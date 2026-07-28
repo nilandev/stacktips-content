@@ -105,10 +105,12 @@ dbConn.Insert (newInventory);
 
 Use the following syntax to retrieve all the records from database
 
+```
 IEnumerable<Inventory> table = dbConn.Table<Inventory> ();
 foreach (Inventory s in table) {
 	Console.WriteLine (s.ItemCode + " " + s.Name);
 }
+```
 
 To retrieve object by primary key, you can use following code syntax.
 

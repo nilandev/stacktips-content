@@ -129,6 +129,8 @@ public class CakeStore {
 
 ### Output
 
+```
 Cake = Sugar:100g, Butter:200g, Name:null, Cheese:Acapella
 Cake1 = Sugar:100g, Butter:200g, Name:Bastien, Cheese:Acapella
 Cake3 = Sugar:100g, Butter:200g, Name:Adams, Cheese:Extra Cheese
+```

@@ -101,11 +101,13 @@ public class TreeSetExample {
 
 ### Output
 
-**TreeSet size: 5
+```
+TreeSet size: 5
 20	22	30	40	50	
 First Element: 20
 Last Element: 50
 40 is removed!
 New size after delete: 4
 20	22	30	50	
-Tree Set is empty.**
+Tree Set is empty.
+```

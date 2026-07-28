@@ -34,27 +34,35 @@ The difficulty in garbage collection is not the actual process of collecting the
 
 A simple expedient is to keep track in each object of the total number of references to that object. That is, we add a special field to each object called a reference count. The reference count field is not accessible to the Java program it is updated by the Java virtual machine itself. Consider the statement
 
+```
 String state = “Alabama”;
+```
 
 The above statement creates a new instance of the String class. Only a single variable, state, refers to the object. So, its reference count should be one. Now consider the following sequence of statements:
 
+```
 String state = “Alabama”;
 String capital = state;
+```
 
 This sequence creates a single String instance. Both state and capital refer to the same object. Therefore, its reference count should be two. Every time one reference variable is assigned to another, it is necessary to update several reference counts. Suppose p and q is both reference variables. The assignment
 
 capital = state  
 would be implemented by the Java virtual machine as follows:
 
+```
   if(state != null){
       state.refCount +=1;
   }
+```
 
 But if state and capital is declared using as follows;
 
+```
 String state = “Alabama”;
 String capital = “Alabama”;
 capital = state;
+```
 
 Then in 1st line the reference count of both state and capital is one. But after state is assigned to capital, both are referred to the same object/memory location. So the reference count of state becomes 2 and capital becomes 0. So now capital is ready for garbage collector.
 

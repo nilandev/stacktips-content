@@ -155,12 +155,14 @@ public class Test {
 
 **Output**
 
+```
 Registered observer
 Registered observer
 New Edition from Subscriber1
 New Edition from Subscriber2
 Deregister observer
 New Edition from Subscriber1
+```
 
 ### Advantages of Observer Design Pattern
 

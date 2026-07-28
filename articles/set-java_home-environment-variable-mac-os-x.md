@@ -28,28 +28,38 @@ Open the Terminal program present in your (this is in your Applications/Utilitie
 
 ### Step-1 Open and edit .bash\_profile file
 
-**open** \-e .bash\_profile
+```
+open -e .bash_profile
+```
 
 ### Step-2 Save the below line
 
-export JAVA\_HOME=$(/usr/libexec/java\_home
+```
+export JAVA_HOME=$(/usr/libexec/java_home
+```
 
 ### Step-3 Refresh the file using below command
 
-$ **source** .bash\_profile
+```
+$ source .bash_profile
+```
 
 ### Step-4 Check if the JAVA\_HOME is set properly
 
-$ **echo**$JAVA\_HOME
-**/**Library**/**Java**/**JavaVirtualMachines**/**1.7.0.jdk**/**Contents**/**Home
+```
+$ echo$JAVA_HOME
+/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+```
 
 ## **For Older Mac OS X**
 
 For older Mac OS X, you have to use the full path of installation directory as it /usr/libexec/java\_home doesn’t exists.
 
-$ **open** \-e .bash\_profile
-**$ export**JAVA\_HOME=**/**System**/**Library**/**Java**/**JavaVirtualMachines**/**1.6.0.jdk**/**Contents**/**Home
-$ **source** .bash\_profile
+```
+$ open -e .bash_profile
+$ exportJAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+$ source .bash_profile
 
-$ **echo**$JAVA\_HOME
-**/**System**/**Library**/**Java**/**JavaVirtualMachines**/**1.6.0.jdk**/**Contents**/**Home
+$ echo$JAVA_HOME
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+```

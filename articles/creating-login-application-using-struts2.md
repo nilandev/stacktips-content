@@ -56,12 +56,13 @@ Now copy following jars from `C:\struts-2.3.15.1-lib` to `\WEB-INF\libs`
 
 Do the following changes in web.xml file to enable struts 2 framework features. You can locate `web.xml` file in `\WEB-INF\web.xml` in your project directory.
 
+```
 <?xmlversion="1.0"encoding="UTF-8"?>
 <web-appxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns="http://java.sun.com/xml/ns/javaee"
-xmlns:web="http://java.sun.com/xml/ns/javaee/web-app\_2\_5.xsd"
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app\_2\_5.xsd"
-id="WebApp\_ID" version="2.5">
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+id="WebApp_ID" version="2.5">
 <display-name>struts2web</display-name>
 <filter>
 	<filter-name>struts2</filter-name>
@@ -72,13 +73,14 @@ id="WebApp\_ID" version="2.5">
 
 <filter-mapping>
 	<filter-name>struts2</filter-name>
-	<url-pattern>/\*</url-pattern>
+	<url-pattern>/*</url-pattern>
 </filter-mapping>
 
 <welcome-file-list>
 	<welcome-file>index.jsp</welcome-file>
 </welcome-file-list>
 </web-app>
+```
 
 <filter/>- This is filter dispatcher class act as controller. All requests go through this filter. It looks at the request and determines the appropriate action by looking up the struts configuration file i.e. struts.xml.
 
@@ -90,6 +92,7 @@ id="WebApp\_ID" version="2.5">
 
 Now, let us jump into validating login credenials from java class. Create `LoginAuthAction.java` inside the following package `com.javatechig.struts2web.actions.` Note, you may have your own package name
 
+```
 public class LoginAuthAction extends ActionSupport {
     Private static final longserialVersionUID = 1L;
     private String userId;
@@ -137,6 +140,7 @@ public class LoginAuthAction extends ActionSupport {
         this.password = password;
     }
 }
+```
 
 The `LoginAuthAction` extends `ActionSupport` to use core methods such as `addActionError` and static string `ERROR`, `SUCCESS`. The `execute()` is the default method which contains the logic for action class. In this example we are validating userId & password is empty or equals. If empty showing error “Please enter userId/password” else if equals then its validated.
 
@@ -144,6 +148,7 @@ The `LoginAuthAction` extends `ActionSupport` to use core methods such as `addAc
 
 Now it’s time to configure the action class in Struts configuration file. Create struts2 configuration file as struts.xml inside project src directory
 
+```
 <?xmlversion="1.0"encoding="UTF-8"?>
 <!DOCTYPEstrutsPUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
@@ -165,6 +170,7 @@ Now it’s time to configure the action class in Struts configuration file. Crea
 		</action>
 	</package>
 </struts>
+```
 
 **Package – name** – It can be any name but it is good practice to use project name.  
 **Package** – namespace –Default it is root(/). It is used for package modularization if the project has more than one module.  
@@ -186,6 +192,7 @@ In this example we will be needing two jsp pages. Once for login form and other 
 
 ## 7.1. Login form
 
+```
 <%@pagecontentType="text/html; charset=UTF-8"%>
 <%@taglibprefix="s"uri="/struts-tags"%>
 <!DOCTYPEhtmlPUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
@@ -239,6 +246,7 @@ body{
 </s:form>
 </body>
 </html>
+```
 
 <s:form/> – Struts form element which enhanced with html form. The action is the action class to invoke on click on Login button.
 
@@ -253,6 +261,7 @@ private String password;
 
 This page contains the welcome text, and will be displayed, once user credentials are authenticated.
 
+```
 <%@pagelanguage="java"contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <!DOCTYPEhtmlPUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
@@ -265,6 +274,7 @@ pageEncoding="ISO-8859-1"%>
 <h1>Welcome!</h1>
 </body>
 </html>
+```
 
 ## 7.3. Create Index.jsp
 

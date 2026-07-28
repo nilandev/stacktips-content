@@ -91,19 +91,24 @@ func dynamicButtonCreation() {
 
 Let’s add the Action method for the buttons created above
 
+```
   func scrollButtonAction(sender: UIButton) {
-        print("Hello \\(sender.tag) is Selected")
+        print("Hello \(sender.tag) is Selected")
     }
     
+```
 
 At last call `dynamicButtonCreation` inside `ViewDidLoad` as show below
 
+```
     override func viewDidLoad() {
         super.viewDidLoad()
   
         //Calling dynamicButtonCreation
          self.dynamicButtonCreation()
     }
+
+```
 
 Cheers…! We are done, let’s Build and Run the application to see the dynamic buttons created on the UIScrollView. Find the source below.
 

@@ -36,6 +36,7 @@ In the above example, we have an sorted list of size 20. The first comparison is
 
 This represents the binary search method to find a required item in a list sorted in increasing order .
 
+```
 INPUT: Sorted LIST of size N, Target Value T
 OUTPUT: Position of T in the LIST = I
 BEGIN
@@ -46,14 +47,15 @@ FOUND = false
 
 2. WHILE (FOUND is false) and (MAX > = MIN)
 2.1 MID = (MAX + MIN)DIV 2
-2.2 If T = LIST \[MID\]
+2.2 If T = LIST [MID]
 I=MID
 FOUND = true
-Else If T < LIST\[MID\]
+Else If T < LIST[MID]
 MAX = MID-1
 Else
 MIN = MD+1
 END
+```
 
 ## Analysis of Binary Search
 

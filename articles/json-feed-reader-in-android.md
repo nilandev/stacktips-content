@@ -26,7 +26,9 @@ This app will fetch the recent posts from stacktips.com and display list of post
 
 #### JSON Feed URL
 
-[http://stacktips.com/api/get\_category\_posts/?dev=1&slug=android](http://stacktips.com/api/get_category_posts/?dev=1&slug=android)
+```
+http://stacktips.com/api/get_category_posts/?dev=1&slug=android
+```
 
 You will learn following things in this article.
 

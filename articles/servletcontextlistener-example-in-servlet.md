@@ -90,11 +90,12 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 
 You will see the output in the console
 
+```
 Jun 13, 2014 3:25:12 PM org.apache.catalina.core.AprLifecycleListener init
 Jun 13, 2014 3:25:12 PM org.apache.coyote.AbstractProtocol init
-INFO: Initializing ProtocolHandler \["http-bio-8080"\]
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
 Jun 13, 2014 3:25:12 PM org.apache.coyote.AbstractProtocol init
-INFO: Initializing ProtocolHandler \["ajp-bio-8009"\]
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
 Jun 13, 2014 3:25:12 PM org.apache.catalina.startup.Catalina load
 INFO: Initialization processed in 645 ms
 Jun 13, 2014 3:25:12 PM org.apache.catalina.core.StandardService startInternal
@@ -104,11 +105,12 @@ INFO: Starting Servlet Engine: Apache Tomcat/7.0.54
 Jun 13, 2014 3:25:13 PM org.apache.tomcat.websocket.server.WsSci onStartup
 HelloWorld Listener initialised.
 Jun 13, 2014 3:25:13 PM org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler \["http-bio-8080"\]
+INFO: Starting ProtocolHandler ["http-bio-8080"]
 Jun 13, 2014 3:25:13 PM org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler \["ajp-bio-8009"\]
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
 Jun 13, 2014 3:25:13 PM org.apache.catalina.startup.Catalina start
 INFO: Server startup in 639 ms
 Jun 13, 2014 3:25:53 PM org.apache.catalina.core.StandardContext reload
-INFO: Reloading Context with name \[/HelloServlet\] has started
+INFO: Reloading Context with name [/HelloServlet] has started
 HelloWorld Listener has been shutdown
+```

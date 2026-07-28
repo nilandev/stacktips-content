@@ -30,11 +30,15 @@ This example is developed in MacOS. Before you begin, make sure you have all the
 
 -   You need ‘Homebrew’ package management software to get all other dependency packages. Usually all modern macOS are preinstalled with home-brew. By any chance, if you don’t have it on your machine, install it using following command. Learn more from official Homebrew website [here](https://brew.sh/).
 
+```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 -   Install node.js if not installed already. To check if it is installed paste the following command in your terminal window.
 
+```
 $ node -v
+```
 
 If not installed, the following command will install the latest node version.
 
@@ -44,15 +48,21 @@ $ brew install node
 
 -   Now we will install ‘Watchman’. Though it is strictly not required, this will make our development productive. Watchman is a tool by provided by Facebook, used for watching changes in the filesystem.
 
+```
 brew install watchman
+```
 
 -   Install React Native command line interface
 
+```
 $ npm install -g react-native-cli
+```
 
 -   Run the following command to cross check React-native version.
 
+```
 $ react-native -v
+```
 
 -   Check you have the latest SDK of [iOS](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) and [Android](https://developer.android.com/studio/index.html) available in your system.Download and install if you don’t have it already.
 -   Make sure you have installed [Visual Studio Code](https://code.visualstudio.com/) IDE, and relevant Plugins for React-Naive. Refer our beginners guide for more information on the [Visual Studio Code IDE plugin](/articles/getting-starteded-with-react-native-ios-android) installation.
@@ -63,10 +73,12 @@ Now, we are ready to go by creating a new project by name DemoLogin via Terminal
 
 Open Terminal/iTerm
 
+```
 $ ~ mkdir ReactNativeApp
 $ ~ cd ReactNativeApp
 $ ReactNativeApp react-native init DemoLogin
 $ DemoLogin Code .
+```
 
 Command `Code .` should open the project in VS code, if it’s not opening we need to configure the _**Path**_ as below:
 
@@ -162,7 +174,9 @@ Let’s compile and check weather we have zero compilation error and logo image 
 
 To compile via iTerm paste the following command, make sure your inside project folder.
 
+```
 react-native run-ios
+```
 
 To compile via VS Code Editor, open debug editor(⇧⌘D) and select `Debug iOS` in dropdown and click on run. If it compile successfully you should find something like
 

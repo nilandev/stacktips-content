@@ -103,13 +103,15 @@ In the above code snippet we have used multiple threads to download an image. (I
 
 **Output**
 
-\*\*\* Main Thread in Action \*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
+```
+*** Main Thread in Action ***
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+```
 
 ### Using CountDownLatch Example
 
@@ -190,13 +192,15 @@ public class MyWorker implements Runnable {
 
 **Output**
 
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Worker Thread \*\*\*\*
-\*\*\* Main Thread in Action \*\*\*
+```
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Worker Thread ****
+*** Main Thread in Action ***
+```
 
 Notice the output above, the main thread was awaiting until all other worker threads completes their execution.  
 If you like reading this post, please don’t forget to hit like or share with your friends!

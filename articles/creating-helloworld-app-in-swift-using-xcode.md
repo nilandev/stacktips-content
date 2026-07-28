@@ -121,6 +121,6 @@ self.presentViewController(alert, animated: true, completion: nil)
 ```
 
 Run the application, Click on HelloWorld Button. Bang, you will get the alert saying “Hello, World” you can find the source code in the following  
-\[download url=”https://github.com/StackTipsLab/Swift-Basic-Tutorials”\]
+[Download source](https://github.com/StackTipsLab/Swift-Basic-Tutorials)
 
 Happy Coding…!

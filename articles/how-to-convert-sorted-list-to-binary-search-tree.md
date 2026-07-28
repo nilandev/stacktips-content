@@ -26,6 +26,7 @@ To convert a sorted singly linked list to a height-balanced Binary Search Tree (
 
 #### Java implementation
 
+```
 class ListNode {
     int val;
     ListNode next;
@@ -78,7 +79,7 @@ public class SortedListToBST {
         return root;
     }
 
-    public static void main(String\[\] args) {
+    public static void main(String[] args) {
         // Example usage
         SortedListToBST converter = new SortedListToBST();
 
@@ -104,16 +105,21 @@ public class SortedListToBST {
         }
     }
 }
+```
 
 **Output**
 
+```
 Inorder traversal of the resulted BST:
 -10 -3 0 5 9
+```
 
 ### Complexity Analysis
 
+```
 Time Complexity: O(n)
 Space Complexity: O(log n) (call stack) + O(n) (additional space)
+```
 
 #### Time Complexity
 

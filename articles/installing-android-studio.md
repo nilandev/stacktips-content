@@ -35,13 +35,17 @@ Know more about android studio features from [Android Studio Features](http://st
 
 ### 1\. ERROR: cannot start Android Studio
 
-ERROR: cannot start Android Studio. No JDK found. Please validate either ANDROID\_STUDIO\_JDK, or JDK\_HOME or JAVA\_HOME points to valid JDK installation. ECHO is off. Press any key to continue
+```
+ERROR: cannot start Android Studio. No JDK found. Please validate either ANDROID_STUDIO_JDK, or JDK_HOME or JAVA_HOME points to valid JDK installation. ECHO is off. Press any key to continue
+```
 
 It is a known issue with android studio**.** On some Windows systems, the launcher script does not find where Java is installed. If you encounter this problem, you need to set an environment variable indicating the correct location. Select **Start menu > Computer > System Properties > Advanced System Properties**. Then open **Advanced tab > Environment Variables**, add new system variable `JAVA_HOME` that points to your JDK folder, for example `C:\Program Files\Java\jdk1.7.0_21`. [![setting up java path](/media/articles/427/setting-up-java-path.png)](http://stacktips.com)
 
 ### 2.Android SDK is out of date or is missing templates
 
+```
 Your Android SDK is out of date or is missing templates. Please ensure you are using SDK version 22 or later.
+```
 
 This may happen because you already have your SDK installation up for Android Developers Bundle with eclipse. First open your SDK manager in the ADT Bundle and update you Android SDK Tools from 21.1 to 22 and then open your Android Studio. For windows user the tools and other SDK packages are saved with the Android Studio application directory. Windows:
 

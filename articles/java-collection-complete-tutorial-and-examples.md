@@ -73,13 +73,15 @@ public class SetExample {
 
 #### Output
 
-Initial Set=\[34, 22, 10, 30, 60\]
-Values after delete=\[34, 22, 10, 60\]
+```
+Initial Set=[34, 22, 10, 30, 60]
+Values after delete=[34, 22, 10, 60]
 Retrieving Values
 34
 22
 10
 60
+```
 
 ### HashSet
 
@@ -128,14 +130,16 @@ public class LinkedHashSetExample {
 
 #### Output
 
-Initial Set=\[34, 22, 10, 60, 30, 25\]
-Values after delete=\[34, 22, 10, 60, 25\]
+```
+Initial Set=[34, 22, 10, 60, 30, 25]
+Values after delete=[34, 22, 10, 60, 25]
 Retrieving Values
 34
 22
 10
 60
 25
+```
 
 ### TreeSet
 
@@ -178,14 +182,16 @@ public class TreeSetExample {
 
 #### Output
 
-Intial Set=\[10, 14, 22, 30, 43, 55\]
-Values after delete=\[10, 14, 22, 43, 55\]
+```
+Intial Set=[10, 14, 22, 30, 43, 55]
+Values after delete=[10, 14, 22, 43, 55]
 Retrieving Values
 10
 14
 22
 43
 55
+```
 
 ### List Interface
 
@@ -239,6 +245,8 @@ public class LinkedListExample {
 
 **Output**
 
-Values of LinkedList=\[B, E1, F, E, D, E, C, G\]
-After deleting first and last= \[E1, F, E, D, E, C\]
-After Delete\[E1, F, E, D\]
+```
+Values of LinkedList=[B, E1, F, E, D, E, C, G]
+After deleting first and last= [E1, F, E, D, E, C]
+After Delete[E1, F, E, D]
+```

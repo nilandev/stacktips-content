@@ -101,11 +101,13 @@ Checkpoints help you to monitor when a tester has reached key points in your app
 
 For example, a purchase could be tracked like so:
 
+```
 //Purchase started
 Log.v("testfairy-checkpoint", "Purchase Initiated");
 // your code to make the purchase
 ..
 Log.v("testfairy-checkpoint", "Purchase Successful!");
+```
 
 ### 5.3. Performance reporting
 
@@ -149,12 +151,14 @@ TestFairy provides fairly many options to the free users. Free account is limite
 
 TestFairy is very simple when it comes to integrate with CI (Continuous integration) tools like Bamboo or Jenkins. CI tools can use the below script to upload the scripts
 
+```
 curl    --sslv3 https://app.testfairy.com/api/upload 
--F api\_key='YOUR API KEY HERE' 
--F apk\_file=@trunk/bin/YourApplication.apk 
+-F api_key='YOUR API KEY HERE' 
+-F apk_file=@trunk/bin/YourApplication.apk 
 -F metrics='cpu,network,logcat' 
--F testers\_groups='YOUR\_DISTRIBUTION\_LIST' 
+-F testers_groups='YOUR_DISTRIBUTION_LIST' 
 -F comment='What’s new in this build?'
+```
 
 ## 8\. TestFairy command line uploader
 

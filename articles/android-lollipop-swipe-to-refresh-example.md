@@ -190,4 +190,4 @@ public class MainActivity extends ActionBarActivity {
 }
 ```
 
-\[download url=”https://github.com/npanigrahy/Android-Lollipop-Swipe-to-Refresh”\]
+[Download source](https://github.com/npanigrahy/Android-Lollipop-Swipe-to-Refresh)

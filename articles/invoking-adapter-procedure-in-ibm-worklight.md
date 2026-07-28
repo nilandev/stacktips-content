@@ -51,11 +51,13 @@ The invocation of adapter procedure involved two basic configurations
 
 InvocationData object is used to provide the invocation configuration information. The configuration parameters are being configured as a JSON object. Preparing invocationData object requires three configuration parameters i.e. adapter name, procedure name and parameters to be passed. For parameters, leave empty array if your procedure is not expecting.
 
+```
 var invocationData = {
         adapter : 'StudentInfo', // adapter name
         procedure : 'getStudentInfos', // procedure name
-        parameters : \[\] // parameters if any
+        parameters : [] // parameters if any
 };
+```
 
 Here in this example, I am trying to invoke the SQL adapter created in my previous post.
 
@@ -63,20 +65,23 @@ Here in this example, I am trying to invoke the SQL adapter created in my previo
 
 We can invoke a procedure from the client application using `WL.Client.invokeProcedure` method. This method take invocationData and call back methods. The call back methods are the failure or success callbacks.
 
+```
 WL.Client.invokeProcedure(invocationData,{
 		onSuccess : loadSQLQueerySuccess, //success callback
 		onFailure : loadSQLQueeryFailure // failure callback
 });
+```
 
 On succesful invocation of adapter procedure the success callback is getting called with the JSON response. The success JSON response contains the status code and the invocationResult object. Below is the format of JSON, I have received from my SQL Adapter.
 
+```
 {
    "status":200,
    "invocationContext":null,
    "invocationResult":{
       "responseID":"8",
       "isSuccessful":true,
-      "resultSet":\[
+      "resultSet":[
          {
             "sgrade":"A+",
             "sid":"PUC001",
@@ -101,19 +106,21 @@ On succesful invocation of adapter procedure the success callback is getting cal
             "sclass":"PUC",
             "sname":"Roman"
          }
-      \]
+      ]
    }
 }
+```
 
 On failure callback, another JSON object is being returned with the error code, and error message and HTTP response status code.
 
 ## 4\. Complete code Snippet
 
+```
 function loadSQLRecords(){
 	var invocationData = {
 		adapter : 'StudentInfo',
 		procedure : 'getStudentInfos',
-		parameters : \[\]
+		parameters : []
 	};
 
 	WL.Client.invokeProcedure(invocationData,{
@@ -130,21 +137,24 @@ function loadSQLQueerySuccess(result){
 function loadSQLQueeryFailure(result){
 	WL.Logger.error("Retrieve failure");
 }
+```
 
 ## 5\. Updating UI with results
 
 To make the example more simplified, I am just creating an simple list and printing the data in rows. You can also have your user interface more beautified using your skills in JQueery, Sencha or any other frameworks. For now below is my code
 
+```
 function displayFeeds(items){
          var ul = $('#itemsList');
          for (var i = 0; i < items.length; i++) {
-              var li = $('<li/>').html(items\[i\].sid);
-              li.append($('<li/>').html(items\[i\].sname));
-              li.append($('<li/>').html(items\[i\].sgrade));
+              var li = $('<li/>').html(items[i].sid);
+              li.append($('<li/>').html(items[i].sname));
+              li.append($('<li/>').html(items[i].sgrade));
               li.append($('<hr>'));
               ul.append(li);
         }
 }
+```
 
 ## 6\. Output
 

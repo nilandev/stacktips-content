@@ -197,4 +197,4 @@ public void onBackPressed() {
 
 ## 8\. Download Complete Source
 
-\[download url=”https://github.com/javatechig/Android-GridView-Advance-Tutorial”\]
+[Download source](https://github.com/javatechig/Android-GridView-Advance-Tutorial)

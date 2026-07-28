@@ -22,16 +22,20 @@ seo:
 
 Include the following script tag in your to your WordPress theme before </head> to support Google Prettify Syntax Highlighter.
 
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run\_prettify.js"></script>
+```
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+```
 
 Now notice that the script will load for all pages and Syntax Highlighter will work fine. You can improve this by not loading the script in your homepage or archive page. To load script only on singles single post, add the following snippets to your theme `functions.php` file. This will add the hook to `<head></head>`.
 
-/\*\*
- \* Add Google Prettify Syntax Highlighter
- \*/ 
-function custom\_gcp\_js() {
-    if(is\_singular(array( 'post', 'deals', 'books'))) {
-      echo '<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run\_prettify.js"></script>';
+```
+/**
+ * Add Google Prettify Syntax Highlighter
+ */ 
+function custom_gcp_js() {
+    if(is_singular(array( 'post', 'deals', 'books'))) {
+      echo '<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>';
     }
   }
-add\_action('wp\_head', 'custom\_gcp\_js');
+add_action('wp_head', 'custom_gcp_js');
+```

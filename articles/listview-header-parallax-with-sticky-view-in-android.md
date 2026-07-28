@@ -213,4 +213,4 @@ public class MainActivity extends ActionBarActivity {
 
 ## 5\. Download Complete Source Code
 
-\[download url=”https://github.com/javatechig/Android-Parallax-ListView-Sticky” source=”GitHub”\]
+[Download source](https://github.com/javatechig/Android-Parallax-ListView-Sticky)

@@ -157,6 +157,8 @@ public class QualityCheckClient {
 
 ### Output
 
+```
 Successfully Executed the method-->checkChargingCapability
 Execution failed for-->CheckOutgoingCallAbility
 Product can’t be proceed for dispatching
+```

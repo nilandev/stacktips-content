@@ -28,7 +28,9 @@ The YouTube Android Player allows you to customize the playback control by setti
 
 You can apply style to YouTubePlayer by calling `setPlayerStyle(PlayerStyle style)` method.
 
+```
 player.setPlayerStyle(PlayerStyle.CHROMELESS);
+```
 
 In our previous example, we saw How to use [YouTube Android Player API and YouTubePlayerView](/articles/youtube-android-player-api-example). In this example, we will customize the YouTubePlayer with custom player controls.
 
@@ -40,89 +42,96 @@ Let us first add the YouTubePlayerView view in your activity or fragment view hi
 
 activity\_custom\_player.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout\_width="match\_parent"
-    android:layout\_height="match\_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.stacktips.youtube.MainActivity">
 
     <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube\_player\_view"
-        android:layout\_width="match\_parent"
-        android:layout\_height="wrap\_content"
+        android:id="@+id/youtube_player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#ebeff2" />
 
 </LinearLayout>
+```
 
 Let us now add the player controls right below `YouTubePlayerView` in `activity_custom_player.xml` layout.
 
+```
 <LinearLayout
-    android:id="@+id/video\_control"
-    android:layout\_width="match\_parent"
-    android:layout\_height="wrap\_content"
+    android:id="@+id/video_control"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="#444"
-    android:gravity="center\_vertical"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
     android:visibility="gone"
     android:weightSum="10">
 
     <ImageButton
-        android:id="@+id/play\_video"
-        android:layout\_width="0dp"
-        android:layout\_height="wrap\_content"
-        android:layout\_margin="5dp"
-        android:layout\_weight="1"
+        android:id="@+id/play_video"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
         android:background="@null"
-        android:src="@drawable/ic\_play" />
+        android:src="@drawable/ic_play" />
 
     <ImageButton
-        android:id="@+id/pause\_video"
-        android:layout\_width="0dp"
-        android:layout\_height="wrap\_content"
-        android:layout\_margin="5dp"
-        android:layout\_weight="1"
+        android:id="@+id/pause_video"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
         android:background="@null"
-        android:src="@drawable/ic\_pause" />
+        android:src="@drawable/ic_pause" />
 
     <SeekBar
-        android:id="@+id/video\_seekbar"
-        android:layout\_width="0dp"
-        android:layout\_height="wrap\_content"
-        android:layout\_margin="10dp"
-        android:layout\_weight="6"
+        android:id="@+id/video_seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="6"
         android:max="100"
         android:progress="0" />
 
     <TextView
-        android:id="@+id/play\_time"
-        android:layout\_width="0dp"
-        android:layout\_height="wrap\_content"
-        android:layout\_margin="5dp"
-        android:layout\_weight="2"
+        android:id="@+id/play_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="2"
         android:text="--:--"
         android:textColor="@android:color/white" />
 </LinearLayout>
+```
 
 ### 2\. Add INTERNET Permission in AndroidManifest
 
 INTERNET permission is required to play video over internet. Add the following permission in your application `AndroidManifest.xml` file.
 
+```
 <uses-permission android:name="android.permission.INTERNET" />
+```
 
 ### Initialize YouTubePlayerView
 
 When using YouTubePlayerView, your activity needs to extend `[YouTubeBaseActivity](https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeBaseActivity.html)`. Now let us create an Activity that extends YouTubeBaseActivity and initialize the YouTubePlayerView. We will add our own Play, Pause and Seek playback control.
 
+```
 public class CustomPlayerControlActivity extends YouTubeBaseActivity 
         implements OnInitializedListener, View.OnClickListener {
     private static final String TAG = "CustomPlayerControlActivity";
 
-    public static final String API\_KEY = "AIzaSyBx7v0YOb140fDO732fMx4l87raxezDWFw";
+    public static final String API_KEY = "AIzaSyBx7v0YOb140fDO732fMx4l87raxezDWFw";
 
-    //https://www.youtube.com/watch?v=<VIDEO\_ID>
-    public static final String VIDEO\_ID = "-m3V8w\_7vhk";
+    //https://www.youtube.com/watch?v=<VIDEO_ID>
+    public static final String VIDEO_ID = "-m3V8w_7vhk";
 
     private YouTubePlayer mPlayer;
 
@@ -136,19 +145,19 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // attaching layout xml
-        setContentView(R.layout.activity\_custom\_player);
+        setContentView(R.layout.activity_custom_player);
 
         // Initializing YouTube player view
-        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube\_player\_view);
-        youTubePlayerView.initialize(API\_KEY, this);
+        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
+        youTubePlayerView.initialize(API_KEY, this);
 
         //Add play button to explicitly play video in YouTubePlayerView
-        mPlayButtonLayout = findViewById(R.id.video\_control);
-        findViewById(R.id.play\_video).setOnClickListener(this);
-        findViewById(R.id.pause\_video).setOnClickListener(this);
+        mPlayButtonLayout = findViewById(R.id.video_control);
+        findViewById(R.id.play_video).setOnClickListener(this);
+        findViewById(R.id.pause_video).setOnClickListener(this);
 
-        mPlayTimeTextView = (TextView) findViewById(R.id.play\_time);
-        mSeekBar = (SeekBar) findViewById(R.id.video\_seekbar);
+        mPlayTimeTextView = (TextView) findViewById(R.id.play_time);
+        mSeekBar = (SeekBar) findViewById(R.id.video_seekbar);
         mSeekBar.setOnSeekBarChangeListener(mVideoSeekBarChangeListener);
 
         mHandler = new Handler();
@@ -156,7 +165,7 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
 
     @Override
     public void onInitializationFailure(Provider provider, YouTubeInitializationResult result) {
-        Toast.makeText(this, "Failed to initialize.", Toast.LENGTH\_LONG).show();
+        Toast.makeText(this, "Failed to initialize.", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -168,7 +177,7 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
 
         // Start buffering
         if (!wasRestored) {
-            player.cueVideo(VIDEO\_ID);
+            player.cueVideo(VIDEO_ID);
         }
 
         player.setPlayerStyle(PlayerStyle.CHROMELESS);
@@ -236,7 +245,7 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
     SeekBar.OnSeekBarChangeListener mVideoSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            long lengthPlayed = (mPlayer.getDurationMillis() \* progress) / 100;
+            long lengthPlayed = (mPlayer.getDurationMillis() * progress) / 100;
             mPlayer.seekToMillis((int) lengthPlayed);
         }
 
@@ -254,11 +263,11 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.play\_video:
+            case R.id.play_video:
                 if (null != mPlayer && !mPlayer.isPlaying())
                     mPlayer.play();
                 break;
-            case R.id.pause\_video:
+            case R.id.pause_video:
                 if (null != mPlayer && mPlayer.isPlaying())
                     mPlayer.pause();
                 break;
@@ -287,3 +296,4 @@ public class CustomPlayerControlActivity extends YouTubeBaseActivity
         }
     };
 }
+```

@@ -25,7 +25,7 @@ The following code snippet demonstrates, how to create an popup dropdown menu us
 
 Also, to make it look bit fancy, we have added animation on button and dropdown component using CSS3 transforms and transitions. Fork or download the source code from Github or see the live example in action by clicking on the “View Demo” button.
 
-\[download url=”https://github.com/StackTipsLab/HTML-CSS-JS-Examples” \]
+[Download source](https://github.com/StackTipsLab/HTML-CSS-JS-Examples)
 
 ### HTML Code
 

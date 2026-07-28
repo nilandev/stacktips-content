@@ -47,6 +47,7 @@ Now, create a folder named www under assets folder in your project directory. Th
 In this exmple, we are using jQueery Mobile Framework for the user interface development. Here in this example, we will develop Sample JQueery page that displays “Hello World” to user.  
 Let us take closer look at the index.html file
 
+```
 <!DOCTYPE html>
 <html>
    <head>
@@ -83,6 +84,7 @@ Let us take closer look at the index.html file
       </div>
    </body>
 </html>
+```
 
 The above html code is pretty simpler one. As as-usual we have to load the JavaScript and CSS files used in our application.
 
@@ -109,6 +111,7 @@ From Cordova version 2.9.0 onwards, the load url configuration will reside insid
 
 Below is my activity code
 
+```
 package com.javatechig.droidgap;
 
 import org.apache.cordova.Config;
@@ -123,9 +126,10 @@ public class MainActivity extends DroidGap
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android\_asset/www/index.html")
+        //super.loadUrl("file:///android_asset/www/index.html")
     }
 }
+```
 
 ## 6\. Output
 

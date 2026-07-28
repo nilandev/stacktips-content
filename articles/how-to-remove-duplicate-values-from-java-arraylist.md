@@ -54,10 +54,12 @@ public class RemoveDuplicate {
 
 ### Output
 
+```
 object3
 object4
 object1
 object2
+```
 
 In this above example we have removed duplicates from the ArrayList but we will loose the sequencing index. If you want to preserve the order of data use LinkedHashSet rather HashSet. Find an example below
 
@@ -93,7 +95,9 @@ public class RemoveDuplicate {
 
 ### Output
 
+```
 object1
 object2
 object3
 object4
+```

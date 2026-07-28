@@ -26,24 +26,27 @@ As described above this example, using an simple layout with an single button. W
 
 ## Application Layout
 
+```
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
-    android:layout\_width="match\_parent"
-    android:layout\_height="match\_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical" >
 
     <Button
         android:id="@+id/button1"
-        android:layout\_width="match\_parent"
-        android:layout\_height="wrap\_content"
-        android:layout\_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Start Download" />
 
 </LinearLayout>
+```
 
 ## Activity Class
 
+```
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Context;
@@ -63,17 +66,17 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity\_main);
+		setContentView(R.layout.activity_main);
 
 		Button b1 = (Button) findViewById(R.id.button1);
 		b1.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View arg0) {
-				mNotifyManager = (NotificationManager) getSystemService(Context.NOTIFICATION\_SERVICE);
+				mNotifyManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 				mBuilder = new NotificationCompat.Builder(MainActivity.this);
 				mBuilder.setContentTitle("Download")
 						.setContentText("Download in progress")
-						.setSmallIcon(R.drawable.ic\_download);
+						.setSmallIcon(R.drawable.ic_download);
 
 				new Downloader().execute();
 			}
@@ -94,7 +97,7 @@ public class MainActivity extends Activity {
 		@Override
 		protected void onProgressUpdate(Integer... values) {
 			// Update progress
-			mBuilder.setProgress(100, values\[0\], false);
+			mBuilder.setProgress(100, values[0], false);
 			mNotifyManager.notify(id, mBuilder.build());
 			super.onProgressUpdate(values);
 		}
@@ -107,7 +110,7 @@ public class MainActivity extends Activity {
 				publishProgress(Math.min(i, 100));
 				try {
 					// Sleep for 5 seconds
-					Thread.sleep(2 \* 1000);
+					Thread.sleep(2 * 1000);
 				} catch (InterruptedException e) {
 					Log.d("TAG", "sleep failure");
 				}
@@ -125,6 +128,7 @@ public class MainActivity extends Activity {
 		}
 	}
 }
+```
 
 ## Download Source Code
 

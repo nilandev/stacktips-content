@@ -48,10 +48,12 @@ The following image depicts the project structure after YouTubeAndroidPlayerApi.
 
 Now that the library is added, just make sure you have the following declaration in your app `build.gradle` file.
 
+```
 dependencies {
-    compile fileTree(dir: 'libs', include: \['\*.jar'\])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     //... other dependencies
 }
+```
 
 Now select **Tools > Android > “Sync Project** **with Gradle Files**” option on Android Studio menu to sync project after adding jar file.
 
@@ -85,25 +87,29 @@ YouTubePlayerView takes care of Android Configuration Change events. It saves an
 
 Let us first add the YouTubePlayerView view in your activity or fragment view hierarchy.
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:tools="http://schemas.android.com/tools"
-   android:layout\_width="match\_parent"
-   android:layout\_height="match\_parent"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
    android:orientation="vertical"
    tools:context="com.stacktips.youtube.MainActivity">
 
    <com.google.android.youtube.player.YouTubePlayerView
-       android:id="@+id/youtube\_player\_view"
-       android:layout\_width="match\_parent"
-       android:layout\_height="wrap\_content"/>
+       android:id="@+id/youtube_player_view"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
 </LinearLayout>
+```
 
 ### Add INTERNET Permission
 
 INTERNET permission is required to play video over internet. Add the following permission in your application `AndroidManifest.xml` file.
 
+```
 <uses-permission android:name="android.permission.INTERNET" />
+```
 
 ### Initialize YouTubePlayerView
 
@@ -111,26 +117,27 @@ When using YouTubePlayerView, your activity needs to extend `[YouTubeBaseActivit
 
 Once the initialization is successful, you will get the `onInitializationSuccess()` callback with YouTubePlayerView instance. You can add additional listeners to handle the playback control events.
 
+```
 public class MainActivity extends YouTubeBaseActivity implements OnInitializedListener {
-    public static final String API\_KEY = "YOUR\_API\_KEY";
+    public static final String API_KEY = "YOUR_API_KEY";
 
-    //https://www.youtube.com/watch?v=<VIDEO\_ID>
-    public static final String VIDEO\_ID = "-m3V8w\_7vhk";
+    //https://www.youtube.com/watch?v=<VIDEO_ID>
+    public static final String VIDEO_ID = "-m3V8w_7vhk";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // attaching layout xml
-        setContentView(R.layout.activity\_main);
+        setContentView(R.layout.activity_main);
 
         // Initializing YouTube player view
-        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube\_player\_view);
-        youTubePlayerView.initialize(API\_KEY, this);
+        YouTubePlayerView youTubePlayerView = (YouTubePlayerView) findViewById(R.id.youtube_player_view);
+        youTubePlayerView.initialize(API_KEY, this);
     }
 
     @Override
     public void onInitializationFailure(Provider provider, YouTubeInitializationResult result) {
-        Toast.makeText(this, "Failed to initialize.", Toast.LENGTH\_LONG).show();
+        Toast.makeText(this, "Failed to initialize.", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -139,10 +146,11 @@ if(null== player) return;
 
         // Start buffering
         if (!wasRestored) {
-            player.cueVideo(VIDEO\_ID);
+            player.cueVideo(VIDEO_ID);
         }
     }
 }
+```
 
 In the above code snippet, we are calling `initialize(String, OnInitializedListener)` method on YouTubePlayerView to instantiate YouTubePlayer. Ones YouTubePlayer instance is ready, it can be used to to load videos into this YouTubePlayerView. You may now build and run the app now to see the YouTube player in action.
 
@@ -150,6 +158,7 @@ In the above code snippet, we are calling `initialize(String, OnInitializedListe
 
 You may attach `PlaybackEventListener` or `PlayerStateChangeListener` listeners to player instance for error handling or advanced configurations.
 
+```
 // Add listeners to YouTubePlayer instance
 player.setPlayerStateChangeListener(new PlayerStateChangeListener() {
     @Override 
@@ -187,6 +196,7 @@ player.setPlaybackEventListener(new PlaybackEventListener() {
     @Override 
 	public void onStopped() { }
 });
+```
 
 ## 5\. Customising YouTubePlayer Controls
 
@@ -198,7 +208,9 @@ The YouTube Android Player allows you to customize the playback control by setti
 
 You can apply style to YouTubePlayer by calling `setPlayerStyle(PlayerStyle style)` method.
 
+```
 player.setPlayerStyle(PlayerStyle.CHROMELESS);
+```
 
 Checkout our Part-II tutorial to learn more about [how to customise YouTubePlayer](/articles/how-to-customize-youtubeplayer-controls-in-android) by adding your own custom playback controls.
 
@@ -209,27 +221,30 @@ Integrating YouTubePlayerFragment is relatively easy. The following section demo
 Let us declare the Activity layout where the YouTubePlayerFragment will be added.  
 **activity\_youtube\_player\_fragment.xml**
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
-    android:layout\_width="match\_parent"
-    android:layout\_height="match\_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 </FrameLayout>
+```
 
 Now let us create an activity and extend it form `YouTubeBaseActivity`. We will now create an instance of YouTubePlayerFragment and add the fragment to activity.
 
 **YouTubePlayerFragmentActivity.java**
 
+```
 public class YouTubePlayerFragmentActivity extends YouTubeBaseActivity {
-    public static final String API\_KEY = "AIzaSyBx7v0YOb1404fDO7EbfMx4l87raxezDWFw";
+    public static final String API_KEY = "AIzaSyBx7v0YOb1404fDO7EbfMx4l87raxezDWFw";
 
-    //https://www.youtube.com/watch?v=<VIDEO\_ID>
-    public static final String VIDEO\_ID = "-m3V8w\_7vhk";
+    //https://www.youtube.com/watch?v=<VIDEO_ID>
+    public static final String VIDEO_ID = "-m3V8w_7vhk";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity\_youtube\_player\_fragment);
+        setContentView(R.layout.activity_youtube_player_fragment);
 
         //Initializing and adding YouTubePlayerFragment
         FragmentManager fm = getFragmentManager();
@@ -242,18 +257,19 @@ public class YouTubePlayerFragmentActivity extends YouTubeBaseActivity {
             ft.commit();
         }
 
-        playerFragment.initialize(API\_KEY, new YouTubePlayer.OnInitializedListener() {
+        playerFragment.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.cueVideo(VIDEO\_ID);
+                youTubePlayer.cueVideo(VIDEO_ID);
             }
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                Toast.makeText(YouTubePlayerFragmentActivity.this, "Error while initializing YouTubePlayer.", Toast.LENGTH\_SHORT).show();
+                Toast.makeText(YouTubePlayerFragmentActivity.this, "Error while initializing YouTubePlayer.", Toast.LENGTH_SHORT).show();
             }
         });
     }
 }
+```
 
 Notice that, the player initialization process is remains same. You still have to call `initialize()` method to get your YouTubePlayer instance.

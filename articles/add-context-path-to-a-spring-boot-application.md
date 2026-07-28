@@ -24,8 +24,23 @@ In a Spring Boot application, the context path represents the base URL for acces
 
 For example, in the following code snippet
 
-      `@RestController @RequestMapping(value = "/products") public class ProductController {      @GetMapping     public List<Product> getProducts() {         return ResponseEntity.ok(productService.getProducts());     }      @GetMapping(value = "/{productId}")     public Product getProduct(@PathVariable(value = "id") Long id) {         			//Your service logic goes here..       return product;     }`
+```
+      @RestController
+@RequestMapping(value = "/products")
+public class ProductController {
+
+    @GetMapping
+    public List<Product> getProducts() {
+        return ResponseEntity.ok(productService.getProducts());
+    }
+
+    @GetMapping(value = "/{productId}")
+    public Product getProduct(@PathVariable(value = "id") Long id) {        
+			//Your service logic goes here..
+      return product;
+    }
     
+```
 
 To test this locally, we need to hit
 
@@ -38,8 +53,10 @@ But sometimes you might want to change the path to make it more meaningful or to
 
 To change the context path, you need to add the following property to your `application.properties` file.
 
-      `server.servlet.context-path=/api/1.0`
+```
+      server.servlet.context-path=/api/1.0
     
+```
 
 Alternatively, if you're using the application.yaml file, you can do this
 
@@ -50,4 +67,4 @@ server:
      context-path: '/api/1.0'
 ```
 
-``   Now with this, you run your application and you will be able to access the endpoints with a new URL        `http://localhhost:8080/api/1.0/products http://localhhost:8080/api/1.0/products/{productId}`       I hope this helps! Let me know if you have any other questions.   ``
+`   Now with this, you run your application and you will be able to access the endpoints with a new URL  ```       http://localhhost:8080/api/1.0/products http://localhhost:8080/api/1.0/products/{productId}      ```  I hope this helps! Let me know if you have any other questions.   `

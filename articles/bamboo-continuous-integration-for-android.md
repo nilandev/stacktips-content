@@ -76,7 +76,9 @@ Add task as source code checkout (by default this will get created). In this ste
 
 Add Another task “Command” type and do the below configurations. Add below snippet as arguments and save the task
 
-update project --target "android-19" --path ./Android\_LoginApp --name LoginTestApp
+```
+update project --target "android-19" --path ./Android_LoginApp --name LoginTestApp
+```
 
 [![Update Android Project](/media/articles/283/Update-Android-Project-620x465.png)](http://stacktips.com)
 
@@ -91,7 +93,9 @@ Add another task to build the project. Select “Ant” form add task. And do th
 1.  Add new executable as “ant” if not available before and add the ant executable path in your computer
 2.  Add arguments as below syntax.
 
+```
 release
+```
 
 [![Add ant  task](/media/articles/283/Add-ant-task-620x378.png)](http://stacktips.com)
 
@@ -112,7 +116,9 @@ Add Another task “Command” type and do the following configurations.
 1.  Add new executable as “jarsigner” if not available before. “jarsigner” will be present in your java SDK. Redirect to your jarsigner sdk.
 2.  Add arguments as below syntax.
 
-\-verbose -sigalg MD5withRSA -digestalg SHA1 -keystore docs/android.keystore-storepass <keystore password> <Path to your unsigned apk>  <your\_alias>
+```
+-verbose -sigalg MD5withRSA -digestalg SHA1 -keystore docs/android.keystore-storepass <keystore password> <Path to your unsigned apk>  <your_alias>
+```
 
 [![Sign Android Project in Bamboo](/media/articles/283/Sign-Android-Project-in-Bamboo-620x378.png)](http://stacktips.com)
 
@@ -124,7 +130,9 @@ This allows all portions to be accessed directly with mmap() even if they contai
 
 Add Another task “Command” type and do the following configurations.
 
+```
  -v 4 <path to your unsigned apk> <name of your new apk include .apk extn>
+```
 
 [![Zip Align andorid APK](/media/articles/283/Zip-Align-andorid-APK-620x371.png)](http://stacktips.com)
 

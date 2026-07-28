@@ -37,7 +37,9 @@ Download the `facebook-android-sdk` and configured a new app. In the application
 -   Open command prompt (Run-> cmd->start) and go to java /bin folder (cd “C:\\Program Files\\Java\\jdk1.6.0\_30\\bin” command will do it for you)
 -   Now you run the below command.
 
-C:\\Program Files\\Java\\jdk1.6.0\_30\\bin>keytool -exportcert -alias androiddebugkey -keystore "C:\\Users\\.android\\debug.keystore" | "C:\\OpenSSL\\bin\\openssl" sha1 -binary |"C:\\OpenSSL\\bin\\openssl" base64
+```
+C:\Program Files\Java\jdk1.6.0_30\bin>keytool -exportcert -alias androiddebugkey -keystore "C:\Users\.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary |"C:\OpenSSL\bin\openssl" base64
+```
 
 -   Provide password (android), as when you are prompted. You are done. It will generate you the key-hash
 

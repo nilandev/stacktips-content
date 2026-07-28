@@ -52,6 +52,8 @@ public class Factorial {
 
 ### Output
 
+```
 Enter A Number :
 6
 Factorial is = 720
+```

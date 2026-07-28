@@ -109,7 +109,9 @@ JSON is often used as a data interchange format to serialize and deserialize dat
 
 RESTful web services use JSON extensively as the format for the data in requests and responses. The HTTP header used to indicate that the content of a request or a response is JSON data is
 
+```
 Content-Type: application/json
+```
 
 ## JSON Processing in JavaScript
 

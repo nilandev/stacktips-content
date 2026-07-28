@@ -28,35 +28,37 @@ This tutorial explains creating spinner in android and attaching event to spinne
 
 Add a new layout file in \\layout\\layout\_main.xml and insert the following code.
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout\_width="fill\_parent"
-    android:layout\_height="fill\_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="10dip" >
 
     <TextView
-        android:layout\_width="fill\_parent"
-        android:layout\_height="wrap\_content"
-        android:layout\_marginTop="10dip"
-        android:text="@string/country\_label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/country_label"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Spinner
-        android:id="@+id/country\_spinner"
-        android:layout\_width="fill\_parent"
-        android:layout\_height="wrap\_content"
-        android:prompt="@string/country\_label" />
+        android:id="@+id/country_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/country_label" />
 
     <ImageView
-        android:id="@+id/country\_image"
-        android:layout\_width="fill\_parent"
-        android:layout\_height="fill\_parent"
-        android:layout\_gravity="center\_vertical"
+        android:id="@+id/country_image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
         android:scaleType="centerInside"
-        android:src="@drawable/ic\_launcher" />
+        android:src="@drawable/ic_launcher" />
 
 </LinearLayout>
+```
 
 In the above example, we have declared TextView, Spinner and a ImageView. The text behaves as a title for the spinner. When you select the Spinner, the ImageView to display the flag for selected country in Spinner.
 
@@ -64,7 +66,8 @@ In the above example, we have declared TextView, Spinner and a ImageView. The te
 
 Below are the strings used in the application. Declare all of them in strings.xml file
 
-<string-array name="countries\_list">
+```
+<string-array name="countries_list">
         <item>Afghanistan</item>
         <item>Albania</item>
         <item>Australia</item>
@@ -77,7 +80,7 @@ Below are the strings used in the application. Declare all of them in strings.xm
         <item>Nepal</item>
     </string-array>
 
-    <integer-array name="countries\_flag\_list">
+    <integer-array name="countries_flag_list">
         <item>@drawable/afghanistan</item>
         <item>@drawable/albania</item>
         <item>@drawable/australia</item>
@@ -86,14 +89,16 @@ Below are the strings used in the application. Declare all of them in strings.xm
         <item>@drawable/england</item>
         <item>@drawable/finland</item>
         <item>@drawable/india</item>
-        <item>@drawable/saudi\_arabia</item>
+        <item>@drawable/saudi_arabia</item>
         <item>@drawable/nepal</item>
     </integer-array>
+```
 
 ### 4\. Activity Java Class (MainActivity.java)
 
 Now create a java class and name it as MainActivity.java. And paste the following code.
 
+```
 package com.example.spinnerexample;
 
 import android.app.Activity;
@@ -109,24 +114,24 @@ import android.widget.Spinner;
 public class MainActivity extends Activity {
 
 	private ImageView image;
-	private String\[\] states;
+	private String[] states;
 	private Spinner spinner;
 	private TypedArray imgs;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity\_main);
+		setContentView(R.layout.activity_main);
 
-		states = getResources().getStringArray(R.array.countries\_list);
-		imgs = getResources().obtainTypedArray(R.array.countries\_flag\_list);
+		states = getResources().getStringArray(R.array.countries_list);
+		imgs = getResources().obtainTypedArray(R.array.countries_flag_list);
 
-		image = (ImageView) findViewById(R.id.country\_image);
-		spinner = (Spinner) findViewById(R.id.country\_spinner);
+		image = (ImageView) findViewById(R.id.country_image);
+		spinner = (Spinner) findViewById(R.id.country_spinner);
 
 		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple\_spinner\_item, states);
-		dataAdapter.setDropDownViewResource(android.R.layout.simple\_spinner\_dropdown\_item);
+				android.R.layout.simple_spinner_item, states);
+		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(dataAdapter);
 
 		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -145,6 +150,7 @@ public class MainActivity extends Activity {
 		});
 	}
 }
+```
 
 First we are initializing `Spinner` object by getting reference from the xml layout file using `findViewById()` method. Then creates a new `ArrayAdapter`, which binds each item in the string array to the initial appearance for the Spinner (which is how each item will appear in the spinner when selected). `setOnItemSelectedListener()` callback is registered to Spinner to handle the spinner event.
 

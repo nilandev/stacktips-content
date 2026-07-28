@@ -54,6 +54,7 @@ In my example, I am witting an adapter to fetch feeds from stacktips.com. To fet
 
 4\. Change the connection parameters like protocol, domain name and port. See my connection parameter in this example. My xml file after changes
 
+```
 <wl:adapter xmlns:wl="http://www.worklight.com/integration" 
 xmlns:http="http://www.worklight.com/integration/http" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -71,6 +72,7 @@ name="JavatechigFeedReader">
 
 <procedure name="getFeeds"/>
 </wl:adapter>
+```
 
 I have changed domain name to “stacktips.com”
 
@@ -78,6 +80,7 @@ The xml file lists the procedure declaration for the adapters. It declares all t
 
 5\. Now let us implement the procedure.
 
+```
 function getFeeds() {	
 	var input = {
 	    method : 'get',
@@ -91,6 +94,7 @@ function getFeeds() {
 
 	return WL.Server.invokeHttp(input);
 }
+```
 
 ## 3\. Testing Adapter Procedures?
 

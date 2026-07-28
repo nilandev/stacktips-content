@@ -98,19 +98,21 @@ class Student {
 
 ### Output
 
-\[
+```
+[
 Name=Student1   Id=1000, 
 Name=Student2   Id=1001, 
 Name=Student3   Id=1002, 
 Name=Student4   Id=1003, 
 Name=Student5   Id=1001, 
-Name=Student6   Id=1004\]
+Name=Student6   Id=1004]
 
-\*\*\*\*\* After removing duplicates \*\*\*\*\*\*\*
+***** After removing duplicates *******
 
-\[
+[
 Name=Student1   Id=1000, 
 Name=Student2   Id=1001, 
 Name=Student3   Id=1002, 
 Name=Student4   Id=1003, 
-Name=Student6   Id=1004\]
+Name=Student6   Id=1004]
+```

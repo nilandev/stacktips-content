@@ -59,9 +59,11 @@ In secondActivity if you want to send back data:
 
 If you don’t want to return data:
 
+```
  Intent returnIntent = new Intent();
- setResult(RESULT\_CANCELED, returnIntent);        
+ setResult(RESULT_CANCELED, returnIntent);        
  finish();
+```
 
 # 4\. Receive the Result
 
@@ -279,4 +281,4 @@ public class SecondActivity extends Activity {
 
 Here you can download complete eclipse project source code from GitHub.
 
-\[download url=”https://github.com/javatechig/javatechig-android-ui/tree/master/ActivityForResults”\]
+[Download source](https://github.com/javatechig/javatechig-android-ui/tree/master/ActivityForResults)

@@ -272,7 +272,9 @@ if (thereAreTacos || thereIsPizza) {
 }
 ```
 
-I'm glad there's good food here!  
+```
+I'm glad there's good food here!
+```
 
 Even though in this case there was no pizza in the house, because there were still tacos, the print statement executed and you were very happy as a result. ??????
 

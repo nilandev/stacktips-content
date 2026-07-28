@@ -30,9 +30,11 @@ Objects are an encapsulation of variables and functions into a single entity. Ob
 
 To define a class we can use class keyword and define the properties and methods inside it.
 
+```python
 class Vehicle:
-    number\_of\_wheels = 2
+    number_of_wheels = 2
     color = "red"
+```
 
 In the above code snippet, we have declared a class called `Vehicle` with two properties `color` and `number_of_wheels`with some default values.
 
@@ -42,18 +44,22 @@ Now that we have our class defined, let's create a object of the class `Vehicle`
 
 To create a new object, simply reference the class you want to build the object out of. In this case, we'll use our previously defined `Person` class.
 
+```python
 class Vehicle:
-    number\_of\_wheels = 2
+    number_of_wheels = 2
     color= "red"
 
 vehicle1 = Vehicle() # Creating object of class Vehicle
 print(vehicle1)
 print("Vehicle1:", vehicle1.color)
+```
 
 **Output:**
 
-<\_\_main\_\_.Vehicle object at 0x10ae31ae0>
+```
+<__main__.Vehicle object at 0x10ae31ae0>
 Vehicle1: red
+```
 
 Awesome, we created an object of class Vehicle and accessed the color property.
 
@@ -70,11 +76,12 @@ Constructors are special kind of method, used for instantiating an object.
 
 Let us now define a constructor for Vehicle class:
 
+```python
 class Vehicle:
 
-    def \_\_init\_\_(self, color, number\_of\_wheels):
+    def __init__(self, color, number_of_wheels):
         self.color = color
-        self.number\_of\_wheels = number\_of\_wheels
+        self.number_of_wheels = number_of_wheels
 
 vehicle1 = Vehicle("Red", 4)
 print(vehicle1)
@@ -83,23 +90,27 @@ print("Vehicle1:", vehicle1.color)
 vehicle2 = Vehicle("Blue", 2)
 print(vehicle2)
 print("Vehicle2", vehicle2.color)
+```
 
 **Output:**
 
-<\_\_main\_\_.Vehicle object at 0x114b0f3a0>
+```
+<__main__.Vehicle object at 0x114b0f3a0>
 Vehicle1: Red
-<\_\_main\_\_.Vehicle object at 0x114b0e470>
+<__main__.Vehicle object at 0x114b0e470>
 Vehicle2 Blue
+```
 
 ## Python Class Methods
 
 Strings and numbers aren't the only thing you can define in classes. Objects can also contain functions. Let's create one in our `Person` class.
 
+```python
 class Vehicle:
 
-    def \_\_init\_\_(self, color, number\_of\_wheels):
+    def __init__(self, color, number_of_wheels):
         self.color = color
-        self.number\_of\_wheels = number\_of\_wheels
+        self.number_of_wheels = number_of_wheels
 
     def drive(self):
         print("Drive mode on!")
@@ -110,11 +121,14 @@ class Vehicle:
 vehicle1 = Vehicle("Red", 4)
 vehicle1.drive()
 vehicle1.stop()
+```
 
 **Output:**
 
+```
 Drive mode on!
 Drive mode off!
+```
 
 ### Python-Inheritance and Super
 

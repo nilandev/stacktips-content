@@ -62,8 +62,10 @@ print(number1 == number3)
 
 **Output**
 
+```
 True
 False
+```
 
 ### Inequality Operator
 
@@ -77,7 +79,9 @@ number2 = 3
 print(number1 != number2)
 ```
 
+```
 False
+```
 
 ### Greater Than and Less Than Operators
 

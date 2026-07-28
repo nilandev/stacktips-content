@@ -64,14 +64,16 @@ Click on “adapter” folder and then New-> Worklight Adapter. You can see a di
 
 Now let us move to the mysql part. We need to have the database server running. I assume that you have installed the mysql and have a database running. Create a table with and fill with some data. You may use the below SQL command
 
-USE \`ibmworklight\`;
-DROP TABLE IF EXISTS \`studentinfo\`;
-CREATE TABLE \`studentinfo\` (\`sid\` varchar(20), \`sname\` varchar(20), \`sclass\` varchar(20), \`sgrade\` varchar(20));
-INSERT INTO \`studentinfo\` ( \`sid\`, \`sname\`, \`sclass\`, \`sgrade\`) values ('PUC001','Rohan','PUC', 'A+');
-INSERT INTO \`studentinfo\` ( \`sid\`, \`sname\`, \`sclass\`, \`sgrade\`) values ('PUC002','Rakesh','PUC', 'A');
-INSERT INTO \`studentinfo\` ( \`sid\`, \`sname\`, \`sclass\`, \`sgrade\`) values ('PUC003','Raj','PUC', 'C');
-INSERT INTO \`studentinfo\` ( \`sid\`, \`sname\`, \`sclass\`, \`sgrade\`) values ('PUC004','Roman','PUC', 'E');
-select \* from \`studentinfo\`;
+```
+USE `ibmworklight`;
+DROP TABLE IF EXISTS `studentinfo`;
+CREATE TABLE `studentinfo` (`sid` varchar(20), `sname` varchar(20), `sclass` varchar(20), `sgrade` varchar(20));
+INSERT INTO `studentinfo` ( `sid`, `sname`, `sclass`, `sgrade`) values ('PUC001','Rohan','PUC', 'A+');
+INSERT INTO `studentinfo` ( `sid`, `sname`, `sclass`, `sgrade`) values ('PUC002','Rakesh','PUC', 'A');
+INSERT INTO `studentinfo` ( `sid`, `sname`, `sclass`, `sgrade`) values ('PUC003','Raj','PUC', 'C');
+INSERT INTO `studentinfo` ( `sid`, `sname`, `sclass`, `sgrade`) values ('PUC004','Roman','PUC', 'E');
+select * from `studentinfo`;
+```
 
 By now, we are ready with the database and table setup.
 
@@ -83,6 +85,7 @@ Open your adapter .xml file. We need to change the database configurations. Driv
 
 As I am running my database in my local system, I have provided localhost and default port as 3306.
 
+```
 <dataSourceDefinition>
 
 <driverClass>com.mysql.jdbc.Driver</driverClass>
@@ -94,19 +97,22 @@ As I am running my database in my local system, I have provided localhost and de
 <password>root</password>
 
 </dataSourceDefinition>
+```
 
 ### 2.5. Defining Worklight Procedures
 
 Now, For making my explanation simplified, I am implementing only one procedure. Here in my example “getStudentInfos” procedures fetches all of the available records from “studentinfo” table.
 
-var selectStatement = WL.Server.createSQLStatement("select \* from studentinfo");
+```
+var selectStatement = WL.Server.createSQLStatement("select * from studentinfo");
 function getStudentInfos() {	
 
 	return WL.Server.invokeSQLStatement({
 		preparedStatement : selectStatement,
-		parameters : \[\]
+		parameters : []
 	});
 }
+```
 
 Now we are done.
 

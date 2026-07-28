@@ -302,4 +302,4 @@ Well, we have now completed the whole exercise to build image gallery using Andr
 
 ## 9\. Download Complete Example
 
-\[download url=”https://github.com/javatechig/Android-GridView-Example”\]
+[Download source](https://github.com/javatechig/Android-GridView-Example)

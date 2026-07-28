@@ -26,6 +26,7 @@ Sequential Search is the most natural searching method. In this method, the sear
 
 This represents the algorithm to search a list of values of to find the required one.
 
+```
 INPUT: List of size N. Target value T
 OUTPUT: Position of T in the list I
 BEGIN
@@ -34,7 +35,7 @@ BEGIN
 Set I to 0
 
 2. While (I<=N) and (FOUND is false)
-If List \[I\] = T
+If List [I] = T
 FOUND = true
 Else
 I=I+1
@@ -43,6 +44,7 @@ END
 3. If FOUND is false
 T is not present in List.
 END
+```
 
 ### Analysis of Sequential Search
 

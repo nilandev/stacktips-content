@@ -26,11 +26,13 @@ The same-origin policy (SOP) is a browser security feature that restricts how sc
 
 These security restrictions are implemented in all modern browsers that disallow the cross-domain web Service calls using Ajax.  If you attempt to make cross-origin resources call, the browser will return the following error:
 
+```
 XMLHttpRequest cannot load URL.
 Origin http://yourwebserver.com is not allowed by Access-Control-Allow-Origin.
 Visit the below link for more details on browser security policy: <a
-href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin\_policy" target="\_blank"
+href="http://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy" target="_blank"
 rel="noopener noreferrer">Same-origin policy.</a>
+```
 
 The solution to the above problem is JSONP.
 
@@ -88,7 +90,9 @@ Now we can access the posts list resources via regular REST call or using JSON A
 
 Accessing REST Resource:
 
+```
 $ curl -X GET http://localhost:8080/api/1.0/posts/1
+```
 
 **Response:** 200 OK
 
@@ -103,7 +107,9 @@ $ curl -X GET http://localhost:8080/api/1.0/posts/1
 
 Accessing REST Resource using JSONP:
 
+```
 $ curl -X GET http://localhost:8080/api/1.0/posts/1?callback=postCallback
+```
 
 **Response:** 200 OK
 

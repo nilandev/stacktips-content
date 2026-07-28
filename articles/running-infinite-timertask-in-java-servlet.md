@@ -102,14 +102,15 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 
 You will see the output in the console
 
+```
 Jun 13, 2014 3:52:25 PM org.apache.catalina.core.AprLifecycleListener init
 Jun 13, 2014 3:52:27 PM org.apache.catalina.core.ApplicationContext log
 INFO: No Spring WebApplicationInitializer types detected on classpath
 HelloWorld Listener initialized.
 Jun 13, 2014 3:52:27 PM org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler \["http-bio-8080"\]
+INFO: Starting ProtocolHandler ["http-bio-8080"]
 Jun 13, 2014 3:52:27 PM org.apache.coyote.AbstractProtocol start
-INFO: Starting ProtocolHandler \["ajp-bio-8009"\]
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
 Jun 13, 2014 3:52:27 PM org.apache.catalina.startup.Catalina start
 INFO: Server startup in 1787 ms
 TimerTask Fri Jun 13 15:52:28 BST 2014
@@ -117,3 +118,4 @@ TimerTask Fri Jun 13 15:52:30 BST 2014
 TimerTask Fri Jun 13 15:52:32 BST 2014
 TimerTask Fri Jun 13 15:52:34 BST 2014
 TimerTask Fri Jun 13 15:52:36 BST 2014
+```

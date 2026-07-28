@@ -40,13 +40,15 @@ $ docker pull mongo
 
 Now, run the following command to start a MongoDB in a container,
 
+```
 docker run
     -d
     --name mongodb
     -p 27017:27017
-    -e MONGO\_INITDB\_ROOT\_USERNAME=YOUR\_USERNAME
-    -e MONGO\_INITDB\_ROOT\_PASSWORD=YOUR\_PASSWORD
+    -e MONGO_INITDB_ROOT_USERNAME=YOUR_USERNAME
+    -e MONGO_INITDB_ROOT_PASSWORD=YOUR_PASSWORD
     mongo
+```
 
 Options:
 

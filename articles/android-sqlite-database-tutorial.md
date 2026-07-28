@@ -558,4 +558,4 @@ public class ModifyTodoActivity extends Activity implements OnClickListener {
 
 ## 10\. Download Example Code
 
-\[download url=”https://github.com/javatechig/Advance-Android-Tutorials/tree/master/TODO%20Android%20App”\]
+[Download source](https://github.com/javatechig/Advance-Android-Tutorials/tree/master/TODO%20Android%20App)

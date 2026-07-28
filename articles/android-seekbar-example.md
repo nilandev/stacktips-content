@@ -219,4 +219,4 @@ Output of the above code is shown below
 
 Download complete example source code from GitHub.
 
-\[download url=”https://github.com/javatechig/Android-Seekbar-Example”\]
+[Download source](https://github.com/javatechig/Android-Seekbar-Example)

@@ -342,4 +342,4 @@ Add the following string array declarations to string.xml file.
 
 ## 5\. Download Complete Example
 
-\[download url=”https://github.com/javatechig/Async-ListView-Image-Loader”\]
+[Download source](https://github.com/javatechig/Async-ListView-Image-Loader)

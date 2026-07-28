@@ -22,11 +22,13 @@ seo:
 
 Is your WordPress theme not showing custom post on Author Archive page? Add the following code snippet to `functions.php` file. This WordPress hook will include custom post types in WordPress Author archive page.
 
+```
 //include snippet in author archive template
-function custom\_archive\_query( $query ) {
-	if ( is\_author() && $query->is\_main\_query()) {
-		$query->set( 'post\_type', array( 'post', 'deals' , 'books' ) );
+function custom_archive_query( $query ) {
+	if ( is_author() && $query->is_main_query()) {
+		$query->set( 'post_type', array( 'post', 'deals' , 'books' ) );
 	}
 	return $query;
 }
-add\_filter( 'pre\_get\_posts', 'custom\_archive\_query' );
+add_filter( 'pre_get_posts', 'custom_archive_query' );
+```

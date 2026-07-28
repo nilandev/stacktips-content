@@ -274,6 +274,8 @@ echo ${URL}
 
 Now, we can run the above script by passing two arguments. One for the APK path and other is for comment for your build. This comment will be sent to the tester over email.
 
+```
 $ chmod a+x testfairy-upload.sh
 
 $ ./testfairy-upload.sh bin/MyApp.apk "$@Your build update comment here"
+```

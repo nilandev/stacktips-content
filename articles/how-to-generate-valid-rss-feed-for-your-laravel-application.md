@@ -34,11 +34,15 @@ To make our life easy, we will generate valid RSS and Atom feed using [roumen/fe
 
 Laravel project dependencies are maintained using [composer](/articles/intro-to-laravel-php-framework-and-features). We can add the roumen/feed dependency library using the following artisan command:
 
+```
 composer require roumen/feed
+```
 
 Or add the following to your re composer.json file:
 
+```
 "roumen/feed": "~2.10"
+```
 
 Please note, after updating composer.json file, run `composer install` command to add dependency to project.
 
@@ -62,7 +66,9 @@ return [
 
 Optionally, if you want to alter the blade layouts, you can publish vendor views using following artisan command.
 
-artisan vendor:publish --provider="Roumen\\Feed\\FeedServiceProvider"
+```
+artisan vendor:publish --provider="Roumen\Feed\FeedServiceProvider"
+```
 
 ### Eloquent Models
 

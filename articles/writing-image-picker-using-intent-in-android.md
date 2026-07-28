@@ -50,35 +50,38 @@ There are also some more additional attributes. Visit the below llink for more d
 
 As you can see in the screenshot below, my example is using simple LinearLayout with a ImageView and a button aligned to vertical orientation. You may have some complex layout as per your needs.
 
+```
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout\_width="fill\_parent"
-    android:layout\_height="fill\_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".ImagePickerActivity" >
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout\_width="wrap\_content"
-        android:layout\_height="wrap\_content"
-        android:layout\_gravity="center\_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:maxHeight="200dp"
-        android:src="@drawable/ic\_launcher" />
+        android:src="@drawable/ic_launcher" />
 
     <Button
-        android:id="@+id/btn\_pick"
-        android:layout\_width="fill\_parent"
-        android:layout\_height="wrap\_content"
-        android:layout\_gravity="center"
-        android:layout\_marginTop="20dp"
-        android:text="@string/change\_image" />
+        android:id="@+id/btn_pick"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/change_image" />
 
 </LinearLayout>
+```
 
 ## Activity class Code Snippet
 
 Below is my activity class using `Intent.ACTION_PICK` action
 
+```
 package com.javatechig.filepicker;
 
 import java.io.FileNotFoundException;
@@ -97,24 +100,24 @@ import android.widget.ImageView;
 
 public class ImagePickerActivity extends Activity {
 
-	private final int SELECT\_PHOTO = 1;
+	private final int SELECT_PHOTO = 1;
 	private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity\_image\_picker);
+        setContentView(R.layout.activity_image_picker);
 
         imageView = (ImageView)findViewById(R.id.imageView);
 
-        Button pickImage = (Button) findViewById(R.id.btn\_pick);
+        Button pickImage = (Button) findViewById(R.id.btn_pick);
         pickImage.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {				
-				Intent photoPickerIntent = new Intent(Intent.ACTION\_PICK);
-				photoPickerIntent.setType("image/\*");
-				startActivityForResult(photoPickerIntent, SELECT\_PHOTO);
+				Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+				photoPickerIntent.setType("image/*");
+				startActivityForResult(photoPickerIntent, SELECT_PHOTO);
 			}
 		});
     }
@@ -124,8 +127,8 @@ public class ImagePickerActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, imageReturnedIntent); 
 
         switch(requestCode) { 
-        case SELECT\_PHOTO:
-            if(resultCode == RESULT\_OK){
+        case SELECT_PHOTO:
+            if(resultCode == RESULT_OK){
 				try {
 					final Uri imageUri = imageReturnedIntent.getData();
 					final InputStream imageStream = getContentResolver().openInputStream(imageUri);
@@ -144,13 +147,16 @@ public class ImagePickerActivity extends Activity {
         return true;
     }    
 }
+```
 
 As you can see the code snippet used is pretty simple. Here in this example, I am handling button click event and their Image picker using `Intent.ACTION_PICK` has been called. `setType()` method is used to define the file filter criteria. This will invoke the default gallery and user will be able to select an image.
 
 Once image is selected, the result will be back to our main activity, and the result will be returned to `onActivityResult()` method. Here we are receiving the selected image Uri. Once we have the uri, we can convert them to `Bitmap` and then display it on `ImageView`. Below coded snippet is used to get the image from the Uri and convert into bitmap.
 
+```
 InputStream imageStream = getContentResolver().openInputStream(imageUri);
 Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+```
 
 And now we are done.
 

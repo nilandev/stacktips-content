@@ -31,7 +31,9 @@ The latest stable version of the Spring Boot framework is 3.3.x, which requires 
 
 Check if you have Java installed using the following command.
 
+```
 java --version
+```
 
 If Java is not installed, you can follow the installation process from my blog post: [How to Install Java for MacOS and Windows?](https://stacktips.com/articles/how-to-install-java-for-macos-and-windows)
 
@@ -62,6 +64,7 @@ It uses an XML file called a pom.xml (Project Object Model) to define the projec
 
 **pom.xml**
 
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -103,6 +106,7 @@ It uses an XML file called a pom.xml (Project Object Model) to define the projec
   </build>
 
 </project>
+```
 
 ### Gradle
 
@@ -112,6 +116,7 @@ The build.gradle file is typically stored in the project's root directory. An ex
 
 **build.gradle**
 
+```
 plugins {
   id 'java'
   id 'org.springframework.boot' version '3.3.4'
@@ -140,6 +145,7 @@ dependencies {
 tasks.named('test') {
   useJUnitPlatform()
 }
+```
 
 Though Gradle is relatively new, it has gained popularity due to its ability to handle complex build automation and dependency management capability.
 

@@ -202,4 +202,4 @@ In this above activity code sample, we are tracking event an crashes on two butt
 
 # 7\. Download Complete Example
 
-\[download url=”https://github.com/javatechig/javatechig-android-advanced/tree/master/GoogleAnalyticsDemo”\]
+[Download source](https://github.com/javatechig/javatechig-android-advanced/tree/master/GoogleAnalyticsDemo)

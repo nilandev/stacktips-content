@@ -294,4 +294,4 @@ mViewFlipper.getInAnimation().setAnimationListener(mAnimationListener);
 
 # 6\. Download source code
 
-\[download url=”https://github.com/javatechig/Android-UI-Tutorials/tree/master/ViewFlipperExample”\]
+[Download source](https://github.com/javatechig/Android-UI-Tutorials/tree/master/ViewFlipperExample)

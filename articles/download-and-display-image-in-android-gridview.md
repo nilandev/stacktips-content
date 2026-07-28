@@ -462,7 +462,7 @@ public class DetailsActivity extends ActionBarActivity {
 
 ## 10\. Download Complete Example
 
-\[download url=”https://github.com/javatechig/Android-GridView-Advance-Tutorial”\]
+[Download source](https://github.com/javatechig/Android-GridView-Advance-Tutorial)
 
 ## 11\. Custom Activity Transition in GridView
 

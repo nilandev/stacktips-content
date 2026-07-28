@@ -123,9 +123,11 @@ In this example, the read method is used to read the contents of the file, and t
 
 You can also use the with statement to automatically close the file for you, like this:
 
+```
 with open("example.txt", "r") as file:
     contents = file.read()
     print(contents)
+```
 
 In this example, the file is automatically closed after the with block is exited, even if an exception is raised.
 
@@ -197,9 +199,18 @@ Coding is fun!
 
 The only difference between appending and **overwriting** an existing file is the mode. Here is how you overwrite a file entirely:
 
-	`file = open("file.txt", "w") file.write("Coding is fun!") file.close()  file = open("file.txt", "r") print(file.read())`
+```
+	file = open("file.txt", "w")
+file.write("Coding is fun!")
+file.close()
 
-	`Coding is fun!`
+file = open("file.txt", "r")
+print(file.read())
+```
+
+```
+	Coding is fun!
+```
 
 Keep in mind that if the file does not exist, a new one will be created.
 

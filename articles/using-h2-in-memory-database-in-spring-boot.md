@@ -75,7 +75,9 @@ spring.h2.console.enabled=true
 
 Once you have done the above configurations, you need to restart your Spring boot application. You can launch the H2 database Web console at:
 
+```
 http://localhost:8080/h2-console.
+```
 
 Make sure that you use `jdbc:h2:mem:testdb` as JDBC URL.
 

@@ -102,6 +102,7 @@ Add the following line just above the package element.
 
 **Value:** Prefix name of resource bundle. I am using global.
 
+```
 <struts>
 	<constant name="struts.custom.i18n.resources" value="global" /> 
 <package name="struts2web" namespace="/" extends="struts-default">
@@ -114,6 +115,7 @@ Add the following line just above the package element.
 </action>
 </package>
 </struts>
+```
 
 **4\. Create resource properties file as follows under src folder**
 
@@ -147,13 +149,16 @@ Here you can observe that keys are same across all file but the value changes as
 
 **global\_ja.properties**
 
-  key: login.here      value: \\u3053\\u3053\\u306B\\u30ED\\u30B0\\u30A4\\u30F3
-  key: login.user      value: \\u30E6\\u30FC\\u30B6\\u30FC
-  key: login.password  value: \\u30D1\\u30B9\\u30EF\\u30FC\\u30C9
-  key: login.submit    value: \\u30ED\\u30B0\\u30A4\\u30F3
+```
+  key: login.here      value: \u3053\u3053\u306B\u30ED\u30B0\u30A4\u30F3
+  key: login.user      value: \u30E6\u30FC\u30B6\u30FC
+  key: login.password  value: \u30D1\u30B9\u30EF\u30FC\u30C9
+  key: login.submit    value: \u30ED\u30B0\u30A4\u30F3
+```
 
 **5\. Create Login.jsp with language options as follows**
 
+```
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <s:form action="loginauth" theme="simple">
@@ -163,7 +168,7 @@ Here you can observe that keys are same across all file but the value changes as
 			<td width="300" colspan="2">
 				<s:a href="changelang?lang=en" >English</s:a>				
 				<s:a href="changelang?lang=fr" >France</s:a>
-				<s:a href="changelang?lang=ja\_JP" >Japanese</s:a>
+				<s:a href="changelang?lang=ja_JP" >Japanese</s:a>
 			</td>
 		</tr>
 		<tr>
@@ -181,12 +186,15 @@ Here you can observe that keys are same across all file but the value changes as
 	</table>
 </center>
 </s:form>
+```
 
 Here I have added three language options i.e. English, France and Japanese.
 
+```
 <s:a href="changelang?lang=en" >English</s:a>				
 <s:a href="changelang?lang=fr" >France</s:a>
 <s:a href="changelang?lang=ja" >Japanese</s:a>
+```
 
 **changelang** – is the action name which is mapped with ChangeLocaleAction in struts.xml.  
 lang – is the parameter to get selected language.
@@ -196,8 +204,10 @@ Here is the code to display text in different language in JSP
 
 Get Message from resource bundle:
 
+```
 <s:property value="getText('login.user')" /> 
 <s:submit key="login.submit" name="submit" />
+```
 
 The above are used to get the message from resource bundle.  
 getText(String s) : It searches the key(‘login.user’) in the resource bundle and returns the respective value or null if none is found. This can be used as label in the UI.  
@@ -205,8 +215,10 @@ Key : This helps to retrieve the value from resource bundle using key (‘login.
 
 **6\. Create ChangeLocaleAction.java in com.javatechig.struts2web.actions**
 
+```
 Locale locale = new Locale(lang);
 ActionContext.getContext().setLocale(locale);
+```
 
 **lang** : It is the parameter to get the language  
 **Locale** : It is from java util package.  

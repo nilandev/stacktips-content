@@ -22,7 +22,9 @@ seo:
 
 The following PHP code snippet extracts the twitter username from twitter URL using regular expressions. For example, if you pass the following url, it will output ‘**Stacktips**‘.
 
+```
 twitter.com/Stacktips
+```
 
 Snippet:
 

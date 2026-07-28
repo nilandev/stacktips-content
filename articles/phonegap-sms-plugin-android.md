@@ -66,6 +66,7 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 
 # 5.Sending SMS using Intent method
 
+```
 // intent param is needed to send sms using sms intent
               $("#btnSmsIntent").click(function(){
 	            SmsPlugin.prototype.send('9731563021', 'Your Message Here!', 'INTENT'
@@ -77,6 +78,7 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 				    }
 				);               
              });
+```
 
 # 6\. Sending SMS using SMS manager
 

@@ -28,14 +28,18 @@ The ANDROID\_HOME environment variable can be used to tell maven where to find t
 
 Set the ANDROID\_HOME variable to your SDK directory example,
 
-export ANDROID\_HOME=/Users/alebirke/apps/adt-bundle-mac-x86\_64/sdk
+```
+export ANDROID_HOME=/Users/alebirke/apps/adt-bundle-mac-x86_64/sdk
+```
 
 ## Setting ANDROID\_HOME environmental variable on Maverick Mac OS X (10.9.x)
 
 Configure the ANDROID\_HOME environment variable based on the location of the Android SDK. Additionally, consider adding ANDROID\_HOME/tools, and ANDROID\_HOME/platform-tools to your PATH.
 
-$  export ANDROID\_HOME=/Users/Neel/Documents/Softwares/adt-bundle-mac-x86\_64-20140321/sdk
-$  export PATH=${PATH}:$ANDROID\_HOME/tools:$ANDROID\_HOME/platform-tools
+```
+$  export ANDROID_HOME=/Users/Neel/Documents/Softwares/adt-bundle-mac-x86_64-20140321/sdk
+$  export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+```
 
 ## Setting ANDROID\_HOME environment variable to .bash\_profile
 
@@ -67,8 +71,10 @@ touch .bash_profile
 
 Save the below line)
 
-export PATH=${PATH}:/Applications/adt-bundle-mac-x86\_64-20140321/sdk/tools
-export PATH=${PATH}:/Applications/adt-bundle-mac-x86\_64-20140321/sdk/platform-tools
+```
+export PATH=${PATH}:/Applications/adt-bundle-mac-x86_64-20140321/sdk/tools
+export PATH=${PATH}:/Applications/adt-bundle-mac-x86_64-20140321/sdk/platform-tools
+```
 
 ### Step-4
 

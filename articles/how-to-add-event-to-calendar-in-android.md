@@ -57,4 +57,4 @@ The output of the above code is as follows.
 
 [![How to add event to calendar in Android](/media/articles/205/How-to-add-event-to-calendar-in-Android.png)](http://stacktips.com)
 
-\[download url=”https://github.com/javatechig/Add-Calendar-Event-Android”\]
+[Download source](https://github.com/javatechig/Add-Calendar-Event-Android)

@@ -32,10 +32,12 @@ Declaring a variable is incredibly simple in Python. Unlike in other programming
 
 Example of variable declaration looks like this:
 
+```
 name = "John Doe"
 x = 777
 print(name)
 print(x)
+```
 
 The above code block prints
 

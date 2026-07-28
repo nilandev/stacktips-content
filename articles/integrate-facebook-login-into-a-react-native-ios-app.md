@@ -28,9 +28,11 @@ As assume that you have a basic knowledge of React-Native and required Software 
 
 To create a new React Native project, just open your Terminal/iTerm app and run the following command.
 
+```
 $ ~ mkdir ReactNativeApp
 $ ~ cd ReactNativeApp
 $ ReactNativeApp react-native init DemoFBLogin
+```
 
 Before integrating with Facebook to React app, we have to first create a Facebook app on the **[Facebook developer console.](https://developers.facebook.com/apps "https://developers.facebook.com/apps")**
 
@@ -48,10 +50,12 @@ Let’s click on **Get Started** with Facebook Login. First let’s start with t
 
 Now, Install and link the Facebook SDK for React Native packages and dependencies in the terminal and start npm server.
 
+```
 $ cd DemoFBLogin
 $ DemoFBLogin react-native install react-native-fbsdk
 $ DemoFBLogin react-native link react-native-fbsdk
 $ DemoFBLogin npm start
+```
 
 ![](/media/articles/29/Screen-Shot-2017-06-08-at-10.28.51-PM-620x267.png)
 
@@ -177,4 +181,4 @@ Compile and run the project.
 
 ### Download Source code
 
-\[download url=”https://github.com/satish25/FaceBook\_Login\_React-Native.git”\]
+[Download source](https://github.com/satish25/FaceBook\_Login\_React-Native.git)

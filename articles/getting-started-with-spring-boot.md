@@ -99,22 +99,30 @@ For Gradle projects, you can build and run the project by following the steps be
 
 Build spring boot application into an executable jar
 
+```
 ./gradlew build
+```
 
 Start/Run spring boot application
 
+```
 ./gradlew bootRun
+```
 
 **For Maven projects**  
 If you’re using maven based build, you can build and run the project by following the steps below:
 
 Build spring boot application into an executable jar
 
+```
 ./mvnw clean package
+```
 
 Start/Run spring boot application
 
+```
 ./mvnw spring-boot:run
+```
 
 When you run your Spring Boot application, you will see a log message like this:
 

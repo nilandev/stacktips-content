@@ -38,25 +38,27 @@ Example: Sort the following list (8,6,4,1,3) using insertion sort
 
 Thus to find the correct position search the list till an item just greater than the target is found. Shift all the items from this point one, down the list. Insert the target in the vacated slot.
 
-INPUT: LIST\[ \] of N items in random order.
-OUTPUT: LIST\[ \] of N items in sorted order.
+```
+INPUT: LIST[ ] of N items in random order.
+OUTPUT: LIST[ ] of N items in sorted order.
 1. BEGIN
 2. FORI = 2 TO N DO
 3. BEGIN
-4. IF LIST\[I\] LIST\[I-1\]
+4. IF LIST[I] LIST[I-1]
 5. THEN BEGIN
 6. J = I.
-7. T = LIST \[I\] /\*STORE LIST \[I\] \*/
-8. REPEAT /\* MOVE OTHER ITEMS DOWN THE LIST.
+7. T = LIST [I] /*STORE LIST [I] */
+8. REPEAT /* MOVE OTHER ITEMS DOWN THE LIST.
 9. J = J-1
-10. LIST \[J + 1\] = LIST \[J\];
+10. LIST [J + 1] = LIST [J];
 11. IF J = 1 THEN
 12. FOUND = TRUE
 13. UNTIL (FOUND = TRUE)
-14. LIST \[I\] = T
+14. LIST [I] = T
 15. END
 16. END
 17. END
+```
 
 ## Example: Program to sort n numbers using insertion sort.
 

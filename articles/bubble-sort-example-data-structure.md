@@ -30,8 +30,9 @@ In this example, we will see bubble sort example In data structure .
 
 ## Algorithm for Bubble Sort
 
-INPUT: LIST \[\] of N items in random order
-O UTPUT: LIST \[\] of N items sorted in ascending order.
+```
+INPUT: LIST [] of N items in random order
+O UTPUT: LIST [] of N items sorted in ascending order.
 1. SWAP = TRUE
 PASS = 0/
 
@@ -41,11 +42,11 @@ BEGIN.
 2.1 FOR I = 0 TO (N-PASS) DO
 BEGIN
 
-2.1.1 IFA\[I\] >A \[I+1\]
+2.1.1 IFA[I] >A [I+1]
 BEGIN
-TMP = A\[I\]
-A\[I\] = A\[I + 1\]
-A\[I + 1\] = TMP
+TMP = A[I]
+A[I] = A[I + 1]
+A[I + 1] = TMP
 SWAP = TRUE
 END
 ELSE
@@ -54,59 +55,62 @@ SWAP = FALSE
 2.1.2 PASS = PASS + 1
 END
 END
+```
 
 ## Example : C program, Function to arrange numbers in ascending order using bubble sort technique.
 
+```
 #include<stdio.h>
 
-void bubble\_sort(int a\[\], int n)
+void bubble_sort(int a[], int n)
 {
-    int i; /\* To access subsequent item while comparing\*/
-    int j; /\* Keep track of the passes \*/
-    int temp; /\* Used to exchange the item \*/
-    int sum; /\* Holds the total number of exchanges \*/
-    int pass; /\*Holds the number of passes required \*/
-    int exchag; /\* Holds the number of exchanges in each pass \*/
-    int flag; /\* Indicate any exchange has been done or not \*/
+    int i; /* To access subsequent item while comparing*/
+    int j; /* Keep track of the passes */
+    int temp; /* Used to exchange the item */
+    int sum; /* Holds the total number of exchanges */
+    int pass; /*Holds the number of passes required */
+    int exchag; /* Holds the number of exchanges in each pass */
+    int flag; /* Indicate any exchange has been done or not */
     sum = 0;
     pass = 0;
     
     for(j=1;j<n;j++)
     {
-        exchg = 0; /\* number of exchanges just before the pass \*/
-        flage = 0; /\* No exchange been done \*/
+        exchg = 0; /* number of exchanges just before the pass */
+        flage = 0; /* No exchange been done */
         for(i=0;i<n-j;i++)
         {
-            if(a\[i\]>=a\[i+1\])
+            if(a[i]>=a[i+1])
             {
                 
-                /\* Exchange and update the number of exchange in the current pass\*/
-                temp=a\[i\];
-                a\[i\]=a\[i+1\];
-                a\[i+1=temp;
+                /* Exchange and update the number of exchange in the current pass*/
+                temp=a[i];
+                a[i]=a[i+1];
+                a[i+1=temp;
                 exchg++;
-                sum++ /\* Update the total number of exchanges \*/
-                flag=1; /\* Exchange has been done \*/
+                sum++ /* Update the total number of exchanges */
+                flag=1; /* Exchange has been done */
             }
         }
         
-        pass++; /\* update the number of passes \*/
+        pass++; /* update the number of passes */
         printf("Number of exchanges in pass : %d=%dn",j,exchg);
         print("Total number of exchanges = %dn",sum);
     }
     
     void main()
     {
-        int i,n,a\[20\];
+        int i,n,a[20];
         printf("Enter the number of items to sort");
         scanf("%d",&n);
         print("Enter the items to sort");
         for(i=0;i<n;i++)
-        scanf("%d",&a\[i\]);
-        bubble\_sort(a,n);
+        scanf("%d",&a[i]);
+        bubble_sort(a,n);
         printf("The sorted items are");
         for(i=0;i<n;i++)
         {
-            printf("%dn",a\[i\]);
+            printf("%dn",a[i]);
         }
     }
+```

@@ -41,6 +41,7 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 ### Java implementation
 
+```
 class TreeNode {
     int val;
     TreeNode left;
@@ -78,6 +79,7 @@ public class BinarySearchTreeDepth {
         return 0;
     }
 }
+```
 
 Let us now write some unit tests to cover all scenarios like empty tree, tree with single node and a tree with depth 2.
 
