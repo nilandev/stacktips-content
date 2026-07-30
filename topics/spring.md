@@ -5,8 +5,8 @@ slug: spring
 description: An application framework and inversion of control container for the Java platform
 taxonomyType: CATEGORY
 thumbnail: /media/categories/spring.png
-bgColor: "#e2e8f0"
-textColor: "#0f172a"
+bgColor: "#64748b"
+textColor: "#ffffff"
 articleCount: 18
 seo: 
   metaTitle: null

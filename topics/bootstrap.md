@@ -5,8 +5,8 @@ slug: bootstrap
 description: Bootstrap is a free and open-source front-end framework for developing websites and web applications. It contains HTML and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions
 taxonomyType: CATEGORY
 thumbnail: /media/categories/bootstrap.png
-bgColor: "#e2e8f0"
-textColor: "#0f172a"
+bgColor: "#4f46e5"
+textColor: "#ffffff"
 articleCount: 16
 seo: 
   metaTitle: null

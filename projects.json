@@ -1,0 +1,26 @@
+[
+  {
+    "id": "spring-boot-tutorials",
+    "name": "Spring Boot Tutorials",
+    "description": "Hands-on Spring Boot samples and practical tutorials covering APIs, security, data access, and more.",
+    "repoUrl": "https://github.com/StackTipsLab/spring-boot-tutorials"
+  },
+  {
+    "id": "android-ui-tutorials",
+    "name": "Android UI Tutorials",
+    "description": "A curated collection of Android UI examples for widgets, navigation, lists, animations, and custom views.",
+    "repoUrl": "https://github.com/StackTipsLab/android-ui-tutorials"
+  },
+  {
+    "id": "html-css-javascript-tutorials",
+    "name": "HTML, CSS & JavaScript Tutorials",
+    "description": "Small web experiments and front-end tutorials for layout, interaction, and responsive design.",
+    "repoUrl": "https://github.com/StackTipsLab/html-css-javascript-tutorials"
+  },
+  {
+    "id": "junit5-tutorials",
+    "name": "JUnit 5 Tutorials",
+    "description": "Comprehensive tutorials for learning and mastering JUnit 5, including writing and running tests.",
+    "repoUrl": "https://github.com/StackTipsLab/junit5-tutorials"
+  }
+]
