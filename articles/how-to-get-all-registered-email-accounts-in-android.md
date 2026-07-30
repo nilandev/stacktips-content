@@ -92,47 +92,47 @@ import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
-	private ArrayList<Item> list = null;
-	private ListView listView;
-	private LovelyListAdapter listadaptor;
+    private ArrayList<Item> list = null;
+    private ListView listView;
+    private LovelyListAdapter listadaptor;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		list = getData();
-		listView = (ListView) findViewById(R.id.listView1);
-		listadaptor = new LovelyListAdapter(this, R.layout.lovely_view_layout, list);
-		listView.setAdapter(listadaptor);
-	}
+        list = getData();
+        listView = (ListView) findViewById(R.id.listView1);
+        listadaptor = new LovelyListAdapter(this, R.layout.lovely_view_layout, list);
+        listView.setAdapter(listadaptor);
+    }
 
-	private ArrayList<Item> getData() {
-		ArrayList<Item> accountsList = new ArrayList<Item>();
+    private ArrayList<Item> getData() {
+        ArrayList<Item> accountsList = new ArrayList<Item>();
 
-		//Getting all registered Google Accounts;
-		try {
-			Account[] accounts = AccountManager.get(this).getAccountsByType("com.google");
-			for (Account account : accounts) {
-				Item item = new Item( account.type, account.name);
-				accountsList.add(item);
-			}
-		} catch (Exception e) {
-			Log.i("Exception", "Exception:" + e);
-		}
+        //Getting all registered Google Accounts;
+        try {
+            Account[] accounts = AccountManager.get(this).getAccountsByType("com.google");
+            for (Account account : accounts) {
+                Item item = new Item( account.type, account.name);
+                accountsList.add(item);
+            }
+        } catch (Exception e) {
+            Log.i("Exception", "Exception:" + e);
+        }
 
-		//For all registered accounts;
-		/*try {
-			Account[] accounts = AccountManager.get(this).getAccounts();
-			for (Account account : accounts) {
-				Item item = new Item( account.type, account.name);
-				accountsList.add(item);
-			}
-		} catch (Exception e) {
-			Log.i("Exception", "Exception:" + e);
-		}*/
-		return accountsList;
-	}
+        //For all registered accounts;
+        /*try {
+            Account[] accounts = AccountManager.get(this).getAccounts();
+            for (Account account : accounts) {
+                Item item = new Item( account.type, account.name);
+                accountsList.add(item);
+            }
+        } catch (Exception e) {
+            Log.i("Exception", "Exception:" + e);
+        }*/
+        return accountsList;
+    }
 }
 ```
 
@@ -150,56 +150,56 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class LovelyListAdapter extends ArrayAdapter<Item> {
-	private List<Item> appsList = null;
-	private Context context;
+    private List<Item> appsList = null;
+    private Context context;
 
-	public LovelyListAdapter(Context context, int textViewResourceId, List<Item> appsList) {
-		super(context, textViewResourceId, appsList);
-		this.context = context;
-		this.appsList = appsList;
-	}
+    public LovelyListAdapter(Context context, int textViewResourceId, List<Item> appsList) {
+        super(context, textViewResourceId, appsList);
+        this.context = context;
+        this.appsList = appsList;
+    }
 
-	@Override
-	public int getCount() {
-		return ((null != appsList) ? appsList.size() : 0);
-	}
+    @Override
+    public int getCount() {
+        return ((null != appsList) ? appsList.size() : 0);
+    }
 
-	@Override
-	public Item getItem(int position) {
-		return ((null != appsList) ? appsList.get(position) : null);
-	}
+    @Override
+    public Item getItem(int position) {
+        return ((null != appsList) ? appsList.get(position) : null);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = convertView;
-		if (null == view) {
-			LayoutInflater layoutInflater = (LayoutInflater) context
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = layoutInflater.inflate(R.layout.lovely_view_layout, null);
-		}
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
+        if (null == view) {
+            LayoutInflater layoutInflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = layoutInflater.inflate(R.layout.lovely_view_layout, null);
+        }
 
-		if (position % 2 == 1) {
-		    view.setBackgroundColor(context.getResources().getColor(R.color.lovely_row_bg1));  
-		} else {
-		    view.setBackgroundColor(context.getResources().getColor(R.color.lovely_row_bg2));  
-		}
+        if (position % 2 == 1) {
+            view.setBackgroundColor(context.getResources().getColor(R.color.lovely_row_bg1));
+        } else {
+            view.setBackgroundColor(context.getResources().getColor(R.color.lovely_row_bg2));
+        }
 
-		Item data = appsList.get(position);
-		if (null != data) {
+        Item data = appsList.get(position);
+        if (null != data) {
 
-			TextView appName = (TextView) view.findViewById(R.id.key);
-			TextView packageName = (TextView) view.findViewById(R.id.value);
+            TextView appName = (TextView) view.findViewById(R.id.key);
+            TextView packageName = (TextView) view.findViewById(R.id.value);
 
-			appName.setText(data.getKey());
-			packageName.setText(data.getValue());
-		}
-		return view;
-	}
+            appName.setText(data.getKey());
+            packageName.setText(data.getValue());
+        }
+        return view;
+    }
 }
 ```
 
@@ -210,29 +210,29 @@ package com.javatechig.regemail;
 
 public class Item {
 
-	private String key;
-	private String value;
+    private String key;
+    private String value;
 
-	public Item(String key, String value) {
-		this.key = key;
-		this.value = value;
-	}
+    public Item(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
 
-	public String getKey() {
-		return key;
-	}
+    public String getKey() {
+        return key;
+    }
 
-	public void setKey(String key) {
-		this.key = key;
-	}
+    public void setKey(String key) {
+        this.key = key;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public void setValue(String value) {
+        this.value = value;
+    }
 }
 ```
 

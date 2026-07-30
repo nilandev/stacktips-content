@@ -24,7 +24,7 @@ When working with a larger team and with a proper Git flow process, the number o
 
 Create a file named, `deleteLocalGitBranches.sh` and add the following code snippet.
 
-```
+```bash
 #!/bin/bash
 # Move to master branch. Delete all other local branches except master, develop, release/* or project/*
 
@@ -46,6 +46,6 @@ done
 
 Now run the shell script
 
-```
+```bash
 $ ./deleteLocalGitBranches.sh
 ```

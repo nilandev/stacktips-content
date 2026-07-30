@@ -24,35 +24,35 @@ Code snippet to sort array using insertion sort algorithm in java.
 
 ```java
 public class InsertionSortExample {
-	static int step = 1;
+    static int step = 1;
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		int[] array = { 17, 21, 191, 3, 23, 45, 34, 9, 1 };
+        int[] array = { 17, 21, 191, 3, 23, 45, 34, 9, 1 };
 
-		int n = array.length;
-		for (int j = 1; j < n; j++) {
-			int key = array[j];
-			int i = j - 1;
-			while ((i > -1) && (array[i] > key)) {
-				array[i + 1] = array[i];
-				i--;
-			}
-			array[i + 1] = key;
-			printNumbers(array);
-			
-			System.out.println("n");
-		}
-	}
+        int n = array.length;
+        for (int j = 1; j < n; j++) {
+            int key = array[j];
+            int i = j - 1;
+            while ((i > -1) && (array[i] > key)) {
+                array[i + 1] = array[i];
+                i--;
+            }
+            array[i + 1] = key;
+            printNumbers(array);
 
-	private static void printNumbers(int[] input) {
-		System.out.println("--- step " + step + " ----");
-		step++;
+            System.out.println("n");
+        }
+    }
 
-		for (int i = 0; i < input.length; i++) {
-			System.out.print(input[i] + ", ");
-		}
-	}
+    private static void printNumbers(int[] input) {
+        System.out.println("--- step " + step + " ----");
+        step++;
+
+        for (int i = 0; i < input.length; i++) {
+            System.out.print(input[i] + ", ");
+        }
+    }
 }
 ```
 

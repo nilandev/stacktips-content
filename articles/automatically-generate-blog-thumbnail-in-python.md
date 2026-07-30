@@ -30,7 +30,7 @@ This is done using specific meta tags called Open Graph. Open graph tags enhance
 
 Here is how the open graph tags look like
 
-```
+```html
 <html prefix="og: https://ogp.me/ns#">
 <head>
 <title>StackTips - Resources for Developers</title>
@@ -65,14 +65,14 @@ For this, we will need two Python dependencies
 
 -   **html2image**: This allows you to run a Chrome browser in the headless mode, render the HTML template, and then generate the screenshot of your browser output.
 
-```
+```text
 Jinja2=3.1.2
 html2image=2.0.3
 ```
 
 Let’s first install **Jinja2** and html2Image python packages. You can install them using the following commands
 
-```
+```bash
 pip3 install Jinja2
 pip3 install html2image
 ```
@@ -81,7 +81,7 @@ pip3 install html2image
 
 Once the packages are installed, let us now create a HTML template file for our thumbnail. In this example, I am displaying the Post title and 3 other images.
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -98,7 +98,7 @@ Once the packages are installed, let us now create a HTML template file for our 
       <div class="title-wrapper">
         <h1 class="post-title">
           {{post_title}}
-        </h1>  
+        </h1>
         <div class="meta">
           <img src="{{author_image_url}}" class="author-avatar" alt="author Image"/>
           <span class="author-name">{{author_name}}</span>
@@ -116,12 +116,12 @@ Once the packages are installed, let us now create a HTML template file for our 
 
 Here is my css stylesheet for the template.
 
-```
+```css
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200,500;600;800display=swap');
 
 body{
-    background-color: #000000;       
-    font-family: 'Inter', sans-serif;    
+    background-color: #000000;
+    font-family: 'Inter', sans-serif;
 }
 
 .main-wrapper {
@@ -129,13 +129,13 @@ body{
     opacity:1;
     background-image:  radial-gradient(#b8b8b8 0.5px, transparent 0.5px), radial-gradient(#b8b8b8 0.5px, #f9f9f9 0.5px);
     background-size: 20px 20px;
-    background-position: 0 0,10px 10px;    
+    background-position: 0 0,10px 10px;
     width: 100%;
     height: 97%;
     position: fixed;
     top: 0%;
     left: 0%;
-    z-index: 100;       
+    z-index: 100;
     display: flex;
     align-items: center;
 }
@@ -200,7 +200,7 @@ body{
 
 Now we have our template ready, let us use the following Python script which will generate the thumbnail using the **html2image**.
 
-```
+```python
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 

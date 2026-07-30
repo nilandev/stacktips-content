@@ -28,25 +28,25 @@ You may need to create a branch anytime during development for keeping your clea
 
 Remember to keep your master clean before creating a new branch. Commit and sync your uncommitted changes, if any in your local repository. Open your Git Shell and follow the below git commands to create a new branch on your local machine:
 
-```
+```bash
 $ git branch <name_of_your_new_branch>
 ```
 
 Once your branch is created you will push the branch on GitHub remote by using the below commands
 
-```
+```bash
 $ git push origin <name_of_your_new_branch>
 ```
 
 ## 2\. Switch to your new branch
 
-```
+```bash
 $ git checkout <name_of_your_new_branch>
 ```
 
 ## 3\. List all branches created
 
-```
+```bash
 $ git branch
 ```
 
@@ -54,11 +54,11 @@ $ git branch
 
 Now you may add some new files or folders to this branch. Either you may create a new file using your vim editor or you may paste the files and folders using your file explorer. When you want to commit something in your branch, be sure to be in your branch. Before committing you must all new files/folders using the below command.
 
-```
+```bash
 $ git add-A
 ```
 
-```
+```bash
 $ git push origin <new branchName>
 ```
 
@@ -66,7 +66,7 @@ $ git push origin <new branchName>
 
 The first git command deletes the branch on your local file system and the second command deletes branch in Github
 
-```
+```bash
 $ git branch -d <name_of_your_new_branch>
 $ git push origin :<name_of_your_new_branch>
 ```

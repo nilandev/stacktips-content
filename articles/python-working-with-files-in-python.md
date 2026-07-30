@@ -123,7 +123,7 @@ In this example, the read method is used to read the contents of the file, and t
 
 You can also use the with statement to automatically close the file for you, like this:
 
-```
+```python
 with open("example.txt", "r") as file:
     contents = file.read()
     print(contents)
@@ -141,7 +141,7 @@ print(file.readline())
 print(file.readline())
 ```
 
-```markup
+```text
 Hello!
 Welcome to StackTips!
 ```
@@ -154,7 +154,7 @@ for line in file:
     print(line)
 ```
 
-```markup
+```text
 Hello!
 Welcome to StackTips!
 Have fun!
@@ -188,7 +188,7 @@ file = open("file.txt", "r")
 print(file.read())
 ```
 
-```markup
+```text
 Hello!
 Welcome to StackTips!
 Have fun!
@@ -199,8 +199,8 @@ Coding is fun!
 
 The only difference between appending and **overwriting** an existing file is the mode. Here is how you overwrite a file entirely:
 
-```
-	file = open("file.txt", "w")
+```python
+file = open("file.txt", "w")
 file.write("Coding is fun!")
 file.close()
 
@@ -208,8 +208,8 @@ file = open("file.txt", "r")
 print(file.read())
 ```
 
-```
-	Coding is fun!
+```text
+Coding is fun!
 ```
 
 Keep in mind that if the file does not exist, a new one will be created.

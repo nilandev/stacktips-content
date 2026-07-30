@@ -36,81 +36,81 @@ Below example demonstrates the usage of FormPanel. The form panel is added with 
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
 
-	onReady : function() {
-		var formBase = new Ext.form.FormPanel({
-			xtype:'form',
-			pinHeaders: true,
-			id: 'formbase',
-			name: 'formBase',
-			fullscreen : true,
-			scroll: 'vertical',
-			items: [{
-				xtype: 'fieldset',
-				title: 'Register User',
-				instructions: 'Please enter the information below.',
+    onReady : function() {
+        var formBase = new Ext.form.FormPanel({
+            xtype:'form',
+            pinHeaders: true,
+            id: 'formbase',
+            name: 'formBase',
+            fullscreen : true,
+            scroll: 'vertical',
+            items: [{
+                xtype: 'fieldset',
+                title: 'Register User',
+                instructions: 'Please enter the information below.',
 
-	            items: [{
-	                xtype: 'textfield',
-	                name: 'name',
-	                label: 'Name',
-	                placeHolder: 'Enter Name',
-	                autoCapitalize : true,
-	                required: true,
-	                useClearIcon: true
-		        }, {
-	                xtype: 'passwordfield',
-	                name: 'password',
-	                label: 'Password',
-	                useClearIcon: true
-	            }, {
-	                xtype: 'emailfield',
-	                name: 'email',
-	                label: 'E-Mail',
-	                placeHolder: 'test@test.com',
-	                useClearIcon: true
-	}, {
-	                xtype: 'urlfield',
-	                name: 'url',
-	                label: 'URL',
-	                placeHolder: 'http://stacktips.com',
-	                useClearIcon: true
-	},{
-	                xtype: 'datepickerfield',
-	                name: 'birthday',
-	                label: 'D.O.B',
-	                picker: { yearFrom: 1970 }
-	}, {
-	                xtype: 'selectfield',
-	                name: 'rank',
-	                label: 'Country',
-	                options: [{
-	                    text: 'India',
-	                    value: 'india'
-	                }, {
-	                    text: 'Japan',
-	                    value: 'japan'
-	                }]
-	},{
-	                xtype: 'textareafield',
-	                name: 'bio',
-	                label: 'About'
-	},{
-	                xtype: 'checkboxfield',
-	                name: 'suscribe',
-	                label: 'Suscribe'
-	}]
+                items: [{
+                    xtype: 'textfield',
+                    name: 'name',
+                    label: 'Name',
+                    placeHolder: 'Enter Name',
+                    autoCapitalize : true,
+                    required: true,
+                    useClearIcon: true
+                }, {
+                    xtype: 'passwordfield',
+                    name: 'password',
+                    label: 'Password',
+                    useClearIcon: true
+                }, {
+                    xtype: 'emailfield',
+                    name: 'email',
+                    label: 'E-Mail',
+                    placeHolder: 'test@test.com',
+                    useClearIcon: true
+    }, {
+                    xtype: 'urlfield',
+                    name: 'url',
+                    label: 'URL',
+                    placeHolder: 'http://stacktips.com',
+                    useClearIcon: true
+    },{
+                    xtype: 'datepickerfield',
+                    name: 'birthday',
+                    label: 'D.O.B',
+                    picker: { yearFrom: 1970 }
+    }, {
+                    xtype: 'selectfield',
+                    name: 'rank',
+                    label: 'Country',
+                    options: [{
+                        text: 'India',
+                        value: 'india'
+                    }, {
+                        text: 'Japan',
+                        value: 'japan'
+                    }]
+    },{
+                    xtype: 'textareafield',
+                    name: 'bio',
+                    label: 'About'
+    },{
+                    xtype: 'checkboxfield',
+                    name: 'suscribe',
+                    label: 'Suscribe'
+    }]
         }, {
             xtype: 'fieldset',
             defaults: {
                 xtype: 'radiofield',
                 labelWidth: '35%'
             },
-            title: 'Select Gender',            
+            title: 'Select Gender',
             items: [{
                 name: 'gender',
                 value: 'Male',
@@ -121,24 +121,24 @@ Ext.setup({
                 value: 'Female'
             }]
         },{
-	xtype: 'fieldset',
+    xtype: 'fieldset',
             items: [{
                 xtype: "button",
                 ui: "submit",
                 text: "Submit"
             }]
         }]
-	});
+    });
 
-	Ext.apply(formBase, {
-		pinHeaders: true,
-		fullscreen : true,
-		autoRender : true,
-		hideOnMaskTap : false		
-	});
+    Ext.apply(formBase, {
+        pinHeaders: true,
+        fullscreen : true,
+        autoRender : true,
+        hideOnMaskTap : false
+    });
 
-	formBase.show();
-	}
+    formBase.show();
+    }
 });
 ```
 

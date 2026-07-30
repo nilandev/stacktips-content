@@ -50,6 +50,6 @@ If you don’t have access to Eclipse or the ADT Plugin, you can install your ap
 
 When the emulator is running, you can also connect to the emulator instance’s console to issue commands as needed.
 
-```
+```bash
 > <adb install <path-to-your-APK>
 ```

@@ -44,70 +44,70 @@ import java.util.TreeSet;
 
 public class TreeSetExample {
 
-	public static void main(String[] args) {
-		// adding Integer to treeset
-		TreeSet<Integer> treeSet = new TreeSet<Integer>();
-		treeSet.add(20);
-		treeSet.add(30);
-		treeSet.add(40);
-		treeSet.add(50);
-		treeSet.add(22);
+    public static void main(String[] args) {
+        // adding Integer to treeset
+        TreeSet<Integer> treeSet = new TreeSet<Integer>();
+        treeSet.add(20);
+        treeSet.add(30);
+        treeSet.add(40);
+        treeSet.add(50);
+        treeSet.add(22);
 
-		// Check empty or not
-		if (treeSet.isEmpty()) {
-			System.out.print("TreeSet is empty.");
-		} else {
-			System.out.println("TreeSet size: " + treeSet.size());
-		}
+        // Check empty or not
+        if (treeSet.isEmpty()) {
+            System.out.print("TreeSet is empty.");
+        } else {
+            System.out.println("TreeSet size: " + treeSet.size());
+        }
 
-		// Looping and Displaying the Tree set data using Iterator
-		Iterator<Integer> iterator = treeSet.iterator();
-		while (iterator.hasNext()) {
-			System.out.print(iterator.next() + "\t");
-		}
+        // Looping and Displaying the Tree set data using Iterator
+        Iterator<Integer> iterator = treeSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + "\t");
+        }
 
-		// Retrieve first data from tree set
-		System.out.println("\nFirst Element: " + treeSet.first());
+        // Retrieve first data from tree set
+        System.out.println("\nFirst Element: " + treeSet.first());
 
-		// Retrieve last data from tree set
-		System.out.println("Last Element: " + treeSet.last());
+        // Retrieve last data from tree set
+        System.out.println("Last Element: " + treeSet.last());
 
-		// remove element by value
-		boolean flag = treeSet.remove(40);
-		if (flag) {
-			System.out.println("40 is removed!");
-		} else {
-			System.out.println("40 doesn't exist!");
-		}
+        // remove element by value
+        boolean flag = treeSet.remove(40);
+        if (flag) {
+            System.out.println("40 is removed!");
+        } else {
+            System.out.println("40 doesn't exist!");
+        }
 
-		System.out.println("New size after delete: " + treeSet.size());
+        System.out.println("New size after delete: " + treeSet.size());
 
-		// Looping and Displaying the Tree set data using Iterator
-		iterator = treeSet.iterator();
-		while (iterator.hasNext()) {
-			System.out.print(iterator.next() + "\t");
-		}
+        // Looping and Displaying the Tree set data using Iterator
+        iterator = treeSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + "\t");
+        }
 
-		// Remove all data
-		treeSet.clear();
-		if (treeSet.isEmpty()) {
-			System.out.print("\nTree Set is empty.");
-		} else {
-			System.out.println("\nTree Set size: " + treeSet.size());
-		}
-	}
+        // Remove all data
+        treeSet.clear();
+        if (treeSet.isEmpty()) {
+            System.out.print("\nTree Set is empty.");
+        } else {
+            System.out.println("\nTree Set size: " + treeSet.size());
+        }
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 TreeSet size: 5
-20	22	30	40	50	
+20    22    30    40    50
 First Element: 20
 Last Element: 50
 40 is removed!
 New size after delete: 4
-20	22	30	50	
+20    22    30    50
 Tree Set is empty.
 ```

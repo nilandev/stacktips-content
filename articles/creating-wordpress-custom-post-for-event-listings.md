@@ -42,18 +42,18 @@ The following code snippet is used for a typical custom post type setup in WordP
 add_action('init', 'events_init');
 
 function events_init() {
-	$args = array(
-	'labels' => array(
-	'name' => __('Events'),
-	'singular_name' => __('Event'),
+    $args = array(
+    'labels' => array(
+    'name' => __('Events'),
+    'singular_name' => __('Event'),
  ),
 
-	'public' => true,
-	'rewrite' => array("slug" => "events"),
-	'supports' => array('thumbnail','editor','title','custom-fields')
+    'public' => true,
+    'rewrite' => array("slug" => "events"),
+    'supports' => array('thumbnail','editor','title','custom-fields')
 );
 
-	register_post_type( 'events' , $args );
+    register_post_type( 'events' , $args );
 }
 ```
 

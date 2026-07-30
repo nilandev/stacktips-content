@@ -38,19 +38,19 @@ The following code snippet depicts how to query the database using RowCallbackHa
 
 ```java
 public Car selectCar(int id) {
-	final String sql = "select * from cars where id = ?";
-	final Car car = new Car();
-	RowCallbackHandler callback = new RowCallbackHandler() {
+    final String sql = "select * from cars where id = ?";
+    final Car car = new Car();
+    RowCallbackHandler callback = new RowCallbackHandler() {
 
-		public void processRow(ResultSet rs) throws SQLException {
-			car.setId(rs.getInt("id"));
-			car.setModel(rs.getString("model"));
-			car.setPrice(rs.getDouble("price"));
-		}
-	};
-	
-	jdbcTemplate.query(sql, callback, id);
-	return car;
+        public void processRow(ResultSet rs) throws SQLException {
+            car.setId(rs.getInt("id"));
+            car.setModel(rs.getString("model"));
+            car.setPrice(rs.getDouble("price"));
+        }
+    };
+
+    jdbcTemplate.query(sql, callback, id);
+    return car;
 }
 ```
 
@@ -60,18 +60,18 @@ The `RowMapper<T>` interface is more general than `RowCallbackHandler`. It maps 
 
 ```java
 public Car selectCar(int id) {
-	final String sql = "select * from cars where id = ?";
-	return jdbcTemplate.queryForObject(sql, new RowMapper<Car>() {
+    final String sql = "select * from cars where id = ?";
+    return jdbcTemplate.queryForObject(sql, new RowMapper<Car>() {
 
-		public Car mapRow(ResultSet rs, int rowNum) throws SQLException {
-			final Car car = new Car();
-			car.setId(rs.getInt("id"));
-			car.setModel(rs.getString("model"));
-			car.setPrice(rs.getDouble("price"));
-			return car;
-		}
+        public Car mapRow(ResultSet rs, int rowNum) throws SQLException {
+            final Car car = new Car();
+            car.setId(rs.getInt("id"));
+            car.setModel(rs.getString("model"));
+            car.setPrice(rs.getDouble("price"));
+            return car;
+        }
 
-	}, id);
+    }, id);
 }
 ```
 
@@ -85,8 +85,8 @@ The following code snippet depicts how to use `BeanPropertyRowMapper` implementa
 
 ```java
 public Car selectCar(int id) {
-	final String sql = "select * from cars where id = ?";
-	return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Car.class), id);
+    final String sql = "select * from cars where id = ?";
+    return jdbcTemplate.queryForObject(sql, BeanPropertyRowMapper.newInstance(Car.class), id);
 }
 ```
 
@@ -96,17 +96,17 @@ Now that we understand how to query single record, we can now have a look at que
 
 ```java
 public List<Car> getAllCars() {
-	final String sql = "select * from cars";
-	final List<Car> vehicles = new ArrayList<Car>();
-	final List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
+    final String sql = "select * from cars";
+    final List<Car> vehicles = new ArrayList<Car>();
+    final List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
 
-	for (Map<String, Object> row : rows) {
-		Car car = new Car();
-		car.setId((Integer) row.get("id"));
-		car.setModel((String) row.get("model"));
-		car.setPrice((Double) row.get("price"));
-		vehicles.add(car);
-	}
-	return vehicles;
+    for (Map<String, Object> row : rows) {
+        Car car = new Car();
+        car.setId((Integer) row.get("id"));
+        car.setModel((String) row.get("model"));
+        car.setPrice((Double) row.get("price"));
+        vehicles.add(car);
+    }
+    return vehicles;
 }
 ```

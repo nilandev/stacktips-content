@@ -28,7 +28,7 @@ Android application is composed of multiple activities and they often communicat
 
 Xamarin Android provides easy to use startActivity method in activity context. The following code snippet will start Activity2 without passing any data
 
-```cs
+```csharp
  StartActivity(typeof(Activity2));
 ```
 
@@ -42,7 +42,7 @@ http://developer.android.com/reference/android/content/Intent.html
 
 http://developer.android.com/reference/android/os/Bundle.html
 
-```cs
+```csharp
 Intent intent = new Intent(this, typeof(MainActivity2));
 intent.PutExtra("name", "Nilanchala");
 intent.PutExtra("empid", 1001);
@@ -53,7 +53,7 @@ Retrieving data bundles received
 
 We can receive the above passed data in “Activity2” using the below code snippet
 
-```cs
+```csharp
 string name = Intent.GetStringExtra("name");
 int roll = Intent.GetIntegerExtra("empid");
 ```

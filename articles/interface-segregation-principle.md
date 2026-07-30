@@ -28,10 +28,10 @@ Let us take the example of a multi-purpose machine developed by Xerox. This supe
 
 ```java
 public interface IMachine {
-	public void print();
-	public void staple();
-	public void scan();
-	public void photoCopy();
+    public void print();
+    public void staple();
+    public void scan();
+    public void photoCopy();
 }
 ```
 
@@ -40,25 +40,25 @@ XeroxMachine implementation
 ```java
 public class XeroxMachine implements IMachine {
 
-	@Override
-	public void print() {
-		System.out.println("Printing Job");
-	}
+    @Override
+    public void print() {
+        System.out.println("Printing Job");
+    }
 
-	@Override
-	public void staple() {
-		System.out.println("Stapling Job");
-	}
-	
-	@Override
-	public void scan() {
-		System.out.println("Scan Job");
-	}
+    @Override
+    public void staple() {
+        System.out.println("Stapling Job");
+    }
 
-	@Override
-	public void photoCopy() {
-		System.out.println("Photo Copy");
-	}
+    @Override
+    public void scan() {
+        System.out.println("Scan Job");
+    }
+
+    @Override
+    public void photoCopy() {
+        System.out.println("Photo Copy");
+    }
 }
 ```
 
@@ -68,19 +68,19 @@ We can breakdown the IMachine into multiple special purpose interfaces as shown 
 
 ```java
 public interface IPrinter {
-	public void print();
+    public void print();
 }
 
 public interface IScanner {
-	public void fax();
+    public void fax();
 }
 
 public interface IStapler {
-	public void staple();
+    public void staple();
 }
 
 public interface IPhotoCopier {
-	public void photoCopy();
+    public void photoCopy();
 }
 ```
 

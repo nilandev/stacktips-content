@@ -42,12 +42,12 @@ Now you can register switch event using setOnCheckedChangeListener(this) method.
 ```java
 Switch toggle = (Switch) findViewById(R.id.wifi_switch);
 toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		if (isChecked) {
-			Toast.makeText(getApplicationContext(), "Switch on!", Toast.LENGTH_LONG).show();
-		} else {
-			Toast.makeText(getApplicationContext(), "Switch off!", Toast.LENGTH_LONG).show();
-		}
-	}
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            Toast.makeText(getApplicationContext(), "Switch on!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Switch off!", Toast.LENGTH_LONG).show();
+        }
+    }
 });
 ```

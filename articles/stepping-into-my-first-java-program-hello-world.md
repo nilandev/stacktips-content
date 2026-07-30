@@ -24,13 +24,13 @@ Before begin writing your first Java program, you need to have your development 
 
 Now, let us create an example class that simply prints “Hello World!” on standard output terminal.
 
-```cs
+```java
 /* My first java program prints “Hello World!” */
-class HelloWorldApp {  
-    public static void main(String[] args) { 
-       //Prints string hello world 
-        System.out.println("Hello World!");  
-    }  
+class HelloWorldApp {
+    public static void main(String[] args) {
+       //Prints string hello world
+        System.out.println("Hello World!");
+    }
 }
 ```
 
@@ -50,13 +50,13 @@ Comments are ignored by the compiler but are useful for readability purpose. The
 
 The following bold text defines the comments of the “Hello World!” application:
 
-```cs
+```java
 /* My first java program prints “Hello World!” */
-class HelloWorldApp {  
-    public static void main(String[] args) { 
-        //Prints string hello world 
-        System.out.println("Hello World!");  
-    }  
+class HelloWorldApp {
+    public static void main(String[] args) {
+        //Prints string hello world
+        System.out.println("Hello World!");
+    }
 }
 ```
 
@@ -64,13 +64,13 @@ class HelloWorldApp {
 
 The following bold text begins the class definition block for the “Hello World!” application:
 
-```cs
+```java
 /* My first java program prints “Hello World!” */
-class HelloWorldApp {  
-    public static void main(String[] args) { 
-        //Prints string hello world 
-        System.out.println("Hello World!");  
-    }  
+class HelloWorldApp {
+    public static void main(String[] args) {
+        //Prints string hello world
+        System.out.println("Hello World!");
+    }
 }
 ```
 
@@ -80,12 +80,12 @@ As shown above, the most basic form of a class definition is `class <Class Name>
 
 The following bold text begins the definition of the main method:
 
-```cs
+```java
 /* My first java program prints “Hello World!” */
-class HelloWorldApp {  
-    public static void main(String[] args) { 
-       //Prints string hello world 
-        System.out.println("Hello World!");  
-    }  
+class HelloWorldApp {
+    public static void main(String[] args) {
+       //Prints string hello world
+        System.out.println("Hello World!");
+    }
 }
 ```

@@ -71,7 +71,7 @@ If the request method is not `POST`, we create a new instance of the `ContactFor
 
 Lastly, define a template `contact_page.html` that renders the form
 
-```python
+```html
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -131,7 +131,7 @@ The form fields can be customized by specifying additional attributes such as la
 
 Lastly, define a template `person_form.html` that renders the form
 
-```python
+```html
 {% extends "base.html" %}
 
 {% block content %}

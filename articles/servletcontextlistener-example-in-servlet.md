@@ -44,17 +44,17 @@ import javax.servlet.ServletContextListener;
 
 public class AppContextListener implements ServletContextListener {
 
-	@Override
-	public void contextDestroyed(ServletContextEvent arg0) {		
-		//Your code here
-		System.out.println("HelloWorld Listener has been shutdown");
-	}
+    @Override
+    public void contextDestroyed(ServletContextEvent arg0) {
+        //Your code here
+        System.out.println("HelloWorld Listener has been shutdown");
+    }
 
-	@Override
-	public void contextInitialized(ServletContextEvent servletContextEvent) {
-		//Your code here
-		System.out.println("HelloWorld Listener initialised.");
-	}
+    @Override
+    public void contextInitialized(ServletContextEvent servletContextEvent) {
+        //Your code here
+        System.out.println("HelloWorld Listener initialised.");
+    }
 }
 ```
 
@@ -65,23 +65,23 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>HelloServlet</display-name>
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    <display-name>HelloServlet</display-name>
 
-	<servlet>
-		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>com.javatechig.HelloServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>HelloServlet</servlet-name>
-		<url-pattern>/HelloServlet</url-pattern>
-	</servlet-mapping>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.javatechig.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
 
-	<listener>
-		<listener-class>com.javatechig.AppContextListener</listener-class>
-	</listener>
+    <listener>
+        <listener-class>com.javatechig.AppContextListener</listener-class>
+    </listener>
 
 </web-app>
 ```
@@ -90,7 +90,7 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 
 You will see the output in the console
 
-```
+```text
 Jun 13, 2014 3:25:12 PM org.apache.catalina.core.AprLifecycleListener init
 Jun 13, 2014 3:25:12 PM org.apache.coyote.AbstractProtocol init
 INFO: Initializing ProtocolHandler ["http-bio-8080"]

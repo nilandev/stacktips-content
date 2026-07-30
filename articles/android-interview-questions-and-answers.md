@@ -39,7 +39,7 @@ Sending SMS by invoking Built-in SMS application
 
 ```java
 Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-sendIntent.putExtra("sms_body", “"); 
+sendIntent.putExtra("sms_body", “");
 sendIntent.setType("vnd.android-dir/mms-sms");
 startActivity(sendIntent);
 ```
@@ -57,16 +57,16 @@ startActivity(callIntent);
 Android Intent is the handy way to send Email using your app.
 
 ```java
-String to = toEmail.getText().toString(); 
+String to = toEmail.getText().toString();
 String subject = emailSubject.getText().toString();
-String message = emailBody.getText().toString(); 
-Intent email = new Intent(Intent.ACTION_SEND); 
-email.putExtra(Intent.EXTRA_EMAIL, new String[] { to }); 
-email.putExtra(Intent.EXTRA_SUBJECT, subject); 
-email.putExtra(Intent.EXTRA_TEXT, message);  
+String message = emailBody.getText().toString();
+Intent email = new Intent(Intent.ACTION_SEND);
+email.putExtra(Intent.EXTRA_EMAIL, new String[] { to });
+email.putExtra(Intent.EXTRA_SUBJECT, subject);
+email.putExtra(Intent.EXTRA_TEXT, message);
 
-// need this to prompts email client only 
-email.setType("message/rfc822"); 
+// need this to prompts email client only
+email.setType("message/rfc822");
 startActivity(Intent.createChooser(email, "Choose an Email client"));
 ```
 

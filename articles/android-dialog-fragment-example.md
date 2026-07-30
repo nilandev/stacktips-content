@@ -46,7 +46,7 @@ As a DialogFragment is much like any other fragment, the same lifecycle rules ar
 
 ```java
 public class MyDialogFragment extends DialogFragment {
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_sample_dialog, container, false);

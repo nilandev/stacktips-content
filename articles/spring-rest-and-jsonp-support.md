@@ -26,7 +26,7 @@ The same-origin policy (SOP) is a browser security feature that restricts how sc
 
 These security restrictions are implemented in all modern browsers that disallow the cross-domain web Service calls using Ajax.  If you attempt to make cross-origin resources call, the browser will return the following error:
 
-```
+```text
 XMLHttpRequest cannot load URL.
 Origin http://yourwebserver.com is not allowed by Access-Control-Allow-Origin.
 Visit the below link for more details on browser security policy: <a
@@ -50,7 +50,7 @@ Add the following class alongside your spring config to support JSONP requests.
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice;
 
-@ControllerAdvice 
+@ControllerAdvice
 public class JsonpAdvice extends AbstractJsonpResponseBodyAdvice {
     public JsonpAdvice() {
         super("callback");
@@ -76,8 +76,8 @@ public class Post {
 We do not have to make any changes to the REST controller methods. For the sake of simplicity and limited scope of this article, we’re skipping the full implementation of `getPost()` method.
 
 ```java
-@RequestMapping(value = "/api/1.0/posts/{postId}", 
-                      method = RequestMethod.GET, 
+@RequestMapping(value = "/api/1.0/posts/{postId}",
+                      method = RequestMethod.GET,
                       produces = MediaType.APPLICATION_JSON_VALUE)
 public ResponseEntity getPost(@PathVariable("postId") long postId) {
     return new ResponseEntity(postService.getPostById(postId), HttpStatus.OK);
@@ -90,13 +90,13 @@ Now we can access the posts list resources via regular REST call or using JSON A
 
 Accessing REST Resource:
 
-```
+```bash
 $ curl -X GET http://localhost:8080/api/1.0/posts/1
 ```
 
 **Response:** 200 OK
 
-```javascript
+```json
 {
     "id": 1,
     "title": "Hello World!!",
@@ -107,13 +107,13 @@ $ curl -X GET http://localhost:8080/api/1.0/posts/1
 
 Accessing REST Resource using JSONP:
 
-```
+```bash
 $ curl -X GET http://localhost:8080/api/1.0/posts/1?callback=postCallback
 ```
 
 **Response:** 200 OK
 
-```javascript
+```json
 postCallback({
     "id": 1,
     "title": "Hello World!!",
@@ -127,6 +127,6 @@ Notice the difference in the results for both cases. When the resource is access
 If you want to access it from another domain, we can use it as
 
 ```html
-<script src="http://localhost:8080/api/1.0/posts/1?callback=postCallback" 
+<script src="http://localhost:8080/api/1.0/posts/1?callback=postCallback"
           type="application/javascript"/>
 ```

@@ -55,28 +55,28 @@ As discussed, let us create a simple WebView layout that covers the full scree
 
 Following activity class snippet will show you how to initialize WebView instance and load static Html string onto it.
 
-```cs
+```csharp
 
 [Activity (Label = "WebViewExample", MainLauncher = true, Icon = "@drawable/icon")]
 public class MainActivity : Activity
 {
-	protected override void OnCreate (Bundle bundle)
-	{
-		base.OnCreate (bundle);
+    protected override void OnCreate (Bundle bundle)
+    {
+        base.OnCreate (bundle);
 
-		// Set our view from the "main" layout resource
-		SetContentView (Resource.Layout.Main);
+        // Set our view from the "main" layout resource
+        SetContentView (Resource.Layout.Main);
 
-		// Get WebView from the layout resource,
-		// and load html text data on it
-		WebView mWebView = FindViewById<WebView>(Resource.Id.webView);
+        // Get WebView from the layout resource,
+        // and load html text data on it
+        WebView mWebView = FindViewById<WebView>(Resource.Id.webView);
 
-		string customHtml = "<html><body><h1>Hello, WebView</h1>" +
-			"<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3>" +
-			"<p>This is a sample paragraph.</p>" +
-			"</body></html>";
-		mWebView.LoadData(customHtml, "text/html", "UTF-8");
-	}
+        string customHtml = "<html><body><h1>Hello, WebView</h1>" +
+            "<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3>" +
+            "<p>This is a sample paragraph.</p>" +
+            "</body></html>";
+        mWebView.LoadData(customHtml, "text/html", "UTF-8");
+    }
 }
 ```
 
@@ -99,49 +99,49 @@ Checkout my Android tutorial that explains [How to show loading progress in Andr
 
 Now let us go back to our example, and take a look into how our activity class looks like.
 
-```cs
+```csharp
 [Activity (Label = "WebViewExample", MainLauncher = true, Icon = "@drawable/icon")]
 public class MainActivity : Activity
 {
-	protected override void OnCreate (Bundle bundle)
-	{
-		base.OnCreate (bundle);
+    protected override void OnCreate (Bundle bundle)
+    {
+        base.OnCreate (bundle);
 
-		// Set our view from the "main" layout resource
-		SetContentView (Resource.Layout.Main);
+        // Set our view from the "main" layout resource
+        SetContentView (Resource.Layout.Main);
 
-		WebView mWebView = FindViewById<WebView>(Resource.Id.webView);
-		mWebView.Settings.JavaScriptEnabled = true;
+        WebView mWebView = FindViewById<WebView>(Resource.Id.webView);
+        mWebView.Settings.JavaScriptEnabled = true;
 
-		mWebView.SetWebViewClient (new MyWebViewClient());
+        mWebView.SetWebViewClient (new MyWebViewClient());
 
-		//Load url to be randered on WebView
-		mWebView.LoadUrl("http://www.stacktips.com");
-	}
+        //Load url to be randered on WebView
+        mWebView.LoadUrl("http://www.stacktips.com");
+    }
 
-	public class MyWebViewClient : WebViewClient
-	{
-	  public override bool ShouldOverrideUrlLoading (WebView view, string url)
-		{
-			view.LoadUrl (url);
-			return true;
-		}
+    public class MyWebViewClient : WebViewClient
+    {
+      public override bool ShouldOverrideUrlLoading (WebView view, string url)
+        {
+            view.LoadUrl (url);
+            return true;
+        }
 
-		public override void OnPageStarted (WebView view, string url, Android.Graphics.Bitmap favicon)
-		{
-			base.OnPageStarted (view, url, favicon);
-		}
+        public override void OnPageStarted (WebView view, string url, Android.Graphics.Bitmap favicon)
+        {
+            base.OnPageStarted (view, url, favicon);
+        }
 
-		public override void OnPageFinished (WebView view, string url)
-		{
-			base.OnPageFinished (view, url);
-		}
+        public override void OnPageFinished (WebView view, string url)
+        {
+            base.OnPageFinished (view, url);
+        }
 
-		public override void OnReceivedError (WebView view, ClientError errorCode, string description, string failingUrl)
-		{
-			base.OnReceivedError (view, errorCode, description, failingUrl);
-		}
-	}
+        public override void OnReceivedError (WebView view, ClientError errorCode, string description, string failingUrl)
+        {
+            base.OnReceivedError (view, errorCode, description, failingUrl);
+        }
+    }
 }
 ```
 

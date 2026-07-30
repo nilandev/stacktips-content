@@ -37,59 +37,59 @@ Download Java for Excel library from below path.
 Export and save data from cursor into excel spreadsheet and saves the spreadsheet into external storage directory.
 
 ```java
-private void exportToExcel(Cursor cursor) {		
-	final String fileName = "TodoList.xls";
-	
-	//Saving file in external storage
-	File sdCard = Environment.getExternalStorageDirectory();	
-	File directory = new File(sdCard.getAbsolutePath() + "/javatechig.todo");
-		
-	//create directory if not exist
-	if(!directory.isDirectory()){
-		directory.mkdirs();	
-	}
-		
-	//file path
-	File file = new File(directory, fileName);
-	
-	WorkbookSettings wbSettings = new WorkbookSettings();
-	wbSettings.setLocale(new Locale("en", "EN"));		
-	WritableWorkbook workbook;
-		
-	try {
-		workbook = Workbook.createWorkbook(file, wbSettings);			
-		//Excel sheet name. 0 represents first sheet
-		WritableSheet sheet = workbook.createSheet("MyShoppingList", 0);
+private void exportToExcel(Cursor cursor) {
+    final String fileName = "TodoList.xls";
 
-		try {
-			sheet.addCell(new Label(0, 0, "Subject")); // column and row
-			sheet.addCell(new Label(1, 0, "Description"));				
-			if (cursor.moveToFirst()) {
-				do {
-					String title = cursor.getString(cursor.getColumnIndex(DatabaseHelper.TODO_SUBJECT));
-					String desc = cursor.getString(cursor.getColumnIndex(DatabaseHelper.TODO_DESC));
+    //Saving file in external storage
+    File sdCard = Environment.getExternalStorageDirectory();
+    File directory = new File(sdCard.getAbsolutePath() + "/javatechig.todo");
 
-					int i = cursor.getPosition() + 1;						
-					sheet.addCell(new Label(0, i, title));
-					sheet.addCell(new Label(1, i, desc));						
-				} while (cursor.moveToNext());
-			}				
-			//closing cursor
-			cursor.close();					
-		} catch (RowsExceededException e) {
-			e.printStackTrace();
-		} catch (WriteException e) {
-			e.printStackTrace();
-		}			
-		workbook.write();		
-		try {
-			workbook.close();
-		} catch (WriteException e) {
-			e.printStackTrace();
-		}
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
+    //create directory if not exist
+    if(!directory.isDirectory()){
+        directory.mkdirs();
+    }
+
+    //file path
+    File file = new File(directory, fileName);
+
+    WorkbookSettings wbSettings = new WorkbookSettings();
+    wbSettings.setLocale(new Locale("en", "EN"));
+    WritableWorkbook workbook;
+
+    try {
+        workbook = Workbook.createWorkbook(file, wbSettings);
+        //Excel sheet name. 0 represents first sheet
+        WritableSheet sheet = workbook.createSheet("MyShoppingList", 0);
+
+        try {
+            sheet.addCell(new Label(0, 0, "Subject")); // column and row
+            sheet.addCell(new Label(1, 0, "Description"));
+            if (cursor.moveToFirst()) {
+                do {
+                    String title = cursor.getString(cursor.getColumnIndex(DatabaseHelper.TODO_SUBJECT));
+                    String desc = cursor.getString(cursor.getColumnIndex(DatabaseHelper.TODO_DESC));
+
+                    int i = cursor.getPosition() + 1;
+                    sheet.addCell(new Label(0, i, title));
+                    sheet.addCell(new Label(1, i, desc));
+                } while (cursor.moveToNext());
+            }
+            //closing cursor
+            cursor.close();
+        } catch (RowsExceededException e) {
+            e.printStackTrace();
+        } catch (WriteException e) {
+            e.printStackTrace();
+        }
+        workbook.write();
+        try {
+            workbook.close();
+        } catch (WriteException e) {
+            e.printStackTrace();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 }
 ```
 

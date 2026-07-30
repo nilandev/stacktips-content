@@ -35,7 +35,7 @@ Know more about android studio features from [Android Studio Features](http://st
 
 ### 1\. ERROR: cannot start Android Studio
 
-```
+```text
 ERROR: cannot start Android Studio. No JDK found. Please validate either ANDROID_STUDIO_JDK, or JDK_HOME or JAVA_HOME points to valid JDK installation. ECHO is off. Press any key to continue
 ```
 
@@ -43,7 +43,7 @@ It is a known issue with android studio**.** On some Windows systems, the launch
 
 ### 2.Android SDK is out of date or is missing templates
 
-```
+```text
 Your Android SDK is out of date or is missing templates. Please ensure you are using SDK version 22 or later.
 ```
 

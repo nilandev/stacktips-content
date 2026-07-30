@@ -44,19 +44,19 @@ First lets solve this problem without using CountDownLatch
 import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchTest {
-	private static int N = 6;
+    private static int N = 6;
 
-	public static void main(String[] args) {		
-		try {
-			for (int i = 0; i < N; i++) {
-				new Thread(new MyWorker()).start();
-			}
-			
-			System.out.println("*** Main Thread in Action ***");
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; i < N; i++) {
+                new Thread(new MyWorker()).start();
+            }
+
+            System.out.println("*** Main Thread in Action ***");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -72,30 +72,30 @@ import java.util.concurrent.CountDownLatch;
 
 public class MyWorker implements Runnable {
 
-	public MyWorker() {		
-	}
+    public MyWorker() {
+    }
 
-	@Override
-	public void run() {
-		try {
-			URL url = new URL(
-					"http://3rdbillion.net/wp-content/uploads/2013/11/35e7e6728456fed40f4f1b27d5d41c8513.jpg");
-			InputStream in = new BufferedInputStream(url.openStream());
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			byte[] buf = new byte[1024];
-			int n = 0;
-			while (-1 != (n = in.read(buf))) {
-				out.write(buf, 0, n);
-			}
-			out.close();
-			in.close();
-			byte[] response = out.toByteArray();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println("*** Worker Thread ****");
+    @Override
+    public void run() {
+        try {
+            URL url = new URL(
+                    "http://3rdbillion.net/wp-content/uploads/2013/11/35e7e6728456fed40f4f1b27d5d41c8513.jpg");
+            InputStream in = new BufferedInputStream(url.openStream());
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            byte[] buf = new byte[1024];
+            int n = 0;
+            while (-1 != (n = in.read(buf))) {
+                out.write(buf, 0, n);
+            }
+            out.close();
+            in.close();
+            byte[] response = out.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("*** Worker Thread ****");
 
-	}
+    }
 }
 ```
 
@@ -103,7 +103,7 @@ In the above code snippet we have used multiple threads to download an image. (I
 
 **Output**
 
-```
+```text
 *** Main Thread in Action ***
 *** Worker Thread ****
 *** Worker Thread ****
@@ -122,25 +122,25 @@ import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchTest {
 
-	private static CountDownLatch _latch;
-	private static int N = 6;
+    private static CountDownLatch _latch;
+    private static int N = 6;
 
-	public static void main(String[] args) {
-		_latch = new CountDownLatch(N);
+    public static void main(String[] args) {
+        _latch = new CountDownLatch(N);
 
-		try {
-			for (int i = 0; i < N; i++) {
-				new Thread(new MyWorker(_latch)).start();
-			}
+        try {
+            for (int i = 0; i < N; i++) {
+                new Thread(new MyWorker(_latch)).start();
+            }
 
-			_latch.await();
+            _latch.await();
 
-			System.out.println("*** Main Thread in Action ***");
+            System.out.println("*** Main Thread in Action ***");
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
@@ -155,44 +155,44 @@ import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 
 public class MyWorker implements Runnable {
-	private CountDownLatch _latch = null;
+    private CountDownLatch _latch = null;
 
-	public MyWorker(CountDownLatch _latch) {
-		this._latch = _latch;
-	}
+    public MyWorker(CountDownLatch _latch) {
+        this._latch = _latch;
+    }
 
-	@Override
-	public void run() {
-		try {
+    @Override
+    public void run() {
+        try {
 
-			URL url = new URL(
-					"http://3rdbillion.net/wp-content/uploads/2013/11/35e7e6728456fed40f4f1b27d5d41c8513.jpg");
-			InputStream in = new BufferedInputStream(url.openStream());
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			byte[] buf = new byte[1024];
-			int n = 0;
-			while (-1 != (n = in.read(buf))) {
-				out.write(buf, 0, n);
-			}
+            URL url = new URL(
+                    "http://3rdbillion.net/wp-content/uploads/2013/11/35e7e6728456fed40f4f1b27d5d41c8513.jpg");
+            InputStream in = new BufferedInputStream(url.openStream());
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            byte[] buf = new byte[1024];
+            int n = 0;
+            while (-1 != (n = in.read(buf))) {
+                out.write(buf, 0, n);
+            }
 
-			out.close();
-			in.close();
+            out.close();
+            in.close();
 
-			byte[] response = out.toByteArray();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            byte[] response = out.toByteArray();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		System.out.println("*** Worker Thread ****");
+        System.out.println("*** Worker Thread ****");
 
-		_latch.countDown();
-	}
+        _latch.countDown();
+    }
 }
 ```
 
 **Output**
 
-```
+```text
 *** Worker Thread ****
 *** Worker Thread ****
 *** Worker Thread ****

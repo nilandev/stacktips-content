@@ -80,8 +80,8 @@ In the above code snippet, we have just downloaded the image and displayed on Im
 ```java
 Picasso.with(this)
     .load("YOUR IMAGE URL HERE")
-    .placeholder(R.drawable.ic_placeholder) 
-    .error(R.drawable.ic_error_fallback)         
+    .placeholder(R.drawable.ic_placeholder)
+    .error(R.drawable.ic_error_fallback)
     .into(imageView);
 ```
 
@@ -91,11 +91,11 @@ Picasso offers much more than just downloading image. It can resize the image, t
 
 ```java
 Picasso.with(this)
-     .load("YOUR IMAGE URL HERE")        
-     .placeholder(R.drawable.ic_placeholder)   
-     .error(R.drawable.ic_error_fallback)      
-     .resize(250, 200)                        
-     .rotate(90)                             
+     .load("YOUR IMAGE URL HERE")
+     .placeholder(R.drawable.ic_placeholder)
+     .error(R.drawable.ic_error_fallback)
+     .resize(250, 200)
+     .rotate(90)
      .into(imageView);
 ```
 

@@ -267,9 +267,9 @@ To start your alarm on device reboot, you have to register your above declared `
         </activity>
 
         <receiver android:name=".AlarmReceiver">
-	      <intent-filter>
-	           <action android:name="android.intent.action.BOOT_COMPLETED"/>
-	      </intent-filter>
+          <intent-filter>
+               <action android:name="android.intent.action.BOOT_COMPLETED"/>
+          </intent-filter>
         </receiver>
 
         <!-- Will not be called unless the application explicitly enables it -->

@@ -112,9 +112,9 @@ String url = bundle.getString("url");
 
 Toast is a notification message that pops up, displays a certain amount of time, and automatically fades in and out, most people just use it for debugging purposes. Below are the code snippets to create a Toast message
 
-```
+```java
 
-//display in a short period of time 
+//display in a short period of time
 Toast.makeText(getApplicationContext(), "msg msg", Toast.LENGTH_SHORT).show();
 
 //display over a long period of time
@@ -260,7 +260,7 @@ SmsManager requires **SMS\_SEND** permission in your Android manifest.
 ```java
 
 Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-sendIntent.putExtra("sms_body", ?"); 
+sendIntent.putExtra("sms_body", ?");
 sendIntent.setType("vnd.android-dir/mms-sms");
 startActivity(sendIntent);
 ```

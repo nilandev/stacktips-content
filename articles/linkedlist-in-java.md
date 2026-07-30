@@ -57,14 +57,14 @@ List<String> arrayList = Arrays.asList("Apple", "Banana", "Orange");
 List<String> linkedList = new LinkedList<>(arrayList);
  87
 // Using ListIterator to add items to a specific position
-ListIterator<String> iterator = linkedList.listIterator(); 
+ListIterator<String> iterator = linkedList.listIterator();
 iterator.next();
 iterator.add("Banana");
 
 // Using the offer method
-Queue<String> linkedList = new LinkedList<>(); 
-linkedList.offer("Apple"); 
-linkedList.offer("Banana"); 
+Queue<String> linkedList = new LinkedList<>();
+linkedList.offer("Apple");
+linkedList.offer("Banana");
 linkedList.offer("Orange");
 ```
 
@@ -112,26 +112,26 @@ linkedList.stream().forEach(fruit -> System.out.println(fruit));
 
 ```java
 // Removes the element at index 1 (Banana)
-linkedList.remove(1); 
+linkedList.remove(1);
 
 // Removes the first occurrence of "Banana"
-linkedList.remove("Banana"); 
+linkedList.remove("Banana");
 
 // Removes the first element (Apple)
-linkedList.removeFirst(); 
+linkedList.removeFirst();
 
 // Removes the last element (Orange)
-linkedList.removeLast(); 
+linkedList.removeLast();
 
 // Removing All Occurrences of a Collection
 List<String> itemsToRemove = Arrays.asList("Banana", "Orange");
-linkedList.removeAll(itemsToRemove); 
+linkedList.removeAll(itemsToRemove);
 
 // Remove elements based on a condition
 linkedList.removeIf(fruit -> fruit.startsWith("B"));
 
 // Removes all elements from the list
-linkedList.clear(); 
+linkedList.clear();
 ```
 
 Get the Size of LinkedList
@@ -151,49 +151,49 @@ linkedList.contains()
 Let us create a simple playlist using LinkedList where we can add, remove, and display songs.
 
 ```java
-public record Song(String title, String artist) {  
+public record Song(String title, String artist) {
 }
 
-public class _1a_MusicPlayList {  
-    private final LinkedList<Song> playlist;  
+public class _1a_MusicPlayList {
+    private final LinkedList<Song> playlist;
 
-    public _1a_MusicPlayList() {  
-        playlist = new LinkedList<>();  
-    }  
+    public _1a_MusicPlayList() {
+        playlist = new LinkedList<>();
+    }
 
-    public void addSong(Song song) {  
-        playlist.add(song);  
-    }  
+    public void addSong(Song song) {
+        playlist.add(song);
+    }
 
-    public void removeSong(Song song) {  
-        playlist.remove(song);  
-    }  
+    public void removeSong(Song song) {
+        playlist.remove(song);
+    }
 
-    public void displayPlaylist() {  
-        for (int i = 0; i < playlist.size(); i++) {  
-            System.out.println((i + 1) + ". " + playlist.get(i));  
-        }  
-    }  
+    public void displayPlaylist() {
+        for (int i = 0; i < playlist.size(); i++) {
+            System.out.println((i + 1) + ". " + playlist.get(i));
+        }
+    }
 
-    public static void main(String[] args) {  
-        _1a_MusicPlayList myPlaylist = new _1a_MusicPlayList();  
+    public static void main(String[] args) {
+        _1a_MusicPlayList myPlaylist = new _1a_MusicPlayList();
 
-        Song song1 = new Song("Bohemian Rhapsody", "Queen");  
-        Song song2 = new Song("Imagine", "John Lennon");  
-        Song song3 = new Song("Hotel California", "Eagles");  
+        Song song1 = new Song("Bohemian Rhapsody", "Queen");
+        Song song2 = new Song("Imagine", "John Lennon");
+        Song song3 = new Song("Hotel California", "Eagles");
 
-        myPlaylist.addSong(song1);  
-        myPlaylist.addSong(song2);  
-        myPlaylist.addSong(song3);  
+        myPlaylist.addSong(song1);
+        myPlaylist.addSong(song2);
+        myPlaylist.addSong(song3);
 
-        System.out.println("My Playlist:");  
-        myPlaylist.displayPlaylist();  
+        System.out.println("My Playlist:");
+        myPlaylist.displayPlaylist();
 
-        System.out.println("Removing 'Imagine' from playlist.");  
-        myPlaylist.removeSong(song2);  
+        System.out.println("Removing 'Imagine' from playlist.");
+        myPlaylist.removeSong(song2);
 
-        System.out.println("Updated Playlist:");  
-        myPlaylist.displayPlaylist();  
-    }  
+        System.out.println("Updated Playlist:");
+        myPlaylist.displayPlaylist();
+    }
 }
 ```

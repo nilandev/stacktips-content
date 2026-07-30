@@ -32,7 +32,7 @@ Consider the scenario, where we have two types of manufacturer Mobile Phone and 
 
 ```java
 public interface Product {
-	public void makeProduct(String productName, String ProductOwner, int IMEINo);
+    public void makeProduct(String productName, String ProductOwner, int IMEINo);
 }
 ```
 
@@ -41,24 +41,24 @@ public interface Product {
 ```java
 public class MobilePhone implements Product, Cloneable {
 
-	String _productName;
-	String _ownerName;
-	int _IMEINo;
-	MobilePhone _clonedProduct;
+    String _productName;
+    String _ownerName;
+    int _IMEINo;
+    MobilePhone _clonedProduct;
 
-	@Override
-	public void makeProduct(String productName, String ownerName, int IMEINo) {
-		// TODO Auto-generated method stub
-		_productName = productName;
-		_ownerName = ownerName;
-		_IMEINo = IMEINo;
-	}
+    @Override
+    public void makeProduct(String productName, String ownerName, int IMEINo) {
+        // TODO Auto-generated method stub
+        _productName = productName;
+        _ownerName = ownerName;
+        _IMEINo = IMEINo;
+    }
 
-	protected MobilePhone clone() throws CloneNotSupportedException {
-		_clonedProduct = (MobilePhone) super.clone();
-		return _clonedProduct;
-		// return super.clone();
-	}
+    protected MobilePhone clone() throws CloneNotSupportedException {
+        _clonedProduct = (MobilePhone) super.clone();
+        return _clonedProduct;
+        // return super.clone();
+    }
 }
 ```
 
@@ -67,17 +67,17 @@ public class MobilePhone implements Product, Cloneable {
 ```java
 public class WasingMachine implements Product {
 
-	String _productName;
-	String _ownerName;
-	int _modelNo;
+    String _productName;
+    String _ownerName;
+    int _modelNo;
 
-	@Override
-	public void makeProduct(String productName, String ownerName, int modelNo) {
-		// TODO Auto-generated method stub
-		_productName = productName;
-		_ownerName = ownerName;
-		_modelNo = modelNo;
-	}
+    @Override
+    public void makeProduct(String productName, String ownerName, int modelNo) {
+        // TODO Auto-generated method stub
+        _productName = productName;
+        _ownerName = ownerName;
+        _modelNo = modelNo;
+    }
 
 }
 ```
@@ -87,7 +87,7 @@ public class WasingMachine implements Product {
 ```java
 public interface Manufacture {
 
-	public Product getProductType();
+    public Product getProductType();
 
 }
 ```
@@ -97,11 +97,11 @@ public interface Manufacture {
 ```java
 public class Apple implements Manufacture {
 
-	@Override
-	public MobilePhone getProductType() {
-		// TODO Auto-generated method stub
-		return new MobilePhone();
-	}
+    @Override
+    public MobilePhone getProductType() {
+        // TODO Auto-generated method stub
+        return new MobilePhone();
+    }
 
 }
 ```
@@ -111,11 +111,11 @@ public class Apple implements Manufacture {
 ```java
 public class Samsung implements Manufacture {
 
-	@Override
-	public WasingMachine getProductType() {
-		// TODO Auto-generated method stub
-		return new WasingMachine();
-	}
+    @Override
+    public WasingMachine getProductType() {
+        // TODO Auto-generated method stub
+        return new WasingMachine();
+    }
 
 }
 ```
@@ -125,25 +125,25 @@ public class Samsung implements Manufacture {
 ```java
 public class ManufactureImpl {
 
-	/**
-	 * @param args
-	 * @throws CloneNotSupportedException
-	 */
-	public static void main(String[] args) throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
+    /**
+     * @param args
+     * @throws CloneNotSupportedException
+     */
+    public static void main(String[] args) throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
 
-		Apple s1 = new Apple();
-		MobilePhone b1 = s1.getProductType();
-		b1.makeProduct("Iphone5S", "XXXX", 1234);
-		MobilePhone b2 = b1.clone();
-		b2._IMEINo = 6789;
-		System.out.println("IMEI Number Of Phone1->" + b1._IMEINo);
-		System.out.println("IMEI Number Of Phone2->" + b2._IMEINo);
-		Samsung f1=new Samsung();
-		WasingMachine c1=f1.getProductType();
-		c1.makeProduct("samsungWashingMachine","XYZ", 2014);
-		System.out.println("Owner Name Of WasingMachine->" + c1._ownerName);
-	}
+        Apple s1 = new Apple();
+        MobilePhone b1 = s1.getProductType();
+        b1.makeProduct("Iphone5S", "XXXX", 1234);
+        MobilePhone b2 = b1.clone();
+        b2._IMEINo = 6789;
+        System.out.println("IMEI Number Of Phone1->" + b1._IMEINo);
+        System.out.println("IMEI Number Of Phone2->" + b2._IMEINo);
+        Samsung f1=new Samsung();
+        WasingMachine c1=f1.getProductType();
+        c1.makeProduct("samsungWashingMachine","XYZ", 2014);
+        System.out.println("Owner Name Of WasingMachine->" + c1._ownerName);
+    }
 
 }
 ```

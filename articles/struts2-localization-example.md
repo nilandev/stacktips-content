@@ -102,15 +102,15 @@ Add the following line just above the package element.
 
 **Value:** Prefix name of resource bundle. I am using global.
 
-```
+```xml
 <struts>
-	<constant name="struts.custom.i18n.resources" value="global" /> 
+    <constant name="struts.custom.i18n.resources" value="global" />
 <package name="struts2web" namespace="/" extends="struts-default">
 <action name="login">
-	<result>pages/login.jsp</result>
+    <result>pages/login.jsp</result>
 </action>
-<action name="changelang"     
-        class="com.javatechig.struts2web.actions.ChangeLocaleAction">	
+<action name="changelang"
+        class="com.javatechig.struts2web.actions.ChangeLocaleAction">
 <result name="success">pages/login.jsp</result>
 </action>
 </package>
@@ -149,7 +149,7 @@ Here you can observe that keys are same across all file but the value changes as
 
 **global\_ja.properties**
 
-```
+```text
   key: login.here      value: \u3053\u3053\u306B\u30ED\u30B0\u30A4\u30F3
   key: login.user      value: \u30E6\u30FC\u30B6\u30FC
   key: login.password  value: \u30D1\u30B9\u30EF\u30FC\u30C9
@@ -158,40 +158,40 @@ Here you can observe that keys are same across all file but the value changes as
 
 **5\. Create Login.jsp with language options as follows**
 
-```
+```html
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <s:form action="loginauth" theme="simple">
 <center>
-	<table width="300">
-		<tr height="30">
-			<td width="300" colspan="2">
-				<s:a href="changelang?lang=en" >English</s:a>				
-				<s:a href="changelang?lang=fr" >France</s:a>
-				<s:a href="changelang?lang=ja_JP" >Japanese</s:a>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" width="300" align="left" style="background:#eee"><s:property value="getText('login.here')" /></td>
-		</tr>
-		<tr>
-			<td align="left" width="100"><s:property value="getText('login.user')" />:</td><td align="left"><s:textfield name="userId"/></td>
-		</tr>
-		<tr>
-			<td align="left"><s:property value="getText('login.password')" />:</td><td align="left"><s:password type="text" name="password"/></td>
-		</tr>
-		<tr>
-			<td align="left"></td><td align="right"><s:submit key="login.submit" name="submit" /></td>
-		</tr>
-	</table>
+    <table width="300">
+        <tr height="30">
+            <td width="300" colspan="2">
+                <s:a href="changelang?lang=en" >English</s:a>
+                <s:a href="changelang?lang=fr" >France</s:a>
+                <s:a href="changelang?lang=ja_JP" >Japanese</s:a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" width="300" align="left" style="background:#eee"><s:property value="getText('login.here')" /></td>
+        </tr>
+        <tr>
+            <td align="left" width="100"><s:property value="getText('login.user')" />:</td><td align="left"><s:textfield name="userId"/></td>
+        </tr>
+        <tr>
+            <td align="left"><s:property value="getText('login.password')" />:</td><td align="left"><s:password type="text" name="password"/></td>
+        </tr>
+        <tr>
+            <td align="left"></td><td align="right"><s:submit key="login.submit" name="submit" /></td>
+        </tr>
+    </table>
 </center>
 </s:form>
 ```
 
 Here I have added three language options i.e. English, France and Japanese.
 
-```
-<s:a href="changelang?lang=en" >English</s:a>				
+```html
+<s:a href="changelang?lang=en" >English</s:a>
 <s:a href="changelang?lang=fr" >France</s:a>
 <s:a href="changelang?lang=ja" >Japanese</s:a>
 ```
@@ -204,8 +204,8 @@ Here is the code to display text in different language in JSP
 
 Get Message from resource bundle:
 
-```
-<s:property value="getText('login.user')" /> 
+```html
+<s:property value="getText('login.user')" />
 <s:submit key="login.submit" name="submit" />
 ```
 
@@ -215,7 +215,7 @@ Key : This helps to retrieve the value from resource bundle using key (‘login.
 
 **6\. Create ChangeLocaleAction.java in com.javatechig.struts2web.actions**
 
-```
+```java
 Locale locale = new Locale(lang);
 ActionContext.getContext().setLocale(locale);
 ```

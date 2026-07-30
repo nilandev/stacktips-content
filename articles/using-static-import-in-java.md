@@ -27,7 +27,7 @@ package com.java.test;
 
 public class Constants {
 
-	public static final double PI = 3.141592653589793;
+    public static final double PI = 3.141592653589793;
 }
 ```
 
@@ -37,15 +37,15 @@ Importing Constants class
 import com.java.test.Constants;
 
 public class Circle {
-	private double getArea(int radious) {
-		return Constants.PI * radious * radious;
+    private double getArea(int radious) {
+        return Constants.PI * radious * radious;
 
-	}
+    }
 
-	public static void main(String[] args) {
-		Circle myCircle = new Circle();
-		System.out.println("Area=" + myCircle.getArea(20));
-	}
+    public static void main(String[] args) {
+        Circle myCircle = new Circle();
+        System.out.println("Area=" + myCircle.getArea(20));
+    }
 
 }
 ```
@@ -56,15 +56,15 @@ This approach works well. However, Java5 has enhanced import feature called stat
 import static com.java.test.Constants.PI;
 
 public class Circle {
-	private double getArea(int radious) {
-		return PI * radious * radious;
+    private double getArea(int radious) {
+        return PI * radious * radious;
 
-	}
+    }
 
-	public static void main(String[] args) {
-		Circle myCircle = new Circle();
-		System.out.println("Area=" + myCircle.getArea(20));
-	}
+    public static void main(String[] args) {
+        Circle myCircle = new Circle();
+        System.out.println("Area=" + myCircle.getArea(20));
+    }
 
 }
 ```

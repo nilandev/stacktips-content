@@ -37,40 +37,40 @@ import java.util.Comparator;
 
 public class SearchObjectArray {
 
-	public static void main(String[] args) {
-		String[] names = { "Neel", "Clay", "Adams", "Joseph", "Jack" };
+    public static void main(String[] args) {
+        String[] names = { "Neel", "Clay", "Adams", "Joseph", "Jack" };
 
-		// sorting array
-		Arrays.sort(names);
+        // sorting array
+        Arrays.sort(names);
 
-		// printing after sort
-		for (String name : names) {
-			System.out.println(name);
-		}
+        // printing after sort
+        for (String name : names) {
+            System.out.println(name);
+        }
 
-		// Search result for "one"
-		System.out.println("Search Adams=" + Arrays.binarySearch(names, "Adams"));
+        // Search result for "one"
+        System.out.println("Search Adams=" + Arrays.binarySearch(names, "Adams"));
 
-		System.out.println("======================================");
+        System.out.println("======================================");
 
-		// reverse sorting
-		ReverseSortComparator reSort = new ReverseSortComparator();
-		Arrays.sort(names, reSort);
-		for (String name : names) {
-			System.out.println(name);
-		}
+        // reverse sorting
+        ReverseSortComparator reSort = new ReverseSortComparator();
+        Arrays.sort(names, reSort);
+        for (String name : names) {
+            System.out.println(name);
+        }
 
-		// Search result for "one"
-		System.out.println("Search Adams=" + Arrays.binarySearch(names, "Adams", reSort));
-	}
+        // Search result for "one"
+        System.out.println("Search Adams=" + Arrays.binarySearch(names, "Adams", reSort));
+    }
 
-	static class ReverseSortComparator implements Comparator {
+    static class ReverseSortComparator implements Comparator {
 
-		public int compare(String a, String b) {
-			return b.compareTo(a);
-		}
+        public int compare(String a, String b) {
+            return b.compareTo(a);
+        }
 
-	}
+    }
 
 }
 ```

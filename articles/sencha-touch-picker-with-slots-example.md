@@ -28,8 +28,8 @@ Below example shows the Sencha Touch Picker in action
 
 ```javascript
 var picker = new Ext.Picker({
-	ui: 'light',
-	slots: [{
+    ui: 'light',
+    slots: [{
       name : 'hours',
       title: 'Hours',
        data : [

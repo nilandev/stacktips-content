@@ -26,7 +26,7 @@ This app will fetch the recent posts from stacktips.com and display list of post
 
 #### JSON Feed URL
 
-```
+```text
 http://stacktips.com/api/get_category_posts/?dev=1&slug=android
 ```
 
@@ -143,9 +143,9 @@ In the above code, I have used “list\_item\_text\_selector” for changing the
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" 
+    <item android:state_pressed="true"
         android:color="@color/text_color_inverse" />
-    <item android:state_focused="true" 
+    <item android:state_focused="true"
         android:color="@color/text_color_inverse" />
     <item android:color="@color/text_color_default" />
 </selector>
@@ -157,60 +157,60 @@ We are ready with the layout for FeedList Screen. Now lets create a custom Adapt
 
 ```java
 public class CustomListAdapter extends BaseAdapter {
-	private ArrayList listData;
-	private LayoutInflater layoutInflater;
-	private Context mContext;
+    private ArrayList listData;
+    private LayoutInflater layoutInflater;
+    private Context mContext;
 
-	public CustomListAdapter(Context context, ArrayList listData) {
-		this.listData = listData;
-		layoutInflater = LayoutInflater.from(context);
-		mContext = context;
-	}
+    public CustomListAdapter(Context context, ArrayList listData) {
+        this.listData = listData;
+        layoutInflater = LayoutInflater.from(context);
+        mContext = context;
+    }
 
-	@Override
-	public int getCount() {
-		return listData.size();
-	}
+    @Override
+    public int getCount() {
+        return listData.size();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return listData.get(position);
-	}
+    @Override
+    public Object getItem(int position) {
+        return listData.get(position);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
-		if (convertView == null) {
-			convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
-			holder = new ViewHolder();
-			holder.headlineView = (TextView) convertView.findViewById(R.id.title);
-			holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
-			holder.imageView = (ImageView) convertView.findViewById(R.id.thumbImage);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
+            holder = new ViewHolder();
+            holder.headlineView = (TextView) convertView.findViewById(R.id.title);
+            holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.thumbImage);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-		FeedItem newsItem = (FeedItem) listData.get(position);
-		holder.headlineView.setText(newsItem.getTitle());
-		holder.reportedDateView.setText(newsItem.getDate());
+        FeedItem newsItem = (FeedItem) listData.get(position);
+        holder.headlineView.setText(newsItem.getTitle());
+        holder.reportedDateView.setText(newsItem.getDate());
 
-		if (holder.imageView != null) {
-			new ImageDownloaderTask(holder.imageView).execute(newsItem.getAttachmentUrl());
-		}
+        if (holder.imageView != null) {
+            new ImageDownloaderTask(holder.imageView).execute(newsItem.getAttachmentUrl());
+        }
 
-		return convertView;
-	}
+        return convertView;
+    }
 
-	static class ViewHolder {
-		TextView headlineView;
-		TextView reportedDateView;
-		ImageView imageView;
-	}
+    static class ViewHolder {
+        TextView headlineView;
+        TextView reportedDateView;
+        ImageView imageView;
+    }
 }
 ```
 
@@ -220,12 +220,12 @@ Now you must be getting some compilation error for FeedItem. FeedItem is an mode
 
 ```java
 public class FeedItem implements Serializable {
-	private String title;
-	private String date;
-	private String attachmentUrl;
-	private String id;
-	private String content;
-	private String url;
+    private String title;
+    private String date;
+    private String attachmentUrl;
+    private String id;
+    private String content;
+    private String url;
 }
 ```
 
@@ -315,29 +315,29 @@ AsyncTask enables you to implement MultiThreading without get Hands dirty into t
 ```java
 private class DownloadFilesTask extends AsyncTask<String, Integer, Void> {
 
-		@Override
-		protected void onProgressUpdate(Integer... values) {
-		}
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+        }
 
-		@Override
-		protected void onPostExecute(Void result) {
-			if (null != feedList) {
-				updateList();
-			}
-		}
+        @Override
+        protected void onPostExecute(Void result) {
+            if (null != feedList) {
+                updateList();
+            }
+        }
 
-		@Override
-		protected Void doInBackground(String... params) {
-			String url = params[0];
+        @Override
+        protected Void doInBackground(String... params) {
+            String url = params[0];
 
-			// getting JSON string from URL
-			JSONObject json = getJSONFromUrl(url);
+            // getting JSON string from URL
+            JSONObject json = getJSONFromUrl(url);
 
-			//parsing json data
-			parseJson(json);
-			return null;
-		}
-	}
+            //parsing json data
+            parseJson(json);
+            return null;
+        }
+    }
 ```
 
 #### Downloading JSON from server
@@ -346,47 +346,47 @@ As downloading of feed data from JavatechIG is a long running task, we are doing
 
 ```java
 public JSONObject getJSONFromUrl(String url) {
-		InputStream is = null;
-		JSONObject jObj = null;
-		String json = null;
+        InputStream is = null;
+        JSONObject jObj = null;
+        String json = null;
 
-		// Making HTTP request
-		try {
-			// defaultHttpClient
-			DefaultHttpClient httpClient = new DefaultHttpClient();
-			HttpPost httpPost = new HttpPost(url);
+        // Making HTTP request
+        try {
+            // defaultHttpClient
+            DefaultHttpClient httpClient = new DefaultHttpClient();
+            HttpPost httpPost = new HttpPost(url);
 
-			HttpResponse httpResponse = httpClient.execute(httpPost);
-			HttpEntity httpEntity = httpResponse.getEntity();
-			is = httpEntity.getContent();
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+            HttpEntity httpEntity = httpResponse.getEntity();
+            is = httpEntity.getContent();
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					is, "iso-8859-1"), 8);
-			StringBuilder sb = new StringBuilder();
-			String line = null;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line + "\n");
-			}
-			is.close();
-			json = sb.toString();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    is, "iso-8859-1"), 8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            is.close();
+            json = sb.toString();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-		try {
-			jObj = new JSONObject(json);
-		} catch (JSONException e) {
-			Log.e("JSON Parser", "Error parsing data " + e.toString());
-		}
+        try {
+            jObj = new JSONObject(json);
+        } catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
 
-		// return JSON String
-		return jObj;
+        // return JSON String
+        return jObj;
 
-	}
+    }
 ```
 
 The above method will download the Json feed and returned as a JSONObject. Now its the time to parse the JSON feed data

@@ -41,19 +41,19 @@ Or if you’re familiar with php code, you can directly add the following code s
 //Remove Dashboard Metabox Widgets for all users except Admin
 add_action('wp_dashboard_setup', 'stsd_remove_dashboard_widget' );
 function stsd_remove_dashboard_widget() {
-	if (!current_user_can('manage_options')){
-		global $wp_meta_boxes;
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);		
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
-	}
-} 
+    if (!current_user_can('manage_options')){
+        global $wp_meta_boxes;
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+        unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+    }
+}
 ```
 
 The above code snippet, removes all of the default WordPress widgets for users other then administrators.

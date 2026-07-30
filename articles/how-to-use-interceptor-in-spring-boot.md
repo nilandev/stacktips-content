@@ -78,7 +78,7 @@ For the demonstration purpose, we will implement a Spring boot REST API with the
 
 -   POST /products/new that accepts the following JSON payload.
 
-```
+```json
 {
    "id": "100",
    "name": "iPhone 12",
@@ -92,7 +92,7 @@ First, let us generate a new Spring Boot project using a Spring Initializer and 
 
 Let us create a new file `Product.java` and add the following code:
 
-```
+```java
 public class Product {
 
     Long id;
@@ -111,7 +111,7 @@ public class Product {
 
 Now, let us add a controller class `ProductController.java` and define the endpoint mappings:
 
-```
+```java
 @RestController
 @RequestMapping(value = "/products",
         produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -144,7 +144,7 @@ Now that we have our Spring Boot application running let us now create an interc
 
 To create a interceptor in Spring boot, let us now create a new class `LogHandlerInterceptor`and implement `HandlerInterceptor` interface.
 
-```
+```java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -176,7 +176,7 @@ public class LogHandlerInterceptor implements HandlerInterceptor {
 
 Once you have created your custom interceptor, you need to register it with the Spring Boot application using `**WebMvcConfigurer**` configuration:
 
-```
+```java
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -199,7 +199,7 @@ Let us now add another interceptor to perform the basic authentication check. Th
 
 For this example, we will hardcode a username and password to verify the credentials passed by the user.
 
-```
+```java
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -252,7 +252,7 @@ public class BasicAuthInterceptor implements HandlerInterceptor {
 
 Now, we need to register the BasicAuthInterceptor class by adding it to InterceptorRegistry
 
-```
+```java
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -271,6 +271,6 @@ public class WebConfig implements WebMvcConfigurer {
 
 The order of execution can be set for the interceptors using the `order()` method.
 
-```
+```java
 registry.addInterceptor(new LogHandlerInterceptor()).order(1);
 ```

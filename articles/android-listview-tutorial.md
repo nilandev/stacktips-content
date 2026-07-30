@@ -55,16 +55,16 @@ Following code snippet depicts the list view declaration inside activity layout
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-	<ListView
-		android:id="@+id/months_list"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content" >
-	</ListView>
+    <ListView
+        android:id="@+id/months_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 </LinearLayout>
 ```
 
@@ -79,26 +79,26 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class ListActivity extends Activity {
-	private String[] monthsArray = { "JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY",
+    private String[] monthsArray = { "JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY",
  "AUG", "SEPT", "OCT", "NOV", "DEC" };
 
-	private ListView monthsListView;
-	private ArrayAdapter arrayAdapter;
+    private ListView monthsListView;
+    private ArrayAdapter arrayAdapter;
 
-	/** Called when the activity is first created. */
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list);
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list);
 
-		monthsListView = (ListView) findViewById(R.id.months_list);
+        monthsListView = (ListView) findViewById(R.id.months_list);
 
-		// this-The current activity context.
-		// Second param is the resource Id for list layout row item
-		// Third param is input array 
-		arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
-		monthsListView.setAdapter(arrayAdapter);
-	}
+        // this-The current activity context.
+        // Second param is the resource Id for list layout row item
+        // Third param is input array
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, monthsArray);
+        monthsListView.setAdapter(arrayAdapter);
+    }
 }
 ```
 
@@ -116,32 +116,32 @@ The NewsItem object will represent each row in list. Declare NewsItem.java class
 
 ```java
 public class NewsItem {
-	private String headline;
-	private String reporterName;
-	private String date;
-	public String getHeadline() {
-		return headline;
-	}
+    private String headline;
+    private String reporterName;
+    private String date;
+    public String getHeadline() {
+        return headline;
+    }
 
-	public void setHeadline(String headline) {
-		this.headline = headline;
-	}
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
 
-	public String getReporterName() {
-		return reporterName;
-	}
+    public String getReporterName() {
+        return reporterName;
+    }
 
-	public void setReporterName(String reporterName) {
-		this.reporterName = reporterName;
-	}
+    public void setReporterName(String reporterName) {
+        this.reporterName = reporterName;
+    }
 
-	public String getDate() {
-		return date;
-	}
+    public String getDate() {
+        return date;
+    }
 
-	public void setDate(String date) {
-		this.date = date;
-	}
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
 ```
 
@@ -201,53 +201,53 @@ Checkout the  following code snippets for CustomListAdapter class.
 
 ```java
 public class CustomListAdapter extends BaseAdapter {
-	private ArrayList<NewsItem> listData;
-	private LayoutInflater layoutInflater;
+    private ArrayList<NewsItem> listData;
+    private LayoutInflater layoutInflater;
 
-	public CustomListAdapter(Context aContext, ArrayList<NewsItem> listData) {
-		this.listData = listData;
-		layoutInflater = LayoutInflater.from(aContext);
-	}
+    public CustomListAdapter(Context aContext, ArrayList<NewsItem> listData) {
+        this.listData = listData;
+        layoutInflater = LayoutInflater.from(aContext);
+    }
 
-	@Override
-	public int getCount() {
-		return listData.size();
-	}
+    @Override
+    public int getCount() {
+        return listData.size();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return listData.get(position);
-	}
+    @Override
+    public Object getItem(int position) {
+        return listData.get(position);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
-		if (convertView == null) {
-			convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
-			holder = new ViewHolder();
-			holder.headlineView = (TextView) convertView.findViewById(R.id.title);
-			holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
-			holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
+            holder = new ViewHolder();
+            holder.headlineView = (TextView) convertView.findViewById(R.id.title);
+            holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
+            holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-		holder.headlineView.setText(listData.get(position).getHeadline());
-		holder.reporterNameView.setText("By, " + listData.get(position).getReporterName());
-		holder.reportedDateView.setText(listData.get(position).getDate());
-		return convertView;
-	}
+        holder.headlineView.setText(listData.get(position).getHeadline());
+        holder.reporterNameView.setText("By, " + listData.get(position).getReporterName());
+        holder.reportedDateView.setText(listData.get(position).getDate());
+        return convertView;
+    }
 
-	static class ViewHolder {
-		TextView headlineView;
-		TextView reporterNameView;
-		TextView reportedDateView;
-	}
+    static class ViewHolder {
+        TextView headlineView;
+        TextView reporterNameView;
+        TextView reportedDateView;
+    }
 }
 ```
 
@@ -278,36 +278,36 @@ Well, we are almost ready. Let us put all of them together and hook it up to the
 ```java
 public class MainActivity extends Activity {
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		ArrayList image_details = getListData();
-		final ListView lv1 = (ListView) findViewById(R.id.custom_list);
-		lv1.setAdapter(new CustomListAdapter(this, image_details));
-		lv1.setOnItemClickListener(new OnItemClickListener() {
+        ArrayList image_details = getListData();
+        final ListView lv1 = (ListView) findViewById(R.id.custom_list);
+        lv1.setAdapter(new CustomListAdapter(this, image_details));
+        lv1.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-				Object o = lv1.getItemAtPosition(position);
-				NewsItem newsData = (NewsItem) o;
-				Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
-			}
-		});
-	}
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                Object o = lv1.getItemAtPosition(position);
+                NewsItem newsData = (NewsItem) o;
+                Toast.makeText(MainActivity.this, "Selected :" + " " + newsData, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 
-	private ArrayList getListData() {
-		ArrayList<NewsItem> results = new ArrayList<NewsItem>();
-		NewsItem newsData = new NewsItem();
-		newsData.setHeadline("Dance of Democracy");
-		newsData.setReporterName("Pankaj Gupta");
-		newsData.setDate("May 26, 2013, 13:35");
-		results.add(newsData);
+    private ArrayList getListData() {
+        ArrayList<NewsItem> results = new ArrayList<NewsItem>();
+        NewsItem newsData = new NewsItem();
+        newsData.setHeadline("Dance of Democracy");
+        newsData.setReporterName("Pankaj Gupta");
+        newsData.setDate("May 26, 2013, 13:35");
+        results.add(newsData);
 
                 // Add some more dummy data for testing
-		return results;
-	}
+        return results;
+    }
 }
 ```
 
@@ -326,15 +326,15 @@ Create a new file named list\_color\_selector.xml inside your drawable folder a
 ```xml
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
      <!-- Normal state. -->
-    <item android:drawable="@color/list_row_default_bg" 
-        android:state_pressed="false" 
+    <item android:drawable="@color/list_row_default_bg"
+        android:state_pressed="false"
         android:state_selected="false"/>
     <!-- pressed state. -->
-    <item android:drawable="@color/list_row_pressed_bg" 
+    <item android:drawable="@color/list_row_pressed_bg"
         android:state_pressed="true"/>
     <!-- Selected state. -->
-    <item android:drawable="@color/list_row_selected_bg" 
-        android:state_pressed="false" 
+    <item android:drawable="@color/list_row_selected_bg"
+        android:state_pressed="false"
         android:state_selected="true"/>
 
 </selector>

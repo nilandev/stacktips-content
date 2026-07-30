@@ -36,12 +36,12 @@ public class MyService extends Service {
   @Override
   public void onCreate() {
   }
- 
+
   @Override
   public void onStart(Intent intent, int startId) {
     //do something
   }
- 
+
   @Override
   public IBinder onBind(Intent intent) {
     return null;
@@ -52,14 +52,14 @@ public class MyService extends Service {
 3\. To start the service and stop the service:
 
 ```java
- 
+
 public class MyActivity extends Activity {
   @Override
   public void onCreate() {
     …
     startService(new Intent(this, MyService.class);
   }
- 
+
   @Override
   public void onStop() {
     …

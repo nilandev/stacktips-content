@@ -33,42 +33,42 @@ I have created both zip and unzip method inside a wrapper class called `**ZipMan
 
 Crete a sample android activity and add the following permission to application Mainfest.xml file. These persmissions are required to store data to your device storage.
 
-```
+```xml
 <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
 You can use below code to create zip file. Just copy paste to make it work in your activity
 
-```
+```java
 public void zip(String[] _files, String zipFileName) {
-		try {
-			BufferedInputStream origin = null;
-			FileOutputStream dest = new FileOutputStream(zipFileName);
-			ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(
-					dest));
-			byte data[] = new byte[BUFFER];
+        try {
+            BufferedInputStream origin = null;
+            FileOutputStream dest = new FileOutputStream(zipFileName);
+            ZipOutputStream out = new ZipOutputStream(new BufferedOutputStream(
+                    dest));
+            byte data[] = new byte[BUFFER];
 
-			for (int i = 0; i < _files.length; i++) {
-				Log.v("Compress", "Adding: " + _files[i]);
-				FileInputStream fi = new FileInputStream(_files[i]);
-				origin = new BufferedInputStream(fi, BUFFER);
+            for (int i = 0; i < _files.length; i++) {
+                Log.v("Compress", "Adding: " + _files[i]);
+                FileInputStream fi = new FileInputStream(_files[i]);
+                origin = new BufferedInputStream(fi, BUFFER);
 
-				ZipEntry entry = new ZipEntry(_files[i].substring(_files[i].lastIndexOf("/") + 1));
-				out.putNextEntry(entry);
-				int count;
+                ZipEntry entry = new ZipEntry(_files[i].substring(_files[i].lastIndexOf("/") + 1));
+                out.putNextEntry(entry);
+                int count;
 
-				while ((count = origin.read(data, 0, BUFFER)) != -1) {
-					out.write(data, 0, count);
-				}
-				origin.close();
-			}
+                while ((count = origin.read(data, 0, BUFFER)) != -1) {
+                    out.write(data, 0, count);
+                }
+                origin.close();
+            }
 
-			out.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 ```
 
 **`BUFFER`** is used for limiting the buffer memory size while reading and writing data it to the zip stream
@@ -79,7 +79,7 @@ public void zip(String[] _files, String zipFileName) {
 
 You can use this in your activity
 
-```
+```java
 // declare an array for storing the files i.e the path
 // of your source files
 String[] s = new String[2];
@@ -101,42 +101,42 @@ You can get complete working eclipse project to end of this tutorial.
 
 Now let us look into unzipping files. For unzipping you need to know the file path for .zip file and the path to the directory extract the files.
 
-```
+```java
 public void unzip(String _zipFile, String _targetLocation) {
 
-		//create target location folder if not exist
-		dirChecker(_targetLocatioan);
+        //create target location folder if not exist
+        dirChecker(_targetLocatioan);
 
-		try {
-			FileInputStream fin = new FileInputStream(_zipFile);
-			ZipInputStream zin = new ZipInputStream(fin);
-			ZipEntry ze = null;
-			while ((ze = zin.getNextEntry()) != null) {
+        try {
+            FileInputStream fin = new FileInputStream(_zipFile);
+            ZipInputStream zin = new ZipInputStream(fin);
+            ZipEntry ze = null;
+            while ((ze = zin.getNextEntry()) != null) {
 
-				//create dir if required while unzipping
-				if (ze.isDirectory()) {
-					dirChecker(ze.getName());
-				} else {
-					FileOutputStream fout = new FileOutputStream(_targetLocation + ze.getName());
-					for (int c = zin.read(); c != -1; c = zin.read()) {
-						fout.write(c);
-					}
+                //create dir if required while unzipping
+                if (ze.isDirectory()) {
+                    dirChecker(ze.getName());
+                } else {
+                    FileOutputStream fout = new FileOutputStream(_targetLocation + ze.getName());
+                    for (int c = zin.read(); c != -1; c = zin.read()) {
+                        fout.write(c);
+                    }
 
-					zin.closeEntry();
-					fout.close();
-				}
+                    zin.closeEntry();
+                    fout.close();
+                }
 
-			}
-			zin.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
+            }
+            zin.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 }
 ```
 
 You can use this method in your activity
 
-```
+```java
 ZipManager zipManager = new ZipManager();
 zipManager.unzip(inputPath + inputFile, outputPath);
 ```

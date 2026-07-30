@@ -25,12 +25,12 @@ The LinearLayout is the most basic layout manager provided by Android. The Linea
 Here is how the LinearLayout declaration looks like in Android layout
 
 ```xml
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"     
-       android:orientation="horizontal"     
-       android:layout_width="fill_parent"  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:orientation="horizontal"
+       android:layout_width="fill_parent"
        android:layout_height="wrap_content">
 
-<!-- add children here--> 
+<!-- add children here-->
 
 </LinearLayout>
 

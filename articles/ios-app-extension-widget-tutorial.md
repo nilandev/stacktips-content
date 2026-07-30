@@ -137,7 +137,7 @@ Drag and Drop Label from Object Library to StoryBoard
 
 Create a Outlet of the Label by Opening Associate Inspector from Storyboard window and _control + Drag_ the Label , In _viewDidLoad_ paste following snippet
 
-```c
+```swift
 
  //Use tap gesture on label to launch app
 labelText.userInteractionEnabled = true
@@ -147,7 +147,7 @@ labelText.addGestureRecognizer(tapGesture)
 
 Add _doLaunchApp_ function below the _viewDidLoad_ as show below
 
-```c
+```swift
 
 func doLaunchApp(){
 if let url = NSURL(string: "TodaysExtTarget://"){

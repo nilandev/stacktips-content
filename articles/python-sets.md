@@ -35,7 +35,7 @@ print(colors)
 
 **Output:**
 
-```
+```text
 {'white', 'red', 'blue'}
 ```
 
@@ -53,7 +53,7 @@ print(colors)
 
 **Output:**
 
-```
+```text
 {'white', 'red', 'green', 'blue'}
 ```
 
@@ -67,7 +67,7 @@ print(colors)
 
 **Output:**
 
-```
+```text
 {'red', 'green', 'orange', 'white', 'black', 'blue'}
 ```
 
@@ -87,7 +87,7 @@ blue
 
 **Output:**
 
-```
+```text
     white
 blue
 red
@@ -97,7 +97,7 @@ red
 
 In addition to adding an item to a set, you can also **remove items** from it using the `remove` function.
 
-```
+```python
 colors = {"red", "white", "blue", "orange"}
 colors.remove("blue")
 print(colors)
@@ -105,7 +105,7 @@ print(colors)
 
 **Output:**
 
-```
+```text
 {'orange', 'white', 'red'}
 ```
 
@@ -119,7 +119,7 @@ colors.discard("green")
 print(colors)
 ```
 
-```
+```text
 {'orange', 'white', 'red', 'blue'}
 ```
 
@@ -136,7 +136,7 @@ print("yellow" in colors)
 
 **Output:**
 
-```
+```text
 True
 False
 ```
@@ -152,7 +152,7 @@ print(len(colors))
 
 **Output:**
 
-```
+```text
 3
 ```
 
@@ -170,7 +170,7 @@ print(colors3)
 
 **Output:**
 
-```
+```text
 {'white', 'brown', 'red', 'purple', 'blue'}
 ```
 
@@ -186,6 +186,6 @@ print(colors1)
 
 **Output:**
 
-```
+```text
 {'blue', 'purple', 'brown', 'red', 'white'}
 ```

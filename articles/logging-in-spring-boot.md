@@ -110,7 +110,7 @@ INFO is the default logging level used in Spring Boot. Hence, if we run the abov
 
 We can enable the DEBUG or TRACE mode while starting our application using a `—-debug` or `—-trace` flag. Example:
 
-```shell
+```bash
 
 java -jar target/my-app-0.0.1-SNAPSHOT.jar --debug
 ```
@@ -180,7 +180,7 @@ management.endpoints.web.exposure.include=loggers
 
 Now, we can change the log level by sending a POST request to `/actuator/loggers/{logger.name}`, with a JSON payload specifying the desired log level. For example:
 
-```shell
+```bash
 
 curl --location 'http://localhost:8080/actuator/loggers/com.stacktips.app' \
 --header 'Content-Type: application/json' \
@@ -210,26 +210,26 @@ You can programmatically add context information to your logs:
 
 ```java
 
-@SpringBootApplication  
-public class MyApplication {  
+@SpringBootApplication
+public class MyApplication {
 
-    private static final Logger logger = LoggerFactory.getLogger(MyApplication.class); 
+    private static final Logger logger = LoggerFactory.getLogger(MyApplication.class);
 
-    public static void main(String[] args) {  
-        SpringApplication.run(MyApplication.class, args);  
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
 
-        String userId = "user123";  
-        MDC.put("userId", userId);  
+        String userId = "user123";
+        MDC.put("userId", userId);
 
-        logger.trace("TRACE message");  
-        logger.debug("DEBUG message");  
-        logger.info("INFO message");  
-        logger.warn("WARNING message");  
-        logger.error("ERROR message");  
-        logger.error("FATAL message");  
+        logger.trace("TRACE message");
+        logger.debug("DEBUG message");
+        logger.info("INFO message");
+        logger.warn("WARNING message");
+        logger.error("ERROR message");
+        logger.error("FATAL message");
 
-        MDC.remove("userId");  
-    }  
+        MDC.remove("userId");
+    }
 }
 ```
 
@@ -242,7 +242,7 @@ logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} [
 
 This prints
 
-```shell
+```bash
 
 2024-03-10 23:22:14 [main] INFO  com.stacktips.app.MyApplication [] - Starting MyApplication using Java 17.0.7 with PID 85229 (/Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging/build/classes/java/main started by nilanchala in /Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging)
 2024-03-10 23:22:14 [main] DEBUG com.stacktips.app.MyApplication [] - Running with Spring Boot v3.2.3, Spring v6.1.4

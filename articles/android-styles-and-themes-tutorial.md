@@ -61,7 +61,7 @@ Sounds Frustrating? Now, we can overcome this by declaring a style for the `Text
 ```xml
 <TextView
     android:id="@+id/textView2"
-    style="@style/MtTextViewStyle" 
+    style="@style/MtTextViewStyle"
     android:text="@string/hello_world">
 </TextView>
 ```
@@ -84,7 +84,7 @@ Here is the style we have defined for the TextView example
     <item name="android:typeface">monospace</item>
     <item name="android:background">#f0f0f0</item>
     <item name="android:textStyle">italic</item>
-    <item name="android:padding">5dp</item>    
+    <item name="android:padding">5dp</item>
 </style>
 ```
 
@@ -95,7 +95,7 @@ Here’s how to set a style for a View in the XML layout:
 ```xml
 <TextView
     android:id="@+id/textView2"
-    style="@style/MyTextViewStyle" 
+    style="@style/MyTextViewStyle"
     android:text="@string/hello_world">
 </TextView>
 ```

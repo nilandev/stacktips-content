@@ -38,7 +38,7 @@ Also, you will need to exclude the default added spring-boot-starter-tomcat depe
 
 For **Gradle**, make the following changes to your `build.gradle` file.
 
-```
+```groovy
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web') {
         exclude group:'org.springframework.boot', module:'spring-boot-starter-tomcat'
@@ -49,7 +49,7 @@ dependencies {
 
 If you’re using **Maven** build tools, you need to add this to your `pom.xml` file.
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -70,8 +70,8 @@ If you’re using **Maven** build tools, you need to add this to your `pom.xml` 
 
 The above configuration works for Spring Boot version 2.x, but it will throw the following error if you’re using the latest Spring Boot version 3.x.
 
-```
-java.lang.ClassNotFoundException: jakarta.servlet.http.HttpSessionContext 
+```text
+java.lang.ClassNotFoundException: jakarta.servlet.http.HttpSessionContext
 with Spring Boot 3 and Jetty server
 ```
 
@@ -79,7 +79,7 @@ This is because Jetty does not yet support Servlet 6.0. To use Jetty with Spring
 
 Ref: [Spring-Boot-3.0-Migration-Guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.0-Migration-Guide#jetty)
 
-```
+```groovy
 ext['jakarta-servlet.version'] = '5.0.0'
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
@@ -94,7 +94,7 @@ dependencies {
 
 If you’re using **Maven** build tools, you need to add this to your `pom.xml` file.
 
-```
+```xml
 <properties>
     <java.version>17</java.version>
     <jakarta-servlet.version>5.0.0</jakarta-servlet.version>
@@ -125,7 +125,7 @@ To use Undertow instead of Tomcat, first, you need to exclude the spring-boot-st
 
 For **Gradle**, make the following changes to your `build.gradle` file.
 
-```
+```groovy
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web') {
         exclude group:'org.springframework.boot', module:'spring-boot-starter-tomcat'
@@ -136,7 +136,7 @@ dependencies {
 
 If you’re using **Maven** build tools, you need to add this to your `pom.xml` file.
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>

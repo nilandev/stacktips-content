@@ -147,7 +147,7 @@ comparedTo() method compares values and returns an integer that says if the comp
   String string1 = "Akshay";
   String string2 = "akshay";
   String string3 = "Akshay";
-  String string4 = "Ajay";		
+  String string4 = "Ajay";
   System.out.println(string1.compareTo(string2)); // returns negative integer
   System.out.println(string1.compareToIgnoreCase(string2)); // returns 0
   System.out.println(string1.compareTo(string3)); // returns 0
@@ -217,11 +217,11 @@ You can convert String to java date object using SimpleDateFormat class.
 
 ```java
   try {
-	String dateInString = "March 28, 2013";
-	SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
-	Date formattedDate = dateFormat.parse(dateInString);
+    String dateInString = "March 28, 2013";
+    SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+    Date formattedDate = dateFormat.parse(dateInString);
   } catch (ParseException e) {
-	e.printStackTrace();
+    e.printStackTrace();
   }
 ```
 

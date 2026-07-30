@@ -24,7 +24,7 @@ This `env.rb` file provides setup and common functionality across all features. 
 
 This is a great place to put shared data like the location of your app, the capabilities you want to test with, and the setup of selenium.
 
-```rb
+```ruby
 require 'appium_lib'
 require 'cucumber'
 require 'require_all'

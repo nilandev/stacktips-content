@@ -30,13 +30,13 @@ You can do this by using the `default` keyword.
 
 ```java
 interface Vehicle {
-    String speedUp(); 
+    String speedUp();
     String slowDown();
 
     default String alarmOn() {
         return "Turning the alarm on.";
     }
-     
+
     default String alarmOff() {
         return "Turning the alarm off.";
     }
@@ -45,7 +45,7 @@ interface Vehicle {
 class Car implements Vehicle {
 
     private String brand;
-        
+
     public Car(String brand){
         this.brand = brand;
     }
@@ -62,7 +62,7 @@ class Car implements Vehicle {
 
     public String getBrand(){
         return brand;
-    }   
+    }
 }
 ```
 
@@ -82,7 +82,7 @@ public class VehicleExmaple {
         //Calling default methods
         System.out.println(car.alarmOn());
         System.out.println(car.alarmOff());
-        
+
     }
 }
 ```
@@ -99,14 +99,14 @@ class Car implements Vehicle1, Vehicle2 {
     // Your code goes here..
     @Override
     public String alarmOn() {
-        // Your code goes here..      
+        // Your code goes here..
         //...
         return Vehicle2.super.alarmOn();
     }
-     
+
     @Override
-    public String alarmOff() {  
-        // Your code goes here..      
+    public String alarmOff() {
+        // Your code goes here..
         //...
         return Vehicle2.super.alarmOff();
 

@@ -30,20 +30,20 @@ First, let us create an HTML file and save it as `sample.html`
 
 ```html
 
-   
-      
-         
-            
-               
-               
-            
-            
-               
-               
-            
-         
-      
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 

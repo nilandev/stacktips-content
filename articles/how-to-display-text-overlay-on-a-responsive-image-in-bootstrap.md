@@ -87,7 +87,7 @@ Complete Source Code
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-sm-4">
                 <div class="col-sm-12 thumbnail text-center">
                     <img alt="" class="img-responsive" src=

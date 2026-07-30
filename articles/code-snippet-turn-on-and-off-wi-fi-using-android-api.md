@@ -24,12 +24,12 @@ Use the following code snippets to turn on and off wifi on Android devices.
 
 ```java
 public void toggleWiFi(boolean status) {
-	WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-	if (status == true &amp;&amp; !wifiManager.isWifiEnabled()) {
-		wifiManager.setWifiEnabled(true);
-	} else if (status == false &amp;&amp; wifiManager.isWifiEnabled()) {
-		wifiManager.setWifiEnabled(false);
-	}
+    WifiManager wifiManager = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+    if (status == true &amp;&amp; !wifiManager.isWifiEnabled()) {
+        wifiManager.setWifiEnabled(true);
+    } else if (status == false &amp;&amp; wifiManager.isWifiEnabled()) {
+        wifiManager.setWifiEnabled(false);
+    }
 }
 ```
 

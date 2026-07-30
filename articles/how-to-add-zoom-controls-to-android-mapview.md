@@ -29,7 +29,7 @@ map.setBuiltInZoomControls(true);
 
 The above code snippet will add the zoom controls to the bottom-center of the `MapView`. The zoom controls only show up when you touch the screen, so you have to make sure that the map is clickable.
 
-```java
+```xml
 <com.google.android.maps.MapView
        android:layout_width="fill_parent"
        android:layout_height="fill_parent"

@@ -32,7 +32,7 @@ First, make sure you have the Docker installed on your machine. If it is not ins
 
 Now, let us pull the official MongoDB docker image from the Docker Hub. For that, open your terminal and run the following command:
 
-```
+```bash
 $ docker pull mongo
 ```
 
@@ -40,7 +40,7 @@ $ docker pull mongo
 
 Now, run the following command to start a MongoDB in a container,
 
-```
+```bash
 docker run
     -d
     --name mongodb
@@ -66,7 +66,7 @@ This command will start a Docker container named "MongoDB" and map the MongoDB d
 
 You can check if the container is running by executing the command:
 
-```
+```bash
 docker ps
 ```
 
@@ -76,12 +76,12 @@ It should display a list of running containers, and you should see the "mongodb"
 
 To stop a MongoDB Docker container, you can use the following command:
 
-```
+```bash
 docker stop mongodb
 ```
 
 To Start MongoDB again
 
-```
+```bash
 docker start moongodb
 ```

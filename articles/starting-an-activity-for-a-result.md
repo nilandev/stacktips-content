@@ -40,7 +40,7 @@ Starting another activity doesn’t have to be one-way. You can also start anoth
 Note: You can use explicit or implicit intents when you call startActivityForResult(). When starting one of your own activities to receive a result, you should use an explicit intent to ensure that you receive the expected result.
 
 ```java
- Intent intent = new Intent(this, SecondActivity.class); 
+ Intent intent = new Intent(this, SecondActivity.class);
  startActivityForResult(intent, requestCode);
 ```
 
@@ -53,15 +53,15 @@ In secondActivity if you want to send back data:
 ```java
  Intent returnIntent = new Intent();
  returnIntent.putExtra("result",result);
- setResult(RESULT_OK, returnIntent);     
+ setResult(RESULT_OK, returnIntent);
  finish();
 ```
 
 If you don’t want to return data:
 
-```
+```java
  Intent returnIntent = new Intent();
- setResult(RESULT_CANCELED, returnIntent);        
+ setResult(RESULT_CANCELED, returnIntent);
  finish();
 ```
 
@@ -78,12 +78,12 @@ requestCode: The request code you passed to startActivityForResult().
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 super.onActivityResult(requestCode, resultCode, data);
     if (requestCode == 1){
-    	if(resultCode == RESULT_OK){      
+        if(resultCode == RESULT_OK){
              //here is your result
-            String result=data.getStringExtra("result");  
-            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();	            
+            String result=data.getStringExtra("result");
+            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
         }
-        if (resultCode == RESULT_CANCELED) {    
+        if (resultCode == RESULT_CANCELED) {
             //Write your code if there's no result
             Toast.makeText(getApplicationContext(), "Nothing Returned!", Toast.LENGTH_SHORT).show();
         }
@@ -99,32 +99,32 @@ In this example, we will develop an application with two activities, the first a
 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/bg"
-	android:orientation="vertical"
-	android:padding="10dp"
-	tools:context=".FirstActivity" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".FirstActivity" >
 
 <TextView
-	android:id="@+id/textView1"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_centerHorizontal="true"
-	android:layout_marginTop="10dp"
-	android:text="Activity 1"
-	android:textAppearance="?android:attr/textAppearanceLarge" />
+    android:id="@+id/textView1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"
+    android:text="Activity 1"
+    android:textAppearance="?android:attr/textAppearanceLarge" />
 
 <Button
-	android:id="@+id/start_button"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:layout_alignParentBottom="true"
-	android:layout_centerHorizontal="true"
-	android:background="@android:color/holo_blue_dark"
-	android:text="Start Activity 2" />
-	
+    android:id="@+id/start_button"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@android:color/holo_blue_dark"
+    android:text="Start Activity 2" />
+
 </RelativeLayout>
 ```
 
@@ -132,51 +132,51 @@ In this example, we will develop an application with two activities, the first a
 
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/bg"
-	android:orientation="vertical"
-	android:padding="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="10dp">
 
-	<TextView
-		android:id="@+id/textView1"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerHorizontal="true"
-		android:layout_marginTop="10dp"
-		android:text="Activity 2"
-		android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Activity 2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_marginTop="50dp"
-		android:orientation="horizontal"
-		android:weightSum="2" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
 
-		<Button
-			android:id="@+id/cancel_button"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_margin="2dp"
-			android:layout_weight="1"
-			android:background="@android:color/holo_blue_dark"
-			android:text="Cancel" />
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Cancel" />
 
-		<Button
-			android:id="@+id/return_button"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_margin="2dp"
-			android:layout_weight="1"
-			android:background="@android:color/holo_blue_dark"
-			android:text="Return Results" />
+        <Button
+            android:id="@+id/return_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Return Results" />
 
-	</LinearLayout>
+    </LinearLayout>
 </RelativeLayout>
 ```
 
@@ -193,37 +193,37 @@ import android.content.Intent;
 
 public class FirstActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_first);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_first);
 
-		Button start = (Button) findViewById(R.id.start_button);
-		start.setOnClickListener(new OnClickListener() {
+        Button start = (Button) findViewById(R.id.start_button);
+        start.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				Intent intent = new Intent(FirstActivity.this, SecondActivity.class); 
-				startActivityForResult(intent, 1); 
-			}
-		});
-	}
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+    }
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	    super.onActivityResult(requestCode, resultCode, data);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-	    if (requestCode == 1){
-	    	if(resultCode == RESULT_OK){
-	            String result=data.getStringExtra("result");  
-	            Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();	            
-	        }
-	        if (resultCode == RESULT_CANCELED) {    
-	            //Write your code if there's no result
-	            Toast.makeText(getApplicationContext(), "Nothing Returned!", Toast.LENGTH_SHORT).show();
-	        }
-	    }
-	}
+        if (requestCode == 1){
+            if(resultCode == RESULT_OK){
+                String result=data.getStringExtra("result");
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+            }
+            if (resultCode == RESULT_CANCELED) {
+                //Write your code if there's no result
+                Toast.makeText(getApplicationContext(), "Nothing Returned!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 }
 ```
@@ -242,38 +242,38 @@ import android.widget.Button;
 
 public class SecondActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_second);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
 
-		Button returnResult = (Button) findViewById(R.id.return_button);
-		returnResult.setOnClickListener(new OnClickListener() {
+        Button returnResult = (Button) findViewById(R.id.return_button);
+        returnResult.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				// returing result back
-				Intent resultIntent = new Intent();
-				resultIntent.putExtra("result", "Getting Smile Back!!");
-				setResult(RESULT_OK, resultIntent);
-				finish();
+            @Override
+            public void onClick(View view) {
+                // returing result back
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("result", "Getting Smile Back!!");
+                setResult(RESULT_OK, resultIntent);
+                finish();
 
-				// if you don't want to return any result
-				// setResult(RESULT_CANCELED, resultIntent);
-			}
-		});
+                // if you don't want to return any result
+                // setResult(RESULT_CANCELED, resultIntent);
+            }
+        });
 
-		Button back = (Button) findViewById(R.id.cancel_button);
-		back.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				// if you don't want to return any result
-				Intent resultIntent = new Intent();
-				setResult(RESULT_CANCELED, resultIntent);
-				finish();
-			}
-		});
-	}
+        Button back = (Button) findViewById(R.id.cancel_button);
+        back.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // if you don't want to return any result
+                Intent resultIntent = new Intent();
+                setResult(RESULT_CANCELED, resultIntent);
+                finish();
+            }
+        });
+    }
 }
 ```
 

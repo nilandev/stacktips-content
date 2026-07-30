@@ -26,7 +26,7 @@ Sequential Search is the most natural searching method. In this method, the sear
 
 This represents the algorithm to search a list of values of to find the required one.
 
-```
+```text
 INPUT: List of size N. Target value T
 OUTPUT: Position of T in the list I
 BEGIN

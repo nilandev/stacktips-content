@@ -26,18 +26,18 @@ Enable deep links for App content in Android, you need to fist add intent filter
 
 For example, a user clicks on a website link `http://stacktips.com` on the browser, that will resolve the link and open the content in installed activity.
 
-```java
+```xml
 <activity
     android:name="com.example.MainActivity"
     android:label="@string/my_app" >
     <intent-filter android:label="@string/my_app">
-	
+
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
-		
+
         <!-- Accepts URIs that begin with "http://stacktips.com/articles” -->
-        <data android:scheme="http" android:host="stacktips.com" android:pathPrefix="/articles" />        
+        <data android:scheme="http" android:host="stacktips.com" android:pathPrefix="/articles" />
     </intent-filter>
 </activity>
 ```
@@ -68,6 +68,6 @@ You can use the Android Debug Bridge with the activity manager tool to test that
 
 The following command tries to view a target app activity that is associated with the specified URI.
 
-```java
+```bash
 $ adb shell am start -W -a android.intent.action.VIEW -d http://stacktips.com/articles com.example
 ```

@@ -55,14 +55,14 @@ public class Employee {
         //....
         return null;
     }
-    
+
     @RequestMapping(value={"/employee/remove","/employee/delete"})
     public ModelAndView delete(
             @RequestParam(value = "uuid") String uuid) {
         //....
         //....
         return null;
-    }   
+    }
 }
 ```
 
@@ -89,15 +89,15 @@ public class Employee {
         //....
         return null;
     }
-    
+
     @RequestMapping(value={"remove","delete"})
     public ModelAndView delete(
             @RequestParam(value = "uuid") String uuid) {
         //....
         //....
-        
+
         return null;
-    }   
+    }
 }
 ```
 
@@ -118,7 +118,7 @@ public class Employee {
         public ModelAndView delete(@RequestParam(value = "uuid") String uuid) {
             // ....
             // ....
-    
+
             return null;
         }
 }

@@ -56,7 +56,7 @@ Now copy following jars from `C:\struts-2.3.15.1-lib` to `\WEB-INF\libs`
 
 Do the following changes in web.xml file to enable struts 2 framework features. You can locate `web.xml` file in `\WEB-INF\web.xml` in your project directory.
 
-```
+```xml
 <?xmlversion="1.0"encoding="UTF-8"?>
 <web-appxmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns="http://java.sun.com/xml/ns/javaee"
@@ -65,19 +65,19 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="2.5">
 <display-name>struts2web</display-name>
 <filter>
-	<filter-name>struts2</filter-name>
+    <filter-name>struts2</filter-name>
 <filter-class>
-       org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter                
+       org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
 </filter-class>
 </filter>
 
 <filter-mapping>
-	<filter-name>struts2</filter-name>
-	<url-pattern>/*</url-pattern>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
 </filter-mapping>
 
 <welcome-file-list>
-	<welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
 </welcome-file-list>
 </web-app>
 ```
@@ -92,7 +92,7 @@ id="WebApp_ID" version="2.5">
 
 Now, let us jump into validating login credenials from java class. Create `LoginAuthAction.java` inside the following package `com.javatechig.struts2web.actions.` Note, you may have your own package name
 
-```
+```java
 public class LoginAuthAction extends ActionSupport {
     Private static final longserialVersionUID = 1L;
     private String userId;
@@ -148,27 +148,27 @@ The `LoginAuthAction` extends `ActionSupport` to use core methods such as `addAc
 
 Now it’s time to configure the action class in Struts configuration file. Create struts2 configuration file as struts.xml inside project src directory
 
-```
+```xml
 <?xmlversion="1.0"encoding="UTF-8"?>
 <!DOCTYPEstrutsPUBLIC
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<packagename="struts2web"namespace="/"extends="struts-default">
-		<actionname="login">
-			<result>pages/login.jsp</result>
-		</action>
-		<actionname="welcome">
-			<result>pages/welcome.jsp</result>
-		</action>
-		<actionname="loginauth"class="com.javatechig.struts2web.actions.LoginAuthAction"		
-			<resultname="success"type="redirect">
-		<paramname="location">/welcome</param>
-		</result>
-			<resultname="error">pages/login.jsp</result>
-		</action>
-	</package>
+    <packagename="struts2web"namespace="/"extends="struts-default">
+        <actionname="login">
+            <result>pages/login.jsp</result>
+        </action>
+        <actionname="welcome">
+            <result>pages/welcome.jsp</result>
+        </action>
+        <actionname="loginauth"class="com.javatechig.struts2web.actions.LoginAuthAction"
+            <resultname="success"type="redirect">
+        <paramname="location">/welcome</param>
+        </result>
+            <resultname="error">pages/login.jsp</result>
+        </action>
+    </package>
 </struts>
 ```
 
@@ -192,7 +192,7 @@ In this example we will be needing two jsp pages. Once for login form and other 
 
 ## 7.1. Login form
 
-```
+```html
 <%@pagecontentType="text/html; charset=UTF-8"%>
 <%@taglibprefix="s"uri="/struts-tags"%>
 <!DOCTYPEhtmlPUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
@@ -202,46 +202,46 @@ In this example we will be needing two jsp pages. Once for login form and other 
 <title>Insert title here</title>
 <styletype="text/css">
 body{
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:12px;	
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
 }
 .errors {
-	background-color:#FFCCCC;
-	border:1px solid #CC0000;
-	width:220px;
-	line-height:10px;
+    background-color:#FFCCCC;
+    border:1px solid #CC0000;
+    width:220px;
+    line-height:10px;
 }
 .errorsli{
-	list-style: none; 
+    list-style: none;
 }
 </style>
 </head>
 <body>
 <s:formaction="loginauth"theme="simple">
 <center>
-	<tablewidth="200">
-		<trheight="30">
-			<tdwidth="200"colspan="2">
-				<s:iftest="hasActionErrors()">
-					<divclass="errors">
-						<s:actionerror/>
-					</div>
-				</s:if>
-			</td>
-		</tr>
-		<tr>
-			<tdcolspan="2"width="200"align="left"style="background:#eee">Login Here</td>
-		</tr>
-		<tr>
-			<tdalign="left">User ID:</td><tdalign="left"><s:textfieldname="userId"/></td>
-		</tr>
-		<tr>
-			<tdalign="left">Password:</td><tdalign="left"><s:passwordtype="text"name="password"/></td>
-		</tr>
-		<tr>
-			<tdalign="left"></td><tdalign="left"><inputtype="submit"name="login"value="Login"></td>
-		</tr>
-	</table>
+    <tablewidth="200">
+        <trheight="30">
+            <tdwidth="200"colspan="2">
+                <s:iftest="hasActionErrors()">
+                    <divclass="errors">
+                        <s:actionerror/>
+                    </div>
+                </s:if>
+            </td>
+        </tr>
+        <tr>
+            <tdcolspan="2"width="200"align="left"style="background:#eee">Login Here</td>
+        </tr>
+        <tr>
+            <tdalign="left">User ID:</td><tdalign="left"><s:textfieldname="userId"/></td>
+        </tr>
+        <tr>
+            <tdalign="left">Password:</td><tdalign="left"><s:passwordtype="text"name="password"/></td>
+        </tr>
+        <tr>
+            <tdalign="left"></td><tdalign="left"><inputtype="submit"name="login"value="Login"></td>
+        </tr>
+    </table>
 </center>
 </s:form>
 </body>
@@ -261,7 +261,7 @@ private String password;
 
 This page contains the welcome text, and will be displayed, once user credentials are authenticated.
 
-```
+```html
 <%@pagelanguage="java"contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <!DOCTYPEhtmlPUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">

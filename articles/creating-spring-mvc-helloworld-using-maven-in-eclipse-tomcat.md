@@ -81,43 +81,43 @@ Before we develop Spring MVC web application, we need to configure the project b
     HelloMVC Maven Webapp
     http://maven.apache.org
 
-    
-    
+
+
         4.2.1.RELEASE
-    
 
-    
 
-        
-        
+
+
+
+
             org.springframework
             spring-core
             ${spring.version}
-        
 
-        
+
+
             org.springframework
             spring-webmvc
             ${spring.version}
-        
 
-        
+
+
             org.springframework
             spring-web
             ${spring.version}
-        
-        
 
-        
+
+
+
             junit
             junit
             3.8.1
             test
-        
-    
-    
+
+
+
         HelloMVC
-    
+
 
 ```
 
@@ -136,29 +136,29 @@ The `DispatcherServlet` must be configured as normal in `web.xml` to bootstrap a
 ```xml
 
     Archetype Created Web Application
-    
+
         contextConfigLocation
         /WEB-INF/dispatcher-servlet.xml
-    
 
-    
-        
+
+
+
             org.springframework.web.context.ContextLoaderListener
-        
-    
 
-    
+
+
+
         dispatcher
-        
-            org.springframework.web.servlet.DispatcherServlet
-        
-        1
-    
 
-    
+            org.springframework.web.servlet.DispatcherServlet
+
+        1
+
+
+
         dispatcher
         /
-    
+
 
 ```
 
@@ -168,18 +168,18 @@ Create an xml file `dispatcher-servlet.xml` under the same directory of `web.xml
 
 ##### dispatcher-servlet.xml
 
-```java
+```xml
 
-    
 
-    
-        
+
+
+
             /WEB-INF/views/
-        
-        
+
+
             .jsp
-        
-    
+
+
 
 ```
 

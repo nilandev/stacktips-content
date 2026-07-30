@@ -32,7 +32,7 @@ It also includes utilities such as `delombok` checking null values and `@Slf4j` 
 
 For example, traditionally a class declaration looks something like this;
 
-```
+```java
 public class Car {
     private String model;
     private int year;
@@ -97,7 +97,7 @@ public class Car {
 
 But with Lombok, we can write the same code using a bunch of annotations.
 
-```
+```java
 @Getter
 @Setter
 @NoArgsConstructor
@@ -152,7 +152,7 @@ The `@Value` annotations make the class Final. It is basically the immutable var
 
 All fields are made private and final by default and this does not generate any setter methods. If you want to make your class extendable, then you cannot use the `@Value` annotation.
 
-```
+```java
 @Value
 public class Car {
     String model;
@@ -165,9 +165,9 @@ The same behavior for a class can be achievable natively in Java using Java 16 r
 
 Records also have a built-in `equals()` and `hashCode()` method and they are _**immutable**_ by default. It makes your code shorter, easier to read, and less prone to errors.
 
-```
+```java
 public record Car(String model, int year, String fuelType) {
-    
+
 }
 ```
 

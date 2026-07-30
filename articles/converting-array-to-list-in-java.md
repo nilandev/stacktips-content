@@ -28,23 +28,23 @@ import java.util.List;
 
 public class ArrayToList {
 
-	public static void main(String[] args) {
-		String[] names = { "Neel", "Clay", "Adams", "Joseph", "Jack" };
+    public static void main(String[] args) {
+        String[] names = { "Neel", "Clay", "Adams", "Joseph", "Jack" };
 
-		// Converting Array to List 
-		List aList = Arrays.asList(names);
+        // Converting Array to List
+        List aList = Arrays.asList(names);
 
-		System.out.println("Size of list=" + aList.size());
-		System.out.println("aList Values=" + aList);
+        System.out.println("Size of list=" + aList.size());
+        System.out.println("aList Values=" + aList);
 
-		//changing the aList values
-		aList.set(2, "Dinesh");
+        //changing the aList values
+        aList.set(2, "Dinesh");
 
-		// printing aList values
-		for (String name : names) {
-			System.out.println(name);
-		}
-	}
+        // printing aList values
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
 }
 ```
 

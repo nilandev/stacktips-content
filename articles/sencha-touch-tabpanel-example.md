@@ -28,60 +28,60 @@ Below example shows the usages of Sencha Touch TabPanel
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
 
-	onReady : function() {
-		var toolbar = new Ext.Toolbar({
-			dock : 'top',
-			title : 'Toolbar Sample'
-		});
+    onReady : function() {
+        var toolbar = new Ext.Toolbar({
+            dock : 'top',
+            title : 'Toolbar Sample'
+        });
 
-		var tabPanel = new Ext.TabPanel({
-			dock : 'bottom',
-			styleHtmlContent : true,
-			tabBar : {
-				dock : 'bottom',
-				layout : {
-					pack : 'center'
-				}
-			},
-			defaults : {
-				scroll : 'vertical'
-			},
-			items : [{
-				title : 'Home',
-				html : '<h2>Home</h2>',
-				iconCls : 'home'
-			}, {
-				title : 'Settings',
-				html : '<h2>Settings</h2>',
-				iconCls : 'settings'
-			}, {
-				title : 'Favourites',
-				html : '<h2>Favourit</h2>',
-				iconCls : 'favorites',
-				badgeText : '2'
-			}]
-		});
+        var tabPanel = new Ext.TabPanel({
+            dock : 'bottom',
+            styleHtmlContent : true,
+            tabBar : {
+                dock : 'bottom',
+                layout : {
+                    pack : 'center'
+                }
+            },
+            defaults : {
+                scroll : 'vertical'
+            },
+            items : [{
+                title : 'Home',
+                html : '<h2>Home</h2>',
+                iconCls : 'home'
+            }, {
+                title : 'Settings',
+                html : '<h2>Settings</h2>',
+                iconCls : 'settings'
+            }, {
+                title : 'Favourites',
+                html : '<h2>Favourit</h2>',
+                iconCls : 'favorites',
+                badgeText : '2'
+            }]
+        });
 
-		var panel = new Ext.Panel({
-			fullscreen : true,
-			dockedItems : [toolbar, tabPanel],
-			layout : 'fit',
-			scroll : 'vertical'
-		});
+        var panel = new Ext.Panel({
+            fullscreen : true,
+            dockedItems : [toolbar, tabPanel],
+            layout : 'fit',
+            scroll : 'vertical'
+        });
 
-		Ext.apply(panel, {
-			fullscreen : true,
-			autoRender : true,
-			hideOnMaskTap : false
-		});
+        Ext.apply(panel, {
+            fullscreen : true,
+            autoRender : true,
+            hideOnMaskTap : false
+        });
 
-		panel.show();
-	}
+        panel.show();
+    }
 });
 ```
 

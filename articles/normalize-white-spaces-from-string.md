@@ -26,22 +26,22 @@ The significant performance difference between these two classes is that StringB
 
 ```java
 String normalizeWhitespaces(String s) {
-		StringBuffer res = new StringBuffer();
-		int prevIndex = 0;
-		int currIndex = -1;
-		int stringLength = s.length();
-		String searchString = " ";
-		while ((currIndex = s.indexOf(searchString, currIndex + 1)) >= 0) {
-			res.append(s.substring(prevIndex, currIndex + 1));
+        StringBuffer res = new StringBuffer();
+        int prevIndex = 0;
+        int currIndex = -1;
+        int stringLength = s.length();
+        String searchString = " ";
+        while ((currIndex = s.indexOf(searchString, currIndex + 1)) >= 0) {
+            res.append(s.substring(prevIndex, currIndex + 1));
 
-			while (currIndex < stringLength && s.charAt(currIndex) == ' ') {
-				currIndex++;
-			}
+            while (currIndex < stringLength && s.charAt(currIndex) == ' ') {
+                currIndex++;
+            }
 
-			prevIndex = currIndex;
-		}
-		res.append(s.substring(prevIndex));
+            prevIndex = currIndex;
+        }
+        res.append(s.substring(prevIndex));
 
-		return res.toString();
-	}
+        return res.toString();
+    }
 ```

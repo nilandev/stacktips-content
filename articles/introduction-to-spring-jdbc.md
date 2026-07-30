@@ -48,7 +48,7 @@ If you’re using Maven project configuration, you need to add the following Spr
 
 #### Gradle dependency
 
-```java
+```groovy
 'org.springframework:spring-jdbc:4.2.1.RELEASE'
 'commons-dbcp:commons-dbcp:1.4'
 ```

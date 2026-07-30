@@ -30,14 +30,14 @@ To override the default port, we need to specify `server.port` property in appli
 
 In the `application.properties` file, we can set a custom port number for the property server.port
 
-```
+```properties
 server.port = 9090
 ```
 
 In the application.yml file, you can find as follows −
 
-```
-server: 
+```yaml
+server:
     port: 9090
 ```
 
@@ -45,14 +45,14 @@ server:
 
 In the `application.properties` file, we can set a random port number for the property `server.port`
 
-```
+```properties
 server.port = 0
 ```
 
 In the `application.yml file`, you can find it as follows −
 
-```
-server: 
+```yaml
+server:
    port: 0
 ```
 
@@ -62,12 +62,12 @@ server:
 
 We can also set the server port using the java command line argument as follows.
 
-```java
+```bash
 java -jar spring-boot-app.jar --server.port=8009
 ```
 
 or by using the equivalent syntax:
 
-```java
+```bash
 java -jar -Dserver.port=8009 spring-boot-app.jar
 ```

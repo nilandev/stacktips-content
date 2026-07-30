@@ -33,7 +33,7 @@ The following snippet shows how to perform batch insert operation using JdbcTemp
 ```java
 public void insertCars(final List cars) {
     final String inserQuery = "insert into cars (id, model, price) values (?, ?, ?) ";
-    jdbcTemplate.batchUpdate(inserQuery, 
+    jdbcTemplate.batchUpdate(inserQuery,
                 new BatchPreparedStatementSetter() {
         public void setValues(PreparedStatement ps, int i) throws SQLException {
             Car car = cars.get(i);
@@ -57,7 +57,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext appContext = new GenericXmlApplicationContext("beans.xml");
         ICarsDao dao = appContext.getBean("carsDao", ICarsDao.class);
-        
+
         //Batch update statement
         List cars = new ArrayList();
         for (int i = 1; i <= 20; i++) {

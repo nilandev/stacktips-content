@@ -51,7 +51,7 @@ The invocation of adapter procedure involved two basic configurations
 
 InvocationData object is used to provide the invocation configuration information. The configuration parameters are being configured as a JSON object. Preparing invocationData object requires three configuration parameters i.e. adapter name, procedure name and parameters to be passed. For parameters, leave empty array if your procedure is not expecting.
 
-```
+```javascript
 var invocationData = {
         adapter : 'StudentInfo', // adapter name
         procedure : 'getStudentInfos', // procedure name
@@ -65,16 +65,16 @@ Here in this example, I am trying to invoke the SQL adapter created in my previo
 
 We can invoke a procedure from the client application using `WL.Client.invokeProcedure` method. This method take invocationData and call back methods. The call back methods are the failure or success callbacks.
 
-```
+```javascript
 WL.Client.invokeProcedure(invocationData,{
-		onSuccess : loadSQLQueerySuccess, //success callback
-		onFailure : loadSQLQueeryFailure // failure callback
+        onSuccess : loadSQLQueerySuccess, //success callback
+        onFailure : loadSQLQueeryFailure // failure callback
 });
 ```
 
 On succesful invocation of adapter procedure the success callback is getting called with the JSON response. The success JSON response contains the status code and the invocationResult object. Below is the format of JSON, I have received from my SQL Adapter.
 
-```
+```json
 {
    "status":200,
    "invocationContext":null,
@@ -115,27 +115,27 @@ On failure callback, another JSON object is being returned with the error code, 
 
 ## 4\. Complete code Snippet
 
-```
+```javascript
 function loadSQLRecords(){
-	var invocationData = {
-		adapter : 'StudentInfo',
-		procedure : 'getStudentInfos',
-		parameters : []
-	};
+    var invocationData = {
+        adapter : 'StudentInfo',
+        procedure : 'getStudentInfos',
+        parameters : []
+    };
 
-	WL.Client.invokeProcedure(invocationData,{
-		onSuccess : loadSQLQueerySuccess,
-		onFailure : loadSQLQueeryFailure
-	});
+    WL.Client.invokeProcedure(invocationData,{
+        onSuccess : loadSQLQueerySuccess,
+        onFailure : loadSQLQueeryFailure
+    });
 }
 
 function loadSQLQueerySuccess(result){
-	WL.Logger.debug("Retrieve success" +  JSON.stringify(result));
-	displayFeeds(result.invocationResult.resultSet);
+    WL.Logger.debug("Retrieve success" +  JSON.stringify(result));
+    displayFeeds(result.invocationResult.resultSet);
 }
 
 function loadSQLQueeryFailure(result){
-	WL.Logger.error("Retrieve failure");
+    WL.Logger.error("Retrieve failure");
 }
 ```
 
@@ -143,7 +143,7 @@ function loadSQLQueeryFailure(result){
 
 To make the example more simplified, I am just creating an simple list and printing the data in rows. You can also have your user interface more beautified using your skills in JQueery, Sencha or any other frameworks. For now below is my code
 
-```
+```javascript
 function displayFeeds(items){
          var ul = $('#itemsList');
          for (var i = 0; i < items.length; i++) {

@@ -57,14 +57,14 @@ For example, if you want your DIV element should only be visible in large device
 Let’s see the above mentioned classes with a simple example,
 
 ```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>My first Bootstrap page </title>
     <meta name="viewport" content="width=device-width, initialscale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
       div {

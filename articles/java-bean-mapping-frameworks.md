@@ -24,15 +24,15 @@ Applications often consist of similar but different object models, where the dat
 
 For example, if you are creating a Spring Boot API endpoint for adding `Product` data into your DB, it is a best practice to hide your internal DB structure and create a DTO object for the API to pass the JSON payload.
 
-```
+```java
 @PostMapping
 public Movie createMovie(@RequestBody MovieDto movieDto){
 
-    // Convert movieDto to the movie model 
+    // Convert movieDto to the movie model
     Movie movie = new Movie();
     movie.setTitle(movieDto.getTitle())
     //So on..
-			
+
     return repository.save(movie);
 }
 ```
@@ -51,7 +51,7 @@ Dozer supports simple property mapping, complex type mapping, bi-directional map
 
 If you’re using Maven build tools, for using the Dozer framework you need to add the following package dependency
 
-```
+```xml
 <dependency>
     <groupid>com.github.dozermapper</groupid>
     <artifactid>dozer-core</artifactid>
@@ -61,7 +61,7 @@ If you’re using Maven build tools, for using the Dozer framework you need to a
 
 If you’re using the Gradle build system, you can include the following package dependency in your `build.gradle` file.
 
-```
+```groovy
 compile group: 'com.github.dozermapper', name: 'dozer-core', version: '6.4.1'
 ```
 
@@ -81,7 +81,7 @@ This is probably the simplest and quickest option for writing mapping code. It s
 
 If you’re using Maven build tools, for using the MapStruct framework you need to add the following package dependency
 
-```
+```xml
 <properties>
     <org.mapstruct.version>1.3.0.Beta1</org.mapstruct.version>
 </properties>
@@ -97,7 +97,7 @@ If you’re using Maven build tools, for using the MapStruct framework you need 
 
 Optionally, you can add MapStruct your classpath to annotation processor paths as follows.
 
-```
+```xml
 <build>
     <plugins>
         <plugin>
@@ -122,7 +122,7 @@ Optionally, you can add MapStruct your classpath to annotation processor paths a
 
 for gradle,
 
-```
+```groovy
 ...
 plugins {
     ...
@@ -150,7 +150,7 @@ The ModelMapper API is type-safe and refactoring-safe, using the actual code, ra
 
 If you’re using Maven build tools, for using the ModelMapper framework, you need to add the following package dependency
 
-```
+```xml
 <dependency>
     <groupid>org.modelmapper</groupid>
     <artifactid>modelmapper</artifactid>
@@ -160,7 +160,7 @@ If you’re using Maven build tools, for using the ModelMapper framework, you ne
 
 for gradle,
 
-```
+```groovy
 dependencies {
     compile('org.modelmapper:modelmapper:2.2.0')
 }
@@ -178,7 +178,7 @@ The framework allows you to map beans using annotation, XML or API-based configu
 
 If you’re using Maven build tools, for using the ModelMapper framework, you need to add the following package dependency
 
-```
+```xml
 <dependency>
     <groupid>com.googlecode.jmapper-framework</groupid>
     <artifactid>jmapper-core</artifactid>
@@ -188,7 +188,7 @@ If you’re using Maven build tools, for using the ModelMapper framework, you ne
 
 for gradle,
 
-```
+```groovy
 dependencies {
     compile('com.googlecode.jmapper-framework:jmapper-core:1.6.0')
 }

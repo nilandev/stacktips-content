@@ -55,14 +55,14 @@ public class ReverseWords {
 
 **Output**
 
-```
+```text
 Original string: the sky is blue
 Reversed words: blue is sky the
 ```
 
 ### Complexity Analysis:
 
-```
+```text
 Time Complexity: O(n + m)
 Space Complexity: O(m + n)
 ```

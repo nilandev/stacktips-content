@@ -52,7 +52,7 @@ For creating a navigation drawer, first we need to declare the drawer layout in 
 A DrawerLayout can have the layout for list to be shown inside navigation drawer and layout for main content view. In this example, the DrawerLayout contains two child views; one FrameLayout for main content, and a ListView for the navigation drawer. The FrameLayout is used to hold the child view’s populated by a Fragment at runtime.
 
 ```xml
-<android.support.v4.widget.DrawerLayout 
+<android.support.v4.widget.DrawerLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
@@ -196,7 +196,7 @@ public class MainActivity extends Activity {
         getActionBar().setTitle(mTitle);
 
         items = getResources().getStringArray(R.array.menus);
-        // Getting reference to the DrawerLayout 
+        // Getting reference to the DrawerLayout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.drawer_list);
 

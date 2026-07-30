@@ -42,7 +42,7 @@ public class SchedulerConfig {
 
 A Cron expression consists of six sequential fields and is declared as `second, minute, hour, day of month, month, day(s) of week`.
 
-```
+```text
 ┌───────────── second (0-59)
 │ ┌───────────── minute (0 - 59)
 │ │ ┌───────────── hour (0 - 23)
@@ -87,10 +87,10 @@ The `fixedDelay` property makes sure that there is a delay of n millisecond betw
 @Component
 public class MyScheduler {
 
-    @Scheduled(fixedDelay=5000) 
+    @Scheduled(fixedDelay=5000)
     public void doSomething() {
        //This will execute periodically, after the one before finishes
-    } 
+    }
 
 }
 ```
@@ -103,10 +103,10 @@ For example, the previous example can also be written as follows.
 @Component
 public class MyScheduler {
 
-    @Scheduled(fixedDelay=5, timeUnit = TimeUnit.SECONDS) 
+    @Scheduled(fixedDelay=5, timeUnit = TimeUnit.SECONDS)
     public void doSomething() {
        //This will execute periodically, after the one before finishes
-    } 
+    }
 
 }
 ```
@@ -122,7 +122,7 @@ public class MyScheduler {
     @Scheduled(fixedRate=5000)
     public void doSomething() {
        //This will execute periodically
-    } 
+    }
 }
 ```
 
@@ -135,7 +135,7 @@ public class MyScheduler {
     @Scheduled(initailDelay=1000, fixedRate=5000)
     public void doSomething() {
       //This will execute periodically
-    } 
+    }
 }
 ```
 
@@ -234,7 +234,7 @@ implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
 Once Actuator dependencies is added, we need to explicitly include the `scheduledtasks` endpoint by using the following property
 
-```groovy
+```text
 management.endpoints.web.exposure.include=scheduledtasks
 ```
 

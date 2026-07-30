@@ -37,31 +37,31 @@ Add the following Maven depandencies to your project pom.xml file.
     SpringBeanExample
     0.0.1-SNAPSHOT
 
-    
+
         4.0.2.RELEASE
         3.0.3
         3.2.3.RELEASE
-    
 
-    
-        
+
+
+
             org.springframework
             spring-core
             ${org.springframework.version}
-        
 
-        
+
+
             org.springframework
             spring-beans
             ${org.springframework.version}
-        
 
-        
+
+
             org.springframework
             spring-context
             ${org.springframework.version}
-        
-    
+
+
 
 ```
 
@@ -125,17 +125,17 @@ Create a new xml file named `bean.xml` under the root of the project classpath f
 
 ```xml
 
-    
-        
+
+
             Mr.
-        
-        
+
+
             Steve
-        
-        
+
+
             Peterson
-        
-    
+
+
 
 ```
 
@@ -151,15 +151,15 @@ The following example shows how to use the constructor-arg element to initialize
 
 ```xml
 
-        
-            Mr. 
-        
-        
-            Steve 
-        
-        
-            Peterson 
-        
+
+            Mr.
+
+
+            Steve
+
+
+            Peterson
+
 
 ```
 

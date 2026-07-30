@@ -25,29 +25,29 @@ MailChimp REST API V3 exposes methods that allow you to add, manage members of a
 ```php
 <?php
 class ST_Newsletter_Plugin {
-	public function __construct(){ 
-	
-	} 
-	
-	function subscribe($user_id, $user_email){
-		//get api_key and list id from admin settings
-		$api_key = "c8d8c17ae54aui8ujnj43343-us9";
-		$list_id = "2d9e113i8hm";
-		
-		require_once('MailChimp.php');
-		$mailChimp = new MailChimp($api_key);
-		
-		$result = $mailChimp->post("lists/$list_id/members", [
-			'email_address' => $user_email,
-			'status'=> 'subscribed'
-		]);
+    public function __construct(){
 
-		if ($mailChimp->success()) {
-		    echo "success";
-		} else {
-		   echo "fail";
-		}
-	}
+    }
+
+    function subscribe($user_id, $user_email){
+        //get api_key and list id from admin settings
+        $api_key = "c8d8c17ae54aui8ujnj43343-us9";
+        $list_id = "2d9e113i8hm";
+
+        require_once('MailChimp.php');
+        $mailChimp = new MailChimp($api_key);
+
+        $result = $mailChimp->post("lists/$list_id/members", [
+            'email_address' => $user_email,
+            'status'=> 'subscribed'
+        ]);
+
+        if ($mailChimp->success()) {
+            echo "success";
+        } else {
+           echo "fail";
+        }
+    }
 }
 
 ?>

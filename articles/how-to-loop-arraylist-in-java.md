@@ -38,52 +38,52 @@ import java.util.List;
 
 public class ArrayListDemo {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// adding items to list
-		// in real time you might get this data from a db or from other sources
-		// We are hard-coding the values here to simplify this example
-		List list = new ArrayList();
-		list.add(new NewsObject(1001,
-				"Soldier beheaded in suspected terror attack in London",
-				"en_in"));
-		list.add(new NewsObject(1002,
-				"Passive smoking can make kids aggressive", "en_in"));
-		list.add(new NewsObject(
-				1003,
-				"Police prepare to question BCCI chief's son-in-law for betting links",
-				"en_in"));
-		list.add(new NewsObject(1004,
-				"Shun body tattoos if you wish to join armed forces", "en_in"));
-		list.add(new NewsObject(1005,
-				"Man linked to Boston bombings killed by FBI agent", "en_in"));
+        // adding items to list
+        // in real time you might get this data from a db or from other sources
+        // We are hard-coding the values here to simplify this example
+        List list = new ArrayList();
+        list.add(new NewsObject(1001,
+                "Soldier beheaded in suspected terror attack in London",
+                "en_in"));
+        list.add(new NewsObject(1002,
+                "Passive smoking can make kids aggressive", "en_in"));
+        list.add(new NewsObject(
+                1003,
+                "Police prepare to question BCCI chief's son-in-law for betting links",
+                "en_in"));
+        list.add(new NewsObject(1004,
+                "Shun body tattoos if you wish to join armed forces", "en_in"));
+        list.add(new NewsObject(1005,
+                "Man linked to Boston bombings killed by FBI agent", "en_in"));
 
-		System.out.println("#1. Looping using regular for loop");
-		for (int i = 0; i < list.size(); i++) {
-			NewsObject news = (NewsObject) list.get(i);
-			System.out.println(news);
-		}
+        System.out.println("#1. Looping using regular for loop");
+        for (int i = 0; i < list.size(); i++) {
+            NewsObject news = (NewsObject) list.get(i);
+            System.out.println(news);
+        }
 
-		System.out.println("#2.  Looping using advance for loop");
-		for (NewsObject news : list) {
-			System.out.println(news);
-		}
+        System.out.println("#2.  Looping using advance for loop");
+        for (NewsObject news : list) {
+            System.out.println(news);
+        }
 
-		System.out.println("#3. Looping using while loop");
-		int j = 0; // initilisation
-		while (list.size() > j) { // condition checking
-			NewsObject news = (NewsObject) list.get(j);
-			System.out.println(news);
-			j++; // iteration
-		}
+        System.out.println("#3. Looping using while loop");
+        int j = 0; // initilisation
+        while (list.size() > j) { // condition checking
+            NewsObject news = (NewsObject) list.get(j);
+            System.out.println(news);
+            j++; // iteration
+        }
 
-		System.out.println("#4. Looping using iterator");
-		Iterator iterator = (Iterator) list.iterator();
-		while (iterator.hasNext()) {
-			NewsObject news = (NewsObject) iterator.next();
-			System.out.println(news);
-		}
-	}
+        System.out.println("#4. Looping using iterator");
+        Iterator iterator = (Iterator) list.iterator();
+        while (iterator.hasNext()) {
+            NewsObject news = (NewsObject) iterator.next();
+            System.out.println(news);
+        }
+    }
 
 }
 ```
@@ -92,46 +92,46 @@ Here in my above example, I am storing NewsObject object in my ArrayList.
 
 ```java
 public class NewsObject {
-	int id;
-	String headline;
-	String edition;
+    int id;
+    String headline;
+    String edition;
 
-	NewsObject(int id, String headline, String edition) {
-		this.id = id;
-		this.headline = headline;
-		this.edition = edition;
+    NewsObject(int id, String headline, String edition) {
+        this.id = id;
+        this.headline = headline;
+        this.edition = edition;
 
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getHeadline() {
-		return headline;
-	}
+    public String getHeadline() {
+        return headline;
+    }
 
-	public void setHeadline(String headline) {
-		this.headline = headline;
-	}
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
 
-	public String getEdition() {
-		return edition;
-	}
+    public String getEdition() {
+        return edition;
+    }
 
-	public void setEdition(String edition) {
-		this.edition = edition;
-	}
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
 
-	@Override
-	public String toString() {
-		return "NewsObject : " + "Id = " + id + ", Headline=" + headline
-				+ ", Editon=" + edition;
-	}
+    @Override
+    public String toString() {
+        return "NewsObject : " + "Id = " + id + ", Headline=" + headline
+                + ", Editon=" + edition;
+    }
 
 }
 ```

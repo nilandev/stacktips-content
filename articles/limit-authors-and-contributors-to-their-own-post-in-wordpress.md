@@ -26,9 +26,9 @@ You can do this by installing third-party WordPress plugin such as [View Own Pos
 
 This little code hack will help you to limit your authors and contributors to their own posts in WordPress admin. Copy and past the following code in you function.php file.
 
-```
+```php
 if (current_user_can('contributor') || current_user_can('author')){
-	add_filter('parse_query', 'filter_my_own_posts_query' );
+    add_filter('parse_query', 'filter_my_own_posts_query' );
 }
 
 function filter_my_own_posts_query( $wp_query ) {

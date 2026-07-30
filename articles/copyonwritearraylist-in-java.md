@@ -50,7 +50,7 @@ public class _4a_ConcurrentModificationException {
 
 Notice that in the above program, we are modifying the list while iterating hence the application will throw `ConcurrentModificationException`.
 
-```
+```text
 Exception in thread "main" java.util.ConcurrentModificationException
     at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
     at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
@@ -64,19 +64,19 @@ The `CopyOnWriteArrayList` class makes a fresh copy of the underlying array whil
 ```java
 public class _4b_CopyOnWriteArrayList {
 
-    public static void main(String[] args) {  
+    public static void main(String[] args) {
         List<String> list = new CopyOnWriteArrayList<>();
         list.add("Apple");
         list.add("Banana");
-        list.add("Guava"); 
+        list.add("Guava");
         list.add("Grapes");
 
-        for (String value : list) {  
+        for (String value : list) {
             if (value.equals("Banana")) {
                 list.remove("Grapes");
             }
         }
-        System.out.println(list);  
-    }  
+        System.out.println(list);
+    }
 }
 ```

@@ -68,7 +68,7 @@ public class UserService {
     }
 
     public void registerUser(User user) {
-        userRepository.saveUser(user);      
+        userRepository.saveUser(user);
 
         emailService.emailUser("User registered successfully!",
                 user.getEmail());
@@ -112,7 +112,7 @@ In Spring, this can be done using a XML configuration, Java Configuration or ann
 
 Spring Beans can be explicitly defined in an XML configuration file. The Spring IOC reads the XML file and registers all the beans defined.
 
-```java
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="<http://www.springframework.org/schema/beans>"
     xmlns:xsi="<http://www.w3.org/2001/XMLSchema-instance>"
@@ -120,7 +120,7 @@ Spring Beans can be explicitly defined in an XML configuration file. The Spring 
     <http://www.springframework.org/schema/beans/spring-beans.xsd>">
 
     <bean id="userService" class="com.stacktips.app.service.UserService">
-        <!-- Configure properties and dependencies needed -->        
+        <!-- Configure properties and dependencies needed -->
     </bean>
 </beans>
 ```
@@ -158,9 +158,9 @@ The `@ComponentScan` annotation, searches for all classes that are marked with s
 For example, if you have a package `com.stacktips.app` that contains Spring-managed components, you can use `@ComponentScan` to register all of them with the Spring container.
 
 ```java
-@Configuration  
-@ComponentScan("com.stacktips.app")  
-public class AppConfig {  
+@Configuration
+@ComponentScan("com.stacktips.app")
+public class AppConfig {
 
 }
 ```

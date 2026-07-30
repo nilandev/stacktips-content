@@ -24,7 +24,7 @@ The git clone is a command-line utility that is used to make a local copy of a r
 
 ##### To clone a repository
 
-```
+```bash
 git clone <remote_repo>
 ```
 
@@ -34,6 +34,6 @@ The above command fetches all the branches and checking out one (default master)
 
 With Git 1.7.10 and later, add –single-branch to prevent fetching of all branches. Example:
 
-```
+```bash
 git clone -b feature-001-branch --single-branch <remote_repo>
 ```

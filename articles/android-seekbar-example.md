@@ -100,7 +100,7 @@ We can add a SeekBar widget using element. `android:max` property is basically u
         </item>
         <item>
             <shape>
-            	<stroke android:width="1.0px" android:color="@color/rounded_container_border" />
+                <stroke android:width="1.0px" android:color="@color/rounded_container_border" />
                 <gradient android:startColor="@color/rounded_container_bg" android:endColor="@color/rounded_container_bg" android:angle="270.0" />
                 <corners android:radius="10.0dip" />
 
@@ -173,32 +173,32 @@ We are good with layout design, lets move a bit into Java coding. Below is my ac
 ```java
 public class SeekbarActivity extends Activity {
 
-	private SeekBar volumeControl = null;
+    private SeekBar volumeControl = null;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_seekbar);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_seekbar);
 
-		volumeControl = (SeekBar) findViewById(R.id.volume_bar);
+        volumeControl = (SeekBar) findViewById(R.id.volume_bar);
 
-		volumeControl.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-			int progressChanged = 0;
+        volumeControl.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            int progressChanged = 0;
 
-			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
-				progressChanged = progress;
-			}
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser){
+                progressChanged = progress;
+            }
 
-			public void onStartTrackingTouch(SeekBar seekBar) {
-				// TODO Auto-generated method stub
-			}
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // TODO Auto-generated method stub
+            }
 
-			public void onStopTrackingTouch(SeekBar seekBar) {
-				Toast.makeText(SeekbarActivity.this,"seek bar progress:"+progressChanged, 
-						Toast.LENGTH_SHORT).show();
-			}
-		});
-	}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast.makeText(SeekbarActivity.this,"seek bar progress:"+progressChanged,
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
 }
 ```

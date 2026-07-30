@@ -34,7 +34,7 @@ SDKMan is a command line utility used for managing multiple versions of SDKs. Th
 
 To get the list of available java SDK's using SDKMan, use
 
-```
+```bash
 sdk list java
 ```
 
@@ -44,25 +44,25 @@ This will return a list of all available Java versions
 
 You can filter a specific Java version using \`grep\` command.  
 
-```
+```bash
 sdk list java | grep 17
 ```
 
 Now to install a specific version, you need to use the distribution identifier
 
-```
+```bash
 sdk install java 21-amzn
 ```
 
 To check the list of installed Java versions
 
-```
+```bash
 sdk list java | grep installed
 ```
 
 Use specific versions of Java
 
-```
+```bash
 sdk use java 21-amzn
 ```
 
@@ -72,7 +72,7 @@ For instructions on how to install using the graphical `PKG` and `MSI` insta
 
 To ensure that Java is installed correctly, open a Command Prompt or PowerShell window and enter the following command.
 
-```
+```bash
 java -version
 ```
 
@@ -82,7 +82,7 @@ java -version
 
 -   Type `brew search openjdk` to find all available Java-related formulas.
 
-```
+```bash
 $ brew search openjdk
 ==> Formulae
 openjdk ✔           openjdk@11          openjdk@17 ✔        openjdk@8
@@ -97,7 +97,7 @@ To show the formula details, you can use the `brew info` command. The Java form
 
 The `openjdk@17` formula contains the Java 17LTS version
 
-```
+```bash
 $ brew info openjdk@17
 ==> openjdk@17: stable 17.0.4.1 (bottled) [keg-only]
 Development kit for the Java programming language
@@ -131,6 +131,6 @@ build-error: 65 (30 days)
 
 Now install the Open JDK 17:
 
-```
+```bash
 brew install openjdk@17
 ```

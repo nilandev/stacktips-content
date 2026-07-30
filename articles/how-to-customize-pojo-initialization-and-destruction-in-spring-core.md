@@ -38,7 +38,7 @@ Notice that in the above code snippet, we have specified `onStart` and `onDestro
 public class Pizza {
     private String name;
     private double price;
-    
+
     public Pizza() { }
 
     public String getName() {

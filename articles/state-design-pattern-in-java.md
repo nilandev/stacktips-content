@@ -42,33 +42,33 @@ The Player class defines the different actions a player can perform.
 ```java
 public class Player {
 
-	public void attack() {
-		System.out.println("Attack");
-	}
+    public void attack() {
+        System.out.println("Attack");
+    }
 
-	public void fireBumb() {
-		System.out.println("Fire Bomb");
-	}
+    public void fireBumb() {
+        System.out.println("Fire Bomb");
+    }
 
-	public void fireGunblade() {
-		System.out.println("Fire Gunblade");
-	}
+    public void fireGunblade() {
+        System.out.println("Fire Gunblade");
+    }
 
-	public void fireLaserPistol() {
-		System.out.println("Laser Pistols");
-	}
+    public void fireLaserPistol() {
+        System.out.println("Laser Pistols");
+    }
 
-	public void firePistol() {
-		System.out.println("Fire Pistol");
-	}
+    public void firePistol() {
+        System.out.println("Fire Pistol");
+    }
 
-	public void survive() {
-		System.out.println("Surviving!");
-	}
+    public void survive() {
+        System.out.println("Surviving!");
+    }
 
-	public void dead() {
-		System.out.println("Dead! Game Over");
-	}
+    public void dead() {
+        System.out.println("Dead! Game Over");
+    }
 
 }
 ```
@@ -80,21 +80,21 @@ Now let us define our game context class which defines the different actions con
 ```java
 public class GameContext {
 
-	private Player player = new Player();
+    private Player player = new Player();
 
-	public void gameAction(String state) {
-		if (state == "healthy") {
-			player.attack();
-			player.fireBumb();
-			player.fireGunblade();
-			player.fireLaserPistol();
-		} else if (state == "survival") {
-			player.survive();
-			player.firePistol();
-		} else if (state == "dead") {
-			player.dead();
-		}
-	}
+    public void gameAction(String state) {
+        if (state == "healthy") {
+            player.attack();
+            player.fireBumb();
+            player.fireGunblade();
+            player.fireLaserPistol();
+        } else if (state == "survival") {
+            player.survive();
+            player.firePistol();
+        } else if (state == "dead") {
+            player.dead();
+        }
+    }
 }
 ```
 
@@ -106,8 +106,8 @@ Before we begin with the state design pattern, let us have a look into the class
 [![State Design Pattern Java](/media/articles/224/State-Design-Pattern-Java.png)](http://stacktips.com)1\. Define an interface named PlayerState that defines an action method. The access() method takes the instance of Player class. This is required to perform the player action.
 
 ```java
-public interface PlayerState {	
-	void action(Player p);
+public interface PlayerState {
+    void action(Player p);
 }
 ```
 
@@ -116,30 +116,30 @@ public interface PlayerState {
 ```java
 public class HealthyState implements PlayerState {
 
-	@Override
-	public void action(Player p) {
-		p.attack();
-		p.fireBumb();
-		p.fireGunblade();
-		p.fireLaserPistol();
-	}
+    @Override
+    public void action(Player p) {
+        p.attack();
+        p.fireBumb();
+        p.fireGunblade();
+        p.fireLaserPistol();
+    }
 }
 
 public class SurvivalState implements PlayerState {
 
-	@Override
-	public void action(Player p) {
-		p.survive();
-		p.firePistol();
-	}
+    @Override
+    public void action(Player p) {
+        p.survive();
+        p.firePistol();
+    }
 }
 
 public class DeadState implements PlayerState {
 
-	@Override
-	public void action(Player p) {
-		p.dead();
-	}
+    @Override
+    public void action(Player p) {
+        p.dead();
+    }
 }
 ```
 
@@ -147,17 +147,17 @@ public class DeadState implements PlayerState {
 
 ```java
 public class GameContext {
-	
-	private PlayerState state = null;
-	private Player player = new Player();
 
-	public void setState(PlayerState state) {
-		this.state = state;
-	}
+    private PlayerState state = null;
+    private Player player = new Player();
 
-	public void gameAction() {
-		state.action(player);
-	}
+    public void setState(PlayerState state) {
+        this.state = state;
+    }
+
+    public void gameAction() {
+        state.action(player);
+    }
 }
 ```
 
@@ -166,29 +166,29 @@ public class GameContext {
 ```java
 public class GameTest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		GameContext context = new GameContext();
+        GameContext context = new GameContext();
 
-		context.setState(new HealthyState());
-		context.gameAction();
-		System.out.println("*****");
+        context.setState(new HealthyState());
+        context.gameAction();
+        System.out.println("*****");
 
-		context.setState(new SurvivalState());
-		context.gameAction();
-		System.out.println("*****");
+        context.setState(new SurvivalState());
+        context.gameAction();
+        System.out.println("*****");
 
-		context.setState(new DeadState());
-		context.gameAction();
-		System.out.println("*****");
+        context.setState(new DeadState());
+        context.gameAction();
+        System.out.println("*****");
 
-	}
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 Attack
 Fire Bomb
 Fire Gunblade

@@ -25,22 +25,22 @@ Bootstrap allows you to create a series of buttons together in a single button g
 ![Button groups in Bootstrap 3](/media/articles/121/Button-groups-in-Bootstrap-3.png)
 
 ```js
-<!DOCTYPE html> 
-<html lang="en">  
-<head>    
-<title>My first Bootstrap page </title>    
-<meta name="viewport" content="width=device-width, initialscale=1">    
-<link href="CSS/bootstrap.min.css" rel="stylesheet">   
-<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My first Bootstrap page </title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link href="CSS/bootstrap.min.css" rel="stylesheet">
+<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script type="text/javascript" src="JS/bootstrap.min.js"></script> 
-</head> 
+<script type="text/javascript" src="JS/bootstrap.min.js"></script>
+</head>
 <body>
-	<div class="btn-group" style="margin:50px">
-	  	<button class="btn btn-wraning" type="button">Find by name</button>
-	  	<button type="button" class="btn btn-success">Find by location</button>  
-		<button type="button" class="btn btn-warning">Find by postcode</button>  
-	</div>
+    <div class="btn-group" style="margin:50px">
+        <button class="btn btn-wraning" type="button">Find by name</button>
+        <button type="button" class="btn btn-success">Find by location</button>
+        <button type="button" class="btn btn-warning">Find by postcode</button>
+    </div>
 </body>
 </html>
 ```

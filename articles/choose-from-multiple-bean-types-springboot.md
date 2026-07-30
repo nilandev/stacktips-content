@@ -33,7 +33,7 @@ public interface MailSender {
 }
 
 @Service
-public class DefaultMailSender implements MailSender {  
+public class DefaultMailSender implements MailSender {
     private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);
 
     @Override
@@ -43,10 +43,10 @@ public class DefaultMailSender implements MailSender {
 }
 
 @Service
-public class SesMailSender implements MailSender {  
+public class SesMailSender implements MailSender {
     private final Logger logger = LoggerFactory.getLogger(HttpMailSender.class);
 
-    @Override  
+    @Override
     public void sendMail(String from, String to, String subject) {
         logger.info("Sending email using SesMailSender");
     }
@@ -67,7 +67,7 @@ public class MyApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail"); 
+        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");
     }
 
     public static void main(String[] args) {
@@ -78,7 +78,7 @@ public class MyApplication implements CommandLineRunner {
 
 When you run the application, it will return the following error;
 
-```java
+```text
 ***************************
 APPLICATION FAILED TO START
 ***************************
@@ -107,16 +107,16 @@ When there are several bean implementations available, we can choose the primary
 For example;
 
 ```java
-@Primary  
+@Primary
 @Service
-public class DefaultMailSender implements MailSender {  
+public class DefaultMailSender implements MailSender {
 
-    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);  
+    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);
 
-    @Override  
-    public void sendMail(String from, String to, String subject) {  
-        logger.info("Sending email using DefaultMailSender");  
-    }  
+    @Override
+    public void sendMail(String from, String to, String subject) {
+        logger.info("Sending email using DefaultMailSender");
+    }
 }
 ```
 
@@ -131,23 +131,23 @@ You can associate qualifier values with specific arguments, narrowing the set of
 For example;
 
 ```java
-@SpringBootApplication  
-public class MyApplication implements CommandLineRunner {  
+@SpringBootApplication
+public class MyApplication implements CommandLineRunner {
 
-    private final MailSender mailSender;  
+    private final MailSender mailSender;
 
-    public MyApplication(@Qualifier("sesMailSender") MailSender mailSender) {  
-        this.mailSender = mailSender;  
-    }  
+    public MyApplication(@Qualifier("sesMailSender") MailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
-    @Override  
-    public void run(String... args) throws Exception {  
-        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");  
-    }  
+    @Override
+    public void run(String... args) throws Exception {
+        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");
+    }
 
-    public static void main(String[] args) {  
-        SpringApplication.run(MyApplication.class, args);  
-    }  
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
 }
 
 ```
@@ -161,49 +161,49 @@ Both approaches defined above uses static approach to inject bean types. To achi
 Let us create a factory class `EmailService`:
 
 ```java
-@Component  
-public class MailService {  
+@Component
+public class MailService {
 
-    private final ApplicationContext context;  
+    private final ApplicationContext context;
 
-    public MailService(ApplicationContext context) {  
-        this.context = context;  
-    }  
+    public MailService(ApplicationContext context) {
+        this.context = context;
+    }
 
-    public MailSender getMailSender(String type) {  
-        if ("ses".equals(type)) {  
-            return context.getBean("sesMailSender", SesMailSender.class);  
-        }  
+    public MailSender getMailSender(String type) {
+        if ("ses".equals(type)) {
+            return context.getBean("sesMailSender", SesMailSender.class);
+        }
 
-        return context.getBean("defaultMailSender", DefaultMailSender.class);  
-    }  
+        return context.getBean("defaultMailSender", DefaultMailSender.class);
+    }
 
-    public void sendMail(String from, String to, String subject) {  
-        getMailSender("ses").sendMail(from, to, subject);  
-    }  
+    public void sendMail(String from, String to, String subject) {
+        getMailSender("ses").sendMail(from, to, subject);
+    }
 }
 ```
 
 Now in our `MainApplication` class, instead of injecting `MailSender` bean, we can use `MailService` type instead.
 
 ```java
-@SpringBootApplication  
-public class MyApplication implements CommandLineRunner {  
+@SpringBootApplication
+public class MyApplication implements CommandLineRunner {
 
-    private final MailService mailService;  
+    private final MailService mailService;
 
-    public MyApplication(MailService mailService) {  
-        this.mailService = mailService;  
-    }  
+    public MyApplication(MailService mailService) {
+        this.mailService = mailService;
+    }
 
-    @Override  
-    public void run(String... args) throws Exception {  
-        mailService.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");  
-    }  
+    @Override
+    public void run(String... args) throws Exception {
+        mailService.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");
+    }
 
-    public static void main(String[] args) {  
-        SpringApplication.run(MyApplication.class, args);  
-    }  
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
 }
 ```
 
@@ -216,75 +216,75 @@ This is similar to Option-4, but using the custom annotation. This approach offe
 Let us first define a custom annotation:
 
 ```java
-import java.lang.annotation.ElementType;  
-import java.lang.annotation.Retention;  
-import java.lang.annotation.RetentionPolicy;  
-import java.lang.annotation.Target;  
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)  
-@Retention(RetentionPolicy.RUNTIME)  
-public @interface MailSenderSelector {  
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface MailSenderSelector {
 
-    String value();  
+    String value();
 }
 ```
 
 Now use the annotation in your `MailSender` services
 
 ```java
-@Service  
-@MailSenderSelector("default")  
-public class DefaultMailSender implements MailSender {  
+@Service
+@MailSenderSelector("default")
+public class DefaultMailSender implements MailSender {
 
-    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);  
+    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);
 
-    @Override  
-    public void sendMail(String from, String to, String subject) {  
-        logger.info("Sending email using DefaultMailSender");  
-    }  
+    @Override
+    public void sendMail(String from, String to, String subject) {
+        logger.info("Sending email using DefaultMailSender");
+    }
 }
 
-@Service  
-@MailSenderSelector("ses")  
-public class SesMailSender implements MailSender {  
+@Service
+@MailSenderSelector("ses")
+public class SesMailSender implements MailSender {
 
-    private final Logger logger = LoggerFactory.getLogger(SesMailSender.class);  
+    private final Logger logger = LoggerFactory.getLogger(SesMailSender.class);
 
-    @Override  
-    public void sendMail(String from, String to, String subject) {  
-        logger.info("Sending email using SesMailSender");  
-    }  
+    @Override
+    public void sendMail(String from, String to, String subject) {
+        logger.info("Sending email using SesMailSender");
+    }
 }
 ```
 
 Now we will implement a bean factory that checks this condition at runtime and selects the appropriate bean types based on the argument passed to the annotation.
 
 ```java
-@Component  
-public class MailService {  
+@Component
+public class MailService {
 
-    private final ApplicationContext context;  
+    private final ApplicationContext context;
 
-    public MailService(ApplicationContext context) {  
-        this.context = context;  
-    }  
+    public MailService(ApplicationContext context) {
+        this.context = context;
+    }
 
-    public MailSender getMailSender(String type) {  
-        Map<String, Object> beansWithAnnotation = context.getBeansWithAnnotation(MailSenderSelector.class);  
-        Optional<Object> matchingBean = beansWithAnnotation.values().stream()  
-                .filter(bean -> bean.getClass().getAnnotation(MailSenderSelector.class).value().equals(type))  
-                .findFirst();  
+    public MailSender getMailSender(String type) {
+        Map<String, Object> beansWithAnnotation = context.getBeansWithAnnotation(MailSenderSelector.class);
+        Optional<Object> matchingBean = beansWithAnnotation.values().stream()
+                .filter(bean -> bean.getClass().getAnnotation(MailSenderSelector.class).value().equals(type))
+                .findFirst();
 
-        if (matchingBean.isEmpty()) {  
-            throw new IllegalArgumentException("No bean found for type: " + type);  
-        }  
+        if (matchingBean.isEmpty()) {
+            throw new IllegalArgumentException("No bean found for type: " + type);
+        }
 
-        return (MailSender) matchingBean.get();  
-    }  
+        return (MailSender) matchingBean.get();
+    }
 
-    public void sendMail(String from, String to, String subject) {  
-        getMailSender("ses").sendMail(from, to, subject);  
-    }  
+    public void sendMail(String from, String to, String subject) {
+        getMailSender("ses").sendMail(from, to, subject);
+    }
 }
 ```
 
@@ -293,29 +293,29 @@ public class MailService {
 Another approach is to define custom conditions to match the bean types to inject. This method determines whether a condition is met based on the application context and metadata.
 
 ```java
-import org.springframework.context.annotation.Condition;  
-import org.springframework.context.annotation.ConditionContext;  
-import org.springframework.core.type.AnnotatedTypeMetadata;  
+import org.springframework.context.annotation.Condition;
+import org.springframework.context.annotation.ConditionContext;
+import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.stereotype.Component;
 
-@Component  
-public class DefaultMailSenderCondition implements Condition {  
+@Component
+public class DefaultMailSenderCondition implements Condition {
 
-    @Override  
-    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { 
-        String mailSender = context.getEnvironment().getProperty("email.mail-sender"); 
-        return null== mailSender || mailSender.trim().equals("default");  
-    }  
+    @Override
+    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+        String mailSender = context.getEnvironment().getProperty("email.mail-sender");
+        return null== mailSender || mailSender.trim().equals("default");
+    }
 }
 
-@Component  
-public class SesMailSenderCondition implements Condition {  
+@Component
+public class SesMailSenderCondition implements Condition {
 
-    @Override  
-    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) { 
-        String mailSender = context.getEnvironment().getProperty("email.mail-sender"); 
-        return null != mailSender && mailSender.trim().equals("ses");  
-    }  
+    @Override
+    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+        String mailSender = context.getEnvironment().getProperty("email.mail-sender");
+        return null != mailSender && mailSender.trim().equals("ses");
+    }
 }
 ```
 
@@ -324,7 +324,7 @@ The two conditions above uses the `email.mail-sender` application property value
 **application.properties**
 
 ```properties
-#default or ses  
+#default or ses
 email.mail-sender=ses
 ```
 
@@ -333,56 +333,56 @@ In this case, the condition for `SesMailSender` will be true, and thus, `SesMail
 Now from mail sender implementations, we can use `@Conditional` annotation by passing the corresponding condition that dictates which bean should be registered.
 
 ```java
-public interface MailSender {  
-    void sendMail(String from, String to, String subject);  
+public interface MailSender {
+    void sendMail(String from, String to, String subject);
 }
 
-@Primary  
-@Component  
-@Conditional(DefaultMailSenderCondition.class)  
-public class DefaultMailSender implements MailSender {  
+@Primary
+@Component
+@Conditional(DefaultMailSenderCondition.class)
+public class DefaultMailSender implements MailSender {
 
-    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);  
+    private final Logger logger = LoggerFactory.getLogger(DefaultMailSender.class);
 
-    @Override  
-    public void sendMail(String from, String to, String subject) {  
-        logger.info("Sending email using DefaultMailSender");  
-    }  
+    @Override
+    public void sendMail(String from, String to, String subject) {
+        logger.info("Sending email using DefaultMailSender");
+    }
 }
 
-@Service  
-@Conditional(SesMailSenderCondition.class)  
-public class SesMailSender implements MailSender {  
+@Service
+@Conditional(SesMailSenderCondition.class)
+public class SesMailSender implements MailSender {
 
-    private final Logger logger = LoggerFactory.getLogger(SesMailSender.class);  
+    private final Logger logger = LoggerFactory.getLogger(SesMailSender.class);
 
-    @Override  
-    public void sendMail(String from, String to, String subject) {  
-        logger.info("Sending email using SesMailSender");  
-    }  
+    @Override
+    public void sendMail(String from, String to, String subject) {
+        logger.info("Sending email using SesMailSender");
+    }
 }
 ```
 
 There is no change in the main application class, we inject the `MailSender` instance using the constructor based injection.
 
 ```java
-@SpringBootApplication  
-public class MyApplication implements CommandLineRunner {  
+@SpringBootApplication
+public class MyApplication implements CommandLineRunner {
 
-    private final MailSender mailSender;  
+    private final MailSender mailSender;
 
-    public MyApplication(MailSender mailSender) {  
-        this.mailSender = mailSender;  
-    }  
+    public MyApplication(MailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
-    @Override  
-    public void run(String... args) throws Exception {  
-        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");  
-    }  
+    @Override
+    public void run(String... args) throws Exception {
+        mailSender.sendMail("hello@test.com", "john.doe@gmail.com", "Test mail");
+    }
 
-    public static void main(String[] args) {  
-        SpringApplication.run(MyApplication.class, args);  
-    }  
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
 }
 ```
 

@@ -100,14 +100,14 @@ The CardView layout declaration is pretty straight forward. CardView widget all
 For using the custom attributes in XML, you need to add the following namespace declaration to your layout parent.
 
 ```xml
-<android.support.v7.widget.CardView 
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:cardView="http://schemas.android.com/apk/res-auto"
-	... >
+    ... >
 
-		... 
-		....
+        ...
+        ....
 </android.support.v7.widget.CardView>
 ```
 

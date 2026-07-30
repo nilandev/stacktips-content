@@ -64,7 +64,7 @@ Click on “adapter” folder and then New-> Worklight Adapter. You can see a di
 
 Now let us move to the mysql part. We need to have the database server running. I assume that you have installed the mysql and have a database running. Create a table with and fill with some data. You may use the below SQL command
 
-```
+```sql
 USE `ibmworklight`;
 DROP TABLE IF EXISTS `studentinfo`;
 CREATE TABLE `studentinfo` (`sid` varchar(20), `sname` varchar(20), `sclass` varchar(20), `sgrade` varchar(20));
@@ -85,7 +85,7 @@ Open your adapter .xml file. We need to change the database configurations. Driv
 
 As I am running my database in my local system, I have provided localhost and default port as 3306.
 
-```
+```xml
 <dataSourceDefinition>
 
 <driverClass>com.mysql.jdbc.Driver</driverClass>
@@ -103,14 +103,14 @@ As I am running my database in my local system, I have provided localhost and de
 
 Now, For making my explanation simplified, I am implementing only one procedure. Here in my example “getStudentInfos” procedures fetches all of the available records from “studentinfo” table.
 
-```
+```javascript
 var selectStatement = WL.Server.createSQLStatement("select * from studentinfo");
-function getStudentInfos() {	
+function getStudentInfos() {
 
-	return WL.Server.invokeSQLStatement({
-		preparedStatement : selectStatement,
-		parameters : []
-	});
+    return WL.Server.invokeSQLStatement({
+        preparedStatement : selectStatement,
+        parameters : []
+    });
 }
 ```
 

@@ -74,37 +74,37 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	public void init() throws ServletException {
-		// Servlet initialization code here
-		super.init();
-	}
+    @Override
+    public void init() throws ServletException {
+        // Servlet initialization code here
+        super.init();
+    }
 
-	@Override
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
 
-		// Set response content type
-		response.setContentType("text/html");
+        // Set response content type
+        response.setContentType("text/html");
 
-		// Actual logic goes here.
-		PrintWriter out = response.getWriter();
-		out.println("<h1>Hurray !!\n Servlet is Working!! </h1>");
-	}
+        // Actual logic goes here.
+        PrintWriter out = response.getWriter();
+        out.println("<h1>Hurray !!\n Servlet is Working!! </h1>");
+    }
 
-	@Override
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException {
 
-	}
+    }
 
-	@Override
-	public void destroy() {
-		// resource release
-		super.destroy();
-	}
+    @Override
+    public void destroy() {
+        // resource release
+        super.destroy();
+    }
 }
 ```
 
@@ -117,19 +117,19 @@ Create a new file “web.xml” under WebContent/WEB-INF folder and paste below 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>HelloServlet</display-name>
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    <display-name>HelloServlet</display-name>
 
-	<servlet>
-		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>com.javatechig.HelloServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>HelloServlet</servlet-name>
-		<url-pattern>/HelloServlet</url-pattern>
-	</servlet-mapping>
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.javatechig.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 ```

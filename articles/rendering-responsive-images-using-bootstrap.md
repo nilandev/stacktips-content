@@ -40,7 +40,7 @@ Following are the <img> classes which can be used to style any image.
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head> 
+</head>
      <body>
        <div class="container">
          <div class="page-header"><h1>Hello Bootstrap!!</h1></div>
@@ -48,18 +48,18 @@ Following are the <img> classes which can be used to style any image.
 
           <!-- Start content panel -->
            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-           
+
            <ul class="list-inline">
               <li><img src="images/son.jpg" class="img-responsive" ></li>
               <li><img src="images/son.jpg" class="img-responsive" ></li>
           </ul>
 
-		  <ul class = "list-inline">
+          <ul class = "list-inline">
           <li><img src="images/temple.jpg" class="img-rounded img-responsive"></li>
           <li><img src="images/son.jpg" class="img-circle img-responsive"></li>
           <li><img src="images/rock.jpg" class="img-thumbnail img-responsive"></li>
-		  </ul>
-         </div> <!-- End row --> 
+          </ul>
+         </div> <!-- End row -->
        </div> <!-- End container -->
 
       <!-- Start footer -->

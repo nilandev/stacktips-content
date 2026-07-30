@@ -28,19 +28,19 @@ Here is a list of some useful commands to help you create and manage a new branc
 
 Create the branch on your local machine and switch to this branch:
 
-```c
+```bash
 $ git checkout -b <new branch name>
 ```
 
 Change working branch:
 
-```c
+```bash
 $ git checkout <new branch name>
 ```
 
 Push the branch to remote git:
 
-```c
+```bash
 $ git push origin <new branch name>
 ```
 
@@ -50,19 +50,19 @@ When you want to commit something in your branch, be sure to be in your branch. 
 
 You can see all the local branches by using:
 
-```c
+```bash
 $ git branch
 ```
 
 View list of all branches, including remote branches:
 
-```c
+```bash
 $ git branch -a
 ```
 
 View list of only remote branches:
 
-```c
+```bash
 $ git branch -r
 ```
 
@@ -70,25 +70,25 @@ $ git branch -r
 
 Add a new remote for your branch:
 
-```c
+```bash
 $ git remote add <remote branch name>
 ```
 
 Push changes from your commit into your branch:
 
-```c
+```bash
 $ git push <new branch remote name>  <new branch name>
 ```
 
 Update your branch when the original branch from the official repository has been updated:
 
-```c
+```bash
 $ git fetch <remote branch name>
 ```
 
 Then you need to apply to merge changes if your branch is derivated from the develop you need to do:
 
-```c
+```bash
 $ git merge <name of remote branch>/develop
 ```
 
@@ -96,18 +96,18 @@ $ git merge <name of remote branch>/develop
 
 Delete local branch: -d option stands for –delete
 
-```c
+```bash
 $ git branch -d <branch_name>
 ```
 
 Git local branch force: -D option stands for –delete –force
 
-```c
+```bash
 $ git branch -D <branch_name>
 ```
 
 Delete a remote Git branch
 
-```c
+```bash
 $ git push origin --delete <branch_name>
 ```

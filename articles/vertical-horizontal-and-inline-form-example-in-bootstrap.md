@@ -41,36 +41,36 @@ Let’s dive in details to each form layout examples.
 This is the default Bootstrap form layout in which the fields are aligned vertically to its parent. Let us create a simple log-in registration form using vertical form layout.
 
 ```html
-<!DOCTYPE html> 
-<html lang="en">  
-<head>    
-<title>My first Bootstrap page </title>    
-<meta name="viewport" content="width=device-width, initialscale=1">    
-<link href="CSS/bootstrap.min.css" rel="stylesheet">   
-<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">    
-<script type="text/javascript" src="JS/bootstrap.min.js"></script> 
- </head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My first Bootstrap page </title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link href="CSS/bootstrap.min.css" rel="stylesheet">
+<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="JS/bootstrap.min.js"></script>
+ </head>
  <body>
 <div class="container" style="max-width:600px;margin:60px auto;">
-	<form role="form">
-	   <div class="form-group">
-	      <label for="name">First name</label>
-	      <input type="name" class="form-control" id="fname" placeholder="Enter name">
-	   </div>
-	   <div class="form-group">
-	      <label for="address">Second name</label>
-	      <input type="address" class="form-control" id="sname" placeholder="Enter surname">
-	   </div>
-	   <div class="form-group">
-	      <label for="email">Email</label>
-	      <input type="email" class="form-control" id="email" placeholder="Enter email">
-	   </div>
-	   <div class="form-group">
-	      <label for="pwd">Password</label>
-	      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-	   </div>
-	     <button type="submit" class="btn btn-default">Register</button>
-	</form>
+    <form role="form">
+       <div class="form-group">
+          <label for="name">First name</label>
+          <input type="name" class="form-control" id="fname" placeholder="Enter name">
+       </div>
+       <div class="form-group">
+          <label for="address">Second name</label>
+          <input type="address" class="form-control" id="sname" placeholder="Enter surname">
+       </div>
+       <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter email">
+       </div>
+       <div class="form-group">
+          <label for="pwd">Password</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+       </div>
+         <button type="submit" class="btn btn-default">Register</button>
+    </form>
 </div>
 </body>
 </html>
@@ -87,36 +87,36 @@ All you have to do is to add `.form-horizontal` class to the `<form>` element an
 
 ```html
 <div class="container" style="max-width:600px;padding:40px 20px;background:#ebeff2">
-	<h3>Signup</h3>
-	<form class="form-horizontal" role="form">
-	   <div class="form-group">
-	      <label for="name" class ="control-label col-sm-3">First name</label>
-		<div class="col-sm-8">
-	      <input type="name" class="form-control" id="name" placeholder="Enter name">
-		</div>
-	    </div>
-	   <div class="form-group">
-	      <label for="address" class ="control-label col-sm-3">Second name</label>
-		<div class="col-sm-8">
-	      <input type="address" class="form-control" id="address" placeholder="Enter address">
-		</div>
-	    </div>
-	   <div class="form-group">
-	      <label for="email" class ="control-label col-sm-3">Email</label>
-		<div class="col-sm-8">
-	      <input type="email" class="form-control" id="email" placeholder="Enter email">
-		</div>
-	    </div>
-	   <div class="form-group">
-	      <label for="pwd" class ="control-label col-sm-3">Password</label>
-		<div class="col-sm-8">
-	      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-		</div>
-	    </div>
-	   <div class="col-sm-offset-2 col-sm-8">
-	     <button type="submit" class="btn btn-default">Register</button>
-	   </div>
-	</form>
+    <h3>Signup</h3>
+    <form class="form-horizontal" role="form">
+       <div class="form-group">
+          <label for="name" class ="control-label col-sm-3">First name</label>
+        <div class="col-sm-8">
+          <input type="name" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        </div>
+       <div class="form-group">
+          <label for="address" class ="control-label col-sm-3">Second name</label>
+        <div class="col-sm-8">
+          <input type="address" class="form-control" id="address" placeholder="Enter address">
+        </div>
+        </div>
+       <div class="form-group">
+          <label for="email" class ="control-label col-sm-3">Email</label>
+        <div class="col-sm-8">
+          <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        </div>
+       <div class="form-group">
+          <label for="pwd" class ="control-label col-sm-3">Password</label>
+        <div class="col-sm-8">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+        </div>
+        </div>
+       <div class="col-sm-offset-2 col-sm-8">
+         <button type="submit" class="btn btn-default">Register</button>
+       </div>
+    </form>
 </div>
 ```
 
@@ -133,15 +133,15 @@ Inline bootstrap form layout example;
 <form class="form-inline" role="form">
    <div class="form-group">
       <label for="name">Name</label>
-	  <input type="name" class="form-control" id="name" placeholder="Enter name">
+      <input type="name" class="form-control" id="name" placeholder="Enter name">
    </div>
    <div class="form-group">
       <label for="email">Email</label>
-	  <input type="email" class="form-control" id="email" placeholder="Enter email">
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
  </div>
    <div class="form-group">
       <label for="pwd">Password</label>
-	  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
    </div>
    <button type="submit" class="btn btn-default">Register</button>
 </form>

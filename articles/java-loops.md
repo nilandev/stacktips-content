@@ -55,7 +55,7 @@ for (int i = 1; i <= 10; i++) {
 
 So first we initialize our variable `i` to be `1`. That way when the first print statement is executed, the value `1` is printed. Then we increment the value of it thanks to:
 
-```markup
+```java
 i++
 ```
 

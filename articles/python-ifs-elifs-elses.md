@@ -62,7 +62,7 @@ print(number1 == number3)
 
 **Output**
 
-```
+```bash
 True
 False
 ```
@@ -79,7 +79,7 @@ number2 = 3
 print(number1 != number2)
 ```
 
-```
+```bash
 False
 ```
 

@@ -39,7 +39,7 @@ All you have to do is to define your activity theme style inside `Resources/valu
 
 Now let us create a new Activity for splash screen. In this example, we have named it as SplashActivity, and paste the below code.
 
-```vb
+```csharp
 namespace MyApplication
 {
     using System.Threading;
@@ -54,7 +54,7 @@ namespace MyApplication
             base.OnCreate(bundle);
 
             // Wait for 2 seconds
-            Thread.Sleep(2000); 
+            Thread.Sleep(2000);
 
             //Moving to next activity
             StartActivity(typeof(MainActivity));

@@ -183,50 +183,50 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 public class MyWidgetProvider extends AppWidgetProvider {
-	@Override
-	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
-			int[] appWidgetIds) {
+    @Override
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager,
+            int[] appWidgetIds) {
 
-		// initializing widget layout
-		RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-				R.layout.widget_layout);
+        // initializing widget layout
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
+                R.layout.widget_layout);
 
-		// register for button event
-		remoteViews.setOnClickPendingIntent(R.id.sync_button,
-				buildButtonPendingIntent(context));
+        // register for button event
+        remoteViews.setOnClickPendingIntent(R.id.sync_button,
+                buildButtonPendingIntent(context));
 
-		// updating view with initial data
-		remoteViews.setTextViewText(R.id.title, getTitle());
-		remoteViews.setTextViewText(R.id.desc, getDesc());
+        // updating view with initial data
+        remoteViews.setTextViewText(R.id.title, getTitle());
+        remoteViews.setTextViewText(R.id.desc, getDesc());
 
-		// request for widget update
-		pushWidgetUpdate(context, remoteViews);
-	}
+        // request for widget update
+        pushWidgetUpdate(context, remoteViews);
+    }
 
-	public static PendingIntent buildButtonPendingIntent(Context context) {
-		++MyWidgetIntentReceiver.clickCount;
+    public static PendingIntent buildButtonPendingIntent(Context context) {
+        ++MyWidgetIntentReceiver.clickCount;
 
-		// initiate widget update request
-		Intent intent = new Intent();
-		intent.setAction(WidgetUtils.WIDGET_UPDATE_ACTION);
-		return PendingIntent.getBroadcast(context, 0, intent,
-				PendingIntent.FLAG_UPDATE_CURRENT);
-	}
+        // initiate widget update request
+        Intent intent = new Intent();
+        intent.setAction(WidgetUtils.WIDGET_UPDATE_ACTION);
+        return PendingIntent.getBroadcast(context, 0, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+    }
 
-	private static CharSequence getDesc() {
-		return "Sync to see some of our funniest joke collections";
-	}
+    private static CharSequence getDesc() {
+        return "Sync to see some of our funniest joke collections";
+    }
 
-	private static CharSequence getTitle() {
-		return "Funny Jokes";
-	}
+    private static CharSequence getTitle() {
+        return "Funny Jokes";
+    }
 
-	public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
-		ComponentName myWidget = new ComponentName(context,
-				MyWidgetProvider.class);
-		AppWidgetManager manager = AppWidgetManager.getInstance(context);
-		manager.updateAppWidget(myWidget, remoteViews);
-	}
+    public static void pushWidgetUpdate(Context context, RemoteViews remoteViews) {
+        ComponentName myWidget = new ComponentName(context,
+                MyWidgetProvider.class);
+        AppWidgetManager manager = AppWidgetManager.getInstance(context);
+        manager.updateAppWidget(myWidget, remoteViews);
+    }
 }
 ```
 
@@ -244,44 +244,44 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 public class MyWidgetIntentReceiver extends BroadcastReceiver {
-	public static int clickCount = 0;
-	private String msg[] = null;
+    public static int clickCount = 0;
+    private String msg[] = null;
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
-		if (intent.getAction().equals(WidgetUtils.WIDGET_UPDATE_ACTION)) {
-			updateWidgetPictureAndButtonListener(context);
-		}
-	}
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(WidgetUtils.WIDGET_UPDATE_ACTION)) {
+            updateWidgetPictureAndButtonListener(context);
+        }
+    }
 
-	private void updateWidgetPictureAndButtonListener(Context context) {
-		RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
-				R.layout.widget_layout);
+    private void updateWidgetPictureAndButtonListener(Context context) {
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(),
+                R.layout.widget_layout);
 
-		// updating view
-		remoteViews.setTextViewText(R.id.title, getTitle());
-		remoteViews.setTextViewText(R.id.desc, getDesc(context));
+        // updating view
+        remoteViews.setTextViewText(R.id.title, getTitle());
+        remoteViews.setTextViewText(R.id.desc, getDesc(context));
 
-		// re-registering for click listener
-		remoteViews.setOnClickPendingIntent(R.id.sync_button,
-				MyWidgetProvider.buildButtonPendingIntent(context));
+        // re-registering for click listener
+        remoteViews.setOnClickPendingIntent(R.id.sync_button,
+                MyWidgetProvider.buildButtonPendingIntent(context));
 
-		MyWidgetProvider.pushWidgetUpdate(context.getApplicationContext(),
-				remoteViews);
-	}
+        MyWidgetProvider.pushWidgetUpdate(context.getApplicationContext(),
+                remoteViews);
+    }
 
-	private String getDesc(Context context) {
-		// some static jokes from xml
-		msg = context.getResources().getStringArray(R.array.news_headlines);
-		if (clickCount >= msg.length) {
-			clickCount = 0;
-		}
-		return msg[clickCount];
-	}
+    private String getDesc(Context context) {
+        // some static jokes from xml
+        msg = context.getResources().getStringArray(R.array.news_headlines);
+        if (clickCount >= msg.length) {
+            clickCount = 0;
+        }
+        return msg[clickCount];
+    }
 
-	private String getTitle() {
-		return "Funny Jokes";
-	}
+    private String getTitle() {
+        return "Funny Jokes";
+    }
 }
 ```
 

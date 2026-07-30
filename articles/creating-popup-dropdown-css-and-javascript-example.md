@@ -37,53 +37,53 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
   <title>Popup Dropdown CSS Example</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
   <style>
-  	/* Your style goes here */ 
+      /* Your style goes here */
   </style>
 </head>
 
 <body>
 <div class="buttons-container">
-<h1>Dropdown Menu using CSS and Java Script</h3>	
+<h1>Dropdown Menu using CSS and Java Script</h3>
   <div class="dropdown">
-	<a href="#" class="btn">Centered Dropdown </a>
+    <a href="#" class="btn">Centered Dropdown </a>
     <div class="outer-list">
       <ul>
         <li>Red Apples</li>
         <li>Blood Oranges</li>
         <li>Gooseberries</li>
         <li>Red Cranberries</li>
-		<li>Pomegranates</li>
+        <li>Pomegranates</li>
       </ul>
     </div>
   </div>
   <div class="dropdown">
-	<a href="#" class="btn">Bottom Centered Dropdown </a>
+    <a href="#" class="btn">Bottom Centered Dropdown </a>
     <div class="outer-list bottom">
       <ul>
         <li>Red Apples</li>
         <li>Blood Oranges</li>
         <li>Gooseberries</li>
         <li>Red Cranberries</li>
-		<li>Pomegranates</li>
+        <li>Pomegranates</li>
       </ul>
     </div>
   </div>
   <div class="dropdown">
-	<a href="#" class="btn">Top Centered Dropdown </a>
+    <a href="#" class="btn">Top Centered Dropdown </a>
     <div class="outer-list top">
       <ul>
         <li>Red Apples</li>
         <li>Blood Oranges</li>
         <li>Gooseberries</li>
         <li>Red Cranberries</li>
-		<li>Pomegranates</li>
+        <li>Pomegranates</li>
       </ul>
     </div>
-  </div>  
+  </div>
 </div>
 
   <script>
-	/* Your JavaScript code goes here */   
+    /* Your JavaScript code goes here */
   </script>
 </body>
 </html>
@@ -97,24 +97,24 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
- 
+
   body {
     text-align: center;
-	margin:0;
-	-webkit-font-smoothing: antialiased;
+    margin:0;
+    -webkit-font-smoothing: antialiased;
   }
- 
+
   a {
     text-decoration: none;
   }
- 
+
   h1 {
-    color: #444;    
+    color: #444;
     font-weight: 800;
     font-size: 2.5em;
-	padding:30px;
+    padding:30px;
   }
- 
+
    .buttons-container {
     padding: 50px;
     background: #ebeff2;
@@ -123,7 +123,7 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     display: block;
     height: 100vh;
   }
- 
+
   .btn {
     position: relative;
     display: block;
@@ -137,9 +137,9 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     transition: all 0.35s ease;
     overflow: hidden;
     font-size: 1.2em;
-	font-weight: 500;
+    font-weight: 500;
   }
- 
+
   .btn:after {
     content: '';
     position: absolute;
@@ -153,29 +153,29 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     background: rgba(255, 255, 255, 0.35);
     transition: all 0.35s ease;
   }
- 
+
   .btn:active:after,
   .btn.dropdown-open:after {
     width: 200%;
     height: 200%;
   }
- 
+
   .btn:hover {
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
   }
- 
+
   .btn.dropdown-open + .outer-list {
     transform: scale(1);
     opacity: 1;
     visibility: visible;
   }
- 
+
   .dropdown {
     position: relative;
     margin: 0 auto;
     width: 20em;
   }
- 
+
   .dropdown > .outer-list {
     position: absolute;
     z-index: 1;
@@ -191,25 +191,25 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     visibility: hidden;
     transition: all 0.35s ease;
   }
- 
+
   .dropdown > .outer-list.top {
     align-items: flex-start;
     transform-origin: 50% 0;
   }
- 
+
   .dropdown > .outer-list.left {
     justify-content: flex-start;
   }
- 
+
   .dropdown > .outer-list.bottom {
     align-items: flex-end;
     transform-origin: 50% 100%;
   }
- 
+
   .dropdown > .outer-list.right {
     justify-content: flex-end;
   }
- 
+
   .dropdown > .outer-list > ul {
     list-style: none;
     padding: 0;
@@ -222,21 +222,21 @@ Also, to make it look bit fancy, we have added animation on button and dropdown 
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
     border-radius: .2em;
   }
- 
+
   .dropdown > .outer-list > ul li {
     padding: .25em 3em;
     margin: .25em;
     width: 100%;
     cursor: pointer;
     transition: background 0.35s ease;
-	font-weight: 500;
-	font-size: 1.2em;
-	color:#444;
+    font-weight: 500;
+    font-size: 1.2em;
+    color:#444;
   }
- 
+
   .dropdown > .outer-list > ul li:hover {
     background: rgba(0, 0, 0, 0.07);
-  }  
+  }
 ```
 
 ### JavaScript Code

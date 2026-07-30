@@ -29,7 +29,7 @@ In this post we will see how to convert unix date to human readable format, how 
 
 # How to get current date
 
-```xml
+```java
 DateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss");
 //getting current date using util.Date class
 Date date = new Date();
@@ -42,7 +42,7 @@ System.out.println("Current Date:" + dateFormat.format(date));
 
 # Convert UNIX date to String
 
-```xml
+```java
 long unixdate = 1389705117;
 DateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss");
 Calendar calendar = Calendar.getInstance();

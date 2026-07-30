@@ -23,12 +23,12 @@ seo:
 A `LinearLayout` manager is a most basic type of layout manager, that organizes its child views either `horizontally` or `vertically` based on the value provided in android:orientation property.
 
 ```xml
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-	android:orientation="horizontal" 
-	android:layout_width="fill_parent" 
-	android:layout_height="wrap_content"> 
-	<!-- add children here--> 
-</LinearLayout> 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <!-- add children here-->
+</LinearLayout>
 ```
 
 Notice in the above code snippet, the orientation property access two possible values such as `vertical` or `horizontal`. This defines the whether the views to be organized vertically or horizontally. We had enough talk about linear layouts; let us move a bit towards the practical implementation of it. To began with let us design a login page layout as shown in the screenshot below. [![Linear Layout Manager Android](/media/articles/195/Linear-Layout-Manager-Android.png)](http://stacktips.com) We would add two edit text for the user to enter the username and password and two buttons for Login and Register action. **ActivityMain.axml**
@@ -46,7 +46,7 @@ Notice in the above code snippet, the orientation property access two possible v
         android:id="@+id/password"
         android:padding="10dp"
         android:hint="@string/username_hint" />
-    
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

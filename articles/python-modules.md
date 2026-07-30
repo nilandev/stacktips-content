@@ -56,7 +56,7 @@ print("Sub is:", sum)
 
 **Output:**
 
-```
+```text
 Sum is: 15
 Sub is: 5
 ```

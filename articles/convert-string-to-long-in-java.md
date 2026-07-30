@@ -29,30 +29,30 @@ import java.util.Locale;
 
 public class StringToLong {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// converting to long
-		String number1 = "543210";
-		long result = Long.valueOf(number1);
-		System.out.println("Result=" + result);
+        // converting to long
+        String number1 = "543210";
+        long result = Long.valueOf(number1);
+        System.out.println("Result=" + result);
 
-		// remove all commas and then converting to long
-		String bumber2 = "5,43,210";
-		long result2 = Long.valueOf(bumber2.replaceAll(",", "").toString());
-		System.out.println("Result=" + result2);
+        // remove all commas and then converting to long
+        String bumber2 = "5,43,210";
+        long result2 = Long.valueOf(bumber2.replaceAll(",", "").toString());
+        System.out.println("Result=" + result2);
 
-		// converting using Locale
-		String number3 = "5,43,210";
-		NumberFormat format = NumberFormat.getInstance(Locale.US);
-		Number number = 0;
-		try {
-			number = format.parse(number3);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		long result3 = number.longValue();
-		System.out.println("Result=" + result3);
-	}
+        // converting using Locale
+        String number3 = "5,43,210";
+        NumberFormat format = NumberFormat.getInstance(Locale.US);
+        Number number = 0;
+        try {
+            number = format.parse(number3);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long result3 = number.longValue();
+        System.out.println("Result=" + result3);
+    }
 
 }
 ```

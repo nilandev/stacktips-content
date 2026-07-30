@@ -50,7 +50,7 @@ There are also some more additional attributes. Visit the below llink for more d
 
 As you can see in the screenshot below, my example is using simple LinearLayout with a ImageView and a button aligned to vertical orientation. You may have some complex layout as per your needs.
 
-```
+```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -81,7 +81,7 @@ As you can see in the screenshot below, my example is using simple LinearLayout 
 
 Below is my activity class using `Intent.ACTION_PICK` action
 
-```
+```java
 package com.javatechig.filepicker;
 
 import java.io.FileNotFoundException;
@@ -100,8 +100,8 @@ import android.widget.ImageView;
 
 public class ImagePickerActivity extends Activity {
 
-	private final int SELECT_PHOTO = 1;
-	private ImageView imageView;
+    private final int SELECT_PHOTO = 1;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,30 +113,30 @@ public class ImagePickerActivity extends Activity {
         Button pickImage = (Button) findViewById(R.id.btn_pick);
         pickImage.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {				
-				Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-				photoPickerIntent.setType("image/*");
-				startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-			}
-		});
+            @Override
+            public void onClick(View view) {
+                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
+            }
+        });
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) { 
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent); 
+    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 
-        switch(requestCode) { 
+        switch(requestCode) {
         case SELECT_PHOTO:
             if(resultCode == RESULT_OK){
-				try {
-					final Uri imageUri = imageReturnedIntent.getData();
-					final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-					final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-					imageView.setImageBitmap(selectedImage);
-				} catch (FileNotFoundException e) {
-					e.printStackTrace();
-				}
+                try {
+                    final Uri imageUri = imageReturnedIntent.getData();
+                    final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    imageView.setImageBitmap(selectedImage);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
 
             }
         }
@@ -145,7 +145,7 @@ public class ImagePickerActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
-    }    
+    }
 }
 ```
 
@@ -153,7 +153,7 @@ As you can see the code snippet used is pretty simple. Here in this example, I a
 
 Once image is selected, the result will be back to our main activity, and the result will be returned to `onActivityResult()` method. Here we are receiving the selected image Uri. Once we have the uri, we can convert them to `Bitmap` and then display it on `ImageView`. Below coded snippet is used to get the image from the Uri and convert into bitmap.
 
-```
+```java
 InputStream imageStream = getContentResolver().openInputStream(imageUri);
 Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
 ```

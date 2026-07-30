@@ -105,28 +105,28 @@ Now let us go back to our example, and take a look into how our activity class l
 
 ```java
 public class WebViewActivity extends Activity {
-	private WebView webView;	
+    private WebView webView;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_webview);
-		
-		webView = (WebView) findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient());
-		
-		String url = "http://stacktips.com";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_webview);
+
+        webView = (WebView) findViewById(R.id.webView);
+        webView.setWebViewClient(new MyWebViewClient());
+
+        String url = "http://stacktips.com";
                 webView.getSettings().setJavaScriptEnabled(true);
-		webView.loadUrl(url);		
-	}
+        webView.loadUrl(url);
+    }
 
-	private class MyWebViewClient extends WebViewClient {
-	    @Override
-	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-	        view.loadUrl(url);
-	        return true;
-	    }
-	}	
+    private class MyWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
+    }
 }
 
 ```

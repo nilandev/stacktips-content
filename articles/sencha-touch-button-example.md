@@ -28,61 +28,61 @@ Here is the basic example of Sencha Touch UI controls.
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
 
-	onReady : function() {
-		var formBase = new Ext.form.FormPanel({
-			fullscreen: true,
-			layout: "vbox",			
-			items: [
+    onReady : function() {
+        var formBase = new Ext.form.FormPanel({
+            fullscreen: true,
+            layout: "vbox",
+            items: [
               {
                 xtype: "button",
                 ui: "normal",
-                text: "Normal Button"  
+                text: "Normal Button"
               },
               {
                 xtype: "button",
                 ui: "back",
-                text: "Backward  Button"  
+                text: "Backward  Button"
               },{
                 xtype: "button",
                 ui: "forward",
-                text: "Forward  Button"  
+                text: "Forward  Button"
               },
               {
                 xtype: "button",
                 ui: "round",
-                text: "Round  Button"  
+                text: "Round  Button"
               },
               {
                 xtype: "button",
                 ui: "action",
-                text: "Action  Button"  
-              },              
-              {
-              	xtype: "button",
-                ui: "decline",
-                text: "Decline  Button"  
+                text: "Action  Button"
               },
               {
-              	xtype: "button",
+                  xtype: "button",
+                ui: "decline",
+                text: "Decline  Button"
+              },
+              {
+                  xtype: "button",
                 ui: "decline-round",
-                text: "Decline Round"  
+                text: "Decline Round"
               }
             ]
-		});
+        });
 
-		Ext.apply(formBase, {
-			fullscreen : true,
-			autoRender : true,
-			hideOnMaskTap : false
-		});
+        Ext.apply(formBase, {
+            fullscreen : true,
+            autoRender : true,
+            hideOnMaskTap : false
+        });
 
-		formBase.show();
-	}
+        formBase.show();
+    }
 });
 ```
 
@@ -100,7 +100,7 @@ Now, let’s make it responsive. Here we will add some event handler function to
   ui: "decline",
   text: "Decline  Button" ,
   handler: function () {
-     	alert("Decline Button Pressed!!");                
+         alert("Decline Button Pressed!!");
   }
 }
 ```
@@ -111,22 +111,22 @@ Here is the example for that makes use of Button components both by xtype as wel
 
 ```javascript
 var declineBtn = new Ext.Button({
-	id: 'sampleBtn',
+    id: 'sampleBtn',
       ui: "decline",
       text: "Decline  Button" ,
       handler: function () {
-        	alert("Decline Button Pressed!!");                
+            alert("Decline Button Pressed!!");
       }
 });
 ```
 
 Sencha touch comes with an array of beautiful icons for almost every need of your app. You can use them using the iconMask and iconCls property. You can find those images inside the resources/picto directory of Sencha downloaded resource.
 
-```json
+```javascript
 {
    xtype: "button",
    ui: "decline-round",
-   text: "Decline Round",     
+   text: "Decline Round",
    iconCls : 'add',
    iconMask : true
 }

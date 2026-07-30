@@ -31,28 +31,28 @@ At times, you may need to sort the ArrayList to make it alphabetically order. In
 ```java
 public class SortArrayList {
 
-	public static void main(String[] args) {
-		ArrayList unsortList = new ArrayList();
-		unsortList.add("1011");
-		unsortList.add("5460");
-		unsortList.add("1000");
-		unsortList.add("Abdul");
-		unsortList.add("1012");
-		unsortList.add("Adam");
+    public static void main(String[] args) {
+        ArrayList unsortList = new ArrayList();
+        unsortList.add("1011");
+        unsortList.add("5460");
+        unsortList.add("1000");
+        unsortList.add("Abdul");
+        unsortList.add("1012");
+        unsortList.add("Adam");
 
-		System.out.println("********** Value before sorting **************");
-		for (String str : unsortList) {
-			System.out.println(str);
-		}
+        System.out.println("********** Value before sorting **************");
+        for (String str : unsortList) {
+            System.out.println(str);
+        }
 
-		Collections.sort(unsortList);
+        Collections.sort(unsortList);
 
-		System.out.println("********** Value after sorting **************");
-		for (String str : unsortList) {
-			System.out.println(str);
-		}
+        System.out.println("********** Value after sorting **************");
+        for (String str : unsortList) {
+            System.out.println(str);
+        }
 
-	}
+    }
 }
 ```
 
@@ -68,55 +68,55 @@ In my example I want to sort the employees list as per their salary in descendin
 
 ```java
 public class Employee implements Comparable {
-	private String name;
-	private String id;
-	private double salary;
+    private String name;
+    private String id;
+    private double salary;
 
-	public Employee(String id, String name, double salary) {
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-	}
+    public Employee(String id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public double getSalary() {
+        return salary;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
-	@Override
-	public int compareTo(Employee employee) {
-		double compareSalary = ((Employee) employee).getSalary();
+    @Override
+    public int compareTo(Employee employee) {
+        double compareSalary = ((Employee) employee).getSalary();
 
-		// ascending order
-		// return (int) (this.salary - compareSalary);
+        // ascending order
+        // return (int) (this.salary - compareSalary);
 
-		// descending order
-		return (int) (compareSalary - this.salary);
-	}
+        // descending order
+        return (int) (compareSalary - this.salary);
+    }
 
-	@Override
-	public String toString() {
-		return "[ id=" + id + ", name=" + name + ", salary=" + salary + "]";
-	}
+    @Override
+    public String toString() {
+        return "[ id=" + id + ", name=" + name + ", salary=" + salary + "]";
+    }
 
 }
 ```
@@ -127,19 +127,19 @@ Check out the below code snippet, I am sorting Employees list using Anonymous Co
 
 ```java
 //Sorting using Anonymous inner class type
-		Collections.sort(emplyoees, new Comparator() {
-			@Override
-			public int compare(Employee e1, Employee e2) {
-				String id1 = ((Employee) e1).getId();
-				String id2 = ((Employee) e2).getId();
+        Collections.sort(emplyoees, new Comparator() {
+            @Override
+            public int compare(Employee e1, Employee e2) {
+                String id1 = ((Employee) e1).getId();
+                String id2 = ((Employee) e2).getId();
 
-				// ascending order
-				 return id1.compareTo(id2);
+                // ascending order
+                 return id1.compareTo(id2);
 
-				// descending order
-				//return id2.compareTo(id1);
-			}
-		});
+                // descending order
+                //return id2.compareTo(id1);
+            }
+        });
 ```
 
 ##### Complete Code
@@ -147,47 +147,47 @@ Check out the below code snippet, I am sorting Employees list using Anonymous Co
 ```java
 public class SortArrayListObjects {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ArrayList employees = new ArrayList();
-		employees.add(new Employee("1001", "Adam", 5000));
-		employees.add(new Employee("1006", "Rajan", 8400));
-		employees.add(new Employee("1040", "Keay", 2500));
-		employees.add(new Employee("1056", "Ashok", 12000));	
+        ArrayList employees = new ArrayList();
+        employees.add(new Employee("1001", "Adam", 5000));
+        employees.add(new Employee("1006", "Rajan", 8400));
+        employees.add(new Employee("1040", "Keay", 2500));
+        employees.add(new Employee("1056", "Ashok", 12000));
 
-		System.out.println("**** Value before sorting ***");
-		for(Employee employee: employees){
-			System.out.println(employee);
-		}
+        System.out.println("**** Value before sorting ***");
+        for(Employee employee: employees){
+            System.out.println(employee);
+        }
 
-		Collections.sort(employees);
+        Collections.sort(employees);
 
-		System.out.println("**** After sorting salary descending ***");
-		for(Employee employee: employees){
-			System.out.println(employee);
-		}
+        System.out.println("**** After sorting salary descending ***");
+        for(Employee employee: employees){
+            System.out.println(employee);
+        }
 
-		//Sorting using Anonymous inner class type
-		Collections.sort(employees, new Comparator() {
-			@Override
-			public int compare(Employee e1, Employee e2) {
-				String id1 = ((Employee) e1).getId();
-				String id2 = ((Employee) e2).getId();
+        //Sorting using Anonymous inner class type
+        Collections.sort(employees, new Comparator() {
+            @Override
+            public int compare(Employee e1, Employee e2) {
+                String id1 = ((Employee) e1).getId();
+                String id2 = ((Employee) e2).getId();
 
-				// ascending order
-				 return id1.compareTo(id2);
+                // ascending order
+                 return id1.compareTo(id2);
 
-				// descending order
-				//return id2.compareTo(id1);
-			}
-		});
+                // descending order
+                //return id2.compareTo(id1);
+            }
+        });
 
-		System.out.println("**** After sorting id ascending ***");
-		for(Employee employee: employees){
-			System.out.println(employee);
-		}
+        System.out.println("**** After sorting id ascending ***");
+        for(Employee employee: employees){
+            System.out.println(employee);
+        }
 
-	}
+    }
 }
 ```
 

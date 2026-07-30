@@ -24,13 +24,13 @@ Shared preferences are persistence key/value data pairs, used to store primitive
 
 For using shared preference to saving data pairs, you need first get an instance of `ISharedPreferences` interface. A shared preference can be specific to an activity or made global to all activities in the application. If you want to create a single preference file specific to an activity you can use `Activity.GetPreferences` to initialize ISharedPreferences interface. For getting the application level preference, you can call `GetSharedPreferences` method passing the preference name and mode of operation.
 
-```cs
+```csharp
 ISharedPreferences prefs = Application.Context.GetSharedPreferences ("PREF_NAME", FileCreationMode.Private);
 ```
 
 Now let us call `Edit()` to get an instance of `ISharedPreferencesEditor`. This batches all of the changes made to value in shred preferences and saves only when there is a call to `Commit()` or `Apply()` is made.
 
-```cs
+```csharp
 ISharedPreferencesEditor editor = prefs.Edit();
 editor.PutInt("your_key1" ,10);
 editor.PutString("your_key2", "Xamarin Example");
@@ -39,7 +39,7 @@ editor.Apply();
 
 To read values from shared preferences, we can use methods such as `GetString()`, `GetInt()`, `GetFloat()` etc. by providing proper key. The following snippets retrieves the values stored in the above step.
 
-```cs
+```csharp
 var value1 = prefs.GetInt ("your_key1", 0);
 var value2 = prefs.GetString ("your_key2", null);
 ```

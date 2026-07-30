@@ -56,7 +56,7 @@ print("Vehicle1:", vehicle1.color)
 
 **Output:**
 
-```
+```text
 <__main__.Vehicle object at 0x10ae31ae0>
 Vehicle1: red
 ```
@@ -94,7 +94,7 @@ print("Vehicle2", vehicle2.color)
 
 **Output:**
 
-```
+```text
 <__main__.Vehicle object at 0x114b0f3a0>
 Vehicle1: Red
 <__main__.Vehicle object at 0x114b0e470>
@@ -125,7 +125,7 @@ vehicle1.stop()
 
 **Output:**
 
-```
+```text
 Drive mode on!
 Drive mode off!
 ```
@@ -159,7 +159,7 @@ class Car(Vehicle):
         super().__init__(brand, color)
         self.fuel_type = fuel_type
         self.number_of_seats = number_of_seats
-    
+
     def horn(self):
         print("Beep Beep!!")
 ```
@@ -189,7 +189,7 @@ tesla.stop()
 
 **Output:**
 
-```
+```text
 Starting Volkswagen
 Beep Beep!!
 Stopping Volkswagen
@@ -226,7 +226,7 @@ class Car(Vehicle):
         super().__init__(brand, color)
         self.fuel_type = fuel_type
         self.number_of_seats = number_of_seats
-    
+
     def drive(self):
         print(f"Starting {{0}}".format(self.brand))
         print("Activating auto-pilot mode")
@@ -248,7 +248,7 @@ tesla.stop()
 
 **Output:**
 
-```
+```text
 Starting Volkswagen
 Stopping Volkswagen
 =====

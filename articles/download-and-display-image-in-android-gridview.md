@@ -373,17 +373,17 @@ Right now GridView is not responding to user clicks. Let us make it more functio
 mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-		//Get item at position
-		GridItem item = (GridItem) parent.getItemAtPosition(position);
+        //Get item at position
+        GridItem item = (GridItem) parent.getItemAtPosition(position);
 
-		//Pass the image title and url to DetailsActivity
+        //Pass the image title and url to DetailsActivity
                 Intent intent = new Intent(GridViewActivity.this, DetailsActivity.class);
                 intent.putExtra("title", item.getTitle());
                 intent.putExtra("image", item.getImage());
 
-		//Start details activity
-		startActivity(intent);
-	}
+        //Start details activity
+        startActivity(intent);
+    }
 });
 ```
 

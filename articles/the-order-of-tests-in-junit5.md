@@ -33,29 +33,29 @@ Title Please note, the `Alphanumeric` annotation is deprecated and internally us
 Following code demonstrates how to order test methods based on the MethodName. The same applies for `Random` as well.
 
 ```java
-import org.junit.jupiter.api.MethodOrderer;  
-import org.junit.jupiter.api.Test;  
-import org.junit.jupiter.api.TestMethodOrder;  
-  
-import static org.junit.jupiter.api.Assertions.assertTrue;  
-  
-@TestMethodOrder(MethodOrderer.MethodName.class)  
-class MyServiceTests {  
-  
-    @Test  
-    void test1() {  
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    void test2() {  
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    void test3() {  
-        assertTrue(true);  
-    }  
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@TestMethodOrder(MethodOrderer.MethodName.class)
+class MyServiceTests {
+
+    @Test
+    void test1() {
+        assertTrue(true);
+    }
+
+    @Test
+    void test2() {
+        assertTrue(true);
+    }
+
+    @Test
+    void test3() {
+        assertTrue(true);
+    }
 }
 ```
 
@@ -68,33 +68,33 @@ Prints:
 The `@DisplayName` is used when the test report is generated. For ordering the test methods by display name we need to specify a custom display name for each test using the `@DisplayName` annotation.
 
 ```java
-import org.junit.jupiter.api.DisplayName;  
-import org.junit.jupiter.api.MethodOrderer;  
-import org.junit.jupiter.api.Test;  
-import org.junit.jupiter.api.TestMethodOrder;  
-  
-import static org.junit.jupiter.api.Assertions.assertTrue;  
-  
-@TestMethodOrder(MethodOrderer.DisplayName.class)  
-class MyServiceTests {  
-  
-    @Test  
-	@DisplayName("testMethod1")  
-	void test1() {   
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    @DisplayName("testMethod2")  
-    void test2() {  
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    @DisplayName("testMethod3")  
-    void test3() {  
-        assertTrue(true);  
-    }  
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@TestMethodOrder(MethodOrderer.DisplayName.class)
+class MyServiceTests {
+
+    @Test
+    @DisplayName("testMethod1")
+    void test1() {
+        assertTrue(true);
+    }
+
+    @Test
+    @DisplayName("testMethod2")
+    void test2() {
+        assertTrue(true);
+    }
+
+    @Test
+    @DisplayName("testMethod3")
+    void test3() {
+        assertTrue(true);
+    }
 }
 ```
 
@@ -109,32 +109,32 @@ To define the test execution order based on the `OrderAnnotation`, we need to de
 Please note that the `@Order` annotation should be from `org.junit.jupiter.api` package not from the spring framework `org.springframework.core.annotation` package.
 
 ```java
-import org.junit.jupiter.api.MethodOrderer;  
-import org.junit.jupiter.api.Order;  
-import org.junit.jupiter.api.Test;  
-import org.junit.jupiter.api.TestMethodOrder;  
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)  
-class MyServiceTests {  
-  
-    @Test  
-    @Order(1)  
-    void test1() {  
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    @Order(3)  
-    void test2() {  
-        assertTrue(true);  
-    }  
-  
-    @Test  
-    @Order(2)  
-    void test3() {  
-        assertTrue(true);  
-    }  
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class MyServiceTests {
+
+    @Test
+    @Order(1)
+    void test1() {
+        assertTrue(true);
+    }
+
+    @Test
+    @Order(3)
+    void test2() {
+        assertTrue(true);
+    }
+
+    @Test
+    @Order(2)
+    void test3() {
+        assertTrue(true);
+    }
 }
 ```
 
@@ -149,56 +149,56 @@ We can define custom order by extending the existing method orderers. For exampl
 ```java
 import java.util.Comparator;
 
-class ParameterCountOrder implements MethodOrderer {  
-    @Override  
-    public void orderMethods(MethodOrdererContext context) {  
-        Comparator<MethodDescriptor> comparator =  
-                Comparator.comparingInt(md1 -> md1.getMethod().getParameterCount());  
-        context.getMethodDescriptors()  
-                .sort(comparator.reversed());  
-    }  
+class ParameterCountOrder implements MethodOrderer {
+    @Override
+    public void orderMethods(MethodOrdererContext context) {
+        Comparator<MethodDescriptor> comparator =
+                Comparator.comparingInt(md1 -> md1.getMethod().getParameterCount());
+        context.getMethodDescriptors()
+                .sort(comparator.reversed());
+    }
 }
 ```
 
 Now, let us use the custom `MethodOrderer` we have created above.
 
 ```java
-import org.junit.jupiter.api.DisplayName;  
-import org.junit.jupiter.api.Test;  
-import org.junit.jupiter.api.TestMethodOrder;  
-import org.junit.jupiter.params.ParameterizedTest;  
-import org.junit.jupiter.params.provider.CsvSource;  
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@TestMethodOrder(ParameterCountOrder.class)  
-class MyServiceTests {  
-  
-    @Test  
-    @DisplayName("testMethod1")  
-    void test1() {  
-        assertTrue(true);  
-    }  
-  
-    @ParameterizedTest(name = "{index} ==> product={0}")  
-    @CsvSource({  
-            "iPhone 15",  
-            "Mx Master 3S"  
-    })  
-    @DisplayName("testMethod2")  
-    void test2(String product) {  
-        assertTrue(true);  
-    }  
-  
-    @DisplayName("testMethod3")  
-    @ParameterizedTest(name = "{index} ==> product={0}, price={1}")  
-    @CsvSource({  
-            "iPhone 15, 999",  
-            "Mx Master 3S, 89"  
-    })  
-    void test3(String product, double price) {  
-        assertTrue(true);  
-    }  
-  
+@TestMethodOrder(ParameterCountOrder.class)
+class MyServiceTests {
+
+    @Test
+    @DisplayName("testMethod1")
+    void test1() {
+        assertTrue(true);
+    }
+
+    @ParameterizedTest(name = "{index} ==> product={0}")
+    @CsvSource({
+            "iPhone 15",
+            "Mx Master 3S"
+    })
+    @DisplayName("testMethod2")
+    void test2(String product) {
+        assertTrue(true);
+    }
+
+    @DisplayName("testMethod3")
+    @ParameterizedTest(name = "{index} ==> product={0}, price={1}")
+    @CsvSource({
+            "iPhone 15, 999",
+            "Mx Master 3S, 89"
+    })
+    void test3(String product, double price) {
+        assertTrue(true);
+    }
+
 }
 ```
 

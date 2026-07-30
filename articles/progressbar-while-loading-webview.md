@@ -91,60 +91,60 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 public class WebViewActivity extends Activity {
-	private WebView webView;
-	private EditText urlEditText;
-	private ProgressBar progress;
+    private WebView webView;
+    private EditText urlEditText;
+    private ProgressBar progress;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_web_view);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_web_view);
 
-		urlEditText = (EditText) findViewById(R.id.urlField);
-		webView = (WebView) findViewById(R.id.webView);
-		webView.setWebChromeClient(new MyWebViewClient());
+        urlEditText = (EditText) findViewById(R.id.urlField);
+        webView = (WebView) findViewById(R.id.webView);
+        webView.setWebChromeClient(new MyWebViewClient());
 
-		progress = (ProgressBar) findViewById(R.id.progressBar);
-		progress.setMax(100);
+        progress = (ProgressBar) findViewById(R.id.progressBar);
+        progress.setMax(100);
 
-		Button openUrl = (Button) findViewById(R.id.goButton);
-		openUrl.setOnClickListener(new OnClickListener() {
+        Button openUrl = (Button) findViewById(R.id.goButton);
+        openUrl.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				String url = urlEditText.getText().toString();
-				if (validateUrl(url)) {
-					webView.getSettings().setJavaScriptEnabled(true);
-					webView.loadUrl(url);
+            @Override
+            public void onClick(View view) {
+                String url = urlEditText.getText().toString();
+                if (validateUrl(url)) {
+                    webView.getSettings().setJavaScriptEnabled(true);
+                    webView.loadUrl(url);
 
-					WebViewActivity.this.progress.setProgress(0);
-				}
-			}
+                    WebViewActivity.this.progress.setProgress(0);
+                }
+            }
 
-			private boolean validateUrl(String url) {
-				return true;
-			}
-		});
+            private boolean validateUrl(String url) {
+                return true;
+            }
+        });
 
-	}
+    }
 
-	private class MyWebViewClient extends WebChromeClient {	
-		@Override
-		public void onProgressChanged(WebView view, int newProgress) {			
-			WebViewActivity.this.setValue(newProgress);
-			super.onProgressChanged(view, newProgress);
-		}
-	}
+    private class MyWebViewClient extends WebChromeClient {
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            WebViewActivity.this.setValue(newProgress);
+            super.onProgressChanged(view, newProgress);
+        }
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.web_view, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.web_view, menu);
+        return true;
+    }
 
-	public void setValue(int progress) {
-		this.progress.setProgress(progress);		
-	}
+    public void setValue(int progress) {
+        this.progress.setProgress(progress);
+    }
 }
 ```
 
@@ -181,72 +181,72 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 
 public class WebViewActivity extends Activity {
-	private WebView webView;
-	private EditText urlEditText;
-	private ProgressBar progress;
+    private WebView webView;
+    private EditText urlEditText;
+    private ProgressBar progress;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_web_view);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_web_view);
 
-		urlEditText = (EditText) findViewById(R.id.urlField);
-		webView = (WebView) findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient());
+        urlEditText = (EditText) findViewById(R.id.urlField);
+        webView = (WebView) findViewById(R.id.webView);
+        webView.setWebViewClient(new MyWebViewClient());
 
-		progress = (ProgressBar) findViewById(R.id.progressBar);
-		progress.setVisibility(View.GONE);
-		Button openUrl = (Button) findViewById(R.id.goButton);
-		openUrl.setOnClickListener(new OnClickListener() {
+        progress = (ProgressBar) findViewById(R.id.progressBar);
+        progress.setVisibility(View.GONE);
+        Button openUrl = (Button) findViewById(R.id.goButton);
+        openUrl.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				String url = urlEditText.getText().toString();
-				if (validateUrl(url)) {
-					webView.getSettings().setJavaScriptEnabled(true);
-					webView.loadUrl(url);
+            @Override
+            public void onClick(View view) {
+                String url = urlEditText.getText().toString();
+                if (validateUrl(url)) {
+                    webView.getSettings().setJavaScriptEnabled(true);
+                    webView.loadUrl(url);
 
-				}
-			}
+                }
+            }
 
-			private boolean validateUrl(String url) {
-				return true;
-			}
-		});
+            private boolean validateUrl(String url) {
+                return true;
+            }
+        });
 
-	}
+    }
 
-	private class MyWebViewClient extends WebViewClient {	
-		 @Override
-		    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-		        view.loadUrl(url);
-		        return true;
-		    }
+    private class MyWebViewClient extends WebViewClient {
+         @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
 
-		 @Override
-		public void onPageFinished(WebView view, String url) {
-			 progress.setVisibility(View.GONE);
-				WebViewActivity.this.progress.setProgress(100);
-			super.onPageFinished(view, url);
-		}
+         @Override
+        public void onPageFinished(WebView view, String url) {
+             progress.setVisibility(View.GONE);
+                WebViewActivity.this.progress.setProgress(100);
+            super.onPageFinished(view, url);
+        }
 
-		 @Override
-		public void onPageStarted(WebView view, String url, Bitmap favicon) {
-			 progress.setVisibility(View.VISIBLE);
-			WebViewActivity.this.progress.setProgress(0);
-			super.onPageStarted(view, url, favicon);
-		}
-	}
+         @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+             progress.setVisibility(View.VISIBLE);
+            WebViewActivity.this.progress.setProgress(0);
+            super.onPageStarted(view, url, favicon);
+        }
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.web_view, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.web_view, menu);
+        return true;
+    }
 
-	public void setValue(int progress) {
-		this.progress.setProgress(progress);		
-	}
+    public void setValue(int progress) {
+        this.progress.setProgress(progress);
+    }
 }
 ```
 

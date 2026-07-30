@@ -29,19 +29,19 @@ Sheet is a floating model panel widget, what animates on top of the view. Below 
 ```javascript
 // Creating a Sheet Instance using Ext.Sheet Class constructor
 var sheet = new Ext.Sheet({
-		height  : 70,
-		stretchX: true,
-		stretchY: true,
-		layout: { type: 'hbox', align: 'stretch'},
-		items: [{html: "<img src='quote.png'>"}],
-	dockedItems: [{
+        height  : 70,
+        stretchX: true,
+        stretchY: true,
+        layout: { type: 'hbox', align: 'stretch'},
+        items: [{html: "<img src='quote.png'>"}],
+    dockedItems: [{
             dock : 'right',
             xtype: 'button',
             text : 'Close',
             iconCls : 'delete',
-		iconMask : true,
+        iconMask : true,
             handler: function () {
-	sheet.hide();             
+    sheet.hide();
             }
         }]
 });
@@ -57,24 +57,24 @@ ActionSheet is a floating panel docked at the bottom of the screen, consists of 
 ```javascript
 // Creating a ActionSheet Instance using Ext.ActionSheet Class constructor
 var actions = new Ext.ActionSheet({
-		items: [{
-			text: 'Option 1',
-			scope : this,
-			handler : function(){
-				actions.hide();
-				}
+        items: [{
+            text: 'Option 1',
+            scope : this,
+            handler : function(){
+                actions.hide();
+                }
              },{
-	text : 'Option 2',
-	scope : this,
-	handler : function(){
-		actions.hide();
+    text : 'Option 2',
+    scope : this,
+    handler : function(){
+        actions.hide();
                     }
              },{
-	text : 'Cancel',
-	scope : this,
-	handler : function(){
-		actions.hide();
-		}
+    text : 'Cancel',
+    scope : this,
+    handler : function(){
+        actions.hide();
+        }
              }]
  });
 ```

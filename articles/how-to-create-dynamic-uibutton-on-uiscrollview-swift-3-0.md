@@ -33,26 +33,26 @@ Let us now open ViewController.swift and create a new function by name dynamicBu
 
 Initially let’s set isScrollEnabled , isUserInteractionEnabled properties to true and let’s set the number of buttons and number of rows which has to be displayed in our case we have 16 buttons which are displayed in 2 rows. Let’s divide numberOfButtons into 2 and equally spread the buttons in 2 rows as shown in below snippet. let’s create a button programmatically and set the frame, tag values, title and `addTarget(Button Action)` for each of the buttons as shown below.
 
-```c
+```swift
 func dynamicButtonCreation() {
-        
+
         mScrollView.isScrollEnabled = true
         mScrollView.isUserInteractionEnabled = true
-        
+
         let numberOfButtons = 16
         let numberofRows = 2
-        
+
         var count = 0
         var px = 0
         var py = 0
-        
+
         for _ in 1...numberofRows {
             px = 0
-            
+
             if count < numberOfButtons/2 {
                 for j in 1...numberOfButtons/2 {
                     count += 1
-                    
+
                     let Button = UIButton()
                     Button.tag = count
                     Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
@@ -63,10 +63,10 @@ func dynamicButtonCreation() {
                     px = px + Int(mScrollView.frame.width)/2 - 30
                 }
             }else{
-                
+
                 for j in numberOfButtons/2+1...numberOfButtons {
                     count += 1
-                    
+
                     let Button = UIButton()
                     Button.tag = count
                     Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
@@ -76,34 +76,34 @@ func dynamicButtonCreation() {
                     mScrollView.addSubview(Button)
                     px = px + Int(mScrollView.frame.width)/2 - 30
                 }
-                
-                
+
+
             }
-            
+
             py =  Int(mScrollView.frame.height)-70
         }
-        
+
         mScrollView.contentSize = CGSize(width: px, height: py)
-        
+
     }
 
 ```
 
 Let’s add the Action method for the buttons created above
 
-```
+```swift
   func scrollButtonAction(sender: UIButton) {
         print("Hello \(sender.tag) is Selected")
     }
-    
+
 ```
 
 At last call `dynamicButtonCreation` inside `ViewDidLoad` as show below
 
-```
+```swift
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+
         //Calling dynamicButtonCreation
          self.dynamicButtonCreation()
     }

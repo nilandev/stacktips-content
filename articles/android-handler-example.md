@@ -95,23 +95,23 @@ public class MainActivity extends Activity {
 
         Button start = (Button) findViewById(R.id.button1);
         start.setOnClickListener(new OnClickListener() {
-        	@Override
+            @Override
             public void onClick(View arg0) {
-        		progressDialog = ProgressDialog.show(MainActivity.this, "", "Loading..");
-        		new Thread() {
-        			public void run() {
-        				bitmap = downloadBitmap(url);
-        				messageHandler.sendEmptyMessage(0);
-        			}
-        		}.start();
+                progressDialog = ProgressDialog.show(MainActivity.this, "", "Loading..");
+                new Thread() {
+                    public void run() {
+                        bitmap = downloadBitmap(url);
+                        messageHandler.sendEmptyMessage(0);
+                    }
+                }.start();
             }
         });
     }
 
     private Handler messageHandler = new Handler() {
         public void handleMessage(Message msg) {
-        	super.handleMessage(msg);
-        	imageView.setImageBitmap(bitmap);
+            super.handleMessage(msg);
+            imageView.setImageBitmap(bitmap);
                 progressDialog.dismiss();
         }
     };

@@ -32,45 +32,45 @@ The queue blocks retrieval operations until the delay of the head element has ex
 
 ```java
 
-class Notification implements Delayed {  
-    private final String name;  
-    private final long startTime;  
+class Notification implements Delayed {
+    private final String name;
+    private final long startTime;
 
-    public Notification(String name, long delay, TimeUnit unit) {  
-        this.name = name;  
-        this.startTime = System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(delay, unit);  
-    }  
+    public Notification(String name, long delay, TimeUnit unit) {
+        this.name = name;
+        this.startTime = System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(delay, unit);
+    }
 
-    @Override  
-    public long getDelay(TimeUnit unit) {  
-        long delay = startTime - System.currentTimeMillis();  
-        return unit.convert(delay, TimeUnit.MILLISECONDS);  
-    }  
+    @Override
+    public long getDelay(TimeUnit unit) {
+        long delay = startTime - System.currentTimeMillis();
+        return unit.convert(delay, TimeUnit.MILLISECONDS);
+    }
 
-    @Override  
-    public int compareTo(Delayed other) {  
-        return Long.compare(this.startTime, ((Notification) other).startTime);  
-    }  
+    @Override
+    public int compareTo(Delayed other) {
+        return Long.compare(this.startTime, ((Notification) other).startTime);
+    }
 
-    @Override  
-    public String toString() {  
-        return "Task: {name='" + name + "', startTime=" + startTime + '}';  
-    }  
-}  
+    @Override
+    public String toString() {
+        return "Task: {name='" + name + "', startTime=" + startTime + '}';
+    }
+}
 
-public class DelayQueueExample {  
-    public static void main(String[] args) throws InterruptedException {  
-        DelayQueue<Notification> notifications = new DelayQueue<>();  
-        notifications.add(new Notification("Task 1", 5, TimeUnit.SECONDS));  
-        notifications.add(new Notification("Task 2", 10, TimeUnit.SECONDS));  
-        notifications.add(new Notification("Task 3", 3, TimeUnit.SECONDS));  
+public class DelayQueueExample {
+    public static void main(String[] args) throws InterruptedException {
+        DelayQueue<Notification> notifications = new DelayQueue<>();
+        notifications.add(new Notification("Task 1", 5, TimeUnit.SECONDS));
+        notifications.add(new Notification("Task 2", 10, TimeUnit.SECONDS));
+        notifications.add(new Notification("Task 3", 3, TimeUnit.SECONDS));
 
-        // Processing tasks as they expire  
-        while (!notifications.isEmpty()) {  
-            Notification task = notifications.take();  
-            System.out.println("Notifying " + task);  
-        }  
-    }  
+        // Processing tasks as they expire
+        while (!notifications.isEmpty()) {
+            Notification task = notifications.take();
+            System.out.println("Notifying " + task);
+        }
+    }
 }
 ```
 
@@ -78,7 +78,7 @@ Note that the `take()` method retrieves and removes tasks from the queue when th
 
 **Output:**
 
-```
+```text
 
 Notifying Task: {name='Task 3', startTime=1721688863846}
 Notifying Task: {name='Task 1', startTime=1721688865846}

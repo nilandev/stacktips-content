@@ -27,32 +27,32 @@ import java.util.Scanner;
 
 public class Factorial {
 
-	public static void main(String[] args) {
-		int number;
+    public static void main(String[] args) {
+        int number;
                 int factorial = 1;
 
-		Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-		//accept input from user
-		System.out.println("Enter A Number :");
-		number = input.nextInt();
+        //accept input from user
+        System.out.println("Enter A Number :");
+        number = input.nextInt();
 
-		int i = 1;
+        int i = 1;
 
-		// while loops
-		while (i <= number) {
-			factorial = factorial * i;
-			i++;
-		}
+        // while loops
+        while (i <= number) {
+            factorial = factorial * i;
+            i++;
+        }
 
-		System.out.println("Factorial is = " + factorial);
-	}
+        System.out.println("Factorial is = " + factorial);
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 Enter A Number :
 6
 Factorial is = 720

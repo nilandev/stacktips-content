@@ -28,20 +28,20 @@ Due to the additional overhead for maintaining order, `LinkedHashMap` is general
 
 ```java
 
-Map<String, Integer> map = new LinkedHashMap<>();  
-map.put("B", 2);  
-map.put("A", 1);  
-map.put("C", 3);  
-map.put(null, 4);  
+Map<String, Integer> map = new LinkedHashMap<>();
+map.put("B", 2);
+map.put("A", 1);
+map.put("C", 3);
+map.put(null, 4);
 
-for (Map.Entry<String, Integer> entry : map.entrySet()) {  
-    System.out.println(entry.getKey() + ": " + entry.getValue());  
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + ": " + entry.getValue());
 }
 ```
 
 **Outputs:**
 
-```
+```text
 
 Output:
 B: 2
@@ -54,23 +54,23 @@ Generally, `LinkedHashMap` maintains the insertion order, but we can change that
 
 ```java
 
-Map<String, Integer> map = new LinkedHashMap<>(16, 0.75f, true);  
-map.put("B", 2);  
-map.put("A", 1);  
-map.put("C", 3);  
-map.put(null, 4);  
+Map<String, Integer> map = new LinkedHashMap<>(16, 0.75f, true);
+map.put("B", 2);
+map.put("A", 1);
+map.put("C", 3);
+map.put(null, 4);
 
-map.get("A");  
-map.get("B");  
+map.get("A");
+map.get("B");
 
-for (Map.Entry<String, Integer> entry : map.entrySet()) {  
-    System.out.println(entry.getKey() + ": " + entry.getValue());  
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + ": " + entry.getValue());
 }
 ```
 
 **Outputs**
 
-```
+```text
 
 Output:
 C: 3

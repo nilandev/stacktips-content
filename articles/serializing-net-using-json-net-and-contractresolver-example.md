@@ -26,14 +26,14 @@ JSON.NET is one of the popular, advanced and high-performance JSON framework for
 
 Before we begin with the example, let us take declare the entity class to be serialized. For the sake of simplicity, this example uses a simple entity class Employee with the following attributes.
 
-```cs
+```csharp
 public class Employee
 {
-	public int EmpId { get; set; }
-	public string Name { get; set; }
-	public double Salary { get; set; }
-	public string Department { get; set; }
-	public bool IsSingle { get; set; }
+    public int EmpId { get; set; }
+    public string Name { get; set; }
+    public double Salary { get; set; }
+    public string Department { get; set; }
+    public bool IsSingle { get; set; }
 }
 ```
 
@@ -41,18 +41,18 @@ public class Employee
 
 JSON.NET presents easy method of serializing .NET object into JSON string. All you have to do is include `Newtonsoft.Json` namespace and call `JsonConvert.SerializeObject` by passing the object for serialization.
 
-```cs
+```csharp
 public static void Main (string[] args)
 {
-	//Creating a new emplyoee entity object
-	Employee e = new Employee ();
-	e.EmpId = 1001;
-	e.Name= "Nilanchala";
-	e.IsSingle = true;
-	e.Department="Engineering";
+    //Creating a new emplyoee entity object
+    Employee e = new Employee ();
+    e.EmpId = 1001;
+    e.Name= "Nilanchala";
+    e.IsSingle = true;
+    e.Department="Engineering";
 
-	string json = JsonConvert.SerializeObject(e);
-	Console.WriteLine(json);
+    string json = JsonConvert.SerializeObject(e);
+    Console.WriteLine(json);
 }
 ```
 
@@ -64,7 +64,7 @@ The output of the above code is depicted in the following screenshot
 
 As you can see in the screenshot above, the JSON object is not readable. It can be formatted with indent using the `Formatting.Indented` parameter.
 
-```cs
+```csharp
 string json = JsonConvert.SerializeObject(e, Formatting.Indented);
 Console.WriteLine(json);
 ```
@@ -79,21 +79,21 @@ Notice that in the above two steps, we are serializing all of the attributes of 
 
 There are two ways to achieve this. The simplest way is to do it by using annotation. All you have to do is to add some of the annotation fields to your entity class. In this method you don’t need to do any changes to the code for serialization.
 
-```cs
+```csharp
 [JsonObject(MemberSerialization.OptIn)]
 public class Employee
 {
-	[JsonProperty]
-	public int EmpId { get; set; }
-	[JsonProperty]
-	public string Name { get; set; }
-	[JsonProperty]
-	public double Salary { get; set; }
-	[JsonProperty]
-	public string Department { get; set; }
+    [JsonProperty]
+    public int EmpId { get; set; }
+    [JsonProperty]
+    public string Name { get; set; }
+    [JsonProperty]
+    public double Salary { get; set; }
+    [JsonProperty]
+    public string Department { get; set; }
 
-	//Do not serialize this
-	public bool IsSingle { get; set; }
+    //Do not serialize this
+    public bool IsSingle { get; set; }
 }
 ```
 
@@ -106,27 +106,27 @@ The above step is sweet easy step to skip the attributes. However, you can still
 
 Extend your DefaultContractResolver class and override `CreateProperties()` method. Notice that CreateProperties() method returns of `JsonProperty` to be serialized.
 
-```cs
+```csharp
 public class SkipKeysContractResolver : DefaultContractResolver
 {
-	private IList<string> attributesList = null;
-	public SkipKeysContractResolver(IList<string> propertiesToSerialize)
-	{
-		attributesList = propertiesToSerialize;
-	}
+    private IList<string> attributesList = null;
+    public SkipKeysContractResolver(IList<string> propertiesToSerialize)
+    {
+        attributesList = propertiesToSerialize;
+    }
 
-	protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
-	{
-		IList<JsonProperty> properties = base.CreateProperties(type, memberSerialization);
-		return properties.Where(p => attributesList.Contains(p.PropertyName)).ToList();
-	}
+    protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+    {
+        IList<JsonProperty> properties = base.CreateProperties(type, memberSerialization);
+        return properties.Where(p => attributesList.Contains(p.PropertyName)).ToList();
+    }
 }
 ```
 
 Now use the following code
 
-```cs
-//List properties to be seriliazed 
+```csharp
+//List properties to be seriliazed
 List<string> propertiesToSerialize = new List<string>(new string[] {"EmpId", "Name", "Salary", "Department" });
 
 // Create a contract resolver
@@ -143,19 +143,19 @@ The output of the above code is the same as the above screenshot.
 
 JSON.NET serializes the .NET objects into JSON by maintaining the case of each attribute. The following code snippet will help you to change all the keys to upper case or lower case.
 
-```cs
+```csharp
 public class LowercaseContractResolver : DefaultContractResolver
 {
-	protected override string ResolvePropertyName(string key)
-	{
-		return key.ToLower();
-	}
+    protected override string ResolvePropertyName(string key)
+    {
+        return key.ToLower();
+    }
 }
 ```
 
 Now instantiate LowercaseContractResolver and add it to JsonSerializerSettings.
 
-```cs
+```csharp
 var settings = new JsonSerializerSettings();
 settings.ContractResolver = new LowercaseContractResolver();
 string json = JsonConvert.SerializeObject(e, Formatting.Indented, settings);

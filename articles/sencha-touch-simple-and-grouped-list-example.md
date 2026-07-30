@@ -37,57 +37,57 @@ Sencha touch also provides the extended flexibility to created grouped list with
 ```javascript
 //registering model
 Ext.regModel('Contact', {
-		fields: ['name', 'number']
+        fields: ['name', 'number']
 });
 
 //declaring store which will be used by list
 var store = new Ext.data.JsonStore({
-	model  : 'Contact',
-	sorters: 'name',
+    model  : 'Contact',
+    sorters: 'name',
 
 //registering model
-	getGroupString : function(record) {
-		return record.get('name')[0];
+    getGroupString : function(record) {
+        return record.get('name')[0];
 },
 
 data: [{,
-		{name: 'Robin', number: '+91-9538926202'},
-		{name: 'Joy', number: '+91-9538926202'},
-		{name: 'Adam',number: '+91-9538926202'},
-		{name: 'Shyam', number: '+91-9538926202'},
-		{name: 'James', number: '+91-9538926202'},
-		{name: 'Jack', number: '+91-9538926202'},
-		{name: 'Rajani', number: '+99-9999999999'},
-		{name: 'Robin', number: '+91-9538926202'},
-		{name: 'Robin', number: '+91-9538926202'},
-		{name: 'Adam',number: '+91-9538926202'},
-		{name: 'Shyam', number: '+91-9538926202'}]
-	});
+        {name: 'Robin', number: '+91-9538926202'},
+        {name: 'Joy', number: '+91-9538926202'},
+        {name: 'Adam',number: '+91-9538926202'},
+        {name: 'Shyam', number: '+91-9538926202'},
+        {name: 'James', number: '+91-9538926202'},
+        {name: 'Jack', number: '+91-9538926202'},
+        {name: 'Rajani', number: '+99-9999999999'},
+        {name: 'Robin', number: '+91-9538926202'},
+        {name: 'Robin', number: '+91-9538926202'},
+        {name: 'Adam',number: '+91-9538926202'},
+        {name: 'Shyam', number: '+91-9538926202'}]
+    });
 
 var list = new Ext.List({
 fullscreen: true,
-	 itemTpl : '<div class="list-item-title">{name}</div>' +
+     itemTpl : '<div class="list-item-title">{name}</div>' +
 ' <div class="list-item-narrative">{number}</div>',
        width : '100%',
        scroll : 'vertical',
-	grouped : true,
-	indexBar: true,
-	store:store,
+    grouped : true,
+    indexBar: true,
+    store:store,
 
 onItemDisclosure : function(list, record, index){
-	alert("Name: "  + list.store.data.items[index].data.name +
-	"  Number:  " + list.store.data.items[index].data.number +
-	" At Position "  + index);
-	},
+    alert("Name: "  + list.store.data.items[index].data.name +
+    "  Number:  " + list.store.data.items[index].data.number +
+    " At Position "  + index);
+    },
 
 listeners: {
 // Handler for the item tap event
         itemtap: function(list, index, e, event) {
-alert("Name: "  + list.store.data.items[index].data.name+ 
+alert("Name: "  + list.store.data.items[index].data.name+
 "  Number:  " + list.store.data.items[index].data.number+
 " At Position "  + index);
             }
-	 }
+     }
 });
 ```
 

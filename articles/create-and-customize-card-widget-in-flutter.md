@@ -32,7 +32,7 @@ Now without further delay, let us jump straight into the implementation.
 
 Let us start by creating a simple Flutter project.
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 class CardViewExample extends StatefulWidget {
@@ -74,7 +74,7 @@ In the code snippet above the page body contains a Text widget aligned to the ce
 
 Let us now add a basic CardView widget.
 
-```
+```dart
 body: const Card(
   margin: EdgeInsets.all(20),
   child: Text('Apple iPhone 14 Pro Max, 2021 128 GB',
@@ -94,7 +94,7 @@ Let us now add another text view ‘subtitle’ to the card.
 
 The CardView in Flutter can contain only one direct child. Hence, If we want to have multiple child views, we need to wrap them inside a Column widget.
 
-```
+```dart
 Column(
   mainAxisSize: MainAxisSize.min,
   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -129,7 +129,7 @@ The CardView now has two text fields, one for the title and another for the subt
 
 To add the padding around the CardView, we need to wrap the `Column` widget inside a `Padding` widget.
 
-```
+```dart
 Padding(
     padding: EdgeInsets.all(20),
     child: Column(
@@ -172,7 +172,7 @@ The `FadeInImage` is a Flutter widget that displays an image with a placeholder 
 
 This is quite a nice and handy feature for images that take a long time to load.
 
-```
+```dart
 FadeInImage(
   fit: BoxFit.cover,
   height: 180,
@@ -201,7 +201,7 @@ The Card widget in Flutter provides a number of customizations out of the box. H
 
 Here is an example of how to customize a Card widget in Flutter:
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 class CardViewExample extends StatefulWidget {

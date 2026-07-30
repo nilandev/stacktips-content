@@ -31,11 +31,11 @@ Python supports two looping constructs:
 
 The basic syntax of the for loop in Python looks something similar to the one mentioned below.
 
-```java
+```python
 for itarator in sequence:
-	Statements
-	. . .
-	Statements
+    Statements
+    . . .
+    Statements
 ```
 
 -   The keyword **for** signifies the beginning of the for loop.
@@ -76,7 +76,7 @@ for letter in "stacktips.com":
 
 **Output:**
 
-```
+```text
 s
 t
 a
@@ -96,12 +96,12 @@ Lists and Tuples in python are iterable objects. The following example explains 
 week = ["Sunday", "Monday", "Tuesday",
          "Wednesday", "Thursday", "Friday", "Saturday"]
 for day in week:
-	print(day)
+    print(day)
 ```
 
 **Output:**
 
-```python
+```text
 Sunday
 Monday
 Tuesday
@@ -122,7 +122,7 @@ numbers = [15, 30, 10, 6, 8, 12]
 
 def search_item(numbers, search_key):
     found = False
-    for number in numbers:        
+    for number in numbers:
         if (number == search_key):
             found = True
             break
@@ -134,7 +134,7 @@ print("List contains 40:", search_item(numbers, 40))
 
 **Output:**
 
-```
+```text
 List contains 10: True
 List contains 40: False
 ```
@@ -158,7 +158,7 @@ print("Sum of Positive Numbers:", sum)
 
 **Output:**
 
-```
+```text
 Sum of Positive Numbers: 12
 ```
 
@@ -189,7 +189,7 @@ validate_name("John007")
 
 **Output:**
 
-```
+```text
 John is a valid name
 John007 contains invalid characters
 ```
@@ -214,7 +214,7 @@ while count <= 5:
 
 **Output:**
 
-```
+```text
 1
 2
 3

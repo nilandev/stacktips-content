@@ -39,18 +39,18 @@ The ParameterizedTest annotation is not part of the core `junit-jupiter-api` but
 
 If you are using Maven, we have to add the `junit-jupiter-params` dependency to the pom.xml file to the `test` scope.
 
-```
-<dependency>  
-    <groupId>org.junit.jupiter</groupId>  
-    <artifactId>junit-jupiter-params</artifactId>  
-    <version>5.9.3</version>  
-    <scope>test</scope>  
+```xml
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.9.3</version>
+    <scope>test</scope>
 </dependency>
 ```
 
 If we are using Gradle, you need to add the following to `build.gradle` file
 
-```
+```groovy
 testImplementation('org.junit.jupiter:junit-jupiter-params:5.9.3')
 ```
 
@@ -62,19 +62,19 @@ The @ValueSource provides a simple array of literal values. It supports all prim
 
 The `testWithStrings()` test method in the following code snippet will be executed 3 times with the arguments SUNDAY, MONDAY, and TUESDAY.
 
-```
-import org.junit.jupiter.params.ParameterizedTest;  
+```java
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import static org.junit.jupiter.api.Assertions.assertNotNull;  
-  
-class ValueSourceTest {  
-  
-    @ParameterizedTest  
-    @ValueSource(strings = {"SUNDAY", "MONDAY", "TUESDAY"})  
-    void testWithStrings(String argument) {  
-  
-        assertNotNull(argument);  
-    }  
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+class ValueSourceTest {
+
+    @ParameterizedTest
+    @ValueSource(strings = {"SUNDAY", "MONDAY", "TUESDAY"})
+    void testWithStrings(String argument) {
+
+        assertNotNull(argument);
+    }
 }
 ```
 
@@ -82,30 +82,30 @@ class ValueSourceTest {
 
 The `@EnumSource` allows us to test a function or a method against all possible values of an enum type.
 
-```
+```java
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import java.util.EnumSet;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-  
-enum DayOfWeek {  
-    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY  
-}  
-  
-class EnumSourceTest {  
-  
-    @ParameterizedTest  
-    @EnumSource(DayOfWeek.class)  
-    void testWithEnumSource(DayOfWeek dayOfWeek) {  
-        assertNotNull(dayOfWeek);  
-    }  
-  
-    @ParameterizedTest  
-    @EnumSource(value = DayOfWeek.class, names = {"MONDAY", "FRIDAY"})  
-    void testWithEnumSourceIncludeOnlySomeDays(DayOfWeek dayOfWeek) {  
-        assertTrue(EnumSet.of(DayOfWeek.MONDAY, DayOfWeek.FRIDAY).contains(dayOfWeek));  
-    }  
+
+enum DayOfWeek {
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+}
+
+class EnumSourceTest {
+
+    @ParameterizedTest
+    @EnumSource(DayOfWeek.class)
+    void testWithEnumSource(DayOfWeek dayOfWeek) {
+        assertNotNull(dayOfWeek);
+    }
+
+    @ParameterizedTest
+    @EnumSource(value = DayOfWeek.class, names = {"MONDAY", "FRIDAY"})
+    void testWithEnumSourceIncludeOnlySomeDays(DayOfWeek dayOfWeek) {
+        assertTrue(EnumSet.of(DayOfWeek.MONDAY, DayOfWeek.FRIDAY).contains(dayOfWeek));
+    }
 }
 ```
 
@@ -113,28 +113,28 @@ class EnumSourceTest {
 
 The `@MethodSource` annotation allows us to specify a method that provides a stream of arguments. Here is how we can use `@MethodSource` annotations in Junit5.
 
-```
-import org.junit.jupiter.params.ParameterizedTest; 
+```java
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-  
-class MethodSourceTest {  
-  
-    @ParameterizedTest  
-    @MethodSource("provideStringArgs")  
-    void testWithMethodSource(String week, String weekShort) {  
-        assertEquals(weekShort, week.substring(0, 3));  
-    }  
-  
-    static Stream<Arguments> provideStringArgs() {  
-        return Stream.of(  
-                Arguments.of("SUNDAY", "SUN"),  
-                Arguments.of("MONDAY", "MON"),  
-                Arguments.of("TUESDAY", "TUE")  
-        );  
-    }  
+
+class MethodSourceTest {
+
+    @ParameterizedTest
+    @MethodSource("provideStringArgs")
+    void testWithMethodSource(String week, String weekShort) {
+        assertEquals(weekShort, week.substring(0, 3));
+    }
+
+    static Stream<Arguments> provideStringArgs() {
+        return Stream.of(
+                Arguments.of("SUNDAY", "SUN"),
+                Arguments.of("MONDAY", "MON"),
+                Arguments.of("TUESDAY", "TUE")
+        );
+    }
 }
 ```
 
@@ -144,20 +144,20 @@ The `@CsvSource` annotation allows us to specify a comma-separated list of value
 
 Here is how we can use the `@CsvSource` in Junit5.
 
-```
-import org.junit.jupiter.params.ParameterizedTest; 
+```java
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CsvSourceTest {  
-  
-    @ParameterizedTest  
-    @CsvSource({  
-            "SUNDAY, 6",  
-            "MONDAY, 6",  
-            "TUE, 3",  
-            "'', 0",  
-            "'HAPPY WEEKEND!', 14",  
+class CsvSourceTest {
+
+    @ParameterizedTest
+    @CsvSource({
+            "SUNDAY, 6",
+            "MONDAY, 6",
+            "TUE, 3",
+            "'', 0",
+            "'HAPPY WEEKEND!', 14",
     })
     void testStringLength(String input, int expectedLength) {
         assertEquals(expectedLength, input.length());
@@ -171,31 +171,31 @@ The `@CsvFileSource` annotation in JUnit 5 allows you to use CSV files as a sour
 
 Here is how we can use `@CsvFileSource` in Junit5:
 
-```
-import org.junit.jupiter.params.ParameterizedTest;  
-import org.junit.jupiter.params.provider.CsvFileSource;  
-  
-import static org.junit.jupiter.api.Assertions.assertEquals;  
-  
-class CsvFileSourceTest {  
-  
-    @ParameterizedTest  
-    @CsvFileSource(resources = "/data1.csv")  
-    void testWithCsvFileSource1(String day, int length) {  
-        assertEquals(length, day.length());  
-    }  
-  
-    @ParameterizedTest  
-    @CsvFileSource(resources = "/data2.csv", delimiter = ';')  
-    void testWithCsvFileSourceDelimiter(String day, int length) {  
-        assertEquals(length, day.length());  
-    }  
-  
-    @ParameterizedTest  
-    @CsvFileSource(resources = "/data3.csv", nullValues = {"NULL"})  
-    void testWithCsvFileSourceNullValue(String day, int length) {  
-        assertEquals(length, day != null ? day.length() : 0);  
-    }  
+```java
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class CsvFileSourceTest {
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data1.csv")
+    void testWithCsvFileSource1(String day, int length) {
+        assertEquals(length, day.length());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data2.csv", delimiter = ';')
+    void testWithCsvFileSourceDelimiter(String day, int length) {
+        assertEquals(length, day.length());
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data3.csv", nullValues = {"NULL"})
+    void testWithCsvFileSourceNullValue(String day, int length) {
+        assertEquals(length, day != null ? day.length() : 0);
+    }
 }
 ```
 
@@ -203,41 +203,41 @@ The above code snippet uses the `data.csv` file. It reads the file from the `src
 
 **data1.csv**  
 
-```
-SUNDAY, 6  
-MONDAY, 6  
-TUE, 3  
+```text
+SUNDAY, 6
+MONDAY, 6
+TUE, 3
 HAPPY WEEKEND!, 14
 ```
 
 **data2.csv**
 
-```
-SUNDAY; 6  
-MONDAY; 6  
-TUE; 3  
+```text
+SUNDAY; 6
+MONDAY; 6
+TUE; 3
 HAPPY WEEKEND!; 14
 ```
 
 **data3.csv**
 
-```
-SUNDAY, 6  
-MONDAY, 6  
-TUE, 3  
-HAPPY WEEKEND!, 14  
+```text
+SUNDAY, 6
+MONDAY, 6
+TUE, 3
+HAPPY WEEKEND!, 14
  , 0
 ```
 
 If your CSV file uses a delimiter other than a comma, you can specify it using the `delimiter` attribute of the `@CsvFileSource` annotation.
 
-```
+```java
 @CsvFileSource(resources = "/data.csv", delimiter = ';')
 ```
 
 By default, an empty field in the CSV file is treated as an empty string. If you want to treat them as `null`, specify a `nullValues` attribute.
 
-```
+```java
 @CsvFileSource(resources = "/data.csv", nullValues = {"NULL"})
 ```
 
@@ -247,36 +247,36 @@ The `@ArgumentsSource` annotation allows us to specify a custom, reusable source
 
 Here is how we can use `@ArgumentsSource` annotation:
 
-```
+```java
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.params.ParameterizedTest; 
+import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-  
-class ArgumentSourceTest {  
-  
-    @ParameterizedTest  
-    @ArgumentsSource(CustomArgumentsProvider.class)  
-    void testWithCustomArgumentsSource(String input, int number) {  
-        assertNotNull(input);  
-        assertTrue(number > 0);  
-    }  
-}  
-  
-class CustomArgumentsProvider implements ArgumentsProvider {  
-  
-    @Override  
-    public Stream<? extends Arguments> provideArguments(ExtensionContext context) {  
-        return Stream.of(  
-                Arguments.of("SUNDAY", 6),  
-                Arguments.of("MONDAY", 6),  
-                Arguments.of("TUE", 3),  
-                Arguments.of("HAPPY WEEKEND!", 14)  
-        );  
-    }  
+
+class ArgumentSourceTest {
+
+    @ParameterizedTest
+    @ArgumentsSource(CustomArgumentsProvider.class)
+    void testWithCustomArgumentsSource(String input, int number) {
+        assertNotNull(input);
+        assertTrue(number > 0);
+    }
+}
+
+class CustomArgumentsProvider implements ArgumentsProvider {
+
+    @Override
+    public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
+        return Stream.of(
+                Arguments.of("SUNDAY", 6),
+                Arguments.of("MONDAY", 6),
+                Arguments.of("TUE", 3),
+                Arguments.of("HAPPY WEEKEND!", 14)
+        );
+    }
 }
 ```

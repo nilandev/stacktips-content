@@ -77,7 +77,7 @@ print("Hello world!")
 
 To run the program, type `python3 helloworld.py` command and hit Return.
 
-```
+```bash
 $ python3 helloworld.py
 Hello World!
 ```
@@ -101,14 +101,14 @@ Indentation refers to the space used at the beginning of a code to improve reada
 
 For example, if we're writing a conditional statement using if statement, here's how we use spaces to indent the code.
 
-```
+```python
 if True:
     print("True")
 else:
     print("False")
 ```
 
-```
+```text
 True
 ```
 
@@ -116,14 +116,14 @@ If you're familiar with any other programming language like Java, or .NET, they 
 
 Here are examples of broken syntax in Python:
 
-```
+```python
 if True:
 print("True")
 else:
 print("False")
 ```
 
-```
+```python
 if True:
     print("True")
         print("True")
@@ -136,18 +136,18 @@ For all the same reasons, code in Python needs to be perfectly indented or else 
 
 At some point down the road, you will want to leave comments in your code, either for yourself in the future, or for another developer working on the same project as you. Here is how comments in Python look like:
 
-```
+```python
 # First comment
 print("Hello world!") # second comment
 ```
 
-```
+```text
 Hello world!
 ```
 
 Fairly straightforward! Comments in Python start with the # character and the following is the comment itself. Unlike most programming languages, Python does not support multi-line comments. However, nothing technically stops you from doing this:
 
-```
+```python
 # This
 # is
 # a
@@ -156,7 +156,7 @@ Fairly straightforward! Comments in Python start with the # character and the fo
 print("Hello world!")
 ```
 
-```
+```text
 Hello world!
 ```
 

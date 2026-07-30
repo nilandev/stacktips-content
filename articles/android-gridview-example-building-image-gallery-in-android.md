@@ -101,43 +101,43 @@ Let us not proceed with creating a custom adapter for grid view by extending Arr
 
 ```java
 public class GridViewAdapter extends ArrayAdapter {
-	private Context context;
-	private int layoutResourceId;
-	private ArrayList data = new ArrayList();
+    private Context context;
+    private int layoutResourceId;
+    private ArrayList data = new ArrayList();
 
-	public GridViewAdapter(Context context, int layoutResourceId, ArrayList data) {
-		super(context, layoutResourceId, data);
-		this.layoutResourceId = layoutResourceId;
-		this.context = context;
-		this.data = data;
-	}
+    public GridViewAdapter(Context context, int layoutResourceId, ArrayList data) {
+        super(context, layoutResourceId, data);
+        this.layoutResourceId = layoutResourceId;
+        this.context = context;
+        this.data = data;
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View row = convertView;
-		ViewHolder holder = null;
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View row = convertView;
+        ViewHolder holder = null;
 
-		if (row == null) {
-			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-			row = inflater.inflate(layoutResourceId, parent, false);
-			holder = new ViewHolder();
-			holder.imageTitle = (TextView) row.findViewById(R.id.text);
-			holder.image = (ImageView) row.findViewById(R.id.image);
-			row.setTag(holder);
-		} else {
-			holder = (ViewHolder) row.getTag();
-		}
+        if (row == null) {
+            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
+            row = inflater.inflate(layoutResourceId, parent, false);
+            holder = new ViewHolder();
+            holder.imageTitle = (TextView) row.findViewById(R.id.text);
+            holder.image = (ImageView) row.findViewById(R.id.image);
+            row.setTag(holder);
+        } else {
+            holder = (ViewHolder) row.getTag();
+        }
 
-		ImageItem item = data.get(position);
-		holder.imageTitle.setText(item.getTitle());
-		holder.image.setImageBitmap(item.getImage());
-		return row;
-	}
+        ImageItem item = data.get(position);
+        holder.imageTitle.setText(item.getTitle());
+        holder.image.setImageBitmap(item.getImage());
+        return row;
+    }
 
-	static class ViewHolder {
-		TextView imageTitle;
-		ImageView image;
-	}
+    static class ViewHolder {
+        TextView imageTitle;
+        ImageView image;
+    }
 }
 ```
 
@@ -147,30 +147,30 @@ Notice that the above adapter is working on a ImageItem pojo Class. Create a new
 
 ```java
 public class ImageItem {
-	private Bitmap image;
-	private String title;
+    private Bitmap image;
+    private String title;
 
-	public ImageItem(Bitmap image, String title) {
-		super();
-		this.image = image;
-		this.title = title;
-	}
+    public ImageItem(Bitmap image, String title) {
+        super();
+        this.image = image;
+        this.title = title;
+    }
 
-	public Bitmap getImage() {
-		return image;
-	}
+    public Bitmap getImage() {
+        return image;
+    }
 
-	public void setImage(Bitmap image) {
-		this.image = image;
-	}
+    public void setImage(Bitmap image) {
+        this.image = image;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
 ```
 
@@ -217,14 +217,14 @@ When user click on any grid item, we have to take user to details activity by pa
 ```java
 gridView.setOnItemClickListener(new OnItemClickListener() {
 public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	ImageItem item = (ImageItem) parent.getItemAtPosition(position);
-	//Create intent
-	Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
-	intent.putExtra("title", item.getTitle());
-	intent.putExtra("image", item.getImage());
+    ImageItem item = (ImageItem) parent.getItemAtPosition(position);
+    //Create intent
+    Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+    intent.putExtra("title", item.getTitle());
+    intent.putExtra("image", item.getImage());
 
-	//Start details activity
-	startActivity(intent);
+    //Start details activity
+    startActivity(intent);
 }
 ```
 

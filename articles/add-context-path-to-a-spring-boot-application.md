@@ -24,7 +24,7 @@ In a Spring Boot application, the context path represents the base URL for acces
 
 For example, in the following code snippet
 
-```
+```java
       @RestController
 @RequestMapping(value = "/products")
 public class ProductController {
@@ -35,16 +35,16 @@ public class ProductController {
     }
 
     @GetMapping(value = "/{productId}")
-    public Product getProduct(@PathVariable(value = "id") Long id) {        
-			//Your service logic goes here..
+    public Product getProduct(@PathVariable(value = "id") Long id) {
+            //Your service logic goes here..
       return product;
     }
-    
+
 ```
 
 To test this locally, we need to hit
 
-```
+```text
 http://localhost:8080/products
 http://localhost:8080/products/{productId}
 ```
@@ -53,14 +53,14 @@ But sometimes you might want to change the path to make it more meaningful or to
 
 To change the context path, you need to add the following property to your `application.properties` file.
 
-```
+```text
       server.servlet.context-path=/api/1.0
-    
+
 ```
 
 Alternatively, if you're using the application.yaml file, you can do this
 
-```
+```yaml
 
 server:
    servlet:

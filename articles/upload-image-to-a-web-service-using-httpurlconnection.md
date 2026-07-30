@@ -24,23 +24,23 @@ The following code snippet can be used to upload an image to web service in Andr
 
 ```java
 try {
-	URL url = new URL(SERVER_POST_URL);
-	HttpURLConnection c = (HttpURLConnection) url.openConnection();
-	c.setDoInput(true);
-	c.setRequestMethod("POST");
-	c.setDoOutput(true);
-	c.connect();
+    URL url = new URL(SERVER_POST_URL);
+    HttpURLConnection c = (HttpURLConnection) url.openConnection();
+    c.setDoInput(true);
+    c.setRequestMethod("POST");
+    c.setDoOutput(true);
+    c.connect();
 
-	OutputStream output = c.getOutputStream();
-	bitmap.compress(CompressFormat.JPEG, 50, output);
-	output.close();
+    OutputStream output = c.getOutputStream();
+    bitmap.compress(CompressFormat.JPEG, 50, output);
+    output.close();
 
-	Scanner result = new Scanner(c.getInputStream());
-	String response = result.nextLine();
-	Log.e("ImageUploader", "Error uploading image: " + response);
+    Scanner result = new Scanner(c.getInputStream());
+    String response = result.nextLine();
+    Log.e("ImageUploader", "Error uploading image: " + response);
 
-	result.close();
+    result.close();
 } catch (IOException e) {
-		Log.e("ImageUploader", "Error uploading image", e);
+        Log.e("ImageUploader", "Error uploading image", e);
 }
 ```

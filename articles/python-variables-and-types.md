@@ -32,7 +32,7 @@ Declaring a variable is incredibly simple in Python. Unlike in other programming
 
 Example of variable declaration looks like this:
 
-```
+```python
 name = "John Doe"
 x = 777
 print(name)
@@ -41,7 +41,7 @@ print(x)
 
 The above code block prints
 
-```python
+```text
 John Doe
 777
 ```
@@ -64,7 +64,7 @@ Here are the rules for what are valid Python variable names:
 
 With that in mind, here are some examples of valid Python variable names:
 
-```python
+```text
 apples
 _apples
 _apples_
@@ -72,7 +72,7 @@ _apples_
 
 And here are examples of invalid Python variable names:
 
-```python
+```text
 1apples
 app les
 $apples
@@ -112,7 +112,7 @@ print(type(
 
 Output of the code prints:
 
-```python
+```text
 <class 'str'>
 John Doe
 <class 'float'>

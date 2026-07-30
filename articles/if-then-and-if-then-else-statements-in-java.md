@@ -32,21 +32,21 @@ import java.util.Scanner;
 
 public class JavaTest {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		int N1 = 10;
-		System.out.println("Enter Value for N2:");
-		Scanner scanner = new Scanner(System.in);
-		int N2 = scanner.nextInt();
+        int N1 = 10;
+        System.out.println("Enter Value for N2:");
+        Scanner scanner = new Scanner(System.in);
+        int N2 = scanner.nextInt();
 
-		if (N1 > N2) {
-			System.out.println("N1 is greater");
-		} else if (N1 == N2) {
-			System.out.println("N1 and N2 are equal");
-		} else {
-			System.out.println("N2 is greater");
-		}
-	}
+        if (N1 > N2) {
+            System.out.println("N1 is greater");
+        } else if (N1 == N2) {
+            System.out.println("N1 and N2 are equal");
+        } else {
+            System.out.println("N2 is greater");
+        }
+    }
 }
 ```
 

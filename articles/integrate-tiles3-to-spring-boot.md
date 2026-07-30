@@ -48,7 +48,7 @@ Add dependencies to the POM to pull in Tomcat, Jasper and Apache Tiles
 
 If you’re using Gradle build system, you can add the following dependency to your `build.gradle` file.
 
-```java
+```groovy
 compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.12'
 providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.8'
@@ -56,14 +56,14 @@ compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.8'
 
 Change the packaging to WAR in the POM
 
-```java
-<packaging>war</packaging> 
+```xml
+<packaging>war</packaging>
 ```
 
 Or for gradle
 
-```java
-    
+```groovy
+
 apply plugin: 'war'
 ```
 
@@ -71,7 +71,7 @@ apply plugin: 'war'
 
 Create Web application structure the Maven way (tree showing all files):
 
-```java
+```text
 ExampleApp:
     │   pom.xml
     ├───src
@@ -87,7 +87,7 @@ ExampleApp:
     │   │   ├───resources
     │   │   │       application.properties
     │   │   └───webapp
-    │   │       ├───static       
+    │   │       ├───static
     │   │       └───WEB-INF
     │   │           └───tiles
     │   │               │   tiles.xml
@@ -100,7 +100,7 @@ ExampleApp:
     │   │                          greeting.jsp
     │   │                          home.jsp
     │   └───test
-    │       
+    │
     └───target
 ```
 
@@ -141,24 +141,24 @@ public class TilesConfig {
 
 Create the tiles configuration file: `WEB-INF/tiles/tiles.xml`
 
-```java
+```xml
 <!--?xml version="1.0" encoding="ISO-8859-1" ?-->
 
 <tiles-definitions>
 
-    <!-- Templates -->      
+    <!-- Templates -->
     <definition name="layout.basic" template="/WEB-INF/tiles/layouts/basic.jsp">
         <put-attribute name="title" value="Spring Web MVC with Tiles 3">
         <put-attribute name="header" value="/WEB-INF/tiles/views/header.jsp">
         <put-attribute name="body" value="">
         <put-attribute name="footer" value="/WEB-INF/tiles/views/footer.jsp">
     </put-attribute></put-attribute></put-attribute></put-attribute></definition>
-    
-    <!-- Pages -->        
+
+    <!-- Pages -->
     <definition name="site.home" extends="layout.basic">
         <put-attribute name="body" value="/WEB-INF/tiles/views/home/home.jsp">
     </put-attribute></definition>
-    
+
     <definition name="site.greeting" extends="layout.basic">
         <put-attribute name="body" value="/WEB-INF/tiles/views/home/greeting.jsp">
     </put-attribute></definition>
@@ -200,7 +200,7 @@ footer.jsp:
 
 **greeting.jsp:**
 
-```java
+```html
 <div>
   Hello ${name}
 </div>
@@ -224,15 +224,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HelloWorldController {    
+public class HelloWorldController {
 
     @RequestMapping(value = "/home", method=RequestMethod.GET)
     public String home() {
         return "site.home";
     }
-    
+
     @RequestMapping(value = "/greet/{name}", method=RequestMethod.GET)
-    public ModelAndView greetTwoWays(@PathVariable(value="name") final String name, final Model model) {        
+    public ModelAndView greetTwoWays(@PathVariable(value="name") final String name, final Model model) {
         return new ModelAndView("site.greeting", "name", name);
     }
 }
@@ -240,19 +240,19 @@ public class HelloWorldController {
 
 Build the project using Maven:
 
-```java
+```bash
 mvn clean package
 ```
 
 When using Gradle:
 
-```java
+```bash
 gradle build
 ```
 
 Now let us test the controller and confirm that Spring MVC has been configured as expected
 
-```java
-http://localhost:8080/home    
+```text
+http://localhost:8080/home
 http://localhost:8080/greet/John
 ```

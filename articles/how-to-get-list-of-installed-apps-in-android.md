@@ -122,139 +122,139 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class AllAppsActivity extends ListActivity {
-	private PackageManager packageManager = null;
-	private List<ApplicationInfo> applist = null;
-	private ApplicationAdapter listadaptor = null;
+    private PackageManager packageManager = null;
+    private List<ApplicationInfo> applist = null;
+    private ApplicationAdapter listadaptor = null;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		packageManager = getPackageManager();
+        packageManager = getPackageManager();
 
-		new LoadApplications().execute();
-	}
+        new LoadApplications().execute();
+    }
 
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu, menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
 
-		return true;
-	}
+        return true;
+    }
 
-	public boolean onOptionsItemSelected(MenuItem item) {
-		boolean result = true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean result = true;
 
-		switch (item.getItemId()) {
-		case R.id.menu_about: {
-			displayAboutDialog();
+        switch (item.getItemId()) {
+        case R.id.menu_about: {
+            displayAboutDialog();
 
-			break;
-		}
-		default: {
-			result = super.onOptionsItemSelected(item);
+            break;
+        }
+        default: {
+            result = super.onOptionsItemSelected(item);
 
-			break;
-		}
-		}
+            break;
+        }
+        }
 
-		return result;
-	}
+        return result;
+    }
 
-	private void displayAboutDialog() {
-		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(getString(R.string.about_title));
-		builder.setMessage(getString(R.string.about_desc));
+    private void displayAboutDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.about_title));
+        builder.setMessage(getString(R.string.about_desc));
 
-		builder.setPositiveButton("Know More", new DialogInterface.OnClickListener() {
-		       public void onClick(DialogInterface dialog, int id) {
-		    	   Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://stacktips.com"));
-		    	   startActivity(browserIntent);
-		    	   dialog.cancel();
-		       }
-		   });
-		builder.setNegativeButton("No Thanks!", new DialogInterface.OnClickListener() {
-		       public void onClick(DialogInterface dialog, int id) {
-		            dialog.cancel();
-		       }
-		});
+        builder.setPositiveButton("Know More", new DialogInterface.OnClickListener() {
+               public void onClick(DialogInterface dialog, int id) {
+                   Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://stacktips.com"));
+                   startActivity(browserIntent);
+                   dialog.cancel();
+               }
+           });
+        builder.setNegativeButton("No Thanks!", new DialogInterface.OnClickListener() {
+               public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+               }
+        });
 
-		builder.show();
-	}
+        builder.show();
+    }
 
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		super.onListItemClick(l, v, position, id);
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
 
-		ApplicationInfo app = applist.get(position);
-		try {
-			Intent intent = packageManager
-					.getLaunchIntentForPackage(app.packageName);
+        ApplicationInfo app = applist.get(position);
+        try {
+            Intent intent = packageManager
+                    .getLaunchIntentForPackage(app.packageName);
 
-			if (null != intent) {
-				startActivity(intent);
-			}
-		} catch (ActivityNotFoundException e) {
-			Toast.makeText(AllAppsActivity.this, e.getMessage(),
-					Toast.LENGTH_LONG).show();
-		} catch (Exception e) {
-			Toast.makeText(AllAppsActivity.this, e.getMessage(),
-					Toast.LENGTH_LONG).show();
-		}
-	}
+            if (null != intent) {
+                startActivity(intent);
+            }
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(AllAppsActivity.this, e.getMessage(),
+                    Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(AllAppsActivity.this, e.getMessage(),
+                    Toast.LENGTH_LONG).show();
+        }
+    }
 
-	private List<ApplicationInfo> checkForLaunchIntent(List<ApplicationInfo> list) {
-		ArrayList<ApplicationInfo> applist = new ArrayList<ApplicationInfo>();
-		for (ApplicationInfo info : list) {
-			try {
-				if (null != packageManager.getLaunchIntentForPackage(info.packageName)) {
-					applist.add(info);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+    private List<ApplicationInfo> checkForLaunchIntent(List<ApplicationInfo> list) {
+        ArrayList<ApplicationInfo> applist = new ArrayList<ApplicationInfo>();
+        for (ApplicationInfo info : list) {
+            try {
+                if (null != packageManager.getLaunchIntentForPackage(info.packageName)) {
+                    applist.add(info);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-		return applist;
-	}
+        return applist;
+    }
 
-	private class LoadApplications extends AsyncTask<Void, Void, Void> {
-		private ProgressDialog progress = null;
+    private class LoadApplications extends AsyncTask<Void, Void, Void> {
+        private ProgressDialog progress = null;
 
-		@Override
-		protected Void doInBackground(Void... params) {
-			applist = checkForLaunchIntent(packageManager.getInstalledApplications(PackageManager.GET_META_DATA));
-			listadaptor = new ApplicationAdapter(AllAppsActivity.this,
-					R.layout.snippet_list_row, applist);
+        @Override
+        protected Void doInBackground(Void... params) {
+            applist = checkForLaunchIntent(packageManager.getInstalledApplications(PackageManager.GET_META_DATA));
+            listadaptor = new ApplicationAdapter(AllAppsActivity.this,
+                    R.layout.snippet_list_row, applist);
 
-			return null;
-		}
+            return null;
+        }
 
-		@Override
-		protected void onCancelled() {
-			super.onCancelled();
-		}
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
 
-		@Override
-		protected void onPostExecute(Void result) {
-			setListAdapter(listadaptor);
-			progress.dismiss();
-			super.onPostExecute(result);
-		}
+        @Override
+        protected void onPostExecute(Void result) {
+            setListAdapter(listadaptor);
+            progress.dismiss();
+            super.onPostExecute(result);
+        }
 
-		@Override
-		protected void onPreExecute() {
-			progress = ProgressDialog.show(AllAppsActivity.this, null,
-					"Loading application info...");
-			super.onPreExecute();
-		}
+        @Override
+        protected void onPreExecute() {
+            progress = ProgressDialog.show(AllAppsActivity.this, null,
+                    "Loading application info...");
+            super.onPreExecute();
+        }
 
-		@Override
-		protected void onProgressUpdate(Void... values) {
-			super.onProgressUpdate(values);
-		}
-	}
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+    }
 }
 ```
 
@@ -276,54 +276,54 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ApplicationAdapter extends ArrayAdapter<ApplicationInfo> {
-	private List<ApplicationInfo> appsList = null;
-	private Context context;
-	private PackageManager packageManager;
+    private List<ApplicationInfo> appsList = null;
+    private Context context;
+    private PackageManager packageManager;
 
-	public ApplicationAdapter(Context context, int textViewResourceId,
-			List<ApplicationInfo> appsList) {
-		super(context, textViewResourceId, appsList);
-		this.context = context;
-		this.appsList = appsList;
-		packageManager = context.getPackageManager();
-	}
+    public ApplicationAdapter(Context context, int textViewResourceId,
+            List<ApplicationInfo> appsList) {
+        super(context, textViewResourceId, appsList);
+        this.context = context;
+        this.appsList = appsList;
+        packageManager = context.getPackageManager();
+    }
 
-	@Override
-	public int getCount() {
-		return ((null != appsList) ? appsList.size() : 0);
-	}
+    @Override
+    public int getCount() {
+        return ((null != appsList) ? appsList.size() : 0);
+    }
 
-	@Override
-	public ApplicationInfo getItem(int position) {
-		return ((null != appsList) ? appsList.get(position) : null);
-	}
+    @Override
+    public ApplicationInfo getItem(int position) {
+        return ((null != appsList) ? appsList.get(position) : null);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View view = convertView;
-		if (null == view) {
-			LayoutInflater layoutInflater = (LayoutInflater) context
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			view = layoutInflater.inflate(R.layout.snippet_list_row, null);
-		}
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = convertView;
+        if (null == view) {
+            LayoutInflater layoutInflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = layoutInflater.inflate(R.layout.snippet_list_row, null);
+        }
 
-		ApplicationInfo applicationInfo = appsList.get(position);
-		if (null != applicationInfo) {
-			TextView appName = (TextView) view.findViewById(R.id.app_name);
-			TextView packageName = (TextView) view.findViewById(R.id.app_paackage);
-			ImageView iconview = (ImageView) view.findViewById(R.id.app_icon);
+        ApplicationInfo applicationInfo = appsList.get(position);
+        if (null != applicationInfo) {
+            TextView appName = (TextView) view.findViewById(R.id.app_name);
+            TextView packageName = (TextView) view.findViewById(R.id.app_paackage);
+            ImageView iconview = (ImageView) view.findViewById(R.id.app_icon);
 
-			appName.setText(applicationInfo.loadLabel(packageManager));
-			packageName.setText(applicationInfo.packageName);
-			iconview.setImageDrawable(applicationInfo.loadIcon(packageManager));
-		}
-		return view;
-	}
+            appName.setText(applicationInfo.loadLabel(packageManager));
+            packageName.setText(applicationInfo.packageName);
+            iconview.setImageDrawable(applicationInfo.loadIcon(packageManager));
+        }
+        return view;
+    }
 };
 ```
 

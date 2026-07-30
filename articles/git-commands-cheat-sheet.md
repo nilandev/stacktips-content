@@ -26,20 +26,20 @@ A list of some commonly used Git commands to get you going with Git.
 
 To tell Git who you are, run the following two commands:
 
-```bsh
+```bash
 $ git config --global user.name "King Kong"
 $ git config --global user.email "king-kong@gmail.com"
 ```
 
 Pretty colours for the git outputs in terminal:
 
-```bsh
+```bash
 $ git config --global color.ui true
 ```
 
 Get the list of configurations:
 
-```bsh
+```bash
 $ git config --list
 ```
 
@@ -52,49 +52,49 @@ git clone ssh://git@github.com/\[username\]/\[repository-name\].git
 
 Initialize the local directory as a Git repository.
 
-```bsh
+```bash
 $ git init
 ```
 
 Add the files to your new local repository. This stages them for the first commit.
 
-```bsh
+```bash
 $ git add .
 ```
 
 Or, alternatively, you can add one by one file
 
-```bsh
+```bash
 $ git add file1.txt file2.txt
 ```
 
 To unstage a file:
 
-```bsh
-$ git reset HEAD file1.txt 
+```bash
+$ git reset HEAD file1.txt
 ```
 
 Commit the files that you’ve staged in your local repository
 
-```bsh
+```bash
 $ git commit -m "Initial commit"
 ```
 
 In Terminal, add the URL for the remote repository where your local repository will be pushed. Sets the new remote
 
-```bsh
+```bash
 $ git remote add origin [REMOTE REPO URL]
 ```
 
 Verifies the new remote URL
 
-```bsh
+```bash
 $ git remote -v
 ```
 
 Push the changes in your local repository to GitHub.
 
-```bsh
+```bash
 $ git push -u origin master
 ```
 
@@ -102,25 +102,25 @@ $ git push -u origin master
 
 To view file diff in git before commit:
 
-```bsh
-$ git diff 
+```bash
+$ git diff
 ```
 
 When you want to do a git diff but do not care about the full diff and just want to know which files changed
 
-```bsh
+```bash
 $ git diff --name-only
 ```
 
 To include some brief information about changed lines
 
-```bsh
+```bash
 $ git diff --stat
 ```
 
 The output of –stat is nicely coloured. If you want a more machine-readable output
 
-```bsh
+```bash
 $ git diff --numstat
 ```
 
@@ -128,26 +128,26 @@ $ git diff --numstat
 
 Show full log of the last commit:
 
-```bsh
+```bash
 $ git show
 ```
 
 Show log of last commit (summary only):
 
-```bsh
+```bash
 git log -1
 ```
 
 If you need just the commit message and nothing else.  
 More elegantly – if you want a quick overview of your commits
 
-```bsh
+```bash
 $ git log -1 --pretty=%B
 ```
 
 Show log of last N commit:
 
-```bsh
+```bash
 $ git log --oneline -5
 ```
 
@@ -155,19 +155,19 @@ $ git log --oneline -5
 
 View list local branches
 
-```bsh
+```bash
 $ git branch
 ```
 
 View list of all
 
-```bsh
+```bash
 $ git branch -a
 ```
 
 View list of remote branches
 
-```bsh
+```bash
 $ git branch -r
 ```
 
@@ -175,37 +175,37 @@ $ git branch -r
 
 Push a branch to your remote repository
 
-```bsh
+```bash
 $ git push origin <branch_name>
 ```
 
 Push changes to the remote repository (and remember the branch)
 
-```bsh
+```bash
 $ git push -u origin <branch_name>
 ```
 
 Push changes to the remote repository (remembered branch)
 
-```bsh
-$ git push  
+```bash
+$ git push
 ```
 
 Delete a remote branch
 
-```bsh
+```bash
 $ git push origin --delete <branch_name>
 ```
 
 Update local repository to the newest commit
 
-```bsh
+```bash
 $ git pull
 ```
 
 Pull changes from the remote repository
 
-```bsh
+```bash
 $ git pull origin <branch_name>
 ```
 
@@ -216,31 +216,31 @@ If you’re a developer you probably have used it and are familiar with git work
 Here is the list of some useful commands to help you create and manage a new branch. Please note, before creating a new branch, pull the changes from upstream. Your master needs to be up to date.  
 Create a git branch.
 
-```bsh
+```bash
 $ git branch <new branch name>
 ```
 
 Switch to a branch
 
-```bsh
+```bash
 $ git checkout <branch name>
 ```
 
 Create the branch on your local machine and switch in this branch:
 
-```bsh
+```bash
 $ git checkout -b <new branch name>
 ```
 
 Change the working branch:
 
-```bsh
+```bash
 $ git checkout <new branch name>
 ```
 
 Push the branch to remote git:
 
-```bsh
+```bash
 $ git push origin <new branch name>
 ```
 
@@ -248,31 +248,31 @@ When you want to commit something in your branch, be sure to be in your branch. 
 
 You can see all the branches created by using :
 
-```bsh
+```bash
 $ git branch
 ```
 
 Add a new remote for your branch:
 
-```bsh
-$ git remote add <remote branch name> 
+```bash
+$ git remote add <remote branch name>
 ```
 
 Push changes from your commit into your branch :
 
-```bsh
+```bash
 $ git push <new branch remote name>  <new branch name>
 ```
 
 Update your branch when the original branch from the official repository has been updated:
 
-```bsh
+```bash
 $ git fetch <remote branch name>
 ```
 
 Then you need to apply to merge changes if your branch is derivated from develop you need to do:
 
-```bsh
+```bash
 $ git merge <name of remote branch>/develop
 ```
 
@@ -280,19 +280,19 @@ $ git merge <name of remote branch>/develop
 
 Delete local branch: -d option stands for –delete
 
-```bsh
+```bash
 git branch -d <branch_name>
 ```
 
 Git local branch force: -D option stands for –delete –force
 
-```bsh
+```bash
 git branch -D <branch_name>
 ```
 
 Delete a remote GIT branch
 
-```bsh
+```bash
 git push origin --delete <branch_name>
 ```
 
@@ -300,13 +300,13 @@ git push origin --delete <branch_name>
 
 If you run git status, you can see your dirty state:
 
-```bsh
+```bash
 $ git status
 ```
 
 Now you want to switch branches, but you don’t want to commit what you’ve been working on yet; so you’ll stash the changes. To push a new stash onto your stack, run git stash or git stash save:
 
-```bsh
+```bash
 $ git stash
 
 $ git stash save "Stash message"
@@ -314,7 +314,7 @@ $ git stash save "Stash message"
 
 At this point, you can switch branches and do work elsewhere; your changes are stored on your stack. To see which stashes you’ve stored, you can use git stash list:
 
-```bsh
+```bash
 $ git stash list
 
 Outputs:
@@ -327,7 +327,7 @@ In this case, two stashes were done previously, so you have access to three diff
 
 If you want to apply one of the older stashes, you can specify it by naming it, like this: git stash apply stash@{2}. If you don’t specify a stash, Git assumes the most recent stash and tries to apply it:
 
-```bsh
+```bash
 $ git stash apply
 
 $ git stash apply stash@{1}
@@ -335,7 +335,7 @@ $ git stash apply stash@{1}
 
 Delete a particular stash.
 
-```bsh
+```bash
 $ git stash drop
 
 $ git stash drop stash@{0}

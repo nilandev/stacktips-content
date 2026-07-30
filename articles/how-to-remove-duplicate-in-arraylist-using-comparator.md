@@ -30,89 +30,89 @@ import java.util.TreeSet;
 
 public class RemoveDuplicate {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		final ArrayList students = new ArrayList();
-		students.add(new Student("Student1", "1000"));
-		students.add(new Student("Student2", "1001"));
-		students.add(new Student("Student3", "1002"));
-		students.add(new Student("Student4", "1003"));
-		students.add(new Student("Student5", "1001"));
-		students.add(new Student("Student6", "1004"));
+        final ArrayList students = new ArrayList();
+        students.add(new Student("Student1", "1000"));
+        students.add(new Student("Student2", "1001"));
+        students.add(new Student("Student3", "1002"));
+        students.add(new Student("Student4", "1003"));
+        students.add(new Student("Student5", "1001"));
+        students.add(new Student("Student6", "1004"));
 
-		/** Printing original list **/
-		System.out.println(students);
+        /** Printing original list **/
+        System.out.println(students);
 
-		Set set = new TreeSet(new Comparator() {
-			@Override
-			public int compare(Student o1, Student o2) {
-				if(o1.getId().equalsIgnoreCase(o2.getId())){
-	        		return 0;
-	        	}
-	        	return 1;
-			}
-		});
-		set.addAll(students);
+        Set set = new TreeSet(new Comparator() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if(o1.getId().equalsIgnoreCase(o2.getId())){
+                    return 0;
+                }
+                return 1;
+            }
+        });
+        set.addAll(students);
 
-		System.out.println("\n***** After removing duplicates *******\n");
+        System.out.println("\n***** After removing duplicates *******\n");
 
-	    final ArrayList newList = new ArrayList(set);
+        final ArrayList newList = new ArrayList(set);
 
-	    /** Printing original list **/
-		System.out.println(newList);
-	}
+        /** Printing original list **/
+        System.out.println(newList);
+    }
 
 }
 
 class Student {
-	private String name;
-	private String id;
+    private String name;
+    private String id;
 
-	public Student(String name, String id) {
-		this.name = name;
-		this.id = id;
-	}
+    public Student(String name, String id) {
+        this.name = name;
+        this.id = id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	@Override
-	public String toString() {
-		return "\n" +"Name=" + name + "   Id=" + id ;
-	}
+    @Override
+    public String toString() {
+        return "\n" +"Name=" + name + "   Id=" + id ;
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 [
-Name=Student1   Id=1000, 
-Name=Student2   Id=1001, 
-Name=Student3   Id=1002, 
-Name=Student4   Id=1003, 
-Name=Student5   Id=1001, 
+Name=Student1   Id=1000,
+Name=Student2   Id=1001,
+Name=Student3   Id=1002,
+Name=Student4   Id=1003,
+Name=Student5   Id=1001,
 Name=Student6   Id=1004]
 
 ***** After removing duplicates *******
 
 [
-Name=Student1   Id=1000, 
-Name=Student2   Id=1001, 
-Name=Student3   Id=1002, 
-Name=Student4   Id=1003, 
+Name=Student1   Id=1000,
+Name=Student2   Id=1001,
+Name=Student3   Id=1002,
+Name=Student4   Id=1003,
 Name=Student6   Id=1004]
 ```

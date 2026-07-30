@@ -24,10 +24,10 @@ The `@PathVariable` in spring is used to handle the template variables in the re
 
 For example, in the following controller the `vehicleId` is a path variable mapped directly to the the `updateModel()` controller method.
 
-```
+```java
 @PostMapping("/vehicles/{vehicleId}")
-public ResponseEntity updateModel(@PathVariable String vehicleId, 
-				@Valid @RequestBody VehicleDto vehicle) throws Exception {
+public ResponseEntity updateModel(@PathVariable String vehicleId,
+                @Valid @RequestBody VehicleDto vehicle) throws Exception {
     // Your implementation goes here
 }
 ```
@@ -40,10 +40,10 @@ Here are some common approaches:
 
 We can use the `@NotNull` or `@NotEmpty` annotations to ensure that the `vehicleId` is not null or empty.
 
-```
+```java
 @PostMapping("/vehicles/{vehicleId}")
-public ResponseEntity updateModel(@PathVariable @NotEmpty String vehicleId, 
-			@Valid @RequestBody VehicleDto vehicle) throws Exception {
+public ResponseEntity updateModel(@PathVariable @NotEmpty String vehicleId,
+            @Valid @RequestBody VehicleDto vehicle) throws Exception {
     // Your implementation goes here
 }
 ```
@@ -52,10 +52,10 @@ public ResponseEntity updateModel(@PathVariable @NotEmpty String vehicleId,
 
 To validate a specific pattern like a specific length or containing only numbers, you can use the `@Pattern` annotation from the `javax.validation.constraints` package and use the regular expressions.
 
-```
+```java
 @PostMapping("/vehicles/{vehicleId}")
-public ResponseEntity updateModel(@PathVariable @Pattern(regexp = "\d{4,6}") String vehicleId, 
-		@Valid @RequestBody VehicleDto vehicle) throws Exception {
+public ResponseEntity updateModel(@PathVariable @Pattern(regexp = "\d{4,6}") String vehicleId,
+        @Valid @RequestBody VehicleDto vehicle) throws Exception {
     // Your implementation goes here
 }
 ```
@@ -66,7 +66,7 @@ The regular expressions `\d{4,6}` allows only numbers between 4 and 6 characters
 
 We can use the custom validator if we have more complex validations such as checking against a database. For this we can implement the `ConstraintValidator` interface and inside the `isValid` method it should return either true or false based on the business logic.
 
-```
+```java
 @Target({ ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = VehicleIdValidator.class)
@@ -88,10 +88,10 @@ public class VehicleIdValidator implements ConstraintValidator<ValidVehicleId, S
 
 Now here is how we can use the our custom validator in the controller mapping.
 
-```
+```java
 @PostMapping("/vehicles/{vehicleId}")
-public ResponseEntity updateModel(@PathVariable @ValidVehicleId String vehicleId, 
-		@Valid @RequestBody VehicleDto vehicle) throws Exception {
+public ResponseEntity updateModel(@PathVariable @ValidVehicleId String vehicleId,
+        @Valid @RequestBody VehicleDto vehicle) throws Exception {
     // Your implementation goes here
 }
 ```
@@ -100,11 +100,11 @@ public ResponseEntity updateModel(@PathVariable @ValidVehicleId String vehicleId
 
 It is recommended to use one of the above method for validating the `@PathVariable`. But otherwise we can also validate manually inside the method implementation and throw custom exceptions if the validation fails..
 
-```
+```java
 @PostMapping("/vehicles/{vehicleId}")
 public ResponseEntity updateModel(
-		@PathVariable @ValidVehicleId String vehicleId, 
-		@Valid @RequestBody VehicleDto vehicle) throws Exception {
+        @PathVariable @ValidVehicleId String vehicleId,
+        @Valid @RequestBody VehicleDto vehicle) throws Exception {
     if (vehicleId == null || vehicleId.isEmpty()) {
         throw new MyCustomValiationException("Vehicle id is invalid")
     }

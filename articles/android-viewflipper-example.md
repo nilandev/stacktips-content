@@ -115,7 +115,7 @@ Here in the above xml layout, I am using three `LinearLayout`. Each layout has a
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<resources>    
+<resources>
     <style name="ImageTitle">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">50dp</item>
@@ -142,51 +142,51 @@ Android ViewFlipper can anytime display only one immoderate child at a time. So 
 ```java
 
 public class ViewFlipperSampleActivity extends Activity {
-	private static final int SWIPE_MIN_DISTANCE = 120;
-	private static final int SWIPE_THRESHOLD_VELOCITY = 200;
-	private ViewFlipper mViewFlipper;	
-	private Context mContext;
-	private final GestureDetector detector = new GestureDetector(new SwipeGestureDetector());
+    private static final int SWIPE_MIN_DISTANCE = 120;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
+    private ViewFlipper mViewFlipper;
+    private Context mContext;
+    private final GestureDetector detector = new GestureDetector(new SwipeGestureDetector());
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		mContext = this;
-		mViewFlipper = (ViewFlipper) this.findViewById(R.id.view_flipper);
-		mViewFlipper.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(final View view, final MotionEvent event) {
-				detector.onTouchEvent(event);
-				return true;
-			}
-		});
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        mContext = this;
+        mViewFlipper = (ViewFlipper) this.findViewById(R.id.view_flipper);
+        mViewFlipper.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(final View view, final MotionEvent event) {
+                detector.onTouchEvent(event);
+                return true;
+            }
+        });
+    }
 
-	class SwipeGestureDetector extends SimpleOnGestureListener {
-		@Override
-		public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-			try {
-				// right to left swipe
-				if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
-					mViewFlipper.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.left_in));
-					mViewFlipper.setOutAnimation(AnimationUtils.loadAnimation(mContext, R.anim.left_out));					
-					mViewFlipper.showNext();
-					return true;
-				} else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
-					mViewFlipper.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.right_in));
-					mViewFlipper.setOutAnimation(AnimationUtils.loadAnimation(mContext,R.anim.right_out));
-					mViewFlipper.showPrevious();
-					return true;
-				}
+    class SwipeGestureDetector extends SimpleOnGestureListener {
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            try {
+                // right to left swipe
+                if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+                    mViewFlipper.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.left_in));
+                    mViewFlipper.setOutAnimation(AnimationUtils.loadAnimation(mContext, R.anim.left_out));
+                    mViewFlipper.showNext();
+                    return true;
+                } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+                    mViewFlipper.setInAnimation(AnimationUtils.loadAnimation(mContext, R.anim.right_in));
+                    mViewFlipper.setOutAnimation(AnimationUtils.loadAnimation(mContext,R.anim.right_out));
+                    mViewFlipper.showPrevious();
+                    return true;
+                }
 
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-			return false;
-		}
-	}
+            return false;
+        }
+    }
 }
 ```
 
@@ -233,30 +233,30 @@ Added the following style
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:background">#99000000</item>
-        <item name="android:gravity">center</item>        
+        <item name="android:gravity">center</item>
     </style>
 ```
 
 ViewFlipper auto flip can be controlled from java code. add following code in your java class
 
-```xml
-		
+```java
+
 findViewById(R.id.play).setOnClickListener(new OnClickListener() {
-	@Override
-	public void onClick(View view) {
-		//sets auto flipping
-		mViewFlipper.setAutoStart(true);
-		mViewFlipper.setFlipInterval(4000);
-		mViewFlipper.startFlipping();
-	}
+    @Override
+    public void onClick(View view) {
+        //sets auto flipping
+        mViewFlipper.setAutoStart(true);
+        mViewFlipper.setFlipInterval(4000);
+        mViewFlipper.startFlipping();
+    }
 });
 
 findViewById(R.id.stop).setOnClickListener(new OnClickListener() {
-	@Override
-	public void onClick(View view) {
-		//stop auto flipping 
-		mViewFlipper.stopFlipping();
-	}
+    @Override
+    public void onClick(View view) {
+        //stop auto flipping
+        mViewFlipper.stopFlipping();
+    }
 });
 ```
 
@@ -272,16 +272,16 @@ Sometimes we may need to control our screen while animation is started or comple
 
 //animation listener
 AnimationListener mAnimationListener = new Animation.AnimationListener() {
-	public void onAnimationStart(Animation animation) {
-		//animation started event
-	}
+    public void onAnimationStart(Animation animation) {
+        //animation started event
+    }
 
-	public void onAnimationRepeat(Animation animation) {
-	}
+    public void onAnimationRepeat(Animation animation) {
+    }
 
-	public void onAnimationEnd(Animation animation) {
-		//TODO animation stopped event
-	}
+    public void onAnimationEnd(Animation animation) {
+        //TODO animation stopped event
+    }
 };
 ```
 

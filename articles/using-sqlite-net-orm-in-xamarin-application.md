@@ -50,7 +50,7 @@ Once the component is added to your Xamarin project, you are good to use this li
 
 Before you can store data into SQLite, you first need to create a database, if not created already. Create a blank database or open existing by passing the file path the SQLiteConnection class constructor.
 
-```cs
+```csharp
 private string DbName = "Intentory_DB.db";
 string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 SQLiteConnection dbConn = new SQLiteConnection (System.IO.Path.Combine (path, DbName));
@@ -64,31 +64,31 @@ SQLiteConnection dbConn = new SQLiteConnection (System.IO.Path.Combine (path, Db
 
 In this example, we will be storing items to Inventory table. Below is the structure of Inventory class. As you can see in the code snippet below, we have declared different SQL attributes to Inventory class model.
 
-```cs
+```csharp
 class Inventory
 {
-	[PrimaryKey, AutoIncrement]
-	public int Id { get; set; }
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
 
-	[NotNull]
-	public int ItemCode { get; set;}
+    [NotNull]
+    public int ItemCode { get; set;}
 
-	public String Name{ get; set;}
-	public String Category { get; set;}
-	public double Price{ get; set;}
-	public bool StockAvailable { get; set;}
+    public String Name{ get; set;}
+    public String Category { get; set;}
+    public double Price{ get; set;}
+    public bool StockAvailable { get; set;}
 }
 ```
 
 Once you have your model ready, you can invoke the below methods to create table, if not exist already.
 
-```cs
+```csharp
 dbConn.CreateTable ();
 ```
 
 ## Insert into database
 
-```cs
+```csharp
 //Creating inventory object for storing into db
 Inventory newInventory = new Inventory ();
 newInventory.ItemCode = Convert.ToInt32(ItemCode.Text);
@@ -105,29 +105,29 @@ dbConn.Insert (newInventory);
 
 Use the following syntax to retrieve all the records from database
 
-```
+```csharp
 IEnumerable<Inventory> table = dbConn.Table<Inventory> ();
 foreach (Inventory s in table) {
-	Console.WriteLine (s.ItemCode + " " + s.Name);
+    Console.WriteLine (s.ItemCode + " " + s.Name);
 }
 ```
 
 To retrieve object by primary key, you can use following code syntax.
 
-```cs
+```csharp
 //3 is primary key
 var item = db.Get<Inventory>(3);
 ```
 
 ## Update record into database
 
-```cs
+```csharp
 //Inserting record into database
 dbConn.Update (item);
 ```
 
 ## Delete from database
 
-```cs
+```csharp
 dbConn.Delete (item);
 ```

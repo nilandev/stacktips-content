@@ -36,7 +36,7 @@ When we create a new Spring boot project the `spring-boot-starter-test` dependen
 
 For maven, add the following to the `<dependencies>` section in your `pom.xml` file
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-test</artifactId>
@@ -48,23 +48,23 @@ The `test` scope defines that the `spring-boot-starter-test` dependency is requi
 
 For gradle,
 
-```
+```groovy
 testImplementation 'org.springframework.boot:spring-boot-starter-test'
 ```
 
 The Spring Initializr also includes a default test class in the root directory of the test package.
 
-```
-import org.junit.jupiter.api.Test;  
-import org.springframework.boot.test.context.SpringBootTest;  
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest  
-class MoviesApplicationTests {  
+@SpringBootTest
+class MoviesApplicationTests {
 
-    @Test  
-    void contextLoads() {  
+    @Test
+    void contextLoads() {
 
-    }  
+    }
 }
 ```
 
@@ -74,13 +74,13 @@ The `@Test` annotation a JUnit annotation that will execute the method when the 
 
 You can run this test in your IDE or on the command line using following Maven or Gradle commands.
 
-```
+```bash
 ./mvnw test
 ```
 
 or
 
-```
+```bash
 ./gradlew test
 ```
 
@@ -88,42 +88,42 @@ or
 
 Now that we have the required test dependency in our project and we have learnt how to execute the test, let us now test the following controller.
 
-```
-import org.springframework.web.bind.annotation.RequestMapping;  
-import org.springframework.web.bind.annotation.RestController;  
+```java
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@RestController  
-public class GreetingController {  
+@RestController
+public class GreetingController {
 
-    @RequestMapping("/")  
-    public String greeting() {  
-        return "Hello, Spring Boot!";  
-    }  
+    @RequestMapping("/")
+    public String greeting() {
+        return "Hello, Spring Boot!";
+    }
 }
 ```
 
 Let us now verify if the Spring context is creating the instance of `GreetingsController` with an assertion.
 
-```
-import com.stacktips.movies.api.GreetingsController;  
-import org.junit.jupiter.api.Test;  
-import org.springframework.beans.factory.annotation.Autowired;  
-import org.springframework.boot.test.context.SpringBootTest;  
+```java
+import com.stacktips.movies.api.GreetingsController;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.hamcrest.MatcherAssert.assertThat;  
-import static org.hamcrest.Matchers.is;  
-import static org.hamcrest.Matchers.notNullValue;  
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
 
-@SpringBootTest  
-class MoviesApplicationTests {  
+@SpringBootTest
+class MoviesApplicationTests {
 
-    @Autowired  
-    private GreetingController controller;  
+    @Autowired
+    private GreetingController controller;
 
-    @Test  
-    void contextLoads() {  
-        assertThat(controller, is(notNullValue()));  
-    }  
+    @Test
+    void contextLoads() {
+        assertThat(controller, is(notNullValue()));
+    }
 
 }
 ```
@@ -136,32 +136,32 @@ The `@Autowired` injects the controller instance before the test methods are run
 
 Let us now write some tests to assert the behavior of your application. For that we will start the application and and listen for a connection (as it would do in production) and then send an HTTP request and assert the response.
 
-```
-import org.junit.jupiter.api.Test;  
-import org.springframework.beans.factory.annotation.Autowired;  
-import org.springframework.boot.test.context.SpringBootTest;  
-import org.springframework.boot.test.web.client.TestRestTemplate;  
-import org.springframework.boot.test.web.server.LocalServerPort;  
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
-import static org.hamcrest.MatcherAssert.assertThat;  
-import static org.hamcrest.Matchers.is;  
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;  
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)  
-class GreetingsControllerTest {  
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class GreetingsControllerTest {
 
-    @LocalServerPort  
-    private int port;  
+    @LocalServerPort
+    private int port;
 
-    @Autowired  
-    private TestRestTemplate restTemplate;  
+    @Autowired
+    private TestRestTemplate restTemplate;
 
-    @Test  
-    void greetingShouldReturnDefaultMessage() throws Exception {  
+    @Test
+    void greetingShouldReturnDefaultMessage() throws Exception {
         String result = restTemplate
-            .getForObject("http://localhost:" + port + "/",  String.class);  
-        assertThat(result, is("Hello, Spring Boot!"));  
-    }  
+            .getForObject("http://localhost:" + port + "/",  String.class);
+        assertThat(result, is("Hello, Spring Boot!"));
+    }
 
 }
 ```
@@ -176,31 +176,31 @@ In the above approach we have started the server but if we want to tests to only
 
 If we have multiple controllers, we can instantiate specific ones by using the`@WebMvcTest(HomeController.class)` annotation on the class.
 
-```
-import org.junit.jupiter.api.Test;  
-import org.springframework.beans.factory.annotation.Autowired;  
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;  
-import org.springframework.test.web.servlet.MockMvc;  
+```java
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.containsString;  
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;  
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;  
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;  
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;  
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(GreetingController.class)  
-class GreetingControllerTest {  
+@WebMvcTest(GreetingController.class)
+class GreetingControllerTest {
 
-    @Autowired  
-    MockMvc mockMvc;  
+    @Autowired
+    MockMvc mockMvc;
 
-    @Test  
-    void greetingShouldReturnDefaultMessage() throws Exception {  
-        this.mockMvc.perform(get("/"))  
-                .andDo(print())  
-                .andExpect(status().isOk())  
-                .andExpect(content().string(containsString("Hello, Spring Boot!")));  
-    }  
+    @Test
+    void greetingShouldReturnDefaultMessage() throws Exception {
+        this.mockMvc.perform(get("/"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Hello, Spring Boot!")));
+    }
 
 }
 ```
@@ -213,92 +213,92 @@ So far, our `HomeController` is simple and has no dependencies. But we will ofte
 
 **MovieService**
 
-```
-import org.springframework.stereotype.Service;  
+```java
+import org.springframework.stereotype.Service;
 
-import java.util.List;  
+import java.util.List;
 
-@Service  
-public class MovieService {  
+@Service
+public class MovieService {
 
-    public List<String> getMovies() {  
-        return List.of("The Incredibles", "Father of the Bride", "The Parent Trap");  
-    }  
+    public List<String> getMovies() {
+        return List.of("The Incredibles", "Father of the Bride", "The Parent Trap");
+    }
 }
 ```
 
 And, lets say our MovieController has `/movies` GET endpoint.
 
-```
-import com.stacktips.movies.service.MovieService;  
-import org.springframework.web.bind.annotation.RequestMapping;  
-import org.springframework.web.bind.annotation.RestController;  
+```java
+import com.stacktips.movies.service.MovieService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;  
+import java.util.List;
 
-@RestController  
-public class MovieController {  
+@RestController
+public class MovieController {
 
-    private final MovieService movieService;  
+    private final MovieService movieService;
 
-    public MovieController(MovieService movieService) {  
-        this.movieService = movieService;  
-    }  
+    public MovieController(MovieService movieService) {
+        this.movieService = movieService;
+    }
 
-    @RequestMapping("/movies")  
-    public List<String> getMovies() {  
-        return movieService.getMovies();  
-    }  
+    @RequestMapping("/movies")
+    public List<String> getMovies() {
+        return movieService.getMovies();
+    }
 }
 ```
 
 In the above code snippet, Spring automatically injects the `MovieService` dependency into the controller as we have only one constructor defined. If you run the spring boot application and test `/movies` endpoint, it will return the list of movies.
 
-```
+```text
 nilan > curl http://localhost:8080/movies
 ["The Incredibles","Father of the Bride","The Parent Trap"]
 ```
 
 Let us now create a test for the `MoviesController` and mock the service instance. To mock the Spring bean the `@MockBean` annotation is used.
 
-```
-import com.stacktips.movies.service.MovieService;  
-import org.junit.jupiter.api.Test;  
-import org.springframework.beans.factory.annotation.Autowired;  
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;  
-import org.springframework.boot.test.mock.mockito.MockBean;  
-import org.springframework.test.web.servlet.MockMvc;  
+```java
+import com.stacktips.movies.service.MovieService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;  
+import java.util.List;
 
-import static org.hamcrest.CoreMatchers.is;  
-import static org.mockito.Mockito.when;  
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;  
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;  
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;  
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;  
+import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(MovieController.class)  
-class MovieControllerTest {  
+@WebMvcTest(MovieController.class)
+class MovieControllerTest {
 
-    @Autowired  
-    private MockMvc mockMvc;  
+    @Autowired
+    private MockMvc mockMvc;
 
-    @MockBean  
-    private MovieService movieService;  
+    @MockBean
+    private MovieService movieService;
 
-    @Test  
-    void greetingShouldReturnMockResponse() throws Exception {  
-        List<String> moviesMock = List.of("Sprider Man", "X-Man", "Iron Man");  
-        when(movieService.getMovies()).thenReturn(moviesMock); 
+    @Test
+    void greetingShouldReturnMockResponse() throws Exception {
+        List<String> moviesMock = List.of("Sprider Man", "X-Man", "Iron Man");
+        when(movieService.getMovies()).thenReturn(moviesMock);
 
-        this.mockMvc.perform(get("/movies"))  
-                .andDo(print())  
-                .andExpect(status().isOk())  
-                .andExpect(jsonPath("$[0]", is("Sprider Man")))  
-                .andExpect(jsonPath("$[1]", is("X-Man")))  
-                .andExpect(jsonPath("$[2]", is("Iron Man")));  
-    }  
+        this.mockMvc.perform(get("/movies"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0]", is("Sprider Man")))
+                .andExpect(jsonPath("$[1]", is("X-Man")))
+                .andExpect(jsonPath("$[2]", is("Iron Man")));
+    }
 
 }
 ```

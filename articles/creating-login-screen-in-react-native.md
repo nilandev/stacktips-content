@@ -30,37 +30,37 @@ This example is developed in MacOS. Before you begin, make sure you have all the
 
 -   You need ‘Homebrew’ package management software to get all other dependency packages. Usually all modern macOS are preinstalled with home-brew. By any chance, if you don’t have it on your machine, install it using following command. Learn more from official Homebrew website [here](https://brew.sh/).
 
-```
+```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 -   Install node.js if not installed already. To check if it is installed paste the following command in your terminal window.
 
-```
+```bash
 $ node -v
 ```
 
 If not installed, the following command will install the latest node version.
 
-```js
+```bash
 $ brew install node
 ```
 
 -   Now we will install ‘Watchman’. Though it is strictly not required, this will make our development productive. Watchman is a tool by provided by Facebook, used for watching changes in the filesystem.
 
-```
+```bash
 brew install watchman
 ```
 
 -   Install React Native command line interface
 
-```
+```bash
 $ npm install -g react-native-cli
 ```
 
 -   Run the following command to cross check React-native version.
 
-```
+```bash
 $ react-native -v
 ```
 
@@ -73,7 +73,7 @@ Now, we are ready to go by creating a new project by name DemoLogin via Terminal
 
 Open Terminal/iTerm
 
-```
+```bash
 $ ~ mkdir ReactNativeApp
 $ ~ cd ReactNativeApp
 $ ReactNativeApp react-native init DemoLogin
@@ -156,7 +156,7 @@ And initialise the `Login` component inside `render` function, overall it’s sh
 ```js
 import React, { Component } from 'react';
 import { AppRegistry,StyleSheet,Text ,View} from 'react-native';
-//import Login Component 
+//import Login Component
 import Login from './src/components/Login/Login';
 
 export default class DemoLogin extends Component {
@@ -174,7 +174,7 @@ Let’s compile and check weather we have zero compilation error and logo image 
 
 To compile via iTerm paste the following command, make sure your inside project folder.
 
-```
+```bash
 react-native run-ios
 ```
 
@@ -195,26 +195,26 @@ import { View, Text, TextInput, TouchableOpacity,StyleSheet} from 'react-native'
 Inside View container tag paste the following snippet, which contains properties for Textfield like keyboardType, returnKeyType, placeholder, placeholderTextColor ,onSubmitEditing, secureTextEntry for secure password. For Login button we can use either react-native Button component or TouchableOpacity, we will use TouchableOpacity in this article.
 
 ```js
-<TextInput style = {styles.input} 
-               autoCapitalize="none" 
-               onSubmitEditing={() => this.passwordInput.focus()} 
-               autoCorrect={false} 
-               keyboardType='email-address' 
-               returnKeyType="next" 
-               placeholder='Email or Mobile Num' 
+<TextInput style = {styles.input}
+               autoCapitalize="none"
+               onSubmitEditing={() => this.passwordInput.focus()}
+               autoCorrect={false}
+               keyboardType='email-address'
+               returnKeyType="next"
+               placeholder='Email or Mobile Num'
                placeholderTextColor='rgba(225,225,225,0.7)'/>
 
-<TextInput style = {styles.input}   
-              returnKeyType="go" 
-              ref={(input)=> this.passwordInput = input} 
-              placeholder='Password' 
-              placeholderTextColor='rgba(225,225,225,0.7)' 
+<TextInput style = {styles.input}
+              returnKeyType="go"
+              ref={(input)=> this.passwordInput = input}
+              placeholder='Password'
+              placeholderTextColor='rgba(225,225,225,0.7)'
               secureTextEntry/>
 
-<TouchableOpacity style={styles.buttonContainer} 
+<TouchableOpacity style={styles.buttonContainer}
                      onPress={onButtonPress}>
              <Text  style={styles.buttonText}>LOGIN</Text>
-</TouchableOpacity> 
+</TouchableOpacity>
 // define your styles
 const styles = StyleSheet.create({
     container: {
@@ -270,7 +270,7 @@ class Login extends Component {
 
                 <View style={styles.loginContainer}>
                     <Image resizeMode="contain" style={styles.logo} source={require('../../components/images/logo-dark-bg.png')} />
-                  
+
                    </View>
                <View style={styles.formContainer}>
                    <LoginForm />

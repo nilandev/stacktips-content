@@ -24,22 +24,22 @@ The following code snippet will fetch all sub categories of selected category. A
 
 ```php
 <section class="sub-category">
-	<div class="container">
-	<?php
-		$cur_cat = get_query_var('cat');
-		$args=array(
-		    'child_of' => $cur_cat,
-		    'hide_empty' => 0,
-		    'orderby' => 'name',
-		    'order' => 'ASC',
-		    'depth' => '1'
-		
-		);
-		$categories=get_categories($args);
-		foreach($categories as $category) {
-			echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';  }
-	?>
-	<div>
+    <div class="container">
+    <?php
+        $cur_cat = get_query_var('cat');
+        $args=array(
+            'child_of' => $cur_cat,
+            'hide_empty' => 0,
+            'orderby' => 'name',
+            'order' => 'ASC',
+            'depth' => '1'
+
+        );
+        $categories=get_categories($args);
+        foreach($categories as $category) {
+            echo '<a href="' . get_category_link( $category->term_id ) . '" title="' . sprintf( __( "View all posts in %s" ), $category->name ) . '" ' . '>' . $category->name.'</a>';  }
+    ?>
+    <div>
 </section>
 ```
 

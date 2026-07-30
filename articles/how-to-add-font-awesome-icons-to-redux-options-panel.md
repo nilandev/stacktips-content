@@ -24,8 +24,7 @@ Redux WordPress framework includes Elusive Icons by default for your options pan
 
 Add the following code snippet to your redux framework `options-init.php` file.
 
-```java
-
+```php
 // This is your option name where all the Redux data is stored.
 $opt_name = 'my_theme_options';
 //...
@@ -34,9 +33,9 @@ function add_font_awesome_icons() {
     // Uncomment this to remove elusive icon from the panel completely
     //wp_deregister_style( 'redux-elusive-icon' );
     //wp_deregister_style( 'redux-elusive-icon-ie7' );
- 
-    wp_register_style('redux-font-awesome', 
-		'//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css',
+
+    wp_register_style('redux-font-awesome',
+        '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css',
         array(), time(), 'all'
     );
     wp_enqueue_style( 'redux-font-awesome' );

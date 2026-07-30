@@ -28,7 +28,7 @@ To consume a REST API using RestTemplate in a Spring Boot application, you need 
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
-</dependency> 
+</dependency>
 ```
 
 **Depreciation** **Notice!!**
@@ -148,7 +148,7 @@ HttpEntity<String> httpEntity = new HttpEntity<>(headers);
 Map<String, String> params = new HashMap<>();
 params.put("productId", productId);
 
-ResponseEntity<Product> result = restTemplate.exchange(GET_API, HttpMethod.GET, httpEntity, 
+ResponseEntity<Product> result = restTemplate.exchange(GET_API, HttpMethod.GET, httpEntity,
                     Product.class, params);
 return result.getBody();
 ```
@@ -158,9 +158,9 @@ return result.getBody();
 ```java
 HttpHeaders headers = new HttpHeaders();
 headers.set("X-API-KEY", "YOUR_API_KEY");
-headers.setContentType(MediaType.APPLICATION_JSON);    
+headers.setContentType(MediaType.APPLICATION_JSON);
 HttpEntity<Product> httpEntity = new HttpEntity<>(product, headers);
-    
+
 Product createdProduct = restTemplate.postForObject(POST_API, httpEntity, Product.class);
 ```
 

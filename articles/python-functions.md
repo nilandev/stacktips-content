@@ -26,7 +26,7 @@ Functions are a great way to group related statements that is aimed to break a c
 
 In Python a function is defined using the def keyword.
 
-```
+```python
 def function_name(parameter1, parameter2):
     print("Hello from a function")
 ```
@@ -44,7 +44,7 @@ print_hello()
 
 **Output:**
 
-```
+```text
 Hello from a function!
 ```
 
@@ -62,7 +62,7 @@ greet(message="Good morning!", name="John") # Named arguments
 
 **Output:**
 
-```
+```text
 Hello Adam, Good morning!
 Hello John, Good morning!
 ```
@@ -72,7 +72,7 @@ Hello John, Good morning!
 
 **Output:**
 
-```
+```text
 Result: 300
 ```
 
@@ -97,7 +97,7 @@ print("Result:", result)
 
 **Output:**
 
-```
+```text
 Result: 300
 Result: 0
 ```
@@ -119,7 +119,7 @@ my_function("John", "Adam", "Prakash")
 
 Output:
 
-```
+```text
 The third arg is: Prakash
 ```
 
@@ -140,7 +140,7 @@ my_function(name1="John", name2="Adam", name3="Prakash")
 
 **Output:**
 
-```python
+```text
 The name2 arg is: Adam
 ```
 
@@ -150,7 +150,7 @@ A function defined in Python cannot have be empty. But for some reason if you do
 
 ```python
 def my_function():
-	pass
+    pass
 ```
 
 ## Function Recursion
@@ -174,7 +174,7 @@ print('{}! is {}'.format(3, factorial(3)))
 
 **Output:**
 
-```python
+```text
 4! is 24
 3! is 6
 ```

@@ -28,18 +28,18 @@ Below is the example demonstrating the usage of Carousel.
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
-	
-	onReady : function() {
-		
-		var title = new Ext.Toolbar({
-			 title: 'Carousel Example'
-		});
-		
-		var actionBar = new Ext.Toolbar({
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
+
+    onReady : function() {
+
+        var title = new Ext.Toolbar({
+             title: 'Carousel Example'
+        });
+
+        var actionBar = new Ext.Toolbar({
             id: 'mytoolbar',
             dock: 'bottom',
             ui: 'light',
@@ -48,52 +48,52 @@ Ext.setup({
                 ui: "back",
                 text: "Previous",
                 handler: function(){
-	carousel.prev();
-	}
+    carousel.prev();
+    }
               },{
-	xtype:'spacer'
+    xtype:'spacer'
               },{
                 xtype: "button",
                 ui: "forward",
                 text: "Next",
                 handler: function(){
-	carousel.next();
-	}
-              }]            
-	     });
-		
-		var carousel = new Ext.Carousel({
-	            direction: 'horizontal',
-	            items: [{
-	                title: 'Tab 1',
-	                html: 'Carousel Tab 1'
-	            },{
-	                title: 'Tab 2',
-	                html: 'Carousel Tab 2'
-	            },{
-	                title: 'Tab 3',
-	                html: 'Carousel Tab  3'
-	            }]
-	        });
-		
-		var formBase = new Ext.Panel({
-			layout : 'fit',
-			pinHeaders: true,
-			id: 'formbase',
-			name: 'formBase',
-			fullscreen : true,
-			items: [carousel],
-			dockedItems: [title, actionBar]
-		});
+    carousel.next();
+    }
+              }]
+         });
 
-	Ext.apply(formBase, {
-		fullscreen : true,
-		autoRender : true,
-		hideOnMaskTap : false		
-	});
+        var carousel = new Ext.Carousel({
+                direction: 'horizontal',
+                items: [{
+                    title: 'Tab 1',
+                    html: 'Carousel Tab 1'
+                },{
+                    title: 'Tab 2',
+                    html: 'Carousel Tab 2'
+                },{
+                    title: 'Tab 3',
+                    html: 'Carousel Tab  3'
+                }]
+            });
 
-	formBase.show();
-	}
+        var formBase = new Ext.Panel({
+            layout : 'fit',
+            pinHeaders: true,
+            id: 'formbase',
+            name: 'formBase',
+            fullscreen : true,
+            items: [carousel],
+            dockedItems: [title, actionBar]
+        });
+
+    Ext.apply(formBase, {
+        fullscreen : true,
+        autoRender : true,
+        hideOnMaskTap : false
+    });
+
+    formBase.show();
+    }
 });
 ```
 

@@ -54,43 +54,43 @@ implementation 'org.springframework.boot:spring-boot-starter-quartz'`
 The CSV content maps to the following `Book` model. Please note, I am using [Java17 record](https://stacktips.com/articles/java-17-interview-questions-and-answers#1-what-is-the-records-in-java) for this purpose. If you're using lower version of Java, you can write a simple POJO class.
 
 ```java
-public record Book(  
-        String id,  
-        String isbn,  
-        String isbn13,  
-        String authors,  
-        String publicationYear,  
-        String title,  
-        String languageCode,  
-        Double averageRating,  
-        String imageUrl) {  
+public record Book(
+        String id,
+        String isbn,
+        String isbn13,
+        String authors,
+        String publicationYear,
+        String title,
+        String languageCode,
+        Double averageRating,
+        String imageUrl) {
 }
 ```
 
 To keep the scope of this article limited to the task scheduler, we will not perform any database operations. Here is how our `ImportService` looks like:
 
 ```java
-@Service  
-public class ImportService {  
+@Service
+public class ImportService {
 
-    private static final Logger log = LoggerFactory.getLogger(ImportService.class);  
+    private static final Logger log = LoggerFactory.getLogger(ImportService.class);
 
-    public void readBooks() throws IOException, CsvException {  
-        File file = new File("src/data/books.csv");  
-        log.info("Importer started!");  
+    public void readBooks() throws IOException, CsvException {
+        File file = new File("src/data/books.csv");
+        log.info("Importer started!");
 
-        try (CSVReader csvReader = new CSVReader(new FileReader(file))) {  
-            final List<String[]> rows = csvReader.readAll();  
-            List<Book> books = rows.stream()  
-                    .skip(1)  
-                    .map(row -> new Book(row[0], row[1], row[2], row[3], row[4],  
-                            row[5], row[6], Double.parseDouble(row[7]), row[8]))  
-                    .toList();  
-            log.info("Imported {} books", books.size());  
-        }  
+        try (CSVReader csvReader = new CSVReader(new FileReader(file))) {
+            final List<String[]> rows = csvReader.readAll();
+            List<Book> books = rows.stream()
+                    .skip(1)
+                    .map(row -> new Book(row[0], row[1], row[2], row[3], row[4],
+                            row[5], row[6], Double.parseDouble(row[7]), row[8]))
+                    .toList();
+            log.info("Imported {} books", books.size());
+        }
 
-        log.info("Importer completed!");  
-    }  
+        log.info("Importer completed!");
+    }
 }
 ```
 
@@ -112,7 +112,7 @@ public class CsvImportJob implements Job {
         this.importService = importService;
     }
 
-    @Override  
+    @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
             JobDataMap dataMap = context.getJobDetail().getJobDataMap();
@@ -128,7 +128,7 @@ public class CsvImportJob implements Job {
             log.error("CsvException thrown while running job", e);
             throw new RuntimeException(e);
         }
-    }  
+    }
 }
 ```
 
@@ -141,15 +141,15 @@ The `spring-boot-starter-quartz` dependency automatically configures a `Schedule
 The `SchedulerFactoryBean` is a Quartz's standard factory implementation that is responsible for creating a `Scheduler` instance.
 
 ```java
-@Configuration  
-public class QuartzConfig {  
+@Configuration
+public class QuartzConfig {
 
     @Bean
     public JobDetail csvImportJob() {
         return JobBuilder.newJob(CsvImportJob.class)
-                .withIdentity("csvImportJob")          
+                .withIdentity("csvImportJob")
                 .build();
-    }  
+    }
 
     @Bean
     public Trigger csvImportJobTrigger(JobDetail csvImportJob) {
@@ -173,20 +173,20 @@ Along with the cron trigger, we can also schedule job to start at a specific mom
 When defining a interval based trigger, we need to specify the start time, repeat interval, and optionally the number of repeats.
 
 ```java
-@Bean  
-    public Trigger csvImportJobTrigger(JobDetail csvImportJob) {  
+@Bean
+    public Trigger csvImportJobTrigger(JobDetail csvImportJob) {
         // Initial delay
-        Date afterFiveSeconds = Date.from(LocalDateTime.now().plusSeconds(5)  
-                .atZone(ZoneId.systemDefault()).toInstant());  
+        Date afterFiveSeconds = Date.from(LocalDateTime.now().plusSeconds(5)
+                .atZone(ZoneId.systemDefault()).toInstant());
 
-        return TriggerBuilder.newTrigger()  
-                .forJob(csvImportJob)  
-                .startAt(afterFiveSeconds) // Initial delay 
-                .withIdentity("simpleTrigger") 
-                .withSchedule(SimpleScheduleBuilder.simpleSchedule()  
-                        .withIntervalInSeconds(60)  
-                        .repeatForever())  
-                .build();  
+        return TriggerBuilder.newTrigger()
+                .forJob(csvImportJob)
+                .startAt(afterFiveSeconds) // Initial delay
+                .withIdentity("simpleTrigger")
+                .withSchedule(SimpleScheduleBuilder.simpleSchedule()
+                        .withIntervalInSeconds(60)
+                        .repeatForever())
+                .build();
     }
 ```
 
@@ -199,49 +199,49 @@ The `InterruptableJob` interface extends the `Job` interface and adds the abilit
 To create an Interruptible Job, we need to implement the `InterruptableJob` interface and implement the `interrupt()` method. The `interrupt()` method is called by the Quartz Scheduler when a user interrupts the Job.
 
 ```java
-public class CsvImportInterruptableJob implements InterruptableJob {  
+public class CsvImportInterruptableJob implements InterruptableJob {
 
-    private static final Logger log = LoggerFactory.getLogger(CsvImportInterruptableJob.class);  
+    private static final Logger log = LoggerFactory.getLogger(CsvImportInterruptableJob.class);
 
-    private final ImportService importService;  
+    private final ImportService importService;
 
-    public CsvImportInterruptableJob(ImportService importService) {  
-        this.importService = importService;  
-    }  
+    public CsvImportInterruptableJob(ImportService importService) {
+        this.importService = importService;
+    }
 
-    private volatile boolean toStop = false;  
+    private volatile boolean toStop = false;
 
-    @Override  
-    public void execute(JobExecutionContext context) throws JobExecutionException {  
-        while (!toStop) {  
+    @Override
+    public void execute(JobExecutionContext context) throws JobExecutionException {
+        while (!toStop) {
 
-            try {  
-                JobDataMap dataMap = context.getJobDetail().getJobDataMap();  
-                String param = dataMap.getString("param");  
+            try {
+                JobDataMap dataMap = context.getJobDetail().getJobDataMap();
+                String param = dataMap.getString("param");
 
-                log.info("CsvImportInterruptableJob started with parameter: {}", param);  
-                importService.readBooks();  
+                log.info("CsvImportInterruptableJob started with parameter: {}", param);
+                importService.readBooks();
 
-            } catch (IOException e) {  
-                log.error("IOException thrown while running job", e);  
-                throw new RuntimeException(e);  
-            } catch (CsvException e) {  
-                log.error("Exception thrown while running job", e);  
-                throw new RuntimeException(e);  
-            }  
+            } catch (IOException e) {
+                log.error("IOException thrown while running job", e);
+                throw new RuntimeException(e);
+            } catch (CsvException e) {
+                log.error("Exception thrown while running job", e);
+                throw new RuntimeException(e);
+            }
 
-            if (Thread.interrupted()) {  
-                // Perform any cleanup tasks and terminate  
-                toStop = true;  
-            }  
-        }  
+            if (Thread.interrupted()) {
+                // Perform any cleanup tasks and terminate
+                toStop = true;
+            }
+        }
 
-    }  
+    }
 
-    @Override  
-    public void interrupt() throws UnableToInterruptJobException {  
-        toStop = true;  
-    }  
+    @Override
+    public void interrupt() throws UnableToInterruptJobException {
+        toStop = true;
+    }
 }
 ```
 

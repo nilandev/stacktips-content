@@ -272,7 +272,7 @@ if (thereAreTacos || thereIsPizza) {
 }
 ```
 
-```
+```text
 I'm glad there's good food here!
 ```
 
@@ -295,7 +295,7 @@ if (!thereIsGoodFood) {
 }
 ```
 
-```bash
+```text
 There is no good food here :(
 ```
 

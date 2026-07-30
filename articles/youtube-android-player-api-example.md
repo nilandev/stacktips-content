@@ -48,7 +48,7 @@ The following image depicts the project structure after YouTubeAndroidPlayerApi.
 
 Now that the library is added, just make sure you have the following declaration in your app `build.gradle` file.
 
-```
+```groovy
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //... other dependencies
@@ -87,7 +87,7 @@ YouTubePlayerView takes care of Android Configuration Change events. It saves an
 
 Let us first add the YouTubePlayerView view in your activity or fragment view hierarchy.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:tools="http://schemas.android.com/tools"
@@ -107,7 +107,7 @@ Let us first add the YouTubePlayerView view in your activity or fragment view hi
 
 INTERNET permission is required to play video over internet. Add the following permission in your application `AndroidManifest.xml` file.
 
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
@@ -117,7 +117,7 @@ When using YouTubePlayerView, your activity needs to extend `[YouTubeBaseActivit
 
 Once the initialization is successful, you will get the `onInitializationSuccess()` callback with YouTubePlayerView instance. You can add additional listeners to handle the playback control events.
 
-```
+```java
 public class MainActivity extends YouTubeBaseActivity implements OnInitializedListener {
     public static final String API_KEY = "YOUR_API_KEY";
 
@@ -158,43 +158,43 @@ In the above code snippet, we are calling `initialize(String, OnInitializedListe
 
 You may attach `PlaybackEventListener` or `PlayerStateChangeListener` listeners to player instance for error handling or advanced configurations.
 
-```
+```java
 // Add listeners to YouTubePlayer instance
 player.setPlayerStateChangeListener(new PlayerStateChangeListener() {
-    @Override 
-	public void onAdStarted() { }
-    
-	@Override 
-	public void onError(ErrorReason arg0) { }
-    
-	@Override
-	public void onLoaded(String arg0) { }
-    
-	@Override
-	public void onLoading() { }
-    
-	@Override 
-	public void onVideoEnded() { }
-	
-    @Override 
-	public void onVideoStarted() { }
+    @Override
+    public void onAdStarted() { }
+
+    @Override
+    public void onError(ErrorReason arg0) { }
+
+    @Override
+    public void onLoaded(String arg0) { }
+
+    @Override
+    public void onLoading() { }
+
+    @Override
+    public void onVideoEnded() { }
+
+    @Override
+    public void onVideoStarted() { }
 });
 
 player.setPlaybackEventListener(new PlaybackEventListener() {
-    @Override 
-	public void onBuffering(boolean arg0) { }
-	
-    @Override 
-	public void onPaused() { }
-	
-    @Override 
-	public void onPlaying() { }
-	
-    @Override 
-	public void onSeekTo(int arg0) { }
-	
-    @Override 
-	public void onStopped() { }
+    @Override
+    public void onBuffering(boolean arg0) { }
+
+    @Override
+    public void onPaused() { }
+
+    @Override
+    public void onPlaying() { }
+
+    @Override
+    public void onSeekTo(int arg0) { }
+
+    @Override
+    public void onStopped() { }
 });
 ```
 
@@ -208,7 +208,7 @@ The YouTube Android Player allows you to customize the playback control by setti
 
 You can apply style to YouTubePlayer by calling `setPlayerStyle(PlayerStyle style)` method.
 
-```
+```java
 player.setPlayerStyle(PlayerStyle.CHROMELESS);
 ```
 
@@ -221,7 +221,7 @@ Integrating YouTubePlayerFragment is relatively easy. The following section demo
 Let us declare the Activity layout where the YouTubePlayerFragment will be added.  
 **activity\_youtube\_player\_fragment.xml**
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/content"
@@ -234,7 +234,7 @@ Now let us create an activity and extend it form `YouTubeBaseActivity`. We will 
 
 **YouTubePlayerFragmentActivity.java**
 
-```
+```java
 public class YouTubePlayerFragmentActivity extends YouTubeBaseActivity {
     public static final String API_KEY = "AIzaSyBx7v0YOb1404fDO7EbfMx4l87raxezDWFw";
 

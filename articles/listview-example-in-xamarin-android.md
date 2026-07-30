@@ -108,65 +108,65 @@ Adapter is a tricky part while creating ListView. BaseAdapter is a common Adapte
 
 In our example, `CusotmListAdapter` takes list of Post objects. The structure of Post class as described below.
 
-```cs
+```csharp
 public class Post
 {
-	public string url { get; set; }
-	public string title { get; set; }
-	public string description { get; set; }
+    public string url { get; set; }
+    public string title { get; set; }
+    public string description { get; set; }
 }
 ```
 
 The post class contains three fields; a url, title and a description. In this example we will not cover much on how to get the data source, you may hardcode or write some logic to download data form server. Now lets move to our list adapter implementation.
 
-```cs
+```csharp
 public class CusotmListAdapter : BaseAdapter<Post>
 {
-	Activity context;
-	List<Post> list;
+    Activity context;
+    List<Post> list;
 
-	public CusotmListAdapter (Activity _context, List<Post> _list)
-		:base()
-	{
-		this.context = _context;
-		this.list = _list;
-	}
+    public CusotmListAdapter (Activity _context, List<Post> _list)
+        :base()
+    {
+        this.context = _context;
+        this.list = _list;
+    }
 
-	public override int Count {
-		get { return list.Count; }
-	}
+    public override int Count {
+        get { return list.Count; }
+    }
 
-	public override long GetItemId (int position)
-	{
-		return position;
-	}
+    public override long GetItemId (int position)
+    {
+        return position;
+    }
 
-	public override Post this[int index] {
-		get { return list [index]; }
-	}
+    public override Post this[int index] {
+        get { return list [index]; }
+    }
 
-	public override View GetView (int position, View convertView, ViewGroup parent)
-	{
-		View view = convertView; 
+    public override View GetView (int position, View convertView, ViewGroup parent)
+    {
+        View view = convertView;
 
-		// re-use an existing view, if one is available
-		// otherwise create a new one
-		if (view == null)
-			view = context.LayoutInflater.Inflate (Resource.Layout.ListRowLayout, parent, false);
+        // re-use an existing view, if one is available
+        // otherwise create a new one
+        if (view == null)
+            view = context.LayoutInflater.Inflate (Resource.Layout.ListRowLayout, parent, false);
 
-		Post item = this [position];
-		view.FindViewById<TextView> (Resource.Id.Title).Text = item.title;
-		view.FindViewById<TextView>(Resource.Id.Description).Text = item.description;
+        Post item = this [position];
+        view.FindViewById<TextView> (Resource.Id.Title).Text = item.title;
+        view.FindViewById<TextView>(Resource.Id.Description).Text = item.description;
 
-		using (var imageView = view.FindViewById<ImageView> (Resource.Id.Thumbnail)) {
-			string url = Android.Text.Html.FromHtml (item.thumbnail).ToString ();
+        using (var imageView = view.FindViewById<ImageView> (Resource.Id.Thumbnail)) {
+            string url = Android.Text.Html.FromHtml (item.thumbnail).ToString ();
 
-			//Download and display image
-			Koush.UrlImageViewHelper.SetUrlDrawable (imageView, 
-				url, Resource.Drawable.Placeholder);
-		}
-		return view;
-	}
+            //Download and display image
+            Koush.UrlImageViewHelper.SetUrlDrawable (imageView,
+                url, Resource.Drawable.Placeholder);
+        }
+        return view;
+    }
 }
 ```
 
@@ -177,7 +177,7 @@ public class CusotmListAdapter : BaseAdapter<Post>
 
 Once your list adapter is ready, then you are almost done with your ListView implementation. Now all you need to do is to instantiate the adapter and setting to ListView.
 
-```cs
+```csharp
 //Initializing listview
 listView = FindViewById (Resource.Id.feedList);
 listView.ItemClick += OnListItemClick;
@@ -186,9 +186,9 @@ listView.Adapter = new CusotmListAdapter(this, listData);
 
 You can handle ListView click event by adding `ItemClick` callback.
 
-```cs
+```csharp
 void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e) {
-	Post item = result.posts.ElementAt (e.Position);
-	// Do whatever you like here
+    Post item = result.posts.ElementAt (e.Position);
+    // Do whatever you like here
 }
 ```

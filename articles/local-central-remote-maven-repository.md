@@ -68,7 +68,7 @@ Here's an example of how to use a remote Maven repository in a Java project:
 
 2.  Add a new `<repositories>` section to the file, if it doesn't exist already. For example:
 
-```XML
+```xml
 <repositories>
     <repository>
         <id>central</id>
@@ -87,7 +87,7 @@ In this example, we have added two remote repositories - the Central Repository 
 
 3.  Now you can add dependencies to your project that are hosted in these remote repositories. For example:
 
-```XML
+```xml
 <dependencies>
 <dependency>
     <groupId>junit</groupId>

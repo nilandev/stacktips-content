@@ -44,13 +44,13 @@ While writing code, you must write set of comments for your own understanding or
 
 A singleline comment is represented by slash-shash (//). Example of single line comment
 
-```
+```java
 // This is a single line comment
 ```
 
 Multiline comments are represented as follows
 
-```
+```java
 /**
 * This is a multiline comment
 **/
@@ -68,7 +68,7 @@ The Java Developer’s Kit is distributed by Sun Microsystems. The JDK contains 
 
 Literals are any number, text, or other information that represents a value. Literals are the values assigned to variables.
 
-```
+```java
 int num = 100;
 ```
 

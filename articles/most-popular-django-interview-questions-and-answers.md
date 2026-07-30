@@ -53,10 +53,10 @@ ref: [Django official documentation](https://docs.djangoproject.com/en/dev/ref/c
 
 A "slug" is a way of generating a valid URL, generally using data already obtained. For instance, a slug uses the title of an article to generate a URL. I advise to generate the slug by means of a function, given the title (or another piece of data), rather than setting it manually. An example:
 
-```
+```xml
 
-<title> The 46 Year Old Virgin </title>  
-<content> A silly comedy movie </content>  
+<title> The 46 Year Old Virgin </title>
+<content> A silly comedy movie </content>
 <slug> the-46-year-old-virgin </slug>
 ```
 
@@ -72,28 +72,28 @@ class Article(models.Model):
 
 How would you reference this object with a URL and with a meaningful name? You could for instance use Article. id so the URL would look like this:
 
-```
+```text
 
 www.example.com/article/23
 ```
 
 Or, you might want to reference the title like this:
 
-```
+```text
 
 www.example.com/article/The 46 Year Old Virgin
 ```
 
 Since spaces aren't valid in URLs, they must be replaced by %20, which results in:
 
-```
+```text
 
 www.example.com/article/The%2046%20Year%20Old%20Virgin
 ```
 
 Both attempts are not resulting in very meaningful, easy-to-read URL. This is better:
 
-```
+```text
 
 www.example.com/article/the-46-year-old-virgin
 ```

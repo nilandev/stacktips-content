@@ -47,17 +47,17 @@ In the above class diagram,
 package com.javatechig.designpattern.builder;
 
 public class Meal {
-	public String sandwich;
-	public String sideOrder;
-	public String drink;
-	public String offer;
-	public double price;
+    public String sandwich;
+    public String sideOrder;
+    public String drink;
+    public String offer;
+    public double price;
 
-	@Override
-	public String toString() {
-		return "Sandwich=" + sandwich + " Side Order=" + sideOrder + " Drink="
-				+ drink + " Offer=" + offer + " Price=" + price;
-	}
+    @Override
+    public String toString() {
+        return "Sandwich=" + sandwich + " Side Order=" + sideOrder + " Drink="
+                + drink + " Offer=" + offer + " Price=" + price;
+    }
 }
 ```
 
@@ -66,13 +66,13 @@ public class Meal {
 ```java
 package com.javatechig.designpattern.builder;
 
-public interface MealBuilder {	
-	public abstract void addSandwich(String sandwich);
-	public abstract void addSides(String sides);
-	public abstract void addDrink(String drink);
-	public abstract void addOffer(String coupon);
-	public abstract void setPrice(double price);
-	public abstract Meal getMeal();
+public interface MealBuilder {
+    public abstract void addSandwich(String sandwich);
+    public abstract void addSides(String sides);
+    public abstract void addDrink(String drink);
+    public abstract void addOffer(String coupon);
+    public abstract void setPrice(double price);
+    public abstract Meal getMeal();
 }
 ```
 
@@ -82,37 +82,37 @@ public interface MealBuilder {
 package com.javatechig.designpattern.builder;
 
 public class SandwichMealBuilder implements MealBuilder {
-	private Meal _meal = new Meal();
+    private Meal _meal = new Meal();
 
-	@Override
-	public void addSandwich(String sandwich) {
-		_meal.sandwich = sandwich;
-	}
+    @Override
+    public void addSandwich(String sandwich) {
+        _meal.sandwich = sandwich;
+    }
 
-	@Override
-	public void addSides(String sides) {
-		_meal.sideOrder = sides;
-	}
+    @Override
+    public void addSides(String sides) {
+        _meal.sideOrder = sides;
+    }
 
-	@Override
-	public void addDrink(String drink) {
-		_meal.drink = drink;
-	}
+    @Override
+    public void addDrink(String drink) {
+        _meal.drink = drink;
+    }
 
-	@Override
-	public void addOffer(String coupon) {
-		_meal.offer = coupon;
-	}
+    @Override
+    public void addOffer(String coupon) {
+        _meal.offer = coupon;
+    }
 
-	@Override
-	public void setPrice(double price) {
-		_meal.price = price;
-	}
+    @Override
+    public void setPrice(double price) {
+        _meal.price = price;
+    }
 
-	@Override
-	public Meal getMeal() {
-		return _meal;
-	}
+    @Override
+    public Meal getMeal() {
+        return _meal;
+    }
 }
 ```
 
@@ -122,15 +122,15 @@ public class SandwichMealBuilder implements MealBuilder {
 package com.javatechig.designpattern.builder;
 
 public class MealDirector {
-	
-	public void makeMeal(MealBuilder mealBuilder) {
-		
-		mealBuilder.addSandwich("Hamburger");
-		mealBuilder.addSides("Fries");
-		mealBuilder.addDrink("Coke");
-		mealBuilder.addOffer("Weekend Bonanza");
-		mealBuilder.setPrice(5.99);
-	}
+
+    public void makeMeal(MealBuilder mealBuilder) {
+
+        mealBuilder.addSandwich("Hamburger");
+        mealBuilder.addSides("Fries");
+        mealBuilder.addDrink("Coke");
+        mealBuilder.addOffer("Weekend Bonanza");
+        mealBuilder.setPrice(5.99);
+    }
 }
 ```
 
@@ -140,13 +140,13 @@ public class MealDirector {
 package com.javatechig.designpattern.builder;
 
 public class Client {
-	public static void main(String[] args) {		
-		MealBuilder pizzaBuilder = new SandwichMealBuilder();
-		MealDirector director = new MealDirector();
-		director.makeMeal(pizzaBuilder);
-		
-		Meal meal = pizzaBuilder.getMeal();
-		System.out.println(meal.toString());
-	}
+    public static void main(String[] args) {
+        MealBuilder pizzaBuilder = new SandwichMealBuilder();
+        MealDirector director = new MealDirector();
+        director.makeMeal(pizzaBuilder);
+
+        Meal meal = pizzaBuilder.getMeal();
+        System.out.println(meal.toString());
+    }
 }
 ```

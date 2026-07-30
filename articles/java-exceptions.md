@@ -29,15 +29,15 @@ If you don't handle it properly, it can cause your entire program to terminate a
 For example, let's say we have an algorithm that divides two numbers and calculates the Quotient. What happens when the value of `number2` is 0?
 
 ```java
-class Calculator {  
-    public float calculateQuotient(int number1, int number2) {  
+class Calculator {
+    public float calculateQuotient(int number1, int number2) {
         return number1 / number2;
     }
 }
 
-public class Main {  
-    public static void main(String[] args) {  
-        Calculator calculator = new Calculator();  
+public class Main {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
         //1
         System.out.println("Result: " + calculator.calculateQuotient(3000, 2));
         //2
@@ -50,7 +50,7 @@ public class Main {
 
 The above program will cause an `ArithmeticException` and the program will terminate after executing the first line.
 
-```log
+```text
 Result: 1500.0
 Exception in thread "main" java.lang.ArithmeticException: / by zero
     at exceptionhandling.Calculator.calculateQuotient(Calculator.java:6)
@@ -108,20 +108,20 @@ Here is a flow diagram of how the try-catch block works in Java.
 Let us now rewrite the above example with an exception handler.
 
 ```java
-public class Main {  
-    public static void main(String[] args) {  
+public class Main {
+    public static void main(String[] args) {
 
-        try {  
-            Calculator calculator = new Calculator();  
+        try {
+            Calculator calculator = new Calculator();
             System.out.println("Result:" + calculator.calculateQuotient(3000, 2));
             System.out.println("Result:" + calculator.calculateQuotient(3000, 0));
-            System.out.println("Result:" + calculator.calculateQuotient(3000, 3));  
-        } catch (ArithmeticException e) {  
-            System.out.println("An ArithmeticException was thrown! " + e.getMessage());  
-        } finally {  
-            System.out.println("Moving on!");  
-        }  
-    }  
+            System.out.println("Result:" + calculator.calculateQuotient(3000, 3));
+        } catch (ArithmeticException e) {
+            System.out.println("An ArithmeticException was thrown! " + e.getMessage());
+        } finally {
+            System.out.println("Moving on!");
+        }
+    }
 }
 ```
 
@@ -173,11 +173,11 @@ For example, let's say we have an application that needs to import the content o
 In this example, we want our application to fail as it cannot process without a valid username or password. For this, we can write a custom exception class by extending the `Exception` class.
 
 ```java
-public class MissingCredentialsException extends Exception {  
+public class MissingCredentialsException extends Exception {
 
-    public MissingCredentialsException(String message) {  
-        super(message);  
-    }  
+    public MissingCredentialsException(String message) {
+        super(message);
+    }
 }
 ```
 

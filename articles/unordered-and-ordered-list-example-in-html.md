@@ -53,17 +53,17 @@ The following example generates two separate lists;
    <BODY>
       <H1> Mobile Operating System</h1>
       <UL>
-         <LI> Android 
+         <LI> Android
          <LI> Blckberry
          <LI> iPhone
          <LI> Windows Phone
       </UL>
       <H1>Mobile Manufacturers</h1>
       <UL TYPE = "SQUARE">
-         <LI> Samsung 
-         <LI> HTC 
-         <LI TYPE = "DISC"> Micromax 
-         <LI TYPE = "CIRCLE"> Apple 
+         <LI> Samsung
+         <LI> HTC
+         <LI TYPE = "DISC"> Micromax
+         <LI TYPE = "CIRCLE"> Apple
       </UL>
    </BODY>
 </HTML>
@@ -99,17 +99,17 @@ One important aspect of lists is that you can nest one list inside another to cr
    <BODY>
       <H1> Mobile Operating System</h1>
       <OL>
-         <LI> Android 
+         <LI> Android
          <LI> Blckberry
          <LI> iPhone
          <LI> Windows Phone
       </OL>
       <H1>Mobile Manufacturers</h1>
       <OL TYPE = "A">
-         <LI> Samsung 
-         <LI> HTC 
-         <LI> Micromax 
-         <LI> Apple 
+         <LI> Samsung
+         <LI> HTC
+         <LI> Micromax
+         <LI> Apple
       </OL>
    </BODY>
 </HTML>

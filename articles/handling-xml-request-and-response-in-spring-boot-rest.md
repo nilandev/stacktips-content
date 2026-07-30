@@ -89,33 +89,33 @@ We need to annotate our controller mapping to match the `application/xml` media 
 This can be done by defining the appropriate MediaType using the `produces` and `consumes` property of `RequestMapping` annotation.
 
 ```java
-@RestController  
-@RequestMapping(value = "/api/1.0/movies",  
+@RestController
+@RequestMapping(value = "/api/1.0/movies",
         consumes = {MediaType.APPLICATION_XML_VALUE}, # Content-Type
         produces = {MediaType.APPLICATION_XML_VALUE}  # Accept
-)  
-public class MoviesController {  
+)
+public class MoviesController {
 
-    private final MovieService movieService;  
+    private final MovieService movieService;
 
-    public MoviesController(MovieService movieService) {  
-        this.movieService = movieService;  
-    }  
+    public MoviesController(MovieService movieService) {
+        this.movieService = movieService;
+    }
 
     @GetMapping
-    public ResponseEntity<List<Movie>> getMovies() {  
-        return ResponseEntity.ok(movieService.getMovies());  
-    }  
+    public ResponseEntity<List<Movie>> getMovies() {
+        return ResponseEntity.ok(movieService.getMovies());
+    }
 
     @PostMapping
-    public Movie createMovie(@RequestBody MovieDto movieDto) {  
-        return movieService.createMovie(movieDto);  
-    }  
+    public Movie createMovie(@RequestBody MovieDto movieDto) {
+        return movieService.createMovie(movieDto);
+    }
 
-    @GetMapping(path = "/{movieId}")  
-    public Movie getMovie(@PathVariable String movieId) {  
-        return movieService.getMovie(movieId);  
-    }  
+    @GetMapping(path = "/{movieId}")
+    public Movie getMovie(@PathVariable String movieId) {
+        return movieService.getMovie(movieId);
+    }
 
 }
 ```
@@ -124,7 +124,7 @@ In the above code snippet, we have set the `MediaType` configuration to the cont
 
 That is all, now our controller will handle the XML request and produce the `application/xml` media type. Let us test our `/movies` endpoint
 
-```shell
+```bash
 curl --location 'http://localhost:8080/api/1.0/movies' \
     --header 'Content-type: application/xml' \
     --header 'Accept: application/xml'
@@ -178,13 +178,13 @@ The above method works fine but the configuration is now at controller level. Th
 We can override this by setting the default content negotiation for all controllers thought the project by implementing the `WebMvcConfigurer` configuration.
 
 ```java
-@Configuration  
-public class AppConfig implements WebMvcConfigurer {  
+@Configuration
+public class AppConfig implements WebMvcConfigurer {
 
-    @Override  
-    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) { 
-        configurer.defaultContentType(MediaType.APPLICATION_XML);  
-    }  
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.defaultContentType(MediaType.APPLICATION_XML);
+    }
 }
 ```
 
@@ -229,10 +229,10 @@ public class Movie {
 And, update the controller to return the `ResponseEntity<Movies>>` type.
 
 ```java
-@GetMapping  
-public ResponseEntity<Movies> getMovies() {  
-    Movies movies = new Movies(movieService.getMovies());  
-    return ResponseEntity.ok(movies);  
+@GetMapping
+public ResponseEntity<Movies> getMovies() {
+    Movies movies = new Movies(movieService.getMovies());
+    return ResponseEntity.ok(movies);
 }
 ```
 

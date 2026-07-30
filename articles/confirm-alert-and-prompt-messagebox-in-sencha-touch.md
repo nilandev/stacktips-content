@@ -35,7 +35,7 @@ Ext.Msg.alert('Alert', 'Sencha Touch is Sexy ! Isn\'t it ?', Ext.emptyFn);
 
 // For Confirm type MessageBox
 Ext.Msg.prompt('Confirm', 'Please enter your name', function(text) {
-     // text represents the user input value				
+     // text represents the user input value
 });
 
 // For Alert type MessageBox

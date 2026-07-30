@@ -52,10 +52,10 @@ You can retrieve the information using `getData()` methods on the Intent object.
 ```java
   Intent intent = getIntent();
   if (null != intent) {
-	String stringData= intent.getStringExtra(KEY);
-	int numberData = intent.getIntExtra(KEY, defaultValue);
-	boolean booleanData = intent.getBooleanExtra(KEY, defaultValue);
-	char charData = intent.getCharExtra(KEY, defaultValue);	
+    String stringData= intent.getStringExtra(KEY);
+    int numberData = intent.getIntExtra(KEY, defaultValue);
+    boolean booleanData = intent.getBooleanExtra(KEY, defaultValue);
+    char charData = intent.getCharExtra(KEY, defaultValue);
   }
 ```
 
@@ -176,33 +176,33 @@ package com.javatechig;
 
 public class NewsItem  {
 
-	private String headline;
-	private String details;
-	private String pubDate;
+    private String headline;
+    private String details;
+    private String pubDate;
 
-	public String getHeadline() {
-		return headline;
-	}
+    public String getHeadline() {
+        return headline;
+    }
 
-	public void setHeadline(String headline) {
-		this.headline = headline;
-	}
+    public void setHeadline(String headline) {
+        this.headline = headline;
+    }
 
-	public String getDetails() {
-		return details;
-	}
+    public String getDetails() {
+        return details;
+    }
 
-	public void setDetails(String details) {
-		this.details = details;
-	}
+    public void setDetails(String details) {
+        this.details = details;
+    }
 
-	public String getPubDate() {
-		return pubDate;
-	}
+    public String getPubDate() {
+        return pubDate;
+    }
 
-	public void setPubDate(String pubDate) {
-		this.pubDate = pubDate;
-	}
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
+    }
 
 }
 ```
@@ -226,58 +226,58 @@ import android.widget.ListView;
 
 public class NewsListActivity extends Activity {
 
-	private NewsListAdapter adapter;
+    private NewsListAdapter adapter;
 
-	public static final String KEY_HEADLINE="news_headline";
-	public static final String KEY_DETAILS="news_details";
-	public static final String KEY_PUBDATE = "news_pub_date";
+    public static final String KEY_HEADLINE="news_headline";
+    public static final String KEY_DETAILS="news_details";
+    public static final String KEY_PUBDATE = "news_pub_date";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_news_list);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news_list);
 
-		adapter = new NewsListAdapter(this, getData());
-		ListView list = (ListView) findViewById(R.id.newsList);
-		list.setAdapter(adapter);
+        adapter = new NewsListAdapter(this, getData());
+        ListView list = (ListView) findViewById(R.id.newsList);
+        list.setAdapter(adapter);
 
-		list.setOnItemClickListener(new OnItemClickListener() {
+        list.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> adapterView, View view, int position, long offset) {
-				NewsItem item = (NewsItem) adapter.getItem(position);
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long offset) {
+                NewsItem item = (NewsItem) adapter.getItem(position);
 
-				Intent intent = new Intent(getApplicationContext(), NewsDetailsActivity.class);
-				intent.putExtra(KEY_HEADLINE, item.getHeadline());
-				intent.putExtra(KEY_PUBDATE, item.getPubDate());
-				intent.putExtra(KEY_DETAILS, item.getDetails());
+                Intent intent = new Intent(getApplicationContext(), NewsDetailsActivity.class);
+                intent.putExtra(KEY_HEADLINE, item.getHeadline());
+                intent.putExtra(KEY_PUBDATE, item.getPubDate());
+                intent.putExtra(KEY_DETAILS, item.getDetails());
 
-				startActivity(intent); 
-			}
-		});
-	}
+                startActivity(intent);
+            }
+        });
+    }
 
-	private ArrayList<NewsItem> getData() {
-		ArrayList<NewsItem> newsList = new ArrayList<NewsItem>();
-		String[] headlines = getResources().getStringArray(R.array.news_headlines);
-		String[] pubDate = getResources().getStringArray(R.array.news_pubdate);
-		String[] details = getResources().getStringArray(R.array.news_details);
+    private ArrayList<NewsItem> getData() {
+        ArrayList<NewsItem> newsList = new ArrayList<NewsItem>();
+        String[] headlines = getResources().getStringArray(R.array.news_headlines);
+        String[] pubDate = getResources().getStringArray(R.array.news_pubdate);
+        String[] details = getResources().getStringArray(R.array.news_details);
 
-		for (int i = 0; i < headlines.length; i++) {
-			NewsItem item = new NewsItem();
-			item.setHeadline(headlines[i]);
-			item.setPubDate(pubDate[i]);
-			item.setDetails(details[i]);
-			newsList.add(item);
-		}
-		return newsList;
-	}
+        for (int i = 0; i < headlines.length; i++) {
+            NewsItem item = new NewsItem();
+            item.setHeadline(headlines[i]);
+            item.setPubDate(pubDate[i]);
+            item.setDetails(details[i]);
+            newsList.add(item);
+        }
+        return newsList;
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 }
 ```
 
@@ -298,59 +298,59 @@ import android.widget.TextView;
 
 public class NewsListAdapter extends BaseAdapter {
 
-	private ArrayList<NewsItem> listData;
-	private LayoutInflater layoutInflater;
-	private Context context;
+    private ArrayList<NewsItem> listData;
+    private LayoutInflater layoutInflater;
+    private Context context;
 
-	public NewsListAdapter(Context context, ArrayList<NewsItem> listData) {
-		this.listData = listData;
-		this.context = context;
-		layoutInflater = LayoutInflater.from(context);
-	}
+    public NewsListAdapter(Context context, ArrayList<NewsItem> listData) {
+        this.listData = listData;
+        this.context = context;
+        layoutInflater = LayoutInflater.from(context);
+    }
 
-	@Override
-	public int getCount() {
-		return listData.size();
-	}
+    @Override
+    public int getCount() {
+        return listData.size();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return listData.get(position);
-	}
+    @Override
+    public Object getItem(int position) {
+        return listData.get(position);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
-		if (convertView == null) {
-			convertView = layoutInflater.inflate(R.layout.snippet_news_list_row, null);
-			holder = new ViewHolder();
-			holder.headline = (TextView) convertView.findViewById(R.id.newsHeadline);
-			holder.pubDate = (TextView) convertView.findViewById(R.id.pubDate);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.snippet_news_list_row, null);
+            holder = new ViewHolder();
+            holder.headline = (TextView) convertView.findViewById(R.id.newsHeadline);
+            holder.pubDate = (TextView) convertView.findViewById(R.id.pubDate);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-		holder.headline.setText(listData.get(position).getHeadline());
-		holder.pubDate.setText(listData.get(position).getPubDate());
+        holder.headline.setText(listData.get(position).getHeadline());
+        holder.pubDate.setText(listData.get(position).getPubDate());
 
-		if (position % 2 == 1) {
-			convertView.setBackgroundColor(context.getResources().getColor(R.color.list_row_color1));  
-		} else {
-			convertView.setBackgroundColor(context.getResources().getColor(R.color.list_row_color2));  
-		}
+        if (position % 2 == 1) {
+            convertView.setBackgroundColor(context.getResources().getColor(R.color.list_row_color1));
+        } else {
+            convertView.setBackgroundColor(context.getResources().getColor(R.color.list_row_color2));
+        }
 
-		return convertView;
-	}
+        return convertView;
+    }
 
-	static class ViewHolder {
-		TextView headline;
-		TextView pubDate;
-	}
+    static class ViewHolder {
+        TextView headline;
+        TextView pubDate;
+    }
 
 }
 ```
@@ -373,37 +373,37 @@ import static com.javatechig.NewsListActivity.KEY_DETAILS;
 
 public class NewsDetailsActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_news_details);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_news_details);
 
-		String headline = "";
-		String details = "";
-		String pubDate = "";
+        String headline = "";
+        String details = "";
+        String pubDate = "";
 
-		Intent intent = getIntent();
-		if (null != intent) {
-			headline = intent.getStringExtra(KEY_HEADLINE);
-			details = intent.getStringExtra(KEY_DETAILS);
-			pubDate = intent.getStringExtra(KEY_PUBDATE);
-		}
+        Intent intent = getIntent();
+        if (null != intent) {
+            headline = intent.getStringExtra(KEY_HEADLINE);
+            details = intent.getStringExtra(KEY_DETAILS);
+            pubDate = intent.getStringExtra(KEY_PUBDATE);
+        }
 
-		TextView headlineTxt = (TextView) findViewById(R.id.headlines);
-		headlineTxt.setText(headline);
+        TextView headlineTxt = (TextView) findViewById(R.id.headlines);
+        headlineTxt.setText(headline);
 
-		TextView pubdateTxt = (TextView) findViewById(R.id.pub_date);
-		pubdateTxt.setText(pubDate);
+        TextView pubdateTxt = (TextView) findViewById(R.id.pub_date);
+        pubdateTxt.setText(pubDate);
 
-		TextView descriptionTxt = (TextView) findViewById(R.id.description);
-		descriptionTxt.setText(details);
-	}
+        TextView descriptionTxt = (TextView) findViewById(R.id.description);
+        descriptionTxt.setText(details);
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 }
 ```
 

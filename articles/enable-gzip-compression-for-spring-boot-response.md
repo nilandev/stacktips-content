@@ -28,7 +28,7 @@ By default, the `gzip` compression is disabled in the Spring Boot application. H
 
 Add the following configuration to your Spring Boot [`application.properties`](http://application.properties) file to enable gzip response compression.
 
-```java
+```properties
 # Enable response compression
 server.compression.enabled=true
 
@@ -44,7 +44,7 @@ Please note, that the wildcard in mime types is not supported. So we need to pro
 
 The `gzip` operation consumes time and other server resources. You may enable the compression only when the response size exceeds a specific limit. This can be configured using the following property.
 
-```java
+```properties
 # Minimum response where compression will kick in
 server.compression.min-response-size=4096
 ```
@@ -53,7 +53,7 @@ server.compression.min-response-size=4096
 
 You can also exclude the specific user agents using `excluded-user-agents` configuration.
 
-```java
+```properties
 server.compression.excluded-user-agents= Mozilla/5.0
 ```
 

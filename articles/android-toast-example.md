@@ -37,7 +37,7 @@ Checkout below code snippet to show an simple toast in Android
 Toast.makeText(getApplicationContext(), "Your toast message.",
                       Toast.LENGTH_SHORT).show();
 //display in long period of time
-Toast.makeText(getApplicationContext(), "Your toast message", 
+Toast.makeText(getApplicationContext(), "Your toast message",
                       Toast.LENGTH_LONG).show();
 ```
 
@@ -60,39 +60,39 @@ In my example, I have created an XML layout named as `custom_toast.xml`
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/toast_layout_root"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:layout_marginLeft="10dp"
-	android:layout_marginRight="10dp"
-	android:orientation="horizontal"
-	android:paddingLeft="10dp"
-	android:paddingRight="10dp" >
+    android:id="@+id/toast_layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="horizontal"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
 
-	<LinearLayout
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:background="#00AAE9"
-		android:orientation="horizontal"
-		android:paddingBottom="5dp"
-		android:paddingTop="5dp" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00AAE9"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
 
-	<ImageView
-		android:id="@+id/toastImage"
-		android:layout_width="wrap_content"
-		android:layout_height="fill_parent"
-		android:layout_marginRight="10dp"
-		android:src="@drawable/ic_warning" />
+    <ImageView
+        android:id="@+id/toastImage"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_warning" />
 
-	<TextView
-		android:id="@+id/toastText"
-		android:layout_width="wrap_content"
-		android:layout_height="fill_parent"
-		android:gravity="center_vertical"
-		android:textColor="#FFFFFF"
-		android:textSize="7pt"
-		android:textStyle="italic" />
-	</LinearLayout>
+    <TextView
+        android:id="@+id/toastText"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="7pt"
+        android:textStyle="italic" />
+    </LinearLayout>
 </LinearLayout>
 ```
 
@@ -101,41 +101,41 @@ Below is the code changes for the activity class
 ```java
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		Button toastButton = (Button) this.findViewById(R.id.toastButton);
-		toastButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				//create the toast object, set display duration,
-				Toast.makeText(getApplicationContext(), "This is a plain toast.", Toast.LENGTH_SHORT).show();
-			}
-		});
+        Button toastButton = (Button) this.findViewById(R.id.toastButton);
+        toastButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This is a plain toast.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-		Button customToastButton = (Button) this.findViewById(R.id.customToastButton);
-		customToastButton.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
+        Button customToastButton = (Button) this.findViewById(R.id.customToastButton);
+        customToastButton.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
 
-				//get the LayoutInflater and inflate the custom_toast layout
-				LayoutInflater inflater = getLayoutInflater();
-				View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
-				findViewById(R.id.toast_layout_root));
+                //get the LayoutInflater and inflate the custom_toast layout
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup)
+                findViewById(R.id.toast_layout_root));
 
-				//get the TextView from the custom_toast layout
-				TextView text = (TextView) layout.findViewById(R.id.toastText);
-				text.setText("This is my custom toast");
+                //get the TextView from the custom_toast layout
+                TextView text = (TextView) layout.findViewById(R.id.toastText);
+                text.setText("This is my custom toast");
 
-				//create the toast object, set display duration,
-				//set the view as layout that's inflated above and then call show()
-				Toast t = new Toast(getApplicationContext());
-				t.setDuration(Toast.LENGTH_LONG);
-				t.setView(layout);
-				t.show();
-			}
-		});
-	}
+                //create the toast object, set display duration,
+                //set the view as layout that's inflated above and then call show()
+                Toast t = new Toast(getApplicationContext());
+                t.setDuration(Toast.LENGTH_LONG);
+                t.setView(layout);
+                t.show();
+            }
+        });
+    }
 }
 ```
 

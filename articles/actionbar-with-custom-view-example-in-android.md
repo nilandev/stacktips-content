@@ -77,34 +77,34 @@ The above declared layout will be used as custom layout for Activity `ActionBar`
 ```java
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		ActionBar mActionBar = getActionBar();
-		mActionBar.setDisplayShowHomeEnabled(false);
-		mActionBar.setDisplayShowTitleEnabled(false);
-		LayoutInflater mInflater = LayoutInflater.from(this);
+        ActionBar mActionBar = getActionBar();
+        mActionBar.setDisplayShowHomeEnabled(false);
+        mActionBar.setDisplayShowTitleEnabled(false);
+        LayoutInflater mInflater = LayoutInflater.from(this);
 
-		View mCustomView = mInflater.inflate(R.layout.custom_actionbar, null);
-		TextView mTitleTextView = (TextView) mCustomView.findViewById(R.id.title_text);
-		mTitleTextView.setText("My Own Title");
+        View mCustomView = mInflater.inflate(R.layout.custom_actionbar, null);
+        TextView mTitleTextView = (TextView) mCustomView.findViewById(R.id.title_text);
+        mTitleTextView.setText("My Own Title");
 
-		ImageButton imageButton = (ImageButton) mCustomView
-				.findViewById(R.id.imageButton);
-		imageButton.setOnClickListener(new OnClickListener() {
+        ImageButton imageButton = (ImageButton) mCustomView
+                .findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				Toast.makeText(getApplicationContext(), "Refresh Clicked!",
-						Toast.LENGTH_LONG).show();
-			}
-		});
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Refresh Clicked!",
+                        Toast.LENGTH_LONG).show();
+            }
+        });
 
-		mActionBar.setCustomView(mCustomView);
-		mActionBar.setDisplayShowCustomEnabled(true);
-	}
+        mActionBar.setCustomView(mCustomView);
+        mActionBar.setDisplayShowCustomEnabled(true);
+    }
 
 }
 ```

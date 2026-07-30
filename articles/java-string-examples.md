@@ -32,10 +32,10 @@ import java.util.Scanner;
 
 public class StringExampleTwo {
     public static void main(String args[]) {
-        
+
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter a string with space");
-        
+
         String s1 = scanner.nextLine();
         System.out.println("s1 = " + s1);
 
@@ -68,7 +68,7 @@ public class StringEqualsTest {
         String str3 = new String("hellp");
         String str4 = new String("hello 2");
         String str5 = "hello";
-        
+
         System.out.println("Comparison using == : " + (str1 == str5));
         System.out.println("Comparison using == : " + (str1 == str2));
         System.out.println("Comparison Using equals() method : " + str1.equals(str2));
@@ -151,15 +151,15 @@ class ReverseString
    {
       String original, reverse = "";
       Scanner scanner = new Scanner(System.in);
- 
+
       System.out.println("Enter a string to reverse");
       original = scanner.nextLine();
       int length = original.length();
- 
+
       for ( int i = length - 1 ; i >= 0 ; i-- ){
          reverse = reverse + original.charAt(i);
       }
- 
+
       System.out.println("Reverse of entered string is: "+reverse);
    }
 }
@@ -209,14 +209,14 @@ class CompareStrings {
       Scanner in = new Scanner(System.in);
       System.out.println("Enter the first string");
       str1 = in .nextLine();
-    
+
       System.out.println("Enter the second string");
       str2 = in .nextLine();
-    
+
       if (str1.compareTo(str2) > 0){
-            System.out.println("First string is greater than second."); 
+            System.out.println("First string is greater than second.");
       } else if (str1.compareTo(str2) < 0){
-            System.out.println("First string is smaller than second."); 
+            System.out.println("First string is smaller than second.");
       } else{
             System.out.println("Both strings are equal.");
       }

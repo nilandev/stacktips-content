@@ -140,114 +140,114 @@ import com.dropbox.client2.session.Session.AccessType;
 import com.dropbox.client2.session.TokenPair;
 
 public class DropboxActivity extends Activity implements OnClickListener {
-	private DropboxAPI<AndroidAuthSession> dropbox;
-	private final static String FILE_DIR = "/DropboxSample/";
-	private final static String DROPBOX_NAME = "dropbox_prefs";
-	private final static String ACCESS_KEY = "yatqpqyb9lsh0tu";
-	private final static String ACCESS_SECRET = "9siqdkoo44y3jlr";
-	private boolean isLoggedIn;
-	private Button logIn;
-	private Button uploadFile;
-	private Button listFiles;
-	private LinearLayout container;
+    private DropboxAPI<AndroidAuthSession> dropbox;
+    private final static String FILE_DIR = "/DropboxSample/";
+    private final static String DROPBOX_NAME = "dropbox_prefs";
+    private final static String ACCESS_KEY = "yatqpqyb9lsh0tu";
+    private final static String ACCESS_SECRET = "9siqdkoo44y3jlr";
+    private boolean isLoggedIn;
+    private Button logIn;
+    private Button uploadFile;
+    private Button listFiles;
+    private LinearLayout container;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dropbox);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dropbox);
 
-		logIn = (Button) findViewById(R.id.dropbox_login);
-		logIn.setOnClickListener(this);
-		uploadFile = (Button) findViewById(R.id.upload_file);
-		uploadFile.setOnClickListener(this);
-		listFiles = (Button) findViewById(R.id.list_files);
-		listFiles.setOnClickListener(this);
-		container = (LinearLayout) findViewById(R.id.container_files);
+        logIn = (Button) findViewById(R.id.dropbox_login);
+        logIn.setOnClickListener(this);
+        uploadFile = (Button) findViewById(R.id.upload_file);
+        uploadFile.setOnClickListener(this);
+        listFiles = (Button) findViewById(R.id.list_files);
+        listFiles.setOnClickListener(this);
+        container = (LinearLayout) findViewById(R.id.container_files);
 
-		loggedIn(false);
-		AndroidAuthSession session;
-		AppKeyPair pair = new AppKeyPair(ACCESS_KEY, ACCESS_SECRET);
+        loggedIn(false);
+        AndroidAuthSession session;
+        AppKeyPair pair = new AppKeyPair(ACCESS_KEY, ACCESS_SECRET);
 
-		SharedPreferences prefs = getSharedPreferences(DROPBOX_NAME, 0);
-		String key = prefs.getString(ACCESS_KEY, null);
-		String secret = prefs.getString(ACCESS_SECRET, null);
+        SharedPreferences prefs = getSharedPreferences(DROPBOX_NAME, 0);
+        String key = prefs.getString(ACCESS_KEY, null);
+        String secret = prefs.getString(ACCESS_SECRET, null);
 
-		if (key != null && secret != null) {
-			AccessTokenPair token = new AccessTokenPair(key, secret);
-			session = new AndroidAuthSession(pair, AccessType.APP_FOLDER, token);
-		} else {
-			session = new AndroidAuthSession(pair, AccessType.APP_FOLDER);
-		}
-		dropbox = new DropboxAPI<AndroidAuthSession>(session);
-	}
+        if (key != null && secret != null) {
+            AccessTokenPair token = new AccessTokenPair(key, secret);
+            session = new AndroidAuthSession(pair, AccessType.APP_FOLDER, token);
+        } else {
+            session = new AndroidAuthSession(pair, AccessType.APP_FOLDER);
+        }
+        dropbox = new DropboxAPI<AndroidAuthSession>(session);
+    }
 
-	@Override
-	protected void onResume() {
-		super.onResume();
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-		AndroidAuthSession session = dropbox.getSession();
-		if (session.authenticationSuccessful()) {
-			try {
-				session.finishAuthentication();
-				TokenPair tokens = session.getAccessTokenPair();
-				SharedPreferences prefs = getSharedPreferences(DROPBOX_NAME, 0);
-				Editor editor = prefs.edit();
-				editor.putString(ACCESS_KEY, tokens.key);
-				editor.putString(ACCESS_SECRET, tokens.secret);
-				editor.commit();
-				loggedIn(true);
-			} catch (IllegalStateException e) {
-				Toast.makeText(this, "Error during Dropbox authentication",
-						Toast.LENGTH_SHORT).show();
-			}
-		}
-	}
+        AndroidAuthSession session = dropbox.getSession();
+        if (session.authenticationSuccessful()) {
+            try {
+                session.finishAuthentication();
+                TokenPair tokens = session.getAccessTokenPair();
+                SharedPreferences prefs = getSharedPreferences(DROPBOX_NAME, 0);
+                Editor editor = prefs.edit();
+                editor.putString(ACCESS_KEY, tokens.key);
+                editor.putString(ACCESS_SECRET, tokens.secret);
+                editor.commit();
+                loggedIn(true);
+            } catch (IllegalStateException e) {
+                Toast.makeText(this, "Error during Dropbox authentication",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
-	public void loggedIn(boolean isLogged) {
-		isLoggedIn = isLogged;
-		uploadFile.setEnabled(isLogged);
-		listFiles.setEnabled(isLogged);
-		logIn.setText(isLogged ? "Log out" : "Log in");
-	}
+    public void loggedIn(boolean isLogged) {
+        isLoggedIn = isLogged;
+        uploadFile.setEnabled(isLogged);
+        listFiles.setEnabled(isLogged);
+        logIn.setText(isLogged ? "Log out" : "Log in");
+    }
 
-	private final Handler handler = new Handler() {
-		public void handleMessage(Message msg) {
-			ArrayList<String> result = msg.getData().getStringArrayList("data");
-			for (String fileName : result) {
-				Log.i("ListFiles", fileName);
-				TextView tv = new TextView(DropboxActivity.this);
-				tv.setText(fileName);
-				container.addView(tv);
-			}
-		}
-	};
+    private final Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            ArrayList<String> result = msg.getData().getStringArrayList("data");
+            for (String fileName : result) {
+                Log.i("ListFiles", fileName);
+                TextView tv = new TextView(DropboxActivity.this);
+                tv.setText(fileName);
+                container.addView(tv);
+            }
+        }
+    };
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.dropbox_login:
-			if (isLoggedIn) {
-				dropbox.getSession().unlink();
-				loggedIn(false);
-			} else {
-				dropbox.getSession().startAuthentication(DropboxActivity.this);
-			}
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+        case R.id.dropbox_login:
+            if (isLoggedIn) {
+                dropbox.getSession().unlink();
+                loggedIn(false);
+            } else {
+                dropbox.getSession().startAuthentication(DropboxActivity.this);
+            }
 
-			break;
-		case R.id.list_files:
-			ListDropboxFiles list = new ListDropboxFiles(dropbox, FILE_DIR,
-					handler);
-			list.execute();
-			break;
-		case R.id.upload_file:
-			UploadFileToDropbox upload = new UploadFileToDropbox(this, dropbox,
-					FILE_DIR);
-			upload.execute();
-			break;
-		default:
-			break;
-		}
-	}
+            break;
+        case R.id.list_files:
+            ListDropboxFiles list = new ListDropboxFiles(dropbox, FILE_DIR,
+                    handler);
+            list.execute();
+            break;
+        case R.id.upload_file:
+            UploadFileToDropbox upload = new UploadFileToDropbox(this, dropbox,
+                    FILE_DIR);
+            upload.execute();
+            break;
+        default:
+            break;
+        }
+    }
 }
 ```
 
@@ -267,52 +267,52 @@ import com.dropbox.client2.exception.DropboxException;
 
 public class UploadFileToDropbox extends AsyncTask<Void, Void, Boolean> {
 
-	private DropboxAPI<?> dropbox;
-	private String path;
-	private Context context;
+    private DropboxAPI<?> dropbox;
+    private String path;
+    private Context context;
 
-	public UploadFileToDropbox(Context context, DropboxAPI<?> dropbox,
-			String path) {
-		this.context = context.getApplicationContext();
-		this.dropbox = dropbox;
-		this.path = path;
-	}
+    public UploadFileToDropbox(Context context, DropboxAPI<?> dropbox,
+            String path) {
+        this.context = context.getApplicationContext();
+        this.dropbox = dropbox;
+        this.path = path;
+    }
 
-	@Override
-	protected Boolean doInBackground(Void... params) {
-		final File tempDir = context.getCacheDir();
-		File tempFile;
-		FileWriter fr;
-		try {
-			tempFile = File.createTempFile("file", ".txt", tempDir);
-			fr = new FileWriter(tempFile);
-			fr.write("Sample text file created for demo purpose. You may use some other file format for your app ");
-			fr.close();
+    @Override
+    protected Boolean doInBackground(Void... params) {
+        final File tempDir = context.getCacheDir();
+        File tempFile;
+        FileWriter fr;
+        try {
+            tempFile = File.createTempFile("file", ".txt", tempDir);
+            fr = new FileWriter(tempFile);
+            fr.write("Sample text file created for demo purpose. You may use some other file format for your app ");
+            fr.close();
 
-			FileInputStream fileInputStream = new FileInputStream(tempFile);
-			dropbox.putFile(path + "textfile.txt", fileInputStream,
-					tempFile.length(), null, null);
-			tempFile.delete();
-			return true;
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (DropboxException e) {
-			e.printStackTrace();
-		}
+            FileInputStream fileInputStream = new FileInputStream(tempFile);
+            dropbox.putFile(path + "textfile.txt", fileInputStream,
+                    tempFile.length(), null, null);
+            tempFile.delete();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (DropboxException e) {
+            e.printStackTrace();
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	@Override
-	protected void onPostExecute(Boolean result) {
-		if (result) {
-			Toast.makeText(context, "File Uploaded Sucesfully!",
-					Toast.LENGTH_LONG).show();
-		} else {
-			Toast.makeText(context, "Failed to upload file", Toast.LENGTH_LONG)
-					.show();
-		}
-	}
+    @Override
+    protected void onPostExecute(Boolean result) {
+        if (result) {
+            Toast.makeText(context, "File Uploaded Sucesfully!",
+                    Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, "Failed to upload file", Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
 }
 ```
 
@@ -332,40 +332,40 @@ import com.dropbox.client2.exception.DropboxException;
 
 public class ListDropboxFiles extends AsyncTask<Void, Void, ArrayList<String>> {
 
-	private DropboxAPI<?> dropbox;
-	private String path;
-	private Handler handler;
+    private DropboxAPI<?> dropbox;
+    private String path;
+    private Handler handler;
 
-	public ListDropboxFiles(DropboxAPI<?> dropbox, String path, Handler handler) {
-		this.dropbox = dropbox;
-		this.path = path;
-		this.handler = handler;
-	}
+    public ListDropboxFiles(DropboxAPI<?> dropbox, String path, Handler handler) {
+        this.dropbox = dropbox;
+        this.path = path;
+        this.handler = handler;
+    }
 
-	@Override
-	protected ArrayList<String> doInBackground(Void... params) {
-		ArrayList<String> files = new ArrayList<String>();
-		try {
-			Entry directory = dropbox.metadata(path, 1000, null, true, null);
-			for (Entry entry : directory.contents) {
-				files.add(entry.fileName());
-			}
-		} catch (DropboxException e) {
-			e.printStackTrace();
-		}
+    @Override
+    protected ArrayList<String> doInBackground(Void... params) {
+        ArrayList<String> files = new ArrayList<String>();
+        try {
+            Entry directory = dropbox.metadata(path, 1000, null, true, null);
+            for (Entry entry : directory.contents) {
+                files.add(entry.fileName());
+            }
+        } catch (DropboxException e) {
+            e.printStackTrace();
+        }
 
-		return files;
-	}
+        return files;
+    }
 
-	@Override
-	protected void onPostExecute(ArrayList<String> result) {
-		Message msgObj = handler.obtainMessage();
-		Bundle b = new Bundle();
-		b.putStringArrayList("data", result);
-		msgObj.setData(b);
-		handler.sendMessage(msgObj);
+    @Override
+    protected void onPostExecute(ArrayList<String> result) {
+        Message msgObj = handler.obtainMessage();
+        Bundle b = new Bundle();
+        b.putStringArrayList("data", result);
+        msgObj.setData(b);
+        handler.sendMessage(msgObj);
 
-	}
+    }
 }
 
 ```

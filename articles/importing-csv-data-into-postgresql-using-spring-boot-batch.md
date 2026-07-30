@@ -80,7 +80,7 @@ Use Spring Initializr to bootstrap a spring boot project by selecting the requir
 -   [Flyway](https://stacktips.com/articles/using-flyway-for-database-migration-in-spring-boot) - Database migration
 
 ```groovy
-dependencies {  
+dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     compileOnly 'org.projectlombok:lombok'
@@ -101,12 +101,12 @@ Let us now configure the data source and batch configuration in the `application
 
 ```properties
 # Datasource configurations
-spring.datasource.url=jdbc:postgresql://localhost:5432/spring_batch  
-spring.datasource.username=postgres  
-spring.datasource.password=Passw0rd  
-spring.datasource.driver-class-name=org.postgresql.Driver  
+spring.datasource.url=jdbc:postgresql://localhost:5432/spring_batch
+spring.datasource.username=postgres
+spring.datasource.password=Passw0rd
+spring.datasource.driver-class-name=org.postgresql.Driver
 
-# JPA settings  
+# JPA settings
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
@@ -119,9 +119,9 @@ In this example, we will read the customer data from the CSV (`customers.csv`) f
 You can download the sample `customers.csv` file from [here](https://raw.githubusercontent.com/StackTipsLab/spring-boot-tutorials/main/spring-batch-chunk-processing/src/main/resources/customers.csv)
 
 ```csv
-Index,Customer Id,First Name,Last Name,Company,City,Country,Phone 1,Phone 2,Email,Subscription Date,Website  
-1,4962fdbE6Bfee6D,Pam,Sparks,Patel-Deleon,Blakemouth,British Indian Ocean Territory (Chagos Archipelago),267-243-9490x035,480-078-0535x889,nicolas00@faulkner-kramer.com,2020-11-29,https://nelson.com/  
-2,9b12Ae76fdBc9bE,Gina,Rocha,"Acosta, Paul and Barber",East Lynnchester,Costa Rica,027.142.0940,+1-752-593-4777x07171,yfarley@morgan.com,2021-01-03,https://pineda-rogers.biz/  
+Index,Customer Id,First Name,Last Name,Company,City,Country,Phone 1,Phone 2,Email,Subscription Date,Website
+1,4962fdbE6Bfee6D,Pam,Sparks,Patel-Deleon,Blakemouth,British Indian Ocean Territory (Chagos Archipelago),267-243-9490x035,480-078-0535x889,nicolas00@faulkner-kramer.com,2020-11-29,https://nelson.com/
+2,9b12Ae76fdBc9bE,Gina,Rocha,"Acosta, Paul and Barber",East Lynnchester,Costa Rica,027.142.0940,+1-752-593-4777x07171,yfarley@morgan.com,2021-01-03,https://pineda-rogers.biz/
 3,39edFd2F60C85BC,Kristie,Greer,Ochoa PLC,West Pamela,Ecuador,+1-049-168-7497x5053,+1-311-216-7855,jennyhayden@petty.org,2021-06-20,https://mckinney.com/
 ```
 
@@ -156,7 +156,7 @@ public class Customer {
 We will use Spring Data JPA to handle database operations. Let us now create a repository for the `Customer` entity. This JPA repository will be used by the writer to save data to Postgres DB.
 
 ```java
-@Repository  
+@Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 }
@@ -181,20 +181,20 @@ Let us now create two migration scripts inside the `resources/db/migration` dire
 -   `v2__added_customers_table.sql` - Contains schema for customer table.
 
 ```sql
-CREATE TABLE customers  
-(  
-    subscription_date DATE,  
-    city              CHARACTER VARYING(255),  
-    company           CHARACTER VARYING(255),  
-    country           CHARACTER VARYING(255),  
-    customer_id       CHARACTER VARYING(255) NOT NULL,  
-    email             CHARACTER VARYING(255),  
-    first_name        CHARACTER VARYING(255),  
-    last_name         CHARACTER VARYING(255),  
-    phone1            CHARACTER VARYING(255),  
-    phone2            CHARACTER VARYING(255),  
-    website           CHARACTER VARYING(255),  
-    PRIMARY KEY (customer_id)  
+CREATE TABLE customers
+(
+    subscription_date DATE,
+    city              CHARACTER VARYING(255),
+    company           CHARACTER VARYING(255),
+    country           CHARACTER VARYING(255),
+    customer_id       CHARACTER VARYING(255) NOT NULL,
+    email             CHARACTER VARYING(255),
+    first_name        CHARACTER VARYING(255),
+    last_name         CHARACTER VARYING(255),
+    phone1            CHARACTER VARYING(255),
+    phone2            CHARACTER VARYING(255),
+    website           CHARACTER VARYING(255),
+    PRIMARY KEY (customer_id)
 );
 ```
 
@@ -211,37 +211,37 @@ This class will contain the configuration for the Step, Job, ItemReader and Item
 @EnableBatchProcessing
 public class SpringBatchConfig {
 
-    @Bean  
+    @Bean
     public FlatFileItemReader<Customer> reader() {
        //TODO
-    }  
+    }
 
-    @Bean  
+    @Bean
     public JpaItemWriter<Customer> writer() {
        //TODO
     }
 
-    @Bean  
-    public Job csvImporterJob(Step customerStep, JobRepository jobRepository) {  
-        return new JobBuilder("csvImporterJob", jobRepository)  
-                .incrementer(new RunIdIncrementer())  
-                .flow(customerStep)  
-                .end()  
-                .build();  
-    }  
+    @Bean
+    public Job csvImporterJob(Step customerStep, JobRepository jobRepository) {
+        return new JobBuilder("csvImporterJob", jobRepository)
+                .incrementer(new RunIdIncrementer())
+                .flow(customerStep)
+                .end()
+                .build();
+    }
 
-    @Bean  
-    public Step csvImporterStep(  
-        ItemReader<Customer> csvReader, ItemWriter<Customer> csvWriter,  
-        JobRepository jobRepository, PlatformTransactionManager tx) {  
+    @Bean
+    public Step csvImporterStep(
+        ItemReader<Customer> csvReader, ItemWriter<Customer> csvWriter,
+        JobRepository jobRepository, PlatformTransactionManager tx) {
 
-        return new StepBuilder("csvImporterStep", jobRepository)  
-                .<Customer, Customer>chunk(50, tx)  
-                .reader(csvReader)  
-                .writer(csvWriter)  
-                .allowStartIfComplete(true)  
-                .build();  
-    }   
+        return new StepBuilder("csvImporterStep", jobRepository)
+                .<Customer, Customer>chunk(50, tx)
+                .reader(csvReader)
+                .writer(csvWriter)
+                .allowStartIfComplete(true)
+                .build();
+    }
 }
 ```
 
@@ -294,8 +294,8 @@ The `fieldSetMapper()` defines how to map fields from the CSV to the `Customer` 
 In this example, we are manually mapping each field and setting the values to the `Customer` object. But if you want to parse all the fields from CSV and if it maps exactly to the field names, you can use `BeanWrapperFieldSetMapper` to automatically map each column to a Java object.
 
 ```java
-.fieldSetMapper(new BeanWrapperFieldSetMapper<>() {{  
-    setTargetType(Customer.class);  
+.fieldSetMapper(new BeanWrapperFieldSetMapper<>() {{
+    setTargetType(Customer.class);
 }})
 ```
 
@@ -323,17 +323,17 @@ The Job can triggered from a command line runner, from a REST controller, using 
 In this example, we will use an application-ready event to trigger the job. This will trigger the job immediately after the application starts.
 
 ```java
-@Component  
-@RequiredArgsConstructor  
-public class ApplicationStartEvent {  
+@Component
+@RequiredArgsConstructor
+public class ApplicationStartEvent {
 
-    private final JobLauncher jobLauncher;  
-    private final Job csvImporterJob;  
+    private final JobLauncher jobLauncher;
+    private final Job csvImporterJob;
 
-    @EventListener(ApplicationReadyEvent.class)  
-    public void onReadyEvent() throws JobExecutionException {  
-        jobLauncher.run(csvImporterJob, new JobParameters());  
-    }  
+    @EventListener(ApplicationReadyEvent.class)
+    public void onReadyEvent() throws JobExecutionException {
+        jobLauncher.run(csvImporterJob, new JobParameters());
+    }
 }
 ```
 
@@ -348,38 +348,38 @@ The `JobExecutionListener` interface has `beforeJob()` and `afterJob()` methods.
 For now, we are logging but you can add your custom business logic here.
 
 ```java
-@Slf4j  
-@Component  
-public class ImportJobListener implements JobExecutionListener {  
+@Slf4j
+@Component
+public class ImportJobListener implements JobExecutionListener {
 
-    @Override  
-    public void beforeJob(JobExecution jobExecution) {  
-        log.info("Job:{} execution started", jobExecution.getJobInstance().getJobName());  
-    }  
+    @Override
+    public void beforeJob(JobExecution jobExecution) {
+        log.info("Job:{} execution started", jobExecution.getJobInstance().getJobName());
+    }
 
-    @Override  
-    public void afterJob(JobExecution jobExecution) {  
-        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {  
-            log.info("Job completed: {}", jobExecution.getJobInstance().getJobName());  
-        } else if (jobExecution.getStatus() == BatchStatus.FAILED) {  
-            log.error("Error while running job: {}", jobExecution.getJobInstance().getJobName());  
-        }  
-    }  
+    @Override
+    public void afterJob(JobExecution jobExecution) {
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+            log.info("Job completed: {}", jobExecution.getJobInstance().getJobName());
+        } else if (jobExecution.getStatus() == BatchStatus.FAILED) {
+            log.error("Error while running job: {}", jobExecution.getJobInstance().getJobName());
+        }
+    }
 }
 ```
 
 The custom job listener can be added to the job by calling the `listener()` method on `JobBuilder`.
 
 ```java
-@Bean  
-public Job csvImporterJob(Step customerStep, JobRepository jobRepository,   
-                          ImportJobListener importJobListener) {  
-    return new JobBuilder("csvImporterJob", jobRepository)  
-            .incrementer(new RunIdIncrementer())  
-            .listener(importJobListener)  
-            .flow(customerStep)  
-            .end()  
-            .build();  
+@Bean
+public Job csvImporterJob(Step customerStep, JobRepository jobRepository,
+                          ImportJobListener importJobListener) {
+    return new JobBuilder("csvImporterJob", jobRepository)
+            .incrementer(new RunIdIncrementer())
+            .listener(importJobListener)
+            .flow(customerStep)
+            .end()
+            .build();
 }
 ```
 
@@ -390,21 +390,21 @@ While running a job, we can also pass the runtime parameters using `JobParameter
 For example, let us pass `ignoreCountry` parameter to our import job and ignore the customers that are from **'India'**.
 
 ```java
-@Component  
-@RequiredArgsConstructor  
-public class ApplicationStartEvent {  
+@Component
+@RequiredArgsConstructor
+public class ApplicationStartEvent {
 
-    private final JobLauncher jobLauncher;  
-    private final Job csvImporterJob;  
+    private final JobLauncher jobLauncher;
+    private final Job csvImporterJob;
 
-    @EventListener(ApplicationReadyEvent.class)  
-    public void onReadyEvent() throws JobExecutionException {  
-        JobParameters jobParameters = new JobParametersBuilder()  
+    @EventListener(ApplicationReadyEvent.class)
+    public void onReadyEvent() throws JobExecutionException {
+        JobParameters jobParameters = new JobParametersBuilder()
                 .addString("ignoreCountry", "India")
-                .toJobParameters();  
+                .toJobParameters();
 
-        jobLauncher.run(csvImporterJob, jobParameters);  
-    }  
+        jobLauncher.run(csvImporterJob, jobParameters);
+    }
 }
 ```
 
@@ -422,50 +422,50 @@ To access the parameters from the processor, we need to obtain the `JobExecution
 The `@JobScope` annotation can be used on the processor to bind the job lifecycle to the execution of a job. This allows us to inject job parameters directly into the processor using Spring Expression Language (SpEL).
 
 ```java
-@Slf4j  
-@StepScope  
-@Component  
-public class CustomerJobProcessor implements ItemProcessor<Customer, Customer> {  
+@Slf4j
+@StepScope
+@Component
+public class CustomerJobProcessor implements ItemProcessor<Customer, Customer> {
 
-    private final String ignoreCountry;  
+    private final String ignoreCountry;
 
-    public CustomerJobProcessor(@Value("#{jobParameters['ignoreCountry']}") String ignoreCountry) {  
-        this.ignoreCountry = ignoreCountry;  
-    }  
+    public CustomerJobProcessor(@Value("#{jobParameters['ignoreCountry']}") String ignoreCountry) {
+        this.ignoreCountry = ignoreCountry;
+    }
 
-    @Override  
-    public Customer process(Customer customer) {  
-        if (customer.getCountry().equalsIgnoreCase(ignoreCountry)) {  
-            log.info("Ignoring customer {} {} belongs to country {}", customer.getFirstName(),  
-                    customer.getLastName(), customer.getCountry());  
-            return null;  
-        }  
-        return customer;  
-    }  
+    @Override
+    public Customer process(Customer customer) {
+        if (customer.getCountry().equalsIgnoreCase(ignoreCountry)) {
+            log.info("Ignoring customer {} {} belongs to country {}", customer.getFirstName(),
+                    customer.getLastName(), customer.getCountry());
+            return null;
+        }
+        return customer;
+    }
 }
 ```
 
 We can optionally validate job parameters at runtime using `JobParametersValidator` and override the `validate()` method.
 
 ```java
-@Bean  
-public Job csvImporterJob(Step customerStep, JobRepository jobRepository,  
-                          ImportJobListener importJobListener) {  
-    return new JobBuilder("csvImporterJob", jobRepository)  
-            .incrementer(new RunIdIncrementer())  
-            .validator(new JobParametersValidator() {  
-                @Override  
-                public void validate(JobParameters parameters) throws JobParametersInvalidException {  
-                    String ignoreCountry = parameters.getString("ignoreCountry"); 
-                    if ("Costa Rica".equals(ignoreCountry)) {  
-                        throw new JobParametersInvalidException("Country ignored");  
+@Bean
+public Job csvImporterJob(Step customerStep, JobRepository jobRepository,
+                          ImportJobListener importJobListener) {
+    return new JobBuilder("csvImporterJob", jobRepository)
+            .incrementer(new RunIdIncrementer())
+            .validator(new JobParametersValidator() {
+                @Override
+                public void validate(JobParameters parameters) throws JobParametersInvalidException {
+                    String ignoreCountry = parameters.getString("ignoreCountry");
+                    if ("Costa Rica".equals(ignoreCountry)) {
+                        throw new JobParametersInvalidException("Country ignored");
                     }
-                }  
-            })  
-            .listener(importJobListener)  
-            .flow(customerStep)  
-            .end()  
-            .build();  
+                }
+            })
+            .listener(importJobListener)
+            .flow(customerStep)
+            .end()
+            .build();
 }
 ```
 

@@ -27,38 +27,38 @@ import java.util.Scanner;
 
 public class LinearSearchExample {
 
-	public static void main(String args[]) {
-		int i, totalCount, search, inputArray[];
+    public static void main(String args[]) {
+        int i, totalCount, search, inputArray[];
 
-		Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Enter number of elements");
-		totalCount = scanner.nextInt();
-		inputArray = new int[totalCount];
+        System.out.println("Enter number of elements");
+        totalCount = scanner.nextInt();
+        inputArray = new int[totalCount];
 
-		System.out.println("Enter " + totalCount + " integers");
+        System.out.println("Enter " + totalCount + " integers");
 
-		for (i = 0; i < totalCount; i++) {
-			inputArray[i] = scanner.nextInt();
-		}
+        for (i = 0; i < totalCount; i++) {
+            inputArray[i] = scanner.nextInt();
+        }
 
-		System.out.println("Enter value to find");
-		search = scanner.nextInt();
+        System.out.println("Enter value to find");
+        search = scanner.nextInt();
 
-		for (i = 0; i < totalCount; i++) {
-			// Element found
-			if (inputArray[i] == search) {
-				System.out.println(search + " is present at location "
-						+ (i + 1) + ".");
-				break;
-			}
-		}
+        for (i = 0; i < totalCount; i++) {
+            // Element found
+            if (inputArray[i] == search) {
+                System.out.println(search + " is present at location "
+                        + (i + 1) + ".");
+                break;
+            }
+        }
 
-		// Element not in the input array
-		if (i == totalCount) {
-			System.out.println(search + " is not present in array.");
-		}
-	}
+        // Element not in the input array
+        if (i == totalCount) {
+            System.out.println(search + " is not present in array.");
+        }
+    }
 }
 ```
 

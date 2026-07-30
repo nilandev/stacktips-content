@@ -48,7 +48,7 @@ void selection_sort(int a[],int n);
                 pos=j;
             }
         }
-        
+
         /* Exchange ith item with least item */
         temp=a[pos];
         a[pos] = a[i];

@@ -45,7 +45,7 @@ Following are simple steps you need to follow for implementing Toolbar as Action
 
 First of all, you need to disable ActionBar. To do this, you need to extend your application theme from `Theme.AppCompat.NoActionBar` or if you are already using `Theme.AppCompact` theme, then just add below lines of code snippet
 
-```
+```xml
 <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat">
         <item name="android:windowNoTitle">true</item>
@@ -55,7 +55,7 @@ First of all, you need to disable ActionBar. To do this, you need to extend your
 
 Secondly, add the App Compact V7 support support library. In this example, I am using Android Studio as the development IDE. You can add the V7 support library dependency to your application build.gradle file.
 
-```
+```groovy
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:21.0.+"
@@ -64,7 +64,7 @@ dependencies {
 
 Now you need to add Toolbar to your Activity layout. Find the code snippet below for simple Toolbar Layout.
 
-```
+```xml
 <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:minHeight="?attr/actionBarSize"
@@ -76,7 +76,7 @@ Now you need to add Toolbar to your Activity layout. Find the code snippet below
 
 Apply the theme to Activity. Here in this step you need to apply the theme which we have created in step-1 to your activity. This can be done, by using `android:theme` attribute in your application AndroidManifest.xml.
 
-```
+```xml
 <activity
             android:name="com.javatechig.sample.MyActivity"
             android:label="@string/app_name"
@@ -86,7 +86,7 @@ Apply the theme to Activity. Here in this step you need to apply the theme which
 
 Now you are almost ready. You just need to instantiate the Toolbar and add it to your activity by using `setSupportActionBar(Toolbar)` method.
 
-```
+```java
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -100,6 +100,6 @@ public class MyActivity extends ActionBarActivity{
         // Set a toolbar to replace the action bar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-	}
+    }
 }
 ```

@@ -28,7 +28,7 @@ As assume that you have a basic knowledge of React-Native and required Software 
 
 To create a new React Native project, just open your Terminal/iTerm app and run the following command.
 
-```
+```bash
 $ ~ mkdir ReactNativeApp
 $ ~ cd ReactNativeApp
 $ ReactNativeApp react-native init DemoFBLogin
@@ -50,7 +50,7 @@ Let’s click on **Get Started** with Facebook Login. First let’s start with t
 
 Now, Install and link the Facebook SDK for React Native packages and dependencies in the terminal and start npm server.
 
-```
+```bash
 $ cd DemoFBLogin
 $ DemoFBLogin react-native install react-native-fbsdk
 $ DemoFBLogin react-native link react-native-fbsdk
@@ -85,7 +85,7 @@ Enable single sign-on, and Configure your info.plist follow the step by step ins
 
 Connect App Delegate , Open your Xcode project go to **AppDelegate.m** and **import** and paste the following code inside **didFinishLaunchingWithOptions**
 
-```c
+```objectivec
 [[FBSDKApplicationDelegate sharedInstance] application:application
 didFinishLaunchingWithOptions:launchOptions];
 Declare OpenUrl:sourceApplicaiton:annotation method below didFinishLaunchingWithOptions
@@ -111,7 +111,7 @@ Now open the react-native project with VS Code IDE, directly by opening folder v
 
 Open `index.ios.js` **import FBSDK, { LoginManager } from ‘react-native-fbsdk’** and create a function called `_fbAuth` i start with **\_** to signify that it’s a private method inside this function call `logInWithReadPermissions` form FB loginManage and handled the success and cancel state snippet looks something like
 
-```js
+```javascript
 _fbAuth() {
     LoginManager.logInWithReadPermissions(['public_profile']).then(
         function(result) {
@@ -132,7 +132,7 @@ _fbAuth() {
 
 Remove all the code inside **render()** function except container view and create a button by with saying **Login Via Facebook**, Later let’s assign the **\_fbAuth function** for a button. we do this by **onPress** in your opening tag of and supplying the function `{this._fbAuth}`. Over all code will look something like this:
 
-```js
+```javascript
 import React, {
     Component
 } from 'react';
@@ -167,11 +167,11 @@ export default class DemoFBLogin extends Component {
     }
     render() {
         return (
-		<View style={styles.container}>
-		<TouchableOpacity onPress={this._fbAuth}>
-		<Text>Login Via FaceBook</Text>
-		</TouchableOpacity>
-		</View> 
+        <View style={styles.container}>
+        <TouchableOpacity onPress={this._fbAuth}>
+        <Text>Login Via FaceBook</Text>
+        </TouchableOpacity>
+        </View>
         );
     }
 }

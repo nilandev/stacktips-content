@@ -34,11 +34,11 @@ AlertDialog.Builder alert = new AlertDialog.Builder (this);
 alert.SetTitle ("Confirm delete");
 alert.SetMessage ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
 alert.SetPositiveButton ("Delete", (senderAlert, args) => {
-	Toast.MakeText(this ,"Deleted!" , ToastLength.Short).Show();
+    Toast.MakeText(this ,"Deleted!" , ToastLength.Short).Show();
 });
 
 alert.SetNegativeButton ("Cancel", (senderAlert, args) => {
-	Toast.MakeText(this ,"Cancelled!" , ToastLength.Short).Show();
+    Toast.MakeText(this ,"Cancelled!" , ToastLength.Short).Show();
 });
 
 Dialog dialog = alert.Create();
@@ -82,30 +82,30 @@ using Android.Widget;
 
 namespace DialogExample
 {
-	public class DialogFragment2 : DialogFragment
-	{
-		public static DialogFragment2 NewInstance(Bundle bundle){
-			DialogFragment2 fragment = new DialogFragment2 ();
-			fragment.Arguments = bundle;
-			return fragment;
-		}
+    public class DialogFragment2 : DialogFragment
+    {
+        public static DialogFragment2 NewInstance(Bundle bundle){
+            DialogFragment2 fragment = new DialogFragment2 ();
+            fragment.Arguments = bundle;
+            return fragment;
+        }
 
-		public override Dialog OnCreateDialog (Bundle savedInstanceState)
-		{
-			AlertDialog.Builder alert = new AlertDialog.Builder (Activity);
-			alert.SetTitle ("Confirm delete");
-			alert.SetMessage ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
-			alert.SetPositiveButton ("Delete", (senderAlert, args) => {
-				Toast.MakeText(Activity ,"Deleted!" , ToastLength.Short).Show();
-			});
+        public override Dialog OnCreateDialog (Bundle savedInstanceState)
+        {
+            AlertDialog.Builder alert = new AlertDialog.Builder (Activity);
+            alert.SetTitle ("Confirm delete");
+            alert.SetMessage ("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.");
+            alert.SetPositiveButton ("Delete", (senderAlert, args) => {
+                Toast.MakeText(Activity ,"Deleted!" , ToastLength.Short).Show();
+            });
 
-			alert.SetNegativeButton ("Cancel", (senderAlert, args) => {
-				Toast.MakeText(Activity ,"Cancelled!" , ToastLength.Short).Show();
-			});
+            alert.SetNegativeButton ("Cancel", (senderAlert, args) => {
+                Toast.MakeText(Activity ,"Cancelled!" , ToastLength.Short).Show();
+            });
 
-			return alert.Create();
-		}
-	}
+            return alert.Create();
+        }
+    }
 }
 ```
 
@@ -161,27 +161,27 @@ using Android.Widget;
 
 namespace DialogExample
 {
-	public class DialogFragment1 : DialogFragment
-	{
-		public static DialogFragment1 NewInstance(Bundle bundle){
-			DialogFragment1 fragment = new DialogFragment1 ();
-			fragment.Arguments = bundle;
-			return fragment;
-		}
+    public class DialogFragment1 : DialogFragment
+    {
+        public static DialogFragment1 NewInstance(Bundle bundle){
+            DialogFragment1 fragment = new DialogFragment1 ();
+            fragment.Arguments = bundle;
+            return fragment;
+        }
 
-		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-		{
-			// Use this to return your custom view for this Fragment
-			View view =  inflater.Inflate(Resource.Layout.DialogFragment1Layout, container, false);
-			Button button = view.FindViewById<Button> (Resource.Id.CloseButton);
-			button.Click += delegate {
-				Dismiss();
-				Toast.MakeText(Activity ,"Dialog fragment dismissed!" , ToastLength.Short).Show();
-			};
+        public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            // Use this to return your custom view for this Fragment
+            View view =  inflater.Inflate(Resource.Layout.DialogFragment1Layout, container, false);
+            Button button = view.FindViewById<Button> (Resource.Id.CloseButton);
+            button.Click += delegate {
+                Dismiss();
+                Toast.MakeText(Activity ,"Dialog fragment dismissed!" , ToastLength.Short).Show();
+            };
 
-			return view;
-		}
-	}
+            return view;
+        }
+    }
 }
 ```
 
@@ -197,7 +197,7 @@ FragmentTransaction ft = FragmentManager.BeginTransaction();
 //Remove fragment else it will crash as it is already added to backstack
 Fragment prev = FragmentManager.FindFragmentByTag("dialog");
 if (prev != null) {
-	ft.Remove(prev);
+    ft.Remove(prev);
 }
 
 ft.AddToBackStack(null);

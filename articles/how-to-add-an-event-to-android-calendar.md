@@ -32,5 +32,5 @@ intent.putExtra(CalendarContract.Events.DESCRIPTION, description)
 intent.putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY);
 context.startActivity(intent);
 
-Toast.makeText(context, "Event added to calendar, Toast.LENGTH_SHORT).show(); 
+Toast.makeText(context, "Event added to calendar, Toast.LENGTH_SHORT).show();
 ```

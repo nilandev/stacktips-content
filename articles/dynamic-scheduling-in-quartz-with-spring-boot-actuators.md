@@ -52,16 +52,16 @@ Let us now create a custom actuator to start, and stop scheduled jobs using actu
 In this example, we have `actuator/manage-jobs` actuator endpoint with `@WriteOperation` that accepts an `action`, `jobName` and `jobGroup` as a input parameter.
 
 ```java
-@Component  
-@Endpoint(id = "manage-jobs")  
-public class QuartzJobEndpoint {  
+@Component
+@Endpoint(id = "manage-jobs")
+public class QuartzJobEndpoint {
 
-    private static final Logger log = LoggerFactory.getLogger(QuartzJobEndpoint.class);  
-    private final QuartzJobService quartzJobService;  
+    private static final Logger log = LoggerFactory.getLogger(QuartzJobEndpoint.class);
+    private final QuartzJobService quartzJobService;
 
-    public QuartzJobEndpoint(QuartzJobService quartzJobService) {  
-        this.quartzJobService = quartzJobService;  
-    }  
+    public QuartzJobEndpoint(QuartzJobService quartzJobService) {
+        this.quartzJobService = quartzJobService;
+    }
 
     @WriteOperation
     public void manageJob(String action, String jobName, String jobGroup) {
@@ -98,7 +98,7 @@ In this example, we are using hardcoded CRON expression, the endpoint can be ext
 
 ```java
 import com.stacktips.app.tasks.CsvImportInterruptableJob;
-import org.quartz.*;  
+import org.quartz.*;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -153,7 +153,7 @@ public class QuartzJobService {
 
         scheduler.rescheduleJob(TriggerKey.triggerKey(newTriggerName, jobGroup), newTrigger);
         scheduler.deleteJob(JobKey.jobKey(jobName, jobGroup));
-    }  
+    }
 
 }
 ```
@@ -164,7 +164,7 @@ With this we are ready to dynamically schedule our Quartz job.
 
 **To Start a Job**
 
-```shell
+```bash
 curl --location 'http://localhost:8080/actuator/manage-jobs' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -176,7 +176,7 @@ curl --location 'http://localhost:8080/actuator/manage-jobs' \
 
 **To Stop a Job**
 
-```shell
+```bash
 curl --location 'http://localhost:8080/actuator/manage-jobs' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -188,7 +188,7 @@ curl --location 'http://localhost:8080/actuator/manage-jobs' \
 
 **To Update an Existing Job**
 
-```shell
+```bash
 curl --location 'http://localhost:8080/actuator/manage-jobs' \
 --header 'Content-Type: application/json' \
 --data '{

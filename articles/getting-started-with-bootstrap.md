@@ -59,8 +59,8 @@ This will download the full source code bundle of Bootstrap. You have to install
 In case of a downloaded local copy of Bootstrap, we include the following files to your HTML HEAD section.
 
 ```html
-<link rel="stylesheet" href="bootstrap.min.css"> 
-<link rel="stylesheet" href="bootstrap-theme.min.css"> 
-<script type="text/javascript" src="bootstrap.min.js"></script> 
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap-theme.min.css">
+<script type="text/javascript" src="bootstrap.min.js"></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 ```

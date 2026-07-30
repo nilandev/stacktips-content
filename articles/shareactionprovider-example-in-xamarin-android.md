@@ -38,7 +38,7 @@ To use the ShareActionProvider, set the `android:actionProviderClass` attribute 
 
 ## Your activity class
 
-```cs
+```csharp
 using System;
 
 using Android.App;
@@ -50,41 +50,41 @@ using Android.OS;
 
 namespace ShareActionProviderExample
 {
-	[Activity (Label = "ShareActionProviderExample", MainLauncher = true)]
-	public class MainActivity : Activity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+    [Activity (Label = "ShareActionProviderExample", MainLauncher = true)]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate (Bundle bundle)
+        {
+            base.OnCreate (bundle);
 
-			TextView tv = new TextView (this);
-			tv.Text = "This is an ShareActionProvider Example";
-			tv.SetPadding (20, 20, 20, 20);
+            TextView tv = new TextView (this);
+            tv.Text = "This is an ShareActionProvider Example";
+            tv.SetPadding (20, 20, 20, 20);
 
-			// Set our view from the "main" layout resource
-			SetContentView (tv);
-		}
+            // Set our view from the "main" layout resource
+            SetContentView (tv);
+        }
 
-		public override bool OnCreateOptionsMenu (IMenu menu) {
+        public override bool OnCreateOptionsMenu (IMenu menu) {
 
-			MenuInflater.Inflate (Resource.Menu.MainMenu, menu);   
+            MenuInflater.Inflate (Resource.Menu.MainMenu, menu);
 
-			var shareMenuItem = menu.FindItem (Resource.Id.shareMenu);           
-			var shareActionProvider =
-				(ShareActionProvider)shareMenuItem.ActionProvider;
-			shareActionProvider.SetShareIntent (CreateIntent ());
+            var shareMenuItem = menu.FindItem (Resource.Id.shareMenu);
+            var shareActionProvider =
+                (ShareActionProvider)shareMenuItem.ActionProvider;
+            shareActionProvider.SetShareIntent (CreateIntent ());
 
-			return true;
-		}
+            return true;
+        }
 
-		Intent CreateIntent () {  
-			var sendPictureIntent = new Intent (Intent.ActionSend);
-			sendPictureIntent.SetType ("image/*");
-			var uri = Android.Net.Uri.FromFile (GetFileStreamPath ("image.png"));          
-			sendPictureIntent.PutExtra (Intent.ExtraStream, uri);
-			return sendPictureIntent;
-		}
-	}
+        Intent CreateIntent () {
+            var sendPictureIntent = new Intent (Intent.ActionSend);
+            sendPictureIntent.SetType ("image/*");
+            var uri = Android.Net.Uri.FromFile (GetFileStreamPath ("image.png"));
+            sendPictureIntent.PutExtra (Intent.ExtraStream, uri);
+            return sendPictureIntent;
+        }
+    }
 }
 ```
 

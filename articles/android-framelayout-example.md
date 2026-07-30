@@ -106,8 +106,8 @@ protected void onCreate(Bundle savedInstanceState) {
     ImageView imageView = new ImageView(this);
     imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     imageView.setImageResource(R.drawable.photo);
-    imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 
-    			LayoutParams.MATCH_PARENT));
+    imageView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+                LayoutParams.MATCH_PARENT));
 
     TextView textView1 = new TextView(this);
     textView1.setText("Fanny Hands Lane, London");
@@ -116,8 +116,8 @@ protected void onCreate(Bundle savedInstanceState) {
     textView1.setTextColor(Color.parseColor("#fcfcfc"));
     textView1.setBackgroundColor((Color.parseColor("#00000c")));
     textView1.setPadding(10,10,10,10);
-	LayoutParams lp1 = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 
-				Gravity.CENTER_HORIZONTAL);
+    LayoutParams lp1 = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT,
+                Gravity.CENTER_HORIZONTAL);
     lp1.setMargins(0,20,0,0);
     textView1.setLayoutParams(lp1);
 
@@ -128,14 +128,14 @@ protected void onCreate(Bundle savedInstanceState) {
     textView2.setTextColor(Color.WHITE);
     textView2.setPadding(10,10,10,10);
     textView2.setBackgroundColor(Color.BLACK);
-    LayoutParams lp2 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 
-    			Gravity.BOTTOM|Gravity.RIGHT);
+    LayoutParams lp2 = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT,
+                Gravity.BOTTOM|Gravity.RIGHT);
     textView2.setLayoutParams(lp2);
 
     //Initializing frame layout
     FrameLayout framelayout = new FrameLayout(this);
-    framelayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, 
-    			LayoutParams.MATCH_PARENT));
+    framelayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
+                LayoutParams.MATCH_PARENT));
 
     //Adding views to FrameLayout
     framelayout.addView(imageView);

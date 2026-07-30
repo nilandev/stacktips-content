@@ -34,68 +34,68 @@ import java.nio.channels.FileChannel;
 
 public class CopyFile {
 
-	public static void main(String[] args) {
-		File sourceFile = new File(
-				"/Users/Neel/Documents/Workspace/file1.txt");
+    public static void main(String[] args) {
+        File sourceFile = new File(
+                "/Users/Neel/Documents/Workspace/file1.txt");
 
-		File destFile = new File(
-				"/Users/Neel/Documents/Workspace/file2.txt");
+        File destFile = new File(
+                "/Users/Neel/Documents/Workspace/file2.txt");
 
-		/* verify whether file exist in source location */
-		if (!sourceFile.exists()) {
-			System.out.println("Source File Not Found!");
-		}
+        /* verify whether file exist in source location */
+        if (!sourceFile.exists()) {
+            System.out.println("Source File Not Found!");
+        }
 
-		/* if file not exist then create one */
-		if (!destFile.exists()) {
-			try {
-				destFile.createNewFile();
-				
-				System.out.println("Destination file doesn't exist. Creating one!");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+        /* if file not exist then create one */
+        if (!destFile.exists()) {
+            try {
+                destFile.createNewFile();
 
-		FileChannel source = null;
-		FileChannel destination = null;
+                System.out.println("Destination file doesn't exist. Creating one!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-		try {
+        FileChannel source = null;
+        FileChannel destination = null;
 
-			/**
-			 * getChannel() returns unique FileChannel object associated a file
-			 * output stream.
-			 */
-			source = new FileInputStream(sourceFile).getChannel();
+        try {
 
-			destination = new FileOutputStream(destFile).getChannel();
+            /**
+             * getChannel() returns unique FileChannel object associated a file
+             * output stream.
+             */
+            source = new FileInputStream(sourceFile).getChannel();
 
-			if (destination != null && source != null) {
-				destination.transferFrom(source, 0, source.size());
-			}
+            destination = new FileOutputStream(destFile).getChannel();
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            if (destination != null && source != null) {
+                destination.transferFrom(source, 0, source.size());
+            }
 
-		finally {
-			if (source != null) {
-				try {
-					source.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			if (destination != null) {
-				try {
-					destination.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-	}
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            if (source != null) {
+                try {
+                    source.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (destination != null) {
+                try {
+                    destination.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
 ```

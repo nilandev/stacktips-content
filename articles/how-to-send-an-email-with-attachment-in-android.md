@@ -24,17 +24,17 @@ The following code snippet shows to send an email with image attachment in Andro
 
 ```java
 public static void sendEmail(Context context, String subject, String message, String imagePath) {
-	Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-	emailIntent.setType("plain/text");
-	emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
-	emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);
-	
-	if (imagePath != null && imagePath.length() > 0) {
-		File file = urlToFile(imagePath);
-		if (file != null && file.getAbsolutePath() != null)
-			emailIntent.putExtra(Intent.EXTRA_STREAM, file.getAbsolutePath());
-	}
-	
-	context.startActivity(emailIntent);
+    Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+    emailIntent.setType("plain/text");
+    emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+    emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, message);
+
+    if (imagePath != null && imagePath.length() > 0) {
+        File file = urlToFile(imagePath);
+        if (file != null && file.getAbsolutePath() != null)
+            emailIntent.putExtra(Intent.EXTRA_STREAM, file.getAbsolutePath());
+    }
+
+    context.startActivity(emailIntent);
 }
 ```

@@ -38,7 +38,7 @@ print(week)
 
 **Output:**
 
-```
+```text
 ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 ```
 
@@ -71,12 +71,12 @@ week = ["Sunday", "Monday", "Tuesday",
          "Wednesday", "Thursday", "Friday", "Saturday"]
 
 week[1] = "MONDAY"
-print(week) 
+print(week)
 ```
 
 **Output:**
 
-```
+```text
 ['Sunday', 'MONDAY', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 ```
 
@@ -94,7 +94,7 @@ print(animals)
 
 **Output:**
 
-```
+```text
 ['elephant', 'tiger', 'lion']
 ['elephant', 'tiger', 'lion', 'bear']
 ```
@@ -113,7 +113,7 @@ print(animals)
 
 **Output:**
 
-```
+```text
 ['elephant', 'tiger', 'lion', 'bear']
 ['elephant', 'lion', 'bear']
 ```
@@ -130,7 +130,7 @@ print(animals)
 
 **Output:**
 
-```
+```text
 ['elephant', 'tiger', 'lion', 'bear']
 ['elephant', 'lion', 'bear']
 ```
@@ -143,12 +143,12 @@ Looping through a list is a very common operation and Python luckily makes this 
 week = ["Sunday", "Monday", "Tuesday",
          "Wednesday", "Thursday", "Friday", "Saturday"]
 for day in week:
-	print(day)
+    print(day)
 ```
 
 **Output:**
 
-```
+```text
 Sunday
 Monday
 Tuesday
@@ -173,7 +173,7 @@ print("Monday" in week)
 
 **Output:**
 
-```
+```text
 True
 ```
 
@@ -190,7 +190,7 @@ print(len(week))
 
 **Output:**
 
-```
+```text
 7
 ```
 
@@ -208,7 +208,7 @@ print(countries)
 
 **Output:**
 
-```
+```text
 ['USA', 'Canada', 'Mexico', 'UK', 'France', 'Germany']
 ```
 
@@ -227,7 +227,7 @@ print(week)
 
 **Output:**
 
-```
+```text
 ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 ['Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday']
 ```
@@ -247,7 +247,7 @@ print(week)
 
 **Output:**
 
-```
+```text
 ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 ['Friday', 'Monday', 'Saturday', 'Sunday', 'Thursday', 'Tuesday', 'Wednesday']
 ```

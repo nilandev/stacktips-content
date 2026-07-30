@@ -99,11 +99,11 @@ There are several methods available to remove an item from HashSet.
 
 // Remove object using remove method
 HashSet<String> hashSet = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
-hashSet.remove("B"); 
+hashSet.remove("B");
 
 // Remove element conditionally using predicate
 HashSet<String> hashSet = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
-hashSet.removeIf(s -> s.startsWith("A")); 
+hashSet.removeIf(s -> s.startsWith("A"));
 
 // Remove all elements
 HashSet<String> hashSet = new HashSet<>(Arrays.asList("A", "B", "C", "D"));

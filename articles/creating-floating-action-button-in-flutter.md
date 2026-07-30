@@ -26,7 +26,7 @@ The Floating Action Button (FAB) represents the critical user action on that scr
 
 The `FloatingActionButton` widget class in Flutter can be used to create a floating button. The following code shows how to create a simple floating button in Flutter.
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 void main() {
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
 
 The `FloatingActionButton` widget has a number of properties that can be used to customize its appearance and behavior. For example, we can use the `backgroundColor` property to set the button background colour and the `onPressed` property to set a callback that is executed when the button is pressed.
 
-```
+```dart
 floatingActionButton: FloatingActionButton(
   tooltip: "Settings",
   backgroundColor: Colors.cyan.shade800,
@@ -75,7 +75,7 @@ floatingActionButton: FloatingActionButton(
 
 ### Displaying Icon and label on the floating action button
 
-```
+```dart
 floatingActionButton: FloatingActionButton.extended(
   tooltip: "Settings",
   backgroundColor: Colors.cyan.shade800,
@@ -96,7 +96,7 @@ floatingActionButton: FloatingActionButton.extended(
 
 ### Small Floating Action Button
 
-```
+```dart
 floatingActionButton: FloatingActionButton.small(
   tooltip: "Settings",
   backgroundColor: Colors.cyan.shade800,
@@ -116,7 +116,7 @@ floatingActionButton: FloatingActionButton.small(
 
 ### Large Floating Action Button
 
-```
+```dart
 floatingActionButton: FloatingActionButton.large(
   tooltip: "Settings",
   backgroundColor: Colors.cyan.shade800,

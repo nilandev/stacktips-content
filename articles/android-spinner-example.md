@@ -28,7 +28,7 @@ This tutorial explains creating spinner in android and attaching event to spinne
 
 Add a new layout file in \\layout\\layout\_main.xml and insert the following code.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -66,7 +66,7 @@ In the above example, we have declared TextView, Spinner and a ImageView. The te
 
 Below are the strings used in the application. Declare all of them in strings.xml file
 
-```
+```xml
 <string-array name="countries_list">
         <item>Afghanistan</item>
         <item>Albania</item>
@@ -98,7 +98,7 @@ Below are the strings used in the application. Declare all of them in strings.xm
 
 Now create a java class and name it as MainActivity.java. And paste the following code.
 
-```
+```java
 package com.example.spinnerexample;
 
 import android.app.Activity;
@@ -113,42 +113,42 @@ import android.widget.Spinner;
 
 public class MainActivity extends Activity {
 
-	private ImageView image;
-	private String[] states;
-	private Spinner spinner;
-	private TypedArray imgs;
+    private ImageView image;
+    private String[] states;
+    private Spinner spinner;
+    private TypedArray imgs;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		states = getResources().getStringArray(R.array.countries_list);
-		imgs = getResources().obtainTypedArray(R.array.countries_flag_list);
+        states = getResources().getStringArray(R.array.countries_list);
+        imgs = getResources().obtainTypedArray(R.array.countries_flag_list);
 
-		image = (ImageView) findViewById(R.id.country_image);
-		spinner = (Spinner) findViewById(R.id.country_spinner);
+        image = (ImageView) findViewById(R.id.country_image);
+        spinner = (Spinner) findViewById(R.id.country_spinner);
 
-		ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_spinner_item, states);
-		dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(dataAdapter);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, states);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
 
-		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
-			@Override
-			public void onItemSelected(AdapterView<?> parent, View view,
-					int position, long id) {
-				image.setImageResource(imgs.getResourceId(
-						spinner.getSelectedItemPosition(), -1));
-			}
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                    int position, long id) {
+                image.setImageResource(imgs.getResourceId(
+                        spinner.getSelectedItemPosition(), -1));
+            }
 
-			@Override
-			public void onNothingSelected(AdapterView<?> arg0) {
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
 
-			}
-		});
-	}
+            }
+        });
+    }
 }
 ```
 

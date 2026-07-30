@@ -51,7 +51,7 @@ I use “Visual Studio Code” in my macOS as IDE of my choice.
 
 Create a new folder in any specific location you wish using terminal with the following command
 
-```
+```bash
 $ mkdir ReactProject
 $ cd ReactProject
 $ ReactProject~ react-native init HelloWorld
@@ -66,13 +66,13 @@ By React CLI in Terminal using commands.
 
 #### By React CLI in Terminal using commands.
 
-```
+```bash
 $ cd HelloWorld
 ```
 
 To run the iOS app, execute following command in your terminal.
 
-```
+```bash
 $ HelloWorld~ react-native run-ios
 ```
 
@@ -80,7 +80,7 @@ $ HelloWorld~ react-native run-ios
 
 To run the Android app, execute following command in your terminal.
 
-```
+```bash
 $ HelloWorld~ react-native run-android
 ```
 

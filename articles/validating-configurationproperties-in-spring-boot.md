@@ -28,8 +28,8 @@ Let's say we have a Spring boot importer service that imports customer data from
 
 ```yaml
 
-importer:  
-  service:  
+importer:
+  service:
     filePath: '/nfs/files'
     fileType: '.xslx'
     threadPoolSize: 3
@@ -39,11 +39,11 @@ These properties can be mapped to a Java class automatically using `@Configurati
 
 ```java
 
-@Getter 
+@Getter
 @Setter
 @Component
 @ConfigurationProperties(prefix = "importer.service")
-public class ImporterConfig {  
+public class ImporterConfig {
     String filePath;
     String fileType;
     int threadPoolSize;
@@ -65,23 +65,23 @@ For example,
 
 ```java
 
-@Getter  
-@Setter  
-@Component  
-@Validated  
-@ConfigurationProperties(prefix = "importer.service")  
-public class ImporterConfig {  
+@Getter
+@Setter
+@Component
+@Validated
+@ConfigurationProperties(prefix = "importer.service")
+public class ImporterConfig {
 
-    @NotNull  
-    String filePath;  
+    @NotNull
+    String filePath;
 
-    @NotNull  
-    @Pattern(regexp = "\\.csv$|\\.txt$")  
-    String fileType;  
+    @NotNull
+    @Pattern(regexp = "\\.csv$|\\.txt$")
+    String fileType;
 
-    @Positive  
-    @Max(10)  
-    int threadPoolSize;  
+    @Positive
+    @Max(10)
+    int threadPoolSize;
 }
 ```
 
@@ -102,8 +102,7 @@ Now, Run the application and notice that it will bind these properties from `app
 
 If the validation fails it will result in `BindException` as shown below:
 
-```
-
+```text
 ***************************
 APPLICATION FAILED TO START
 ***************************
@@ -130,11 +129,11 @@ Starting with Spring Boot 2.6 and Java 16 you can use record classes with `@Conf
 
 ```java
 
-@Validated  
-@ConfigurationProperties(prefix = "importer.service")  
-public record ImporterProperties(  
-        @NotNull String filePath,  
-        @Min(3) int threadPoolSize) {  
+@Validated
+@ConfigurationProperties(prefix = "importer.service")
+public record ImporterProperties(
+        @NotNull String filePath,
+        @Min(3) int threadPoolSize) {
 }
 ```
 
@@ -148,13 +147,13 @@ For example:
 
 ```java
 
-@EnableConfigurationProperties(ImporterProperties.class)  
-@SpringBootApplication  
-public class MyApplication {  
+@EnableConfigurationProperties(ImporterProperties.class)
+@SpringBootApplication
+public class MyApplication {
 
-    public static void main(String[] args) {  
-       SpringApplication.run(MyApplication.class, args);  
-    }  
+    public static void main(String[] args) {
+       SpringApplication.run(MyApplication.class, args);
+    }
 
 }
 ```

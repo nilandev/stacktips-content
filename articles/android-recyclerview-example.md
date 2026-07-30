@@ -26,7 +26,7 @@ In Android 5.0 Lollipop, Android introduced RecyclerView widget. RecyclerView is
 
 Android SDK doesn’t includes the `RecyclerView` class. You need to add the following support library graddle dependency to project `build.graddle` file.
 
-```java
+```groovy
 compile 'com.android.support:recyclerview-v7:24.0.0'
 ```
 
@@ -51,7 +51,7 @@ Following steps are required to complete the example:
 
 Let us begin with creating a new Android project in Android Studio. After the project is created, open app `build.graddle` file and add the following dependency libraries.
 
-```java
+```groovy
 dependencies {
     compile 'com.android.support:recyclerview-v7:24.0.0'
     compile 'com.android.support:cardview-v7:24.0.0'

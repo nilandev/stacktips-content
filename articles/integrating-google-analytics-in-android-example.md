@@ -81,7 +81,7 @@ Add `analytics.xml` configuration file in your application values folder
     <bool name="ga_autoActivityTracking">true</bool>
 
     <!-- Enable automatic exception tracking -->
-    <bool name="ga_reportUncaughtExceptions">true</bool>    
+    <bool name="ga_reportUncaughtExceptions">true</bool>
 
 </resources>
 ```
@@ -99,7 +99,7 @@ For this example, I have created an sample Activity with two buttons for trackin
     android:padding="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView        
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/info" />
@@ -137,59 +137,59 @@ import com.google.analytics.tracking.android.StandardExceptionParser;
 
 public class MainActivity extends Activity {
 
-	private EasyTracker easyTracker = null;
+    private EasyTracker easyTracker = null;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		easyTracker = EasyTracker.getInstance(MainActivity.this);
+        easyTracker = EasyTracker.getInstance(MainActivity.this);
 
-		findViewById(R.id.trackEvent).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.trackEvent).setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				easyTracker.send(MapBuilder.createEvent("your_action",
-						"envet_name", "button_name/id", null).build());
-			}
-		});
+            @Override
+            public void onClick(View view) {
+                easyTracker.send(MapBuilder.createEvent("your_action",
+                        "envet_name", "button_name/id", null).build());
+            }
+        });
 
-		findViewById(R.id.trackCrash).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.trackCrash).setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-				try {
-					int a[] = new int[2];
-					int num = a[4];
-				} catch (ArrayIndexOutOfBoundsException e) {
-					easyTracker.send(MapBuilder.createException(
-									new StandardExceptionParser(MainActivity.this, null)
-											.getDescription(Thread.currentThread().getName(), e), false).build());
-				}
+                try {
+                    int a[] = new int[2];
+                    int num = a[4];
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    easyTracker.send(MapBuilder.createException(
+                                    new StandardExceptionParser(MainActivity.this, null)
+                                            .getDescription(Thread.currentThread().getName(), e), false).build());
+                }
 
-			}
-		});
-	}
+            }
+        });
+    }
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		EasyTracker.getInstance(this).activityStart(this);
-	}
+    @Override
+    public void onStart() {
+        super.onStart();
+        EasyTracker.getInstance(this).activityStart(this);
+    }
 
-	@Override
-	public void onStop() {
-		super.onStop();
-		EasyTracker.getInstance(this).activityStop(this);
-	}
+    @Override
+    public void onStop() {
+        super.onStop();
+        EasyTracker.getInstance(this).activityStop(this);
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
 }
 ```

@@ -48,7 +48,7 @@ If you don’t have SDKMan installed, follow the official installation guide fro
 
 Before we install let us first get the list of available Java versions. You can do that using the following command:
 
-```shell
+```bash
 sdk list java
 ```
 
@@ -60,31 +60,31 @@ Figure 2.1 - List of available Java versions
 
 You can filter a specific Java version using the **grep** command.
 
-```shell
+```bash
 sdk list java | grep 17
 ```
 
 To install a specific version, you need to use the distribution identifier.
 
-```shell
+```bash
 sdk install java 21-amzn
 ```
 
 To check the list of installed Java versions
 
-```shell
+```bash
 sdk list java | grep installed
 ```
 
 To use specific versions of Java
 
-```shell
+```bash
 sdk use java 21-amzn
 ```
 
 Check if you have Java installed using the following command.
 
-```shell
+```bash
 java --version
 ```
 
@@ -98,7 +98,7 @@ If you don’t have Homebrew installed, follow the official installation guide f
 
 Type brew search `openjdk` to find all available Java-related formulas.
 
-```shell
+```bash
 $ brew search openjdk
 ==> Formulae
 openjdk ✔         openjdk@11        openjdk@17 ✔     openjdk@8
@@ -113,7 +113,7 @@ To show the formula details, you can use the brew info command. The Java formula
 
 The openjdk@17 formula contains the Java 17LTS version.
 
-```shell
+```bash
 $ brew info openjdk@17
 ==> openjdk@17: stable 17.0.4.1 (bottled) [keg-only]
 Development kit for the Java programming language
@@ -147,13 +147,13 @@ build-error: 65 (30 days)
 
 To install the Open JDK 17, you can type the following command.
 
-```shell
+```bash
 brew install openjdk@17
 ```
 
 Check if you have Java installed using the following command.
 
-```shell
+```bash
 java --version
 ```
 
@@ -165,7 +165,7 @@ Referee the official refer the official Installation guide. [https://learn.micro
 
 To ensure that Java is installed correctly, open a Command Prompt or PowerShell window and enter the following command.
 
-```shell
+```bash
 java -version
 ```
 
@@ -197,7 +197,7 @@ Figure 2.2 - Download maven versions
 
 -   Open a new command prompt window and run the command `mvn -version` to verify that Maven is installed correctly. You should see the version of Maven printed on the console.
 
-```shell
+```bash
 mvn -version
 ```
 
@@ -209,25 +209,25 @@ To install and configure Maven on MacOS, you can follow these steps:
 
 2.  Install the Homebrew package manager by running the following command in the terminal. This step is required only if Homebrew is not installed on your machine.
 
-```shell
+```bash
 /bin/bash -c "$(curl -fsSL <https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh>)"
 ```
 
 3.  Install Maven by running the following command in the terminal:
 
-```shell
+```bash
 brew install maven
 ```
 
 4.  Verify that Maven has been installed by running the following command in the terminal:
 
-```shell
+```bash
 mvn -version
 ```
 
 5.  Set the environment variables for Maven by adding the following lines to the **.bash\_profile** file in your home directory:
 
-```shell
+```bash
 export M2_HOME=/usr/local/Cellar/maven/{VERSION}/libexec
 export PATH=$PATH:$M2_HOME/bin
 ```
@@ -236,13 +236,13 @@ Replace `{VERSION}` with the actual version of Maven that you installed.
 
 6.  Reload the .bash\_profile file by running the following command in the terminal:
 
-```shell
+```bash
 source ~/.bash_profile
 ```
 
 7.  Verify that Maven has been configured correctly by running the following command in the terminal:
 
-```shell
+```bash
 echo $M2_HOME
 ```
 
@@ -254,7 +254,7 @@ Congratulations, you have successfully installed and configured Maven on your Ma
 
 Once Maven is installed, you can verify if it is installed properly by running `mvn -v` from the command line. If Maven has been installed, you should see something resembling the following output:
 
-```shell
+```bash
 ~ mvn -version
 Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
 Maven home: /opt/homebrew/Cellar/maven/3.9.6/libexec

@@ -30,7 +30,7 @@ In this example, we will see bubble sort example In data structure .
 
 ## Algorithm for Bubble Sort
 
-```
+```text
 INPUT: LIST [] of N items in random order
 O UTPUT: LIST [] of N items sorted in ascending order.
 1. SWAP = TRUE
@@ -59,7 +59,7 @@ END
 
 ## Example : C program, Function to arrange numbers in ascending order using bubble sort technique.
 
-```
+```c
 #include<stdio.h>
 
 void bubble_sort(int a[], int n)
@@ -73,7 +73,7 @@ void bubble_sort(int a[], int n)
     int flag; /* Indicate any exchange has been done or not */
     sum = 0;
     pass = 0;
-    
+
     for(j=1;j<n;j++)
     {
         exchg = 0; /* number of exchanges just before the pass */
@@ -82,7 +82,7 @@ void bubble_sort(int a[], int n)
         {
             if(a[i]>=a[i+1])
             {
-                
+
                 /* Exchange and update the number of exchange in the current pass*/
                 temp=a[i];
                 a[i]=a[i+1];
@@ -92,12 +92,12 @@ void bubble_sort(int a[], int n)
                 flag=1; /* Exchange has been done */
             }
         }
-        
+
         pass++; /* update the number of passes */
         printf("Number of exchanges in pass : %d=%dn",j,exchg);
         print("Total number of exchanges = %dn",sum);
     }
-    
+
     void main()
     {
         int i,n,a[20];

@@ -34,7 +34,7 @@ try:
     print("An exception occurred.")
 ```
 
-```bash
+```text
 An exception occurred.
 ```
 
@@ -50,7 +50,7 @@ finally:
     print("Moving on!")
 ```
 
-```bash
+```text
 An exception occurred.
 Moving on!
 ```
@@ -71,7 +71,7 @@ finally:
     print("Moving on!")
 ```
 
-```bash
+```text
 An exception occurred.
 Moving on!
 ```
@@ -93,7 +93,7 @@ finally:
     print("Moving on!")
 ```
 
-```bash
+```text
 Hello!
 Great, no errors!
 Moving on!
@@ -107,7 +107,7 @@ When the situation arises, you might want to raise an exception yourself. This i
 raise Exception("Sorry, this is an exception!")
 ```
 
-```bash
+```text
 Traceback (most recent call last):
 File "C:\Users\Nilan\example.py", line 1, in <module>
 raise Exception("Sorry, this is an exception!")

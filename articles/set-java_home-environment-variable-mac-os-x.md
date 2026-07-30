@@ -28,25 +28,25 @@ Open the Terminal program present in your (this is in your Applications/Utilitie
 
 ### Step-1 Open and edit .bash\_profile file
 
-```
+```bash
 open -e .bash_profile
 ```
 
 ### Step-2 Save the below line
 
-```
+```bash
 export JAVA_HOME=$(/usr/libexec/java_home
 ```
 
 ### Step-3 Refresh the file using below command
 
-```
+```bash
 $ source .bash_profile
 ```
 
 ### Step-4 Check if the JAVA\_HOME is set properly
 
-```
+```bash
 $ echo$JAVA_HOME
 /Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
 ```
@@ -55,7 +55,7 @@ $ echo$JAVA_HOME
 
 For older Mac OS X, you have to use the full path of installation directory as it /usr/libexec/java\_home doesn’t exists.
 
-```
+```bash
 $ open -e .bash_profile
 $ exportJAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 $ source .bash_profile

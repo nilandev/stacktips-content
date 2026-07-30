@@ -99,13 +99,13 @@ For Gradle projects, you can build and run the project by following the steps be
 
 Build spring boot application into an executable jar
 
-```
+```bash
 ./gradlew build
 ```
 
 Start/Run spring boot application
 
-```
+```bash
 ./gradlew bootRun
 ```
 
@@ -114,27 +114,27 @@ If you’re using maven based build, you can build and run the project by follow
 
 Build spring boot application into an executable jar
 
-```
+```bash
 ./mvnw clean package
 ```
 
 Start/Run spring boot application
 
-```
+```bash
 ./mvnw spring-boot:run
 ```
 
 When you run your Spring Boot application, you will see a log message like this:
 
-```java
+```text
     . ____ _ __ _ _
-    /\ / ___'_ __ _ _(_)_ __ __ _ \ \ \ 
-    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ 
+    /\ / ___'_ __ _ _(_)_ __ __ _ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \
     \/ ___)| |_)| | | | | || (_| | ) ) ) )
     ' |____| .__|_| |_|_| |_\__, | / / / /
     =========|_|==============|___/=/_/_/_/
     :: Spring Boot :: (v2.6.6)
-    
+
     2022-04-16 17:17:14.805 INFO 25315 --- [ main] c.e.h.HelloSpringBootApplication : Starting HelloSpringBootApplication
     using Java 11.0.11 on BLR-P7111831LP.local with PID 25315
     (/Users/Neel/spring-boot-examples/hello-spring-boot/build/classes/java/main started by

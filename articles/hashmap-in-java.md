@@ -42,7 +42,7 @@ hashMap.put("C", 3);
 HashMap<String, Integer> hashMap = new HashMap<>(50);
 
 // Using a Constructor with Initial Capacity and Load Factor
-HashMap<String, Integer> hashMap = new HashMap<>(50, 0.75f); 
+HashMap<String, Integer> hashMap = new HashMap<>(50, 0.75f);
 
 // Using a Constructor to Copy Another Map
 Map<String, Integer> map1 = new HashMap<>();
@@ -99,7 +99,7 @@ hashMap.forEach((key, value) -> {
     System.out.println("Key: " + key + ", Value: " + value);
 });
 
-//Using Streams 
+//Using Streams
 hashMap.entrySet().stream().forEach(entry -> {
     System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
 });

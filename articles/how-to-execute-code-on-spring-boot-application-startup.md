@@ -40,7 +40,7 @@ You can add `@PostConstruct` annotation in your Spring boot main application cla
 
 @PostConstruct is mainly used to complete the initialization of your application. It is part of the Spring Boot Lifecycle.
 
-```
+```java
 @Slf4j
 @SpringBootApplication
 public class MyApplication {
@@ -49,10 +49,10 @@ public class MyApplication {
         SpringApplication.run(MyApplication.class, args);
     }
 
-		@PostConstruct
+        @PostConstruct
     public void int(){
-		     log.info("MyApplication::init()");
-		}   
+             log.info("MyApplication::init()");
+        }
 }
 ```
 
@@ -62,7 +62,7 @@ The @PostConstruct is mainly used to complete the initialization of your applica
 
 Here is how the logs will be printed:
 
-```
+```text
 INFO 81697 - [main] com.stacktips.MyApplication              : Starting MyApplication using Java 17.0.7 on N-Panigrahy.local with PID 81697
 INFO 81697 - [main] com.stacktips.MyApplication              : No active profile set, falling back to 1 default profile: "default"
 INFO 81697 - [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
@@ -87,7 +87,7 @@ Both the `CommandLineRunner` and `ApplicationRunner` are functional interface th
 
 Let's see how to implement that.
 
-```
+```java
 @Slf4j
 @Component
 public class AppRunner1 implements ApplicationRunner {
@@ -105,7 +105,7 @@ You could implement the `ApplicationRunner` in your main class as well, but I wo
 
 You could have multiple `ApplicationRunner` implementations in your code.
 
-```
+```java
 @Slf4j
 @Component
 public class AppRunner2 implements ApplicationRunner {
@@ -121,7 +121,7 @@ But where there are multiple runners, spring doesn’t know which order they sho
 
 Here is how our logs will be printed now
 
-```
+```text
 INFO 81697 - [main] com.stacktips.MyApplication              : Starting MyApplication using Java 17.0.7 on N-Panigrahy.local with PID 81697
 INFO 81697 - [main] com.stacktips.MyApplication              : No active profile set, falling back to 1 default profile: "default"
 INFO 81697 - [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
@@ -140,7 +140,7 @@ INFO 81697 - [main] com.stacktips.AppRunner                  : AppRunner::run()
 
 The Spring Boot application provides a number of events that are published during the application lifecycle. We can register a listener for one of these events and execute code in the listener's `onApplicationEvent()` method.
 
-```
+```java
 @Slf4j
 @Component
 public class ApplicationStartEvent {
@@ -155,7 +155,7 @@ public class ApplicationStartEvent {
 
 Now if we run all three options together, this is what the output looks like.
 
-```
+```text
 INFO 81697 - [main] com.stacktips.MyApplication              : Starting MyApplication using Java 17.0.7 on N-Panigrahy.local with PID 81697
 INFO 81697 - [main] com.stacktips.MyApplication              : No active profile set, falling back to 1 default profile: "default"
 INFO 81697 - [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)

@@ -144,7 +144,7 @@ Here are some of the popular Spring Boot starter packages:
 
 You can get the comprehensive list of Spring boot starters using the following command. Note that you need Spring CLI installed to use the following command.
 
-```
+```bash
 
 spring init --list
 ```

@@ -24,8 +24,7 @@ In the previous lesson, we saw different ways to bootstrap a Spring Boot project
 
 Spring Boot organizes the code according to some of the best practices in the industry. A typical Spring Boot project structure is similar to what is shown below;
 
-```shell
-
+```text
 hello-spring
 ├── HELP.md
 ├── build

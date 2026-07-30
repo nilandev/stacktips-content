@@ -88,17 +88,17 @@ Now that we have created the activity layout. Let us use this layout in activity
 
 ```java
 protected void onCreate(Bundle savedInstanceState) {
-	super.onCreate(savedInstanceState);
-	setContentView(R.layout.main;
-	Activity mActivity = this;
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.main;
+    Activity mActivity = this;
 
-	Button button = (Button) findViewById(R.id.button1);
-	button.setOnClickListener(new OnClickListener() {
+    Button button = (Button) findViewById(R.id.button1);
+    button.setOnClickListener(new OnClickListener() {
 
-		@Override
-		public void onClick(View v) {
-			Toast.makeText(mActivity, "Button1 Clicked!", Toast.LENGTH_LONG).show();
-		}
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(mActivity, "Button1 Clicked!", Toast.LENGTH_LONG).show();
+        }
 });
 ```
 

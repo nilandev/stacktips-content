@@ -43,7 +43,7 @@ The easiest way to create an index is to use the `@Indexed` annotation. All you 
 Let us look into the `Product` model, the field `productId` is indexed with a TTL value set to 1 minute.
 
 ```java
-@Document(collection = "products")  
+@Document(collection = "products")
 public class Product {
     @Indexed(name = "productId_index", expireAfterSeconds=3600)
     String productId;
@@ -66,9 +66,9 @@ Note that, a compound index can have a maximum of 32 fields.
 The following example creates a compound index named `product_brand_index` using the `productId` and `brand` field.
 
 ```java
-@CompoundIndex(name = "product_brand_index", 
+@CompoundIndex(name = "product_brand_index",
                def = "{'productId': 1, 'brand': 1}")
-public class Product {  
+public class Product {
     @Indexed
     String productId;
     String name;
@@ -92,27 +92,27 @@ It is recommended to start the index creation on Spring application startup, spe
 The following example creates a partial index named `apple_products_index` inside the `products` collection only for documents which contain `brand=apple`.
 
 ```java
-@Component  
-class AppEventListener {  
+@Component
+class AppEventListener {
 
-    @Autowired  
-    private MongoTemplate mongoTemplate;  
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
-    @EventListener(ContextRefreshedEvent.class)  
-    public void initIndicesAfterStartup() {  
-        Index myIndex = new Index()  
-                .background()  
-                .unique()  
-                .named("apple_products_index")  
-                .on("productId", Sort.Direction.ASC)  
-                .on("price", Sort.Direction.DESC)  
-                .partial(PartialIndexFilter.of(Criteria.where("brand")  
-                        .is("apple")));  
+    @EventListener(ContextRefreshedEvent.class)
+    public void initIndicesAfterStartup() {
+        Index myIndex = new Index()
+                .background()
+                .unique()
+                .named("apple_products_index")
+                .on("productId", Sort.Direction.ASC)
+                .on("price", Sort.Direction.DESC)
+                .partial(PartialIndexFilter.of(Criteria.where("brand")
+                        .is("apple")));
 
-        DefaultIndexOperations indexOperations = new DefaultIndexOperations(mongoTemplate,  
-                "products", Product.class);  
-        indexOperations.ensureIndex(myIndex);  
-    }  
+        DefaultIndexOperations indexOperations = new DefaultIndexOperations(mongoTemplate,
+                "products", Product.class);
+        indexOperations.ensureIndex(myIndex);
+    }
 };
 ```
 
@@ -129,9 +129,9 @@ Incorrectly configured connection pools can either lead to a shortage of databas
 By default spring data MongoDB sets the max pool size to 100. But this can be changed by setting the `maxPoolSize=500` parameter to your connection URI.
 
 ```yaml
-spring:  
-  data:  
-    mongodb:  
+spring:
+  data:
+    mongodb:
       uri: mongodb://user:password@localhost:27017/product_db?ssl=true&maxPoolSize=500&replicaSet=rs0&authSource=admin
 ```
 
@@ -144,8 +144,8 @@ Retrieving a large number of documents in a single operation can significantly i
 For example, the following code snippet uses the paginated query instead of fetching all data at once.
 
 ```java
-Pageable pageable = PageRequest.of(page, size);  
-Query query = new Query().with(pageable);  
+Pageable pageable = PageRequest.of(page, size);
+Query query = new Query().with(pageable);
 List<Product> products= mongoTemplate.find(query, Product.class);
 ```
 
@@ -174,7 +174,7 @@ By default, MongoDB acknowledges all write operations. Meaning, it ensures the d
 The default write concern used in Java Mongo driver is to **acknowledge** all write operations. But, you can override this behaviour from your application using the `setWriteConcern()` method on `MongoTemplate`.
 
 ```java
-MongoTemplate template = new MongoTemplate(factory, converter);  
+MongoTemplate template = new MongoTemplate(factory, converter);
 template.setWriteConcern(WriteConcern.ACKNOWLEDGED);
 ```
 
@@ -187,18 +187,18 @@ Alternatively, you can configure it per-operation basis using `WriteConcernResol
 @Configuration
 public class MongoConfiguration {
 
-    @Bean  
-    public WriteConcernResolver writeConcernResolver() {  
-        return action -> {  
-            String entityName = action.getEntityType().getSimpleName();  
-            if (entityName.contains("Product")) {  
-                return WriteConcern.ACKNOWLEDGED;  
-            } else if (entityName.contains("Metadata")) {  
-                return WriteConcern.JOURNALED;  
-            }  
-            return action.getDefaultWriteConcern();  
+    @Bean
+    public WriteConcernResolver writeConcernResolver() {
+        return action -> {
+            String entityName = action.getEntityType().getSimpleName();
+            if (entityName.contains("Product")) {
+                return WriteConcern.ACKNOWLEDGED;
+            } else if (entityName.contains("Metadata")) {
+                return WriteConcern.JOURNALED;
+            }
+            return action.getDefaultWriteConcern();
 
-        };  
+        };
     }
 
 }
@@ -228,8 +228,8 @@ public MongoClientSettingsBuilderCustomizer monoClientCustomizer() {
 We can also set the read preference per operation using:
 
 ```java
-mongoTemplate.getCollection("product_collection")  
-        .withReadPreference(ReadPreference.nearest())  
+mongoTemplate.getCollection("product_collection")
+        .withReadPreference(ReadPreference.nearest())
         .find();
 ```
 
@@ -272,38 +272,38 @@ Spring Data MongoDB provides support for the aggregation framework through the A
 Let's say you have a list of products, prices and sales data stored in different collections and you want to generate a report that calculates the total sales made last month for each product. This can be written using aggregations as follows;
 
 ```java
-public List<TotalSales> calculateLastMonthSales() {  
-    MatchOperation matchStage = Aggregation.match(Criteria.where("date")  
-            .gte(getLastMonthStartDate())  
-            .lte(new Date()));  
+public List<TotalSales> calculateLastMonthSales() {
+    MatchOperation matchStage = Aggregation.match(Criteria.where("date")
+            .gte(getLastMonthStartDate())
+            .lte(new Date()));
 
-    LookupOperation lookupProduct = Aggregation.lookup(  
-            "Product", "productId", "_id", "product");  
-    LookupOperation lookupPrice = Aggregation.lookup(  
-            "Price", "productId", "_id", "price");  
-    UnwindOperation unwindProduct = Aggregation.unwind("product");  
-    UnwindOperation unwindPrice = Aggregation.unwind("price");  
+    LookupOperation lookupProduct = Aggregation.lookup(
+            "Product", "productId", "_id", "product");
+    LookupOperation lookupPrice = Aggregation.lookup(
+            "Price", "productId", "_id", "price");
+    UnwindOperation unwindProduct = Aggregation.unwind("product");
+    UnwindOperation unwindPrice = Aggregation.unwind("price");
 
-    GroupOperation groupStage = Aggregation.group("product.name")  
-            .sum(ArithmeticOperators.Multiply.valueOf("quantity")  
-                    .multiplyBy("price.price"))  
-            .as("totalSales");  
+    GroupOperation groupStage = Aggregation.group("product.name")
+            .sum(ArithmeticOperators.Multiply.valueOf("quantity")
+                    .multiplyBy("price.price"))
+            .as("totalSales");
 
-    ProjectionOperation projectStage = Aggregation.project()  
-            .andExpression("_id").as("productName")  
-            .andExpression("totalSales").as("totalSales")  
-            .andExclude("_id");  
+    ProjectionOperation projectStage = Aggregation.project()
+            .andExpression("_id").as("productName")
+            .andExpression("totalSales").as("totalSales")
+            .andExclude("_id");
 
-    Aggregation aggregation = Aggregation.newAggregation(matchStage,  
-            lookupProduct,  
-            unwindProduct,  
-            lookupPrice,  
-            unwindPrice,  
-            groupStage,  
-            projectStage);  
-    AggregationResults<TotalSales> results = mongoTemplate.aggregate(  
-            aggregation, "Sales", TotalSales.class);  
-    return results.getMappedResults();  
+    Aggregation aggregation = Aggregation.newAggregation(matchStage,
+            lookupProduct,
+            unwindProduct,
+            lookupPrice,
+            unwindPrice,
+            groupStage,
+            projectStage);
+    AggregationResults<TotalSales> results = mongoTemplate.aggregate(
+            aggregation, "Sales", TotalSales.class);
+    return results.getMappedResults();
 }
 ```
 
@@ -320,31 +320,31 @@ MongoDB bulk operations are not atomic by default. However, it can be integrated
 The following example demonstrates inserting multiple records using bulk operation.
 
 ```java
-@Component  
-@RequiredArgsConstructor  
-public class DataLoader implements CommandLineRunner {  
+@Component
+@RequiredArgsConstructor
+public class DataLoader implements CommandLineRunner {
 
-    private static final String FILE_PATH = "src/main/resources/products.csv";  
+    private static final String FILE_PATH = "src/main/resources/products.csv";
 
-    private final MongoTemplate mongoTemplate;  
+    private final MongoTemplate mongoTemplate;
 
-    @Override  
-    public void run(String... args) throws Exception {  
-        List<Product> products = parseCsv(FILE_PATH, Product.class)  
-                .stream()  
-                .map(row -> new Product(row.getId(), row.getName(), row.getBrand()))  
-                .toList();  
+    @Override
+    public void run(String... args) throws Exception {
+        List<Product> products = parseCsv(FILE_PATH, Product.class)
+                .stream()
+                .map(row -> new Product(row.getId(), row.getName(), row.getBrand()))
+                .toList();
 
-        mongoTemplate.bulkOps(BulkOperations.BulkMode.ORDERED, Product.class)  
-                .insert(products)  
-                .execute();  
-    }  
+        mongoTemplate.bulkOps(BulkOperations.BulkMode.ORDERED, Product.class)
+                .insert(products)
+                .execute();
+    }
 
-    public static <T> List<T> parseCsv(String filePath, Class<T> type) throws IOException {  
-        try (Reader reader = new FileReader(filePath)) {  
-            return new CsvToBeanBuilder<T>(reader).withType(type).build().parse();  
-        }  
-    }  
+    public static <T> List<T> parseCsv(String filePath, Class<T> type) throws IOException {
+        try (Reader reader = new FileReader(filePath)) {
+            return new CsvToBeanBuilder<T>(reader).withType(type).build().parse();
+        }
+    }
 }
 ```
 
@@ -357,8 +357,8 @@ You're not allowed to perform delete documents from a capped collection. If you 
 Capped collection can be useful if you want to create a real-time logging system that maintains a rolling log of the most recent user activities.
 
 ```java
-mongoTemplate.createCollection(LogEntry.class,  
-        CollectionOptions.empty().capped()  
-                .size(MAX_SIZE)  
+mongoTemplate.createCollection(LogEntry.class,
+        CollectionOptions.empty().capped()
+                .size(MAX_SIZE)
                 .maxDocuments(MAX_DOCUMENTS));
 ```

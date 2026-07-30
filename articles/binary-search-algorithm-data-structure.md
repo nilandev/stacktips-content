@@ -36,7 +36,7 @@ In the above example, we have an sorted list of size 20. The first comparison is
 
 This represents the binary search method to find a required item in a list sorted in increasing order .
 
-```
+```text
 INPUT: Sorted LIST of size N, Target Value T
 OUTPUT: Position of T in the LIST = I
 BEGIN
@@ -71,43 +71,43 @@ Suppose there are 31 records, then the first key compared is at location 16 of t
 
 ```c
 #include <stdio.h>
- 
+
 int main()
 {
    int c, first, last, middle, n, search, array[100];
- 
+
    printf("Enter number of elements\n");
    scanf("%d",&n);
- 
+
    printf("Enter %d integers\n", n);
- 
+
    for ( c = 0 ; c < n ; c++ )
       scanf("%d",&array[c]);
- 
+
    printf("Enter value to find\n");
    scanf("%d",&search);
- 
+
    first = 0;
    last = n - 1;
    middle = (first+last)/2;
- 
+
    while( first <= last )
    {
       if ( array[middle] < search )
-         first = middle + 1;    
-      else if ( array[middle] == search ) 
+         first = middle + 1;
+      else if ( array[middle] == search )
       {
          printf("%d found at location %d.\n", search, middle+1);
          break;
       }
       else
          last = middle - 1;
- 
+
       middle = (first + last)/2;
    }
    if ( first > last )
       printf("Not found! %d is not present in the list.\n", search);
- 
-   return 0;   
+
+   return 0;
 }
 ```

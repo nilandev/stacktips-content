@@ -35,7 +35,7 @@ function break_text($text){
     if(strlen($text)<$length+10) return $text; //don't cut if too short
     $break_pos = strpos($text, ' ', $length); //find next space after desired length
     $visible = substr($text, 0, $break_pos);
-	$read_more = "... <br><center><a href='".get_permalink()."' class='wp-btn'>Read more..</a></center>";
+    $read_more = "... <br><center><a href='".get_permalink()."' class='wp-btn'>Read more..</a></center>";
     return balanceTags($visible) . $read_more;
   } else {
     return $text;

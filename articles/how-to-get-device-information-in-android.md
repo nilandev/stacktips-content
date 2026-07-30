@@ -23,7 +23,7 @@ seo:
 The following code snippet will get the device detailed information in Android.
 
 ```java
-public class DashboardActivity extends Activity { 
+public class DashboardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

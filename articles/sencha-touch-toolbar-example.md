@@ -30,50 +30,50 @@ Below example shows the usages of toolbar and docked items.
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
 
-	onReady : function() {
-		var panel = new Ext.Panel({
-			fullscreen : true,
-			html : "Example demonstrates the usage of Sencha Touch Ext.Toolbar class",
-			dockedItems : [{
-				xtype : 'toolbar',
-				dock : 'top',
-				title : 'Docked Top',
-				items : [{
-					text : 'Back',
-					iconCls : 'arrow_left',
-					iconMask : true
-				}, {
-					xtype : 'spacer'
-				}, {
-					text : 'Home',
-					iconCls : 'home',
-					iconMask : true
-				}]
-			}, {
-				xtype : 'toolbar',
-				dock : 'bottom',
-				ui : 'light',
-				title : 'Docked Bottom',
-				items : [{
-					text : 'Exit',
-					ui : "decline"
-				}]
-			}]
-		});
+    onReady : function() {
+        var panel = new Ext.Panel({
+            fullscreen : true,
+            html : "Example demonstrates the usage of Sencha Touch Ext.Toolbar class",
+            dockedItems : [{
+                xtype : 'toolbar',
+                dock : 'top',
+                title : 'Docked Top',
+                items : [{
+                    text : 'Back',
+                    iconCls : 'arrow_left',
+                    iconMask : true
+                }, {
+                    xtype : 'spacer'
+                }, {
+                    text : 'Home',
+                    iconCls : 'home',
+                    iconMask : true
+                }]
+            }, {
+                xtype : 'toolbar',
+                dock : 'bottom',
+                ui : 'light',
+                title : 'Docked Bottom',
+                items : [{
+                    text : 'Exit',
+                    ui : "decline"
+                }]
+            }]
+        });
 
-		Ext.apply(panel, {
-			fullscreen : true,
-			autoRender : true,
-			hideOnMaskTap : false
-		});
+        Ext.apply(panel, {
+            fullscreen : true,
+            autoRender : true,
+            hideOnMaskTap : false
+        });
 
-		panel.show();
-	}
+        panel.show();
+    }
 });
 ```
 
@@ -93,7 +93,7 @@ var toolBar = new Ext.Toolbar({
              items: [{
                 text: 'Exit',
                 ui: "decline"
-            }]            
+            }]
  });
 ```
 

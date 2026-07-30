@@ -58,7 +58,7 @@ namespace ActionBarTabsExample
 {
     [Activity (Label = "ActionBar Tabs Example", MainLauncher = true)]
     public class Activity1 : Activity
-    {   
+    {
         protected override void OnCreate (Bundle bundle)
         {
             base.OnCreate (bundle);
@@ -66,37 +66,37 @@ namespace ActionBarTabsExample
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
 
-	    //enable navigation mode to support tab layout
+        //enable navigation mode to support tab layout
             this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 
-	    //adding audio tab
-	    AddTab ("Audio", Resource.Drawable.Icon,  new AudioFragment());
+        //adding audio tab
+        AddTab ("Audio", Resource.Drawable.Icon,  new AudioFragment());
 
-	    //adding video tab 
+        //adding video tab
             AddTab ("Video", Resource.Drawable.Icon,  new VideoFragment());
         }
 
-		/*
-		 * This method is used to create and add dynamic tab view
-		 * @Param,
-		 *  tabText: title to be displayed in tab
-		 *  iconResourceId: image/resource id
-		 *  fragment: fragment reference
-		 * 
-		*/
-		void AddTab (string tabText, int iconResourceId, Fragment fragment)
+        /*
+         * This method is used to create and add dynamic tab view
+         * @Param,
+         *  tabText: title to be displayed in tab
+         *  iconResourceId: image/resource id
+         *  fragment: fragment reference
+         *
+        */
+        void AddTab (string tabText, int iconResourceId, Fragment fragment)
         {
-            var tab = this.ActionBar.NewTab ();            
+            var tab = this.ActionBar.NewTab ();
             tab.SetText (tabText);
-			tab.SetIcon (iconResourceId);
+            tab.SetIcon (iconResourceId);
 
-			// must set event handler for replacing tabs tab
+            // must set event handler for replacing tabs tab
             tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {
-				e.FragmentTransaction.Replace(Resource.Id.fragmentContainer, fragment);
+                e.FragmentTransaction.Replace(Resource.Id.fragmentContainer, fragment);
             };
 
             this.ActionBar.AddTab (tab);
-        }      
+        }
 
     }
 }
@@ -133,18 +133,18 @@ using Android.Widget;
 
 namespace ActionBarTabsExample
 {
-	class AudioFragment: Fragment
-	{            
-		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-		{
-			base.OnCreateView (inflater, container, savedInstanceState);
+    class AudioFragment: Fragment
+    {
+        public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            base.OnCreateView (inflater, container, savedInstanceState);
 
-			var view = inflater.Inflate (Resource.Layout.Tab, container, false);
-			var sampleTextView = view.FindViewById<TextView> (Resource.Id.textView);	
-			sampleTextView.Text = "This is Audio Fragment Sample";
-			return view;
-		}
-	}
+            var view = inflater.Inflate (Resource.Layout.Tab, container, false);
+            var sampleTextView = view.FindViewById<TextView> (Resource.Id.textView);
+            sampleTextView.Text = "This is Audio Fragment Sample";
+            return view;
+        }
+    }
 }
 ```
 
@@ -165,18 +165,18 @@ using Android.Widget;
 
 namespace ActionBarTabsExample
 {
-	class VideoFragment: Fragment
-	{            
-		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-		{
-			base.OnCreateView (inflater, container, savedInstanceState);
+    class VideoFragment: Fragment
+    {
+        public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+            base.OnCreateView (inflater, container, savedInstanceState);
 
-			var view = inflater.Inflate (Resource.Layout.Tab, container, false);
-			var sampleTextView = view.FindViewById<TextView> (Resource.Id.textView);             
-			sampleTextView.Text = "This is Video Fragment Sample";
+            var view = inflater.Inflate (Resource.Layout.Tab, container, false);
+            var sampleTextView = view.FindViewById<TextView> (Resource.Id.textView);
+            sampleTextView.Text = "This is Video Fragment Sample";
 
-			return view;
-		}
+            return view;
+        }
 }
 }
 ```

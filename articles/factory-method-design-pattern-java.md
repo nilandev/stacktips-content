@@ -43,18 +43,18 @@ Spice Digital Inc. is one of the top smartphone manufacturers in India. They are
 
 ```java
 public SpiceMobile produceMobile(String model) {
-		SpiceMobile mobile = null;
+        SpiceMobile mobile = null;
 
-		if (model.equalsIgnoreCase("SpiceBolt")) {
-			mobile = new SpicePlus();
-		} else if (model.equalsIgnoreCase("SpiceFire")) {
-			mobile = new SpiceBolt();
-		}
-		mobile.prepare();
-		mobile.bundle();
-		mobile.label();
+        if (model.equalsIgnoreCase("SpiceBolt")) {
+            mobile = new SpicePlus();
+        } else if (model.equalsIgnoreCase("SpiceFire")) {
+            mobile = new SpiceBolt();
+        }
+        mobile.prepare();
+        mobile.bundle();
+        mobile.label();
 
-		return mobile;
+        return mobile;
 }
 ```
 
@@ -62,38 +62,38 @@ SpiceMobile implementation,
 
 ```java
 public abstract class SpiceMobile {
-	public abstract void prepare();
-	public abstract void bundle();
-	public abstract void label();
+    public abstract void prepare();
+    public abstract void bundle();
+    public abstract void label();
 }
 
 public class SpiceFire extends SpiceMobile {
-	@Override
-	public void prepare() {
-	}
+    @Override
+    public void prepare() {
+    }
 
-	@Override
-	public void bundle() {
-	}
+    @Override
+    public void bundle() {
+    }
 
-	@Override
-	public void label() {
-	}
+    @Override
+    public void label() {
+    }
 }
 
 public class SpiceBolt extends SpiceMobile {
 
-	@Override
-	public void prepare() {
-	}
+    @Override
+    public void prepare() {
+    }
 
-	@Override
-	public void bundle() {
-	}
+    @Override
+    public void bundle() {
+    }
 
-	@Override
-	public void label() {
-	}
+    @Override
+    public void label() {
+    }
 }
 ```
 
@@ -115,20 +115,20 @@ Spice Digital Inc. company now decided to make their global presence. They want 
 
 ```java
 public abstract class SpiceMobile {
-	public double price;
-	public double getPrice() {
-		return price;
-	}
+    public double price;
+    public double getPrice() {
+        return price;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public abstract void prepare();
+    public abstract void prepare();
 
-	public abstract void bundle();
+    public abstract void bundle();
 
-	public abstract void label();
+    public abstract void label();
 }
 ```
 
@@ -139,17 +139,17 @@ Now, let us create three different Spice mobile implementation. For demonstratio
 ```java
 public class SpiceBolt extends SpiceMobile {
 
-	@Override
-	public void prepare() {
-	}
+    @Override
+    public void prepare() {
+    }
 
-	@Override
-	public void bundle() {
-	}
+    @Override
+    public void bundle() {
+    }
 
-	@Override
-	public void label() {
-	}
+    @Override
+    public void label() {
+    }
 }
 ```
 
@@ -158,24 +158,24 @@ public class SpiceBolt extends SpiceMobile {
 ```java
 public abstract class MobileFactory {
 
-	public abstract SpiceMobile constructMobile(String model);
+    public abstract SpiceMobile constructMobile(String model);
 
-	/**
-	 * Defines the process to product mobile. This implementation should'nt be
-	 * be changed by clients
-	 * 
-	 * @param model
-	 * @return SpiceMobile
-	 */
-	public SpiceMobile produceMobile(String model) {
+    /**
+     * Defines the process to product mobile. This implementation should'nt be
+     * be changed by clients
+     *
+     * @param model
+     * @return SpiceMobile
+     */
+    public SpiceMobile produceMobile(String model) {
 
-		SpiceMobile mobile = constructMobile(model);
-		mobile.prepare();
-		mobile.bundle();
-		mobile.label();
+        SpiceMobile mobile = constructMobile(model);
+        mobile.prepare();
+        mobile.bundle();
+        mobile.label();
 
-		return mobile;
-	}
+        return mobile;
+    }
 }
 ```
 
@@ -187,21 +187,21 @@ public abstract class MobileFactory {
  */
 public class LondonMobileFactory extends MobileFactory {
 
-	@Override
-	public SpiceMobile constructMobile(String model) {
+    @Override
+    public SpiceMobile constructMobile(String model) {
 
-		SpiceMobile mobile = null;
+        SpiceMobile mobile = null;
 
-		if (model.equalsIgnoreCase("SpiceFire")) {
-			mobile = new SpicePlus();
-			mobile.setPrice(300);
-		} else if (model.equalsIgnoreCase("SpiceBolt")) {
-			mobile = new SpiceBolt();
-			mobile.setPrice(400);
-		}
+        if (model.equalsIgnoreCase("SpiceFire")) {
+            mobile = new SpicePlus();
+            mobile.setPrice(300);
+        } else if (model.equalsIgnoreCase("SpiceBolt")) {
+            mobile = new SpiceBolt();
+            mobile.setPrice(400);
+        }
 
-		return mobile;
-	}
+        return mobile;
+    }
 }
 ```
 
@@ -214,21 +214,21 @@ public class LondonMobileFactory extends MobileFactory {
 
 public class NYMobileFactory extends MobileFactory {
 
-	@Override
-	public SpiceMobile constructMobile(String model) {
-		
-		SpiceMobile mobile = null;
+    @Override
+    public SpiceMobile constructMobile(String model) {
 
-		if (model.equalsIgnoreCase("SpiceFire")) {
-			mobile = new SpicePlus();
-			mobile.setPrice(200);
-		} else if (model.equalsIgnoreCase("SpiceMono")) {
-			mobile = new SpiceFire();
-			mobile.setPrice(280);
-		}
+        SpiceMobile mobile = null;
 
-		return mobile;
-	}
+        if (model.equalsIgnoreCase("SpiceFire")) {
+            mobile = new SpicePlus();
+            mobile.setPrice(200);
+        } else if (model.equalsIgnoreCase("SpiceMono")) {
+            mobile = new SpiceFire();
+            mobile.setPrice(280);
+        }
+
+        return mobile;
+    }
 }
 ```
 
@@ -237,14 +237,14 @@ public class NYMobileFactory extends MobileFactory {
 ```java
 public class Client {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		MobileFactory factory = new LondonMobileFactory();
-		SpiceMobile mobile = factory.produceMobile("SpiceHD");
+        MobileFactory factory = new LondonMobileFactory();
+        SpiceMobile mobile = factory.produceMobile("SpiceHD");
 
-		MobileFactory nyFactory = new NYMobileFactory();
-		SpiceMobile mobile2 = factory.produceMobile("SpiceMono");
+        MobileFactory nyFactory = new NYMobileFactory();
+        SpiceMobile mobile2 = factory.produceMobile("SpiceMono");
 
-	}
+    }
 }
 ```

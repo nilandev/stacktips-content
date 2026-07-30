@@ -54,10 +54,10 @@ In my example, I am witting an adapter to fetch feeds from stacktips.com. To fet
 
 4\. Change the connection parameters like protocol, domain name and port. See my connection parameter in this example. My xml file after changes
 
-```
-<wl:adapter xmlns:wl="http://www.worklight.com/integration" 
-xmlns:http="http://www.worklight.com/integration/http" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+```xml
+<wl:adapter xmlns:wl="http://www.worklight.com/integration"
+xmlns:http="http://www.worklight.com/integration/http"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 name="JavatechigFeedReader">
    <displayName>stacktips.com</displayName>
    <description>Javatechig FeedReader</description>
@@ -80,19 +80,19 @@ The xml file lists the procedure declaration for the adapters. It declares all t
 
 5\. Now let us implement the procedure.
 
-```
-function getFeeds() {	
-	var input = {
-	    method : 'get',
-	    returnedContentType : 'xml',
-	    path : "feed",
-	    transformation : {
-		    type : 'xslFile',
-		    xslFile : 'filtered.xsl'
-	    }
-	};
+```js
+function getFeeds() {
+    var input = {
+        method : 'get',
+        returnedContentType : 'xml',
+        path : "feed",
+        transformation : {
+            type : 'xslFile',
+            xslFile : 'filtered.xsl'
+        }
+    };
 
-	return WL.Server.invokeHttp(input);
+    return WL.Server.invokeHttp(input);
 }
 ```
 

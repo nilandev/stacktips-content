@@ -35,63 +35,63 @@ import java.io.OutputStream;
 
 public class CopyFileContent {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		/* Source file, from which content will be copied */
-		File sourceFile = new File("file1.txt");
+        /* Source file, from which content will be copied */
+        File sourceFile = new File("file1.txt");
 
-		/* destination file, where the content to be pasted */
-		File destFile = new File("file2.txt");
-		
-		/* if file not exist then create one */
-		if (!destFile.exists()) {
-			try {
-				destFile.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+        /* destination file, where the content to be pasted */
+        File destFile = new File("file2.txt");
 
-		InputStream input = null;
-		OutputStream output = null;
+        /* if file not exist then create one */
+        if (!destFile.exists()) {
+            try {
+                destFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-		try {
+        InputStream input = null;
+        OutputStream output = null;
 
-			/* FileInputStream to read streams */
-			input = new FileInputStream(sourceFile);
+        try {
 
-			/* FileOutputStream to write streams */
-			output = new FileOutputStream(destFile);
+            /* FileInputStream to read streams */
+            input = new FileInputStream(sourceFile);
 
-			byte[] buf = new byte[1024];
-			int bytesRead;
+            /* FileOutputStream to write streams */
+            output = new FileOutputStream(destFile);
 
-			while ((bytesRead = input.read(buf)) > 0) {
-				output.write(buf, 0, bytesRead);
-			}
+            byte[] buf = new byte[1024];
+            int bytesRead;
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            while ((bytesRead = input.read(buf)) > 0) {
+                output.write(buf, 0, bytesRead);
+            }
 
-		finally {
-			try {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-				if (null != input) {
-					input.close();
-				}
-				
-				if (null != output) {
-					output.close();
-				}
+        finally {
+            try {
 
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+                if (null != input) {
+                    input.close();
+                }
+
+                if (null != output) {
+                    output.close();
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
 ```

@@ -101,24 +101,24 @@ using Android.OS;
 
 namespace MyApplication
 {
-	[Activity (Label = "POIApplication", Theme="@style/android:Theme.Holo.Light.NoActionBar")]
-	public class LoginActivity : Activity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+    [Activity (Label = "POIApplication", Theme="@style/android:Theme.Holo.Light.NoActionBar")]
+    public class LoginActivity : Activity
+    {
+        protected override void OnCreate (Bundle bundle)
+        {
+            base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Login);
+            // Set our view from the "main" layout resource
+            SetContentView (Resource.Layout.Login);
 
-			//Initializing button from layout
-			Button login = FindViewById<Button> (Resource.Id.login);
+            //Initializing button from layout
+            Button login = FindViewById<Button> (Resource.Id.login);
 
-			//Login button click action
-			login.Click += (object sender, EventArgs e) => {
-				Android.Widget.Toast.MakeText(this, "Login Button Clicked!", Android.Widget.ToastLength.Short).Show();
-			};
-		}
-	}
+            //Login button click action
+            login.Click += (object sender, EventArgs e) => {
+                Android.Widget.Toast.MakeText(this, "Login Button Clicked!", Android.Widget.ToastLength.Short).Show();
+            };
+        }
+    }
 }
 ```

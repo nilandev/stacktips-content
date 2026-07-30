@@ -37,18 +37,18 @@ private void captureScreenshot() {
         // create bitmap screen capture
         View view = getWindow().getDecorView().getRootView();
         view.setDrawingCacheEnabled(true);
-		
+
         Bitmap bitmap = Bitmap.createBitmap(view.getDrawingCache());
         view.setDrawingCacheEnabled(false);
-		
+
         File imageFile = new File(mPath);
         FileOutputStream outputStream = new FileOutputStream(imageFile);
-		
+
         int quality = 100;
         bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
         outputStream.flush();
         outputStream.close();
-		
+
     } catch (Throwable e) {
         e.printStackTrace();
     }

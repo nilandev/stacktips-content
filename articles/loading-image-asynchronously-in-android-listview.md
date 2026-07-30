@@ -132,7 +132,7 @@ For sake of simplicity our activity layout contains a simple ListView that cover
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ListView xmlns:android="http://schemas.android.com/apk/res/android"   
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/custom_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
@@ -146,11 +146,11 @@ Let us now create a new activity class MainActivity.java in your project src dir
 ```java
 public class MainActivity extends Activity {
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
 }
 ```
 
@@ -210,59 +210,59 @@ Create a new class named CustomListAdapter and extend it from BaseAdapter. [Visi
 
 ```java
 public class CustomListAdapter extends BaseAdapter {
-	private ArrayList listData;
-	private LayoutInflater layoutInflater;
+    private ArrayList listData;
+    private LayoutInflater layoutInflater;
 
-	public CustomListAdapter(Context context, ArrayList listData) {
-		this.listData = listData;
-		layoutInflater = LayoutInflater.from(context);
-	}
+    public CustomListAdapter(Context context, ArrayList listData) {
+        this.listData = listData;
+        layoutInflater = LayoutInflater.from(context);
+    }
 
-	@Override
-	public int getCount() {
-		return listData.size();
-	}
+    @Override
+    public int getCount() {
+        return listData.size();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return listData.get(position);
-	}
+    @Override
+    public Object getItem(int position) {
+        return listData.get(position);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	public View getView(int position, View convertView, ViewGroup parent) {
-		ViewHolder holder;
-		if (convertView == null) {
-			convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
-			holder = new ViewHolder();
-			holder.headlineView = (TextView) convertView.findViewById(R.id.title);
-			holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
-			holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
-			holder.imageView = (ImageView) convertView.findViewById(R.id.thumbImage);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = layoutInflater.inflate(R.layout.list_row_layout, null);
+            holder = new ViewHolder();
+            holder.headlineView = (TextView) convertView.findViewById(R.id.title);
+            holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
+            holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.thumbImage);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
 
-		NewsItem newsItem = (NewsItem) listData.get(position);
-		holder.headlineView.setText(newsItem.getHeadline());
-		holder.reporterNameView.setText("By, " + newsItem.getReporterName());
-		holder.reportedDateView.setText(newsItem.getDate());
-		if (holder.imageView != null) {
-			new ImageDownloaderTask(holder.imageView).execute(newsItem.getUrl());
-		}
-		return convertView;
-	}
+        NewsItem newsItem = (NewsItem) listData.get(position);
+        holder.headlineView.setText(newsItem.getHeadline());
+        holder.reporterNameView.setText("By, " + newsItem.getReporterName());
+        holder.reportedDateView.setText(newsItem.getDate());
+        if (holder.imageView != null) {
+            new ImageDownloaderTask(holder.imageView).execute(newsItem.getUrl());
+        }
+        return convertView;
+    }
 
-	static class ViewHolder {
-		TextView headlineView;
-		TextView reporterNameView;
-		TextView reportedDateView;
-		ImageView imageView;
-	}
+    static class ViewHolder {
+        TextView headlineView;
+        TextView reporterNameView;
+        TextView reportedDateView;
+        ImageView imageView;
+    }
 }
 ```
 

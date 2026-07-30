@@ -58,32 +58,32 @@ In this example we are using object adapters. The object adapters uses compositi
 package com.javatechig.designpattern.adapter;
 
 public class OffshoreAccount {
-	private double balance;
+    private double balance;
 
-	/** The tax for the country where the account is */
-	private static final double TAX_RATE = 0.04;
+    /** The tax for the country where the account is */
+    private static final double TAX_RATE = 0.04;
 
-	public OffshoreAccount(final double balance) {
-		this.balance = balance;
-	}
+    public OffshoreAccount(final double balance) {
+        this.balance = balance;
+    }
 
-	public double getTaxRate() {
-		return TAX_RATE;
-	}
+    public double getTaxRate() {
+        return TAX_RATE;
+    }
 
-	public double getOffshoreBalance() {
-		return balance;
-	}
+    public double getOffshoreBalance() {
+        return balance;
+    }
 
-	public void debit(final double debit) {
-		if (balance >= debit) {
-			balance -= debit;
-		}
-	}
+    public void debit(final double debit) {
+        if (balance >= debit) {
+            balance -= debit;
+        }
+    }
 
-	public void credit(final double credit) {
-		balance += balance;
-	}
+    public void credit(final double credit) {
+        balance += balance;
+    }
 }
 ```
 
@@ -93,8 +93,8 @@ public class OffshoreAccount {
 package com.javatechig.designpattern.adapter;
 
 public interface Account {
-    public double getBalance();    
-    public boolean isOverdraftAvailable();    
+    public double getBalance();
+    public boolean isOverdraftAvailable();
     public void credit(final double credit);
 }
 ```
@@ -105,37 +105,37 @@ public interface Account {
 package com.javatechig.designpattern.adapter;
 
 public class AbstractAccount implements Account {
-	private double balance;	
-	private boolean isOverdraftAvailable;
+    private double balance;
+    private boolean isOverdraftAvailable;
 
-	public AbstractAccount(final double size) {
-		this.balance = size;
-	}
+    public AbstractAccount(final double size) {
+        this.balance = size;
+    }
 
-	@Override
-	public double getBalance() {
-		return balance;
-	}
+    @Override
+    public double getBalance() {
+        return balance;
+    }
 
-	@Override
-	public boolean isOverdraftAvailable() {
-		return isOverdraftAvailable;
-	}
+    @Override
+    public boolean isOverdraftAvailable() {
+        return isOverdraftAvailable;
+    }
 
-	public void setOverdraftAvailable(boolean isOverdraftAvailable) {
-		this.isOverdraftAvailable = isOverdraftAvailable;
-	}
+    public void setOverdraftAvailable(boolean isOverdraftAvailable) {
+        this.isOverdraftAvailable = isOverdraftAvailable;
+    }
 
-	@Override
-	public String toString() {
-		return getClass().getSimpleName() + " Balance=" + getBalance()
-				+ " Overdraft:" + isOverdraftAvailable();
-	}
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " Balance=" + getBalance()
+                + " Overdraft:" + isOverdraftAvailable();
+    }
 
-	@Override
-	public void credit(final double credit) {
-		balance += credit;
-	}
+    @Override
+    public void credit(final double credit) {
+        balance += credit;
+    }
 }
 ```
 
@@ -144,10 +144,10 @@ public class AbstractAccount implements Account {
 ```java
 public class PlatinumAccount extends AbstractAccount {
 
-	public PlatinumAccount(final double balance) {
-		super(balance);
-		setOverdraftAvailable(true);
-	}
+    public PlatinumAccount(final double balance) {
+        super(balance);
+        setOverdraftAvailable(true);
+    }
 }
 ```
 
@@ -156,10 +156,10 @@ public class PlatinumAccount extends AbstractAccount {
 ```java
 public class StandardAccount extends AbstractAccount {
 
-	public StandardAccount(final double balance) {
-		super(balance);
-		setOverdraftAvailable(false);
-	}
+    public StandardAccount(final double balance) {
+        super(balance);
+        setOverdraftAvailable(false);
+    }
 }
 ```
 
@@ -168,34 +168,34 @@ public class StandardAccount extends AbstractAccount {
 ```java
 public class AccountAdapter extends AbstractAccount {
 
-	// Adaptee - The class we are adapting from
-	private OffshoreAccount offshoreAccount;
+    // Adaptee - The class we are adapting from
+    private OffshoreAccount offshoreAccount;
 
-	/**
-	 * 
-	 * @param offshoreAccount
-	 *            the instance of OffshoreAccount we are going to adapt from.
-	 */
-	public AccountAdapter(final OffshoreAccount offshoreAccount) {
-		super(offshoreAccount.getOffshoreBalance());
+    /**
+     *
+     * @param offshoreAccount
+     *            the instance of OffshoreAccount we are going to adapt from.
+     */
+    public AccountAdapter(final OffshoreAccount offshoreAccount) {
+        super(offshoreAccount.getOffshoreBalance());
 
-		// holds adaptee reference
-		this.offshoreAccount = offshoreAccount;
-	}
+        // holds adaptee reference
+        this.offshoreAccount = offshoreAccount;
+    }
 
-	/**
-	 * Calculate offshore account balance after deducting the tax owed for
-	 * offshore account
-	 */
-	@Override
-	public double getBalance() {
-		final double taxRate = offshoreAccount.getTaxRate();
-		final double grossBalance = offshoreAccount.getOffshoreBalance();
+    /**
+     * Calculate offshore account balance after deducting the tax owed for
+     * offshore account
+     */
+    @Override
+    public double getBalance() {
+        final double taxRate = offshoreAccount.getTaxRate();
+        final double grossBalance = offshoreAccount.getOffshoreBalance();
 
-		final double taxableBalance = grossBalance * taxRate;
-		final double balanceAfterTax = grossBalance - taxableBalance;
-		return balanceAfterTax;
-	}
+        final double taxableBalance = grossBalance * taxRate;
+        final double balanceAfterTax = grossBalance - taxableBalance;
+        return balanceAfterTax;
+    }
 }
 ```
 
@@ -203,14 +203,14 @@ public class AccountAdapter extends AbstractAccount {
 
 ```java
 public class AdapterTest {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		StandardAccount sa = new StandardAccount(2000);
-		System.out.println("Account Balance= " + sa.getBalance());
-		
-		//Calling getBalance() on Adapter
-		AccountAdapter adapter = new AccountAdapter(new OffshoreAccount(2000));
-		System.out.println("Account Balance= " + adapter.getBalance());		
-	}
+        StandardAccount sa = new StandardAccount(2000);
+        System.out.println("Account Balance= " + sa.getBalance());
+
+        //Calling getBalance() on Adapter
+        AccountAdapter adapter = new AccountAdapter(new OffshoreAccount(2000));
+        System.out.println("Account Balance= " + adapter.getBalance());
+    }
 }
 ```

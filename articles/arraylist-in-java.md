@@ -41,37 +41,37 @@ ArrayList is not synchronised (not thread-safe).
 Let's look at how to use an `ArrayList`.
 
 ```java
-//Using the Default Constructor  
-List<String> list1 = new ArrayList<>();  
-list1.add("Apple");  
-list1.add("Banana");  
+//Using the Default Constructor
+List<String> list1 = new ArrayList<>();
+list1.add("Apple");
+list1.add("Banana");
 
-// Using Constructor with Initial Capacity  
-List<String> list2 = new ArrayList<>(20);  
-list2.add("Apple");  
-list2.add("Banana");  
+// Using Constructor with Initial Capacity
+List<String> list2 = new ArrayList<>(20);
+list2.add("Apple");
+list2.add("Banana");
 
-//Initializing array list using the anonymous inner class method  
-List<String> list3 = new ArrayList<String>() {{  
-    add("Apple");  
-    add("Banana");  
-    add("Orange");  
-}};  
+//Initializing array list using the anonymous inner class method
+List<String> list3 = new ArrayList<String>() {{
+    add("Apple");
+    add("Banana");
+    add("Orange");
+}};
 
-// fixed-size list from the elements of another collection  
-List<String> list4 = Arrays.asList("Apple", "Banana", "Orange");  
-List<String> list5 = new ArrayList<>(list4);  
+// fixed-size list from the elements of another collection
+List<String> list4 = Arrays.asList("Apple", "Banana", "Orange");
+List<String> list5 = new ArrayList<>(list4);
 
-// Using Arrays.asList method  
-List<String> list6 = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));  
+// Using Arrays.asList method
+List<String> list6 = new ArrayList<>(Arrays.asList("Apple", "Banana", "Orange"));
 
-// Using Collections.addAll method  
-List<String> list7 = new ArrayList<>();  
-Collections.addAll(list7, "Apple", "Banana", "Orange");  
+// Using Collections.addAll method
+List<String> list7 = new ArrayList<>();
+Collections.addAll(list7, "Apple", "Banana", "Orange");
 
-// Using Java8 streams and collectors  
-List<String> list8 = Stream.of("Apple", "Banana", "Orange")  
-        .collect(Collectors.toCollection(ArrayList::new));  
+// Using Java8 streams and collectors
+List<String> list8 = Stream.of("Apple", "Banana", "Orange")
+        .collect(Collectors.toCollection(ArrayList::new));
         .collect(Collectors.toCollection(ArrayList::new));
 ```
 
@@ -105,19 +105,19 @@ There are multiple ways we can iterate an ArrayList.
 
 ```java
 // Iterate using enhanced for loop
-for (String item:list1) { 
-    System.out.println(item); 
+for (String item:list1) {
+    System.out.println(item);
 }
 
 // Iterate using a traditional for loop
-for (int i = 0; i < list1.size(); i++) { 
-    System.out.println(list1.get(i)); 
+for (int i = 0; i < list1.size(); i++) {
+    System.out.println(list1.get(i));
 }
 
 // Using an Iterator
-Iterator<String> iterator = list1.iterator(); 
-while (iterator.hasNext()) { 
-    System.out.println(iterator.next()); 
+Iterator<String> iterator = list1.iterator();
+while (iterator.hasNext()) {
+    System.out.println(iterator.next());
 }
 
 // Using ListIterator
@@ -146,18 +146,18 @@ We can remove an item from ArrayList using the `remove()` method by specifying t
 list.remove(1);
 
 // Removes the first occurrence of "Banana"
-list.remove("Banana"); 
+list.remove("Banana");
 
 // Remove all items based on a collection
-List<String> toRemove = Arrays.asList("Banana", "Orange"); list.removeAll(toRemove); 
+List<String> toRemove = Arrays.asList("Banana", "Orange"); list.removeAll(toRemove);
 
 // Removes elements based on condition
-list.removeIf(fruit -> fruit.startsWith("B")); 
+list.removeIf(fruit -> fruit.startsWith("B"));
 
 //TODO demonstrate filter based on streams
 
 // Removes all elements from the list
-list.clear(); 
+list.clear();
 ```
 
 ## Creating Immutable List in Java
@@ -165,32 +165,32 @@ list.clear();
 To create an immutable list using the `List.of()` factory method.
 
 ```java
-public class ImmutableList {  
-    public static void main(String[] args) {  
-        List<String> immutableList = List.of("A", "B", "C");  
-        System.out.println(immutableList);  
-
-        immutableList.add("D"); // throws UnsupportedOperationException  
+public class ImmutableList {
+    public static void main(String[] args) {
+        List<String> immutableList = List.of("A", "B", "C");
         System.out.println(immutableList);
-    }  
+
+        immutableList.add("D"); // throws UnsupportedOperationException
+        System.out.println(immutableList);
+    }
 }
 ```
 
 We can also create an unmodifiable view of the list using the `Collections.unmodifiableList()` method. If you modify the returned list, whether directly or via its iterator will result in an `UnsupportedOperationException`.
 
 ```java
-public class UnmodifiableListExample {  
-    public static void main(String[] args) {  
-        List<String> list = new ArrayList<>();  
-        list.add("A");  
-        list.add("B");  
-        list.add("C");  
+public class UnmodifiableListExample {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("A");
+        list.add("B");
+        list.add("C");
 
-        List<String> unmodifiableList = Collections.unmodifiableList(list);  
-        System.out.println(unmodifiableList);  
-        unmodifiableList.add("D"); // throws UnsupportedOperationException  
+        List<String> unmodifiableList = Collections.unmodifiableList(list);
         System.out.println(unmodifiableList);
-    }  
+        unmodifiableList.add("D"); // throws UnsupportedOperationException
+        System.out.println(unmodifiableList);
+    }
 }
 ```
 
@@ -205,7 +205,7 @@ public class NonSynchronizedArrayList {
     public static void main(String[] args) {
         List<Integer> arrayList = new ArrayList<>();
 
-        // Create a runnable task that adds elements to the list  
+        // Create a runnable task that adds elements to the list
         Runnable addItemsTask = () -> {
             for (int i = 0; i < 1000; i++) {
                 arrayList.add(i);
@@ -215,9 +215,9 @@ public class NonSynchronizedArrayList {
         // Create multiple threads that will run the addItemsTask
         Thread thread1 = new Thread(addItemsTask);
         thread1.start();
-        Thread thread2 = new Thread(addItemsTask);  
+        Thread thread2 = new Thread(addItemsTask);
         thread2.start();
-        try {  
+        try {
             thread1.join();
             thread2.join();
         } catch (InterruptedException e) {
@@ -235,30 +235,30 @@ To make the `ArrayList` thread-safe, we can use `Collections.synchronizedList()`
 To guarantee serial access, all access to the backing list must be accomplished through the returned list. The above program can be written as follows:
 
 ```java
-public class SynchronizedArrayList {  
-    public static void main(String[] args) {  
-        List<Integer> arrayList = Collections.synchronizedList(new ArrayList<>());  
+public class SynchronizedArrayList {
+    public static void main(String[] args) {
+        List<Integer> arrayList = Collections.synchronizedList(new ArrayList<>());
 
-        // Create a runnable task that adds elements to the list  
-        Runnable addItemsTask = () -> {  
-            for (int i = 0; i < 1000; i++) {  
-                arrayList.add(i);  
-            }  
-        };  
+        // Create a runnable task that adds elements to the list
+        Runnable addItemsTask = () -> {
+            for (int i = 0; i < 1000; i++) {
+                arrayList.add(i);
+            }
+        };
 
-        // Create multiple threads that will run the addItemsTask  
-        Thread thread1 = new Thread(addItemsTask);  
-        thread1.start();  
+        // Create multiple threads that will run the addItemsTask
+        Thread thread1 = new Thread(addItemsTask);
+        thread1.start();
 
-        Thread thread2 = new Thread(addItemsTask);  
-        thread2.start();  
-        try {  
-            thread1.join();  
-            thread2.join();  
-        } catch (InterruptedException e) {  
-            System.out.println(e.getMessage());  
-        }  
-        System.out.println("Size of List: " + arrayList.size());  
-    }  
+        Thread thread2 = new Thread(addItemsTask);
+        thread2.start();
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Size of List: " + arrayList.size());
+    }
 }
 ```

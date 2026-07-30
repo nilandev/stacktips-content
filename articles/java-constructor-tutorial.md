@@ -43,19 +43,19 @@ In the below code snippet, we have declared two constructors in ConstructorDemo 
 ```java
 
 public class ConstructorDemo {
-	public ConstructorDemo() {
-		System.out.println("Constructor with no argument");
-	}
+    public ConstructorDemo() {
+        System.out.println("Constructor with no argument");
+    }
 
-	public ConstructorDemo(String name) {
-		System.out.println("Constructor with argument");
-	}
+    public ConstructorDemo(String name) {
+        System.out.println("Constructor with argument");
+    }
 
-	public static void main(String args[]) {
+    public static void main(String args[]) {
 
-		ConstructorDemo demo1 = new ConstructorDemo();
-		ConstructorDemo demo2 = new ConstructorDemo("Constructor Demo");
-	}
+        ConstructorDemo demo1 = new ConstructorDemo();
+        ConstructorDemo demo2 = new ConstructorDemo("Constructor Demo");
+    }
 }
 ```
 
@@ -75,18 +75,18 @@ Constructors cannot be called explicitly like methods in java. But a constructor
 
 ```java
 public class ConstructorDemo {
-	public ConstructorDemo() {
-		System.out.println("Constructor with no argument");
-	}
+    public ConstructorDemo() {
+        System.out.println("Constructor with no argument");
+    }
 
-	public ConstructorDemo(String name) {
-		this();
-		System.out.println("Constructor with argument");
-	}
+    public ConstructorDemo(String name) {
+        this();
+        System.out.println("Constructor with argument");
+    }
 
-	public static void main(String args[]) {
-		ConstructorDemo demo = new ConstructorDemo("Constructor Demo");
-	}
+    public static void main(String args[]) {
+        ConstructorDemo demo = new ConstructorDemo("Constructor Demo");
+    }
 }
 ```
 
@@ -100,30 +100,30 @@ In this above example, we are calling one constructor from another constructor o
 ```java
 public class ConstructorDemoSuper {
 
-	public ConstructorDemoSuper() {
-		System.out.println("Super Class Constructor with no argument");
-	}
+    public ConstructorDemoSuper() {
+        System.out.println("Super Class Constructor with no argument");
+    }
 
-	public ConstructorDemoSuper(String name) {
-		System.out.println("Super Class Constructor with argument");
-	}
+    public ConstructorDemoSuper(String name) {
+        System.out.println("Super Class Constructor with argument");
+    }
 }
 
 public class ConstructorDemo extends ConstructorDemoSuper {
-	public ConstructorDemo() {
-		super();
-		System.out.println("Constructor with no argument");
-	}
+    public ConstructorDemo() {
+        super();
+        System.out.println("Constructor with no argument");
+    }
 
-	public ConstructorDemo(String name) {
-		super(name);
-		System.out.println("Constructor with argument");
-	}
+    public ConstructorDemo(String name) {
+        super(name);
+        System.out.println("Constructor with argument");
+    }
 
-	public static void main(String args[]) {
-		ConstructorDemo demo1 = new ConstructorDemo("Constructor Demo");
-		ConstructorDemo demo2 = new ConstructorDemo("Constructor Demo");
-	}
+    public static void main(String args[]) {
+        ConstructorDemo demo1 = new ConstructorDemo("Constructor Demo");
+        ConstructorDemo demo2 = new ConstructorDemo("Constructor Demo");
+    }
 }
 ```
 

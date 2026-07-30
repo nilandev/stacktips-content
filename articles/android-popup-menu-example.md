@@ -84,35 +84,35 @@ import android.widget.Toast;
 
 public class PopMenuActivity extends Activity implements OnMenuItemClickListener {
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		findViewById(R.id.btn_click).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				PopupMenu popupMenu = new PopupMenu(PopMenuActivity.this, view);
-				popupMenu.setOnMenuItemClickListener(PopMenuActivity.this);
-				popupMenu.inflate(R.menu.popup_menu);
-				popupMenu.show();
-			}
-		});
-	}
+        findViewById(R.id.btn_click).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(PopMenuActivity.this, view);
+                popupMenu.setOnMenuItemClickListener(PopMenuActivity.this);
+                popupMenu.inflate(R.menu.popup_menu);
+                popupMenu.show();
+            }
+        });
+    }
 
-	public boolean onMenuItemClick(MenuItem item) {
-		switch (item.getItemId()) {
-		case R.id.item_comedy:
-			Toast.makeText(this, "Comedy Clicked", Toast.LENGTH_SHORT).show();
-			return true;
-		case R.id.item_movies:
-			Toast.makeText(this, "Movies Clicked", Toast.LENGTH_SHORT).show();
-			return true;
-		case R.id.item_music:
-			Toast.makeText(this, "Music Clicked", Toast.LENGTH_SHORT).show();
-			return true;		
-		}
-	}
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.item_comedy:
+            Toast.makeText(this, "Comedy Clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        case R.id.item_movies:
+            Toast.makeText(this, "Movies Clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        case R.id.item_music:
+            Toast.makeText(this, "Music Clicked", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+    }
 }
 ```
 

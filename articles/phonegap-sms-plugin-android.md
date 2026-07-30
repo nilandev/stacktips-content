@@ -50,7 +50,7 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 
 -   Add the SmsPlugin.java file from src to your project’s src hierarchy. and then reference the plugin in your res/config.xml file
 
-```javascript
+```xml
  <feature name="SmsPlugin">
       <param name="android-package" value="org.apache.cordova.plugin.SmsPlugin"/>
  </feature>
@@ -58,7 +58,7 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 
 -   Ensure that your manifest contains the necessary permissions to send SMS messages.
 
-```javascript
+```xml
  <uses-permission android:name="android.permission.SEND_SMS"
 ```
 
@@ -66,17 +66,17 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 
 # 5.Sending SMS using Intent method
 
-```
+```javascript
 // intent param is needed to send sms using sms intent
               $("#btnSmsIntent").click(function(){
-	            SmsPlugin.prototype.send('9731563021', 'Your Message Here!', 'INTENT'
-				    function () { 
-				       alert('Message sent successfully');  
-				    },
-				    function (e) {
-				        alert('Message Failed:' + e);
-				    }
-				);               
+                SmsPlugin.prototype.send('9731563021', 'Your Message Here!', 'INTENT'
+                    function () {
+                       alert('Message sent successfully');
+                    },
+                    function (e) {
+                        alert('Message Failed:' + e);
+                    }
+                );
              });
 ```
 
@@ -85,14 +85,14 @@ The plugin source code is hosted over GitHub. You can grab a copy from below lin
 ```javascript
 // intent param is needed to send sms using sms intent
               $("#btnSmsIntent").click(function(){
-	            SmsPlugin.prototype.send('9731563021', 'Your Message Here!', ' '
-				    function () { 
-				       alert('Message sent successfully');  
-				    },
-				    function (e) {
-				        alert('Message Failed:' + e);
-				    }
-				);               
+                SmsPlugin.prototype.send('9731563021', 'Your Message Here!', ' '
+                    function () {
+                       alert('Message sent successfully');
+                    },
+                    function (e) {
+                        alert('Message Failed:' + e);
+                    }
+                );
              });
 ```
 
@@ -134,17 +134,17 @@ Now take a look at my index.html files
          //leave empty for sending sms using default intent
              $("#btnDefaultSMS").click(function(){
 
-             	var number = $("#numberTxt").val();
-             	var message = $("#messageTxt").val();
+                var number = $("#numberTxt").val();
+                var message = $("#messageTxt").val();
              SmsPlugin.prototype.send(number, message, '',
-         function () { 
-           alert('Message sent successfully');  
+         function () {
+           alert('Message sent successfully');
          },
          function (e) {
             alert('Message Failed:' + e);
          }
-         );               
-             }); 
+         );
+             });
          });
 
       </script>
@@ -176,7 +176,7 @@ In the ‘index.html’ file, you need the add the reference of ‘smsplugin.js�
 
 ## 7.3. Adding plugin source to project
 
-```javascript
+```java
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.app.PendingIntent;
@@ -187,49 +187,49 @@ import org.apache.cordova.api.CordovaPlugin;
 import org.apache.cordova.api.PluginResult;
 
 public class SmsPlugin extends CordovaPlugin {
-	public final String ACTION_SEND_SMS = "SendSMS";
+    public final String ACTION_SEND_SMS = "SendSMS";
 
-	@Override
-	public boolean execute(String action, JSONArray args,
-			final CallbackContext callbackContext) throws JSONException {
-		if (action.equals(ACTION_SEND_SMS)) {
-			try {
-				String phoneNumber = args.getString(0);
-				String message = args.getString(1);
-				String method = args.getString(2);
+    @Override
+    public boolean execute(String action, JSONArray args,
+            final CallbackContext callbackContext) throws JSONException {
+        if (action.equals(ACTION_SEND_SMS)) {
+            try {
+                String phoneNumber = args.getString(0);
+                String message = args.getString(1);
+                String method = args.getString(2);
 
-				if (method.equalsIgnoreCase("INTENT")) {
-					invokeSMSIntent(phoneNumber, message);
-					callbackContext.sendPluginResult(new PluginResult(
-							PluginResult.Status.NO_RESULT));
-				} else {
-					sendSMS(phoneNumber, message);
-				}
+                if (method.equalsIgnoreCase("INTENT")) {
+                    invokeSMSIntent(phoneNumber, message);
+                    callbackContext.sendPluginResult(new PluginResult(
+                            PluginResult.Status.NO_RESULT));
+                } else {
+                    sendSMS(phoneNumber, message);
+                }
 
-				callbackContext.sendPluginResult(new PluginResult(
-						PluginResult.Status.OK));
-				return true;
-			} catch (JSONException ex) {
-				callbackContext.sendPluginResult(new PluginResult(
-						PluginResult.Status.JSON_EXCEPTION));
-			}
-		}
-		return false;
-	}
+                callbackContext.sendPluginResult(new PluginResult(
+                        PluginResult.Status.OK));
+                return true;
+            } catch (JSONException ex) {
+                callbackContext.sendPluginResult(new PluginResult(
+                        PluginResult.Status.JSON_EXCEPTION));
+            }
+        }
+        return false;
+    }
 
-	private void invokeSMSIntent(String phoneNumber, String message) {
-		Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-		sendIntent.putExtra("sms_body", message);
-		sendIntent.setType("vnd.android-dir/mms-sms");
-		this.cordova.getActivity().startActivity(sendIntent);
-	}
+    private void invokeSMSIntent(String phoneNumber, String message) {
+        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+        sendIntent.putExtra("sms_body", message);
+        sendIntent.setType("vnd.android-dir/mms-sms");
+        this.cordova.getActivity().startActivity(sendIntent);
+    }
 
-	private void sendSMS(String phoneNumber, String message) {
-		SmsManager manager = SmsManager.getDefault();
-		PendingIntent sentIntent = PendingIntent.getActivity(
-				this.cordova.getActivity(), 0, new Intent(), 0);
-		manager.sendTextMessage(phoneNumber, null, message, sentIntent, null);
-	}
+    private void sendSMS(String phoneNumber, String message) {
+        SmsManager manager = SmsManager.getDefault();
+        PendingIntent sentIntent = PendingIntent.getActivity(
+                this.cordova.getActivity(), 0, new Intent(), 0);
+        manager.sendTextMessage(phoneNumber, null, message, sentIntent, null);
+    }
 
 }
 ```
@@ -249,5 +249,6 @@ Ensure that your manifest contains the necessary permissions to send SMS message
 ```xml
  <uses-permission android:name="android.permission.SEND_SMS"
 ```
+
 
 Now let us call the plugin method by passing appropriate parameters to send SMS.

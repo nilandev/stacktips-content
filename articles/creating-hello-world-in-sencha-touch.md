@@ -73,13 +73,13 @@ glossOnIcon : false,
 
 onReady : function() {
 var formBase = new Ext.form.FormPanel({
-		html: "Hello World!!"
-	});
+        html: "Hello World!!"
+    });
 
 Ext.apply(formBase, {
-	fullscreen : true,
-	autoRender : true,
-	hideOnMaskTap : false
+    fullscreen : true,
+    autoRender : true,
+    hideOnMaskTap : false
 });
 
 formBase.show();
@@ -99,13 +99,13 @@ Beginning the Ext Application Script File:
 
 ```javascript
 Ext.setup({
-	icon : 'icon.png',
-	tabletStartupScreen : 'tablet_startup.png',
-	phoneStartupScreen : 'phone_startup.png',
-	glossOnIcon : false,
+    icon : 'icon.png',
+    tabletStartupScreen : 'tablet_startup.png',
+    phoneStartupScreen : 'phone_startup.png',
+    glossOnIcon : false,
 
-	onReady : function() {
-	}
+    onReady : function() {
+    }
 });
 ```
 

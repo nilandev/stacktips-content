@@ -47,7 +47,7 @@ Now, create a folder named www under assets folder in your project directory. Th
 In this exmple, we are using jQueery Mobile Framework for the user interface development. Here in this example, we will develop Sample JQueery page that displays “Hello World” to user.  
 Let us take closer look at the index.html file
 
-```
+```html
 <!DOCTYPE html>
 <html>
    <head>
@@ -58,12 +58,12 @@ Let us take closer look at the index.html file
       <title></title>
 
       <!-- stylesheets -->
-      <link rel="stylesheet" href="jquery.mobile-1.3.1.min.css">      
-      <link rel="stylesheet" href="codiqa.ext.css">    
+      <link rel="stylesheet" href="jquery.mobile-1.3.1.min.css">
+      <link rel="stylesheet" href="codiqa.ext.css">
 
-      <!-- jQuery and jQuery Mobile framework libs-->  
+      <!-- jQuery and jQuery Mobile framework libs-->
       <script src="jquery-1.9.1.min.js"></script>
-      <script src="jquery.mobile-1.3.1.min.js"></script>      
+      <script src="jquery.mobile-1.3.1.min.js"></script>
       <script src="codiqa.ext.js"></script>
 
       <!-- for codova plugins -->
@@ -79,7 +79,7 @@ Let us take closer look at the index.html file
             </h4>
          </div>
          <div data-role="content">
-         	Hello World!
+            Hello World!
          </div>
       </div>
    </body>
@@ -111,7 +111,7 @@ From Cordova version 2.9.0 onwards, the load url configuration will reside insid
 
 Below is my activity code
 
-```
+```java
 package com.javatechig.droidgap;
 
 import org.apache.cordova.Config;

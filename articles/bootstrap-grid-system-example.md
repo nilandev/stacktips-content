@@ -83,15 +83,15 @@ Suppose we want to create three equal columns – irrespective of all device siz
 
 ```html
 <div class="row">
-  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">   
- Column 1: col-xs-4 col-sm-4 col-md-4 col-lg-4 
- </div> 
- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">    
-Column 2: col-xs-4 col-sm-4 col-md-4 col-lg-4 
- </div> 
- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">  
-  Column 3: col-xs-4 col-sm-4 col-md-4 col-lg-4  
-</div> 
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+ Column 1: col-xs-4 col-sm-4 col-md-4 col-lg-4
+ </div>
+ <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+Column 2: col-xs-4 col-sm-4 col-md-4 col-lg-4
+ </div>
+ <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+  Column 3: col-xs-4 col-sm-4 col-md-4 col-lg-4
+</div>
 </div>
 ```
 
@@ -105,14 +105,14 @@ In the below code we are displaying only first two column in smaller screen and 
 
 ```html
 <div class="row">
-<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="background-color:#F0B2D1;">  
-Column 1: display-xs,display-sm,display-md,display-lg 
+<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="background-color:#F0B2D1;">
+Column 1: display-xs,display-sm,display-md,display-lg
 </div>
-<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="background-color:#E066A3;">  
-Column 2: display-xs,display-sm,display-md,display-lg  
-</div>  
-<div class="hidden-xs col-sm-4 col-md-4 col-lg-4" style="background-color:#D11975;">  
-Column 3: hidden-xs,display-sm,display-md,display-lg 
+<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4" style="background-color:#E066A3;">
+Column 2: display-xs,display-sm,display-md,display-lg
+</div>
+<div class="hidden-xs col-sm-4 col-md-4 col-lg-4" style="background-color:#D11975;">
+Column 3: hidden-xs,display-sm,display-md,display-lg
 </div>
 ```
 
@@ -125,15 +125,15 @@ In smaller screens we need all the columns to be vertical. In medium screens fir
 
 ```html
 <div class="row">
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="background-color:#F0B2D1;">  
- Column 1: vertical display-xs,column 1: large area display-sm,column 1: large area display-md,display-lg 
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="background-color:#F0B2D1;">
+ Column 1: vertical display-xs,column 1: large area display-sm,column 1: large area display-md,display-lg
 </div>
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="background-color:#E066A3;">  
-Column 2: Vertical display-xs,column 2: large area display-sm,column 2: large area display-md,display-lg  
-</div>  
-<div class="col-xs-12 col-sm-2 col-md-2 col-lg-4" style="background-color:#D11975;">  
-Column 3: Vertical display-xs,column 3: small area display-sm,column31: small areadisplay-md,display-lg 
-</div> 
+<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="background-color:#E066A3;">
+Column 2: Vertical display-xs,column 2: large area display-sm,column 2: large area display-md,display-lg
+</div>
+<div class="col-xs-12 col-sm-2 col-md-2 col-lg-4" style="background-color:#D11975;">
+Column 3: Vertical display-xs,column 3: small area display-sm,column31: small areadisplay-md,display-lg
+</div>
 </div>
 ```
 
@@ -150,20 +150,20 @@ The output of the above code,
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head> 
+</head>
      <body>
        <div class="container">
         <div class="row">
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="min-height:200px;background-color:#F0B2D1;">  
-          Column 1: vertical display-xs,column 1: large area display-sm,column 1: large area display-md,display-lg 
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="min-height:200px;background-color:#F0B2D1;">
+          Column 1: vertical display-xs,column 1: large area display-sm,column 1: large area display-md,display-lg
         </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="min-height:200px;background-color:#E066A3;">  
-        Column 2: Vertical display-xs,column 2: large area display-sm,column 2: large area display-md,display-lg  
-        </div>  
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4" style="min-height:200px;background-color:#D11975;">  
-        Column 3: Vertical display-xs,column 3: small area display-sm,column31: small areadisplay-md,display-lg 
-		    </div> 
-	     </div>
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4" style="min-height:200px;background-color:#E066A3;">
+        Column 2: Vertical display-xs,column 2: large area display-sm,column 2: large area display-md,display-lg
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-4" style="min-height:200px;background-color:#D11975;">
+        Column 3: Vertical display-xs,column 3: small area display-sm,column31: small areadisplay-md,display-lg
+            </div>
+         </div>
       </div>
     </body>
 </html>

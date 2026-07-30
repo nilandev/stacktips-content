@@ -44,25 +44,25 @@ The following section describes the basic structure of a bootstrap page.
 -   You have to include the Bootstrap `CSS` and `JS` files, as follows
 
 ```html
-<!DOCTYPE html> 
-<html lang="en">  
- <head>    
-    <title>My first Bootstrap page </title>    
-    <meta name="viewport" content="width=device-width, initialscale=1">    
-    <link href="CSS/bootstrap.min.css" rel="stylesheet">   
-    <link href="CSS/bootstrap-theme.min.css" rel="stylesheet">    
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>My first Bootstrap page </title>
+    <meta name="viewport" content="width=device-width, initialscale=1">
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
     <script type="text/javascript" src="JS/bootstrap.min.js"/>
     <script type="text/javascript" src="JS/jquery.min.js"/>
-</head> 
+</head>
 ```
 
 -   **Body section:** All of your HTML body section must be kept inside div element with class attached as `container` or `container-fluid`.
 
 ```html
-<body>    
+<body>
    <div class="container">
-     ...  
-   </div> 
+     ...
+   </div>
 </body>
 ```
 
@@ -71,25 +71,25 @@ The container class renders the page with a fixed width in middle of the browser
 #### Complete example
 
 ```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <title>My first Bootstrap page </title>
       <meta name="viewport" content="width=device-width, initialscale=1">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.j"></script> 
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.j"></script>
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    </head>
    <body>
       <div class="conainer" style="margin:20px;">
          <div class="page-header">
-            <h1> 
+            <h1>
                <span class="glyphicon glyphiconhome"></span>&nbsp; Welcome to the Bootstrap framework
             </h1>
          </div>
          <div class="row">
-            <!--Column display with the xs-12&sm-12 : for mobile , md-8&lg-8 : for tablet and desctop --> 
+            <!--Column display with the xs-12&sm-12 : for mobile , md-8&lg-8 : for tablet and desctop -->
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                <div class="panel panel-warning" style="height:200px;" >
                   <div class="panel-heading">Content panel</div>
@@ -97,14 +97,13 @@ The container class renders the page with a fixed width in middle of the browser
                </div>
             </div>
 
-            <!--Column display with the xs-12&sm-12 : for mobile , md-4&lg-4 : for tablet and desctop --> 
+            <!--Column display with the xs-12&sm-12 : for mobile , md-4&lg-4 : for tablet and desctop -->
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                <div class="panel panel-info" style="height:200px;">
                   <div class="panel-heading">Right sidebar</div>
                   <div class="panel-body">...</div>
                </div>
             </div>
-            
 
          </div>
       </div>

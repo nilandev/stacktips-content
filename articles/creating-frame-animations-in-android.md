@@ -40,15 +40,15 @@ Declare a XML file that defines the animation sequence that holds the list of dr
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
         <item android:drawable="@drawable/frame1" android:duration="210" />
-	<item android:drawable="@drawable/frame2" android:duration="210" />
-	<item android:drawable="@drawable/frame3" android:duration="210" />
-	<item android:drawable="@drawable/frame4" android:duration="210" />
-	<item android:drawable="@drawable/frame5" android:duration="210" />
-	<item android:drawable="@drawable/frame6" android:duration="210" />
-	<item android:drawable="@drawable/frame7" android:duration="210" />
-	<item android:drawable="@drawable/frame8" android:duration="210" />
-	<item android:drawable="@drawable/frame9" android:duration="210" />
-	<item android:drawable="@drawable/frame10" android:duration="210" />
+    <item android:drawable="@drawable/frame2" android:duration="210" />
+    <item android:drawable="@drawable/frame3" android:duration="210" />
+    <item android:drawable="@drawable/frame4" android:duration="210" />
+    <item android:drawable="@drawable/frame5" android:duration="210" />
+    <item android:drawable="@drawable/frame6" android:duration="210" />
+    <item android:drawable="@drawable/frame7" android:duration="210" />
+    <item android:drawable="@drawable/frame8" android:duration="210" />
+    <item android:drawable="@drawable/frame9" android:duration="210" />
+    <item android:drawable="@drawable/frame10" android:duration="210" />
 
 </animation-list>
 ```

@@ -31,30 +31,30 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RemoveDuplicate {
-	public static void main(String[] args) {
-		List sourceList = new ArrayList();
+    public static void main(String[] args) {
+        List sourceList = new ArrayList();
 
-		sourceList.add("object1");
-		sourceList.add("object2");
-		sourceList.add("object2");
-		sourceList.add("object3");
-		sourceList.add("object4");
-		sourceList.add("object2");
+        sourceList.add("object1");
+        sourceList.add("object2");
+        sourceList.add("object2");
+        sourceList.add("object3");
+        sourceList.add("object4");
+        sourceList.add("object2");
 
-		List newList = new ArrayList(new HashSet(
-				sourceList));
-		Iterator it = newList.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
+        List newList = new ArrayList(new HashSet(
+                sourceList));
+        Iterator it = newList.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
 
-	}
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 object3
 object4
 object1
@@ -72,30 +72,30 @@ import java.util.LinkedHashSet;
 import java.util.List;
 
 public class RemoveDuplicate {
-	public static void main(String[] args) {
-		List sourceList = new ArrayList();
+    public static void main(String[] args) {
+        List sourceList = new ArrayList();
 
-		sourceList.add("object1");
-		sourceList.add("object2");
-		sourceList.add("object2");
-		sourceList.add("object3");
-		sourceList.add("object4");
-		sourceList.add("object2");
+        sourceList.add("object1");
+        sourceList.add("object2");
+        sourceList.add("object2");
+        sourceList.add("object3");
+        sourceList.add("object4");
+        sourceList.add("object2");
 
-		List newList = new ArrayList(new LinkedHashSet(
-				sourceList));
-		Iterator it = newList.iterator();
-		while (it.hasNext()) {
-			System.out.println(it.next());
-		}
+        List newList = new ArrayList(new LinkedHashSet(
+                sourceList));
+        Iterator it = newList.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
 
-	}
+    }
 }
 ```
 
 ### Output
 
-```
+```text
 object1
 object2
 object3

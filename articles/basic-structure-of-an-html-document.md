@@ -72,7 +72,7 @@ Text-level elements are for markup bits of text, including creating links, inser
 
 Technically speaking, HTML does not include a separate tag to denote a page footer. But it is recommended because a good footer helps to identify a document’s vintage and contents and let interested readers contact the author if they spot errors or want to provide feedback.
 
-```
+```html
 <HTML>
    <HEAD>
       <TITLE> Javatechig | Resources for Developers. </TITLE>
@@ -82,7 +82,7 @@ Technically speaking, HTML does not include a separate tag to denote a page foot
          Welcome to Javatechig!
       </H1>
       <H2> Fabulous development tutorials </H2>
-      Our website, <A HREF = ''http://javetechig.com/"> stacktips.com</A> provides some of the finest tutorials on <B> Android </B>, <B> Java</B>, <B> Web Technologies (<I>HTML</I>, <I>Sencha Touch</I>, etc.)</B> and related mobile technlogies. 
+      Our website, <A HREF = ''http://javetechig.com/"> stacktips.com</A> provides some of the finest tutorials on <B> Android </B>, <B> Java</B>, <B> Web Technologies (<I>HTML</I>, <I>Sencha Touch</I>, etc.)</B> and related mobile technlogies.
       <HR>
       <CENTER> Why not visit <A HREF = http://stacktips.com/> stacktips.com </A> </CENTER>
    </BODY>

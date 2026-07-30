@@ -72,16 +72,16 @@ First, add the following dependencies to your `pom.xml` or your `build.gradle` f
         <scope>runtime</scope>
     </dependency>
 
-    <dependency>  
-        <groupId>org.flywaydb</groupId>  
-        <artifactId>flyway-core</artifactId>  
-    </dependency>  
-    <dependency>  
-        <groupId>org.flywaydb</groupId>  
-        <artifactId>flyway-mysql</artifactId>  
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-mysql</artifactId>
     </dependency>
     <!-- Other dependencies-->
-</dependencies>       
+</dependencies>
 ```
 
 ### Configure the Database Connection
@@ -122,12 +122,12 @@ CREATE TABLE movie
 **V2\_\_add\_actor\_table.sql**
 
 ```sql
-CREATE TABLE actor  
-(  
-    id         bigint NOT NULL AUTO_INCREMENT,  
-    first_name varchar(255) DEFAULT NULL,  
-    last_name  varchar(255) DEFAULT NULL,  
-    PRIMARY KEY (id)  
+CREATE TABLE actor
+(
+    id         bigint NOT NULL AUTO_INCREMENT,
+    first_name varchar(255) DEFAULT NULL,
+    last_name  varchar(255) DEFAULT NULL,
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 ```
 
@@ -148,8 +148,8 @@ CREATE TABLE movie_actors
 **R\_\_create\_or\_replace\_movie\_view.sql**
 
 ```sql
-CREATE OR REPLACE VIEW movie_view AS  
-SELECT id, title  
+CREATE OR REPLACE VIEW movie_view AS
+SELECT id, title
 FROM movie;
 ```
 
@@ -229,8 +229,8 @@ public enum ContentRating {
 **Actor.java**
 
 ```java
-@Entity  
-@Data  
+@Entity
+@Data
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -264,7 +264,7 @@ spring.flyway.validate-on-migrate=true
 
 When you start your Spring Boot application, Flyway will automatically check the `db/migrations` directory for any new migrations that have not yet been applied to the database and will apply them in version order.
 
-```shell
+```bash
 ./mvnw spring-boot:run
 ```
 
@@ -316,21 +316,21 @@ To integrate the flyway maven plugin in your maven project, we need to add `flyw
                 <user>${database.username}</user>
                 <password>${database.password}</password>
             </configuration>
-        </plugin>  
+        </plugin>
 
         <!-- other plugins -->
-    </plugins>  
+    </plugins>
 </build>
 ```
 
 Now you can use the Maven goals
 
-```shell
+```bash
 ./mvnw flyway:migrate
 ```
 
 Maven allows you to define properties in the project's POM and pass the value from the command line.
 
-```shell
+```bash
 ./mvnw -Ddatabase.username=root -Ddatabase.password=Passw0rd flyway:migrate
 ```

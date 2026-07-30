@@ -41,7 +41,7 @@ The following example shows Employees data in XML format;
       <name>Alex</first>
       <id>19</id>
       <details>
-      	<location>London</location>
+          <location>London</location>
          <dob>15 May 1962</dob>
          <sex>Male</sex>
       </details>
@@ -50,7 +50,7 @@ The following example shows Employees data in XML format;
       <name>Mark</first>
       <id>19</id>
       <details>
-      	<location>Berlin</location>
+          <location>Berlin</location>
          <dob>15 May 1968</dob>
          <sex>Male</sex>
       </details>
@@ -109,7 +109,7 @@ JSON is often used as a data interchange format to serialize and deserialize dat
 
 RESTful web services use JSON extensively as the format for the data in requests and responses. The HTTP header used to indicate that the content of a request or a response is JSON data is
 
-```
+```text
 Content-Type: application/json
 ```
 

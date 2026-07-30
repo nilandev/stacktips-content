@@ -37,12 +37,12 @@ queens = {
     "country": "United States"
 }
 
-print(queens)   
+print(queens)
 ```
 
 **Output:**
 
-```
+```text
 {'city': 'New York City', 'state': 'New York', 'country': 'United States'}
 ```
 
@@ -62,7 +62,7 @@ print(queens["city"])
 
 **Output:**
 
-```
+```text
 New York
 ```
 
@@ -82,7 +82,7 @@ print(company)
 
 **Output:**
 
-```
+```text
 {'city': 'New York City', 'state': 'New York', 'country': 'United States', 'name': 'ABC Inc'}
 ```
 
@@ -101,7 +101,7 @@ company["country"] = "GB"
 print(company)
 ```
 
-```
+```text
 {'city': 'London', 'state': 'New York', 'country': 'GB'}
 ```
 
@@ -122,7 +122,7 @@ for key in queens:
 
 **Output:**
 
-```
+```text
 Key: city Value: New York City
 Key: state Value: New York
 Key: country Value: United Statess
@@ -143,7 +143,7 @@ print("city" in queens)
 
 **Output:**
 
-```
+```text
 True
 ```
 
@@ -162,7 +162,7 @@ queens.pop("city")
 print(queens)
 ```
 
-```
+```text
 {'state': 'New York', 'country': 'United States'}
 ```
 
@@ -182,7 +182,7 @@ print(len(queens))
 
 **Output:**
 
-```
+```text
 {'city': 'New York City', 'state': 'New York', 'country': 'United States'}
 3
 ```

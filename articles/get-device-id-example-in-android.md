@@ -54,19 +54,19 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		//getting unique id for device
-		String id = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
+        //getting unique id for device
+        String id = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
 
-		//displaying id in textview
-		TextView tv = (TextView) findViewById(R.id.textView1);
-		tv.setText(id);
+        //displaying id in textview
+        TextView tv = (TextView) findViewById(R.id.textView1);
+        tv.setText(id);
 
-	}
+    }
 
 }
 ```

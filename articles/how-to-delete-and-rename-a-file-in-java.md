@@ -32,30 +32,30 @@ import java.io.IOException;
 
 public class RenameFile {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		/* File (or directory) with old name */
-		File file = new File("/Users/Neel/Documents/Workspace/file.txt");
+        /* File (or directory) with old name */
+        File file = new File("/Users/Neel/Documents/Workspace/file.txt");
 
-		/* File (or directory) with new name */
-		File file2 = new File("/Users/Neel/Documents/Workspace/new-file.txt");
+        /* File (or directory) with new name */
+        File file2 = new File("/Users/Neel/Documents/Workspace/new-file.txt");
 
-		if (file2.exists()) {
-			try {
-				throw new java.io.IOException("File already exists!");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+        if (file2.exists()) {
+            try {
+                throw new java.io.IOException("File already exists!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
-		/* Rename file */
-		boolean success = file.renameTo(file2);
-		if (!success) {
-			System.out.println("Couldn't rename file!");
-		} else {
-			System.out.println("File renamed successfully!");
-		}
-	}
+        /* Rename file */
+        boolean success = file.renameTo(file2);
+        if (!success) {
+            System.out.println("Couldn't rename file!");
+        } else {
+            System.out.println("File renamed successfully!");
+        }
+    }
 
 }
 ```
@@ -69,19 +69,19 @@ import java.io.File;
 
 public class DeleteFile {
 
-	public static void main(String[] args) {
-		try {
-			File file = new File(
-					"/Users/Neel/Documents/Workspace/file1.txt");
+    public static void main(String[] args) {
+        try {
+            File file = new File(
+                    "/Users/Neel/Documents/Workspace/file1.txt");
 
-			if (file.delete()) {
-				System.out.println(file.getName() + " is deleted!");
-			} else {
-				System.out.println("Delete operation is failed.");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            if (file.delete()) {
+                System.out.println(file.getName() + " is deleted!");
+            } else {
+                System.out.println("Delete operation is failed.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```

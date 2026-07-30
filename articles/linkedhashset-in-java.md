@@ -32,25 +32,25 @@ For instance, when you need to store unique elements but also need to iterate th
 
 ```java
 
-public class UserActivityTracker {  
-    public static void main(String[] args) {  
-        LinkedHashSet<String> pagesVisited = new LinkedHashSet<>();  
+public class UserActivityTracker {
+    public static void main(String[] args) {
+        LinkedHashSet<String> pagesVisited = new LinkedHashSet<>();
 
-        pagesVisited.add("home.html");  
-        pagesVisited.add("about.html");  
-        pagesVisited.add("contact.html");  
-        pagesVisited.add("home.html"); 
-        pagesVisited.add("services.html");  
+        pagesVisited.add("home.html");
+        pagesVisited.add("about.html");
+        pagesVisited.add("contact.html");
+        pagesVisited.add("home.html");
+        pagesVisited.add("services.html");
 
-        // Display the pages visited in the order of insertion  
-        System.out.println("Pages visited by the user in order:");  
-        for (String page : pagesVisited) {  
-            System.out.println(page);  
-        }  
+        // Display the pages visited in the order of insertion
+        System.out.println("Pages visited by the user in order:");
+        for (String page : pagesVisited) {
+            System.out.println(page);
+        }
 
-        System.out.println("-----");  
-        pagesVisited.spliterator().forEachRemaining(System.out::println);  
-    }  
+        System.out.println("-----");
+        pagesVisited.spliterator().forEachRemaining(System.out::println);
+    }
 }
 ```
 
@@ -58,7 +58,7 @@ Notice that the `home.html` is added only once to the `LinkedHashSet`.
 
 **Output:**
 
-```
+```text
 
 Pages visited:
 home.html

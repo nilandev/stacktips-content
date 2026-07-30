@@ -42,21 +42,21 @@ Enum can be declared as their own class or can be enclosed inside another class.
 enum BenzColors {WHITE, RED, SILVER}
 
 public class MercedesBenz {
-	private BenzColors color;
+    private BenzColors color;
 
-	public void setColor(BenzColors color){
-		this.color = color;
-	}
+    public void setColor(BenzColors color){
+        this.color = color;
+    }
 
-	public BenzColors getColor() {
-		return color;
-	}
+    public BenzColors getColor() {
+        return color;
+    }
 
-	public static void main(String[] args) {
-		MercedesBenz benz = new MercedesBenz();
-		benz.setColor(BenzColors.RED);		
-		System.out.println(benz.getColor());
-	}
+    public static void main(String[] args) {
+        MercedesBenz benz = new MercedesBenz();
+        benz.setColor(BenzColors.RED);
+        System.out.println(benz.getColor());
+    }
 
 }
 ```
@@ -65,22 +65,22 @@ public class MercedesBenz {
 
 ```java
 public class MercedesBenz {
-	enum BenzColors {WHITE, RED, SILVER}
-	private BenzColors color;
+    enum BenzColors {WHITE, RED, SILVER}
+    private BenzColors color;
 
-	public void setColor(BenzColors color){
-		this.color = color;
-	}
+    public void setColor(BenzColors color){
+        this.color = color;
+    }
 
-	public BenzColors getColor() {
-		return color;
-	}
+    public BenzColors getColor() {
+        return color;
+    }
 
-	public static void main(String[] args) {
-		MercedesBenz benz = new MercedesBenz();
-		benz.setColor(BenzColors.RED);		
-		System.out.println(benz.getColor());
-	}
+    public static void main(String[] args) {
+        MercedesBenz benz = new MercedesBenz();
+        benz.setColor(BenzColors.RED);
+        System.out.println(benz.getColor());
+    }
 
 }
 ```
@@ -93,37 +93,37 @@ Let us go back to our MercedesBenz example, the enum constants represents the th
 
 ```java
 enum BenzColors {
-	WHITE(20), RED(40), SILVER(40);
+    WHITE(20), RED(40), SILVER(40);
 
-	private final int colorRatio;
+    private final int colorRatio;
 
-	private BenzColors(int colorRatio) {
-		this.colorRatio = colorRatio;
-	}
+    private BenzColors(int colorRatio) {
+        this.colorRatio = colorRatio;
+    }
 
-	public int getColorRatio() {
-		return colorRatio;
-	}
+    public int getColorRatio() {
+        return colorRatio;
+    }
 };
 
 public class MercedesBenz {
 
-	private BenzColors color;
+    private BenzColors color;
 
-	public void setColor(BenzColors color){
-		this.color = color;
-	}
+    public void setColor(BenzColors color){
+        this.color = color;
+    }
 
-	public BenzColors getColor() {
-		return color;
-	}
+    public BenzColors getColor() {
+        return color;
+    }
 
-	public static void main(String[] args) {
-		MercedesBenz benz = new MercedesBenz();
-		benz.setColor(BenzColors.RED);		
-		System.out.println(benz.getColor()); // prints RED
-		System.out.println(benz.getColor().getColorRatio()); // prints 40
-	}
+    public static void main(String[] args) {
+        MercedesBenz benz = new MercedesBenz();
+        benz.setColor(BenzColors.RED);
+        System.out.println(benz.getColor()); // prints RED
+        System.out.println(benz.getColor().getColorRatio()); // prints 40
+    }
 
 }
 ```

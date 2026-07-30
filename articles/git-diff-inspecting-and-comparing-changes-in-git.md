@@ -28,19 +28,19 @@ In this short article, we’ll talk about the most important use cases you need 
 
 Running the plain git diff command without any parameters can be pretty helpful: it will show you all of your local changes since you last committed.
 
-```
+```bash
 $ git diff
 ```
 
 When you want to do a git diff but do not care about the full diff and just want to know which files changed
 
-```
+```bash
 $ git diff --name-only
 ```
 
 To include some brief information about changed lines
 
-```
+```bash
 $ git diff --stat
 ```
 
@@ -50,12 +50,12 @@ By adding the `--staged` option, Git will show which local changes you have alre
 
 \# Staged changes in a certain file…
 
-```
+```bash
 $ git diff --staged index.html
 ```
 
 \# Staged changes in all local files…
 
-```
+```bash
 $ git diff --staged
 ```

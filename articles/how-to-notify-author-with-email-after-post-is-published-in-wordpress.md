@@ -28,26 +28,26 @@ The following code snippet will help you to send an email to the post author aft
 add_action( 'transition_post_status', 'post_published_notification' , 10, 3 );
 function post_published_notification($new_status, $old_status, $post ) {
     if ( 'publish' !== $new_status or 'publish' === $old_status)return;
-	   
-	   $author = $post->post_author;
-	   $name = get_the_author_meta( 'display_name', $author );
-	   $email = get_the_author_meta( 'user_email', $author );
-	   
-	   $post_title = $post->post_title;
-	   $permalink = get_post_permalink($post);
 
-	   $admin_email = get_option('admin_email');
-	   $subject = 'Congratulations! Your article has been published!';
-	   
-	   $headers = "MIME-Version: 1.0" . "\r\n";
-	   $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
-	   $headers .= 'From: Stacktips <'. $admin_email . ">\r\n" . 'Reply-To: Stacktips <' . $admin_email . ">\r\n";
-	   $message = <<<MESSAGE
+       $author = $post->post_author;
+       $name = get_the_author_meta( 'display_name', $author );
+       $email = get_the_author_meta( 'user_email', $author );
+
+       $post_title = $post->post_title;
+       $permalink = get_post_permalink($post);
+
+       $admin_email = get_option('admin_email');
+       $subject = 'Congratulations! Your article has been published!';
+
+       $headers = "MIME-Version: 1.0" . "\r\n";
+       $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
+       $headers .= 'From: Stacktips <'. $admin_email . ">\r\n" . 'Reply-To: Stacktips <' . $admin_email . ">\r\n";
+       $message = <<<MESSAGE
 <html><body>
 <p>Dear {$name}!</p>
 <p>Congratulations! Your article titled <strong>{$post_title}</strong> has been published on {$site_name}</p>
 </body></html>
 MESSAGE;
-	wp_mail($email, $subject, $message, $headers);
+    wp_mail($email, $subject, $message, $headers);
 }
 ```

@@ -28,30 +28,30 @@ This code snippet shows how to use JavaScript Regular Expressions to validate a 
 <html>
 <head>
     <title>Form Validation Demo</title>
-	<style>
-	.my-form {
-	    background: #efefef;
-	    padding: 20px;
-		width:400px;
-		margin: 0 auto;
-	}
-	
-	.error {
-	    background: #e05022;
-	    padding: 10px;
-	    color: #fff;
-		display:none;
-		border-radius: 2px;
-	}
-	</style>
-	
+    <style>
+    .my-form {
+        background: #efefef;
+        padding: 20px;
+        width:400px;
+        margin: 0 auto;
+    }
+
+    .error {
+        background: #e05022;
+        padding: 10px;
+        color: #fff;
+        display:none;
+        border-radius: 2px;
+    }
+    </style>
+
     <script type="text/javascript">
      // Script here..
     </script>
 </head>
 <body>
     <form method="get" action="./register.php" class="my-form"></
-	<p id="error" class="error"></p>
+    <p id="error" class="error"></p>
     <table style="width:400px;">
         <tr>
             <td style="width: 35%;">
@@ -104,14 +104,14 @@ function ValidateForm()
     var nameBox = document.getElementById ("name");
     if (nameBox.value.length == 0) {
         document.getElementById("error").innerHTML = "Error: Enter your full name.";
-		document.getElementById("error").style.display = 'block';
+        document.getElementById("error").style.display = 'block';
         return false;
     }
 
     var pwBox = document.getElementById ("password");
     if (pwBox.value.length < 6){
         document.getElementById("error").innerHTML = "Error: Password is too short.";
-		document.getElementById("error").style.display = 'block';
+        document.getElementById("error").style.display = 'block';
         return false;
     }
 
@@ -119,7 +119,7 @@ function ValidateForm()
     re = /^\S{6,16}$/;
     if (!pwBox.value.match (re)){
          document.getElementById("error").innerHTML = "Error: Invalid password.";
-		 document.getElementById("error").style.display = 'block';
+         document.getElementById("error").style.display = 'block';
         return false;
     }
 
@@ -129,7 +129,7 @@ function ValidateForm()
     if (telBox.value.length > 0){
         if (!telBox.value.match (re)){
             document.getElementById("error").innerHTML = "Error: Invalid telephone number.";
-			document.getElementById("error").style.display = 'block';
+            document.getElementById("error").style.display = 'block';
             return false;
         }
     }
@@ -140,11 +140,11 @@ function ValidateForm()
     if (!emailBox.value.match (re))
     {
         document.getElementById("error").innerHTML = "Error: Invalid email address: " + emailBox.value;
-		document.getElementById("error").style.display = 'block';
+        document.getElementById("error").style.display = 'block';
         return false;
     }
-	
-	document.getElementById("error").style.display = 'none';
+
+    document.getElementById("error").style.display = 'none';
     return true;
 }
 ```

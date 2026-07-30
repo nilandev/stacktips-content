@@ -44,7 +44,7 @@ A program that does not create any object instances or arrays does not create ga
 
 Sometimes, a Java program will create many objects which are used only once. For example, a program may create an object in the body of a loop that is used to hold temporary information that is only required for the particular iteration of the loop in which it is created. Consider the following:
 
-```
+```java
 for(int i=0; i    obj = new SomeClass(i);
     System.out.priintln(obj.value);
 }
@@ -52,7 +52,7 @@ for(int i=0; i    obj = new SomeClass(i);
 
 This creates a million instances of the SomeClass class and prints them out. If the SomeClass class has a property, say value, we can reuse and a single object instance like this:
 
-```
+```java
 obj = new SomeClass()
 for(int i=0; i    obj.value = i;
 System.out.priintln(obj.value);

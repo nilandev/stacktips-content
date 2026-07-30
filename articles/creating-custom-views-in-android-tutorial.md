@@ -76,17 +76,17 @@ import android.widget.LinearLayout;
 
 public class LovelyView extends LinearLayout {
 
-	public LovelyView(Context context) {
-		super(context);		
-	}
+    public LovelyView(Context context) {
+        super(context);
+    }
 
-	public LovelyView(Context context, AttributeSet attrs) {
-		super(context, attrs);		
-	}
+    public LovelyView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-	public LovelyView(Context context, AttributeSet attrs, int defStyle) {
-		this(context, attrs);		
-	}	
+    public LovelyView(Context context, AttributeSet attrs, int defStyle) {
+        this(context, attrs);
+    }
 }
 ```
 
@@ -154,16 +154,16 @@ In the above two steps, we have configured the View stylable attributes in the X
 
 ```java
 TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
-		R.styleable.LovelyView, 0, 0);
+        R.styleable.LovelyView, 0, 0);
 try {
-	// get the text and colors specified using the names in attrs.xml
-	leftLabel = a.getString(R.styleable.LovelyView_leftLabel);
-	rightLabel = a.getString(R.styleable.LovelyView_rightLabel);
-	leftStyle = a.getResourceId(R.styleable.LovelyView_leftLabelStyle, android.R.style.TextAppearance_DeviceDefault);
-	rightStyle = a.getResourceId(R.styleable.LovelyView_rightLabelStyle, android.R.style.TextAppearance_DeviceDefault);
+    // get the text and colors specified using the names in attrs.xml
+    leftLabel = a.getString(R.styleable.LovelyView_leftLabel);
+    rightLabel = a.getString(R.styleable.LovelyView_rightLabel);
+    leftStyle = a.getResourceId(R.styleable.LovelyView_leftLabelStyle, android.R.style.TextAppearance_DeviceDefault);
+    rightStyle = a.getResourceId(R.styleable.LovelyView_rightLabelStyle, android.R.style.TextAppearance_DeviceDefault);
 
 } finally {
-	a.recycle();
+    a.recycle();
 }
 
 LayoutInflater.from(context).inflate(R.layout.key_value_layout, this);
@@ -190,77 +190,77 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class LovelyView extends LinearLayout {
-	private String leftLabel = "";
-	private String rightLabel = "";
-	private TextView leftTextView;
-	private TextView rightTextView;
-	private int leftStyle ;
-	private int rightStyle;
+    private String leftLabel = "";
+    private String rightLabel = "";
+    private TextView leftTextView;
+    private TextView rightTextView;
+    private int leftStyle ;
+    private int rightStyle;
 
-	public LovelyView(Context context) {
-		super(context);
-		LayoutInflater.from(context).inflate(R.layout.key_value_layout, this);
-	}
+    public LovelyView(Context context) {
+        super(context);
+        LayoutInflater.from(context).inflate(R.layout.key_value_layout, this);
+    }
 
-	public LovelyView(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		initViews(context, attrs);
-	}
+    public LovelyView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initViews(context, attrs);
+    }
 
-	public LovelyView(Context context, AttributeSet attrs, int defStyle) {
-		this(context, attrs);
-		initViews(context, attrs);
-	}
+    public LovelyView(Context context, AttributeSet attrs, int defStyle) {
+        this(context, attrs);
+        initViews(context, attrs);
+    }
 
-	private void initViews(Context context, AttributeSet attrs) {
-		TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
-				R.styleable.LovelyView, 0, 0);
+    private void initViews(Context context, AttributeSet attrs) {
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs,
+                R.styleable.LovelyView, 0, 0);
 
-		try {
-			// get the text and colors specified using the names in attrs.xml
-			leftLabel = a.getString(R.styleable.LovelyView_leftLabel);
-			rightLabel = a.getString(R.styleable.LovelyView_rightLabel);
-			leftStyle = a.getResourceId(R.styleable.LovelyView_leftLabelStyle, android.R.style.TextAppearance_DeviceDefault);
-			rightStyle = a.getResourceId(R.styleable.LovelyView_rightLabelStyle, android.R.style.TextAppearance_DeviceDefault);
+        try {
+            // get the text and colors specified using the names in attrs.xml
+            leftLabel = a.getString(R.styleable.LovelyView_leftLabel);
+            rightLabel = a.getString(R.styleable.LovelyView_rightLabel);
+            leftStyle = a.getResourceId(R.styleable.LovelyView_leftLabelStyle, android.R.style.TextAppearance_DeviceDefault);
+            rightStyle = a.getResourceId(R.styleable.LovelyView_rightLabelStyle, android.R.style.TextAppearance_DeviceDefault);
 
-		} finally {
-			a.recycle();
-		}
+        } finally {
+            a.recycle();
+        }
 
-		LayoutInflater.from(context).inflate(R.layout.key_value_layout, this);
+        LayoutInflater.from(context).inflate(R.layout.key_value_layout, this);
 
-		//left text view
-		leftTextView = (TextView) this.findViewById(R.id.leftTextView);
-		leftTextView.setText(leftLabel);
-		leftTextView.setTextAppearance(context, leftStyle);
+        //left text view
+        leftTextView = (TextView) this.findViewById(R.id.leftTextView);
+        leftTextView.setText(leftLabel);
+        leftTextView.setTextAppearance(context, leftStyle);
 
-		//right text view
-		rightTextView = (TextView) this.findViewById(R.id.rightTextView);
-		rightTextView.setText(rightLabel);
-		rightTextView.setTextAppearance(context, rightStyle);
-	}
+        //right text view
+        rightTextView = (TextView) this.findViewById(R.id.rightTextView);
+        rightTextView.setText(rightLabel);
+        rightTextView.setTextAppearance(context, rightStyle);
+    }
 
-	public String getLeftLabel() {
-		return leftLabel;
-	}
+    public String getLeftLabel() {
+        return leftLabel;
+    }
 
-	public void setLeftLabel(String leftLabel) {
-		this.leftLabel = leftLabel;
-		if(leftTextView!=null){
-			leftTextView.setText(leftLabel);
-		}
-	}
+    public void setLeftLabel(String leftLabel) {
+        this.leftLabel = leftLabel;
+        if(leftTextView!=null){
+            leftTextView.setText(leftLabel);
+        }
+    }
 
-	public String getRightLabel() {
-		return rightLabel;
-	}
+    public String getRightLabel() {
+        return rightLabel;
+    }
 
-	public void setRightLabel(String rightLabel) {
-		this.rightLabel = rightLabel;
-		if(rightTextView!=null){
-			rightTextView.setText(rightLabel);
-		}
-	}
+    public void setRightLabel(String rightLabel) {
+        this.rightLabel = rightLabel;
+        if(rightTextView!=null){
+            rightTextView.setText(rightLabel);
+        }
+    }
 }
 ```
 

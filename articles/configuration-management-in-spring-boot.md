@@ -38,8 +38,8 @@ In the following example, we will create a weather service to load properties fr
 
 ```properties
 
-weather.api.key=default-api-key  
-weather.default.city=New York  
+weather.api.key=default-api-key
+weather.default.city=New York
 weather.units=imperial
 ```
 
@@ -48,21 +48,21 @@ weather.units=imperial
 ```java
 
 @Service
-public class WeatherService {  
+public class WeatherService {
 
-    @Value("${weather.api.key}")  
-    private String apiKey;  
+    @Value("${weather.api.key}")
+    private String apiKey;
 
-    @Value("${weather.default.city}")  
-    private String defaultCity;  
+    @Value("${weather.default.city}")
+    private String defaultCity;
 
-    @Value("${weather.units}")  
-    private String units;  
+    @Value("${weather.units}")
+    private String units;
 
-    public String getWeatherForecast() {  
-        return String.format("Weather forecast for %s: Sunny, 25°%s. API Key: %s",  
-                defaultCity, units.equals("metric") ? "C":"F", apiKey);  
-    }  
+    public String getWeatherForecast() {
+        return String.format("Weather forecast for %s: Sunny, 25°%s. API Key: %s",
+                defaultCity, units.equals("metric") ? "C":"F", apiKey);
+    }
 }
 ```
 
@@ -74,11 +74,10 @@ We can define a default value to the `@Value` annotation by adding a semicolon. 
 
 If there are no properties defined inside the `application.properties` file, it will though following exception.
 
-```
-
+```text
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weatherService': Injection of autowired dependencies failed
     at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515) ~[spring-beans-6.1.13.jar:6.1.13]
-    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.13.jar:6.1.13]    
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.13.jar:6.1.13]
     ... omitted
 Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'weather.api.key' in value "${weather.api.key}"
 ```
@@ -108,8 +107,7 @@ To load properties from an external file we need to run the application as a fat
 
 Running as a fat JAR.
 
-```
-
+```bash
 java -jar hello-spring-0.0.1-SNAPSHOT.jar
 ```
 
@@ -137,8 +135,7 @@ When profile-specific properties are defined, the resources are loaded in the fo
 
 To override configuration using the command-line arguments, you can simply add `--key=value` argument to your java -jar command.
 
-```shell
-
+```bash
 java -jar hello-spring-0.0.1-SNAPSHOT.jar --weather.api.key=my-key
 ```
 

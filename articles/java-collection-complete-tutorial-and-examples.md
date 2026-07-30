@@ -47,23 +47,23 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class SetExample {
-  public static void main(String args[]) { 
+  public static void main(String args[]) {
      int count[] = {34, 22,10,60,30,22};
      Set<Integer> set = new HashSet<Integer>();
      try{
         for(int i = 0; i<5; i++){
            set.add(count[i]);
         }
-        System.out.println("Initial Set=" + set);        
+        System.out.println("Initial Set=" + set);
 
-        set.remove(30);        
+        set.remove(30);
         System.out.println("Values after delete=" + set);
 
-        System.out.println("Retrieving Values");        
+        System.out.println("Retrieving Values");
         Iterator<Integer> iterator = set.iterator();
         while(iterator.hasNext()){
-        	System.out.println(iterator.next());
-        }     
+            System.out.println(iterator.next());
+        }
 
      }
      catch(Exception e){}
@@ -73,7 +73,7 @@ public class SetExample {
 
 #### Output
 
-```
+```text
 Initial Set=[34, 22, 10, 30, 60]
 Values after delete=[34, 22, 10, 60]
 Retrieving Values
@@ -103,34 +103,34 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 
 public class LinkedHashSetExample {
-	public static void main(String args[]) {
-		int count[] = { 34, 22, 10, 60, 30, 22, 25 };
-		LinkedHashSet<Integer> set = new LinkedHashSet<Integer>();
+    public static void main(String args[]) {
+        int count[] = { 34, 22, 10, 60, 30, 22, 25 };
+        LinkedHashSet<Integer> set = new LinkedHashSet<Integer>();
 
-		try {
-			for (int i = 0; i < 7; i++) {
-				set.add(count[i]);
-			}
-			System.out.println("Initial Set=" + set);
+        try {
+            for (int i = 0; i < 7; i++) {
+                set.add(count[i]);
+            }
+            System.out.println("Initial Set=" + set);
 
-			set.remove(30);
-			System.out.println("Values after delete=" + set);
+            set.remove(30);
+            System.out.println("Values after delete=" + set);
 
-			System.out.println("Retrieving Values");
-			Iterator<Integer> iterator = set.iterator();
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next());
-			}
+            System.out.println("Retrieving Values");
+            Iterator<Integer> iterator = set.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
 
-		} catch (Exception e) {
-		}
-	}
+        } catch (Exception e) {
+        }
+    }
 }
 ```
 
 #### Output
 
-```
+```text
 Initial Set=[34, 22, 10, 60, 30, 25]
 Values after delete=[34, 22, 10, 60, 25]
 Retrieving Values
@@ -156,33 +156,33 @@ import java.util.TreeSet;
 
 public class TreeSetExample {
 
-	public static void main(String args[]) {
-		int count[] = { 14, 43, 10, 55, 30, 22,40};
-		Set<Integer> set = new TreeSet<Integer>();
-		try {
-			for (int i = 0; i < 6; i++) {
-				set.add(count[i]);
-			}
-			System.out.println("Intial Set=" + set);
+    public static void main(String args[]) {
+        int count[] = { 14, 43, 10, 55, 30, 22,40};
+        Set<Integer> set = new TreeSet<Integer>();
+        try {
+            for (int i = 0; i < 6; i++) {
+                set.add(count[i]);
+            }
+            System.out.println("Intial Set=" + set);
 
-			set.remove(30);
-			System.out.println("Values after delete=" + set);
+            set.remove(30);
+            System.out.println("Values after delete=" + set);
 
-			System.out.println("Retrieving Values");
-			Iterator<Integer> iterator = set.iterator();
-			while (iterator.hasNext()) {
-				System.out.println(iterator.next());
-			}
+            System.out.println("Retrieving Values");
+            Iterator<Integer> iterator = set.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
 
-		} catch (Exception e) {
-		}
-	}
+        } catch (Exception e) {
+        }
+    }
 }
 ```
 
 #### Output
 
-```
+```text
 Intial Set=[10, 14, 22, 30, 43, 55]
 Values after delete=[10, 14, 22, 43, 55]
 Retrieving Values
@@ -217,35 +217,35 @@ The LinkedList class extends AbstractSequentialList and implements the List inte
 import java.util.LinkedList;
 
 public class LinkedListExample {
-	public static void main(String args[]) {
-		// create a linked list
-		LinkedList<String> list = new LinkedList<String>();
-		list.add("F");
-		list.add("E");
-		list.add("D");
-		list.add("E");
-		list.add("C");
-		list.addLast("G");
-		list.addFirst("B");
-		list.add(1, "E1");
-		System.out.println("Values of LinkedList=" + list);
+    public static void main(String args[]) {
+        // create a linked list
+        LinkedList<String> list = new LinkedList<String>();
+        list.add("F");
+        list.add("E");
+        list.add("D");
+        list.add("E");
+        list.add("C");
+        list.addLast("G");
+        list.addFirst("B");
+        list.add(1, "E1");
+        System.out.println("Values of LinkedList=" + list);
 
-		// remove first and last elements
-		list.removeFirst();
-		list.removeLast();
-		System.out.println("After deleting first and last= " + list);
+        // remove first and last elements
+        list.removeFirst();
+        list.removeLast();
+        System.out.println("After deleting first and last= " + list);
 
-		// remove elements from the linked list
-		list.remove("C");
-		list.remove(4);
-		System.out.println("After Delete" + list);
-	}
+        // remove elements from the linked list
+        list.remove("C");
+        list.remove(4);
+        System.out.println("After Delete" + list);
+    }
 }
 ```
 
 **Output**
 
-```
+```text
 Values of LinkedList=[B, E1, F, E, D, E, C, G]
 After deleting first and last= [E1, F, E, D, E, C]
 After Delete[E1, F, E, D]

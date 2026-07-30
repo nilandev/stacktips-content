@@ -57,7 +57,7 @@ Screenshot depicts project structure after adding google-services.json file
 
 7.  Now, add the required Firebase SDK dependencies to your project. Modify the project level build.gradle (<project>/build.gradle) file and add the google-services.
 
-```java
+```groovy
 buildscript {
   dependencies {
     // Add this line
@@ -68,7 +68,7 @@ buildscript {
 
 And, add the following to app module level `build.gradle` file.
 
-```java
+```groovy
 apply plugin: 'com.android.application'
 android {
    ....

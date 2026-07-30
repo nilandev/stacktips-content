@@ -31,24 +31,24 @@ import java.io.UnsupportedEncodingException;
 
 public class CreateTextFile {
 
-	public static void main(String[] args) {
-		PrintWriter writer = null;
-		try {
-			/* Create a new file with UTF-8 encoding */
-			writer = new PrintWriter("file1.txt", "UTF-8");
+    public static void main(String[] args) {
+        PrintWriter writer = null;
+        try {
+            /* Create a new file with UTF-8 encoding */
+            writer = new PrintWriter("file1.txt", "UTF-8");
 
-			/* Write content to file */
-			writer.println("Hello, this is a binary file.");
-			writer.println("Put your file contents here...");
+            /* Write content to file */
+            writer.println("Hello, this is a binary file.");
+            writer.println("Put your file contents here...");
 
-			writer.close();			
-			System.out.println("New File Created!");			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
+            writer.close();
+            System.out.println("New File Created!");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 }
 ```

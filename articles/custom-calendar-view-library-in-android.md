@@ -50,7 +50,7 @@ To use the **CustomCalendarView** in your application, you first need to add the
 
 Step-1 Add it in your build.gradle at the end of repositories:
 
-```java
+```groovy
 repositories {
     maven { url "https://jitpack.io" }
 }
@@ -58,7 +58,7 @@ repositories {
 
 Step-2 Add the dependency in the form
 
-```java
+```groovy
 dependencies {
     compile 'com.github.npanigrahy:Custom-Calendar-View:v1.1'
 }
@@ -87,13 +87,13 @@ Step 2. Add the dependency in the form
 
 Step-1 Add it in your build.sbt at the end of resolvers:
 
-```java
+```text
 resolvers += "jitpack" at "https://jitpack.io"
 ```
 
 Step-2 Add the dependency in the form
 
-```java
+```text
 libraryDependencies += "com.github.npanigrahy" % "Custom-Calendar-View" % "v1.1"
 ```
 
@@ -103,10 +103,10 @@ The GitHub project source includes a sample application, that is used for demons
 
 ```xml
 <com.stacktips.view.CustomCalendarView
-	android:id="@+id/calendar_view"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:background="@color/off_white">
+    android:id="@+id/calendar_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/off_white">
 </com.stacktips.view.CustomCalendarView>
 ```
 
@@ -114,20 +114,20 @@ The above code snippet will show the simple Calendar View with default design. N
 
 ```xml
 <com.stacktips.view.CustomCalendarView
-	android:id="@+id/calendar_view"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:background="@color/off_white"
-	app:calendarBackgroundColor="@color/off_white"
-	app:calendarTitleTextColor="@color/black"
-	app:currentDayOfMonthColor="@color/blue"
-	app:dayOfMonthTextColor="@color/black"
-	app:dayOfWeekTextColor="@color/black"
-	app:disabledDayBackgroundColor="@color/off_white"
-	app:disabledDayTextColor="@color/grey"
-	app:selectedDayBackgroundColor="@color/blue"
-	app:titleLayoutBackgroundColor="@color/white"
-	app:weekLayoutBackgroundColor="@color/white">
+    android:id="@+id/calendar_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/off_white"
+    app:calendarBackgroundColor="@color/off_white"
+    app:calendarTitleTextColor="@color/black"
+    app:currentDayOfMonthColor="@color/blue"
+    app:dayOfMonthTextColor="@color/black"
+    app:dayOfWeekTextColor="@color/black"
+    app:disabledDayBackgroundColor="@color/off_white"
+    app:disabledDayTextColor="@color/grey"
+    app:selectedDayBackgroundColor="@color/blue"
+    app:titleLayoutBackgroundColor="@color/white"
+    app:weekLayoutBackgroundColor="@color/white">
 </com.stacktips.view.CustomCalendarView>
 ```
 

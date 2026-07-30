@@ -112,7 +112,7 @@ If this method succeeds, the return value is an NSURL instance that identifies t
 
 If your application uses only one container identifier, or you want to use the main container identifier for the application, pass nil for the parameter. If your application accesses multiple containers, you must call this method for each container identifier to ensure you have access to each container. The following code snippet shows how to use this method for the main container identifier:
 
-```c
+```swift
 let folderURL = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil)
 if let unwrappedFolderURL = folderURL {
        //cloud access is available
@@ -128,7 +128,7 @@ Any file stored by your application on iCloud must be managed by a file presente
 
 The simplest way to incorporate file presenters and coordinators in your application is to have your data classes (also known as model classes) subclass `UIDocument`. The UIDocument class implements the methods of the `NSFilePresenter` protocol and handles all of the file-related management. At the most basic level, you will need to override two UIDocument methods:
 
-```c
+```swift
 public func loadFromContents(contents: AnyObject, ofType typeName: String?) throws
 
 public func contentsForType(typeName: String) throws -> AnyObject
@@ -144,37 +144,37 @@ The `contentsForType()` method is also overridden by your UIDocument subclass an
 
 The following code presents a simple UIDocument subclass called `SwiftiCloudTest`. The example assumes that the application where this class is used has a rather simple data model consist- ing of a single String instance.
 
-```c
+```swift
 import UIKit
-enum DocumentReadError: ErrorType { 
-	case InvalidInput 
-} 
-
-enum DocumentWriteError: ErrorType { 
-	case NoContentToSave 
+enum DocumentReadError: ErrorType {
+    case InvalidInput
 }
 
-class SwiftCloudTestDocument: UIDocument { 
-	var documentContents:String? 
-	override init(fileURL url: NSURL) {
-	 	super.init(fileURL: url) 
-	} 
-	
-	override func loadFromContents(contents: AnyObject, ofType typeName: String?) throws { 
-		if let castedContents = contents as? NSData { 
-			documentContents = NSString(data: castedContents, encoding: NSUTF8StringEncoding) as? String 
-		}else { 
-			documentContents = nil 
-			throw DocumentReadError.InvalidInput
-		} 
-	}
+enum DocumentWriteError: ErrorType {
+    case NoContentToSave
+}
 
-	override func contentsForType(typeName: String) throws -> AnyObject { 
-		if documentContents == nil {
-			throw DocumentWriteError.NoContentToSave 
-		} 
-		return 	documentContents!.dataUsingEncoding(NSUTF8StringEncoding)! 
-	} 
+class SwiftCloudTestDocument: UIDocument {
+    var documentContents:String?
+    override init(fileURL url: NSURL) {
+        super.init(fileURL: url)
+    }
+
+    override func loadFromContents(contents: AnyObject, ofType typeName: String?) throws {
+        if let castedContents = contents as? NSData {
+            documentContents = NSString(data: castedContents, encoding: NSUTF8StringEncoding) as? String
+        }else {
+            documentContents = nil
+            throw DocumentReadError.InvalidInput
+        }
+    }
+
+    override func contentsForType(typeName: String) throws -> AnyObject {
+        if documentContents == nil {
+            throw DocumentWriteError.NoContentToSave
+        }
+        return  documentContents!.dataUsingEncoding(NSUTF8StringEncoding)!
+    }
 }
 ```
 
@@ -184,15 +184,15 @@ To create a new document, initialize an instance of your UIDocument subclass by 
 
 The initializer requires a single `NSURL` parameter that identifies the location where document data is to be written. This URL is usually composed by appending a filename in the Documents subdirectory to the path to an iCloud container. For instance, to create a new document on iCloud called `phoneNumber.txt`, you could use the following snippet:
 
-```c
+```swift
 let containerURL = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil)
 let documentDirectoryURL = containerURL!.URLByAppendingPathComponent("Documents")
 let documentURL = documentDirectoryURL.URLByAppendingPathComponent("phoneNumber.txt")
 let cloudDocument:SwiftCloudTestDocument = SwiftCloudTestDocument(fileURL: documentURL)
 cloudDocument.saveToURL(cloudDocument.fileURL, forSaveOperation: UIDocumentSaveOperation.ForCreating) {
 (Bool success) -> Void in if (success) {
-	// document was created successfully. 
-	}
+    // document was created successfully.
+    }
 
 }
 ```
@@ -205,7 +205,7 @@ Once you have an instance of a `UIDocument` subclass, saving it to iCloud is sim
 
 If, however, you want to retrieve the URL corresponding to an existing UIDocument subclass, simply use the fileURL property of the subclass. Thus, if `cloudDocument` is an instance of a `UIDocument` subclass, you can retrieve the URL used when it was instantiated using the following code:
 
-```c
+```swift
 Let documentURL = cloudDocument.fileURL
 ```
 
@@ -218,7 +218,7 @@ The second parameter is a constant that is used to indicate whether the document
 
 To open an existing document, allocate and initialize an instance of your UIDocument subclass and call `openWithCompletionHandler()` on the instance. For example, you could open a le called `phoneNumbers.txt` from iCloud using the following snippet:
 
-```c
+```swift
 let containerURL = NSFileManager.defaultManager().URLForUbiquityContainerIdentifier(nil)
 let documentDirectoryURL = containerURL!.URLByAppendingPathComponent("Documents")
 let documentURL = documentDirectoryURL.URLByAppendingPathComponent("phoneNumber.txt")
@@ -237,62 +237,62 @@ Often, you will need to search iCloud container directories for documents. To do
 
 Queries have two phases: an initial search phase and a second live-update phase. During the live- update phase, updated results are typically available once every second. The following code snippet builds a search query:
 
-```c
+```swift
 let searchQuery:NSMetadataQuery = NSMetadataQuery() searchQuery.searchScopes = [NSMetadataQueryUbiquitousDocumentsScope];
 ```
 
 The searchScopes property allows you to specify an array of directory strings over which the search should execute. To specify the iCloud container folder as the search target, you provide an Array instance with a single object:
 
-```c
+```swift
 NSMetadataQueryUbiquitousDocumentsScope
 ```
 
 Before you can execute the query, you need to specify a search filter. Search filters are also known as predicates and are instances of the NSPredicate class. The following code snippet creates an NSPredicate instance that filters out a file with a specific name:
 
-```c
+```swift
 let documentFileName = "cloudDocument.txt"
 let predicate = NSPredicate(format: "%K == %@", argumentArray: [NSMetadataItemFSNameKey, documentFileName])
 ```
 
 To apply the predicate to the search query, use the predicate property on the NSMetadataQuery instance:
 
-```c
+```swift
 searchQuery.predicate = predicate
 ```
 
 Search queries execute asynchronously. When the query has finished gathering results, your application will receive the NSMetadataQueryDidFinishGatheringNotification notification message. Use the following code snippet to set up a method in your code called `queryDidFinish()` to be called when this notification is received:
 
-```c
+```swift
 NSNotificationCenter.defaultCenter().addObserver(self, selector: "queryDidFinish:",
 name: NSMetadataQueryDidFinishGatheringNotification , object: searchQuery)
 ```
 
 Finally, to start the query, call the startQuery method of the `NSMetadataQuery` instance:
 
-```c
+```swift
 searchQuery.startQuery()
 ```
 
 When you receive the notification message, you can find out the number of results returned by the search by querying the resultCount property of the `NSMetadataQuery` instance:
 
-```c
+```swift
 let numResults = searchQuery.resultCount
 ```
 
 To retrieve an NSURL instance for each result returned by the search query, you can use a simple for loop:
 
-```c
+```swift
 for (var resultIndex = 0; resultIndex < numResults; resultIndex++) {
-	let item:NSMetadataItem? = searchQuery.results[resultIndex] as? NSMetadataItem
-	if let unwrappedItem = item {
-		let url = unwrappedItem.valueForAttribute(NSMetadataItemURLKey)
-	}
+    let item:NSMetadataItem? = searchQuery.results[resultIndex] as? NSMetadataItem
+    if let unwrappedItem = item {
+        let url = unwrappedItem.valueForAttribute(NSMetadataItemURLKey)
+    }
 }
 ```
 
 If you do not want the search query to continue returning results, use the following code snippet to stop it:
 
-```c
+```swift
 searchQuery.disableUpdates()
 searchQuery.stopQuery()
 ```

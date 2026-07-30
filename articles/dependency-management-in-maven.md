@@ -42,7 +42,7 @@ Maven uses the `pom.xml` file to manage dependencies, and it provides several be
 
 To declare a dependency in Maven, you simply add a dependency tag to the pom.xml file, specifying the group ID, Artifact ID, and version of the library that you want to use. For example, the following code declares a dependency on the Apache Commons Lang and jUnit library.
 
-```XML
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -53,7 +53,7 @@ To declare a dependency in Maven, you simply add a dependency tag to the pom.xml
   <name>maven-hello-world</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -111,7 +111,7 @@ The Dependency scope controls when and where a dependency is included in your pr
 
 For specifying the scope in pom.xml file we can use the syntax as follows:
 
-```XML
+```xml
 <dependencies>
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
@@ -130,7 +130,7 @@ For specifying the scope in pom.xml file we can use the syntax as follows:
 
 System dependencies are specified with systemPath under system scope, and they are always available and are not looked up in the repository. Here is how you can use system scope.
 
-```XML
+```xml
 <dependencies>
   <dependency>
     <groupId>com.provider</groupId>
@@ -152,7 +152,7 @@ The properties in Maven are defined using the `<properties>` element and are ref
 
 Here's an example of how to define and use a property in a pom.xml file:
 
-```XML
+```xml
 <project>
   <groupId>com.stacktips</groupId>
   <artifactId>your-artifact-id</artifactId>
@@ -193,7 +193,7 @@ However, as the complexity increases you will be required to customize your buil
 
 Here's an example of a build element in a pom.xml file:
 
-```XML
+```xml
 <build>
   <sourceDirectory>src/main/java</sourceDirectory>
   <testSourceDirectory>src/test/java</testSourceDirectory>

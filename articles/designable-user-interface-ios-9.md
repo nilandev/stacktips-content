@@ -81,40 +81,40 @@ We’ll now add observers to each property so that it can take some action when 
 
 Let us declare an property and getter/setter methods to expose the layer’s borderWidth property. By marking this property with the `@IBInspectable` attribute, we’re exposing the view’s borderWidth property to Interface Builder.
 
-```c
+```swift
 @IBInspectable
 var borderWidth: CGFloat{
-	get{
-		return layer.borderWidth
-	}
-	set{
-		layer.borderWidth = newValue
-	}
+    get{
+        return layer.borderWidth
+    }
+    set{
+        layer.borderWidth = newValue
+    }
 }
 ```
 
 Similarly, let us create two inspectable property to expose the view layer’s border color and corner radius.
 
-```c
+```swift
 @IBInspectable
 var borderColor: UIColor? {
-	get{
-		return layer.borderColor != nil ? UIColor(CGColor: layer.borderColor!): nil
-	}
-	set{
-		layer.borderColor = newValue?.CGColor
-	}
+    get{
+        return layer.borderColor != nil ? UIColor(CGColor: layer.borderColor!): nil
+    }
+    set{
+        layer.borderColor = newValue?.CGColor
+    }
 }
 
 @IBInspectable
 var cornerRadius: CGFloat{
-	get{
-		return layer.cornerRadius
-	}
-	set{
-		layer.cornerRadius = newValue
-		layer.masksToBounds = newValue != 0
-	}
+    get{
+        return layer.cornerRadius
+    }
+    set{
+        layer.cornerRadius = newValue
+        layer.masksToBounds = newValue != 0
+    }
 }
 ```
 
@@ -124,17 +124,17 @@ Let’s do one more. How about a way to mask any view as a circle? Because exten
 
 In its setter, I’ll use optional binding with a where constraint to conditionally set the cornerRadius if makeCircular is not nil and is true.
 
-```c
+```swift
 @IBInspectable
 var makeCircle: Bool? {
-	get{
-		return nil
-	}
-	set{
-		if let makeCircle = newValue where makeCircle {
-			cornerRadius = min(bounds.width, bounds.height) / 2.0
-		}
-	}
+    get{
+        return nil
+    }
+    set{
+        if let makeCircle = newValue where makeCircle {
+            cornerRadius = min(bounds.width, bounds.height) / 2.0
+        }
+    }
 }
 ```
 
@@ -142,7 +142,7 @@ We get the minimum of the width and height of the view’s Bounds property becau
 
 For all this effort, I would not see any changes to these properties in Interface Builder yet. Why? Because UIView itself is not marked with the @IBDesignagble attribute, and you cannot add that attribute in an extension. So I’ll just create a few designable subclasses of UIView to use it. At the top of the file below _import UIKit_ and above _extension_, I’ll add a designable image view, UIImageView subclass, and make it designable. same for `UIButton` and UITextField as show below
 
-```c
+```swift
 @IBDesignable class DesignableImageView: UIImageView {}
 @IBDesignable class DesigbanbleButton: UIButton {}
 @IBDesignable class DesignableTextField: UITextField {}
@@ -150,7 +150,7 @@ For all this effort, I would not see any changes to these properties in Interfac
 
 overall `UIView+Designable.swift` file looks like this
 
-```c
+```swift
 import UIKit
 @IBDesignable class DesignableImageView: UIImageView {}
 @IBDesignable class DesigbanbleButton: UIButton {}
@@ -158,48 +158,48 @@ import UIKit
 
 extension UIView {
 
-	@IBInspectable
-	var borderWidth: CGFloat{
-		get{
-			return layer.borderWidth
-		}
-		set{
-			layer.borderWidth = newValue
-		}
-	}
-	
-	@IBInspectable
-	var borderColor: UIColor? {
-		get{
-			return layer.borderColor != nil ? UIColor(CGColor: layer.borderColor!): nil
-		}
-		set{
-			layer.borderColor = newValue?.CGColor
-		}
-	}
-	
-	@IBInspectable
-	var cornerRadius: CGFloat{
-		get{
-			return layer.cornerRadius
-		}
-		set{
-			layer.cornerRadius = newValue
-			layer.masksToBounds = newValue != 0
-		}
-	}
-	
-	@IBInspectable
-	var makeCircle: Bool? {
-		get{
-			return nil
-		}
-		set{
-			if let makeCircle = newValue where makeCircle{
-			cornerRadius = min(bounds.width, bounds.height) / 2.0
-		}
-	}
-	
+    @IBInspectable
+    var borderWidth: CGFloat{
+        get{
+            return layer.borderWidth
+        }
+        set{
+            layer.borderWidth = newValue
+        }
+    }
+
+    @IBInspectable
+    var borderColor: UIColor? {
+        get{
+            return layer.borderColor != nil ? UIColor(CGColor: layer.borderColor!): nil
+        }
+        set{
+            layer.borderColor = newValue?.CGColor
+        }
+    }
+
+    @IBInspectable
+    var cornerRadius: CGFloat{
+        get{
+            return layer.cornerRadius
+        }
+        set{
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue != 0
+        }
+    }
+
+    @IBInspectable
+    var makeCircle: Bool? {
+        get{
+            return nil
+        }
+        set{
+            if let makeCircle = newValue where makeCircle{
+            cornerRadius = min(bounds.width, bounds.height) / 2.0
+        }
+    }
+
 }
 ```
 

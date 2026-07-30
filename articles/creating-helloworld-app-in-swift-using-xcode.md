@@ -24,7 +24,7 @@ While learning a new technology or framework, it is a traditional practice for a
 
 In Swift we can print “Hello, World” by simply writing the following snippet:
 
-```c
+```swift
 Print("Hello, World")
 ```
 
@@ -114,7 +114,7 @@ Button Action-Target
 
 Later open `ViewController.swift` form Project Navigator of the XCode, and place the following code inside the Action-Target method created:
 
-```c
+```swift
 let alert = UIAlertController(title: "StackTips Alert", message: "Hello, World",   preferredStyle: UIAlertControllerStyle.Alert)
 alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
 self.presentViewController(alert, animated: true, completion: nil)

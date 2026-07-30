@@ -41,7 +41,7 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 ### Java implementation
 
-```
+```java
 class TreeNode {
     int val;
     TreeNode left;

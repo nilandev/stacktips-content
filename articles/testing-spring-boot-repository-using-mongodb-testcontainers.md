@@ -33,34 +33,34 @@ Let us see the following Repository,
 We have defined a `searchMovies()` method that uses `MongoTemplate` to perform search by different search criteria's.
 
 ```java
-@Repository  
-public class MovieRepository {  
+@Repository
+public class MovieRepository {
 
-    private final MongoTemplate mongoTemplate;  
+    private final MongoTemplate mongoTemplate;
 
-    public MovieRepository(MongoTemplate mongoTemplate) {  
-        this.mongoTemplate = mongoTemplate;  
-    }  
+    public MovieRepository(MongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
+    }
 
-    public List<Movie> searchMovies(SearchRequest searchRequest) {  
-        Query query = new Query();  
-        if (null != searchRequest.rating()) {  
+    public List<Movie> searchMovies(SearchRequest searchRequest) {
+        Query query = new Query();
+        if (null != searchRequest.rating()) {
             query.addCriteria(Criteria.where("rating")
-                .is(searchRequest.rating()));  
-        }  
+                .is(searchRequest.rating()));
+        }
 
-        if (null != searchRequest.language()) {  
+        if (null != searchRequest.language()) {
             query.addCriteria(Criteria.where("language")
-                .is(searchRequest.language()));  
-        }  
+                .is(searchRequest.language()));
+        }
 
-        if (null != searchRequest.genre()) {  
+        if (null != searchRequest.genre()) {
             query.addCriteria(Criteria.where("genres")
-                .is(searchRequest.genre()));  
-        }  
+                .is(searchRequest.genre()));
+        }
 
-        return mongoTemplate.find(query, Movie.class);  
-    }  
+        return mongoTemplate.find(query, Movie.class);
+    }
 }
 ```
 
@@ -69,8 +69,8 @@ public class MovieRepository {
 Before we begin, we need to ensure we have the necessary test container dependency added to your `pom.xml` or `build.gradle` file.
 
 ```groovy
-testImplementation 'org.springframework.boot:spring-boot-testcontainers'  
-testImplementation "org.testcontainers:junit-jupiter:1.19.6"  
+testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+testImplementation "org.testcontainers:junit-jupiter:1.19.6"
 testImplementation "org.testcontainers:mongodb:1.19.6"
 ```
 
@@ -83,12 +83,12 @@ Create a test configuration class that starts a MongoDB container. This will be 
 @DataMongoTest(includeFilters = @ComponentScan.Filter(Repository.class))
 class MovieRepositoryTest {
 
-    @Autowired  
+    @Autowired
     MovieRepository repository;
-    @Autowired  
+    @Autowired
     MongoTemplate mongoTemplate;
 
-    @Container  
+    @Container
     static final MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:latest")
             .withExposedPorts(27017);
 
@@ -104,7 +104,7 @@ class MovieRepositoryTest {
 
     static {
         mongoDbContainer.start();
-    } 
+    }
 }
 ```
 
@@ -115,27 +115,27 @@ We can preload the MongoDB Testcontainer with test data. To do that we need to c
 **init-schema.js**
 
 ```javascript
-db = db.getSiblingDB('movies_db');  
+db = db.getSiblingDB('movies_db');
 
-db.movies.insertMany([  
-    {  
-        "title": "Iron Man & Captain America: Heroes United",  
-        "headline": "Iron Man (Adrian Pasdar) and Captain America ...",  
-        "thumbnail": "https://flxt.tmsimg.com/assets/p10906420_v_h9_aa.jpg",  
-        "language": "EN",  
-        "region": "USA",  
-        "actors": [  
-            "David Kaye",  
-            "Ian McKellen",  
-            "Adrian Pasdar"  
-        ],  
-        "genre": "Adventure",  
-        "rating": "G",  
-    },  
-    {  
-        "title": "Transformers: Rise of the Beasts",  
-        "headline": "Transformers: Rise of the Beasts will take audiences on a",  
-        "thumbnail": "https://flxt.tmsimg.com/assets/p20201199_v_h9_am.jpg",  
+db.movies.insertMany([
+    {
+        "title": "Iron Man & Captain America: Heroes United",
+        "headline": "Iron Man (Adrian Pasdar) and Captain America ...",
+        "thumbnail": "https://flxt.tmsimg.com/assets/p10906420_v_h9_aa.jpg",
+        "language": "EN",
+        "region": "USA",
+        "actors": [
+            "David Kaye",
+            "Ian McKellen",
+            "Adrian Pasdar"
+        ],
+        "genre": "Adventure",
+        "rating": "G",
+    },
+    {
+        "title": "Transformers: Rise of the Beasts",
+        "headline": "Transformers: Rise of the Beasts will take audiences on a",
+        "thumbnail": "https://flxt.tmsimg.com/assets/p20201199_v_h9_am.jpg",
         "language": "EN",
         "region": "USA",
         "actors": [
@@ -145,17 +145,17 @@ db.movies.insertMany([
         ],
         "genres": "Action",
         "rating": "G"
-    },    
+    },
 ]);
 ```
 
 For `init-schema.js` to work, we need to use `withCopyFileToContainer()` method. The `withCopyFileToContainer()` method allows moving the initialization script to a location inside the container.
 
 ```java
-@Container  
-static final MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:latest")  
-        .withExposedPorts(27017)  
-        .withCopyFileToContainer(MountableFile.forClasspathResource("./init-schema.js"),  
+@Container
+static final MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:latest")
+        .withExposedPorts(27017)
+        .withCopyFileToContainer(MountableFile.forClasspathResource("./init-schema.js"),
                 "/docker-entrypoint-initdb.d/init-script.js");
 ```
 
@@ -173,7 +173,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.mongodb.core.MongoTemplate; 
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -190,12 +190,12 @@ import static org.hamcrest.core.Is.is;
 @DataMongoTest(includeFilters = @ComponentScan.Filter(Repository.class))
 class MovieRepositoryTest {
 
-    @Autowired  
+    @Autowired
     MovieRepository repository;
-    @Autowired  
+    @Autowired
     MongoTemplate mongoTemplate;
 
-    @Container  
+    @Container
     static final MongoDBContainer mongoDbContainer = new MongoDBContainer("mongo:latest")
             .withExposedPorts(27017)
             .withCopyFileToContainer(MountableFile.forClasspathResource("./init-schema.js"),
@@ -215,20 +215,20 @@ class MovieRepositoryTest {
         mongoDbContainer.start();
     }
 
-    @Test  
+    @Test
     void testMoviesCount() {
         List<Movie> movies = mongoTemplate.findAll(Movie.class);
         assertThat(4, is(movies.size()));
     }
 
-    @Test  
-    void testSearchMovies() {  
+    @Test
+    void testSearchMovies() {
         SearchRequest searchRequest = new SearchRequest(ContentRating.G, "EN", "Action");
         List<Movie> movies = repository.searchMovies(searchRequest);
         assertThat(2, is(movies.size()));
         assertThat(movies.get(0).title(), is("Transformers: Rise of the Beasts"));
         assertThat(movies.get(0).language(), is("EN"));
-        assertThat(movies.get(0).region(), is("USA")); 
+        assertThat(movies.get(0).region(), is("USA"));
         assertThat(movies.get(0).rating(), is(ContentRating.valueOf("G")));
     }
 }

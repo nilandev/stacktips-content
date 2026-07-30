@@ -30,19 +30,19 @@ Maven has several archetypes predefined, you can use any of those archetypes and
 
 Before you create a Java project using the maven command line, first create a new directory for your project. For example, create a directory called **"maven-hello-world”**
 
-```Shell
+```bash
 mkdir maven-hello-world
 ```
 
 Navigate to the newly created directory in your terminal:
 
-```Shell
+```bash
 cd maven-hello-world
 ```
 
 We can generate a maven project from the terminal using the `mvn archetype:generate` command. This command generates a new Maven project based on the template or archetype selected. For example, in this case we will use the `maven-archetype-quickstart` archetype to generate a simple Java project.
 
-```Shell
+```bash
 mvn archetype:generate
      -DgroupId=com.stacktips
      -DartifactId=maven-hello-world
@@ -78,13 +78,13 @@ The dependencies and maven configuration are defined inside the maven configurat
 
 Navigate to the project directory and build the project using the `mvn package` command.
 
-```Shell
+```bash
 mvn package
 ```
 
 This will compile the project, run the tests, package will generate JAR/WAR as per the build configuration defined in the POM file. You can see a console output as follows:
 
-```Shell
+```text
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ------------------< com.stacktips:maven-hello-world >-------------------
@@ -132,7 +132,7 @@ This will compile the project, run the tests, package will generate JAR/WAR as p
 
 Run the project: You can run the project using the java -cp target/my-app-1.0-SNAPSHOT.jar com.example.app.App command. This will execute the main method in the App class.
 
-```Shell
+```bash
 java -cp target/maven-hello-world-1.0-SNAPSHOT.jar com.stacktips.App
 ```
 

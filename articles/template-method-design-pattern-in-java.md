@@ -52,29 +52,29 @@ That’s all! We are ready with the Template Method design. Lets us have a glanc
 
 ```java
 public abstract class Pizza {
-	public abstract void chooseBread();
-	public abstract void addIngredients();
+    public abstract void chooseBread();
+    public abstract void addIngredients();
 
-	public void heating() {
-		System.out.println("Heating for 10 minutes!");
-	}
+    public void heating() {
+        System.out.println("Heating for 10 minutes!");
+    }
 
-	public void addTopinngs() {
-		System.out.println("Adding Topinngs!");
-	}
+    public void addTopinngs() {
+        System.out.println("Adding Topinngs!");
+    }
 
-	public void addCheese() {
-		System.out.println("Adding Cheese!");
-	}
+    public void addCheese() {
+        System.out.println("Adding Cheese!");
+    }
 
-	// Template method
-	public final void preparePizza() {
-		chooseBread();
-		addIngredients();
-		heating();
-		addCheese();
-		addTopinngs();
-	}
+    // Template method
+    public final void preparePizza() {
+        chooseBread();
+        addIngredients();
+        heating();
+        addCheese();
+        addTopinngs();
+    }
 }
 ```
 
@@ -82,15 +82,15 @@ public abstract class Pizza {
 
 ```java
 public class SweetCornPizza extends Pizza {
-	@Override
-	public void chooseBread() {
-		System.out.println("Choosing SweetCorn Pizza Bread!");
-	}
+    @Override
+    public void chooseBread() {
+        System.out.println("Choosing SweetCorn Pizza Bread!");
+    }
 
-	@Override
-	public void addIngredients() {
-		System.out.println("Adding SweetCorn Pizza Ingredients!");
-	}
+    @Override
+    public void addIngredients() {
+        System.out.println("Adding SweetCorn Pizza Ingredients!");
+    }
 }
 ```
 
@@ -98,15 +98,15 @@ public class SweetCornPizza extends Pizza {
 
 ```java
 public class MexicanPizza extends Pizza {
-	@Override
-	public void chooseBread() {
-		System.out.println("Choosing Mexican Pizza Bread!");
-	}
+    @Override
+    public void chooseBread() {
+        System.out.println("Choosing Mexican Pizza Bread!");
+    }
 
-	@Override
-	public void addIngredients() {
-		System.out.println("Adding Mexican Pizza Ingredients!");
-	}
+    @Override
+    public void addIngredients() {
+        System.out.println("Adding Mexican Pizza Ingredients!");
+    }
 }
 ```
 
@@ -114,21 +114,21 @@ public class MexicanPizza extends Pizza {
 
 ```java
 public class TestMain {
-	public static void main(String[] args) {		
-		SweetCornPizza pizza1 = new SweetCornPizza();
-		pizza1.preparePizza();
-		
-		System.out.println("**********");
-		
-		MexicanPizza pizza2 = new MexicanPizza();
-		pizza2.preparePizza();
-	}
+    public static void main(String[] args) {
+        SweetCornPizza pizza1 = new SweetCornPizza();
+        pizza1.preparePizza();
+
+        System.out.println("**********");
+
+        MexicanPizza pizza2 = new MexicanPizza();
+        pizza2.preparePizza();
+    }
 }
 ```
 
 #### Output
 
-```
+```text
 Adding SweetCorn Pizza Ingredients!
 Heating for 10 minutes!
 Adding Cheese!
@@ -156,20 +156,20 @@ In Order to support Double Cheese Pizza, we can override the addCheese() method 
 
 ```java
 public class DoubleCheesePizza extends Pizza {
-	@Override
-	public void chooseBread() {
-		System.out.println("Choosing DoubleCheese Pizza Bread!");
-	}
+    @Override
+    public void chooseBread() {
+        System.out.println("Choosing DoubleCheese Pizza Bread!");
+    }
 
-	@Override
-	public void addIngredients() {
-		System.out.println("Adding DoubleCheese Pizza Ingredients!");
-	}
-	
-	@Override
-	public void addCheese() {
-		System.out.println("Adding Double Cheese!");
-	}
+    @Override
+    public void addIngredients() {
+        System.out.println("Adding DoubleCheese Pizza Ingredients!");
+    }
+
+    @Override
+    public void addCheese() {
+        System.out.println("Adding Double Cheese!");
+    }
 }
 ```
 
@@ -180,19 +180,19 @@ However, for No cheese pizza the current design will fail to support. We have to
 
 ```java
 public boolean isCheese(){
-	return true;
+    return true;
 }
 
 // Template method
 public final void preparePizza() {
-	chooseBread();
-	addIngredients();
-	heating();
-		
-	if(isCheese()){
-	    addCheese();	
-	}
-	addTopinngs();
+    chooseBread();
+    addIngredients();
+    heating();
+
+    if(isCheese()){
+        addCheese();
+    }
+    addTopinngs();
 }
 ```
 
@@ -200,19 +200,19 @@ public final void preparePizza() {
 
 ```java
 public class NoCheesePizza extends Pizza {
-	@Override
-	public void chooseBread() {
-		System.out.println("Choosing SweetCorn Pizza Bread!");
-	}
+    @Override
+    public void chooseBread() {
+        System.out.println("Choosing SweetCorn Pizza Bread!");
+    }
 
-	@Override
-	public void addIngredients() {
-		System.out.println("Adding SweetCorn Pizza Ingredients!");
-	}
-	
-	@Override
-	public boolean isCheese() {
-		return false;
-	}
+    @Override
+    public void addIngredients() {
+        System.out.println("Adding SweetCorn Pizza Ingredients!");
+    }
+
+    @Override
+    public boolean isCheese() {
+        return false;
+    }
 }
 ```

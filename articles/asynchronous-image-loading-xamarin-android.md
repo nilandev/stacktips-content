@@ -45,7 +45,7 @@ Let us create a layout as shown in the image above
         android:id="@+id/downloadButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-    
+
     <LinearLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -93,41 +93,41 @@ using System.Net;
 
 namespace ImageViewExample
 {
-	[Activity (Label = "ImageViewExample", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
-	{
+    [Activity (Label = "ImageViewExample", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
 
-		Button downloadButton;
-		ImageView imageView;
-		LinearLayout progressLayout;
+        Button downloadButton;
+        ImageView imageView;
+        LinearLayout progressLayout;
 
-		//Instance of webclient for async processing
-		WebClient webClient;
+        //Instance of webclient for async processing
+        WebClient webClient;
 
-		protected override void OnCreate (Bundle bundle){
-			base.OnCreate (bundle);
+        protected override void OnCreate (Bundle bundle){
+            base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+            // Set our view from the "main" layout resource
+            SetContentView (Resource.Layout.Main);
 
-			this.imageView = FindViewById<ImageView> (Resource.Id.imageView1);
-			//Hide progressbar initially
-			this.progressLayout = FindViewById<LinearLayout> (Resource.Id.progressLayout);
-			this.progressLayout.Visibility = ViewStates.Gone;
+            this.imageView = FindViewById<ImageView> (Resource.Id.imageView1);
+            //Hide progressbar initially
+            this.progressLayout = FindViewById<LinearLayout> (Resource.Id.progressLayout);
+            this.progressLayout.Visibility = ViewStates.Gone;
 
-			// Get views from the layout resource axml file
-			this.downloadButton = FindViewById<Button> (Resource.Id.downloadButton);
-			downloadButton.Click += downloadAsync;
-		}
+            // Get views from the layout resource axml file
+            this.downloadButton = FindViewById<Button> (Resource.Id.downloadButton);
+            downloadButton.Click += downloadAsync;
+        }
 
-		async void downloadAsync(object sender, System.EventArgs ea){
+        async void downloadAsync(object sender, System.EventArgs ea){
                   //Logic to download image and display on ImageView
-		}
+        }
 
-		void cancelDownload(object sender, System.EventArgs ea){
+        void cancelDownload(object sender, System.EventArgs ea){
                  // Logic to cancel downlaod
-		}
-	}
+        }
+    }
 }
 ```
 
@@ -137,63 +137,63 @@ In our activity, we have a button labelled “Download Image” is added with `d
 
 ```cs
 async void downloadAsync(object sender, System.EventArgs ea){
-	webClient = new WebClient ();
-	var url = new Uri ("http://doubletreebyhiltonsanjose.com/wp-content/uploads/2014/08/Dog-Pictures-1024x698.jpg");
-	byte[] imageBytes = null;
+    webClient = new WebClient ();
+    var url = new Uri ("http://doubletreebyhiltonsanjose.com/wp-content/uploads/2014/08/Dog-Pictures-1024x698.jpg");
+    byte[] imageBytes = null;
 
-	//Show loading progress
-	this.progressLayout.Visibility = ViewStates.Visible;
+    //Show loading progress
+    this.progressLayout.Visibility = ViewStates.Visible;
 
-	//Toggle button click listener to cancel the task
-	this.downloadButton.Text = "Cancel Download";
-	this.downloadButton.Click -= downloadAsync;
-	this.downloadButton.Click += cancelDownload;
+    //Toggle button click listener to cancel the task
+    this.downloadButton.Text = "Cancel Download";
+    this.downloadButton.Click -= downloadAsync;
+    this.downloadButton.Click += cancelDownload;
 
-	try{
-		imageBytes = await webClient.DownloadDataTaskAsync(url);
-	} catch(TaskCanceledException){
-		this.progressLayout.Visibility = ViewStates.Gone;
-		return;
-	} catch(Exception e){
-		this.progressLayout.Visibility = ViewStates.Gone;
+    try{
+        imageBytes = await webClient.DownloadDataTaskAsync(url);
+    } catch(TaskCanceledException){
+        this.progressLayout.Visibility = ViewStates.Gone;
+        return;
+    } catch(Exception e){
+        this.progressLayout.Visibility = ViewStates.Gone;
 
-		this.downloadButton.Click -= cancelDownload;
-		this.downloadButton.Click += downloadAsync;
-		this.downloadButton.Text = "Download Image";
-		return;
-	}
+        this.downloadButton.Click -= cancelDownload;
+        this.downloadButton.Click += downloadAsync;
+        this.downloadButton.Text = "Download Image";
+        return;
+    }
 
-	//Saving bitmap locally
-	string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);	
-	string localFilename = "image.png";
-	string localPath = System.IO.Path.Combine (documentsPath, localFilename);
+    //Saving bitmap locally
+    string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+    string localFilename = "image.png";
+    string localPath = System.IO.Path.Combine (documentsPath, localFilename);
 
-	//Save the Image using writeAsync
-	FileStream fs = new FileStream (localPath, FileMode.OpenOrCreate);
-	await fs.WriteAsync (imageBytes, 0, imageBytes.Length);
-	Console.WriteLine("Saving image in local path: "+localPath);
+    //Save the Image using writeAsync
+    FileStream fs = new FileStream (localPath, FileMode.OpenOrCreate);
+    await fs.WriteAsync (imageBytes, 0, imageBytes.Length);
+    Console.WriteLine("Saving image in local path: "+localPath);
 
-	//Close file connection
-	fs.Close ();
+    //Close file connection
+    fs.Close ();
 
-	BitmapFactory.Options options = new BitmapFactory.Options ();
-	options.InJustDecodeBounds = true;
-	await BitmapFactory.DecodeFileAsync (localPath, options);
+    BitmapFactory.Options options = new BitmapFactory.Options ();
+    options.InJustDecodeBounds = true;
+    await BitmapFactory.DecodeFileAsync (localPath, options);
 
-	//Resizing bitmap image
-	options.InSampleSize = options.OutWidth > options.OutHeight ? options.OutHeight / imageView.Height : options.OutWidth / imageView.Width;
-	options.InJustDecodeBounds = false;
+    //Resizing bitmap image
+    options.InSampleSize = options.OutWidth > options.OutHeight ? options.OutHeight / imageView.Height : options.OutWidth / imageView.Width;
+    options.InJustDecodeBounds = false;
 
-	Bitmap bitmap = await BitmapFactory.DecodeFileAsync (localPath, options);
-	imageView.SetImageBitmap (bitmap);
+    Bitmap bitmap = await BitmapFactory.DecodeFileAsync (localPath, options);
+    imageView.SetImageBitmap (bitmap);
 
-	//Hide progress bar layout
-	this.progressLayout.Visibility = ViewStates.Gone;
+    //Hide progress bar layout
+    this.progressLayout.Visibility = ViewStates.Gone;
 
-	//Toggle button click listener
-	this.downloadButton.Click -= cancelDownload;
-	this.downloadButton.Click += downloadAsync;
-	this.downloadButton.Text = "Download Image";
+    //Toggle button click listener
+    this.downloadButton.Click -= cancelDownload;
+    this.downloadButton.Click += downloadAsync;
+    this.downloadButton.Text = "Download Image";
 }
 ```
 
@@ -203,15 +203,15 @@ The `cancelDownload` delegate is added to button, when the user clicks on downlo
 
 ```cs
 void cancelDownload(object sender, System.EventArgs ea){
-	if(webClient!=null)
-		webClient.CancelAsync ();
+    if(webClient!=null)
+        webClient.CancelAsync ();
 
-	//Hide progressbar layout
-	this.progressLayout.Visibility = ViewStates.Gone;
+    //Hide progressbar layout
+    this.progressLayout.Visibility = ViewStates.Gone;
 
-	//Toggle button click listener
-	this.downloadButton.Click -= cancelDownload;
-	this.downloadButton.Click += downloadAsync;
-	this.downloadButton.Text = "Download Image";
+    //Toggle button click listener
+    this.downloadButton.Click -= cancelDownload;
+    this.downloadButton.Click += downloadAsync;
+    this.downloadButton.Text = "Download Image";
 }
 ```

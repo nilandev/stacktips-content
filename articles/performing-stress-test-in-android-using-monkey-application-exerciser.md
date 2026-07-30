@@ -26,7 +26,7 @@ Note that this tool is not used for automation testing. This only helps to find 
 
 This tool uses an Android Device Bridge ADB toolkit. To run this command you need to provide the application package name and a total number of random events that you want to generate. The following command shows how to start monkey tool.
 
-```
+```bash
 $ adb shell monkey -p com.javatechig.myapp 5000
 ```
 
@@ -37,7 +37,7 @@ There are a variety of ways to control the behavior of Monkey tool by passing di
 
 You can see a complete list of all options by typing:
 
-```
+```bash
 $ adb shell monkey --help
 ```
 
@@ -45,12 +45,12 @@ You must have noticed in the previous command, when the Monkey starts, it always
 
 This behavior can be controlled by providing an additional package -p argument to the Monkey command.
 
-```
+```bash
 $ adb shell monkey -p com.javatechig.myapp -p com.google.map 5000
 ```
 
 Now let us run the Monkey tool more intelligently by controlling the type of events that are triggered. For example, if you want to ensure that 30 percent of the events are touch events, you need to specify the –pct-touch argument as follows.
 
-```
+```bash
 $ adb shell monkey --pct-touch 30 -p com.javatechig.myapp 5000
 ```

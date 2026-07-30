@@ -99,7 +99,7 @@ management.endpoints.web.exposure.exclude=scheduledtasks
 management.endpoints.web.exposure.include=info, health
 
 #Exposes all actuator endpoints
-management.endpoints.web.exposure.include=* 
+management.endpoints.web.exposure.include=*
 ```
 
 ### Endpoint Caching
@@ -123,7 +123,7 @@ The following example demonstrates, creating a custom actuator endpoint `/foo-ba
 
 ```java
 
-@Component  
+@Component
 @Endpoint(id = "foo-bar")
 public class FeaturesEndpoint {
 
@@ -149,11 +149,11 @@ We can pass the input parameter through the custom actuator endpoints as well us
 
 ```java
 
-@Component  
+@Component
 @Endpoint(id = "foo-bar")
 public class FeaturesEndpoint {
 
-    @ReadOperation  
+    @ReadOperation
     public Map<String, String> readOperation() {
         return Map.of("foo", "bar");
     }
@@ -167,7 +167,7 @@ public class FeaturesEndpoint {
 
 Now, we can test the endpoint as follows;
 
-```shell
+```bash
 
 curl --location 'http://localhost:8080/actuator/foo-bar' \
 --header 'Content-Type: application/json' \
@@ -183,15 +183,15 @@ In conjunction with `@ReadOperation`, `@WriteOperation` we can also use `@Delete
 
 ```java
 
-@DeleteOperation  
-public Map<String, Boolean> deleteOperation() {  
-    return Map.of("success", true);  
+@DeleteOperation
+public Map<String, Boolean> deleteOperation() {
+    return Map.of("success", true);
 }
 ```
 
 Example:
 
-```shell
+```bash
 
 curl --location --request DELETE 'http://localhost:8080/actuator/foo-bar'
 ```

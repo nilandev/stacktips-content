@@ -68,15 +68,13 @@ The Spring Boot CLI (Command Line Interface) offers an alternative method for bo
 
 Before we begin using the Spring Boot CLI, we must ensure that it is installed. To verify the installation of the Spring Boot CLI, simply enter the following command:
 
-```jsx
-
+```bash
 spring --version
 ```
 
 If it is installed, you will see the Spring Boot version printed as follows;
 
-```jsx
-
+```text
 Spring CLI v3.2.0
 ```
 

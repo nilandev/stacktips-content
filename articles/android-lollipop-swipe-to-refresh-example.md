@@ -39,7 +39,7 @@ The output of this example is as the following video.
   
 Now without wasting much of time, lets us move straight into its implementation. To implement Swipe to refresh layout, you will need the v4 support library. You can include the v4 support library to your project by adding below dependency in `build.gradle` file.
 
-```java
+```groovy
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:21.0.+"
@@ -51,7 +51,7 @@ Secondly, let us define the swipe to refresh layout and list view to show the fe
 ### activity\_main.xml
 
 ```xml
-<android.support.v4.widget.SwipeRefreshLayout 
+<android.support.v4.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipeRefreshLayout"
     android:layout_width="match_parent"

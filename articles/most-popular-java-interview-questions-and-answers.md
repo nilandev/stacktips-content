@@ -52,7 +52,7 @@ public class EqualsTest {
 
 Output
 
-```
+```text
 
 false
 true
@@ -84,7 +84,7 @@ public class Test {
 
 The above program will output:
 
-```
+```text
 
 Method 1
 ```
@@ -141,7 +141,7 @@ You can do this by using the `default` keyword.
 ```java
 
 interface Vehicle {
-    String speedUp(); 
+    String speedUp();
     String slowDown();
 
     default String alarmOn() {

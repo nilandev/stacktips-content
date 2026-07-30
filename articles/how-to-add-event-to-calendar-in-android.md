@@ -41,7 +41,7 @@ The following two class are important to understanding for adding the events.
 
 The following code bundle can be used to pass the information to calendar intent.
 
-```cs
+```java
 intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime);
 intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,endTime);
 intent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true);

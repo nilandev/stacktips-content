@@ -71,25 +71,25 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 public class MyApplication extends Application {
-	@Override
-	public void onCreate() {
-		super.onCreate();
+    @Override
+    public void onCreate() {
+        super.onCreate();
 
-		// UNIVERSAL IMAGE LOADER SETUP
-		DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-				.cacheOnDisc(true).cacheInMemory(true)
-				.imageScaleType(ImageScaleType.EXACTLY)
-				.displayer(new FadeInBitmapDisplayer(300)).build();
+        // UNIVERSAL IMAGE LOADER SETUP
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheOnDisc(true).cacheInMemory(true)
+                .imageScaleType(ImageScaleType.EXACTLY)
+                .displayer(new FadeInBitmapDisplayer(300)).build();
 
-		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-				getApplicationContext())
-				.defaultDisplayImageOptions(defaultOptions)
-				.memoryCache(new WeakMemoryCache())
-				.discCacheSize(100 * 1024 * 1024).build();
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                getApplicationContext())
+                .defaultDisplayImageOptions(defaultOptions)
+                .memoryCache(new WeakMemoryCache())
+                .discCacheSize(100 * 1024 * 1024).build();
 
-		ImageLoader.getInstance().init(config);
-		// END - UNIVERSAL IMAGE LOADER SETUP
-	}
+        ImageLoader.getInstance().init(config);
+        // END - UNIVERSAL IMAGE LOADER SETUP
+    }
 }
 ```
 
@@ -101,13 +101,13 @@ String url = "http://stacktips.com/wp-content/uploads/2014/05/UniversalImageLoad
 
 ImageLoader imageLoader = ImageLoader.getInstance();
 DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
-				.cacheOnDisc(true).resetViewBeforeLoading(true)
-				.showImageForEmptyUri(fallback)
-				.showImageOnFail(fallback)
-				.showImageOnLoading(fallback).build();
-		
+                .cacheOnDisc(true).resetViewBeforeLoading(true)
+                .showImageForEmptyUri(fallback)
+                .showImageOnFail(fallback)
+                .showImageOnLoading(fallback).build();
+
 //initialize image view
-ImageView imageView = (ImageView) findViewById(R.id.imageView1)		
+ImageView imageView = (ImageView) findViewById(R.id.imageView1)
 
 //download and display image from url
 imageLoader.displayImage(url, imageView, options);

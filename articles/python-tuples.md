@@ -35,7 +35,7 @@ print(week)
 
 **Output:**
 
-```
+```text
 ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
 ```
 
@@ -73,7 +73,7 @@ for day in week:
 
 **Output:**
 
-```
+```text
 Sunday
 Monday
 Tuesday
@@ -97,7 +97,7 @@ print("Sat" in week)
 
 **Output:**
 
-```
+```text
 True
 False
 ```
@@ -115,7 +115,7 @@ print(len(week))
 
 **Output:**
 
-```
+```text
 7
 ```
 
@@ -133,7 +133,7 @@ print(countries)
 
 **Output:**
 
-```
+```text
 ('USA', 'Canada', 'Mexico', 'UK', 'France', 'Germany')
 ```
 
@@ -152,7 +152,7 @@ print(week_list)
 
 **Output:**
 
-```
+```text
 ('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
 ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 ```

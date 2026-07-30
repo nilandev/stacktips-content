@@ -53,7 +53,7 @@ public class Car {
 
 Let us assume you have a series of values in a properties file you want to access and initialize the bean properties. Create a property file named `car.properties` with the following data.
 
-```xml
+```properties
 car.model=Volkswagen Polo
 car.price=5000.00
 ```
@@ -62,9 +62,9 @@ To make the contents of the car.properties file accessible to set up other beans
 
 ```xml
 
-    
+
         classpath:car.properties
-    
+
 
 ```
 
@@ -74,11 +74,11 @@ The above configuration is enough, but this can throw an exception if the file i
 
 ```xml
 
-    
+
         classpath:car.properties
-    
-    
-    
+
+
+
 
 ```
 

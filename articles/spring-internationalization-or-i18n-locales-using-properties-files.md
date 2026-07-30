@@ -30,7 +30,7 @@ Create a properties file containing your static strings in your default locale i
 
 **message.properties**
 
-```java
+```text
 message.hello = Hello
 message.welcome = {0}. {1} {2} welcome to stacktips.com.
 ```
@@ -41,7 +41,7 @@ In this example, we will crate the French translation of the above strings. Crea
 
 **message\_fr.properties**
 
-```java
+```text
 message.hello = Bonjour
 message.welcome = {0}. {1} {2} Bienvenue a stacktips.com.
 ```

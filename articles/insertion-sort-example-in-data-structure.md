@@ -38,7 +38,7 @@ Example: Sort the following list (8,6,4,1,3) using insertion sort
 
 Thus to find the correct position search the list till an item just greater than the target is found. Shift all the items from this point one, down the list. Insert the target in the vacated slot.
 
-```
+```text
 INPUT: LIST[ ] of N items in random order.
 OUTPUT: LIST[ ] of N items in sorted order.
 1. BEGIN
@@ -94,8 +94,8 @@ void main()
     insertion_sort(a,n);
     printf("The sorted array is n");
     for(i=0;i<n;i++)
-    
+
     printf("%dn",a[i]);
-    
+
 }
 ```

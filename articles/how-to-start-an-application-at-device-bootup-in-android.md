@@ -41,19 +41,19 @@ import android.content.Intent;
 
 public class BootReceiver extends BroadcastReceiver{
 
-	@Override
-	public void onReceive(Context context, Intent intent) {
-		Intent i = new Intent(context, MainActivity.class);  
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Intent i = new Intent(context, MainActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(i);  
-	}
+                context.startActivity(i);
+    }
 }
 ```
 
 ## Adding `BroadCastReceiver` to the Android Manifest
 
 ```xml
-<receiver android:name=".BootReceiver" android:enabled="true" 
+<receiver android:name=".BootReceiver" android:enabled="true"
     android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
     <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />

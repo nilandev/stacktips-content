@@ -31,32 +31,32 @@ Example,
 ![Bootstrap Alerts Example](/media/articles/123/Bootstrap-Alerts-Example-e1465825994884.png)
 
 ```html
-<!DOCTYPE html> 
-<html lang="en">  
-<head>    
-<title>My first Bootstrap page </title>    
-<meta name="viewport" content="width=device-width, initialscale=1">    
-<link href="CSS/bootstrap.min.css" rel="stylesheet">   
-<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">    
-<script type="text/javascript" src="JS/bootstrap.min.js"></script> 
- </head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My first Bootstrap page </title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link href="CSS/bootstrap.min.css" rel="stylesheet">
+<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
+<script type="text/javascript" src="JS/bootstrap.min.js"></script>
+ </head>
  <body>
 <div class="container">
-	<div class="container">
-	 <h2>Alerts</h2>
-	 <div class="alert alert-success">
-	    <strong>Success!</strong> This alert box indicates a successful action.
-	  </div>
-	  <div class="alert alert-info">
-	    <strong>Info!</strong> This alert box indicates a neutral informative change or action.
-	  </div>
-	  <div class="alert alert-warning">
-	    <strong>Warning!</strong> This alert box indicates a warning that might need attention.
-	  </div>
-	  <div class="alert alert-danger">
-	    <strong>Danger!</strong> This alert box indicates a dangerous action.
-	  </div>
-	 </div>
+    <div class="container">
+     <h2>Alerts</h2>
+     <div class="alert alert-success">
+        <strong>Success!</strong> This alert box indicates a successful action.
+      </div>
+      <div class="alert alert-info">
+        <strong>Info!</strong> This alert box indicates a neutral informative change or action.
+      </div>
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> This alert box indicates a warning that might need attention.
+      </div>
+      <div class="alert alert-danger">
+        <strong>Danger!</strong> This alert box indicates a dangerous action.
+      </div>
+     </div>
 </div>
 </body>
 </html>
@@ -76,7 +76,7 @@ Now to create dismissible alert,
 ```html
 <div class="alert alert-warning alert-dismissible" >
      <button type="button" class="close" data-dismiss = "alert" aria-label="Close">
-     <span >&times;</span></button> 
+     <span >&times;</span></button>
      <strong>Warning!</strong> This alert box indicates a warning that might need attention.
 </div>
 ```

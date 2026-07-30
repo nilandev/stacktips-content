@@ -150,7 +150,7 @@ Pattern Matching for `instanceof` in Java 17 enhances the `instanceof` operator 
 ```java
 if (obj instanceof Car) {
     Car str = (Car) obj;
-    // Use car object here 
+    // Use car object here
 }
 ```
 
@@ -158,7 +158,7 @@ if (obj instanceof Car) {
 
 ```java
 if (obj instanceof Car car) {
-    // Use car object here 
+    // Use car object here
 }
 ```
 

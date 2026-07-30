@@ -36,19 +36,19 @@ A Git repository refers to a place where all the Git files are stored. These fil
 
 If you want to initialize an empty repository to a directory in Git, you need to enter the git init command. After this command, a hidden .git folder will appear.
 
-```
+```bash
 
 test$ git init
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: is subject to change. To configure the initial branch name to use in all
 hint: of your new repositories, which will suppress this warning, call:
 hint:
-hint:   git config --global init.defaultBranch 
+hint:   git config --global init.defaultBranch
 hint:
 hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
 hint: 'development'. The just-created branch can be renamed via this command:
 hint:
-hint:   git branch -m 
+hint:   git branch -m
 Initialized empty Git repository in /Users/npangirahy/Documents/test/.git/
 ```
 
@@ -88,14 +88,14 @@ Git is capable of automatically merging the changes only if the commits are on d
 
 There are two processes through which you can revert a commit: Remove or fix the bad file in a new commit and push it to the remote repository. Then commit it to the remote repository using:
 
-```
+```bash
 
 git commit –m “commit message”
 ```
 
 Create a new commit to undo all the changes that were made in the bad commit. Use the following command:
 
-```
+```bash
 
 git revert
 ```

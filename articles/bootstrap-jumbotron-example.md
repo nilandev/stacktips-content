@@ -27,25 +27,25 @@ Inside a jumbotron you can put nearly any valid HTML, including other Bootstrap 
 Jumbotron example,
 
 ```html
-<!DOCTYPE html> 
-<html lang="en">  
-<head>    
-<title>My first Bootstrap page </title>    
-<meta name="viewport" content="width=device-width, initialscale=1">    
-<link href="CSS/bootstrap.min.css" rel="stylesheet">   
-<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My first Bootstrap page </title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link href="CSS/bootstrap.min.css" rel="stylesheet">
+<link href="CSS/bootstrap-theme.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script type="text/javascript" src="JS/bootstrap.min.js"></script> 
- </head> 
+<script type="text/javascript" src="JS/bootstrap.min.js"></script>
+ </head>
  <body>
 <div class="container" style="margin:50px;">
-	<div class="container">
-	  <div class="jumbotron" style="background:#ebeff2">
-	    <h1 style="font-size:130px;">400!</h1>      
-		<h2>Sorry but the page that you looking for does not exist..</h2>
-	    <a href="/index.html" class="btn btn-warning btn-lg">Go to Home Page</a>  
-	  </div>
-	</div>
+    <div class="container">
+      <div class="jumbotron" style="background:#ebeff2">
+        <h1 style="font-size:130px;">400!</h1>
+        <h2>Sorry but the page that you looking for does not exist..</h2>
+        <a href="/index.html" class="btn btn-warning btn-lg">Go to Home Page</a>
+      </div>
+    </div>
 </body>
 </html>
 ```

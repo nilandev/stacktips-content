@@ -32,15 +32,15 @@ For more detailed information on multi part content type search for RFC1341(MIME
 
 Let us first convert the bitmap image into byte array to send it as ByteArrayContent via multi part form upload.
 
-```cs
+```csharp
 public async Task<String> UploadBitmapAsync(Bitmap bitmap)
 {
-	//converting bitmap into byte stream
-	byte[] bitmapData;
-	var stream = new MemoryStream();
-	bitmap.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
-	bitmapData = stream.ToArray();
-	var fileContent = new ByteArrayContent(bitmapData);
+    //converting bitmap into byte stream
+    byte[] bitmapData;
+    var stream = new MemoryStream();
+    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
+    bitmapData = stream.ToArray();
+    var fileContent = new ByteArrayContent(bitmapData);
 }
 ```
 
@@ -50,7 +50,7 @@ Notice that the `bitmap.Compress()` write a compressed version of the bitmap to 
 
 Add the following additional content header such as media content type and content disposition. The `"my_uploaded_image.jpg"` is the name of image sent to server.
 
-```cs
+```csharp
 fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse ("application/octet-stream");
 fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
 {
@@ -63,7 +63,7 @@ fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form
 
 Now let us initialize `MultipartFormDataContent` and add the chunks. The boundary is a random string used as a delimiter to separate each part of the message body.
 
-```cs
+```csharp
 string boundary = "---8d0f01e6b3b5dafaaadaada";
 MultipartFormDataContent multipartContent= new MultipartFormDataContent (boundary);
 multipartContent.Add (fileContent);
@@ -77,44 +77,44 @@ Declare a string constant that represents the web service endpoint to upload the
 
 Let us now proceed to upload the form content to server using HttpClient class PostAsync() method. The following code snippet demonstrates using HttpClient class for posting data to server.
 
-```cs
+```csharp
 HttpClient httpClient = new HttpClient ();
 HttpResponseMessage response = await httpClient.PostAsync (UPLOAD_IMAGE, multipartContent);
 if (response.IsSuccessStatusCode) {
       string content = await response.Content.ReadAsStringAsync();
- 	return content;
+     return content;
 }
 return null;
 ```
 
 ## 5\. Complete example code
 
-```cs
+```csharp
 private const string UPLOAD_IMAGE = “http://YOUR_SERVER/api/poi/upload”
 public async Task<String> UploadBitmapAsync (Bitmap bitmap){
-	byte[] bitmapData;
-	var stream = new MemoryStream();
-	bitmap.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
-	bitmapData = stream.ToArray();
-	var fileContent = new ByteArrayContent(bitmapData);
+    byte[] bitmapData;
+    var stream = new MemoryStream();
+    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 0, stream);
+    bitmapData = stream.ToArray();
+    var fileContent = new ByteArrayContent(bitmapData);
 
-	fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse ("application/octet-stream");
-	fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
-	{
-		Name = "file",
-		FileName = "my_uploaded_image.jpg"
-	};
+    fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse ("application/octet-stream");
+    fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+    {
+        Name = "file",
+        FileName = "my_uploaded_image.jpg"
+    };
 
-	string boundary = "---8d0f01e6b3b5dafaaadaad";
-	MultipartFormDataContent multipartContent= new MultipartFormDataContent (boundary);
-	multipartContent.Add (fileContent);
-	
-	HttpClient httpClient = new HttpClient ();
-	HttpResponseMessage response = await httpClient.PostAsync (UPLOAD_IMAGE, multipartContent);
-	if (response.IsSuccessStatusCode) {
-		string content = await response.Content.ReadAsStringAsync ();
-		return content;
-	}
-	return null;
+    string boundary = "---8d0f01e6b3b5dafaaadaad";
+    MultipartFormDataContent multipartContent= new MultipartFormDataContent (boundary);
+    multipartContent.Add (fileContent);
+
+    HttpClient httpClient = new HttpClient ();
+    HttpResponseMessage response = await httpClient.PostAsync (UPLOAD_IMAGE, multipartContent);
+    if (response.IsSuccessStatusCode) {
+        string content = await response.Content.ReadAsStringAsync ();
+        return content;
+    }
+    return null;
 }
 ```

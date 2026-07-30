@@ -34,13 +34,13 @@ To make our life easy, we will generate valid RSS and Atom feed using [roumen/fe
 
 Laravel project dependencies are maintained using [composer](/articles/intro-to-laravel-php-framework-and-features). We can add the roumen/feed dependency library using the following artisan command:
 
-```
+```bash
 composer require roumen/feed
 ```
 
 Or add the following to your re composer.json file:
 
-```
+```json
 "roumen/feed": "~2.10"
 ```
 
@@ -51,14 +51,14 @@ Now, register for `Roumen\Feed\FeedServiceProvider` service provider and class a
 ```php
 <?php
 return [
-     //...		
+     //...
     'providers' => [
         //...
         Roumen\Feed\FeedServiceProvider::class,
     ],
 
-    'aliases' => [		
-	//...
+    'aliases' => [
+    //...
         'Feed'      => Roumen\Feed\Feed::class,
     ],
 ];
@@ -66,7 +66,7 @@ return [
 
 Optionally, if you want to alter the blade layouts, you can publish vendor views using following artisan command.
 
-```
+```bash
 artisan vendor:publish --provider="Roumen\Feed\FeedServiceProvider"
 ```
 
@@ -97,7 +97,7 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }   
+    }
 }
 ```
 
@@ -111,7 +111,7 @@ use App\Models\Post;
 class User extends Authenticatable
 {
     protected $table = 'users';
-    use Notifiable;	
+    use Notifiable;
     protected $fillable = [
         'id',
         'fname',
@@ -169,7 +169,6 @@ In this example, we have configured to serve 30 items in our feed. There is no s
 Let us now define routes for RSS feeds. Here we will define two routes; one for accessing atom feed and other for rss.
 
 ```php
-
 # Feeds
 Route::get('feed/{type?}', ['as' => 'feed.atom', 'uses' => 'Feed\FeedsController@getFeed']);
 ```
@@ -202,7 +201,7 @@ class FeedsController extends Controller
         if ($type === "rss" || $type === "atom") {
             return $this->builder->render($type);
         }
-        
+
         //If invalid feed requested, redirect home
         return redirect()->home();
     }
@@ -239,7 +238,7 @@ class FeedBuilder
 
     public function render($type)
     {
-        $feed = App::make("feed");		
+        $feed = App::make("feed");
         if ($this->config['use_cache']) {
             $feed->setCache($this->config['cache_duration'], $this->config['cache_key']);
         }
@@ -253,7 +252,7 @@ class FeedBuilder
             $feed->setDateFormat('datetime');
             $feed->lang = 'en';
             $feed->setShortening(true);
-            $feed->setTextLimit(250); 
+            $feed->setTextLimit(250);
 
             if (!empty($posts)) {
                 $feed->pubdate = $posts[0]->created_at;
@@ -274,7 +273,7 @@ class FeedBuilder
     }
 
     /**
-     * Creating rss feed with our most recent posts. 
+     * Creating rss feed with our most recent posts.
      * The size of the feed is defined in feed.php config.
      *
      * @return mixed

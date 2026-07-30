@@ -53,7 +53,7 @@ If you’re using Maven build tools for your Spring boot application, then you n
 
 And, if you are on Gradle, you can include the following package dependency in your build.gradle file.
 
-```java
+```groovy
 dependencies {
     // Your dependencies
     runtime('org.springframework.boot:spring-boot-devtools')
@@ -75,7 +75,7 @@ spring.h2.console.enabled=true
 
 Once you have done the above configurations, you need to restart your Spring boot application. You can launch the H2 database Web console at:
 
-```
+```text
 http://localhost:8080/h2-console.
 ```
 

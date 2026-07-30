@@ -274,285 +274,285 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
-	
-	/* Shared preference keys */
-	private static final String PREF_NAME = "sample_twitter_pref";
-	private static final String PREF_KEY_OAUTH_TOKEN = "oauth_token";
-	private static final String PREF_KEY_OAUTH_SECRET = "oauth_token_secret";
-	private static final String PREF_KEY_TWITTER_LOGIN = "is_twitter_loggedin";
-	private static final String PREF_USER_NAME = "twitter_user_name";
 
-	/* Any number for uniquely distinguish your request */
-	public static final int WEBVIEW_REQUEST_CODE = 100;
+    /* Shared preference keys */
+    private static final String PREF_NAME = "sample_twitter_pref";
+    private static final String PREF_KEY_OAUTH_TOKEN = "oauth_token";
+    private static final String PREF_KEY_OAUTH_SECRET = "oauth_token_secret";
+    private static final String PREF_KEY_TWITTER_LOGIN = "is_twitter_loggedin";
+    private static final String PREF_USER_NAME = "twitter_user_name";
 
-	private ProgressDialog pDialog;
+    /* Any number for uniquely distinguish your request */
+    public static final int WEBVIEW_REQUEST_CODE = 100;
 
-	private static Twitter twitter;
-	private static RequestToken requestToken;
-	
-	private static SharedPreferences mSharedPreferences;
+    private ProgressDialog pDialog;
 
-	private EditText mShareEditText;
-	private TextView userName;
-	private View loginLayout;
-	private View shareLayout;
+    private static Twitter twitter;
+    private static RequestToken requestToken;
 
-	private String consumerKey = null;
-	private String consumerSecret = null;
-	private String callbackUrl = null;
-	private String oAuthVerifier = null;
+    private static SharedPreferences mSharedPreferences;
 
-	@SuppressLint("NewApi")
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    private EditText mShareEditText;
+    private TextView userName;
+    private View loginLayout;
+    private View shareLayout;
 
-		/* initializing twitter parameters from string.xml */
-		initTwitterConfigs();
+    private String consumerKey = null;
+    private String consumerSecret = null;
+    private String callbackUrl = null;
+    private String oAuthVerifier = null;
 
-		/* Enabling strict mode */
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy);
+    @SuppressLint("NewApi")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		/* Setting activity layout file */
-		setContentView(R.layout.activity_main);
+        /* initializing twitter parameters from string.xml */
+        initTwitterConfigs();
 
-		loginLayout = (RelativeLayout) findViewById(R.id.login_layout);
-		shareLayout = (LinearLayout) findViewById(R.id.share_layout);
-		mShareEditText = (EditText) findViewById(R.id.share_text);
-		userName = (TextView) findViewById(R.id.user_name);
-		
-		/* register button click listeners */
-		findViewById(R.id.btn_login).setOnClickListener(this);
-		findViewById(R.id.btn_share).setOnClickListener(this);
+        /* Enabling strict mode */
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
-		/* Check if required twitter keys are set */
-		if (TextUtils.isEmpty(consumerKey) || TextUtils.isEmpty(consumerSecret)) {
-			Toast.makeText(this, "Twitter key and secret not configured",
-					Toast.LENGTH_SHORT).show();
-			return;
-		}
+        /* Setting activity layout file */
+        setContentView(R.layout.activity_main);
 
-		/* Initialize application preferences */
-		mSharedPreferences = getSharedPreferences(PREF_NAME, 0);
+        loginLayout = (RelativeLayout) findViewById(R.id.login_layout);
+        shareLayout = (LinearLayout) findViewById(R.id.share_layout);
+        mShareEditText = (EditText) findViewById(R.id.share_text);
+        userName = (TextView) findViewById(R.id.user_name);
 
-		boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
-		
-		/*  if already logged in, then hide login layout and show share layout */
-		if (isLoggedIn) {
-			loginLayout.setVisibility(View.GONE);
-			shareLayout.setVisibility(View.VISIBLE);
+        /* register button click listeners */
+        findViewById(R.id.btn_login).setOnClickListener(this);
+        findViewById(R.id.btn_share).setOnClickListener(this);
 
-			String username = mSharedPreferences.getString(PREF_USER_NAME, "");
-			userName.setText(getResources ().getString(R.string.hello)
-					+ username);
+        /* Check if required twitter keys are set */
+        if (TextUtils.isEmpty(consumerKey) || TextUtils.isEmpty(consumerSecret)) {
+            Toast.makeText(this, "Twitter key and secret not configured",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-		} else {
-			loginLayout.setVisibility(View.VISIBLE);
-			shareLayout.setVisibility(View.GONE);
+        /* Initialize application preferences */
+        mSharedPreferences = getSharedPreferences(PREF_NAME, 0);
 
-			Uri uri = getIntent().getData();
-			
-			if (uri != null && uri.toString().startsWith(callbackUrl)) {
-			
-				String verifier = uri.getQueryParameter(oAuthVerifier);
+        boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
 
-				try {
-					
-					/* Getting oAuth authentication token */
-					AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
+        /*  if already logged in, then hide login layout and show share layout */
+        if (isLoggedIn) {
+            loginLayout.setVisibility(View.GONE);
+            shareLayout.setVisibility(View.VISIBLE);
 
-					/* Getting user id form access token */
-					long userID = accessToken.getUserId();
-					final User user = twitter.showUser(userID);
-					final String username = user.getName();
+            String username = mSharedPreferences.getString(PREF_USER_NAME, "");
+            userName.setText(getResources ().getString(R.string.hello)
+                    + username);
 
-					/* save updated token */
-					saveTwitterInfo(accessToken);
+        } else {
+            loginLayout.setVisibility(View.VISIBLE);
+            shareLayout.setVisibility(View.GONE);
 
-					loginLayout.setVisibility(View.GONE);
-					shareLayout.setVisibility(View.VISIBLE);
-					userName.setText(getString(R.string.hello) + username);
-					
-				} catch (Exception e) {
-					Log.e("Failed to login Twitter!!", e.getMessage());
-				}
-			}
+            Uri uri = getIntent().getData();
 
-		}
-	}
+            if (uri != null && uri.toString().startsWith(callbackUrl)) {
 
-	
-	/**
-	 * Saving user information, after user is authenticated for the first time.
-	 * You don't need to show user to login, until user has a valid access toen
-	 */
-	private void saveTwitterInfo(AccessToken accessToken) {
-		
-		long userID = accessToken.getUserId();
-		
-		User user;
-		try {
-			user = twitter.showUser(userID);
-		
-			String username = user.getName();
+                String verifier = uri.getQueryParameter(oAuthVerifier);
 
-			/* Storing oAuth tokens to shared preferences */
-			Editor e = mSharedPreferences.edit();
-			e.putString(PREF_KEY_OAUTH_TOKEN, accessToken.getToken());
-			e.putString(PREF_KEY_OAUTH_SECRET, accessToken.getTokenSecret());
-			e.putBoolean(PREF_KEY_TWITTER_LOGIN, true);
-			e.putString(PREF_USER_NAME, username);
-			e.commit();
+                try {
 
-		} catch (TwitterException e1) {
-			e1.printStackTrace();
-		}
-	}
+                    /* Getting oAuth authentication token */
+                    AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
 
-	/* Reading twitter essential configuration parameters from strings.xml */
-	private void initTwitterConfigs() {
-		consumerKey = getString(R.string.twitter_consumer_key);
-		consumerSecret = getString(R.string.twitter_consumer_secret);
-		callbackUrl = getString(R.string.twitter_callback);
-		oAuthVerifier = getString(R.string.twitter_oauth_verifier);
-	}
+                    /* Getting user id form access token */
+                    long userID = accessToken.getUserId();
+                    final User user = twitter.showUser(userID);
+                    final String username = user.getName();
 
-	
-	private void loginToTwitter() {
-		boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
-		
-		if (!isLoggedIn) {
-			final ConfigurationBuilder builder = new ConfigurationBuilder();
-			builder.setOAuthConsumerKey(consumerKey);
-			builder.setOAuthConsumerSecret(consumerSecret);
+                    /* save updated token */
+                    saveTwitterInfo(accessToken);
 
-			final Configuration configuration = builder.build();
-			final TwitterFactory factory = new TwitterFactory(configuration);
-			twitter = factory.getInstance();
+                    loginLayout.setVisibility(View.GONE);
+                    shareLayout.setVisibility(View.VISIBLE);
+                    userName.setText(getString(R.string.hello) + username);
 
-			try {
-				requestToken = twitter.getOAuthRequestToken(callbackUrl);
+                } catch (Exception e) {
+                    Log.e("Failed to login Twitter!!", e.getMessage());
+                }
+            }
 
-				/**
-				 *  Loading twitter login page on webview for authorization 
-				 *  Once authorized, results are received at onActivityResult
-				 *  */
-				final Intent intent = new Intent(this, WebViewActivity.class);
-				intent.putExtra(WebViewActivity.EXTRA_URL, requestToken.getAuthenticationURL());
-				startActivityForResult(intent, WEBVIEW_REQUEST_CODE);
-				
-			} catch (TwitterException e) {
-				e.printStackTrace();
-			}
-		} else {
+        }
+    }
 
-			loginLayout.setVisibility(View.GONE);
-			shareLayout.setVisibility(View.VISIBLE);
-		}
-	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    /**
+     * Saving user information, after user is authenticated for the first time.
+     * You don't need to show user to login, until user has a valid access toen
+     */
+    private void saveTwitterInfo(AccessToken accessToken) {
 
-		if (resultCode == Activity.RESULT_OK) {
-			String verifier = data.getExtras().getString(oAuthVerifier);
-			try {
-				AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
+        long userID = accessToken.getUserId();
 
-				long userID = accessToken.getUserId();
-				final User user = twitter.showUser(userID);
-				String username = user.getName();
-				
-				saveTwitterInfo(accessToken);
+        User user;
+        try {
+            user = twitter.showUser(userID);
 
-				loginLayout.setVisibility(View.GONE);
-				shareLayout.setVisibility(View.VISIBLE);
-				userName.setText(MainActivity.this.getResources().getString(
-						R.string.hello) + username);
+            String username = user.getName();
 
-			} catch (Exception e) {
-				Log.e("Twitter Login Failed", e.getMessage());
-			}
-		}
+            /* Storing oAuth tokens to shared preferences */
+            Editor e = mSharedPreferences.edit();
+            e.putString(PREF_KEY_OAUTH_TOKEN, accessToken.getToken());
+            e.putString(PREF_KEY_OAUTH_SECRET, accessToken.getTokenSecret());
+            e.putBoolean(PREF_KEY_TWITTER_LOGIN, true);
+            e.putString(PREF_USER_NAME, username);
+            e.commit();
 
-		super.onActivityResult(requestCode, resultCode, data);
-	}
+        } catch (TwitterException e1) {
+            e1.printStackTrace();
+        }
+    }
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.btn_login:
-			loginToTwitter();
-			break;
-		case R.id.btn_share:
-			final String status = mShareEditText.getText().toString();
-			
-			if (status.trim().length() > 0) {
-				new updateTwitterStatus().execute(status);
-			} else {
-				Toast.makeText(this, "Message is empty!!", Toast.LENGTH_SHORT).show();
-			}
-			break;
-		}
-	}
+    /* Reading twitter essential configuration parameters from strings.xml */
+    private void initTwitterConfigs() {
+        consumerKey = getString(R.string.twitter_consumer_key);
+        consumerSecret = getString(R.string.twitter_consumer_secret);
+        callbackUrl = getString(R.string.twitter_callback);
+        oAuthVerifier = getString(R.string.twitter_oauth_verifier);
+    }
 
-	class updateTwitterStatus extends AsyncTask<String, String, Void> {
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			
-			pDialog = new ProgressDialog(MainActivity.this);
-			pDialog.setMessage("Posting to twitter...");
-			pDialog.setIndeterminate(false);
-			pDialog.setCancelable(false);
-			pDialog.show();
-		}
 
-		protected Void doInBackground(String... args) {
+    private void loginToTwitter() {
+        boolean isLoggedIn = mSharedPreferences.getBoolean(PREF_KEY_TWITTER_LOGIN, false);
 
-			String status = args[0];
-			try {
-				ConfigurationBuilder builder = new ConfigurationBuilder();
-				builder.setOAuthConsumerKey(consumerKey);
-				builder.setOAuthConsumerSecret(consumerSecret);
-				
-				// Access Token
-				String access_token = mSharedPreferences.getString(PREF_KEY_OAUTH_TOKEN, "");
-				// Access Token Secret
-				String access_token_secret = mSharedPreferences.getString(PREF_KEY_OAUTH_SECRET, "");
+        if (!isLoggedIn) {
+            final ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.setOAuthConsumerKey(consumerKey);
+            builder.setOAuthConsumerSecret(consumerSecret);
 
-				AccessToken accessToken = new AccessToken(access_token, access_token_secret);
-				Twitter twitter = new TwitterFactory(builder.build()).getInstance(accessToken);
+            final Configuration configuration = builder.build();
+            final TwitterFactory factory = new TwitterFactory(configuration);
+            twitter = factory.getInstance();
 
-				// Update status
-				StatusUpdate statusUpdate = new StatusUpdate(status);
-				InputStream is = getResources().openRawResource(R.drawable.lakeside_view);
-				statusUpdate.setMedia("test.jpg", is);
-				
-				twitter4j.Status response = twitter.updateStatus(statusUpdate);
+            try {
+                requestToken = twitter.getOAuthRequestToken(callbackUrl);
 
-				Log.d("Status", response.getText());
-				
-			} catch (TwitterException e) {
-				Log.d("Failed to post!", e.getMessage());
-			}
-			return null;
-		}
+                /**
+                 *  Loading twitter login page on webview for authorization
+                 *  Once authorized, results are received at onActivityResult
+                 *  */
+                final Intent intent = new Intent(this, WebViewActivity.class);
+                intent.putExtra(WebViewActivity.EXTRA_URL, requestToken.getAuthenticationURL());
+                startActivityForResult(intent, WEBVIEW_REQUEST_CODE);
 
-		@Override
-		protected void onPostExecute(Void result) {
-			
-			/* Dismiss the progress dialog after sharing */
-			pDialog.dismiss();
-			
-			Toast.makeText(MainActivity.this, "Posted to Twitter!", Toast.LENGTH_SHORT).show();
+            } catch (TwitterException e) {
+                e.printStackTrace();
+            }
+        } else {
 
-			// Clearing EditText field
-			mShareEditText.setText("");
-		}
+            loginLayout.setVisibility(View.GONE);
+            shareLayout.setVisibility(View.VISIBLE);
+        }
+    }
 
-	}
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == Activity.RESULT_OK) {
+            String verifier = data.getExtras().getString(oAuthVerifier);
+            try {
+                AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, verifier);
+
+                long userID = accessToken.getUserId();
+                final User user = twitter.showUser(userID);
+                String username = user.getName();
+
+                saveTwitterInfo(accessToken);
+
+                loginLayout.setVisibility(View.GONE);
+                shareLayout.setVisibility(View.VISIBLE);
+                userName.setText(MainActivity.this.getResources().getString(
+                        R.string.hello) + username);
+
+            } catch (Exception e) {
+                Log.e("Twitter Login Failed", e.getMessage());
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+        case R.id.btn_login:
+            loginToTwitter();
+            break;
+        case R.id.btn_share:
+            final String status = mShareEditText.getText().toString();
+
+            if (status.trim().length() > 0) {
+                new updateTwitterStatus().execute(status);
+            } else {
+                Toast.makeText(this, "Message is empty!!", Toast.LENGTH_SHORT).show();
+            }
+            break;
+        }
+    }
+
+    class updateTwitterStatus extends AsyncTask<String, String, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Posting to twitter...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        protected Void doInBackground(String... args) {
+
+            String status = args[0];
+            try {
+                ConfigurationBuilder builder = new ConfigurationBuilder();
+                builder.setOAuthConsumerKey(consumerKey);
+                builder.setOAuthConsumerSecret(consumerSecret);
+
+                // Access Token
+                String access_token = mSharedPreferences.getString(PREF_KEY_OAUTH_TOKEN, "");
+                // Access Token Secret
+                String access_token_secret = mSharedPreferences.getString(PREF_KEY_OAUTH_SECRET, "");
+
+                AccessToken accessToken = new AccessToken(access_token, access_token_secret);
+                Twitter twitter = new TwitterFactory(builder.build()).getInstance(accessToken);
+
+                // Update status
+                StatusUpdate statusUpdate = new StatusUpdate(status);
+                InputStream is = getResources().openRawResource(R.drawable.lakeside_view);
+                statusUpdate.setMedia("test.jpg", is);
+
+                twitter4j.Status response = twitter.updateStatus(statusUpdate);
+
+                Log.d("Status", response.getText());
+
+            } catch (TwitterException e) {
+                Log.d("Failed to post!", e.getMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            /* Dismiss the progress dialog after sharing */
+            pDialog.dismiss();
+
+            Toast.makeText(MainActivity.this, "Posted to Twitter!", Toast.LENGTH_SHORT).show();
+
+            // Clearing EditText field
+            mShareEditText.setText("");
+        }
+
+    }
 }
 ```
 
@@ -570,51 +570,51 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public class WebViewActivity extends Activity {
-	
-	private WebView webView;
-	
-	public static String EXTRA_URL = "extra_url";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		
-		setContentView(R.layout.activity_webview);
-		
-		setTitle("Login");
+    private WebView webView;
 
-		final String url = this.getIntent().getStringExtra(EXTRA_URL);
-		if (null == url) {
-			Log.e("Twitter", "URL cannot be null");
-			finish();
-		}
+    public static String EXTRA_URL = "extra_url";
 
-		webView = (WebView) findViewById(R.id.webView);
-		webView.setWebViewClient(new MyWebViewClient());
-		webView.loadUrl(url);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-	class MyWebViewClient extends WebViewClient {
-		
-		@Override
-		public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        setContentView(R.layout.activity_webview);
 
-			if (url.contains(getResources().getString(R.string.twitter_callback))) {
-				Uri uri = Uri.parse(url);
-				
-				/* Sending results back */
-				String verifier = uri.getQueryParameter(getString(R.string.twitter_oauth_verifier));
-				Intent resultIntent = new Intent();
-				resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
-				setResult(RESULT_OK, resultIntent);
-				
-				/* closing webview */
-				finish();
-				return true;
-			}
-			return false;
-		}
-	}
+        setTitle("Login");
+
+        final String url = this.getIntent().getStringExtra(EXTRA_URL);
+        if (null == url) {
+            Log.e("Twitter", "URL cannot be null");
+            finish();
+        }
+
+        webView = (WebView) findViewById(R.id.webView);
+        webView.setWebViewClient(new MyWebViewClient());
+        webView.loadUrl(url);
+    }
+
+    class MyWebViewClient extends WebViewClient {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+            if (url.contains(getResources().getString(R.string.twitter_callback))) {
+                Uri uri = Uri.parse(url);
+
+                /* Sending results back */
+                String verifier = uri.getQueryParameter(getString(R.string.twitter_oauth_verifier));
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra(getString(R.string.twitter_oauth_verifier), verifier);
+                setResult(RESULT_OK, resultIntent);
+
+                /* closing webview */
+                finish();
+                return true;
+            }
+            return false;
+        }
+    }
 }
 ```
 

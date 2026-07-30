@@ -197,7 +197,7 @@ If you have multiple text to be queued for TTS engine, you may do it by calling 
 ```java
 String myText1 = "Hi";
 String myText2 = "Hello";
-ttsManager.initQueue(myText1);                
+ttsManager.initQueue(myText1);
 //adding it to queue
 ttsManager.addQueue(myText2);
 ```

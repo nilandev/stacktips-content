@@ -22,7 +22,7 @@ seo:
 
 The following PHP code snippet extracts the domain name from long URL using regular expressions. For example, if you pass the following url, it will output stacktips.com.
 
-```
+```text
 http://stacktips.com/articles/drupal-vs-wordpress-which-one-to-choose
 ```
 

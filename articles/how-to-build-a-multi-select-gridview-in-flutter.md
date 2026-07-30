@@ -24,7 +24,7 @@ This article will walk you through the process of creating a multi-select grid v
 
 The list of products will be fetched from `https://fakestoreapi.com/products/category/electronics` API and here is how the JSON response is returned:
 
-```
+```json
 [
     {
         "id": 9,
@@ -49,7 +49,7 @@ The list of products will be fetched from `https://fakestoreapi.com/products/cat
 
 Let’s get started! First, create a new Flutter project and add the following dependencies to the `pubspec.yaml` file
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -64,7 +64,7 @@ We need to create two models for this example. One to hold the product details r
 
 Here is what the `Product` model class looks like:
 
-```
+```dart
 class Product {
   final int id;
   final String title;
@@ -98,7 +98,7 @@ The `fromJson()` function is a factory constructor that takes a JSON object and 
 
 Now, let us create another model `MultiSelectItem` to represent a selectable item in a multi-select list. It has two properties: `value` and `selected`. The value property is the value of the item, and the selected property is a boolean value that indicates whether the item is selected.
 
-```
+```dart
 class MultiSelectItem<T> {
   final T value;
   bool selected = false;
@@ -114,7 +114,7 @@ Now that we have the models defined, let us now focus on fetching API data. For 
 
 The response is then parsed into a list of `Product` objects using the `fromJson` factory constructor.
 
-```
+```dart
 import 'package:http/http.dart' as http;
 
 class ProductRepository {
@@ -139,7 +139,7 @@ The `ProductsPage` class is a stateful widget that represents the product grid p
 
 The FutureBuilder widget displays a loading spinner while waiting for the products to be fetched. If an error occurs, an error message is shown. Otherwise, the grid view is displayed with the fetched products.
 
-```
+```dart
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -240,7 +240,7 @@ class ProductsPageState extends State<ProductsPage> {
 
 Each item in the grid is displayed as a `Card` widget inside a `Container`. The `Container` has a colour that changes based on the selected state of the item. The `ListTile` widget inside the `Container` displays the product title and an icon indicating whether the product is selected or not.
 
-```
+```dart
 Widget getGridItem(MultiSelectItem item, int index) {
     Product product = item.value;
     Color textColor = item.selected ? Colors.white : Colors.black87;

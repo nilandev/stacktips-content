@@ -30,7 +30,7 @@ To use WebClient in a Spring Boot application, follow these steps:
 
 Ensure you have the necessary dependencies in your project. If you're using Maven, add the following dependency to your `**pom.xml**` file:
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-webflux</artifactId>
@@ -41,7 +41,7 @@ Ensure you have the necessary dependencies in your project. If you're using Mave
 
 In your code, create an instance of `**WebClient**` using the `**WebClient.builder()**` method. You can customize the WebClient instance by setting properties such as timeouts, authentication, SSL configuration, and more.
 
-```
+```java
 WebClient webClient = WebClient.builder()
     .baseUrl("https://api.example.com")
     .build();
@@ -51,7 +51,7 @@ WebClient webClient = WebClient.builder()
 
 Use the methods provided by the WebClient instance to make HTTP requests. WebClient offers methods like `**get()**`, `**post()**`, `**put()**`, `**delete()**`, etc., to perform different types of requests. You can chain these methods together to customize the request.
 
-```
+```java
 Mono<MyResponse> responseMono = webClient.get()
     .uri("/data/{id}", id)
     .retrieve()
@@ -62,7 +62,7 @@ Mono<MyResponse> responseMono = webClient.get()
 
 Let us now examine, how to use `WebClient` in real-time to consume the following APIs from the Spring Boot application.
 
-```
+```text
 GET
 https://fakestoreapi.com/products - get all products
 https://fakestoreapi.com/products/1 - get specific product based on id
@@ -76,7 +76,7 @@ https://fakestoreapi.com/products/1 - get specific product based on id
 
 Let us now declare a domain model for the `Product` object.  
 
-```
+```java
 public class Product {
 
     private String image;
@@ -94,14 +94,14 @@ public class Product {
 
 Let us now create a service class `ProductService` that consumes the Fakestore API endpoints using WebClient.
 
-```
+```java
 @Service
 public class ProductService {
 
     private final WebClient webClient;
 
     public ProductService() {
-        // you may configure the base URL in applcation.properties 
+        // you may configure the base URL in applcation.properties
         this.webClient = WebClient.create("https://fakestoreapi.com");
     }
 
@@ -125,7 +125,7 @@ The `getProducts()` method uses WebClient to make a GET request to the `/product
 
 Now we can consume the ProductService and call `getProducts()` endpoint to return the list of products as follows:
 
-```
+```java
 Mono<Product[]> productsMono = productService.getProducts();
 productsMono.subscribe(
         products -> {
@@ -140,7 +140,7 @@ productsMono.subscribe(
 
 Similarly. we can call `getProductById()` method to return a product specified by Id.
 
-```
+```java
 Mono<Product> productMono = productService.getProductById(1);
 productMono.subscribe(
         product -> {
@@ -157,7 +157,7 @@ productMono.subscribe(
 
 Now let us expand the `ProductService` class to add support for the `addProduct()` method. This method makes a POST request to the /products endpoint and sends the product information as the request body.
 
-```
+```java
 public Mono<Product> addProduct(Product product) {
     return webClient.post()
             .uri("/products")
@@ -172,7 +172,7 @@ The post() method is used to initiate the POST request, and the body() method wi
 
 Now, to consume this new endpoint as follows:
 
-```
+```java
 Product product = new Product();
 product.setTitle("test product");
 product.setPrice(13.5);
@@ -182,7 +182,7 @@ product.setCategory("electronic");
 Mono<Product> addedProductMono = productService.addProduct(product);
 addedProductMono.subscribe(
         addedProduct -> {
-            //TODO Added product 
+            //TODO Added product
         },
         error -> {
             // Handle error cases
@@ -195,7 +195,7 @@ addedProductMono.subscribe(
 
 Now to delete a product, add the following `deleteProduct()` method to the ProductService.
 
-```
+```java
 public Mono<Void> deleteProduct(int productId) {
     return webClient.method(HttpMethod.DELETE)
             .uri("/products/{id}", productId)
@@ -206,7 +206,7 @@ public Mono<Void> deleteProduct(int productId) {
 
 To consume this new endpoint and delete a product, you can use the ProductService as follows:
 
-```
+```java
 Mono<Void> deletedProductMono = productService.deleteProduct(productId);
 deletedProductMono.subscribe(
         response -> {
@@ -227,7 +227,7 @@ It allows applying custom logic such as modifying request headers, logging, addi
 
 Let us create a `BasicAuthInterceptor` class that implements the `ExchangeFilterFunction` interface.
 
-```
+```java
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.ClientRequest;
@@ -257,7 +257,7 @@ class BasicAuthInterceptor implements ExchangeFilterFunction {
 
 Here's an example of how you can configure WebClient to use the Interceptor for doing the basic authentication:
 
-```
+```java
 this.webClient = WebClient.builder()
         .baseUrl("https://fakestoreapi.com")
         .filter(new BasicAuthInterceptor("username", "password"))
@@ -270,7 +270,7 @@ With this configuration, WebClient will automatically include the basic authenti
 
 To pass an `X-API-Key` header in WebClient requests in Spring Boot, you can use the `header()` method provided by the WebClient's `mutate()` function. Here's an example of how you can include the `X-API-Key` header in WebClient requests:
 
-```
+```java
 WebClient webClient = WebClient.builder()
         .baseUrl("https://fakestoreapi.com")
         .build();

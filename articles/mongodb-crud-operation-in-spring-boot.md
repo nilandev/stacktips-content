@@ -48,7 +48,7 @@ Here is an example of a simple Spring Boot application that performs CRUD operat
 
 Start by creating a new Spring Boot project and adding the following dependencies to your `**pom.xml**` file:
 
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -59,7 +59,7 @@ Start by creating a new Spring Boot project and adding the following dependencie
 
 In application.properties file add the following properties for mongodb connection
 
-```
+```properties
 spring.data.mongodb.uri=mongodb://<host>:<port>/<database>
 spring.data.mongodb.username=<username>
 spring.data.mongodb.password=<password>
@@ -69,7 +69,7 @@ spring.data.mongodb.password=<password>
 
 Create a model class, for example `**Person**` which will be mapped to a MongoDB collection. This class should have fields that correspond to the fields in the MongoDB document, as well as appropriate getters and setters.
 
-```
+```java
 @Document(collection = "people")
 public class Person {
     @Id
@@ -85,7 +85,7 @@ public class Person {
 
 Create a `**MongoRepository**` interface to perform CRUD operations on the `**Person**` class.
 
-```
+```java
 public interface PersonRepository extends MongoRepository<Person, String> {
 
 }
@@ -95,20 +95,20 @@ public interface PersonRepository extends MongoRepository<Person, String> {
 
 In your application main class, autowire the `**PersonRepository**` and use it to perform CRUD operations. For example:
 
-```
+```java
 @Service
 class PersonService {
 
-	@Autowired
-	private PersonRepository repository;
+    @Autowired
+    private PersonRepository repository;
 
-	public void addPerson(Person person) {
-	    repository.save(person);
-	}
+    public void addPerson(Person person) {
+        repository.save(person);
+    }
 
-	public List<Person> getAllPeople() {
-	    return repository.findAll();
-	}
+    public List<Person> getAllPeople() {
+        return repository.findAll();
+    }
 }
 ```
 

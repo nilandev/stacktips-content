@@ -97,26 +97,26 @@ using Android.OS;
 
 namespace HelloWorld
 {
-	[Activity (Label = "HelloWorld!", MainLauncher = true)]
-	public class MainActivity : Activity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+    [Activity (Label = "HelloWorld!", MainLauncher = true)]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate (Bundle bundle)
+        {
+            base.OnCreate (bundle);
 
-			// Set your view layout layout resource file
-			SetContentView (Resource.Layout.Main);
+            // Set your view layout layout resource file
+            SetContentView (Resource.Layout.Main);
 
-			// Initilize button from the layout resource
-			Button button = FindViewById<Button> (Resource.Id.myButton);
+            // Initilize button from the layout resource
+            Button button = FindViewById<Button> (Resource.Id.myButton);
 
-			// and attach an event to it
-			button.Click += delegate {
-				//display toast message
-				Toast.MakeText (Application, "Button Clicked!", ToastLength.Short).Show ();
-			};
-		}
-	}
+            // and attach an event to it
+            button.Click += delegate {
+                //display toast message
+                Toast.MakeText (Application, "Button Clicked!", ToastLength.Short).Show ();
+            };
+        }
+    }
 }
 
 ```

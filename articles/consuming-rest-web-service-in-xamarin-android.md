@@ -57,12 +57,12 @@ Downloading data from server is a long running task, and hence we must create a 
 
 ```cs
 public async void DownloadDataAsync() {
-	string url = "http://stacktips.com/api/get_category_posts/?dev=1&slug=android"
-	
-	var httpClient = new HttpClient();
-	Task<string> downloadTask = httpClient.GetStringAsync(url);
-	string content = await downloadTask;	
-	Console.Out.WriteLine("Response: \r\n {0}", content);
+    string url = "http://stacktips.com/api/get_category_posts/?dev=1&slug=android"
+
+    var httpClient = new HttpClient();
+    Task<string> downloadTask = httpClient.GetStringAsync(url);
+    string content = await downloadTask;
+    Console.Out.WriteLine("Response: \r\n {0}", content);
 }
 ```
 
@@ -78,8 +78,8 @@ var posts = new List <Post> ();
 JObject jsonResponse = JObject.Parse (content);
 IList<JToken> results = jsonResponse ["posts"].ToList ();
 foreach (JToken token in results) {
-	PointOfInterest poi = JsonConvert.DeserializeObject<Post> (token.ToString ());
-	posts.Add (poi);
+    PointOfInterest poi = JsonConvert.DeserializeObject<Post> (token.ToString ());
+    posts.Add (poi);
 }
 
 // Write your logic here to display posts list on ui

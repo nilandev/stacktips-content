@@ -86,42 +86,42 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private Button button;
+    private Button button;
 
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		button = (Button) findViewById(R.id.button);
-		button.setOnClickListener(new OnClickListener() {
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View view) {
-				final Dialog dialog = new Dialog(MainActivity.this);
+            @Override
+            public void onClick(View view) {
+                final Dialog dialog = new Dialog(MainActivity.this);
 
-				//setting custom layout to dialog
-				dialog.setContentView(R.layout.cusotm_dialog_layout);
-				dialog.setTitle("Custom Dialog");
+                //setting custom layout to dialog
+                dialog.setContentView(R.layout.cusotm_dialog_layout);
+                dialog.setTitle("Custom Dialog");
 
-				//adding text dynamically
-				TextView txt = (TextView) dialog.findViewById(R.id.textView);
-				txt.setText("Put your dialog text here.");
+                //adding text dynamically
+                TextView txt = (TextView) dialog.findViewById(R.id.textView);
+                txt.setText("Put your dialog text here.");
 
-				ImageView image = (ImageView)dialog.findViewById(R.id.image);
-				image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_dialog_info));
+                ImageView image = (ImageView)dialog.findViewById(R.id.image);
+                image.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_dialog_info));
 
-				//adding button click event
-				Button dismissButton = (Button) dialog.findViewById(R.id.button);
-				dismissButton.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						dialog.dismiss();
-					}
-				});
-				dialog.show();
-			}
-		});
-	}
+                //adding button click event
+                Button dismissButton = (Button) dialog.findViewById(R.id.button);
+                dismissButton.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+    }
 }
 ```
 

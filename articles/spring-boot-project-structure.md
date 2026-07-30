@@ -64,7 +64,7 @@ We recommend that you follow Java’s recommended package naming conventions and
 
 The build.gradle must be located at the root of the application as we can see in the above project structure.
 
-```java
+```groovy
 plugins {
     id 'org.springframework.boot' version '2.6.6'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -97,7 +97,7 @@ The application.properties file is located in the src/main/resources directory. 
 
 For, eg.
 
-```java
+```text
 server.port=8080
 server.contextPath=/
 

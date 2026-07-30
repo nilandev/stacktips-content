@@ -39,34 +39,34 @@ import javax.servlet.ServletContextListener;
 
 public class AppContextListener implements ServletContextListener {
 
-	@Override
-	public void contextDestroyed(ServletContextEvent arg0) {
+    @Override
+    public void contextDestroyed(ServletContextEvent arg0) {
 
-		// Your code here
-		System.out.println("HelloWorld Listener has been shutdown");
+        // Your code here
+        System.out.println("HelloWorld Listener has been shutdown");
 
-	}
+    }
 
-	@Override
-	public void contextInitialized(ServletContextEvent servletContextEvent) {
+    @Override
+    public void contextInitialized(ServletContextEvent servletContextEvent) {
 
-		// Your code here
-		System.out.println("HelloWorld Listener initialized.");
+        // Your code here
+        System.out.println("HelloWorld Listener initialized.");
 
-		TimerTask vodTimer = new VodTimerTask();
+        TimerTask vodTimer = new VodTimerTask();
 
-		Timer timer = new Timer();
-		timer.schedule(vodTimer, 1000, (2 * 1000));
+        Timer timer = new Timer();
+        timer.schedule(vodTimer, 1000, (2 * 1000));
 
-	}
+    }
 
-	class VodTimerTask extends TimerTask {
+    class VodTimerTask extends TimerTask {
 
-		@Override
-		public void run() {
-			System.out.println("TimerTask " + new Date().toString());
-		}
-	}
+        @Override
+        public void run() {
+            System.out.println("TimerTask " + new Date().toString());
+        }
+    }
 
 }
 ```
@@ -78,23 +78,23 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 ```xml
 < ?xml version="1.0" encoding="UTF-8"?>
 <web -app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	<display -name>HelloServlet</display>
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+    <display -name>HelloServlet</display>
 
-	<servlet>
-		</servlet><servlet -name>HelloServlet</servlet>
-		<servlet -class>com.javatechig.HelloServlet</servlet>
-	
-	<servlet -mapping>
-		</servlet><servlet -name>HelloServlet</servlet>
-		<url -pattern>/HelloServlet</url>
-	
+    <servlet>
+        </servlet><servlet -name>HelloServlet</servlet>
+        <servlet -class>com.javatechig.HelloServlet</servlet>
 
-	<listener>
-		</listener><listener -class>com.javatechig.AppContextListener</listener>
-	
+    <servlet -mapping>
+        </servlet><servlet -name>HelloServlet</servlet>
+        <url -pattern>/HelloServlet</url>
+
+
+    <listener>
+        </listener><listener -class>com.javatechig.AppContextListener</listener>
+
 </web>
 ```
 
@@ -102,7 +102,7 @@ Just add the listener tag and listener-class tag with the class path, as shown i
 
 You will see the output in the console
 
-```
+```text
 Jun 13, 2014 3:52:25 PM org.apache.catalina.core.AprLifecycleListener init
 Jun 13, 2014 3:52:27 PM org.apache.catalina.core.ApplicationContext log
 INFO: No Spring WebApplicationInitializer types detected on classpath

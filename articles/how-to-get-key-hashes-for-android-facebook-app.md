@@ -37,7 +37,7 @@ Download the `facebook-android-sdk` and configured a new app. In the application
 -   Open command prompt (Run-> cmd->start) and go to java /bin folder (cd “C:\\Program Files\\Java\\jdk1.6.0\_30\\bin” command will do it for you)
 -   Now you run the below command.
 
-```
+```bash
 C:\Program Files\Java\jdk1.6.0_30\bin>keytool -exportcert -alias androiddebugkey -keystore "C:\Users\.android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary |"C:\OpenSSL\bin\openssl" base64
 ```
 
@@ -51,36 +51,36 @@ Using below code snippet, you can get the hash code.
 
 ```java
 public static String printKeyHash(Activity context) {
-	PackageInfo packageInfo;
-	String key = null;
-	try {
-		//getting application package name, as defined in manifest
-		String packageName = context.getApplicationContext().getPackageName();
+    PackageInfo packageInfo;
+    String key = null;
+    try {
+        //getting application package name, as defined in manifest
+        String packageName = context.getApplicationContext().getPackageName();
 
-		//Retriving package info
-		packageInfo = context.getPackageManager().getPackageInfo(packageName,
-				PackageManager.GET_SIGNATURES);
-			
-		Log.e("Package Name=", context.getApplicationContext().getPackageName());
-		
-		for (Signature signature : packageInfo.signatures) {
-			MessageDigest md = MessageDigest.getInstance("SHA");
-			md.update(signature.toByteArray());
-			key = new String(Base64.encode(md.digest(), 0));
-		
-			// String key = new String(Base64.encodeBytes(md.digest()));
-			Log.e("Key Hash=", key);
-		}
-	} catch (NameNotFoundException e1) {
-		Log.e("Name not found", e1.toString());
-	}
-	catch (NoSuchAlgorithmException e) {
-		Log.e("No such an algorithm", e.toString());
-	} catch (Exception e) {
-		Log.e("Exception", e.toString());
-	}
+        //Retriving package info
+        packageInfo = context.getPackageManager().getPackageInfo(packageName,
+                PackageManager.GET_SIGNATURES);
 
-	return key;
+        Log.e("Package Name=", context.getApplicationContext().getPackageName());
+
+        for (Signature signature : packageInfo.signatures) {
+            MessageDigest md = MessageDigest.getInstance("SHA");
+            md.update(signature.toByteArray());
+            key = new String(Base64.encode(md.digest(), 0));
+
+            // String key = new String(Base64.encodeBytes(md.digest()));
+            Log.e("Key Hash=", key);
+        }
+    } catch (NameNotFoundException e1) {
+        Log.e("Name not found", e1.toString());
+    }
+    catch (NoSuchAlgorithmException e) {
+        Log.e("No such an algorithm", e.toString());
+    } catch (Exception e) {
+        Log.e("Exception", e.toString());
+    }
+
+    return key;
 }
 ```
 

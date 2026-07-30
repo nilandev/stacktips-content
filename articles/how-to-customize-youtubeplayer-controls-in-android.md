@@ -28,7 +28,7 @@ The YouTube Android Player allows you to customize the playback control by setti
 
 You can apply style to YouTubePlayer by calling `setPlayerStyle(PlayerStyle style)` method.
 
-```
+```java
 player.setPlayerStyle(PlayerStyle.CHROMELESS);
 ```
 
@@ -42,7 +42,7 @@ Let us first add the YouTubePlayerView view in your activity or fragment view hi
 
 activity\_custom\_player.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -62,7 +62,7 @@ activity\_custom\_player.xml
 
 Let us now add the player controls right below `YouTubePlayerView` in `activity_custom_player.xml` layout.
 
-```
+```xml
 <LinearLayout
     android:id="@+id/video_control"
     android:layout_width="match_parent"
@@ -115,7 +115,7 @@ Let us now add the player controls right below `YouTubePlayerView` in `activity_
 
 INTERNET permission is required to play video over internet. Add the following permission in your application `AndroidManifest.xml` file.
 
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
@@ -123,8 +123,8 @@ INTERNET permission is required to play video over internet. Add the following p
 
 When using YouTubePlayerView, your activity needs to extend `[YouTubeBaseActivity](https://developers.google.com/youtube/android/player/reference/com/google/android/youtube/player/YouTubeBaseActivity.html)`. Now let us create an Activity that extends YouTubeBaseActivity and initialize the YouTubePlayerView. We will add our own Play, Pause and Seek playback control.
 
-```
-public class CustomPlayerControlActivity extends YouTubeBaseActivity 
+```java
+public class CustomPlayerControlActivity extends YouTubeBaseActivity
         implements OnInitializedListener, View.OnClickListener {
     private static final String TAG = "CustomPlayerControlActivity";
 

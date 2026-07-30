@@ -42,9 +42,9 @@ Intent sendIntent = new Intent(Intent.ACTION\_VIEW);
 
 ```java
 
-	sendIntent.putExtra("sms_body", “"); 
-	sendIntent.setType("vnd.android-dir/mms-sms");
-	startActivity(sendIntent);
+    sendIntent.putExtra("sms_body", “");
+    sendIntent.setType("vnd.android-dir/mms-sms");
+    startActivity(sendIntent);
 ```
 
 Follow the complete example for both the method’s  
@@ -117,64 +117,64 @@ Follow the complete example for both the method’s
 
 public class MainActivity extends Activity {
 
-	private Button shareIntent;
-	private Button send;
-	private EditText phoneNo;
-	private EditText messageBody;
+    private Button shareIntent;
+    private Button send;
+    private EditText phoneNo;
+    private EditText messageBody;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		phoneNo = (EditText) findViewById(R.id.mobileNumber);
-		messageBody = (EditText) findViewById(R.id.smsBody);
+        phoneNo = (EditText) findViewById(R.id.mobileNumber);
+        messageBody = (EditText) findViewById(R.id.smsBody);
 
-		send = (Button) findViewById(R.id.send);
-		send.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				String number = phoneNo.getText().toString();
-				String sms = messageBody.getText().toString();
+        send = (Button) findViewById(R.id.send);
+        send.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = phoneNo.getText().toString();
+                String sms = messageBody.getText().toString();
 
-				try {
-					SmsManager smsManager = SmsManager.getDefault();
-					smsManager.sendTextMessage(number, null, sms, null, null);
-					Toast.makeText(getApplicationContext(), "SMS Sent!",
-							Toast.LENGTH_LONG).show();
-				} catch (Exception e) {
-					Toast.makeText(getApplicationContext(),
-							"SMS faild, please try again later!",
-							Toast.LENGTH_LONG).show();
-					e.printStackTrace();
-				}
-			}
-		});
+                try {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(number, null, sms, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS Sent!",
+                            Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again later!",
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            }
+        });
 
-		shareIntent = (Button) findViewById(R.id.sendViaIntent);
-		shareIntent.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				try {
-					Intent sendIntent = new Intent(Intent.ACTION_VIEW);
-					sendIntent.putExtra("sms_body", messageBody.getText().toString());
-					sendIntent.setType("vnd.android-dir/mms-sms");
-					startActivity(sendIntent);
-				} catch (Exception e) {
-					Toast.makeText(getApplicationContext(),
-							"SMS faild, please try again later!",
-							Toast.LENGTH_LONG).show();
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+        shareIntent = (Button) findViewById(R.id.sendViaIntent);
+        shareIntent.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+                    sendIntent.putExtra("sms_body", messageBody.getText().toString());
+                    sendIntent.setType("vnd.android-dir/mms-sms");
+                    startActivity(sendIntent);
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS faild, please try again later!",
+                            Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 }
 ```
 

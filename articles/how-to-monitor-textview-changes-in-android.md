@@ -40,36 +40,36 @@ A simple use of TextWatcher is to create a live character counter that follows a
 
 ```java
 public class MyActivity extends Activity implements TextWatcher {
-	private EditText text;
-	private int textCount;
-	private static final String TAG = "MyActivity";
+    private EditText text;
+    private int textCount;
+    private static final String TAG = "MyActivity";
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		//Create an EditText widget and add the watcher
-		editText = new EditText(this);
-		editText.addTextChangedListener(this);
-		setContentView(editText);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Create an EditText widget and add the watcher
+        editText = new EditText(this);
+        editText.addTextChangedListener(this);
+        setContentView(editText);
+    }
 
-	/* TextWatcher Implementation Methods */
-	@Override
-	public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-	    
-	}
+    /* TextWatcher Implementation Methods */
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-	@Override
-	public void onTextChanged(CharSequence s, int start, int before, int count) {
-		textCount = editText.getText().length();
-		setTitle(String.valueOf(textCount));
-		Log.e(TAG, String.valueOf(textCount))
-	}
+    }
 
-	@Override
-	public void afterTextChanged(Editable s) {
-	    
-	}
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        textCount = editText.getText().length();
+        setTitle(String.valueOf(textCount));
+        Log.e(TAG, String.valueOf(textCount))
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
 }
 ```
 

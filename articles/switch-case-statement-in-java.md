@@ -30,34 +30,34 @@ The following code example demonstrates switch case with example. An integer val
 
 public class StringSwitch {
 
-	public static void main(String[] args) {
-		int day = 2;
-		String dayOFWeek = "";
-		switch (day) {
-		case 1:
-			dayOFWeek = "MON";
-			break;
-		case 2:
-			dayOFWeek = "TUE";
-			break;
-		case 3:
-			dayOFWeek = "WED";
-			break;
-		case 4:
-			dayOFWeek = "THU";
-			break;
-		case 5:
-			dayOFWeek = "FRI";
-			break;
-		case 6:
-			dayOFWeek = "SAT";
-			break;
-		case 7:
-			dayOFWeek = "SUN";
-		default:
-		}
-		System.out.println(dayOFWeek);
-	}
+    public static void main(String[] args) {
+        int day = 2;
+        String dayOFWeek = "";
+        switch (day) {
+        case 1:
+            dayOFWeek = "MON";
+            break;
+        case 2:
+            dayOFWeek = "TUE";
+            break;
+        case 3:
+            dayOFWeek = "WED";
+            break;
+        case 4:
+            dayOFWeek = "THU";
+            break;
+        case 5:
+            dayOFWeek = "FRI";
+            break;
+        case 6:
+            dayOFWeek = "SAT";
+            break;
+        case 7:
+            dayOFWeek = "SUN";
+        default:
+        }
+        System.out.println(dayOFWeek);
+    }
 }
 ```
 
@@ -71,32 +71,32 @@ The following code example demonstrates switch case with using String comparison
 ```java
 
 public class StringSwitch {
-	public static void main(String[] args) {
-		String key = "TWO";
-		switch (key) {
-		case "ONE":
-			key = "One Selected!";
-			break;
-		case "TWO":
-			key = "Two Selected!";
-			break;
-		case "THREE":
-			key = "Three Selected!";
-			break;
-		case "FOUR":
-			key = "Four Selected!";
-			break;
-		case "FIVE":
-			key = "Five Selected!";
-			break;
-		case "SIX":
-			key = "Six Selected!";
-			break;
-		default:
+    public static void main(String[] args) {
+        String key = "TWO";
+        switch (key) {
+        case "ONE":
+            key = "One Selected!";
+            break;
+        case "TWO":
+            key = "Two Selected!";
+            break;
+        case "THREE":
+            key = "Three Selected!";
+            break;
+        case "FOUR":
+            key = "Four Selected!";
+            break;
+        case "FIVE":
+            key = "Five Selected!";
+            break;
+        case "SIX":
+            key = "Six Selected!";
+            break;
+        default:
 
-		}
-		System.out.println(key);
+        }
+        System.out.println(key);
 
-	}
+    }
 }
 ```

@@ -27,20 +27,20 @@ To connect to multiple MongoDB databases, we need to use `MongoClientFactoryBean
 First let us add two set of MongoDB connection properties to your `application.properties` file corresponding to each DB.
 
 ```properties
-# Primary MongoDB configs  
-spring.data.mongodb.primary.host=localhost  
-spring.data.mongodb.primary.port=27017  
-spring.data.mongodb.primary.username=root  
-spring.data.mongodb.primary.password=admin  
-spring.data.mongodb.primary.database=movies_db  
-spring.data.mongodb.primary.authentication-database=admin  
+# Primary MongoDB configs
+spring.data.mongodb.primary.host=localhost
+spring.data.mongodb.primary.port=27017
+spring.data.mongodb.primary.username=root
+spring.data.mongodb.primary.password=admin
+spring.data.mongodb.primary.database=movies_db
+spring.data.mongodb.primary.authentication-database=admin
 
-# Secondary MongoDB configs  
-spring.data.mongodb.secondary.host=localhost  
-spring.data.mongodb.secondary.port=27018  
-spring.data.mongodb.secondary.username=root  
-spring.data.mongodb.secondary.password=admin  
-spring.data.mongodb.secondary.database=movies_db2  
+# Secondary MongoDB configs
+spring.data.mongodb.secondary.host=localhost
+spring.data.mongodb.secondary.port=27018
+spring.data.mongodb.secondary.username=root
+spring.data.mongodb.secondary.password=admin
+spring.data.mongodb.secondary.database=movies_db2
 spring.data.mongodb.secondary.authentication-database=admin
 ```
 
@@ -57,48 +57,48 @@ The `MongoTemplate` will be used for performing all Mongo DB CRUD operations inc
 **Primary MongoDB Config:**
 
 ```java
-@Configuration  
-@EnableMongoRepositories(basePackages = "com.stacktips.app.repository.primary",  
-        mongoTemplateRef = "primaryMongoTemplate")  
-public class PrimaryMongoConfig {  
+@Configuration
+@EnableMongoRepositories(basePackages = "com.stacktips.app.repository.primary",
+        mongoTemplateRef = "primaryMongoTemplate")
+public class PrimaryMongoConfig {
 
-    @Primary  
-    @Bean("primaryMongoProperties")  
-    @ConfigurationProperties(prefix = "spring.data.mongodb.primary")  
-    public MongoProperties primaryMongoProperties() {  
-        return new MongoProperties();  
-    }  
+    @Primary
+    @Bean("primaryMongoProperties")
+    @ConfigurationProperties(prefix = "spring.data.mongodb.primary")
+    public MongoProperties primaryMongoProperties() {
+        return new MongoProperties();
+    }
 
-    @Primary  
-    @Bean(name = "primaryMongoClient")  
-    public MongoClient primaryMongoClient(@Qualifier("primaryMongoProperties") MongoProperties mongoProperties) {  
+    @Primary
+    @Bean(name = "primaryMongoClient")
+    public MongoClient primaryMongoClient(@Qualifier("primaryMongoProperties") MongoProperties mongoProperties) {
 
-        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());  
-        MongoClientSettings settings = MongoClientSettings.builder()  
-                .applyToClusterSettings(builder ->  
-                        builder.hosts(List.of(serverAddress)))  
-                .credential(MongoCredential.createCredential(  
-                        mongoProperties.getUsername(),  
-                        mongoProperties.getAuthenticationDatabase(),  
-                        mongoProperties.getPassword()))  
-                .build();  
-        return MongoClients.create(settings);  
-    }  
+        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyToClusterSettings(builder ->
+                        builder.hosts(List.of(serverAddress)))
+                .credential(MongoCredential.createCredential(
+                        mongoProperties.getUsername(),
+                        mongoProperties.getAuthenticationDatabase(),
+                        mongoProperties.getPassword()))
+                .build();
+        return MongoClients.create(settings);
+    }
 
-    @Primary  
-    @Bean(name = "primaryMongoFactory")  
-    public MongoDatabaseFactory mongoDatabaseFactory(  
-            @Qualifier("primaryMongoClient") MongoClient mongoClient,  
-            @Qualifier("primaryMongoProperties") MongoProperties mongoProperties) {  
-        return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());  
-    }  
+    @Primary
+    @Bean(name = "primaryMongoFactory")
+    public MongoDatabaseFactory mongoDatabaseFactory(
+            @Qualifier("primaryMongoClient") MongoClient mongoClient,
+            @Qualifier("primaryMongoProperties") MongoProperties mongoProperties) {
+        return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());
+    }
 
-    @Primary  
-    @Bean(name = "primaryMongoTemplate")  
-    public MongoTemplate mongoTemplate(  
-            @Qualifier("primaryMongoFactory") MongoDatabaseFactory mongoDatabaseFactory) {  
-        return new MongoTemplate(mongoDatabaseFactory);  
-    }  
+    @Primary
+    @Bean(name = "primaryMongoTemplate")
+    public MongoTemplate mongoTemplate(
+            @Qualifier("primaryMongoFactory") MongoDatabaseFactory mongoDatabaseFactory) {
+        return new MongoTemplate(mongoDatabaseFactory);
+    }
 }
 ```
 
@@ -113,44 +113,44 @@ public class PrimaryMongoConfig {
 The secondary mongo db config is similar to the primary, except for the `@Primary` annotation and it will read properties with `spring.data.mongodb.secondary` prefix.
 
 ```java
-@Configuration  
-@EnableMongoRepositories(basePackages = "com.stacktips.app.repository.secondary",  
-        mongoTemplateRef = "secondaryMongoTemplate")  
-public class SecondaryMongoConfig {  
+@Configuration
+@EnableMongoRepositories(basePackages = "com.stacktips.app.repository.secondary",
+        mongoTemplateRef = "secondaryMongoTemplate")
+public class SecondaryMongoConfig {
 
-    @Bean("secondaryMongoProperties")  
-    @ConfigurationProperties(prefix = "spring.data.mongodb.secondary")  
-    public MongoProperties secondaryMongoProperties() {  
-        return new MongoProperties();  
-    }  
+    @Bean("secondaryMongoProperties")
+    @ConfigurationProperties(prefix = "spring.data.mongodb.secondary")
+    public MongoProperties secondaryMongoProperties() {
+        return new MongoProperties();
+    }
 
-    @Bean(name = "secondaryMongoClient")  
-    public MongoClient secondaryMongoClient(  
-            @Qualifier("secondaryMongoProperties") MongoProperties mongoProperties) {  
+    @Bean(name = "secondaryMongoClient")
+    public MongoClient secondaryMongoClient(
+            @Qualifier("secondaryMongoProperties") MongoProperties mongoProperties) {
 
-        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());  
-        MongoClientSettings settings = MongoClientSettings.builder()  
-                .applyToClusterSettings(builder -> builder.hosts(List.of(serverAddress)))  
-                .credential(MongoCredential.createCredential(  
-                        mongoProperties.getUsername(),  
-                        mongoProperties.getAuthenticationDatabase(),  
-                        mongoProperties.getPassword()))  
-                .build();  
-        return MongoClients.create(settings);  
-    }  
+        ServerAddress serverAddress = new ServerAddress(mongoProperties.getHost(), mongoProperties.getPort());
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyToClusterSettings(builder -> builder.hosts(List.of(serverAddress)))
+                .credential(MongoCredential.createCredential(
+                        mongoProperties.getUsername(),
+                        mongoProperties.getAuthenticationDatabase(),
+                        mongoProperties.getPassword()))
+                .build();
+        return MongoClients.create(settings);
+    }
 
-    @Bean(name = "secondaryMongoFactory")  
-    public MongoDatabaseFactory mongoDatabaseFactory(  
-            @Qualifier("secondaryMongoClient") MongoClient mongoClient,  
-            @Qualifier("secondaryMongoProperties") MongoProperties mongoProperties) {  
-        return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());  
-    }  
+    @Bean(name = "secondaryMongoFactory")
+    public MongoDatabaseFactory mongoDatabaseFactory(
+            @Qualifier("secondaryMongoClient") MongoClient mongoClient,
+            @Qualifier("secondaryMongoProperties") MongoProperties mongoProperties) {
+        return new SimpleMongoClientDatabaseFactory(mongoClient, mongoProperties.getDatabase());
+    }
 
-    @Bean(name = "secondaryMongoTemplate")  
-    public MongoTemplate mongoTemplate(  
-            @Qualifier("secondaryMongoFactory") MongoDatabaseFactory mongoDatabaseFactory) {  
-        return new MongoTemplate(mongoDatabaseFactory);  
-    }  
+    @Bean(name = "secondaryMongoTemplate")
+    public MongoTemplate mongoTemplate(
+            @Qualifier("secondaryMongoFactory") MongoDatabaseFactory mongoDatabaseFactory) {
+        return new MongoTemplate(mongoDatabaseFactory);
+    }
 }
 ```
 
@@ -163,13 +163,13 @@ In this example, we will created a two repositories to perform CRUD operation. N
 Here we are using extending `MongoRepository` to perform the CRUD operations, but the same will work for custom repository that uses `MongoTemplate`.
 
 ```java
-package com.stacktips.app.repository.primary;  
+package com.stacktips.app.repository.primary;
 
-import com.stacktips.app.model.Movie;  
-import org.springframework.data.mongodb.repository.MongoRepository;  
-import org.springframework.stereotype.Repository;  
+import com.stacktips.app.model.Movie;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-@Repository  
+@Repository
 public interface PrimaryMovieRepository extends MongoRepository<Movie, String> {
 
 }
@@ -178,13 +178,13 @@ public interface PrimaryMovieRepository extends MongoRepository<Movie, String> {
 Secondary Mongo Repository:
 
 ```java
-package com.stacktips.app.repository.secondary;  
+package com.stacktips.app.repository.secondary;
 
-import com.stacktips.app.model.Movie;  
-import org.springframework.data.mongodb.repository.MongoRepository;  
-import org.springframework.stereotype.Repository;  
+import com.stacktips.app.model.Movie;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-@Repository  
+@Repository
 public interface SecondaryMovieRepository extends MongoRepository<Movie, String> {
 
 }
@@ -193,34 +193,34 @@ public interface SecondaryMovieRepository extends MongoRepository<Movie, String>
 No that we have everything, let us now inject these repositories into our service:
 
 ```java
-@Service  
-public class MovieService {  
+@Service
+public class MovieService {
 
-    private final PrimaryMovieRepository primaryMovieRepository;  
-    private final SecondaryMovieRepository secondaryMovieRepository;  
+    private final PrimaryMovieRepository primaryMovieRepository;
+    private final SecondaryMovieRepository secondaryMovieRepository;
 
-    public MovieService(  
-            PrimaryMovieRepository primaryMovieRepository,  
-            SecondaryMovieRepository secondaryMovieRepository) {  
-        this.primaryMovieRepository = primaryMovieRepository;  
-        this.secondaryMovieRepository = secondaryMovieRepository;  
-    }  
+    public MovieService(
+            PrimaryMovieRepository primaryMovieRepository,
+            SecondaryMovieRepository secondaryMovieRepository) {
+        this.primaryMovieRepository = primaryMovieRepository;
+        this.secondaryMovieRepository = secondaryMovieRepository;
+    }
 
-    public Movie savePrimary(Movie movie) {  
-        return primaryMovieRepository.save(movie);  
-    }  
+    public Movie savePrimary(Movie movie) {
+        return primaryMovieRepository.save(movie);
+    }
 
-    public List<Movie> findAllPrimary() {  
-        return primaryMovieRepository.findAll();  
-    }  
+    public List<Movie> findAllPrimary() {
+        return primaryMovieRepository.findAll();
+    }
 
-    public Movie saveSecondary(Movie movie) {  
-        return secondaryMovieRepository.save(movie);  
-    }  
+    public Movie saveSecondary(Movie movie) {
+        return secondaryMovieRepository.save(movie);
+    }
 
-    public List<Movie> findAllSecondary() {  
-        return secondaryMovieRepository.findAll();  
-    }  
+    public List<Movie> findAllSecondary() {
+        return secondaryMovieRepository.findAll();
+    }
 }
 ```
 

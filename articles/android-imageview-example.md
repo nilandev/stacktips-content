@@ -101,25 +101,25 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		// setting image resource from drawable
-		ImageView imageView = (ImageView) findViewById(R.id.imageView2);
-		imageView.setImageResource(R.drawable.image1);
+        // setting image resource from drawable
+        ImageView imageView = (ImageView) findViewById(R.id.imageView2);
+        imageView.setImageResource(R.drawable.image1);
 
-		imageView.setOnClickListener(new OnClickListener() {
+        imageView.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				Toast.makeText(getApplicationContext(), "Clicked Second Image",
-						Toast.LENGTH_SHORT).show();
-			}
-		});
+            @Override
+            public void onClick(View arg0) {
+                Toast.makeText(getApplicationContext(), "Clicked Second Image",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
 
-	}
+    }
 
 }
 ```

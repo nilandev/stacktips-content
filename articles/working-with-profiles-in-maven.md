@@ -28,11 +28,11 @@ Maven allows you to customize a project’s build configuration for different en
 
 Profiles allow you to define a set of configuration options that are activated only under certain conditions, such as a specific environment or build context. Profiles can be defined in a project's pom.xml file, or an external XML file. Here's an example of a profile defined in a `pom.xml` file:
 
-```XML
+```xml
 <project>
   ...
   <profiles>
-    
+
     <profile>
       <id>dev</id>
       <activation>
@@ -65,7 +65,7 @@ In this example, two profiles are defined: `dev` and `prod`. The `dev` profile i
 
 To activate a profile, you can use the `-P` command line option when running Maven. For example, to activate the `prod` profile, you can run the following command:
 
-```Plain
+```bash
 mvn clean install -Pprod
 ```
 

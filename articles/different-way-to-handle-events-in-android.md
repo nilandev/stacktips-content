@@ -39,7 +39,7 @@ This way will create anonymous classes as much as you create buttons. This is re
 
 # 2\. Using android:OnClick layout attribute
 
-```java
+```xml
 <Button android:id="@+id/btnView"
     ...............
     ...............
