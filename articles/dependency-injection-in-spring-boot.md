@@ -17,7 +17,7 @@ tags:
   - spring-autowired-annotation
   - constructor-vs-field-injection
   - spring-bean-configuration
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 5
 seo: 
   metaTitle: "Dependency Injection in Spring Boot: Complete Guide"

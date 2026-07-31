@@ -17,7 +17,7 @@ tags:
   - spring-boot-yaml-configuration
   - spring-value-annotation
   - spring-profiles-configuration
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 6
 seo: 
   metaTitle: "Configuration Management in Spring Boot Explained"

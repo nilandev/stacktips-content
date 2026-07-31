@@ -17,7 +17,7 @@ tags:
   - maven-vs-gradle
   - spring-boot-setup-intellij
   - java-ide-for-spring-boot
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 2
 seo: 
   metaTitle: null

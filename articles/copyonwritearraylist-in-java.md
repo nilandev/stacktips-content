@@ -15,7 +15,7 @@ topics:
 tags:
   - how-tos
   - code-snippet
-course: getting-started-with-java
+course: beginners-guide-to-java-collections
 displayOrder: 3
 seo: 
   metaTitle: "CopyOnWriteArrayList in Java: Thread-Safe List Example"

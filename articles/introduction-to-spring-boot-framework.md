@@ -12,7 +12,7 @@ featured: false
 thumbnail: /media/articles/Getting_Started_with_Spring_Boot-A_Beginners_Guide.png
 topics: 
   - spring-boot
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 1
 seo: 
   metaTitle: null

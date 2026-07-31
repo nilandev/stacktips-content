@@ -17,7 +17,7 @@ tags:
   - slf4j-logback
   - spring-boot-log-levels
   - actuator-runtime-log-level
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 7
 seo: 
   metaTitle: null

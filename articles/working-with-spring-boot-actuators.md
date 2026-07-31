@@ -17,7 +17,7 @@ tags:
   - custom-actuator-endpoint
   - actuator-health-endpoint
   - spring-boot-monitoring
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 8
 seo: 
   metaTitle: null

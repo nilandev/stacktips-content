@@ -12,7 +12,7 @@ featured: false
 thumbnail: /media/post/664_spring-boot-project-structure.jpeg
 topics: 
   - spring-boot
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 4
 seo: 
   metaTitle: null

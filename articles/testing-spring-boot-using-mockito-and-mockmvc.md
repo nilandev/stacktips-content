@@ -17,7 +17,7 @@ tags:
   - mockito-unit-testing-java
   - webmvctest-annotation
   - spring-boot-rest-api-testing
-course: getting-started-with-javascript
+course: spring-boot-for-beginners
 displayOrder: 10
 seo: 
   metaTitle: null
