@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/223/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - strategy-design-pattern-java
   - behavioral-design-patterns

@@ -17,7 +17,7 @@ tags:
   - hashset-iteration
   - java-collections-framework
   - remove-duplicates-java
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 6
 seo: 
   metaTitle: "HashSet in Java: Create, Iterate, and Remove Elements"

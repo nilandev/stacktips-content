@@ -17,7 +17,7 @@ tags:
   - java-delayed-interface
   - blockingqueue-java
   - delayed-task-scheduling-java
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 10
 seo: 
   metaTitle: "DelayQueue in Java: Delayed Task Scheduling Example"

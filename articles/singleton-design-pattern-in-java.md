@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - java-singleton-pattern
   - thread-safe-singleton

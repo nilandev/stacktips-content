@@ -16,7 +16,7 @@ tags:
   - identityhashmap-java
   - java-reference-equality-map
   - hashmap-vs-identityhashmap
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 14
 seo: 
   metaTitle: "IdentityHashMap in Java: How It Differs From HashMap"

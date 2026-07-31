@@ -17,7 +17,7 @@ tags:
   - lifo-data-structure
   - stack-push-pop-peek
   - java-vector-collections
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 5
 seo: 
   metaTitle: null

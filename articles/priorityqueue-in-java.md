@@ -17,7 +17,7 @@ tags:
   - java-binary-heap
   - priorityqueue-comparator
   - java-collections-priorityqueue
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 9
 seo: 
   metaTitle: null

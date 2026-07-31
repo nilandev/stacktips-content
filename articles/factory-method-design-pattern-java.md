@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/248/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - factory-method-design-pattern
   - java-creational-design-patterns

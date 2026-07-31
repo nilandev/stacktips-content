@@ -16,7 +16,7 @@ tags:
   - python-tuple-methods
   - python-immutable-sequence
   - python-data-structures
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 11
 seo: 
   metaTitle: null

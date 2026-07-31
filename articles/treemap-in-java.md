@@ -17,7 +17,7 @@ tags:
   - navigablemap-sortedmap
   - treemap-custom-comparator
   - java-collections-sorted-map
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 15
 seo: 
   metaTitle: null

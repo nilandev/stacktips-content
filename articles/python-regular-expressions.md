@@ -16,7 +16,7 @@ tags:
   - python-re-module
   - regex-python
   - python-findall-search-split-sub
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 15
 seo: 
   metaTitle: null

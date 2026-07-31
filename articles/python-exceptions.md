@@ -17,7 +17,7 @@ tags:
   - python-try-except-finally
   - python-raise-exception
   - python-else-block-exceptions
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 12
 seo: 
   metaTitle: null

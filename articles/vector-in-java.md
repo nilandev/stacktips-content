@@ -17,7 +17,7 @@ tags:
   - java-vector-vs-arraylist
   - synchronized-collection-java
   - java-legacy-collections
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 4
 seo: 
   metaTitle: null

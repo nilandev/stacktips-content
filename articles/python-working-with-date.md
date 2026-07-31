@@ -16,7 +16,7 @@ tags:
   - python-datetime-module
   - python-date-time-formatting
   - python-time-module
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 14
 seo: 
   metaTitle: null

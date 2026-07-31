@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/252/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - observer-design-pattern-java
   - publisher-subscriber-pattern

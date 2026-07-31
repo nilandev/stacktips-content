@@ -17,7 +17,7 @@ tags:
   - python-conditional-statements
   - python-control-flow
   - python-decision-making
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 4
 seo: 
   metaTitle: null

@@ -17,7 +17,7 @@ tags:
   - python-dict-methods
   - python-key-value-pairs
   - iterate-python-dictionary
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 8
 seo: 
   metaTitle: null

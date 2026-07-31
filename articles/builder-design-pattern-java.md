@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/249/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - builder-design-pattern
   - creational-design-pattern-java

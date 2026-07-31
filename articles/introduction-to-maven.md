@@ -17,7 +17,7 @@ tags:
   - maven-pom-xml
   - maven-gav-coordinates
   - maven-dependency-management
-course: getting-started-with-html
+course: maven-for-beginners
 displayOrder: 1
 seo: 
   metaTitle: null

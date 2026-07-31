@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/230/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - gang-of-four-design-patterns
   - creational-design-patterns

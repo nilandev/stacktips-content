@@ -16,7 +16,7 @@ tags:
   - python-os-module
   - python-file-io
   - python-directory-operations
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 13
 seo: 
   metaTitle: null

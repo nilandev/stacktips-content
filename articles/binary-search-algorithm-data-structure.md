@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/303/thumbnail.png
 topics: 
-  - data-structure
+  - c
 tags:
   - binary-search-algorithm
   - binary-search-vs-linear-search

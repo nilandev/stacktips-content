@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/parameterized-tests-in-junit-5.jpeg
 topics: 
-  - junit
+  - junit5
 tags:
   - junit5-parameterized-test
   - valuesource-junit

@@ -17,7 +17,7 @@ tags:
   - maven-transitive-dependency
   - maven-dependency-scope
   - maven-pom-properties
-course: getting-started-with-html
+course: maven-for-beginners
 displayOrder: 4
 seo: 
   metaTitle: "Dependency Management in Maven: A Practical Guide"

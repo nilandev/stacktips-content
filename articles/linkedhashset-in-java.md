@@ -17,7 +17,7 @@ tags:
   - linkedhashset-vs-hashset
   - java-set-insertion-order
   - unique-elements-java-collections
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 7
 seo: 
   metaTitle: null

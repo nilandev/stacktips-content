@@ -17,7 +17,7 @@ tags:
   - python-while-loop
   - python-break-continue
   - python-iteration
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 5
 seo: 
   metaTitle: null

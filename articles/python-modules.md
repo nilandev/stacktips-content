@@ -16,7 +16,7 @@ tags:
   - python-import-module
   - python-packages
   - python-custom-module
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 7
 seo: 
   metaTitle: null

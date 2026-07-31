@@ -17,7 +17,7 @@ tags:
   - synchronized-arraylist
   - java-immutable-list
   - arraylist-vs-array
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 1
 seo: 
   metaTitle: "ArrayList in Java: Complete Guide with Examples"

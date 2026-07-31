@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/396/thumbnail.png
 topics: 
-  - struts
+  - java
 tags:
   - struts2-login-application
   - struts2-actionsupport

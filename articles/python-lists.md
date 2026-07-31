@@ -17,7 +17,7 @@ tags:
   - python-arrays
   - python-data-structures
   - python-list-operations
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 10
 seo: 
   metaTitle: null

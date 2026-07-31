@@ -17,7 +17,7 @@ tags:
   - mvn-clean-install-package
   - maven-dependency-tree
   - maven-archetype-generate
-course: getting-started-with-html
+course: maven-for-beginners
 displayOrder: 6
 seo: 
   metaTitle: null

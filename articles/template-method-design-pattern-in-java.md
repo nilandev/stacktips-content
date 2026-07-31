@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/226/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - template-method-design-pattern
   - behavioral-design-patterns

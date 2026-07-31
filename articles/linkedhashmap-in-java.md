@@ -17,7 +17,7 @@ tags:
   - linkedhashmap-vs-hashmap
   - access-order-linkedhashmap
   - java-map-insertion-order
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 13
 seo: 
   metaTitle: null

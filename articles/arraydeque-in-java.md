@@ -16,7 +16,7 @@ tags:
   - java-arraydeque
   - java-deque-interface
   - undo-redo-stack-java
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 11
 seo: 
   metaTitle: "ArrayDeque in Java: Guide with Undo/Redo Example"

@@ -17,7 +17,7 @@ tags:
   - java-list-set-map-interface
   - java-util-collection
   - java-collections-hierarchy
-course: getting-started-with-java
+course: beginners-guide-to-java-collections
 displayOrder: 0
 seo: 
   metaTitle: null

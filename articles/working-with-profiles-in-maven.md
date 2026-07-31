@@ -17,7 +17,7 @@ tags:
   - maven-pom-xml-profile-activation
   - maven-build-environment-config
   - mvn-command-line-profile
-course: getting-started-with-html
+course: maven-for-beginners
 displayOrder: 7
 seo: 
   metaTitle: null

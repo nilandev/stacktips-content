@@ -16,7 +16,7 @@ tags:
   - python-set-methods
   - python-unique-elements
   - python-data-structures
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 9
 seo: 
   metaTitle: null

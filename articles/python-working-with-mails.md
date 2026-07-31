@@ -16,7 +16,7 @@ tags:
   - python-smtplib
   - send-email-python
   - python-mime-html-email
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 18
 seo: 
   metaTitle: null

@@ -17,7 +17,7 @@ tags:
   - linkedlist-vs-arraylist
   - java-list-iterator
   - java-deque-queue-example
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 2
 seo: 
   metaTitle: null

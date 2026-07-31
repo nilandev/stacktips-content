@@ -17,7 +17,7 @@ tags:
   - python-interpreter
   - python-getting-started
   - learn-python-basics
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 1
 seo: 
   metaTitle: null

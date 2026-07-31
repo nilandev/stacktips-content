@@ -16,7 +16,7 @@ tags:
   - python-arithmetic-operators
   - python-math-module
   - python-number-operations
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 16
 seo: 
   metaTitle: null

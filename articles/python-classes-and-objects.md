@@ -17,7 +17,7 @@ tags:
   - python-inheritance-super
   - python-constructor-init
   - python-method-overriding
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 3
 seo: 
   metaTitle: null

@@ -16,7 +16,7 @@ tags:
   - python-data-types
   - python-variable-declaration
   - python-variable-naming-rules
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 2
 seo: 
   metaTitle: null

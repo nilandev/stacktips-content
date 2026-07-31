@@ -17,7 +17,7 @@ tags:
   - hashmap-iteration
   - java-collections-framework
   - key-value-store
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 12
 seo: 
   metaTitle: "HashMap in Java: Guide to Creating, Iterating & Using It"

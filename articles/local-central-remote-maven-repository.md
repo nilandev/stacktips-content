@@ -17,7 +17,7 @@ tags:
   - maven-central-repository
   - maven-remote-repository-settings-xml
   - maven-dependency-resolution-order
-course: getting-started-with-html
+course: maven-for-beginners
 displayOrder: 5
 seo: 
   metaTitle: null

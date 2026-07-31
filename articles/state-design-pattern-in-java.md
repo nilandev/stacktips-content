@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/224/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - state-design-pattern-java
   - behavioral-design-patterns

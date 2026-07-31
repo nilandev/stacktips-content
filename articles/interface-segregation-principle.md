@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/246/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - interface-segregation-principle
   - solid-design-principles

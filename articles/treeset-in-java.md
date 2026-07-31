@@ -17,7 +17,7 @@ tags:
   - navigableset
   - sorted-collection-java
   - java-collections-framework
-course: getting-started-with-php
+course: beginners-guide-to-java-collections
 displayOrder: 8
 seo: 
   metaTitle: null

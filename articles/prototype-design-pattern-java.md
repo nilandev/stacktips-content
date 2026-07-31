@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/250/thumbnail.png
 topics: 
-  - design-patterns
+  - design-pattern
 tags:
   - prototype-design-pattern-java
   - java-cloneable-interface

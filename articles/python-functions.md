@@ -17,7 +17,7 @@ tags:
   - python-args-kwargs
   - python-default-parameters
   - python-function-recursion
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 6
 seo: 
   metaTitle: null

@@ -16,7 +16,7 @@ tags:
   - python-json-module
   - json-loads-dumps
   - python-json-parsing
-course: getting-started-with-css
+course: getting-started-with-python
 displayOrder: 17
 seo: 
   metaTitle: null
