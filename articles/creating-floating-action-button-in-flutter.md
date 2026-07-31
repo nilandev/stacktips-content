@@ -12,11 +12,15 @@ featured: false
 thumbnail: /media/articles/Copy_of_Building_Multi-Select_GridView_in_Flutter_3.jpg
 topics: 
   - flutter
+tags:
+  - flutter-floatingactionbutton
+  - flutter-fab-customization
+  - flutter-extended-fab
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Flutter Floating Action Button: Create and Customize"
+  metaDescription: "Learn how to create a Flutter FloatingActionButton and customize its color, shape, size, and icon, including extended, small, and large FAB variants."
   metaKeywords: null
 ---
 

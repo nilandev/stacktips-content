@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/441/thumbnail.png
 topics: 
-  - blog
+  - java
+tags:
+  - java-garbage-collection
+  - memory-leak-java
+  - dangling-pointer-java
+  - java-memory-management
 course: null
 displayOrder: 0
 seo: 

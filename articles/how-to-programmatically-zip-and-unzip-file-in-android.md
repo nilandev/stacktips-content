@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-zip-unzip-file
+  - android-zipoutputstream
+  - java-ziputils-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Zip and Unzip Files Programmatically in Android"
+  metaDescription: "Learn how to zip and unzip files in Android using a reusable ZipManager wrapper class built on ZipOutputStream and ZipInputStream."
   metaKeywords: null
 ---
 

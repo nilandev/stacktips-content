@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/posts/java-program-to-find-the-minimum-depth-of-binary-tree.jpeg
 topics: 
   - java
+tags:
+  - binary-search-tree-java
+  - minimum-depth-binary-tree
+  - leetcode-java-solution
+  - tree-traversal-bfs-java
 course: null
 displayOrder: 0
 seo: 

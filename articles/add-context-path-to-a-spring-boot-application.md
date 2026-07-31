@@ -12,11 +12,14 @@ featured: false
 thumbnail: /media/articles/add-context-path-to-a-spring-boot-application.jpg
 topics: 
   - spring-boot
+tags:
+  - servlet-context-path
+  - springboot-base-url
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Add a Context Path to a Spring Boot App"
+  metaDescription: "Learn how to set a custom context path in Spring Boot using server.servlet.context-path in application.properties or application.yaml."
   metaKeywords: null
 ---
 

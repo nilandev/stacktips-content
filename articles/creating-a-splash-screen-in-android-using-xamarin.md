@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - xamarin
+tags:
+  - xamarin-android-splash-screen
+  - android-splash-activity
+  - xamarin-nohistory-activity
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Creating a Splash Screen in Android Using Xamarin"
+  metaDescription: "Learn how to build a splash screen in Xamarin Android using a custom activity theme, windowBackground drawable, and the NoHistory activity attribute."
   metaKeywords: null
 ---
 

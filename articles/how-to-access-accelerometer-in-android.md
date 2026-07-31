@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-accelerometer
+  - sensoreventlistener
+  - android-sensormanager
+  - android-sensors
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Access the Accelerometer in Android"
+  metaDescription: "Learn how to set up the Android accelerometer sensor using SensorManager and SensorEventListener to read live x, y, and z axis values in your app."
   metaKeywords: null
 ---
 

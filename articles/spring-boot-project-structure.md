@@ -12,6 +12,12 @@ featured: false
 thumbnail: /media/articles/2/thumbnail.png
 topics: 
   - spring-boot
+tags:
+  - spring-boot-project-structure
+  - application-properties-file
+  - spring-boot-build-gradle
+  - spring-boot-static-content
+  - spring-boot-templates
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - xamarin
+tags:
+  - actionbar
+  - xamarin-tab-navigation
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Action Bar Tabs Example in Xamarin.Android"
+  metaDescription: "Learn how to add Action Bar tabs in Xamarin.Android using fragments, with a full code example for tab navigation and dynamic fragment switching."
   metaKeywords: null
 ---
 

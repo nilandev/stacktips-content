@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - xamarin
+tags:
+  - linearlayout-orientation
+  - android-layout-weight-gravity
+  - xamarin-android-login-layout
+  - layout-gravity-vs-gravity
 course: null
 displayOrder: 0
 seo: 

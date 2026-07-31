@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/7/thumbnail.png
 topics: 
-  - php
+  - spring-boot
+tags:
+  - swagger2-spring-boot
+  - springfox-boot-starter
+  - enableswagger2
+  - swagger-ui-setup
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Configure Swagger2 in a Spring Boot Application"
+  metaDescription: "Learn how to configure Swagger2 and enable Swagger UI in a Spring Boot app using the springfox-boot-starter dependency and @EnableSwagger2 annotation."
   metaKeywords: null
 ---
 

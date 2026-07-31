@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/thumbnail.002-small.jpeg
 topics: 
   - flutter
+tags:
+  - flutter-card-widget
+  - flutter-cardview-customization
+  - flutter-fadeinimage
+  - flutter-material-design
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create and Customize a Card Widget in Flutter"
+  metaDescription: "Learn how to create a CardView in Flutter and customize its shape, elevation, and content, following Material Design 3 guidelines."
   metaKeywords: null
 ---
 

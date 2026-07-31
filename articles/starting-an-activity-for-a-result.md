@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - startactivityforresult-android
+  - android-activity-result
+  - android-intent-communication
+  - onactivityresult-callback
 course: null
 displayOrder: 0
 seo: 

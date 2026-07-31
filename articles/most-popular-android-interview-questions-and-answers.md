@@ -12,6 +12,9 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - interview-questions
+  - faqs
 course: null
 displayOrder: 0
 seo: 

@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - identityhashmap-java
+  - java-reference-equality-map
+  - hashmap-vs-identityhashmap
 course: getting-started-with-php
 displayOrder: 14
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "IdentityHashMap in Java: How It Differs From HashMap"
+  metaDescription: "Learn how IdentityHashMap in Java uses reference equality instead of equals() to compare keys, with code examples comparing it to a standard HashMap."
   metaKeywords: null
 ---
 

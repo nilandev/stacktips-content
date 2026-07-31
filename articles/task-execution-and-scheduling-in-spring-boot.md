@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/Task_Scheduler_Spring_Boot.jpeg
 topics: 
-  - java
+  - spring-boot
+tags:
+  - spring-scheduled-annotation
+  - spring-boot-cron-expression
+  - fixedrate-vs-fixeddelay
+  - spring-task-scheduler
 course: null
 displayOrder: 0
 seo: 

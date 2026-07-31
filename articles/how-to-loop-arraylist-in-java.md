@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - java-arraylist-loop
+  - java-iterator
+  - for-loop-vs-iterator-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Loop Through an ArrayList in Java (4 Ways)"
+  metaDescription: "Learn four ways to loop through an ArrayList in Java: regular for loop, enhanced for loop, while loop, and Iterator, with a complete code example."
   metaKeywords: null
 ---
 

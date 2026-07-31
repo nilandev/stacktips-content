@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-classes-and-objects
+  - java-constructors
+  - java-oop-fundamentals
+  - java-class-blueprint
 course: maven-for-beginners
 displayOrder: 8
 seo: 

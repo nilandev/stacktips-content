@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-frame-by-frame-animation
+  - animationdrawable-android
+  - android-animation-list-xml
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Creating Frame-by-Frame Animations in Android"
+  metaDescription: "Step-by-step guide to building frame-by-frame animations in Android using AnimationDrawable, an animation-list XML, and start/stop controls."
   metaKeywords: null
 ---
 

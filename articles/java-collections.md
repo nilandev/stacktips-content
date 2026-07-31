@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - maven
+  - java
+tags:
+  - java-arraylist
+  - java-linkedlist
+  - java-hashmap-hashset
+  - java-collections-framework
 course: maven-for-beginners
 displayOrder: 17
 seo: 

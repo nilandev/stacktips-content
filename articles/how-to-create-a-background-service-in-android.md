@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-background-service
+  - android-service-lifecycle
+  - startservice-stopservice
+  - android-ibinder
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create a Background Service in Android"
+  metaDescription: "Learn how to create an Android background service: declare it in the manifest, extend the Service class, and start or stop it from an Activity."
   metaKeywords: null
 ---
 

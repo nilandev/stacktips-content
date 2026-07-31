@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/154/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-internationalization
+  - spring-i18n-messagesource
+  - resourcebundlemessagesource
+  - locale-properties-files
 course: null
 displayOrder: 0
 seo: 

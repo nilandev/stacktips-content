@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-interview-questions
+  - android-share-intent
+  - android-send-sms
+  - android-toast-example
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Interview Questions and Answers with Code"
+  metaDescription: "Common Android interview questions and answers with code snippets covering SMS, calls, email, sharing intents, HTML in TextView, and passing data between activities."
   metaKeywords: null
 ---
 

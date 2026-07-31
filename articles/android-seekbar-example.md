@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-seekbar
+  - onSeekBarChangeListener
+  - custom-seekbar-drawable
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android SeekBar Example: Custom Style and Listener"
+  metaDescription: "Learn how to create and customize an Android SeekBar with a custom drawable, and handle progress changes using OnSeekBarChangeListener."
   metaKeywords: null
 ---
 

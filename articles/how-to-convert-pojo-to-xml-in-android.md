@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - pojo-to-xml-java
+  - xmlserializer-android
+  - android-xml-serialization
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Convert POJO to XML in Android Using XmlSerializer"
+  metaDescription: "Learn how to convert a POJO to XML in Android using XmlSerializer, with a full example that reads object fields and generates XML tags in order."
   metaKeywords: null
 ---
 

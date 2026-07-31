@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - maven
+  - java
+tags:
+  - java-date-class
+  - java-time-package
+  - java-localdate-localdatetime
 course: maven-for-beginners
 displayOrder: 19
 seo: 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-viewflipper
+  - image-slideshow-android
+  - swipe-gesture-detector
+  - viewflipper-auto-flip
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android ViewFlipper Example: Build an Image Slideshow"
+  metaDescription: "Learn how to use Android ViewFlipper to build a swipeable image slideshow with auto-flip, custom animations, and gesture detection, complete with code."
   metaKeywords: null
 ---
 

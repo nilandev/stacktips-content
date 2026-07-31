@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/19/thumbnail.png
 topics: 
-  - ios
+  - java
+tags:
+  - java8-default-methods
+  - interface-default-method-java
+  - java-diamond-problem
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Default Methods for Interfaces in Java 8 Explained"
+  metaDescription: "Learn how Java 8 default methods let interfaces provide method implementations, with a working example and how to resolve the diamond problem."
   metaKeywords: null
 ---
 

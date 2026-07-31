@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-static-keyword
+  - static-variables-methods
+  - static-nested-class-java
+  - java-static-vs-instance
 course: maven-for-beginners
 displayOrder: 21
 seo: 

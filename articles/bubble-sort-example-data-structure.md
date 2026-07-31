@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/300/thumbnail.png
 topics: 
-  - xamarin
+  - data-structure
+tags:
+  - bubble-sort-algorithm
+  - sorting-algorithm-example
+  - data-structures-basics
+  - bubble-sort-in-c
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Bubble Sort Algorithm Explained with Example"
+  metaDescription: "Learn how the bubble sort algorithm works step by step, including how elements are compared and swapped, plus its time complexity and pseudocode."
   metaKeywords: null
 ---
 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/Django.jpg
 topics: 
   - django
+tags:
+  - django-forms
+  - django-modelform
+  - django-form-validation
+  - csrf-token-django
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Handle Form Submissions in Django (Forms & ModelForms)"
+  metaDescription: "Learn how to create and handle standard Django forms and ModelForms, including validation, CSRF tokens, templates, and saving data to the database."
   metaKeywords: null
 ---
 

@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-open-source-libraries
+  - okhttp-volley-retrofit
+  - android-orm-libraries
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Popular Android Third-Party Libraries and SDKs"
+  metaDescription: "Discover popular Android open-source libraries for networking, image loading, databases, and more, including OkHttp, Retrofit, Picasso, and GreenDAO."
   metaKeywords: null
 ---
 

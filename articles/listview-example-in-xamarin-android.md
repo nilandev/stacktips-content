@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - xamarin
+tags:
+  - xamarin-android-listview
+  - xamarin-baseadapter-example
+  - custom-listview-adapter-xamarin
+  - listview-itemclick-xamarin
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/396/thumbnail.png
 topics: 
-  - java
+  - struts
+tags:
+  - struts2-login-application
+  - struts2-actionsupport
+  - struts-xml-configuration
+  - struts2-interceptor
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Struts2 Login Application Tutorial with Example"
+  metaDescription: "Learn how to build a login application in Struts2, covering web.xml setup, ActionSupport validation, struts.xml configuration, and JSP login pages."
   metaKeywords: null
 ---
 

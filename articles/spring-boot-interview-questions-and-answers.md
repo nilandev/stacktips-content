@@ -11,7 +11,13 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - junit5
+  - spring-boot
+tags:
+  - spring-boot-interview-questions
+  - dependency-injection-spring
+  - jpa-hibernate-interview
+  - n-plus-one-query-problem
+  - resttemplate-vs-webclient
 course: null
 displayOrder: 0
 seo: 

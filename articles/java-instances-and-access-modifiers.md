@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-access-modifiers
+  - public-private-protected-java
+  - java-class-instances
 course: maven-for-beginners
 displayOrder: 11
 seo: 

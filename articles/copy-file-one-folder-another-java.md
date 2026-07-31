@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - code-snippet
+  - how-tos
+  - java-file
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Copy a File from One Folder to Another in Java"
+  metaDescription: "A simple Java example showing how to copy a file from one folder to another using FileChannel, with complete working code."
   metaKeywords: null
 ---
 

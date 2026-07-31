@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-spinner
+  - spinner-dropdown-list
+  - onItemSelectedListener
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Spinner Example: Dropdown List with Images"
+  metaDescription: "Learn how to create an Android Spinner dropdown list of countries that updates an ImageView with the matching flag using OnItemSelectedListener."
   metaKeywords: null
 ---
 

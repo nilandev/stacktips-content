@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - java-arraylist-sort
+  - collections-sort-java
+  - comparable-vs-comparator
+  - sort-objects-in-arraylist
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Sort an ArrayList in Java: 3 Methods Explained"
+  metaDescription: "Learn how to sort an ArrayList in Java using Collections.sort(), the Comparable interface, and custom Comparator objects, with complete code examples."
   metaKeywords: null
 ---
 

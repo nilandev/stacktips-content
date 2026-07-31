@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-intentservice
+  - background-service-android
+  - resultreceiver-android
+  - android-networking-tutorial
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android IntentService Tutorial: Background Service Guide"
+  metaDescription: "Learn how to create a background service in Android using IntentService, pass data with ResultReceiver, and update your activity UI with real examples."
   metaKeywords: null
 ---
 

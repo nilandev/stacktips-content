@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring-boot
+  - java
+tags:
+  - java-keywords
+  - java-data-types
+  - java-comments
+  - java-interfaces-basics
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Basic Java Language Constructs: Keywords, Data Types"
+  metaDescription: "A beginner's overview of core Java language constructs, covering keywords, comments, data types, literals, classes, interfaces, and arrays."
   metaKeywords: null
 ---
 

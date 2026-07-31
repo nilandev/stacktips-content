@@ -12,11 +12,15 @@ featured: false
 thumbnail: /media/articles/251/thumbnail.png
 topics: 
   - android
+tags:
+  - adapter-design-pattern
+  - java-structural-patterns
+  - gang-of-four-patterns
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Adapter Design Pattern in Java: Explained with Example"
+  metaDescription: "Understand the Adapter design pattern in Java with real-world analogies and a complete object adapter code example using a bank account use case."
   metaKeywords: null
 ---
 

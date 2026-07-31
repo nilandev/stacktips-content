@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-textwatcher
+  - addTextChangedListener
+  - edittext-input-validation
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android TextWatcher Example: Track EditText Changes"
+  metaDescription: "Learn how to use TextWatcher in Android to monitor EditText input in real time with addTextChangedListener, illustrated with a password field example."
   metaKeywords: null
 ---
 

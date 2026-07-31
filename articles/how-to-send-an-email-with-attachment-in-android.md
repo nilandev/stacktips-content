@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-send-email-intent
+  - email-attachment-android
+  - android-intent-action-send
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Send an Email with Attachment in Android"
+  metaDescription: "Learn how to send an email with an image attachment in Android using an Intent, with a simple sendEmail() code snippet you can drop into your app."
   metaKeywords: null
 ---
 

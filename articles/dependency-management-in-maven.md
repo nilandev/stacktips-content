@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - python
+  - maven
+tags:
+  - maven-dependency-management
+  - maven-transitive-dependency
+  - maven-dependency-scope
+  - maven-pom-properties
 course: getting-started-with-html
 displayOrder: 4
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Dependency Management in Maven: A Practical Guide"
+  metaDescription: "Learn how Maven manages direct and transitive dependencies, resolves version conflicts, and understand dependency scopes like compile, test, and runtime."
   metaKeywords: null
 ---
 

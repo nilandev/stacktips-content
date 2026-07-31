@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - android
+tags:
+  - android-handler
+  - background-thread-ui
+  - message-queue
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Handler Example: Update UI from Background Thread"
+  metaDescription: "Learn how to use Android's Handler class to communicate from a background thread to the UI thread, with an example that downloads and displays an image."
   metaKeywords: null
 ---
 

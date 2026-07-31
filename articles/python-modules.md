@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-import-module
+  - python-packages
+  - python-custom-module
 course: getting-started-with-css
 displayOrder: 7
 seo: 

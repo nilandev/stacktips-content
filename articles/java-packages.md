@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-package-keyword
+  - java-import-statement
+  - java-namespace-organization
 course: maven-for-beginners
 displayOrder: 9
 seo: 

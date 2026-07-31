@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-dictionaries
+  - python-dict-methods
+  - python-key-value-pairs
+  - iterate-python-dictionary
 course: getting-started-with-css
 displayOrder: 8
 seo: 

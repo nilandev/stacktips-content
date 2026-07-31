@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - android
+tags:
+  - swiperefreshlayout
+  - pull-to-refresh
+  - material-design
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android SwipeRefreshLayout Example (Lollipop Material Design)"
+  metaDescription: "Learn how to implement SwipeRefreshLayout in Android to add pull-to-refresh functionality to a ListView, complete with JSON feed loading and full source code."
   metaKeywords: null
 ---
 

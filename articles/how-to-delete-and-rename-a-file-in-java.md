@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - java-file-rename
+  - java-file-delete
+  - java-io-file-class
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Delete and Rename a File in Java"
+  metaDescription: "Learn how to rename and delete files in Java using the File class's renameTo() and delete() methods, with complete working examples."
   metaKeywords: null
 ---
 

@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/Getting_Started_with_Spring_Boot-A_Beginners_Guide.png
 topics: 
-  - java
+  - spring-boot
 course: getting-started-with-javascript
 displayOrder: 1
 seo: 

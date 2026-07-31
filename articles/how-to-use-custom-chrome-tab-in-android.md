@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - wordpress
+  - android
 course: null
 displayOrder: 0
 seo: 

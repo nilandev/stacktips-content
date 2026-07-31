@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - countdownlatch-example
+  - java-concurrency-threads
+  - multithreading-synchronization-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "CountDownLatch in Java: Concurrency Example Explained"
+  metaDescription: "Learn how Java's CountDownLatch coordinates multiple threads, letting a main thread wait until worker threads finish, with a practical example."
   metaKeywords: null
 ---
 

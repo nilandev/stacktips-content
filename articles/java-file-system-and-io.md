@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - maven
+  - java
+tags:
+  - java-file-class
+  - read-write-file-java
+  - java-io-package
 course: maven-for-beginners
 displayOrder: 18
 seo: 

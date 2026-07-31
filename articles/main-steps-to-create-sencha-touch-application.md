@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - sencha-touch-getting-started
+  - sencha-touch-application-setup
+  - sencha-touch-html-file
+  - touch-based-web-app-framework
 course: null
 displayOrder: 0
 seo: 

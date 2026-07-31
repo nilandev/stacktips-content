@@ -11,7 +11,10 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/162/thumbnail.png
 topics: 
-  - ios
+  - spring
+tags:
+  - spring-mvc-helloworld
+  - how-tos
 course: null
 displayOrder: 0
 seo: 

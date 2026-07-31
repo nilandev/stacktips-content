@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/158/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-configuration-annotation
+  - spring-bean-annotation
+  - annotationconfigapplicationcontext
+  - java-based-spring-config
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Spring Bean Configuration with @Configuration and @Bean"
+  metaDescription: "Learn how to configure Spring beans in Java using @Configuration and @Bean annotations instead of XML, and load them with AnnotationConfigApplicationContext."
   metaKeywords: null
 ---
 

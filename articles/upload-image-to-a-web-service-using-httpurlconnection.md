@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - httpurlconnection-image-upload
+  - android-bitmap-upload
+  - upload-image-web-service-android
+  - java-http-post-image
 course: null
 displayOrder: 0
 seo: 

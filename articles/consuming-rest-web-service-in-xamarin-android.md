@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - xamarin
+tags:
+  - json-net-deserialization
+  - xamarin-httpclient
+  - async-await-csharp
+  - consume-rest-api-xamarin
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Consume REST Web Services in Xamarin Android with Json.NET"
+  metaDescription: "Learn how to call a REST API and deserialize the JSON response using Json.NET in a Xamarin Android application, step by step."
   metaKeywords: null
 ---
 

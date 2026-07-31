@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - android
+tags:
+  - android-styles-xml
+  - android-themes
+  - nine-patch-drawable
+  - android-style-inheritance
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Styles and Themes Tutorial with Examples"
+  metaDescription: "Learn how to create and apply Android styles and themes, including style inheritance, nine-patch drawables, selectors, and gradient backgrounds."
   metaKeywords: null
 ---
 

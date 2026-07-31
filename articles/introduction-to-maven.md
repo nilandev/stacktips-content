@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring-boot
+  - maven
+tags:
+  - maven-build-automation
+  - maven-pom-xml
+  - maven-gav-coordinates
+  - maven-dependency-management
 course: getting-started-with-html
 displayOrder: 1
 seo: 

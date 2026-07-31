@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - interview-questions
+  - activity-lifecycle
+  - android-data-persistence
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Interview Questions for Freshers"
+  metaDescription: "A compiled set of Android interview questions and answers for freshers, covering activity lifecycle, ANR, context types, nine-patch images, and data storage."
   metaKeywords: null
 ---
 

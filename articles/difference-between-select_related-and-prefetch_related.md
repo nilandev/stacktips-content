@@ -12,11 +12,16 @@ featured: true
 thumbnail: /media/articles/Django_nhMFVrB.jpg
 topics: 
   - django
+tags:
+  - django-select-related
+  - django-prefetch-related
+  - django-orm-optimization
+  - n-plus-one-query-problem
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "select_related vs prefetch_related in Django Explained"
+  metaDescription: "Understand the difference between Django's select_related and prefetch_related methods, with examples showing how each optimizes related-object queries."
   metaKeywords: null
 ---
 

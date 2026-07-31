@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - blog
+  - android
+tags:
+  - android-excel-file
+  - jexcelapi-android
+  - export-data-to-excel-android
+  - writablesheet-jxl
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create an Excel File in Android Using Java"
+  metaDescription: "Learn how to export SQLite data to an Excel file in Android using the Java for Excel (JExcelApi) library, with a complete code walkthrough."
   metaKeywords: null
 ---
 

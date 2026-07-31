@@ -12,6 +12,12 @@ featured: false
 thumbnail: null
 topics: 
   - git
+tags:
+  - git-interview-questions
+  - git-fetch-vs-pull
+  - git-merge-conflict
+  - git-stash
+  - git-cherry-pick
 course: null
 displayOrder: 0
 seo: 

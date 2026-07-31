@@ -11,12 +11,17 @@ githubLink: "https://github.com/StackTipsLab/spring-boot-tutorials/tree/main/spr
 featured: false
 thumbnail: /media/posts/Working_with_XML_in_Spring_Boot_REST.jpeg
 topics: 
-  - java
+  - spring-boot
+tags:
+  - spring-boot-xml-rest-api
+  - jackson-dataformat-xml
+  - spring-boot-content-negotiation
+  - jacksonxmlrootelement-annotation
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Handling XML Requests and Responses in Spring Boot REST"
+  metaDescription: "Learn how to build an XML-based REST API in Spring Boot using jackson-dataformat-xml, content negotiation, and custom XML response wrapping."
   metaKeywords: null
 ---
 

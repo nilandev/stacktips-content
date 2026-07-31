@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/301/thumbnail.png
 topics: 
-  - android
+  - data-structure
+tags:
+  - insertion-sort-algorithm
+  - insertion-sort-data-structure
+  - insertion-sort-in-c
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Insertion Sort Example in Data Structure"
+  metaDescription: "Understand how the insertion sort algorithm works in data structures, with a step-by-step explanation, pseudocode, and a working C code example."
   metaKeywords: null
 ---
 

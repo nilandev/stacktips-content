@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - java
+tags:
+  - java-enum-tutorial
+  - enum-type-safety-java
+  - declaring-enum-java
 course: null
 displayOrder: 0
 seo: 

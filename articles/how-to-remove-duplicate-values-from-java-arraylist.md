@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - java-arraylist-remove-duplicates
+  - java-hashset-vs-linkedhashset
+  - java-preserve-order-deduplication
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Remove Duplicate Values from a Java ArrayList"
+  metaDescription: "Learn how to remove duplicate values from a Java ArrayList using HashSet, and how to preserve insertion order instead with LinkedHashSet."
   metaKeywords: null
 ---
 

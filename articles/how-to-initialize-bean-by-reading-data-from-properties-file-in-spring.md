@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/156/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-properties-file
+  - property-sources-placeholder-configurer
+  - spring-bean-configuration
+  - spring-ioc-container
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Initialize Spring Bean from a Properties File"
+  metaDescription: "Learn how to use Spring's PropertySourcesPlaceholderConfigurer to initialize a bean's properties by reading values from an external .properties file."
   metaKeywords: null
 ---
 

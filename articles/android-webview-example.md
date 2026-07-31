@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-webview
+  - webviewclient
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android WebView Example: Load HTML and URLs In-App"
+  metaDescription: "Learn how to use Android WebView to load static HTML or remote URLs, override link handling with WebViewClient, and keep browsing inside your app."
   metaKeywords: null
 ---
 

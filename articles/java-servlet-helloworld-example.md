@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/articles/291/thumbnail.png
 topics: 
   - c
+tags:
+  - java-servlet-tutorial
+  - servlet-lifecycle-java
+  - tomcat-servlet-example
+  - dynamic-web-project-eclipse
 course: null
 displayOrder: 0
 seo: 

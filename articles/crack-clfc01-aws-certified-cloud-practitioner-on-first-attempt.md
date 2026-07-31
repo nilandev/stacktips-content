@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/crack-clfc01-aws-certified-cloud-practitioner-in-first-attempt.jpeg
 topics: 
-  - spring
+  - aws
+tags:
+  - clf-c01-exam-notes
+  - aws-certified-cloud-practitioner
+  - aws-exam-preparation
+  - aws-services-overview
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Notes to Pass AWS CLF-C01 Cloud Practitioner Exam"
+  metaDescription: "Study notes covering AWS services, cloud computing concepts, and exam tips that helped pass the CLF-C01 AWS Certified Cloud Practitioner exam on the first try."
   metaKeywords: null
 ---
 

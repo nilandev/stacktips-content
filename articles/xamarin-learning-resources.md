@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - xamarin
+tags:
+  - xamarin-learning-resources
+  - xamarin-forms-books
+  - xamarin-android-development
+  - xamarin-ios-development
 course: null
 displayOrder: 0
 seo: 

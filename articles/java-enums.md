@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-enum-basics
+  - defining-enum-java
+  - iterating-enum-values-java
 course: maven-for-beginners
 displayOrder: 12
 seo: 

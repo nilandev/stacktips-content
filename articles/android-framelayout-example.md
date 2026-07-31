@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - android
+tags:
+  - framelayout
+  - framelayout-xml
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android FrameLayout Example: XML and Programmatic"
+  metaDescription: "Learn how to create an Android FrameLayout to overlap views, with both XML layout and programmatic Java examples for stacking images and text."
   metaKeywords: null
 ---
 

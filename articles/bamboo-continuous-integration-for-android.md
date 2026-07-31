@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - blog
+tags:
+  - bamboo-ci-cd
+  - android-continuous-integration
+  - apk-signing-jarsigner
+  - zipalign-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Bamboo Continuous Integration for Android Builds"
+  metaDescription: "Learn how to set up Atlassian Bamboo CI for Android projects, from checking out source code to building, signing, and zipaligning your APK."
   metaKeywords: null
 ---
 

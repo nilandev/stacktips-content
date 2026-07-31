@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/303/thumbnail.png
 topics: 
-  - git
+  - data-structure
+tags:
+  - binary-search-algorithm
+  - binary-search-vs-linear-search
+  - sorted-array-search
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Binary Search Algorithm in Data Structures Explained"
+  metaDescription: "Learn how the binary search algorithm works on sorted data, how it compares to linear search, and see a complete C program implementation with analysis."
   metaKeywords: null
 ---
 

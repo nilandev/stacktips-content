@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-hashmap
+  - hashmap-iteration
+  - java-collections-framework
+  - key-value-store
 course: getting-started-with-php
 displayOrder: 12
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "HashMap in Java: Guide to Creating, Iterating & Using It"
+  metaDescription: "Learn how HashMap works in Java, including how to create, initialize, and iterate over key-value pairs using iterators, streams, and forEach."
   metaKeywords: null
 ---
 

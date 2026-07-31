@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/287/thumbnail.png
 topics: 
-  - c
+  - java
+tags:
+  - java-home-mac
+  - set-environment-variable-macos
+  - bash-profile-java
 course: null
 displayOrder: 0
 seo: 

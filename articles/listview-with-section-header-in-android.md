@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring-boot
+  - android
+tags:
+  - android-listview-section-header
+  - baseadapter-getviewtypecount
+  - android-multiple-view-types-listview
+  - custom-adapter-section-list
 course: null
 displayOrder: 0
 seo: 

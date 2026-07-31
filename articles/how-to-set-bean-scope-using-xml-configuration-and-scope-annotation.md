@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/157/thumbnail.png
 topics: 
   - android
+tags:
+  - spring-bean-scope
+  - spring-scope-annotation
+  - singleton-vs-prototype-bean
+  - spring-xml-configuration
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Spring Bean Scope: XML Config and @Scope Annotation"
+  metaDescription: "Understand Spring bean scopes like singleton, prototype, request, and session, and learn to set them using XML configuration or the @Scope annotation."
   metaKeywords: null
 ---
 

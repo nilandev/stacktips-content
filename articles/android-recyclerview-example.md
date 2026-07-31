@@ -11,12 +11,17 @@ githubLink: "https://github.com/StackTipsLab/android-ui-tutorials/tree/master/an
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-recyclerview
+  - recyclerview-cardview
+  - recyclerview-click-listener
+  - recyclerview-adapter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android RecyclerView Example with CardView"
+  metaDescription: "Learn how to implement Android RecyclerView with CardView, build a custom adapter, load images with Picasso, and handle item click events."
   metaKeywords: null
 ---
 

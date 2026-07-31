@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/17/thumbnail.png
 topics: 
-  - git
+  - spring-boot
+tags:
+  - h2-in-memory-database-spring-boot
+  - h2-console-configuration
+  - spring-boot-embedded-database
+  - h2-database-testing-java
 course: null
 displayOrder: 0
 seo: 

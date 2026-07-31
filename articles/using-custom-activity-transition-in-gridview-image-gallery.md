@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - android-gridview-image-gallery
+  - custom-activity-transition-android
+  - android-window-animation
+  - gridview-thumbnail-zoom-animation
 course: null
 displayOrder: 0
 seo: 

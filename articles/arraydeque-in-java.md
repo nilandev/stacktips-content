@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-arraydeque
+  - java-deque-interface
+  - undo-redo-stack-java
 course: getting-started-with-php
 displayOrder: 11
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "ArrayDeque in Java: Guide with Undo/Redo Example"
+  metaDescription: "Learn how Java's ArrayDeque works as both a stack and queue, and see a practical undo/redo text editor example that uses two ArrayDeque instances."
   metaKeywords: null
 ---
 

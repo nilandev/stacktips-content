@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - asynctask-image-download
+  - android-listview-lazy-loading
+  - httpurlconnection-bitmap-download
+  - android-listview-thumbnail-images
 course: null
 displayOrder: 0
 seo: 

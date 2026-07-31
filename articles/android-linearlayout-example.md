@@ -12,11 +12,14 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - linearlayout
+  - android-layout-orientation
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android LinearLayout Example with Weight Property"
+  metaDescription: "Learn how to use Android LinearLayout to arrange views horizontally or vertically, nest layouts, and distribute space evenly using layout_weight."
   metaKeywords: null
 ---
 

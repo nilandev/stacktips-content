@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-radiobutton
+  - radiogroup-example
+  - onCheckedChangeListener
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android RadioButton Example with RadioGroup"
+  metaDescription: "Learn how to use RadioButton and RadioGroup in Android, handle selection changes with OnCheckedChangeListener, and clear or submit selections."
   metaKeywords: null
 ---
 

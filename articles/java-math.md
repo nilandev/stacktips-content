@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-arithmetic-operators
+  - java-math-class
+  - java-math-methods
 course: maven-for-beginners
 displayOrder: 19
 seo: 

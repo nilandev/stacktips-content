@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/the-order-of-tests-in-junit5.jpeg
 topics: 
-  - spring-boot
+  - junit5
+tags:
+  - junit5-testmethodorder
+  - junit5-order-annotation
+  - junit-test-execution-order
+  - custom-methodorderer-junit5
 course: null
 displayOrder: 0
 seo: 

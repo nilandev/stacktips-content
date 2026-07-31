@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - android-gridview-example
+  - picasso-image-loading
+  - android-asynctask-json
+  - android-gridview-adapter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Download and Display Images in Android GridView"
+  metaDescription: "Learn how to download images from a server and display them in an Android GridView using AsyncTask, JSON parsing, and Picasso for image loading."
   metaKeywords: null
 ---
 

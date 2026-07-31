@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - covariant-return-type-java
+  - method-overriding-java
+  - java-clone-method-override
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Covariant Return Type in Java Explained with Example"
+  metaDescription: "Understand how covariant return types in Java let overridden methods return a narrower subclass type, avoiding downcasting, with a clone() example."
   metaKeywords: null
 ---
 

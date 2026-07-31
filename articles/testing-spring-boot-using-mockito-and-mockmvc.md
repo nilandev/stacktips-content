@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - spring-boot
+tags:
+  - mockmvc-spring-boot-testing
+  - mockito-unit-testing-java
+  - webmvctest-annotation
+  - spring-boot-rest-api-testing
 course: getting-started-with-javascript
 displayOrder: 10
 seo: 

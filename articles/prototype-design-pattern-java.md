@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/250/thumbnail.png
 topics: 
-  - android
+  - design-patterns
+tags:
+  - prototype-design-pattern-java
+  - java-cloneable-interface
+  - creational-design-patterns-java
+  - object-cloning-java
 course: null
 displayOrder: 0
 seo: 

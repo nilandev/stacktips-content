@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/articles/189/thumbnail.png
 topics: 
   - xamarin
+tags:
+  - linear-search-java
+  - sequential-search-algorithm
+  - java-array-search-example
+  - java-scanner-input
 course: null
 displayOrder: 0
 seo: 

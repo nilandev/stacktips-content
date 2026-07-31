@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-array-search
+  - binary-search-java
+  - java-collections-search
+  - arrays-binarysearch
 course: null
 displayOrder: 0
 seo: 

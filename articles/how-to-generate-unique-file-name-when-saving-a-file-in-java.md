@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/103/thumbnail.png
 topics: 
-  - wordpress
+  - java
 course: null
 displayOrder: 0
 seo: 

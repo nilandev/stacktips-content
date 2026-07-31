@@ -12,11 +12,15 @@ featured: false
 thumbnail: /media/articles/144/thumbnail.png
 topics: 
   - spring
+tags:
+  - spring-jdbctemplate
+  - batchupdate-method
+  - batchpreparedstatementsetter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Batch Update Using Spring JdbcTemplate: batchUpdate()"
+  metaDescription: "Learn how to perform efficient batch insert operations in Spring using JdbcTemplate's batchUpdate() method and BatchPreparedStatementSetter, with example code."
   metaKeywords: null
 ---
 

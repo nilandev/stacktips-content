@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - xamarin
+tags:
+  - xamarin-android-startactivity
+  - xamarin-intent-putextra
+  - startactivityforresult-xamarin
+  - passing-data-between-activities
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Start One Activity From Another in Xamarin.Android"
+  metaDescription: "Learn how to start an activity from another in Xamarin.Android, pass data with Intent extras, and receive results back using StartActivityForResult."
   metaKeywords: null
 ---
 

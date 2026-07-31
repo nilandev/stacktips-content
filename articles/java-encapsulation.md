@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-encapsulation-example
+  - getter-setter-methods-java
+  - java-private-fields
+  - java-oop-principles
 course: maven-for-beginners
 displayOrder: 10
 seo: 

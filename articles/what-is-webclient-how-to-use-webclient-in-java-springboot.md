@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - spring-boot
+tags:
+  - webclient-spring-boot
+  - reactive-webclient-rest-api
+  - webclient-basic-authentication
+  - webclient-get-post-delete-example
 course: null
 displayOrder: 0
 seo: 

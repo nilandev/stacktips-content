@@ -11,7 +11,11 @@ githubLink: "https://github.com/StackTipsLab/spring-boot-tutorials/tree/main/jet
 featured: false
 thumbnail: /media/articles/replace-tomcat-with-jetty.png
 topics: 
-  - java
+  - spring-boot
+tags:
+  - spring-boot-embedded-server
+  - jetty-vs-tomcat
+  - undertow-spring-boot
 course: null
 displayOrder: 0
 seo: 

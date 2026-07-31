@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/248/thumbnail.png
 topics: 
-  - android
+  - design-patterns
+tags:
+  - factory-method-design-pattern
+  - java-creational-design-patterns
+  - simple-factory-vs-factory-method
+  - abstract-factory-pattern-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Factory Method Design Pattern in Java Explained"
+  metaDescription: "Learn the Factory Method design pattern in Java with a practical example comparing simple factory and factory method approaches to object creation."
   metaKeywords: null
 ---
 

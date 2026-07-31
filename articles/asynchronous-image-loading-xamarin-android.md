@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - xamarin
+tags:
+  - xamarin-android
+  - async-image-download
+  - webclient-download-async
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Asynchronous Image Loading in Xamarin.Android"
+  metaDescription: "Learn how to download and display images asynchronously in Xamarin.Android using System.Net.WebClient, with a progress indicator and cancel support."
   metaKeywords: null
 ---
 

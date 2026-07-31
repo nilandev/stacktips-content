@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - aws
-course: getting-started-with-html
+  - maven
+tags:
+  - install-maven-macos-homebrew
+  - install-maven-windows
+  - sdkman-install-java
+  - maven-environment-variables-setup
+course: getting-started-with-maven
 displayOrder: 2
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Installing and Configuring Maven on Windows and macOS"
+  metaDescription: "A complete guide to installing Java and Maven using SDKMan or Homebrew, configuring environment variables, and verifying your Maven installation."
   metaKeywords: null
 ---
 

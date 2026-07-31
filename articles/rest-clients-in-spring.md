@@ -11,7 +11,12 @@ githubLink: "https://github.com/StackTipsLab/spring-boot-tutorials/tree/main/spr
 featured: true
 thumbnail: /media/post/667_rest-clients-in-spring-framework.jpeg
 topics: 
-  - spring
+  - spring-boot
+tags:
+  - spring-resttemplate
+  - spring-webclient
+  - spring-http-interface
+  - feign-client
 course: null
 displayOrder: 0
 seo: 

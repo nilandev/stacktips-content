@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/161/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-requestmapping
+  - spring-mvc-controller
+  - dispatcher-servlet
+  - spring-controller-mapping
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Spring Controller Request Mapping in Spring MVC Explained"
+  metaDescription: "Learn how @RequestMapping works in Spring MVC, covering handler-level, controller-class-level, and HTTP method-based request mapping with examples."
   metaKeywords: null
 ---
 

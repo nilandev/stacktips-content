@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-array-basics
+  - java-array-sorting
+  - java-array-iteration
+  - java-arrays-tutorial
 course: maven-for-beginners
 displayOrder: 5
 seo: 

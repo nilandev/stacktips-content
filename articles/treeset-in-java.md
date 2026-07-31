@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - treeset-java
+  - navigableset
+  - sorted-collection-java
+  - java-collections-framework
 course: getting-started-with-php
 displayOrder: 8
 seo: 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/16/thumbnail.png
 topics: 
-  - git
+  - spring-boot
+tags:
+  - apache-tiles3-spring-boot
+  - spring-boot-web-mvc
+  - tiles-view-resolver
+  - spring-mvc-executable-war
 course: null
 displayOrder: 0
 seo: 

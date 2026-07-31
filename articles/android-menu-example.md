@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-options-menu
+  - onCreateOptionsMenu
+  - android-menu-xml
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Menu Example: Options Menu with XML and Java"
+  metaDescription: "Learn how to create an Android options menu using XML declarations, inflate it with onCreateOptionsMenu, and handle item clicks in your activity."
   metaKeywords: null
 ---
 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - linkedlist-java
+  - linkedlist-vs-arraylist
+  - java-list-iterator
+  - java-deque-queue-example
 course: getting-started-with-php
 displayOrder: 2
 seo: 

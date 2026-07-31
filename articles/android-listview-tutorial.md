@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - listview
+  - listview-custom-adapter
+  - android-baseadapter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android ListView Tutorial: ArrayAdapter to Custom Adapter"
+  metaDescription: "A complete Android ListView tutorial covering ArrayAdapter basics, building a custom BaseAdapter, and styling list selection colors and dividers."
   metaKeywords: null
 ---
 

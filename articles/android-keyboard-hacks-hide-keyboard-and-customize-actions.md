@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - hide-soft-keyboard
+  - android-inputtype
+  - oneditoractionlistener
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Keyboard Hacks: Hide and Customize Actions"
+  metaDescription: "Learn how to control Android soft keyboard behavior, including setting input types, hiding the keyboard programmatically, and customizing IME action buttons."
   metaKeywords: null
 ---
 

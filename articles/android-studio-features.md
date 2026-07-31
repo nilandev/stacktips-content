@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-studio-ide
+  - intellij-idea-android
+  - gradle-build-support
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Studio Features: A Complete Overview"
+  metaDescription: "Explore Android Studio's key features, including Gradle build support, the rich layout editor, Lint tools, and code analysis for Android development."
   metaKeywords: null
 ---
 

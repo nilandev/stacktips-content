@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/224/thumbnail.png
 topics: 
-  - xamarin
+  - design-patterns
+tags:
+  - state-design-pattern-java
+  - behavioral-design-patterns
+  - gang-of-four-patterns
+  - java-state-machine-example
 course: null
 displayOrder: 0
 seo: 

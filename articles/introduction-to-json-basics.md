@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - ios
+  - json
+tags:
+  - json-vs-xml
+  - json-syntax-basics
+  - json-parse-stringify
+  - json-data-interchange-format
 course: null
 displayOrder: 0
 seo: 

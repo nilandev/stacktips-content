@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-calendar-intent
+  - calendarcontract-events
+  - add-calendar-event-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Add an Event to Android Calendar Using Intent"
+  metaDescription: "Learn how to add an event to the Android calendar with a simple Intent.ACTION_INSERT code snippet, including setting event title and description."
   metaKeywords: null
 ---
 

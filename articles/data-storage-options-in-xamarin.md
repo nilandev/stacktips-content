@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - xamarin
+tags:
+  - xamarin-data-storage
+  - sqlite-net-xamarin
+  - shared-preferences-vs-nsuserdefaults
+  - mobile-app-local-storage
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Data Storage Options in Xamarin: A Complete Overview"
+  metaDescription: "Explore the key data storage options in Xamarin apps, including key-value preferences, text files, SQLite databases, and image file caching."
   metaKeywords: null
 ---
 

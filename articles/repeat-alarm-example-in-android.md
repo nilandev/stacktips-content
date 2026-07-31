@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - android
+tags:
+  - android-alarmmanager
+  - repeating-alarm-android
+  - android-scheduled-tasks
 course: null
 displayOrder: 0
 seo: 

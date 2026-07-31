@@ -11,7 +11,7 @@ githubLink: null
 featured: true
 thumbnail: /media/articles/22/thumbnail.png
 topics: 
-  - bootstrap
+  - java
 course: null
 displayOrder: 0
 seo: 

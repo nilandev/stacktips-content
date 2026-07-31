@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - spring-boot
+tags:
+  - spring-dependency-injection
+  - spring-autowired-annotation
+  - constructor-vs-field-injection
+  - spring-bean-configuration
 course: getting-started-with-javascript
 displayOrder: 5
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Dependency Injection in Spring Boot: Complete Guide"
+  metaDescription: "Understand Dependency Injection in Spring Boot, including bean registration, and the differences between field, constructor, and setter injection."
   metaKeywords: null
 ---
 

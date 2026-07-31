@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/190/thumbnail.png
 topics: 
-  - json
+  - java
+tags:
+  - java-comparator-example
+  - sort-array-objects-java
+  - arrays-sort-java
 course: null
 displayOrder: 0
 seo: 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-for-loop
+  - python-while-loop
+  - python-break-continue
+  - python-iteration
 course: getting-started-with-css
 displayOrder: 5
 seo: 

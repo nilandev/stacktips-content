@@ -12,11 +12,16 @@ featured: true
 thumbnail: /media/articles/15/thumbnail.png
 topics: 
   - git
+tags:
+  - git-commands-cheat-sheet
+  - git-branch-management
+  - git-stash-tutorial
+  - git-push-pull-basics
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Git Commands Cheat Sheet: Essential Commands List"
+  metaDescription: "A handy Git commands cheat sheet covering configuration, branching, diffs, stashing, and pushing/pulling changes to get you productive with Git fast."
   metaKeywords: null
 ---
 

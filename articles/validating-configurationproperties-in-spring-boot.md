@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/posts/validating-configurationproperties-in-spring-boot.jpeg
 topics: 
   - spring-boot
+tags:
+  - configurationproperties-validation
+  - spring-boot-validated-annotation
+  - jsr-380-bean-validation
+  - configurationproperties-records
 course: null
 displayOrder: 0
 seo: 

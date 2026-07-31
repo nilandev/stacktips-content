@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - maven
+  - java
+tags:
+  - java-abstract-classes
+  - abstract-method-java
+  - java-class-inheritance
+  - java-oop-basics
 course: maven-for-beginners
 displayOrder: 13
 seo: 

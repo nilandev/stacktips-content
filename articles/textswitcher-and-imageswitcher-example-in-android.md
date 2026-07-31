@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-textswitcher-example
+  - android-imageswitcher-example
+  - viewswitcher-animation-android
+  - android-view-transition-animation
 course: null
 displayOrder: 0
 seo: 

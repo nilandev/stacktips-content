@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - dialogfragment
+  - oncreatedialog
+  - android-alertdialog
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android DialogFragment Example: Create and Dismiss"
+  metaDescription: "Learn how to create an Android DialogFragment using onCreateView and onCreateDialog, display it from an Activity, and dismiss it on button click."
   metaKeywords: null
 ---
 

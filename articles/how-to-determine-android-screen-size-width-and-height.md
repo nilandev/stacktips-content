@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-screen-size
+  - android-display-getsize
+  - android-screen-width-height
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Determine Android Screen Size (Width and Height)"
+  metaDescription: "A quick code snippet to get the screen width and height of an Android device at runtime using WindowManager and Display.getSize()."
   metaKeywords: null
 ---
 

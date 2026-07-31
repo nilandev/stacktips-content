@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/249/thumbnail.png
 topics: 
-  - android
+  - design-patterns
+tags:
+  - builder-design-pattern
+  - creational-design-pattern-java
+  - java-design-patterns
+  - gang-of-four-builder-pattern
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Builder Design Pattern in Java Explained with Example"
+  metaDescription: "Learn how the Builder design pattern simplifies constructing complex Java objects step by step, with a practical cafe meal-ordering example."
   metaKeywords: null
 ---
 

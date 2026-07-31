@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/256/thumbnail.png
 topics: 
-  - java
+  - blog
+tags:
+  - testfairy-command-line-uploader
+  - android-apk-signing-keystore
+  - ci-cd-android-build-upload
+  - testfairy-jenkins-integration
 course: null
 displayOrder: 0
 seo: 

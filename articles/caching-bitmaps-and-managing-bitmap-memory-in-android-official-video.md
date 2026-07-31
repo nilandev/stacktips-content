@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-bitmap-caching
+  - bitmap-memory-management
+  - android-lrucache
+  - out-of-memory-android-images
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Caching Bitmaps and Managing Bitmap Memory in Android"
+  metaDescription: "Watch this official video guide on caching bitmaps and managing bitmap memory in Android to avoid out-of-memory crashes when loading images."
   metaKeywords: null
 ---
 

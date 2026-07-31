@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - spring-boot
+tags:
+  - spring-boot-prerequisites
+  - maven-vs-gradle
+  - spring-boot-setup-intellij
+  - java-ide-for-spring-boot
 course: getting-started-with-javascript
 displayOrder: 2
 seo: 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/390/thumbnail.png
 topics: 
-  - java
+  - struts2
+tags:
+  - struts2-internationalization
+  - struts2-localization-i18n
+  - resource-bundle-properties
+  - multilingual-web-application
 course: null
 displayOrder: 0
 seo: 

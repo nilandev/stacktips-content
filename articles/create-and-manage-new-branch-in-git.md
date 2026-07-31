@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/316/thumbnail.png
 topics: 
-  - java
+  - git
+tags:
+  - git-branch-commands
+  - git-push-origin
+  - manage-git-branch
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Git Branch Commands: Create, Push, and Switch Branches"
+  metaDescription: "Useful git commands for creating a new branch, pushing it to a remote repository, and switching between branches during development."
   metaKeywords: null
 ---
 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - pass-data-between-activities-android
+  - android-intent-putextra
+  - android-bundle-example
+  - android-intent-tutorial
 course: null
 displayOrder: 0
 seo: 

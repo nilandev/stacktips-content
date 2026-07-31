@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - maven
+tags:
+  - maven-local-repository
+  - maven-central-repository
+  - maven-remote-repository-settings-xml
+  - maven-dependency-resolution-order
 course: getting-started-with-html
 displayOrder: 5
 seo: 

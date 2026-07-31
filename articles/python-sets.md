@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-set-methods
+  - python-unique-elements
+  - python-data-structures
 course: getting-started-with-css
 displayOrder: 9
 seo: 

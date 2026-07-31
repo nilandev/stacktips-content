@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - httpsurlconnection-trust-all-certificates
+  - android-ssl-certificate-bypass
+  - x509trustmanager-android
+  - disable-ssl-verification-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Trust All Certificates for HttpsURLConnection in Android"
+  metaDescription: "See how to disable SSL certificate checking for HttpsURLConnection in Android using a custom X509TrustManager, intended for testing environments only."
   metaKeywords: null
 ---
 

@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - c
+  - android
+tags:
+  - android-home-mac
+  - android-sdk-path-setup
+  - bash-profile-android
 course: null
 displayOrder: 0
 seo: 

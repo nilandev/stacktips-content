@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-toast
+  - custom-toast-android
+  - toast-makeText
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Toast Example: Simple and Custom Toast Messages"
+  metaDescription: "Learn how to show Toast messages in Android using Toast.makeText(), change their position with setGravity(), and build a custom Toast layout with your own view."
   metaKeywords: null
 ---
 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - java-virtual-machine-jvm
+  - java-hello-world-program
+  - java-compilation-process
+  - jvm-bytecode-basics
 course: null
 displayOrder: 0
 seo: 

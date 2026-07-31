@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-mapview
+  - setbuiltinzoomcontrols
+  - google-maps-android-v1
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Add Zoom Controls to Android MapView"
+  metaDescription: "Learn how to add zoom controls to an Android MapView using the setBuiltInZoomControls method, with a quick, complete code and XML layout example."
   metaKeywords: null
 ---
 

@@ -12,11 +12,14 @@ featured: false
 thumbnail: null
 topics: 
   - java
-course: getting-started-with-php
+tags:
+  - how-tos
+  - code-snippet
+course: getting-started-with-java
 displayOrder: 3
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "CopyOnWriteArrayList in Java: Thread-Safe List Example"
+  metaDescription: "Learn how CopyOnWriteArrayList provides thread-safe iteration in Java without ConcurrentModificationException, plus when it's slower than ArrayList."
   metaKeywords: null
 ---
 

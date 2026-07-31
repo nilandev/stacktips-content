@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/10/thumbnail.png
 topics: 
-  - java
+  - git
+tags:
+  - git-delete-local-branches
+  - git-branch-cleanup-script
+  - git-for-each-ref
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Delete All Local Branches in Git"
+  metaDescription: "A ready-to-use shell script to bulk delete local Git branches while keeping master, develop, and release/* branches intact."
   metaKeywords: null
 ---
 

@@ -12,11 +12,14 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-checkbox
+  - checkbox-listener
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android CheckBox Example: Handle Click Events"
+  metaDescription: "Learn how to add checkboxes to an Android layout and handle user selection with a click listener, using a simple three-checkbox example."
   metaKeywords: null
 ---
 

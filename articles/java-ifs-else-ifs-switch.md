@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-if-else-statement
+  - java-switch-case
+  - comparison-operators-java
 course: maven-for-beginners
 displayOrder: 6
 seo: 

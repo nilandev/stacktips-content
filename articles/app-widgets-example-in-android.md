@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-app-widget
+  - appwidgetprovider
+  - home-screen-widget
+  - android-remoteviews
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android App Widgets Tutorial: Build a Home Screen Widget"
+  metaDescription: "Learn how to build a home screen App Widget in Android using AppWidgetProvider and RemoteViews, including layout XML, button clicks, and update broadcasts."
   metaKeywords: null
 ---
 

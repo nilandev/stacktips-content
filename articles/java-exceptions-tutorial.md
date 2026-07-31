@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/332/thumbnail.png
 topics: 
-  - android
+  - java
+tags:
+  - checked-vs-unchecked-exceptions-java
+  - java-exception-hierarchy
+  - try-catch-finally-java
+  - java-error-handling
 course: null
 displayOrder: 0
 seo: 

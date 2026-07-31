@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - boot-completed-broadcast-receiver
+  - android-autostart-on-boot
+  - android-broadcastreceiver-example
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Start an App at Device Bootup in Android"
+  metaDescription: "Learn how to auto-start an Android app on device bootup using a BroadcastReceiver that listens for the BOOT_COMPLETED action, with full manifest setup."
   metaKeywords: null
 ---
 

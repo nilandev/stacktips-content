@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - activity-lifecycle
+  - android-intents
+  - android-content-providers
+  - android-broadcast-receivers
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Anatomy of a Xamarin.Android Application"
+  metaDescription: "Explore the core building blocks of a Xamarin.Android app, including Activities, Intents, the AndroidManifest, Services, Content Providers, and Broadcast Receivers."
   metaKeywords: null
 ---
 

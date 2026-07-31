@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - seo
+  - android
+tags:
+  - android-programmatic-screenshot
+  - android-bitmap-capture
+  - android-drawing-cache
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Programmatically Take a Screenshot in Android"
+  metaDescription: "Learn how to capture a screenshot programmatically in Android by drawing the activity view to a bitmap and saving it as a JPEG file."
   metaKeywords: null
 ---
 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - vector-class-java
+  - java-vector-vs-arraylist
+  - synchronized-collection-java
+  - java-legacy-collections
 course: getting-started-with-php
 displayOrder: 4
 seo: 

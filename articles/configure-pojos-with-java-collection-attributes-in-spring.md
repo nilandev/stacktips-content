@@ -12,11 +12,15 @@ featured: false
 thumbnail: /media/articles/142/thumbnail.png
 topics: 
   - spring
+tags:
+  - spring-xml-bean-configuration
+  - spring-ioc-collection-list
+  - spring-pojo-list-property
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Configure POJOs with Java Collection Attributes in Spring"
+  metaDescription: "Learn how to configure Spring POJOs that contain Java collection attributes like List using XML-based bean configuration, with a working example."
   metaKeywords: null
 ---
 

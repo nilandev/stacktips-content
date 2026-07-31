@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - android
+tags:
+  - android-device-id
+  - android-secure-android-id
+  - unique-device-identifier-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Get a Unique Device ID in Android"
+  metaDescription: "Learn how to retrieve a unique device ID in Android using Settings.Secure.ANDROID_ID, useful for device-based user registration and security."
   metaKeywords: null
 ---
 

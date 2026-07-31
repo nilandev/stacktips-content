@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-renderscript
+  - bitmap-blur-effect
+  - scriptintrinsicblur
+  - android-image-processing
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Bitmap Blur Effect in Android Using RenderScript"
+  metaDescription: "Learn how to create a Gaussian blur effect on a Bitmap in Android using RenderScript's ScriptIntrinsicBlur, with Gradle setup and full code examples."
   metaKeywords: null
 ---
 

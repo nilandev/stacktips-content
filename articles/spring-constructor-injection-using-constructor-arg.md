@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/articles/145/thumbnail.png
 topics: 
   - spring
+tags:
+  - spring-constructor-injection
+  - constructor-arg-xml
+  - spring-ioc-container
+  - spring-bean-configuration
 course: null
 displayOrder: 0
 seo: 

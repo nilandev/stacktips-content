@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - unix-timestamp-to-date-java
+  - simpledateformat-java
+  - java-date-conversion
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Convert a UNIX Date to String in Java"
+  metaDescription: "Learn how to convert a UNIX timestamp to a human-readable date string in Java using SimpleDateFormat and Calendar with a working code example."
   metaKeywords: null
 ---
 

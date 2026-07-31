@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/21/thumbnail.png
 topics: 
-  - react
+  - java
+tags:
+  - java-method-chaining
+  - fluent-interface-java
+  - builder-pattern-java
+  - setter-return-this
 course: null
 displayOrder: 0
 seo: 

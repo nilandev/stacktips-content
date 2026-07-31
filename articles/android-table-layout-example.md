@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - android
+tags:
+  - android-tablelayout
+  - tablelayout-tablerow
+  - android-table-example
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android TableLayout Example: Display Rows and Columns"
+  metaDescription: "Learn how to use Android TableLayout and TableRow to arrange views in rows and columns, with a full XML example listing Android version releases."
   metaKeywords: null
 ---
 

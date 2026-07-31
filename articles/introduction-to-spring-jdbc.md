@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/148/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-jdbc-template
+  - spring-jdbc-datasource
+  - jdbctemplate-tutorial
+  - spring-data-access-jdbc
 course: null
 displayOrder: 0
 seo: 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - xamarin
+tags:
+  - sqlite-net-orm-xamarin
+  - xamarin-sqlite-crud
+  - sqliteconnection-xamarin
+  - xamarin-cross-platform-database
 course: null
 displayOrder: 0
 seo: 

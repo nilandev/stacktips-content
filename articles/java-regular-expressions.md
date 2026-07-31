@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - maven
+tags:
+  - java-regex-pattern-matcher
+  - regular-expressions-java
+  - find-replace-regex-java
 course: maven-for-beginners
 displayOrder: 20
 seo: 

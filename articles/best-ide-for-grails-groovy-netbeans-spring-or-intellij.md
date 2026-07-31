@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/372/thumbnail.png
 topics: 
-  - android
+  - blog
+tags:
+  - grails-ide-comparison
+  - groovy-grails-development
+  - intellij-for-grails
+  - spring-tool-suite
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Best IDE for Grails/Groovy: NetBeans vs STS vs IntelliJ"
+  metaDescription: "Compare NetBeans, Spring Tool Suite, IntelliJ IDEA, and the Groovy/Grails Tool Suite for Eclipse to find the best IDE for your Grails and Groovy projects."
   metaKeywords: null
 ---
 

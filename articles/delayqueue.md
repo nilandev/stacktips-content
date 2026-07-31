@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-delayqueue
+  - java-delayed-interface
+  - blockingqueue-java
+  - delayed-task-scheduling-java
 course: getting-started-with-php
 displayOrder: 10
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "DelayQueue in Java: Delayed Task Scheduling Example"
+  metaDescription: "Learn how Java's DelayQueue works with the Delayed interface, and see a working example that schedules and processes delayed notifications."
   metaKeywords: null
 ---
 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-hashset
+  - hashset-iteration
+  - java-collections-framework
+  - remove-duplicates-java
 course: getting-started-with-php
 displayOrder: 6
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "HashSet in Java: Create, Iterate, and Remove Elements"
+  metaDescription: "Learn how HashSet works in Java for storing unique elements, plus how to create, iterate, and remove items using iterators, streams, and predicates."
   metaKeywords: null
 ---
 

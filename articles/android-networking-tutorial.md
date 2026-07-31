@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring
+  - android
+tags:
+  - android-httpurlconnection
+  - apache-httpclient-android
+  - android-asynctask-networking
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Networking Tutorial: HttpClient vs HttpURLConnection"
+  metaDescription: "Learn how to perform network operations in Android using Apache HttpClient and HttpURLConnection, download JSON data, and follow networking best practices."
   metaKeywords: null
 ---
 

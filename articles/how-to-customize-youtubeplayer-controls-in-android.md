@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - youtubeplayer-custom-controls
+  - android-youtube-player-api
+  - youtubeplayerview-android
+  - android-video-playback-controls
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Customize YouTubePlayer Controls in Android"
+  metaDescription: "Learn how to build custom play, pause, and seek controls for the Android YouTubePlayer using CHROMELESS style and YouTubePlayerView."
   metaKeywords: null
 ---
 

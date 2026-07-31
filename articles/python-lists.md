@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-list-methods
+  - python-arrays
+  - python-data-structures
+  - python-list-operations
 course: getting-started-with-css
 displayOrder: 10
 seo: 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-treemap-class
+  - navigablemap-sortedmap
+  - treemap-custom-comparator
+  - java-collections-sorted-map
 course: getting-started-with-php
 displayOrder: 15
 seo: 

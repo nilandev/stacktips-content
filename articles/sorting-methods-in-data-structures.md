@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/302/thumbnail.png
 topics: 
-  - git
+  - data-structures
+tags:
+  - sorting-algorithms
+  - data-structures
+  - internal-vs-external-sorting
+  - algorithm-complexity
 course: null
 displayOrder: 0
 seo: 

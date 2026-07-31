@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-arithmetic-operators
+  - python-math-module
+  - python-number-operations
 course: getting-started-with-css
 displayOrder: 16
 seo: 

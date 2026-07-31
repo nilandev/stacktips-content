@@ -12,6 +12,10 @@ featured: false
 thumbnail: /media/articles/440/thumbnail.png
 topics: 
   - blog
+tags:
+  - reference-counting-gc
+  - java-garbage-collection
+  - memory-management-java
 course: null
 displayOrder: 0
 seo: 

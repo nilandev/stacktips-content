@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-toolbar
+  - actionbar-replacement
+  - appcompat-toolbar
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Toolbar Example: Replace ActionBar with Toolbar"
+  metaDescription: "Learn how to use Android's Toolbar widget as a replacement for ActionBar, including AppCompat setup, XML layout, and activity code examples."
   metaKeywords: null
 ---
 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/226/thumbnail.png
 topics: 
-  - xamarin
+  - design-patterns
+tags:
+  - template-method-design-pattern
+  - behavioral-design-patterns
+  - java-abstract-class-example
+  - gang-of-four-patterns
 course: null
 displayOrder: 0
 seo: 

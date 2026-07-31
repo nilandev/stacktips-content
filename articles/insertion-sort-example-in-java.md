@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/191/thumbnail.png
 topics: 
-  - android
+  - java
+tags:
+  - insertion-sort-java
+  - java-sorting-algorithm-example
+  - sort-array-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Insertion Sort Example in Java"
+  metaDescription: "See a simple Java code example that implements the insertion sort algorithm to sort an array of integers, with step-by-step output at each pass."
   metaKeywords: null
 ---
 

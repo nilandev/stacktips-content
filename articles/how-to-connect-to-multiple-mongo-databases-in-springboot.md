@@ -11,7 +11,7 @@ githubLink: "https://github.com/StackTipsLab/spring-boot-tutorials/tree/main/mul
 featured: false
 thumbnail: /media/posts/how-to-connect-to-multiple-mongo-databases-in-springboot.jpeg
 topics: 
-  - mongodb
+  - spring-boot
 course: null
 displayOrder: 0
 seo: 

@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - java-remove-duplicates-comparator
+  - java-treeset-comparator
+  - arraylist-deduplication-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Remove Duplicates from a Java ArrayList Using Comparator"
+  metaDescription: "Learn how to remove duplicate objects from a Java ArrayList by converting it to a TreeSet with a custom Comparator, with a full working example."
   metaKeywords: null
 ---
 

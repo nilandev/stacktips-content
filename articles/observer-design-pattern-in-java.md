@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/252/thumbnail.png
 topics: 
-  - java
+  - design-patterns
+tags:
+  - observer-design-pattern-java
+  - publisher-subscriber-pattern
+  - java-behavioral-design-patterns
+  - observer-pattern-example
 course: null
 displayOrder: 0
 seo: 

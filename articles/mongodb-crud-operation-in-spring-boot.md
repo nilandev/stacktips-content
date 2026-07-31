@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/thumbnail.png
 topics: 
-  - mongodb
+  - spring-boot
+tags:
+  - spring-boot-mongodb-crud
+  - mongorepository-example
+  - spring-data-mongodb
+  - mongodb-spring-boot-tutorial
 course: null
 displayOrder: 1
 seo: 

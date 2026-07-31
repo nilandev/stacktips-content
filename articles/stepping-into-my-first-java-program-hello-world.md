@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - design-pattern
+  - java
+tags:
+  - java-hello-world-program
+  - first-java-program
+  - java-main-method
+  - java-source-code-comments
 course: null
 displayOrder: 0
 seo: 

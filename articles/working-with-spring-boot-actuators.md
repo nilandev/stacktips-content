@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/posts/working-with-spring-boot-actuators.jpeg
 topics: 
   - spring-boot
+tags:
+  - spring-boot-actuator
+  - custom-actuator-endpoint
+  - actuator-health-endpoint
+  - spring-boot-monitoring
 course: getting-started-with-javascript
 displayOrder: 8
 seo: 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-textview-shadow
+  - setshadowlayer
+  - android-textview-styling
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Apply Shadow Effect on Android TextView"
+  metaDescription: "Learn two ways to apply a shadow effect on Android TextView: via XML layout attributes or programmatically using the setShadowLayer() method."
   metaKeywords: null
 ---
 

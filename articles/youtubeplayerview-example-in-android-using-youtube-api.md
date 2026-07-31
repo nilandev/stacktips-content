@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - youtubeplayerview-android
+  - youtube-data-api-v3
+  - youtube-android-player-api
+  - embed-youtube-video-android
 course: null
 displayOrder: 0
 seo: 

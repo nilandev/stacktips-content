@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/4/thumbnail.png
 topics: 
-  - git
+  - spring-boot
+tags:
+  - spring-boot-server-port
+  - application-properties-port
+  - spring-boot-random-port
+  - server-port-configuration
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Change the Spring Boot Default Port"
+  metaDescription: "Learn how to change the default 8080 port in Spring Boot using application.properties, application.yml, or command-line arguments, plus random ports."
   metaKeywords: null
 ---
 

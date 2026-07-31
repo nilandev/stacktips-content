@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - custom-font-android-textview
+  - hindi-font-android
+  - typeface-createfromasset
+  - devanagari-font-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Use Hindi Font in an Android Application"
+  metaDescription: "Learn how to add Hindi, Marathi, and other Devanagari fonts to a TextView in Android using a custom .ttf asset and Typeface.createFromAsset()."
   metaKeywords: null
 ---
 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - docker
+tags:
+  - mongodb-docker-container
+  - docker-run-mongo-image
+  - mongodb-docker-compose
+  - docker-pull-mongo
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Set Up MongoDB in a Docker Container"
+  metaDescription: "A step-by-step guide to pulling the MongoDB image, running it in a Docker container, exposing the port, and starting or stopping it for local development."
   metaKeywords: null
 ---
 

@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-constructor-example
+  - constructor-overloading-java
+  - java-default-constructor
 course: null
 displayOrder: 0
 seo: 

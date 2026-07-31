@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-for-loop
+  - java-while-loop
+  - do-while-loop-java
 course: maven-for-beginners
 displayOrder: 7
 seo: 

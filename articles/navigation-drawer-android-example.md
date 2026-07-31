@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - android
+tags:
+  - android-navigation-drawer
+  - drawerlayout-android
+  - actionbardrawertoggle
+  - android-fragment-navigation
 course: null
 displayOrder: 0
 seo: 

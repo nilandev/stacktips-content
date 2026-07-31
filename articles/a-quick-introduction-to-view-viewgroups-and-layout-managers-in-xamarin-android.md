@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-view-viewgroup
+  - xamarin-android-layout
+  - android-layout-managers
+  - declarative-vs-programmatic-ui
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Views, ViewGroups & Layout Managers in Xamarin Android"
+  metaDescription: "Learn the basics of Views, ViewGroups, and layout managers in Xamarin.Android, including Linear, Relative, Table, Frame, and Grid layouts, with examples."
   metaKeywords: null
 ---
 

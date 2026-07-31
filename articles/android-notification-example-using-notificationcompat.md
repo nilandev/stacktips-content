@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - notificationcompat-builder
+  - android-notification-example
+  - big-style-notification
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Notification Example Using NotificationCompat"
+  metaDescription: "Learn how to create backward-compatible Android notifications with NotificationCompat.Builder, including big-style notifications and a working code example."
   metaKeywords: null
 ---
 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-custom-viewgroup
+  - android-onmeasure-onlayout
+  - custom-layout-manager-android
+  - android-taglayout
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Custom Layout in Android by Extending ViewGroup"
+  metaDescription: "Learn how to build a custom Android layout manager by extending ViewGroup, overriding onMeasure() and onLayout() to create a tag-style TagLayout."
   metaKeywords: null
 ---
 

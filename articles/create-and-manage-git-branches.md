@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/20/thumbnail.png
 topics: 
-  - react
+  - git
+tags:
+  - git-branch-commands
+  - git-checkout-branch
+  - git-branch-from-terminal
+  - delete-git-branch
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Create and Manage Git Branches from the Command Line"
+  metaDescription: "A handy list of git commands for creating, switching, pushing, and deleting branches straight from your terminal."
   metaKeywords: null
 ---
 

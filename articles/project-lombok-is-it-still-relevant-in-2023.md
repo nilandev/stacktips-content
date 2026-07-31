@@ -11,7 +11,12 @@ githubLink: null
 featured: true
 thumbnail: /media/posts/project-lombok-is-it-still-relevant-in-2023.jpeg
 topics: 
-  - spring-boot
+  - blog
+tags:
+  - project-lombok-java
+  - lombok-vs-java-records
+  - lombok-annotations
+  - lombok-builder-pattern
 course: null
 displayOrder: 0
 seo: 

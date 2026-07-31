@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-service-lifecycle
+  - bound-vs-unbound-service
+  - startservice-onstartcommand
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Service Example: Lifecycle and Implementation"
+  metaDescription: "Learn how Android Service works, including bound vs unbound services, lifecycle methods like onStartCommand, and a complete working code example."
   metaKeywords: null
 ---
 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - wordpress
+  - android
+tags:
+  - android-textview
+  - textview-attributes
+  - android-text-styling
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android TextView Example: Key Properties Explained"
+  metaDescription: "Learn the most useful Android TextView properties like textColor, ellipsize, autoLink, and shadow effects, with a complete XML example."
   metaKeywords: null
 ---
 

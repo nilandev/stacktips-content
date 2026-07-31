@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - blog
+tags:
+  - ibm-worklight-sql-adapter
+  - worklight-adapter-tutorial
+  - mysql-jdbc-adapter
+  - hybrid-mobile-backend
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create a SQL Adapter in IBM Worklight"
+  metaDescription: "Step-by-step guide to creating, configuring, and testing a SQL adapter in IBM Worklight, including MySQL JDBC setup and defining Worklight procedures."
   metaKeywords: null
 ---
 

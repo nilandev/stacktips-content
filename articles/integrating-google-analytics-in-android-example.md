@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - google-analytics-android
+  - easytracker-android
+  - android-event-tracking
+  - android-crash-reporting
 course: null
 displayOrder: 0
 seo: 

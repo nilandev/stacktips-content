@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/how-to-convert-sorted-list-to-binary-search-tree.jpeg
 topics: 
-  - spring-boot
+  - java
+tags:
+  - sorted-list-to-bst
+  - binary-search-tree-java
+  - linked-list-to-bst
+  - java-recursion-algorithm
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Convert a Sorted Linked List to a Balanced BST in Java"
+  metaDescription: "Learn how to convert a sorted singly linked list into a height-balanced Binary Search Tree in Java using a recursive slow/fast pointer approach."
   metaKeywords: null
 ---
 

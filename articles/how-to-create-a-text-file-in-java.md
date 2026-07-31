@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-printwriter
+  - create-text-file-java
+  - java-file-io
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create a Text File in Java Using PrintWriter"
+  metaDescription: "Learn how to create and write to a text file in Java with the PrintWriter class, including UTF-8 encoding and proper exception handling."
   metaKeywords: null
 ---
 

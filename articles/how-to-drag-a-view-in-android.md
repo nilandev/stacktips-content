@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - android-drag-view
+  - android-ontouchlistener
+  - drag-imageview-android
+  - android-motionevent
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Drag a View in Android"
+  metaDescription: "Learn how to make an ImageView draggable in Android by handling touch events with OnTouchListener and updating its layout margins."
   metaKeywords: null
 ---
 

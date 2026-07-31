@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/246/thumbnail.png
 topics: 
-  - android
+  - design-patterns
+tags:
+  - interface-segregation-principle
+  - solid-design-principles
+  - java-interface-design
+  - fat-interface-antipattern
 course: null
 displayOrder: 0
 seo: 

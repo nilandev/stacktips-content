@@ -12,6 +12,12 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-interview-questions
+  - java-default-methods-interface
+  - java-functional-interface
+  - stringbuilder-vs-stringbuffer
+  - java-serialization
 course: null
 displayOrder: 0
 seo: 

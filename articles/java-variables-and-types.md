@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-primitive-data-types
+  - java-variable-declaration
+  - java-variable-naming-rules
+  - local-vs-instance-variables
 course: maven-for-beginners
 displayOrder: 3
 seo: 

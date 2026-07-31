@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/159/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-ioc-container
+  - spring-xml-bean-configuration
+  - spring-constructor-injection
+  - spring-setter-injection
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Create and Manage POJOs with Spring IoC Container"
+  metaDescription: "Learn how to design a POJO class and configure its values using Spring's IoC container in an XML file, with a complete working example."
   metaKeywords: null
 ---
 

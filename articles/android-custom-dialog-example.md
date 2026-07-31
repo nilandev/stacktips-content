@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - c
+  - android
+tags:
+  - android-dialog
+  - custom-dialog-layout
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Custom Dialog Example with Custom Layout"
+  metaDescription: "Learn how to build a custom Android dialog using the Dialog class, attach a custom XML layout, and handle button clicks to show and dismiss it."
   metaKeywords: null
 ---
 

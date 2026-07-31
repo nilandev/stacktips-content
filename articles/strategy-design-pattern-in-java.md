@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/223/thumbnail.png
 topics: 
-  - xamarin
+  - design-patterns
+tags:
+  - strategy-design-pattern-java
+  - behavioral-design-patterns
+  - sorting-strategy-example
+  - gang-of-four-patterns
 course: null
 displayOrder: 0
 seo: 

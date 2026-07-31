@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-onclicklistener
+  - android-event-handling
+  - android-onclick-xml-attribute
+  - android-view-click-events
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "4 Ways to Handle Click Events in Android"
+  metaDescription: "Compare four ways to handle View click events in Android: anonymous listeners, the onClick XML attribute, Activity interfaces, and listener fields."
   metaKeywords: null
 ---
 

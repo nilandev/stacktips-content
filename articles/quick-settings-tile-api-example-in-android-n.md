@@ -11,7 +11,11 @@ githubLink: "https://github.com/StackTipsLab/android-ui-tutorials/tree/master/an
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-quick-settings-tile
+  - tileservice-android
+  - android-n-features
 course: null
 displayOrder: 0
 seo: 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring-boot
+  - maven
+tags:
+  - maven-commands-cheat-sheet
+  - mvn-clean-install-package
+  - maven-dependency-tree
+  - maven-archetype-generate
 course: getting-started-with-html
 displayOrder: 6
 seo: 

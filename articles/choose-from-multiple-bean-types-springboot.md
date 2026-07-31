@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/posts/choose-bean-from-multiple-bean-types-spring-boot.jpeg
 topics: 
   - spring-boot
+tags:
+  - spring-multiple-bean-implementations
+  - spring-qualifier-annotation
+  - spring-primary-annotation
+  - spring-conditional-bean-selection
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Choosing Between Multiple Bean Implementations in Spring Boot"
+  metaDescription: "Learn how to inject the right bean when multiple implementations of the same interface exist in Spring Boot, using @Qualifier, @Primary, and conditional beans."
   metaKeywords: null
 ---
 

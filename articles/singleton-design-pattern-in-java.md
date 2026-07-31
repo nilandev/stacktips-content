@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - design-patterns
+tags:
+  - java-singleton-pattern
+  - thread-safe-singleton
+  - lazy-initialization-java
+  - singleton-serialization-java
 course: null
 displayOrder: 0
 seo: 

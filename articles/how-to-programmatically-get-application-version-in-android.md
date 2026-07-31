@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-app-version-code
+  - packageinfo-android
+  - get-versionname-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Get Application Version Programmatically in Android"
+  metaDescription: "Learn how to retrieve your Android app's version name and version code at runtime using the PackageInfo class, with a ready-to-use code snippet."
   metaKeywords: null
 ---
 

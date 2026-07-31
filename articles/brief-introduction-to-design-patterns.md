@@ -11,12 +11,18 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/230/thumbnail.png
 topics: 
-  - xamarin
+  - design-patterns
+tags:
+  - gang-of-four-design-patterns
+  - creational-design-patterns
+  - structural-design-patterns
+  - behavioral-design-patterns
+  - software-design-principles
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Software Design Patterns: A Brief Introduction"
+  metaDescription: "Understand what software design patterns are, why they matter, and how the Gang of Four's creational, structural, and behavioral patterns solve recurring problems."
   metaKeywords: null
 ---
 

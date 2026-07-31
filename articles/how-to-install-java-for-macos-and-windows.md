@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - install-java-macos
+  - sdkman-java
+  - install-openjdk-homebrew
+  - java-windows-installer
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Install Java on macOS and Windows"
+  metaDescription: "Step-by-step guide to installing Java on macOS using SDKMAN and Homebrew, and on Windows using the official installer, with version-check commands."
   metaKeywords: null
 ---
 

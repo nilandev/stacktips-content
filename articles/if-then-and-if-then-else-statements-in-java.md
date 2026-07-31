@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/319/thumbnail.png
 topics: 
-  - c
+  - java
+tags:
+  - java-if-else-statement
+  - java-conditional-statements
+  - if-else-if-example-java
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "If-Then and If-Then-Else Statements in Java Explained"
+  metaDescription: "Learn how if, else-if, and else statements work in Java for conditional decision making, with a step-by-step example comparing two numbers."
   metaKeywords: null
 ---
 

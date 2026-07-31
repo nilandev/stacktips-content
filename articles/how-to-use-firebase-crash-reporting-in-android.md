@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - php
+  - android
+tags:
+  - firebase-crash-reporting-android
+  - firebasecrash-report
+  - firebase-android-setup
+  - google-services-json
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Use Firebase Crash Reporting in Android"
+  metaDescription: "Learn how to configure Firebase Crash Reporting in Android, add the SDK to your Gradle files, and log custom crashes and events with FirebaseCrash."
   metaKeywords: null
 ---
 

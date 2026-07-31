@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/304/thumbnail.png
 topics: 
-  - android
+  - java
+tags:
+  - sequential-search-algorithm
+  - linear-search-c-program
+  - data-structure-searching
 course: null
 displayOrder: 0
 seo: 

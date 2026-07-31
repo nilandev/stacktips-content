@@ -11,8 +11,13 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring-boot
-course: getting-started-with-php
+  - java
+tags:
+  - java-collections-framework
+  - java-list-set-map-interface
+  - java-util-collection
+  - java-collections-hierarchy
+course: getting-started-with-java
 displayOrder: 0
 seo: 
   metaTitle: null

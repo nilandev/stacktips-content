@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - blog
+tags:
+  - testfairy-android-beta-testing
+  - android-crash-reporting-tools
+  - android-app-distribution
+  - beta-testing-platforms-comparison
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/post/None_configuration-management-in-spring-boot.jpeg
 topics: 
-  - java
+  - spring-boot
+tags:
+  - spring-boot-application-properties
+  - spring-boot-yaml-configuration
+  - spring-value-annotation
+  - spring-profiles-configuration
 course: getting-started-with-javascript
 displayOrder: 6
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Configuration Management in Spring Boot Explained"
+  metaDescription: "Learn how Spring Boot loads and prioritizes configuration from properties files, environment variables, and command-line arguments across environments."
   metaKeywords: null
 ---
 

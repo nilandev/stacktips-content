@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-stack-class
+  - lifo-data-structure
+  - stack-push-pop-peek
+  - java-vector-collections
 course: getting-started-with-php
 displayOrder: 5
 seo: 

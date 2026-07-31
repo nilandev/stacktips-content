@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - blog
+  - maven
+tags:
+  - maven-profiles
+  - maven-pom-xml-profile-activation
+  - maven-build-environment-config
+  - mvn-command-line-profile
 course: getting-started-with-html
 displayOrder: 7
 seo: 

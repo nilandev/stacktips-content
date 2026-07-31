@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-methods-tutorial
+  - method-parameters-return-java
+  - code-reuse-java
 course: maven-for-beginners
 displayOrder: 4
 seo: 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/14/thumbnail.png
 topics: 
   - spring-boot
+tags:
+  - spring-boot-gzip-compression
+  - server-compression-properties
+  - http-response-compression
+  - spring-boot-performance-tuning
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Enable GZIP Compression in Spring Boot"
+  metaDescription: "Learn how to enable GZIP response compression in Spring Boot using application.properties, including mime types, size thresholds, and excluded agents."
   metaKeywords: null
 ---
 

@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - html5
+  - android
+tags:
+  - android-progress-notification
+  - notificationmanager-android
+  - android-asynctask-example
+  - android-notification-progressbar
 course: null
 displayOrder: 0
 seo: 

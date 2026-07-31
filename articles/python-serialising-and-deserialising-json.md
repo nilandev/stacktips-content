@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-json-module
+  - json-loads-dumps
+  - python-json-parsing
 course: getting-started-with-css
 displayOrder: 17
 seo: 

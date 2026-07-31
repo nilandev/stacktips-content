@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/ActiveMQ-vs-Kafka.png
 topics: 
-  - kafka
+  - blog
+tags:
+  - kafka-vs-activemq
+  - message-broker-comparison
+  - kafka-partitioning
+  - jms-vs-kafka
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,18 @@ githubLink: null
 featured: true
 thumbnail: /media/post/690_Essential_MongoDB_Optimization_Tips_for_Spring_Boot_Application-min.png
 topics: 
-  - spring-boot
+  - mongodb
+tags:
+  - mongodb-indexing-spring-data
+  - mongodb-compound-index
+  - spring-data-mongodb-performance
+  - mongodb-aggregation-pipeline
+  - mongodb-connection-pool-tuning
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "10 MongoDB Optimization Tips for Spring Boot Apps"
+  metaDescription: "Improve MongoDB performance in Spring Boot with tips on indexing, connection pooling, pagination, write concerns, projections, caching, and bulk operations."
   metaKeywords: null
 ---
 

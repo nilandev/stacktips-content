@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-datetime-module
+  - python-date-time-formatting
+  - python-time-module
 course: getting-started-with-css
 displayOrder: 14
 seo: 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - blog
+  - android
+tags:
+  - android-studio-shortcuts
+  - mac-keyboard-shortcuts
+  - android-studio-productivity
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Studio Keyboard Shortcuts for Mac OS X"
+  metaDescription: "A handy reference of Android Studio keyboard shortcuts for Mac users, covering code navigation, search, build, refactoring, and more."
   metaKeywords: null
 ---
 

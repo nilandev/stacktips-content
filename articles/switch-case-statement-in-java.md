@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/articles/321/thumbnail.png
 topics: 
   - java
+tags:
+  - java-switch-case-statement
+  - switch-case-string-java
+  - java-control-flow
+  - jdk7-string-switch
 course: null
 displayOrder: 0
 seo: 

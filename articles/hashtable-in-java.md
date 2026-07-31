@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - mongodb
-course: getting-started-with-php
+  - java
+tags:
+  - java-hashtable
+  - hashtable-vs-hashmap
+  - thread-safe-collections
+  - java-collections-framework
+course: getting-started-with-java
 displayOrder: 16
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Hashtable in Java: Thread-Safe Key-Value Store Explained"
+  metaDescription: "Learn how Java's Hashtable works as a synchronized, thread-safe key-value store, why it disallows null values, and how it compares to HashMap."
   metaKeywords: null
 ---
 

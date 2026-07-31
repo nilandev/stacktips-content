@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - install-android-studio
+  - android-studio-no-jdk-found-error
+  - android-sdk-setup
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Installing Android Studio: Setup and Common Fixes"
+  metaDescription: "Learn the steps for installing Android Studio and how to fix common setup issues like the No JDK found error and outdated Android SDK templates."
   metaKeywords: null
 ---
 

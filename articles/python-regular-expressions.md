@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-re-module
+  - regex-python
+  - python-findall-search-split-sub
 course: getting-started-with-css
 displayOrder: 15
 seo: 

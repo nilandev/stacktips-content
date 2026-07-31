@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-string-immutability
+  - string-pool-java
+  - string-comparison-java
+  - string-format-java
 course: null
 displayOrder: 0
 seo: 

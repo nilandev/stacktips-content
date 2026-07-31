@@ -11,7 +11,12 @@ githubLink: "https://github.com/StackTipsLab/advance-android-tutorials/tree/mast
 featured: false
 thumbnail: null
 topics: 
-  - php
+  - android
+tags:
+  - android-speech-to-text
+  - recognizerintent
+  - voice-recognition-android
+  - offline-speech-recognition
 course: null
 displayOrder: 0
 seo: 

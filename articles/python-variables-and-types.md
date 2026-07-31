@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-data-types
+  - python-variable-declaration
+  - python-variable-naming-rules
 course: getting-started-with-css
 displayOrder: 2
 seo: 

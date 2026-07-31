@@ -11,12 +11,17 @@ githubLink: null
 featured: true
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - android-custom-calendar-view
+  - android-calendarview-library
+  - android-calendar-decorators
+  - jitpack-android-library
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Custom Calendar View Library for Android"
+  metaDescription: "Learn how to add and customize the CustomCalendarView library in Android, including day decorators, custom typefaces, and month navigation."
   metaKeywords: null
 ---
 

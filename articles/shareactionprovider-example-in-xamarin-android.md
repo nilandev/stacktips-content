@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - xamarin
+tags:
+  - shareactionprovider-android
+  - android-action-bar-share
+  - xamarin-android-menu
 course: null
 displayOrder: 0
 seo: 

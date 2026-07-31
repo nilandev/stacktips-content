@@ -12,6 +12,11 @@ featured: true
 thumbnail: /media/posts/working-with-quartz-scheduler-in-spring-boot.jpeg
 topics: 
   - spring-boot
+tags:
+  - quartz-scheduler
+  - spring-boot-cron-job
+  - job-scheduling-java
+  - interruptable-job-quartz
 course: null
 displayOrder: 0
 seo: 

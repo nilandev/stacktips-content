@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - blog
+tags:
+  - ibm-worklight-adapter
+  - wl-client-invokeprocedure
+  - worklight-sql-adapter
+  - mobile-enterprise-adapter
 course: null
 displayOrder: 0
 seo: 

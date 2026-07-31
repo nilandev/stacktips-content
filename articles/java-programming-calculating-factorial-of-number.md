@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - factorial-program-java
+  - java-while-loop
+  - java-scanner-input
 course: null
 displayOrder: 0
 seo: 

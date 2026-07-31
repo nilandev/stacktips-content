@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-functions-tutorial
+  - python-args-kwargs
+  - python-default-parameters
+  - python-function-recursion
 course: getting-started-with-css
 displayOrder: 6
 seo: 

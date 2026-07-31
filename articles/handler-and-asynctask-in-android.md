@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-handler-class
+  - android-asynctask-multithreading
+  - android-ui-thread-messaging
+  - android-post-runnable
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Handler vs AsyncTask in Android: Key Differences"
+  metaDescription: "Learn the difference between Handler and AsyncTask in Android for multithreading, including how each schedules work on and off the UI thread."
   metaKeywords: null
 ---
 

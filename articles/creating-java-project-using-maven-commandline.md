@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
-course: getting-started-with-html
+  - maven
+tags:
+  - maven-archetype-generate
+  - maven-command-line-project
+  - maven-build-lifecycle
+  - maven-quickstart-archetype
+course: getting-started-with-maven
 displayOrder: 3
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Creating a Java Project Using Maven Command Line"
+  metaDescription: "Learn how to create, build, and run a Java project using the Maven command line with archetype:generate, and understand the Maven build lifecycle."
   metaKeywords: null
 ---
 

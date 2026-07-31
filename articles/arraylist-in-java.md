@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-arraylist
+  - synchronized-arraylist
+  - java-immutable-list
+  - arraylist-vs-array
 course: getting-started-with-php
 displayOrder: 1
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "ArrayList in Java: Complete Guide with Examples"
+  metaDescription: "Learn how to create, iterate, and modify a Java ArrayList, understand its time complexity, and see why it isn't thread-safe with practical code examples."
   metaKeywords: null
 ---
 

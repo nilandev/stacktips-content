@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - pyramid-pattern-java
+  - nested-for-loop-java
+  - star-pattern-program-java
 course: null
 displayOrder: 0
 seo: 

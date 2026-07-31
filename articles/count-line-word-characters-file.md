@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - how-tos
+  - code-snippet
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Count Lines, Words, and Characters in a File Using Java"
+  metaDescription: "A Java example using BufferedReader and LineNumberReader to count the total lines, words, and characters in a text file."
   metaKeywords: null
 ---
 

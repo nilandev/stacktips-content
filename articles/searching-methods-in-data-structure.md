@@ -11,7 +11,13 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/305/thumbnail.png
 topics: 
-  - java
+  - data-structures
+tags:
+  - linear-search-algorithm
+  - binary-search-algorithm
+  - hash-table-search
+  - big-o-notation
+  - data-structure-searching
 course: null
 displayOrder: 0
 seo: 

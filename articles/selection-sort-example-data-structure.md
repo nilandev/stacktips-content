@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/299/thumbnail.png
 topics: 
-  - xamarin
+  - data-structures
+tags:
+  - selection-sort-algorithm
+  - selection-sort-c-program
+  - sorting-algorithms
+  - data-structure-sorting
 course: null
 displayOrder: 0
 seo: 

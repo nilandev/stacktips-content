@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/24/thumbnail.png
 topics: 
-  - react
+  - blog
+tags:
+  - api-gateway
+  - microservices-architecture
+  - wso2-api-manager
+  - oauth2-api-security
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "API Gateways Explained: Key Benefits for Microservices"
+  metaDescription: "Understand what an API gateway does, why microservices architectures need one, and what to look for in platforms like WSO2, AWS, and Azure API Management."
   metaKeywords: null
 ---
 

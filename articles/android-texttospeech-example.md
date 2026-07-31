@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - android-texttospeech
+  - tts-android-example
+  - android-speech-synthesis
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android TextToSpeech Example: Convert Text to Speech"
+  metaDescription: "Learn how to implement Android TextToSpeech (TTS) with a reusable TTSManager class, handle language initialization, and queue multiple utterances."
   metaKeywords: null
 ---
 

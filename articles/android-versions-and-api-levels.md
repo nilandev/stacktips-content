@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - html5
+  - android
+tags:
+  - android-api-level
+  - android-version-history
+  - android-sdk-versions
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Versions and API Levels Explained (Full Chart)"
+  metaDescription: "A complete reference table mapping Android platform versions to their API levels and VERSION_CODE names, from Android 1.0 through Android 5.0 Lollipop."
   metaKeywords: null
 ---
 

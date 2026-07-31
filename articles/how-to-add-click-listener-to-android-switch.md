@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-switch-widget
+  - oncheckedchangelistener
+  - android-compoundbutton
+  - toggle-switch-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Add a Click Listener to Android Switch Widget"
+  metaDescription: "Learn how to add a Switch widget to your Android layout and handle toggle events using setOnCheckedChangeListener with a working code example."
   metaKeywords: null
 ---
 

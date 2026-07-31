@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-include-tag
+  - reusable-layout-android
+  - android-layout-optimization
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Include Tag: Reuse Layouts in XML"
+  metaDescription: "Learn how to use the Android <include> tag to reuse XML layouts like a shared footer across multiple screens and avoid duplicating view code."
   metaKeywords: null
 ---
 

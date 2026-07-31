@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - sqliteopenhelper
+  - android-sqlite-crud
+  - android-todo-app
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android SQLite Database Tutorial: CRUD with a TODO App"
+  metaDescription: "Learn how to use SQLite in Android with SQLiteOpenHelper, building a complete TODO app that creates, reads, updates, and deletes database records."
   metaKeywords: null
 ---
 

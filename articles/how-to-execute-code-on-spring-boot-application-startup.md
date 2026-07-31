@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/6/thumbnail.png
 topics: 
   - spring-boot
+tags:
+  - spring-boot-postconstruct
+  - applicationrunner-commandlinerunner
+  - spring-boot-application-startup
+  - spring-boot-applicationreadyevent
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Execute Code on Spring Boot Application Startup"
+  metaDescription: "Compare three ways to run code at Spring Boot startup: @PostConstruct, ApplicationRunner/CommandLineRunner, and ApplicationReadyEvent, with examples."
   metaKeywords: null
 ---
 

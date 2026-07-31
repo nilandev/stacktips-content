@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - android-cardview
+  - android-cardview-support
+  - android-recyclerview
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android CardView Example with Support Library"
+  metaDescription: "Learn how to use Android CardView from the v7 support library, including layout XML, dependency setup, and customizing corner radius and background color."
   metaKeywords: null
 ---
 

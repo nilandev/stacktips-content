@@ -12,11 +12,15 @@ featured: false
 thumbnail: /media/articles/9/thumbnail.png
 topics: 
   - git
+tags:
+  - git-diff-command
+  - git-diff-staged
+  - git-compare-changes
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Git Diff: Inspecting and Comparing Changes in Git"
+  metaDescription: "Learn how to use the git diff command to inspect uncommitted changes, view staged changes, and compare files before pushing your code."
   metaKeywords: null
 ---
 

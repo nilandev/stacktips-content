@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-textwatcher
+  - edittext-text-change-listener
+  - android-character-counter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Monitor TextView Changes in Android"
+  metaDescription: "Learn how to use Android's TextWatcher interface to monitor text changes in a TextView or EditText, with a live character counter example."
   metaKeywords: null
 ---
 

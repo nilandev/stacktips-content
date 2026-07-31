@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - priorityqueue-java
+  - java-binary-heap
+  - priorityqueue-comparator
+  - java-collections-priorityqueue
 course: getting-started-with-php
 displayOrder: 9
 seo: 

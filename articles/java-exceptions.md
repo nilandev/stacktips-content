@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - python
+  - java
+tags:
+  - java-exception-handling
+  - try-catch-finally-java
+  - arithmeticexception-java
 course: maven-for-beginners
 displayOrder: 16
 seo: 

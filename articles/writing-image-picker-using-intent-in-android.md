@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - intent-action-pick
+  - android-image-picker
+  - pick-image-from-gallery-android
+  - android-oncreateoptionsmenu
 course: null
 displayOrder: 0
 seo: 

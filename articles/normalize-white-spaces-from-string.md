@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - java-normalize-whitespace
+  - stringbuffer-java
+  - java-string-manipulation
+  - remove-extra-spaces-java
 course: null
 displayOrder: 0
 seo: 

@@ -12,7 +12,12 @@ featured: false
 thumbnail: null
 topics: 
   - java
-course: maven-for-beginners
+tags:
+  - java-installation-guide
+  - java-hello-world
+  - java-jdk-setup
+  - java-ide-setup
+course: getting-started-with-java
 displayOrder: 1
 seo: 
   metaTitle: null

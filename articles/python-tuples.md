@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-tuple-methods
+  - python-immutable-sequence
+  - python-data-structures
 course: getting-started-with-css
 displayOrder: 11
 seo: 

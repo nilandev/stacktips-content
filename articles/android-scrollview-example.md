@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - bootstrap
+  - android
+tags:
+  - android-scrollview
+  - fillviewport
+  - vertical-scrolling-android
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android ScrollView Example: Vertical Scrolling Layout"
+  metaDescription: "Learn how to use Android ScrollView to display content larger than the screen, including fillViewport, layout rules, and a complete XML example."
   metaKeywords: null
 ---
 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - blog
+  - android
+tags:
+  - android-popupmenu
+  - popupmenu-example
+  - android-overflow-menu
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android PopupMenu Example: Show an Overflow Menu"
+  metaDescription: "Learn how to create and show a PopupMenu in Android, define menu items in XML, and handle item click events with a complete working example."
   metaKeywords: null
 ---
 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - html5
+  - android
+tags:
+  - android-onsaveinstancestate
+  - android-activity-state
+  - android-bundle-save-restore
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Save Android Activity State (onSaveInstanceState)"
+  metaDescription: "Learn how to save and restore an Android Activity's UI state using onSaveInstanceState() and onRestoreInstanceState() with a Bundle example."
   metaKeywords: null
 ---
 

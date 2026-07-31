@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-custom-view
+  - custom-styleable-attributes
+  - android-attrs-xml
+  - obtainstyledattributes
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Creating Custom Views in Android: Step-by-Step Tutorial"
+  metaDescription: "Learn how to build a custom Android View with styleable XML attributes, obtainStyledAttributes(), and a reusable two-TextView layout example."
   metaKeywords: null
 ---
 

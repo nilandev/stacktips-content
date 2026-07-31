@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-inheritance-example
+  - extends-keyword-java
+  - parent-child-class-java
 course: maven-for-beginners
 displayOrder: 14
 seo: 

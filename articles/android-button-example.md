@@ -12,11 +12,14 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - button
+  - button-styling
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Button Example: Create and Style Buttons"
+  metaDescription: "Learn how to create Android buttons in XML, handle click events in your Activity, and style buttons with custom colors, icons, and backgrounds."
   metaKeywords: null
 ---
 

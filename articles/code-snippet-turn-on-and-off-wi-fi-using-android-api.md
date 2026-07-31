@@ -11,7 +11,10 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - wordpress
+  - android
+tags:
+  - code-snippet
+  - how-tos
 course: null
 displayOrder: 0
 seo: 

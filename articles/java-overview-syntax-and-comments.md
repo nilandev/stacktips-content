@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - java
+tags:
+  - java-syntax-basics
+  - java-comments
+  - hello-world-java
 course: maven-for-beginners
 displayOrder: 2
 seo: 

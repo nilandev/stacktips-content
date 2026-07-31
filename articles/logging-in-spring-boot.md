@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - spring-boot
+tags:
+  - spring-boot-logging
+  - slf4j-logback
+  - spring-boot-log-levels
+  - actuator-runtime-log-level
 course: getting-started-with-javascript
 displayOrder: 7
 seo: 

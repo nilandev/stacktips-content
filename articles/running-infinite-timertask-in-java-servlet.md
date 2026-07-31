@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/285/thumbnail.png
 topics: 
-  - android
+  - java
+tags:
+  - java-timertask
+  - servletcontextlistener
+  - java-timer-schedule
 course: null
 displayOrder: 0
 seo: 

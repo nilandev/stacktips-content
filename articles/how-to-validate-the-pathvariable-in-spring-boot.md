@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/Validate_the_PathVariable_in_Spring_Boot.jpeg
 topics: 
-  - java
+  - spring-boot
+tags:
+  - spring-boot-pathvariable-validation
+  - spring-boot-custom-validator
+  - constraintvalidator-example
+  - spring-pattern-annotation-validation
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Validate @PathVariable in Spring Boot"
+  metaDescription: "Learn how to validate @PathVariable in Spring Boot using @NotEmpty, @Pattern regex validation, a custom ConstraintValidator, and manual validation."
   metaKeywords: null
 ---
 

@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - xamarin
+tags:
+  - sharedpreferences-xamarin
+  - android-key-value-storage
+  - isharedpreferenceseditor
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - cordova
+  - android
+tags:
+  - android-asynctask-example
+  - download-image-android
+  - android-progressdialog
+  - httpclient-bitmap-download
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Download Image Using AsyncTask in Android (with Code)"
+  metaDescription: "Learn how to download an image in Android using AsyncTask while showing a progress dialog, with a step-by-step explanation of the AsyncTask lifecycle."
   metaKeywords: null
 ---
 

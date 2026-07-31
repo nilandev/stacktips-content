@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - xamarin
+tags:
+  - alertdialog
+  - dialog-fragment
+  - xamarin-dialogs
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "AlertDialog and DialogFragment Example in Xamarin Android"
+  metaDescription: "Learn how to create AlertDialog and DialogFragment in Xamarin.Android, with code examples for OnCreateDialog and OnCreateView implementations."
   metaKeywords: null
 ---
 

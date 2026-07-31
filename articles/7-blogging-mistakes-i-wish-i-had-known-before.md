@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/posts/7-blogging-mistakes-i-wish-i-had-known-before.jpeg
 topics: 
-  - java
+  - blog
+tags:
+  - blogging-tips
+  - blogging-mistakes
+  - blog-seo
+  - content-consistency
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "7 Blogging Mistakes I Wish I Had Known Before Starting"
+  metaDescription: "A personal look at 7 common blogging mistakes around consistency, SEO, niche focus, and distribution that new bloggers should avoid learning the hard way."
   metaKeywords: null
 ---
 

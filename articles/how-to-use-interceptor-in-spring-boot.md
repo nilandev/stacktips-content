@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/interceptors-in-spring-boot.jpg
 topics: 
   - spring-boot
+tags:
+  - spring-handlerinterceptor
+  - spring-boot-interceptor-vs-filter
+  - webmvcconfigurer-addinterceptors
+  - spring-basic-authentication-interceptor
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Spring Boot Interceptor Tutorial: Filters vs Interceptors"
+  metaDescription: "Learn how to implement HandlerInterceptor in Spring Boot, register it with WebMvcConfigurer, set path patterns, and add basic authentication checks."
   metaKeywords: null
 ---
 

@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-studio-project-structure
+  - gradle-build-variants
+  - eclipse-vs-android-studio
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Studio Project Structure Explained"
+  metaDescription: "Understand the Android Studio project structure, including Gradle build variants, modules, and folders, compared to the traditional Eclipse ADT layout."
   metaKeywords: null
 ---
 

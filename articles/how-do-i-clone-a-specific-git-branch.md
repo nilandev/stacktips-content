@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/8/thumbnail.png
 topics: 
-  - java
+  - git
+tags:
+  - git-clone-branch
+  - git-single-branch
+  - clone-remote-repository
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How Do I Clone a Specific Git Branch? Quick Guide"
+  metaDescription: "Learn how to clone a specific Git branch using the --single-branch flag, avoiding the overhead of downloading every branch in the repository."
   metaKeywords: null
 ---
 

@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - ibm-worklight
+  - android
+tags:
+  - android-packagemanager
+  - list-installed-apps-android
+  - android-listview-adapter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Get List of Installed Apps in Android"
+  metaDescription: "Learn how to use Android's PackageManager to list installed apps with a custom ListView adapter showing app icons, names, and package details."
   metaKeywords: null
 ---
 

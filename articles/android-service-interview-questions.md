@@ -11,12 +11,15 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - android
+tags:
+  - interview-questions
+  - android-faqs
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Service Interview Questions and Answers"
+  metaDescription: "Prepare for Android interviews with common questions on Service, IntentService, and AlarmManager, covering lifecycle, bound vs unbound, and key differences."
   metaKeywords: null
 ---
 

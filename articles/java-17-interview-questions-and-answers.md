@@ -12,6 +12,12 @@ featured: true
 thumbnail: /media/posts/java-17-interview-questions-and-answers.jpeg
 topics: 
   - java
+tags:
+  - java-17-interview-questions
+  - java-sealed-classes
+  - java-records
+  - java-pattern-matching-switch
+  - java-text-blocks
 course: null
 displayOrder: 0
 seo: 

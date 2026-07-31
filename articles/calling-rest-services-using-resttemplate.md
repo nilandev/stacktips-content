@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/5/thumbnail.png
 topics: 
   - spring-boot
+tags:
+  - resttemplate-example
+  - consume-rest-api-spring-boot
+  - resttemplate-vs-webclient
+  - spring-boot-http-client
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "RestTemplate Tutorial: Consume REST API in Spring Boot"
+  metaDescription: "Learn how to use RestTemplate to call REST APIs from a Spring Boot application, with setup steps and common HTTP methods explained."
   metaKeywords: null
 ---
 

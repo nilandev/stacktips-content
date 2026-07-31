@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-edittext-validation
+  - android-email-regex-validation
+  - android-signup-form
+  - edittext-set-error
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "EditText Validation in Android: Signup Form Example"
+  metaDescription: "Learn how to validate EditText input in Android with a simple signup form example covering email regex validation and password length checks."
   metaKeywords: null
 ---
 

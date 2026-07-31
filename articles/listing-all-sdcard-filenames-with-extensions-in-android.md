@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - sencha-touch
+  - android
+tags:
+  - android-list-sdcard-files
+  - android-file-listing-recursive
+  - android-external-storage-files
+  - list-image-files-android
 course: null
 displayOrder: 0
 seo: 

@@ -11,12 +11,16 @@ githubLink: "https://github.com/StackTipsLab/advance-android-tutorials/tree/mast
 featured: false
 thumbnail: null
 topics: 
-  - ibm-worklight
+  - android
+tags:
+  - android-wifimanager
+  - toggle-wifi-android
+  - android-wifi-switch
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Turn Wi-Fi On and Off in Android Programmatically"
+  metaDescription: "Learn how to toggle Wi-Fi on and off in Android using WifiManager and a Switch widget, with full layout and activity code examples."
   metaKeywords: null
 ---
 

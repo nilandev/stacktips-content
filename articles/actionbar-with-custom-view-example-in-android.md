@@ -12,11 +12,14 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - actionbar-customview
+  - android-actionbar
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "ActionBar with Custom View Example in Android"
+  metaDescription: "Learn how to customize the Android ActionBar with a custom layout using setCustomView(), including XML layout and Activity code examples."
   metaKeywords: null
 ---
 

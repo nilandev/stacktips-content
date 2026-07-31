@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - xamarin
+  - android
+tags:
+  - dropbox-sdk-android
+  - android-file-upload-dropbox
+  - dropbox-api-integration
 course: null
 displayOrder: 0
 seo: 

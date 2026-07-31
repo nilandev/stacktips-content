@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/articles/How_to_Build_a_Multi-Select_GridView_Layout_in_Flutter.jpeg
 topics: 
   - flutter
+tags:
+  - flutter-gridview
+  - multi-select-gridview
+  - flutter-gridview-builder
+  - flutter-futurebuilder
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Build a Multi-Select GridView Layout in Flutter"
+  metaDescription: "Step-by-step guide to building a multi-select GridView in Flutter, fetching products from a REST API and toggling item selection with GestureDetector."
   metaKeywords: null
 ---
 

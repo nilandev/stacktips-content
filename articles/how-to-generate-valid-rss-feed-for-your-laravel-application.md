@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - spring
+  - laravel
+tags:
+  - laravel-rss-feed
+  - roumen-laravel-feed
+  - laravel-atom-feed
+  - laravel-feed-service-provider
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Generate a Valid RSS Feed for Laravel"
+  metaDescription: "Learn how to add RSS and Atom feeds to a Laravel application using the roumen/feed package, with routes, config, and a FeedBuilder service."
   metaKeywords: null
 ---
 

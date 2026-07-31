@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - unity
+tags:
+  - java-inputstream-outputstream
+  - copy-text-file-java
+  - java-file-read-write
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Copy Contents of One Text File to Another in Java"
+  metaDescription: "A step-by-step Java example that shows how to copy the contents of one text file into another using InputStream and OutputStream."
   metaKeywords: null
 ---
 

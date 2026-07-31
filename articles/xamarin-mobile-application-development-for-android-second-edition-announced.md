@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - blog
+tags:
+  - xamarin-android-book
+  - xamarin-mobile-development
+  - xamarin-android-second-edition
 course: null
 displayOrder: 0
 seo: 

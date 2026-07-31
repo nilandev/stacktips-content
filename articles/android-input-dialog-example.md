@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-input-dialog
+  - alertdialog-edittext
+  - android-user-input-prompt
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Input Dialog Example with EditText"
+  metaDescription: "Learn how to build an Android input dialog using AlertDialog with a custom EditText layout to capture and display user text input."
   metaKeywords: null
 ---
 

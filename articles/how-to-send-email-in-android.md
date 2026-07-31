@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-email-intent
+  - intent-action-send-android
+  - android-email-client-chooser
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Send Email in Android Using Intent"
+  metaDescription: "Learn how to send an email in Android with Intent.ACTION_SEND, build a simple compose UI, and launch an email client chooser with working code."
   metaKeywords: null
 ---
 

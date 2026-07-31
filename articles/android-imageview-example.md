@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - android-imageview
+  - imageview-scaletype
+  - android-setimageresource
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android ImageView Example: ScaleTypes and Usage"
+  metaDescription: "Learn how to use Android ImageView with different scaleType options, set images dynamically with setImageResource(), and handle click events."
   metaKeywords: null
 ---
 

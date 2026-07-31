@@ -12,6 +12,11 @@ featured: true
 thumbnail: /media/posts/testing-spring-boot-repository-using-mongodb-testcontainers.jpeg
 topics: 
   - spring-boot
+tags:
+  - mongodb-testcontainers
+  - spring-boot-mongotemplate-testing
+  - testcontainers-junit5
+  - spring-data-mongodb-repository-test
 course: null
 displayOrder: 0
 seo: 

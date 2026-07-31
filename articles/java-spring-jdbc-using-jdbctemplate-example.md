@@ -12,6 +12,11 @@ featured: false
 thumbnail: /media/articles/147/thumbnail.png
 topics: 
   - spring
+tags:
+  - spring-jdbctemplate
+  - spring-datasource-configuration
+  - jdbc-crud-example
+  - java-dao-pattern
 course: null
 displayOrder: 0
 seo: 

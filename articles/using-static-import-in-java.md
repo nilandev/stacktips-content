@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
+tags:
+  - static-import-java
+  - java-import-static-members
+  - java-static-import-example
 course: null
 displayOrder: 0
 seo: 

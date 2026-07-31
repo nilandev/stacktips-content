@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - ibm-worklight
+  - blog
+tags:
+  - worklight-http-adapter
+  - worklight-adapter-xml
+  - wl-server-invokehttp
+  - worklight-rest-integration
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "How to Create an HTTP Adapter in IBM Worklight"
+  metaDescription: "Step-by-step guide to creating and deploying an HTTP adapter in IBM Worklight, including adapter XML configuration and invoking a REST procedure."
   metaKeywords: null
 ---
 

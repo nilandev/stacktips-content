@@ -11,12 +11,17 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/153/thumbnail.png
 topics: 
-  - android
+  - spring
+tags:
+  - spring-bean-lifecycle
+  - init-method-destroy-method
+  - spring-ioc-container
+  - spring-pojo-initialization
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Customize POJO Initialization and Destruction in Spring"
+  metaDescription: "Learn how Spring manages POJO lifecycle callbacks using init-method and destroy-method attributes to run custom startup and shutdown logic."
   metaKeywords: null
 ---
 

@@ -12,11 +12,16 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - gridview
+  - image-gallery
+  - custom-adapter
+  - arrayadapter
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android GridView Example: Build an Image Gallery"
+  metaDescription: "Learn how to build an image gallery in Android using GridView, a custom ArrayAdapter, and item click handling to open a full-size details view."
   metaKeywords: null
 ---
 

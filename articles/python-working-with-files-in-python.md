@@ -12,6 +12,10 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-os-module
+  - python-file-io
+  - python-directory-operations
 course: getting-started-with-css
 displayOrder: 13
 seo: 

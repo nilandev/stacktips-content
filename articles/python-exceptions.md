@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - python
+tags:
+  - python-exception-handling
+  - python-try-except-finally
+  - python-raise-exception
+  - python-else-block-exceptions
 course: getting-started-with-css
 displayOrder: 12
 seo: 

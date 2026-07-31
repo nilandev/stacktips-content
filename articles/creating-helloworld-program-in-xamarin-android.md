@@ -11,12 +11,16 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - xamarin
+tags:
+  - xamarin-android-helloworld
+  - xamarin-android-project-structure
+  - xamarin-button-click-toast
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Creating a Hello World App in Xamarin.Android"
+  metaDescription: "A step-by-step guide to building your first Xamarin.Android app, covering project structure, layout XML, and handling a button click with a Toast."
   metaKeywords: null
 ---
 

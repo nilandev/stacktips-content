@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/286/thumbnail.png
 topics: 
-  - c
+  - java
+tags:
+  - servletcontextlistener-example
+  - servlet-lifecycle
+  - java-web-app-listener
+  - tomcat-servlet
 course: null
 displayOrder: 0
 seo: 

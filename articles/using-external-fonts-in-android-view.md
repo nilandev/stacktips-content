@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - custom-font-android-textview
+  - typeface-createfromasset
+  - android-ttf-font-assets
+  - custom-textview-android
 course: null
 displayOrder: 0
 seo: 

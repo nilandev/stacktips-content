@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-installation
+  - python-interpreter
+  - python-getting-started
+  - learn-python-basics
 course: getting-started-with-css
 displayOrder: 1
 seo: 

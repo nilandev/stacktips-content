@@ -12,6 +12,12 @@ featured: true
 thumbnail: /media/articles/1/thumbnail.png
 topics: 
   - spring-boot
+tags:
+  - spring-boot-annotations
+  - springbootapplication
+  - autowired-annotation
+  - component-vs-service-vs-repository
+  - spring-bean-annotation
 course: null
 displayOrder: 0
 seo: 

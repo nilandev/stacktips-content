@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - django
+tags:
+  - django-interview-questions
+  - django-admin-permissions
+  - django-slug-field
+  - django-middleware
 course: null
 displayOrder: 0
 seo: 

@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-classes-and-objects
+  - python-inheritance-super
+  - python-constructor-init
+  - python-method-overriding
 course: getting-started-with-css
 displayOrder: 3
 seo: 

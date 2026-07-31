@@ -12,11 +12,15 @@ featured: false
 thumbnail: null
 topics: 
   - android
+tags:
+  - xamarin-android
+  - android-login-screen
+  - xamarin-tutorial
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Android Login Screen Using Xamarin: Step-by-Step Tutorial"
+  metaDescription: "Learn how to build a login screen in Xamarin.Android using EditText fields and a login button, with full AXML layout and C# activity code."
   metaKeywords: null
 ---
 

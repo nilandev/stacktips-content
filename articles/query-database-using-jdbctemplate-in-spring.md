@@ -12,6 +12,10 @@ featured: false
 thumbnail: /media/articles/143/thumbnail.png
 topics: 
   - spring
+tags:
+  - spring-jdbctemplate
+  - rowcallbackhandler-rowmapper
+  - jdbc-query-database
 course: null
 displayOrder: 0
 seo: 

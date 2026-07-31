@@ -12,6 +12,11 @@ featured: true
 thumbnail: /media/post/666_using-flyway-for-database-migration-in-springboot.png
 topics: 
   - spring-boot
+tags:
+  - flyway-spring-boot-migration
+  - flyway-mysql-setup
+  - versioned-vs-repeatable-migrations
+  - flyway-maven-plugin
 course: null
 displayOrder: 0
 seo: 

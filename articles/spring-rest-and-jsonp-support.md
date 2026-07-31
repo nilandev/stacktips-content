@@ -11,7 +11,12 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - java
+  - spring
+tags:
+  - spring-jsonp-support
+  - abstractjsonpresponsebodyadvice
+  - cross-origin-rest-api
+  - same-origin-policy
 course: null
 displayOrder: 0
 seo: 

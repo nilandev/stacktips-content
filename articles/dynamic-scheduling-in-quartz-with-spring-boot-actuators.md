@@ -12,11 +12,16 @@ featured: false
 thumbnail: /media/posts/dynamic-scheduling-in-quartz-with-spring-boot-actuators.jpeg
 topics: 
   - spring-boot
+tags:
+  - quartz-scheduler-java
+  - spring-boot-custom-actuator
+  - dynamic-cron-job-scheduling
+  - quartz-job-management
 course: null
 displayOrder: 0
 seo: 
-  metaTitle: null
-  metaDescription: null
+  metaTitle: "Dynamic Job Scheduling in Quartz with Spring Boot Actuators"
+  metaDescription: "Learn how to dynamically start, stop, and update Quartz scheduler jobs at runtime using a custom Spring Boot actuator endpoint, with full code examples."
   metaKeywords: null
 ---
 

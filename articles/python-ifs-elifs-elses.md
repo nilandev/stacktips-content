@@ -12,6 +12,11 @@ featured: false
 thumbnail: null
 topics: 
   - python
+tags:
+  - python-if-elif-else
+  - python-conditional-statements
+  - python-control-flow
+  - python-decision-making
 course: getting-started-with-css
 displayOrder: 4
 seo: 

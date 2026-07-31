@@ -11,7 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - maven
+  - java
+tags:
+  - java-interface-example
+  - abstract-methods-java
+  - interface-vs-abstract-class-java
 course: maven-for-beginners
 displayOrder: 12
 seo: 

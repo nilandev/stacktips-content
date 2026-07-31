@@ -11,7 +11,7 @@ githubLink: "https://github.com/StackTipsLab/android-ui-tutorials/tree/master/an
 featured: false
 thumbnail: null
 topics: 
-  - bootstrap
+  - android
 course: null
 displayOrder: 0
 seo: 
