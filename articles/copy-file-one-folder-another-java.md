@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - android
+  - java
 tags:
   - code-snippet
   - how-tos

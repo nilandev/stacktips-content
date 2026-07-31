@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/157/thumbnail.png
 topics: 
-  - android
+  - spring
 tags:
   - spring-bean-scope
   - spring-scope-annotation

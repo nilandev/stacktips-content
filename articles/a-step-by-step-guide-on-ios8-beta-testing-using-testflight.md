@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/242/thumbnail.png
 topics: 
-  - android
+  - blog
 course: null
 displayOrder: 0
 seo: 

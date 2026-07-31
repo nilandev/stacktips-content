@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/189/thumbnail.png
 topics: 
-  - xamarin
+  - java
 tags:
   - linear-search-java
   - sequential-search-algorithm

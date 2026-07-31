@@ -9,7 +9,7 @@ updatedDate: "2025-09-16T23:05:34.313Z"
 videoLink: null
 githubLink: null
 featured: false
-thumbnail: /media/articles/372/thumbnail.png
+thumbnail: null
 topics: 
   - blog
 tags:

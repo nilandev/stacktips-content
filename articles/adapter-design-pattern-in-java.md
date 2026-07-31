@@ -11,7 +11,7 @@ githubLink: null
 featured: false
 thumbnail: /media/articles/251/thumbnail.png
 topics: 
-  - android
+  - design-pattern
 tags:
   - adapter-design-pattern
   - java-structural-patterns
