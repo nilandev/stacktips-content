@@ -154,7 +154,6 @@ public class MyApplication implements CommandLineRunner {
         SpringApplication.run(MyApplication.class, args);
     }
 }
-
 ```
 
 As we are specifying `@Qualifier("sesMailSender")`, Spring will now inject the `sesMailSender` bean.

@@ -145,7 +145,6 @@ I admit the fact that, the style file used here can be more improvised. The colo
 Android ViewFlipper can anytime display only one immoderate child at a time. So you can only see the first image in your eclipse graphical layout view. We need to pragmatically move to different child or we can setup an auto timer. Setting an auto flip timer will create a slideshow and can be controlled by `startFlipping()` and `stopFlipping()` method. Later in this example we will see more in detail.
 
 ```java
-
 public class ViewFlipperSampleActivity extends Activity {
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
@@ -245,7 +244,6 @@ Added the following style
 ViewFlipper auto flip can be controlled from java code. add following code in your java class
 
 ```java
-
 findViewById(R.id.play).setOnClickListener(new OnClickListener() {
     @Override
     public void onClick(View view) {
@@ -274,7 +272,6 @@ The ViewFlipper class has derived from `ViewAnimator`. It supports the methods t
 Sometimes we may need to control our screen while animation is started or completed. AnimationListener enables to handle animation events using `onAnimationStart()`, `onAnimationRepeat()` and `onAnimationEnd()` methods.
 
 ```java
-
 //animation listener
 AnimationListener mAnimationListener = new Animation.AnimationListener() {
     public void onAnimationStart(Animation animation) {
@@ -293,7 +290,6 @@ AnimationListener mAnimationListener = new Animation.AnimationListener() {
 Now add the animation listener to `ViewFlipper`.
 
 ```java
-
 mViewFlipper.getInAnimation().setAnimationListener(mAnimationListener);
 ```
 

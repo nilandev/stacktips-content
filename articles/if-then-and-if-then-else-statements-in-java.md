@@ -31,7 +31,6 @@ If-else statement in java is used for conditional checks for decision making. Yo
 For example, if you want check a number N1 is greater than or less to another number N2, then you will have to use if-else block. Below example will demonstrates the usages of if else statements.
 
 ```java
-
 import java.util.Scanner;
 
 public class JavaTest {

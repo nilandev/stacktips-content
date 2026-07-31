@@ -33,7 +33,6 @@ In Java, the `equals()` method is used for comparing the contents of two string 
 In the following example, `equals()` returns true as the two string objects have the same values. However == operator returns false as both string objects are referencing different objects:
 
 ```java
-
 public class EqualsTest {
 
     public static void main(String args[]) {
@@ -59,7 +58,6 @@ public class EqualsTest {
 Output
 
 ```text
-
 false
 true
 true
@@ -69,7 +67,6 @@ true
 ### 2\. What is the output of the following program?
 
 ```java
-
 public class Test {
 
     public void print(int a, long b) {
@@ -91,7 +88,6 @@ public class Test {
 The above program will output:
 
 ```text
-
 Method 1
 ```
 
@@ -104,7 +100,6 @@ Infinite loops are those loops that run infinitely without any breaking conditio
 Using For Loop:
 
 ```java
-
 for (;;)
 {
    // Business logic
@@ -115,7 +110,6 @@ for (;;)
 Using while loop:
 
 ```java
-
 while(true){
    // Business logic
    // Any break logic
@@ -125,7 +119,6 @@ while(true){
 Using do-while loop:
 
 ```java
-
 do{
    // Business logic
    // Any break logic
@@ -145,7 +138,6 @@ Therefore, to overcome this issue, Java 8 has introduced the concept of default 
 You can do this by using the `default` keyword.
 
 ```java
-
 interface Vehicle {
     String speedUp();
     String slowDown();
@@ -172,7 +164,6 @@ There are two ways to address this issue in Java:
 2.  **Inheritance Rule:** If a class inherits a method from a superclass, it takes precedence over any default methods provided by interfaces.
 
 ```java
-
 interface Interface1 {
     default void hello() {
         System.out.println("Hello from Interface1");
@@ -212,7 +203,6 @@ Since default methods are not abstract you're free to add default methods to you
 To ensure your interface meets the requirements, you can optionally add the `@FunctionalInterface` annotation. The compiler is aware of this annotation and throws a compiler error as you try to add a second abstract method declaration to the interface.
 
 ```java
-
 @FunctionalInterface
 interface Converter<F, T> {
     T convert(F from);
@@ -222,7 +212,6 @@ interface Converter<F, T> {
 This can be used as
 
 ```java
-
 Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
 Integer converted = converter.convert("123");
 System.out.println(converted);
@@ -237,7 +226,6 @@ While it may seem counterintuitive at first, since abstract classes cannot be in
 Here's how abstract class constructors are used:
 
 ```java
-
 abstract class MyAbstractClass {
 
     public int a;
@@ -290,7 +278,6 @@ Streams are created on a source, e.g. a `java.util.Collection` like lists or set
 The following sections explain the most common stream operations.
 
 ```java
-
 List<String> listItems = new ArrayList<>();
 listItems.add("item1");
 listItems.add("item3");
@@ -309,7 +296,6 @@ A `String` is **immutable**, whereas both the `StringBuilder` and `StringBuffer`
 It is quite slow to work with a String. However, StringBuilder is the fastest in performing operations. The speed of a StringBuffer is more than a String and less than a StringBuilder. (For example, appending a character is fastest in StringBuilder and very slow in String because a new memory is required for the new String with appended character.)
 
 ```java
-
 // String
 String first = "InterviewBit";
 String second = new String("InterviewBit");
@@ -324,7 +310,6 @@ StringBuilder fourth = new StringBuilder("InterviewBit");
 ### 12\. Explain the output of the following program related to the `equals()` method of StringBuilder.
 
 ```java
-
 public class Demo {
 
     public static void main(String[] args) {
@@ -396,7 +381,6 @@ The `break` and `continue` are two important keywords used in the loops. When a 
 In the below example, the Loop is broken when the counter reaches 4.
 
 ```java
-
 for (counter = 0; counter< 10; counter++)
     system.out.println(counter);
 
@@ -409,7 +393,6 @@ for (counter = 0; counter< 10; counter++)
 In the below example when the counter reaches 4, the loop jumps to the next iteration and any statements after the continue keyword are skipped for the current iteration.
 
 ```java
-
 for (counter = 0; counter < 10; counter++)
     system.out.println(counter);
     if (counter == 4) {
@@ -429,7 +412,6 @@ A variable declared with the final keyword is a constant in Java. Value can be a
 For example, a constant with the name `MAX_LIMIT` is declared and assigned value:
 
 ```java
-
 private final int MAX_LIMIT=100
 ```
 

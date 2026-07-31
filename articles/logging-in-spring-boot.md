@@ -85,7 +85,6 @@ Log levels indicate the severity/importance of the log event. Here is the list o
 The following is a simple example of how to log a message in a Spring Boot application:
 
 ```groovy
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -116,7 +115,6 @@ INFO is the default logging level used in Spring Boot. Hence, if we run the abov
 We can enable the DEBUG or TRACE mode while starting our application using a `—-debug` or `—-trace` flag. Example:
 
 ```bash
-
 java -jar target/my-app-0.0.1-SNAPSHOT.jar --debug
 ```
 
@@ -129,7 +127,6 @@ Enabling the debug mode using the above method does not configure your applicati
 The application log levels can be set from the `application.properties` file using the following properties.
 
 ```properties
-
 logging.level.root=WARN
 logging.level.com.stacktips.app=TRACE
 ```
@@ -137,7 +134,6 @@ logging.level.com.stacktips.app=TRACE
 If you run your application, it will print as follows;
 
 ```java
-
 2023-08-15T00:12:53.419+01:00  INFO 70870 --- [           main] c.stacktips.app.MyApplication  : Starting MyApplication using Java 17.0.7 with PID 70870 (/Users/nilanchala/Downloads/spring-boot-example/target/classes started by nilanchala in /Users/nilanchala/Downloads/spring-boot-example)
 2023-08-15T00:12:53.421+01:00 DEBUG 70870 --- [           main] c.stacktips.app.MyApplication  : Running with Spring Boot v3.1.2, Spring v6.0.11
 2023-08-15T00:12:53.422+01:00  INFO 70870 --- [           main] c.stacktips.app.MyApplication  : No active profile set, falling back to 1 default profile: "default"
@@ -155,7 +151,6 @@ If you run your application, it will print as follows;
 By default, all logs from Spring Boot applications are printed only to the console and do not write files. If you want to write log files in addition to the console output, you need to set the following properties:
 
 ```properties
-
 # Log file name
 logging.file.name=myapp-log.log
 
@@ -172,21 +167,18 @@ Spring Boot Actuator allows change log levels at runtime without restarting the 
 For the actuator to work, we need to add the following actuator dependency.
 
 ```groovy
-
 implementation 'org.springframework.boot:spring-boot-starter-actuator'
 ```
 
 Now, we can expose the Actuator's `loggers` endpoint in your `application.properties`:
 
 ```properties
-
 management.endpoints.web.exposure.include=loggers
 ```
 
 Now, we can change the log level by sending a POST request to `/actuator/loggers/{logger.name}`, with a JSON payload specifying the desired log level. For example:
 
 ```bash
-
 curl --location 'http://localhost:8080/actuator/loggers/com.stacktips.app' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -201,7 +193,6 @@ Open your web browser and visit `http://localhost:8080/actuator/loggers`. This w
 If you want to customize the log pattern, you can define your custom pattern in `application.properties` file. For example, to include the class name, method, and line number in the logs:
 
 ```properties
-
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %highlight(%-5level) --- [%15.15thread] %cyan(%logger{40}) : %msg %n
 ```
 
@@ -214,7 +205,6 @@ Logback's MDC allows you to enrich log messages with contextual information, suc
 You can programmatically add context information to your logs:
 
 ```java
-
 @SpringBootApplication
 public class MyApplication {
 
@@ -241,14 +231,12 @@ public class MyApplication {
 And then include the MDC arguments in your log output pattern:
 
 ```properties
-
 logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} [%X{userId}] - %msg%n
 ```
 
 This prints
 
 ```bash
-
 2024-03-10 23:22:14 [main] INFO  com.stacktips.app.MyApplication [] - Starting MyApplication using Java 17.0.7 with PID 85229 (/Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging/build/classes/java/main started by nilanchala in /Users/nilanchala/Documents/github/StackTipsLab/spring-boot-tutorials/spring-boot-logging)
 2024-03-10 23:22:14 [main] DEBUG com.stacktips.app.MyApplication [] - Running with Spring Boot v3.2.3, Spring v6.1.4
 2024-03-10 23:22:14 [main] INFO  com.stacktips.app.MyApplication [] - No active profile set, falling back to 1 default profile: "default"

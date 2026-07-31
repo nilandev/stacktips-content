@@ -41,7 +41,6 @@ Following section of the tutorial, will drive you with step by step approach to 
 As discussed, let us create a simple WebView layout that covers the full screen space.
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -61,7 +60,6 @@ As discussed, let us create a simple WebView layout that covers the full scree
 Following activity class snippet will show you how to initialize WebView instance and load static Html string onto it.
 
 ```csharp
-
 [Activity (Label = "WebViewExample", MainLauncher = true, Icon = "@drawable/icon")]
 public class MainActivity : Activity
 {

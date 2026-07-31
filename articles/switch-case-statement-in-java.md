@@ -32,7 +32,6 @@ Switch case is another alternative for if-else statements. Switch case statement
 The following code example demonstrates switch case with example. An integer value day is passed as an parameter and the code will display the day of week.
 
 ```java
-
 public class StringSwitch {
 
     public static void main(String[] args) {
@@ -74,7 +73,6 @@ public class StringSwitch {
 The following code example demonstrates switch case with using String comparison example. Note that, you Java to compile with Java 7 and above.
 
 ```java
-
 public class StringSwitch {
     public static void main(String[] args) {
         String key = "TWO";

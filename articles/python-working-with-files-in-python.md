@@ -116,7 +116,6 @@ For example, "rb" means to open the file in binary read mode, and "wb" means to
 Here's an example of how you can read the contents of a file:  
 
 ```python
-
 file = open("example.txt", "r")
 contents = file.read()
 print(contents)

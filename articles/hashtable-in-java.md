@@ -34,7 +34,6 @@ The `Hashtable` is synchronized, meaning it is thread-safe and can be shared bet
 `Hashtable` does not allow `null` keys or values. If you try to add `null` as a key or value, it will throw a `NullPointerException`.
 
 ```java
-
 public class _1a_Hashtable {
 
     public static void main(String[] args) {

@@ -90,7 +90,6 @@ We will learn more about this annotation in [Chapter 5, Dependency Injection](ht
 By using the `@SpringBootApplication` annotation, you can simplify the configuration of your Spring Boot application as you don't need to declare the `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan` annotations separately.
 
 ```java
-
 @SpringBootApplication
 public class HelloSpringApplication {
 

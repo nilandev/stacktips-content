@@ -33,7 +33,6 @@ It uses reference equality (`==`) instead of the `equals()` method. It performs 
 It also supports `null` keys and values.
 
 ```java
-
 Map<String, String> map1 = new IdentityHashMap<>();
 String key1 = "key";
 String key2 = "key";
@@ -64,7 +63,6 @@ Outputs:
 key -> value2
 key -> value1
 */
-
 ```
 
 Notice that in the second map, the `key3` and `key4` have the same content but are different objects. Hence, `IdentityHashMap` treats them as two different keys, as a result, the map contains two entries.

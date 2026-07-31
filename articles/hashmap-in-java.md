@@ -36,7 +36,6 @@ HashMap can contain null values and one of its keys can be null.
 ### Creating a HashMap
 
 ```java
-
 // Using the Default Constructor
 HashMap<String, Integer> hashMap = new HashMap<>();
 hashMap.put("A", 1);
@@ -70,14 +69,12 @@ HashMap<String, Integer> hashMap = new HashMap<>(immutableMap);
 The order of items stored on a map is not guaranteed. We can access the item inside the map using its key.
 
 ```java
-
 hashMap.get("key1")
 ```
 
 ### Iterate over a HashMap
 
 ```java
-
 // Using an Iterator
 Iterator<String> keyIterator = hashMap.keySet().iterator();
 while (keyIterator.hasNext()) {

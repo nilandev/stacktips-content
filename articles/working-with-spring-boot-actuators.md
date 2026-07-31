@@ -34,7 +34,6 @@ Through the Actuator, you can find out how beans are wired together in the Sprin
 To enable the Actuator endpoints, you need include the `spring-boot-starter-actuator` starter dependency to your project. If you have Gradle based project, you can add the following dependency to your `build.gradle` file.
 
 ```groovy
-
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-actuator
 }
@@ -43,7 +42,6 @@ dependencies {
 If you’re using maven, you can include the following dependency on your `pom.xml` file.
 
 ```xml
-
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
@@ -86,7 +84,6 @@ By default, all endpoints except for `shutdown` are enabled. You can enable a sp
 For example, the following example enables the `shutdown` and `info` endpoint
 
 ```properties
-
 management.endpoint.shutdown.enabled=true
 management.endpoint.info.enabled=true
 ```
@@ -98,7 +95,6 @@ Since endpoints may contain sensitive information about your application, you sh
 By default, only the `health` endpoint is exposed over HTTP. To change which endpoints are exposed we can use the `include` and `exclude` property.
 
 ```properties
-
 #Include or exclude specific endpoints. Comma seperated endpoint names
 management.endpoints.web.exposure.exclude=scheduledtasks
 management.endpoints.web.exposure.include=info, health
@@ -112,7 +108,6 @@ management.endpoints.web.exposure.include=*
 Note that, the spring boot actuator endpoints automatically cached for read operations that do not take any parameters. To configure the amount of time for which an endpoint caches a response, we can use the following property.
 
 ```properties
-
 management.endpoint.beans.cache.time-to-live=10s
 ```
 
@@ -127,7 +122,6 @@ The methods can be annotated with `@ReadOperation`, `@WriteOperation`, or `@Dele
 The following example demonstrates, creating a custom actuator endpoint `/foo-bar` that supports read operation:
 
 ```java
-
 @Component
 @Endpoint(id = "foo-bar")
 public class FeaturesEndpoint {
@@ -142,7 +136,6 @@ public class FeaturesEndpoint {
 Run your application and you will visit `/actuator/foo-bar` endpoint. It will return the following response:
 
 ```json
-
 {
     "foo": "bar"
 }
@@ -153,7 +146,6 @@ Run your application and you will visit `/actuator/foo-bar` endpoint. It will re
 We can pass the input parameter through the custom actuator endpoints as well using the `@WriteOperation` annotation.
 
 ```java
-
 @Component
 @Endpoint(id = "foo-bar")
 public class FeaturesEndpoint {
@@ -173,7 +165,6 @@ public class FeaturesEndpoint {
 Now, we can test the endpoint as follows;
 
 ```bash
-
 curl --location 'http://localhost:8080/actuator/foo-bar' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -187,7 +178,6 @@ curl --location 'http://localhost:8080/actuator/foo-bar' \
 In conjunction with `@ReadOperation`, `@WriteOperation` we can also use `@DeleteOperation`, which maps to the HTTP DELETE request type.
 
 ```java
-
 @DeleteOperation
 public Map<String, Boolean> deleteOperation() {
     return Map.of("success", true);
@@ -197,6 +187,5 @@ public Map<String, Boolean> deleteOperation() {
 Example:
 
 ```bash
-
 curl --location --request DELETE 'http://localhost:8080/actuator/foo-bar'
 ```

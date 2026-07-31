@@ -35,7 +35,6 @@ Let us first declare the following POJOs.
 **User.java**
 
 ```java
-
 public class User {
     private String name;
     private String email;

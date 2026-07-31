@@ -42,7 +42,6 @@ In the following example, we will create a weather service to load properties fr
 1.  Add the following properties inside `application.properties` file.
 
 ```properties
-
 weather.api.key=default-api-key
 weather.default.city=New York
 weather.units=imperial
@@ -51,7 +50,6 @@ weather.units=imperial
 1.  Let us create a `WeatherService` class and load the properties from `application.properties` file
 
 ```java
-
 @Service
 public class WeatherService {
 
@@ -96,7 +94,6 @@ The application.properties file content can be written using YAML as:
 **application.yaml**
 
 ```yaml
-
 weather:
   api:
     key: default-api-key

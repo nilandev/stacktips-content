@@ -47,7 +47,6 @@ Async task enables you to implement MultiThreading without get Hands dirty into 
 ## Downloading image using Android AsyncTask
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -74,7 +73,6 @@ android:contentDescription="Your image will appear here" >
 .java class
 
 ```java
-
 package com.javatechig.droid;
 
 import java.io.InputStream;

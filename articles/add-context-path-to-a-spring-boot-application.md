@@ -42,7 +42,6 @@ public class ProductController {
             //Your service logic goes here..
       return product;
     }
-
 ```
 
 To test this locally, we need to hit
@@ -58,13 +57,11 @@ To change the context path, you need to add the following property to your `app
 
 ```text
       server.servlet.context-path=/api/1.0
-
 ```
 
 Alternatively, if you're using the application.yaml file, you can do this
 
 ```yaml
-
 server:
    servlet:
      context-path: '/api/1.0'

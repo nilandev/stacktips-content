@@ -9,7 +9,7 @@ updatedDate: "2025-09-16T23:05:29.437Z"
 videoLink: null
 githubLink: null
 featured: false
-thumbnail: /media/articles/248/thumbnail.png
+thumbnail: null
 topics: 
   - design-pattern
 tags:

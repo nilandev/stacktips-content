@@ -27,7 +27,6 @@ Since then many people are asking questions like how to use Decorators and how t
 In this example, we will disable all the dates that are past.
 
 ```java
-
 public class CalendarDayDecoratorActivity extends AppCompatActivity {
     private CustomCalendarView calendarView;
     private TextView selectedDateTv;

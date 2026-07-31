@@ -85,7 +85,6 @@ For example, when you start the Spring boot application with the `spring-boot-st
 We can provide the data source configuration using the following configuration properties.
 
 ```properties
-
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database
 spring.datasource.username=myuser
 spring.datasource.password=mypassword
@@ -145,7 +144,6 @@ Here are some of the popular Spring Boot starter packages:
 You can get the comprehensive list of Spring boot starters using the following command. Note that you need Spring CLI installed to use the following command.
 
 ```bash
-
 spring init --list
 ```
 

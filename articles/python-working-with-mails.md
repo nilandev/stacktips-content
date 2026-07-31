@@ -29,7 +29,6 @@ To send email in Python using the smtplib module, you'll need to have a working 
 Python offers the `smtplib` module that allows us to use the Simple Mail Transfer Protocol (SMTP) to send mail between mail servers.
 
 ```python
-
 import smtplib
 
 # Set up the SMTP server
@@ -72,7 +71,6 @@ I hope this helps you get started with sending emails using smtplib in Python!
 To send an HTML email in Python using smtplib, you can use the email.mime module to create a message with the MIMEMultipart and MIMEText classes. Here's an example of how to send an HTML email:
 
 ```python
-
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText

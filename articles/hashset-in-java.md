@@ -36,7 +36,6 @@ A `HashSet` is preferred when your data is unique and the order of elements is n
 #### Creating and initializing HashSet
 
 ```java
-
 // Creating HashSet using the default constructor
 HashSet<String> hashSet = new HashSet<>();
 hashSet.add("A");
@@ -65,7 +64,6 @@ HashSet<String> hashSet = new HashSet<>(set);
 All collections support iterators. We need to use an iterator when we use a `HashSet` to iterate since it doesn't support indexes.
 
 ```java
-
 // Using an Enhanced for-each loop
 HashSet<String> hashSet = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
 for (String element : hashSet) {
@@ -101,7 +99,6 @@ hashSet.stream().forEach(System.out::println);
 There are several methods available to remove an item from HashSet.
 
 ```java
-
 // Remove object using remove method
 HashSet<String> hashSet = new HashSet<>(Arrays.asList("A", "B", "C", "D"));
 hashSet.remove("B");

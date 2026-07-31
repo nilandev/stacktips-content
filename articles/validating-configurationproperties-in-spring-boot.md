@@ -32,7 +32,6 @@ But, did you know you also can validate configuration properties at spring appli
 Let's say we have a Spring boot importer service that imports customer data from a CSV file to the database periodically. For the importer to work we have the following configurations:
 
 ```yaml
-
 importer:
   service:
     filePath: '/nfs/files'
@@ -43,7 +42,6 @@ importer:
 These properties can be mapped to a Java class automatically using `@ConfigurationProperties` annotation as follows:
 
 ```java
-
 @Getter
 @Setter
 @Component
@@ -60,7 +58,6 @@ Now let's say, we want to ensure the importer configuration is provided and meet
 For this validation to work, we need to have a **JSR-380** implementation like **_Hibernate Validator_** on your classpath.
 
 ```groovy
-
 implementation 'org.springframework.boot:spring-boot-starter-validation'
 ```
 
@@ -69,7 +66,6 @@ Once we have a validator in the classpath, we need to explicitly enable the conf
 For example,
 
 ```java
-
 @Getter
 @Setter
 @Component
@@ -133,7 +129,6 @@ Now you update the `fileType: .csv` and the application will start as expected.
 Starting with Spring Boot 2.6 and Java 16 you can use record classes with `@ConfigurationProperties`. But there are a few things you need to consider when using records.
 
 ```java
-
 @Validated
 @ConfigurationProperties(prefix = "importer.service")
 public record ImporterProperties(
@@ -151,7 +146,6 @@ To fix this, we need to remove the `@Component` annotation and explicitly define
 For example:
 
 ```java
-
 @EnableConfigurationProperties(ImporterProperties.class)
 @SpringBootApplication
 public class MyApplication {

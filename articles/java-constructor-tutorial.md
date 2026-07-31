@@ -45,7 +45,6 @@ Static block is executed before constructor, because static members gets initial
 In the below code snippet, we have declared two constructors in ConstructorDemo class. One without argument and other taking a String argument. A java class can have as many as overridden constructors.
 
 ```java
-
 public class ConstructorDemo {
     public ConstructorDemo() {
         System.out.println("Constructor with no argument");

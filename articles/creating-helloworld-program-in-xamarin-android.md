@@ -122,7 +122,6 @@ namespace HelloWorld
         }
     }
 }
-
 ```
 
 ## 4\. Output

@@ -30,7 +30,6 @@ seo:
 The `is_superuser` property in the User model designates that this user has all permissions without explicitly assigning them.
 
 ```python
-
 class UserAdmin(BaseUserAdmin):
     ...
     def has_add_permission(self, request, obj=None):
@@ -45,7 +44,6 @@ class UserAdmin(BaseUserAdmin):
 You can use the URL resolver directly in a template, there's no need to write your filter. E.g.
 
 ```html
-
 {% url 'admin:index' %}
 {% url 'admin:polls_choice_add' %}
 {% url 'admin:polls_choice_change' choice.id %}
@@ -59,7 +57,6 @@ ref: [Django official documentation](https://docs.djangoproject.com/en/dev/ref/c
 A "slug" is a way of generating a valid URL, generally using data already obtained. For instance, a slug uses the title of an article to generate a URL. I advise to generate the slug by means of a function, given the title (or another piece of data), rather than setting it manually. An example:
 
 ```xml
-
 <title> The 46 Year Old Virgin </title>
 <content> A silly comedy movie </content>
 <slug> the-46-year-old-virgin </slug>
@@ -68,7 +65,6 @@ A "slug" is a way of generating a valid URL, generally using data already obtain
 Now let's pretend that we have a Django model such as:
 
 ```python
-
 class Article(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(max_length=1000)
@@ -78,28 +74,24 @@ class Article(models.Model):
 How would you reference this object with a URL and with a meaningful name? You could for instance use Article. id so the URL would look like this:
 
 ```text
-
 www.example.com/article/23
 ```
 
 Or, you might want to reference the title like this:
 
 ```text
-
 www.example.com/article/The 46 Year Old Virgin
 ```
 
 Since spaces aren't valid in URLs, they must be replaced by %20, which results in:
 
 ```text
-
 www.example.com/article/The%2046%20Year%20Old%20Virgin
 ```
 
 Both attempts are not resulting in very meaningful, easy-to-read URL. This is better:
 
 ```text
-
 www.example.com/article/the-46-year-old-virgin
 ```
 

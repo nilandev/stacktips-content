@@ -32,7 +32,6 @@ The `LinkedHashMap` works very similar to `HashMap` but it maintains a doubly-li
 Due to the additional overhead for maintaining order, `LinkedHashMap` is generally slower as compared to `HashMap`.
 
 ```java
-
 Map<String, Integer> map = new LinkedHashMap<>();
 map.put("B", 2);
 map.put("A", 1);
@@ -47,7 +46,6 @@ for (Map.Entry<String, Integer> entry : map.entrySet()) {
 **Outputs:**
 
 ```text
-
 Output:
 B: 2
 A: 1
@@ -58,7 +56,6 @@ null: 4
 Generally, `LinkedHashMap` maintains the insertion order, but we can change that to access order bypassing the `accessOrder` true during the constructor initialisation.
 
 ```java
-
 Map<String, Integer> map = new LinkedHashMap<>(16, 0.75f, true);
 map.put("B", 2);
 map.put("A", 1);
@@ -76,7 +73,6 @@ for (Map.Entry<String, Integer> entry : map.entrySet()) {
 **Outputs**
 
 ```text
-
 Output:
 C: 3
 null: 4

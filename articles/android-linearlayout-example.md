@@ -36,7 +36,6 @@ Here is how the LinearLayout declaration looks like in Android layout
 <!-- add children here-->
 
 </LinearLayout>
-
 ```
 
 Notice that in the above code snippets, we have specified orientation as horizontal, this aligns all its child layout/views horizontally.

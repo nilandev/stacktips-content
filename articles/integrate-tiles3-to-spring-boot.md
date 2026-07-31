@@ -68,7 +68,6 @@ Change the packaging to WAR in the POM
 Or for gradle
 
 ```groovy
-
 apply plugin: 'war'
 ```
 

@@ -36,7 +36,6 @@ The NavigableMap interface provides several navigation methods such as `lowerEnt
 Unlike HashMap, the TreeMap does not allow `null` keys.
 
 ```java
-
 public class _1a_TreeMap {
     public static void main(String[] args) {
         TreeMap<Integer, String> treeMap = new TreeMap<>();
@@ -84,7 +83,6 @@ TreeMap after removal of key 3: {1=One, 2=Two, 4=Four}
 A custom comparator can be set to `TreeMap` during initialization. The above example can be rewritten using a comparator that stores entries in the reverse order of keys.
 
 ```java
-
 public class _1b_TreeMapCustomComparator {
     public static void main(String[] args) {
         Comparator<Integer> reverseOrderComparator = (key1, key2) -> key2.compareTo(key1);

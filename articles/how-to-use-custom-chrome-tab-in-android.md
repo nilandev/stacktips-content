@@ -39,7 +39,6 @@ compile 'com.android.support:customtabs:23.4.0+'
 Sync the project after adding the dependencies. Now you’re good to go.
 
 ```java
-
  public static void launchChromeTab(Activity activity, String url) {
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
         builder.setToolbarColor(ContextCompat.getColor(activity, R.color.colorPrimary));

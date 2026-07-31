@@ -36,7 +36,6 @@ Let us first began with creating a new eclipse Maven project.
 Add the following Maven depandencies to your project pom.xml file.
 
 ```xml
-
     4.0.0
     com.javatechig
     SpringBeanExample
@@ -65,9 +64,6 @@ Add the following Maven depandencies to your project pom.xml file.
             org.springframework
             spring-context
             ${org.springframework.version}
-
-
-
 ```
 
 ## 2\. Create the POJO Class
@@ -129,9 +125,6 @@ To define instances of a POJO class in the Spring IoC container, you have to cre
 Create a new xml file named `bean.xml` under the root of the project classpath for easier testing with in an IDE. The following code snippet explains how to configure bean in Spring.
 
 ```xml
-
-
-
             Mr.
 
 
@@ -139,9 +132,6 @@ Create a new xml file named `bean.xml` under the root of the project classpath f
 
 
             Peterson
-
-
-
 ```
 
 **Notes:**
@@ -155,8 +145,6 @@ Create a new xml file named `bean.xml` under the root of the project classpath f
 The following example shows how to use the constructor-arg element to initialize bean via constructor injection.
 
 ```xml
-
-
             Mr.
 
 
@@ -164,8 +152,6 @@ The following example shows how to use the constructor-arg element to initialize
 
 
             Peterson
-
-
 ```
 
 Note that the constructor arguments are order based, so you have to be careful about the order while declaring in `bean.xml` file.

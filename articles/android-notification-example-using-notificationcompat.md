@@ -31,7 +31,6 @@ If you are using this library, then your newer version of android phone will sho
 # Example using NotificationCompat
 
 ```java
-
 package com.javatechig.notification;
 
 import android.app.Activity;

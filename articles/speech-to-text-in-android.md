@@ -105,7 +105,6 @@ Let us add an [ImageButton](/articles/android-button-example) representing a mic
             android:text="@string/hint" />
     </LinearLayout>
 </RelativeLayout>
-
 ```
 
 ### Inside Android Activity
@@ -178,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
 ```
 
 In the above code, we are triggering an Intent named `RecognizerIntent` which asks for speech input and then sends it through speech recognizer. It does it through `ACTION_RECOGNIZE_SPEECH`. If request code is `REQ_CODE_SPEECH_INPUT` then corresponding text is written in output screen.

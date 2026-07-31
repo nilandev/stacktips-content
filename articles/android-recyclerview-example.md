@@ -108,7 +108,6 @@ Create a new file `activity_main.xml` inside layout resource folder and paste th
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
-
 ```
 
 ### RecyclerView Row Layout

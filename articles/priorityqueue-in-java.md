@@ -40,7 +40,6 @@ Use `PriorityQueue` when you need to manage tasks or elements that should be pro
 **Example:** Suppose you are developing a task management system where tasks have different priorities. Higher-priority tasks should be processed before lower-priority tasks.
 
 ```java
-
 class Task {
     private String name;
     private int priority;
@@ -84,7 +83,6 @@ public class TaskManager {
 **Output:**
 
 ```text
-
 Printing tasks based on priority:
 Processing Task{name='Task 3', priority=4}
 Processing Task{name='Task 1', priority=3}

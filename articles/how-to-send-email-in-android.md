@@ -35,7 +35,6 @@ Here is my layout as shown in the screenshots below
 **activity\_main.xml**
 
 ```xml
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/linearLayout1"
     android:layout_width="fill_parent"
@@ -92,7 +91,6 @@ In my code example, I have used ActionBar commands for send and clear option.
 **main\_menu.xml**
 
 ```xml
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
      <item
@@ -115,7 +113,6 @@ Now, check out the activity code
 **MainActivity.java**
 
 ```java
-
 public class MainActivity extends Activity {
 
     private EditText toEmail = null;

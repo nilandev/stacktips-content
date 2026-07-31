@@ -43,7 +43,6 @@ Alarm service is used to run tasks periodically at a given interval. You can des
 You can pass data as a bundle to IntentService before you start.
 
 ```java
-
 Intent intent = new Intent(Intent.ACTION_SYNC, null, this, DownloadService.class);
 
 /* Send optional extras to Download IntentService */
@@ -59,7 +58,6 @@ startService(intent);
 All the services used in the app need to be registered in the application Manifest. Services are declared as shown below
 
 ```xml
-
 <!--Service declared in manifest -->
 <service android:name=".HelloService"
 android:exported="false"/>
@@ -92,7 +90,6 @@ Android Service is used to perform long-running jobs off the UI thread. Typical 
 We can pass values between the activities, by using Bundles. Use the below code to send data from ActivityA
 
 ```java
-
 String name="Javatechig";
 String url="http://stacktips.com"
 Intent intent=new Intent(ActivityA.this, ActivityB.class);
@@ -104,7 +101,6 @@ startActivity(intent);
 Now, you can retrieve the data in ActivityB using the below code
 
 ```java
-
 Bundle bundle = new Bundle();
 bundle = getIntent().getExtras();
 String name = bundle.getString("name");
@@ -116,7 +112,6 @@ String url = bundle.getString("url");
 Toast is a notification message that pops up, displays a certain amount of time, and automatically fades in and out, most people just use it for debugging purposes. Below are the code snippets to create a Toast message
 
 ```java
-
 //display in a short period of time
 Toast.makeText(getApplicationContext(), "msg msg", Toast.LENGTH_SHORT).show();
 
@@ -135,7 +130,6 @@ In Android, there is a lovely class `android.text.HTML` that processes HTML stri
 But in my example, I am using the images from resources to make my ImageGetter implementation simpler.
 
 ```java
-
 String htmlText = "<html><body>....</body></html>";
 TextView htmlTextView = (TextView)findViewById(R.id.html_text);
 htmlTextView.setText(Html.fromHtml(htmlText, new ImageGetter(), null));
@@ -144,7 +138,6 @@ htmlTextView.setText(Html.fromHtml(htmlText, new ImageGetter(), null));
 ### 12\. How to open a link in Android Browser?
 
 ```java
-
 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://stacktips.com"));
 startActivity(browserIntent);
 ```
@@ -158,7 +151,6 @@ The onResume() method is an activity lifecycle method. This is called when the a
 For launching an activity, we need to create an explicit intent that defines the activity that we wish to start. In the below code snippet, the first parameter to the Intent constructor is the current activity context and the second parameter is your new activity `class.startActivity()` method can be called on Activity context.
 
 ```java
-
 Intent intent = new Intent(this, SecondActivity.class);
 startActivity(intent);
 ```
@@ -166,7 +158,6 @@ startActivity(intent);
 If you want to start an activity from a fragment
 
 ```java
-
 Intent intent = new Intent(getActivity(), SecondActivity.class);
 getActivity().startActivity(intent);
 ```
@@ -176,7 +167,6 @@ getActivity().startActivity(intent);
 All the activities used in the application should be defined in the application manifest file. For the launcher activity, you need to define the intent filter as shown in the below code snippets.
 
 ```xml
-
 <activity android:name=".MyActivity"
           android:label="@string/app_name">
     <intent-filter>
@@ -202,7 +192,6 @@ ANR is short for Application Not Responding. Android systems show this dialog if
 Share intent is an easy and convenient way of sharing the content of your application with other apps.
 
 ```java
-
 Intent sendIntent = new Intent();
 sendIntent.setAction(Intent.ACTION_SEND);
 sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
@@ -221,7 +210,6 @@ WebView uses the WebKit rendering engine to display web pages and includes metho
 Context defines the current state of the application or object. Context provides access to things such as creating new activity instances, accessing databases, starting a service, etc. You can get the context by invoking `getApplicationContext()`, `getContext()`, `getBaseContext()` or `this` when in the activity class.
 
 ```java
-
 //Creating ui instance
 ImageButton button = new ImageButton(getContext());
 
@@ -251,7 +239,6 @@ You may send SMS either using SmsManager or by invoking the Built-in SMS applica
 **Sending SMS using SmsManager API**
 
 ```java
-
 SmsManager smsManager = SmsManager.getDefault();
 smsManager.sendTextMessage("", null, "< message body>", null, null);
 ```
@@ -261,7 +248,6 @@ SmsManager requires **SMS\_SEND** permission in your Android manifest.
 **Sending SMS by invoking the Built-in SMS application**
 
 ```java
-
 Intent sendIntent = new Intent(Intent.ACTION_VIEW);
 sendIntent.putExtra("sms_body", ?");
 sendIntent.setType("vnd.android-dir/mms-sms");
@@ -271,7 +257,6 @@ startActivity(sendIntent);
 ### 22\. How to Make a Call in Android?
 
 ```java
-
 Intent callIntent = new Intent(Intent.ACTION_CALL);
 callIntent.setData(Uri.parse("tel:03777788"));
 startActivity(callIntent);
@@ -282,7 +267,6 @@ startActivity(callIntent);
 Android Intent is a handy way to send Email using your app.
 
 ```java
-
 String to = toEmail.getText().toString();
 String subject = emailSubject.getText().toString();
 String message = emailBody.getText().toString();

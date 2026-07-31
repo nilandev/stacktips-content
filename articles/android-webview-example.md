@@ -131,7 +131,6 @@ public class WebViewActivity extends Activity {
         }
     }
 }
-
 ```
 
 Output of the above code is here

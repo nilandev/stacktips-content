@@ -1,13 +1,11 @@
 ---
 id: 99
-name: Blog Posts
+name: Blogging
 slug: blog
 description: Browse technical blog posts and tutorials written by experts.
-taxonomyType: CATEGORY
 thumbnail: /media/categories/blog_EbKMglV.png
-bgColor: "#A1FF97"
-textColor: "#0F172A"
-articleCount: 7
+bgColor: "#ff9d00ff"
+textColor: "#e0e4efff"
 seo: 
   metaTitle: null
   metaDescription: null

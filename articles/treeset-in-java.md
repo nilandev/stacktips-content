@@ -36,7 +36,6 @@ When you need to maintain a collection of unique elements in a sorted order, you
 **Example** Suppose you are developing an application for managing a library. You need to keep track of the titles of the books in sorted order to facilitate searching and displaying the books in alphabetical order.
 
 ```java
-
 public class LibraryManager {
     public static void main(String[] args) {
         TreeSet<String> bookTitles = new TreeSet<>();

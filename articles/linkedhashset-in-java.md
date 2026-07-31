@@ -36,7 +36,6 @@ For instance, when you need to store unique elements but also need to iterate th
 **Example:** Suppose you are developing a system for tracking user activities on a website. You want to keep track of the unique pages visited by a user in the order they were visited. This can be efficiently managed using a `LinkedHashSet`.
 
 ```java
-
 public class UserActivityTracker {
     public static void main(String[] args) {
         LinkedHashSet<String> pagesVisited = new LinkedHashSet<>();
@@ -64,7 +63,6 @@ Notice that the `home.html` is added only once to the `LinkedHashSet`.
 **Output:**
 
 ```text
-
 Pages visited:
 home.html
 about.html

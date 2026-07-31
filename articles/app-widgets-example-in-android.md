@@ -60,7 +60,6 @@ Supported widget classes are
 For our example we will take a simple layout with two TextField and a button. Pressing on the button it will change the content on the widget. below is my widget-layout
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -125,7 +124,6 @@ This is used to describe the metadata for an App Widget, such as the App Widgetâ
 Below is my AppWidgetProvider xml configuration file
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialLayout="@layout/widget_layout"
@@ -156,7 +154,6 @@ You can set a preview image to specify what the app widget will look like on the
 You can set the preview image using the following code
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     ...................
@@ -176,7 +173,6 @@ The resizeMode attribute is used to specify whether the widget can be resizable 
 Now we need to add a class extending AppWidgetProvider which will be used to control the behavior of the widget. The onUpdate() call back method is used to change the text view text at runtime. This class is used to interface with the App Widget, based on broadcast events. Using AppWidgetProvider we can receive broadcast events while the App Widget state has been updated, enabled, disabled or deleted.
 
 ```java
-
 package com.javatechig.widgetdemo;
 
 import android.app.PendingIntent;
@@ -240,7 +236,6 @@ public class MyWidgetProvider extends AppWidgetProvider {
 Now, we will write a BroadcastReciever to perform action on the button click. This implementation is pretty straight forward. The onReceive() method is requesting the app widget provider for updating the widget.
 
 ```java
-
 package com.javatechig.widgetdemo;
 
 import android.content.BroadcastReceiver;
@@ -295,7 +290,6 @@ public class MyWidgetIntentReceiver extends BroadcastReceiver {
 Finally, we need to register the app widget in your application Manifest file. To do this, you will use the tag. This block of XML should be placed inside the application tag in application Manifest.
 
 ```xml
-
 <receiver android:name=".MyWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

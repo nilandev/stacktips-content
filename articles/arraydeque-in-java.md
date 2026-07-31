@@ -37,7 +37,6 @@ It is not synchronized, meaning you need to manage synchronization externally fo
 **Example:** Suppose you are developing a text editor with an undo and redo feature. You can use two `ArrayDeque` instances to manage the history of operations: one for undo and one for redo.
 
 ```java
-
 public class TextEditor {
     private StringBuilder text;
     private ArrayDeque<String> undoStack;
@@ -95,7 +94,6 @@ public class TextEditor {
 **Output:**
 
 ```text
-
 Current Text: Hello, World!
 After Undo: Hello
 After Redo: Hello, World!

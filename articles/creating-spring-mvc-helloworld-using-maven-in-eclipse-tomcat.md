@@ -75,7 +75,6 @@ Before we develop Spring MVC web application, we need to configure the project b
 ##### pom.xml
 
 ```xml
-
     4.0.0
     com.javatechig
     HelloMVC
@@ -120,8 +119,6 @@ Before we develop Spring MVC web application, we need to configure the project b
 
 
         HelloMVC
-
-
 ```
 
 With this the basic Spring project configuration is complete. Your project structure should look like as the following screenshot.
@@ -137,7 +134,6 @@ The `DispatcherServlet` must be configured as normal in `web.xml` to bootstrap a
 ##### web.xml
 
 ```xml
-
     Archetype Created Web Application
 
         contextConfigLocation
@@ -161,8 +157,6 @@ The `DispatcherServlet` must be configured as normal in `web.xml` to bootstrap a
 
         dispatcher
         /
-
-
 ```
 
 ## 7\. Mapping Requests
@@ -172,18 +166,10 @@ Create an xml file `dispatcher-servlet.xml` under the same directory of `web.xml
 ##### dispatcher-servlet.xml
 
 ```xml
-
-
-
-
-
             /WEB-INF/views/
 
 
             .jsp
-
-
-
 ```
 
 In the above xml file, base-package specifies the package of the controllers. prefix specifies the directory of views, and it is set to be `/WEB-INF/views/`, which means views directory should be created under WEB-INF. suffix specifies the file extension of views. For example, given a view `hello`, the view will be located as `/WEB-INF/views/hello.jsp`.
@@ -229,7 +215,6 @@ Edit the default index.jsp and add the following code snippets.
 ```html
     Hello World
     Click here...
-
 ```
 
 Add a JSP files `hello.jsp` file under `/WEB-INF/views/` directory.
@@ -244,7 +229,6 @@ Spring 4 MVC
 <%@ page isELIgnored="false"%>
 
     Hello, ${name}. Welcome to Spring MVC!
-
 ```
 
 Now we are done with our first HelloWorld example. To deploy it on Tomcat application server, Right click on the project -> select **Run as**. Choose **Tomcat server**, select **Next** and **Finish**. It will deploy the project and to see the output visit http://localhost:8080/HelloMVC on your browser. you will see the following output on your browser.

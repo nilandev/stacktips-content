@@ -66,11 +66,7 @@ car.price=5000.00
 To make the contents of the car.properties file accessible to set up other beans, you can use the `PropertySourcesPlaceholderConfigurer` class read its value. Add the following configuration to your `beans.xml` file.
 
 ```xml
-
-
         classpath:car.properties
-
-
 ```
 
 Notice that in the above code snippet, the location property for the bean is defined with `classpath:car.properties`. The classpath: prefix tells Spring to look for the car.properties file in the Java class path.
@@ -78,13 +74,7 @@ Notice that in the above code snippet, the location property for the bean is def
 The above configuration is enough, but this can throw an exception if the file is not found. This can be avoided using `ignoreResourceNotFound` and `ignoreUnresolvablePlaceholders` properties as follows.
 
 ```xml
-
-
         classpath:car.properties
-
-
-
-
 ```
 
 After declaring the `PropertySourcesPlaceholderConfigurer` bean, you can access the values of the `car.properties` file as follows.

@@ -56,7 +56,6 @@ public void insertCars(final List cars) {
 Let us now write the main class and test the above code.
 
 ```java
-
 public class Main {
     public static void main(String[] args) {
         ApplicationContext appContext = new GenericXmlApplicationContext("beans.xml");

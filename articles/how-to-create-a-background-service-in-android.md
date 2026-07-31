@@ -57,7 +57,6 @@ public class MyService extends Service {
 3\. To start the service and stop the service:
 
 ```java
-
 public class MyActivity extends Activity {
   @Override
   public void onCreate() {

@@ -36,7 +36,6 @@ The queue blocks retrieval operations until the delay of the head element has ex
 **Example:** Suppose you are developing a system where tasks need to be executed after a certain delay, such as sending out delayed notifications.
 
 ```java
-
 class Notification implements Delayed {
     private final String name;
     private final long startTime;
@@ -84,7 +83,6 @@ Note that the `take()` method retrieves and removes tasks from the queue when th
 **Output:**
 
 ```text
-
 Notifying Task: {name='Task 3', startTime=1721688863846}
 Notifying Task: {name='Task 1', startTime=1721688865846}
 Notifying Task: {name='Task 2', startTime=1721688870846}

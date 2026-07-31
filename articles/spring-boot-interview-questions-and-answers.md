@@ -261,7 +261,6 @@ public class HelloController {
         return "Hello World!";
     }
 }
-
 ```
 
 Other CORS Configuration Options: - `allowedOrigins`: Specifies which origins are allowed to make requests. - `allowedMethods`: Specifies which HTTP methods are allowed (GET, POST, etc.). - `allowedHeaders`: Specifies which headers are allowed in the request. - `exposedHeaders`: Specifies which headers should be exposed to the client. - `allowCredentials`: Indicates whether the browser should include credentials (like cookies) with the request. - `maxAge`: Specifies how long the browser should cache the CORS configuration.

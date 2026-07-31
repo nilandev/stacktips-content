@@ -154,7 +154,6 @@ Route::get('post/{id}/{slug?}', ['as' => 'post.single', 'uses' => 'PostControlle
 We would like to have some of the feed configurations inside a config file. Create a new file named `feed.php` inside `/config/` directory and add the following snippets.
 
 ```php
-
 <?php
 return [
     'feed_title' => "Stacktips",
@@ -183,7 +182,6 @@ I personally believe in simplicity, so let us define a method `getFeed()` in con
 ### Feed Controller
 
 ```php
-
 <?php
 
 namespace App\Http\Controllers\Web\Feed;

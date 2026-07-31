@@ -76,7 +76,6 @@ Use below code snippet to get the shadow effect on the second TextView pragmatic
 ```java
 TextView textv = (TextView) findViewById(R.id.textview2);
 textv.setShadowLayer(30, 0, 0, Color.RED);
-
 ```
 
 ## Output
