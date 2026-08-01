@@ -38,7 +38,7 @@ To achieve this kind of animation, we need to follow the following steps
 -   Launch activity transparently so that we see the thumbnail gets zoomed. We can control the background alpha animation to set the image background.
 -   Write your own enter and exit transition on DetailsActivity.
 
-## 1\. Capture and send the thumbnail details
+## 1. Capture and send the thumbnail details
 
 Let us implement mGridView.setOnItemClickListener to handle click event on GridView. When user clicks on any grid items, get the image thumbnail at that position. Extract the information such as position, width and height and pass to DetailsActivity `intent` bundle.
 
@@ -65,7 +65,7 @@ mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 });
 ```
 
-## 2\. Read bundle data passed form intent
+## 2. Read bundle data passed form intent
 
 This is straight forward. Just read all the bundle data passed form GridView activity.
 
@@ -81,7 +81,7 @@ String title = bundle.getString("title");
 String image = bundle.getString("image");
 ```
 
-## 3\. Make DetailsActivity window transparent
+## 3. Make DetailsActivity window transparent
 
 Make the DetailsActivity background as transparent by adding the `android:windowBackground` color as transparent. This can be done using custom themes to your activity.
 
@@ -100,7 +100,7 @@ Now, set the above theme to your activity in AndroidManifest.xml file.
             android:theme="@style/Transparent" />
 ```
 
-## 4\. Set color drawable to main background
+## 4. Set color drawable to main background
 
 We have made the activity default background as transparent. Now let us set the main parent view background as follows.
 
@@ -111,7 +111,7 @@ colorDrawable = new ColorDrawable(Color.BLACK);
 frameLayout.setBackground(colorDrawable);
 ```
 
-## 5\. Implement .addOnPreDrawListener
+## 5. Implement .addOnPreDrawListener
 
 Register `ViewTreeObserver.addOnPreDrawListener` callback in DetailsActivity. This callback will be invoked when the view tree is about to be drawn. This is the best place to run our window enter animation.
 
@@ -142,7 +142,7 @@ if (savedInstanceState == null) {
 }
 ```
 
-## 6\. Create custom enter and exit animation
+## 6. Create custom enter and exit animation
 
 The enter animation scales the picture in from its previous thumbnail size/location. In parallel, the background of the activity is fading in.
 
@@ -185,7 +185,7 @@ public void exitAnimation(final Runnable endAction) {
 }
 ```
 
-## 7\. Override onBackPressed() method
+## 7. Override onBackPressed() method
 
 Override `onBackPressed()` method to run our exit animation first, then exiting the activity when it is complete.
 
@@ -200,6 +200,6 @@ public void onBackPressed() {
 }
 ```
 
-## 8\. Download Complete Source
+## 8. Download Complete Source
 
 [Download source](https://github.com/javatechig/Android-GridView-Advance-Tutorial)

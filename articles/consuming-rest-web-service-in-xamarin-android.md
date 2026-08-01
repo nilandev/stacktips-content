@@ -27,7 +27,7 @@ seo:
 
 Consuming data from web services is the most common task and very integral part to most of the full-fledged mobile application. In this tutorial we will take a look into various key concepts and steps for consuming web service methods from Xamarin Android application. This tutorial explains the following key concepts.
 
-# 1\. Understanding web service basics
+# 1. Understanding web service basics
 
 Web services are the server side applications that are meant to serve data or logic to various client applications. REST and SOAP are the industry standard web service architecture widely used. The data shared to client can be of various media formats, it can be plain text data, XML, JSON, audio, video or other supporting formats.
 
@@ -41,7 +41,7 @@ In this example, we will be consuming the following API to fetch list of latest 
 **Response:**  
 [![JSON Feed Response](/media/articles/208/JSON-Feed-Response-940x838.png)](http://stacktips.com)
 
-# 2\. Declare entity class
+# 2. Declare entity class
 
 Now that we have fair understanding of the structure of response, lets us go ahead with declaring an entity class that holds the repose received. Notice that the response is quite big and structure looks complex.
 
@@ -56,7 +56,7 @@ public class Post
 }
 ```
 
-# 3\. Asynchronous programming with async await
+# 3. Asynchronous programming with async await
 
 Downloading data from server is a long running task, and hence we must create a new thread to perform such operations. We can make use of `System.Threading` namespace classes to create a new thread or simply use `async`, `await` keywords. The async and await are two keywords introduced since .NET 4.5 helps programmers to execute code asynchronously without writing your own thread. All you have to do is to define async keyword in your method declaration and use await keyword for any long running tasks.
 
@@ -71,7 +71,7 @@ public async void DownloadDataAsync() {
 }
 ```
 
-# 4\. Deserializing response using Json.NET
+# 4. Deserializing response using Json.NET
 
 So far we have downloaded data from server and printing the JSON response on console. Now let us de-serialize the JSON response into Post list collection. In this example, I am using **Json.NET** component for parsing JSON data. You can add it to your project it from Xamarin component store.
 
@@ -92,7 +92,7 @@ foreach (JToken token in results) {
 
 In this example, we are not writing any code to explain the user interface and hence, I have just a comment. You can follow [Xamarin Android ListView Example](http://stacktips.com/xamarin/listview-example-in-xamarin-android "ListView Example in Xamarin.Android") to learn more about creating list UI.
 
-# 5\. Adding INTERNET permission
+# 5. Adding INTERNET permission
 
 Downloading data from server requires special permission to be granted in `AndroidManifest.xml`. Open AndroidManifest.xml and add the following code before `<application>` element.
 

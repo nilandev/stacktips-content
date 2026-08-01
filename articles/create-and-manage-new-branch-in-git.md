@@ -26,7 +26,7 @@ seo:
 
 Find some of the useful git commands for creating and managing a new branch in git.
 
-## 1\. Create a New Branch in Git
+## 1. Create a New Branch in Git
 
 You may need to create a branch anytime during development for keeping your clean to your master branch. Usually, we create a new branch by copying the master or current branch code. Branches can be merged to master or other branches.
 
@@ -42,19 +42,19 @@ Once your branch is created you will push the branch on GitHub remote by using t
 $ git push origin <name_of_your_new_branch>
 ```
 
-## 2\. Switch to your new branch
+## 2. Switch to your new branch
 
 ```bash
 $ git checkout <name_of_your_new_branch>
 ```
 
-## 3\. List all branches created
+## 3. List all branches created
 
 ```bash
 $ git branch
 ```
 
-## 4\. Adding files/folders to the branch
+## 4. Adding files/folders to the branch
 
 Now you may add some new files or folders to this branch. Either you may create a new file using your vim editor or you may paste the files and folders using your file explorer. When you want to commit something in your branch, be sure to be in your branch. Before committing you must all new files/folders using the below command.
 
@@ -66,7 +66,7 @@ $ git add-A
 $ git push origin <new branchName>
 ```
 
-## 5\. Delete a git branch
+## 5. Delete a git branch
 
 The first git command deletes the branch on your local file system and the second command deletes branch in Github
 

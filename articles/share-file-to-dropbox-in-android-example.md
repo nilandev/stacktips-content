@@ -28,13 +28,13 @@ In this example we will see how to use Dropbox API to share file to Dropbox in f
 
 [![Share file to Dropbox in Android Example](/media/articles/341/Share-file-to-Dropbox-in-Android-Example-e1435937309632.png)](http://stacktips.com)
 
-# 1\. Create App on Dropbox
+# 1. Create App on Dropbox
 
 For integrating Dropbox services to your Android application, you need to use the Dropbox SDK. The SDK allows you to authenticate and share file on Dropbox. Before we begin, we need to download official [Dropbox API](https://www.dropbox.com/developers/core/sdks/android "https://www.dropbox.com/developers/core/sdks/android") from the link. Once download is complete, extract the file on your computer drive. Notice that the downloaded Zip file will have sample and library.
 
 Now, let us go ahead and create a new app on Dropbox developer console. Visit [Dropbox developer console](https://www.dropbox.com/developers/apps "https://www.dropbox.com/developers/apps") and create a new application. Once the application is setup, you will get an **App key** and **App Secret** that is required for integration.
 
-# 2\. Using Dropbox SDK
+# 2. Using Dropbox SDK
 
 Now do the following changes to your application manifest file. Put the following code before </application> tag. Make sure you are using your own AppID obtained from Facebook developer console.
 
@@ -56,7 +56,7 @@ Now do the following changes to your application manifest file. Put the followin
 
 > **Note:** Make sure that you have to declare android.permission.INTERNET permission in your application manifest file.
 
-# 3\. Declare Activity Layout
+# 3. Declare Activity Layout
 
 Now define layout for your activity class. In this example, We have three sample buttons one for login/logout , upload and view files.
 
@@ -117,7 +117,7 @@ Now define layout for your activity class. In this example, We have three sample
 </LinearLayout>
 ```
 
-# 4\. Activity Java Code
+# 4. Activity Java Code
 
 ```java
 package com.javatechig.dropboxsample;
@@ -255,7 +255,7 @@ public class DropboxActivity extends Activity implements OnClickListener {
 }
 ```
 
-# 5\. Upload File to Dropbox
+# 5. Upload File to Dropbox
 
 ```java
 package com.javatechig.dropboxsample;
@@ -320,7 +320,7 @@ public class UploadFileToDropbox extends AsyncTask<Void, Void, Boolean> {
 }
 ```
 
-# 6\. List Dropbox Files
+# 6. List Dropbox Files
 
 ```java
 package com.javatechig.dropboxsample;

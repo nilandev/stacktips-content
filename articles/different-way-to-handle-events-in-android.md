@@ -29,7 +29,7 @@ Typically events do responds to user interactions. Android platform supports mul
 
 For example, when a user clicks on a view such as a Button, the `onTouchEvent()` method is called on that Button object. In order to make our application to responds to the event we must extend the class and override the method. But extending every View object in order to handle such an event would not be practical. Each View classes in Android provide collection of nested interfaces called listeners with callbacks that you can much more easily define in order to handle event.
 
-# 1\. Anonymus click listener
+# 1. Anonymus click listener
 
 ```java
 button.setOnClickListener(new OnClickListener(){
@@ -42,7 +42,7 @@ button.setOnClickListener(new OnClickListener(){
 
 This way will create anonymous classes as much as you create buttons. This is recommended only if you have fewer listener in your class. But if we have a complex screen layout with many view’s then writing a listener programmatically for each view will make the code messy. Its less readable and costly
 
-# 2\. Using android:OnClick layout attribute
+# 2. Using android:OnClick layout attribute
 
 ```xml
 <Button android:id="@+id/btnView"
@@ -53,7 +53,7 @@ This way will create anonymous classes as much as you create buttons. This is re
 
 Many people use this way of handling the click events by writing `OnClick` attribute in XML. But, usually it is not preferable as I because better to keep listeners inside code. Internally android is using java reflection concept behind the scene to handle this. It is less readable, and confuses other developers.
 
-# 3\. Using OnClickListener interface on the Activity
+# 3. Using OnClickListener interface on the Activity
 
 ```java
 public class MainActivity extends Activity implements OnClickListener{
@@ -75,7 +75,7 @@ This way we can handle the click event for all views. However, we need to differ
 
 This way is hard to navigate through, because you can’t determine the type of the listener you are using with current button (I know eclipse will highlight the methods this are pointing at, but with huge code I think it will be hard to find).
 
-# 4\. Creating the OnClickListener field
+# 4. Creating the OnClickListener field
 
 ```java
 private OnClickListener onClickHandler = new OnClickListener(){

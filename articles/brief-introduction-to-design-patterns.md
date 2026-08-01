@@ -87,7 +87,7 @@ Don’t hate things, because you don’t know or you don’t like them. Before d
 
 Gang-Of-Four also called as foundation patterns are the 23 basic design patterns that provide a solution to commonly recurring problems in software design. They are categorized into three major categories; Creational, Structural and Behavioral pattern based on behavior and characteristics.
 
-### 1\. Creational design patterns
+### 1. Creational design patterns
 
 This category provides patterns to resolve the problems of object creation in flexible ways. These will eliminate the difficulties in object instantiation and enables enable greater levels of reuse in evolving systems.
 
@@ -98,7 +98,7 @@ This category provides patterns to resolve the problems of object creation in fl
 | Prototype | Prototype is used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects. In a simpler term, using prototype pattern, we will create new instances through cloning existing instances. |
 | Singleton | Singleton pattern ensures at most one instance of a particular class is ever created in your application. |
 
-### 2\. Structural design patterns
+### 2. Structural design patterns
 
 This category provides patterns to resolve the problems of object structure and composition. These will help to identify a simple way to realize relationships between entities.
 
@@ -111,7 +111,7 @@ This category provides patterns to resolve the problems of object structure and 
 | Flyweight | Facilitates the reuse of many fine-grained objects, making the utilization of large numbers of objects more efficient. |
 | Proxy | Allows for object-level access control by acting as a pass-through entity or a placeholder object. |
 
-### 3\. Behavioral design patterns
+### 3. Behavioral design patterns
 
 This category provides patterns to resolve the problems of common communication patterns between objects. These will use to manage algorithms, relationships, and responsibilities between objects.
 

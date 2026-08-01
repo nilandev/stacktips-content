@@ -42,7 +42,7 @@ CREATE TABLE `Cars` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-## 1\. Configuring Bean
+## 1. Configuring Bean
 
 The corresponding Java bean class for the above Cars table will look like the following code:
 
@@ -88,19 +88,19 @@ public class Car {
 
 Now, let us configure the Car bean declaration to `beans.xml` file for Spring IoC to locate, initialize and manage to Car bean instance.
 
-## 2\. Configuring data source object
+## 2. Configuring data source object
 
 As discussed above, we will be using Spring data source approach to connect to MySQL database. For this you need to add the `BasicDataSource` bean configuration to your `bean.xml` file.
 
 Notice that in the above bean configuration the `localhost` indicated the location of MySQL database. Currently it is located on my development machine. Don’t forget to change the username and password of your own, if you configured differently while installing your MySQL server.
 
-## 3\. Understanding Spring JdbcTemplate
+## 3. Understanding Spring JdbcTemplate
 
 Spring JdbcTemplate is a class that takes care of all the boilerplate code required for creating a database connection and closing the resources. It makes our life a lot easier by saving the effort and development time. Add the following bean declaration to initialize the JdbcTemplate instance.
 
 Notice that we are injecting the datasource bean instance defined above to initialize the JdbcTemplate bean.
 
-## 4\. Executing SQL statements
+## 4. Executing SQL statements
 
 Spring JdbcTemplate exposes many helpful methods for performing CRUD operations on database. Following are most common methods that we use from JdbcTemplate.
 

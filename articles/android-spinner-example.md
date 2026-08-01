@@ -26,7 +26,7 @@ seo:
 
 This tutorial explains creating spinner in android and attaching event to spinner in android. Here in this tutorial, you’ll create a Simple spinner widget that displays a list of countries and shows appropriate flag as per selected country from the spinner.
 
-1\. Create a new new project. In this example we named it as **SpinnerExample.**
+1. Create a new new project. In this example we named it as **SpinnerExample.**
 
 ### Declare Your Activity Layout (layout\_main.xml)
 
@@ -66,7 +66,7 @@ Add a new layout file in \\layout\\layout\_main.xml and insert the following cod
 
 In the above example, we have declared TextView, Spinner and a ImageView. The text behaves as a title for the spinner. When you select the Spinner, the ImageView to display the flag for selected country in Spinner.
 
-### 3\. Declaring String Arrays inside strings.xml
+### 3. Declaring String Arrays inside strings.xml
 
 Below are the strings used in the application. Declare all of them in strings.xml file
 
@@ -98,7 +98,7 @@ Below are the strings used in the application. Declare all of them in strings.xm
     </integer-array>
 ```
 
-### 4\. Activity Java Class (MainActivity.java)
+### 4. Activity Java Class (MainActivity.java)
 
 Now create a java class and name it as MainActivity.java. And paste the following code.
 
@@ -158,6 +158,6 @@ public class MainActivity extends Activity {
 
 First we are initializing `Spinner` object by getting reference from the xml layout file using `findViewById()` method. Then creates a new `ArrayAdapter`, which binds each item in the string array to the initial appearance for the Spinner (which is how each item will appear in the spinner when selected). `setOnItemSelectedListener()` callback is registered to Spinner to handle the spinner event.
 
-### 5\. Output
+### 5. Output
 
 [![Android Spinner Example](/media/articles/407/Android-Spinner-Example.png)](http://stacktips.com)

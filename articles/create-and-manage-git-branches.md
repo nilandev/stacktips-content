@@ -27,7 +27,7 @@ seo:
 
 Whenever you want to commit a bug or a new feature, you need to create a branch for it, which will be a copy of your master branch. Once your fixes are ready to merge, you typically create a pull request on your new branch. The reason for this is to keep your master branch clean all the time.
 
-## 1\. Create a New Git Branch
+## 1. Create a New Git Branch
 
 Here is a list of some useful commands to help you create and manage a new branch. Please note, that before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
 
@@ -51,7 +51,7 @@ $ git push origin <new branch name>
 
 When you want to commit something in your branch, be sure to be in your branch. Add -u parameter to set-upstream.
 
-## 2\. View Git Branches
+## 2. View Git Branches
 
 You can see all the local branches by using:
 
@@ -71,7 +71,7 @@ View list of only remote branches:
 $ git branch -r
 ```
 
-## 3\. Push Branch to Remote
+## 3. Push Branch to Remote
 
 Add a new remote for your branch:
 
@@ -97,7 +97,7 @@ Then you need to apply to merge changes if your branch is derivated from the dev
 $ git merge <name of remote branch>/develop
 ```
 
-## 4\. Delete Git Branch
+## 4. Delete Git Branch
 
 Delete local branch: -d option stands for –delete
 

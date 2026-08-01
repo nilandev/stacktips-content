@@ -39,7 +39,7 @@ Mainly we have the following choices:
 4.  [WebClient](https://stacktips.com/articles/what-is-webclient-how-to-use-webclient-in-java-springboot)
 5.  New declarative HTTP Interface
 
-## 1\. RestTemplate
+## 1. RestTemplate
 
 The `RestTemplate` was Introduced almost 14 years ago in Spring Framework version 3.0. RestTemplate is a synchronous client used to make HTTP requests from the Spring application. It simplifies the process of making HTTP requests using template-like classes.
 
@@ -102,7 +102,7 @@ _Notice_
 
 If you’re developing a new application or migrating the old codebase, it is recommended to use [WebClient](https://stacktips.com/articles/what-is-webclient-how-to-use-webclient-in-java-springboot) over `RestTemplate`. Even better, if you're using Spring 6, you can use `RestClient` backed Spring Interface declarative clients.
 
-### 2\. Feign Client
+### 2. Feign Client
 
 For many years, we relied on `RestTemplate` for our HTTP communications from Spring, and it served us well. However, as our API contracts expanded and we added new endpoints, we began to see that keeping up with the API changes with `RestTemplate` was becoming increasingly difficult.
 
@@ -140,7 +140,7 @@ _Notice_
 
 Starting with Spring 6 and Spring Cloud 2022, the Spring community recommend WebClient-backed Spring interface clients as a declarative client solution of choice.
 
-### 3\. WebClient
+### 3. WebClient
 
 The `WebClient` is an alternative to `RestTemplate`. It was introduced in Spring 5 as part of the **WebFlux** stack. It provides both synchronous and asynchronous APIs to make the REST calls from the Spring application.
 
@@ -201,7 +201,7 @@ The `WebClient` works similar way to `RestTemplate` but with a modern functional
 
 Ref: [WebClient](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-webclient)
 
-### 4\. RestClient
+### 4. RestClient
 
 The `RestClient` is a newer client in Spring 6, designed to overcome some limitations of `RestTemplate`. It supports both synchronous and asynchronous operations.
 
@@ -266,7 +266,7 @@ public class ProductApiClient {
 
 Ref: [RestClient](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-restclient)
 
-### 5\. HTTP Interface
+### 5. HTTP Interface
 
 Spring 6 also adds the ability to create a declarative HTTP interface (similar to Feign) using the existing HTTP clients such as RestTemplate, WebClient and RestClient.
 

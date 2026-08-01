@@ -35,17 +35,17 @@ Below are some of the Xamarin learning web portals, provides examples, source co
 
 #### API Documentation
 
-[1\. iOS API Documentation](http://iosapi.xamarin.com/ "iOS Xamarin API documentation")  
-[2\. Android API Documentation](http://androidapi.xamarin.com/)  
-[3\. Mac API Documentation](http://macapi.xamarin.com/)  
-[4\. TestCloud Documentation](http://developer.xamarin.com/guides/testcloud/apis)
+[1. iOS API Documentation](http://iosapi.xamarin.com/ "iOS Xamarin API documentation")  
+[2. Android API Documentation](http://androidapi.xamarin.com/)  
+[3. Mac API Documentation](http://macapi.xamarin.com/)  
+[4. TestCloud Documentation](http://developer.xamarin.com/guides/testcloud/apis)
 
 #### Xamarin Tutorials
 
-[1\. Xamarin Developer Website](http://developer.xamarin.com/guides/ios/getting_started/)  
-[2\. Microsoft MSDN Site](http://blogs.msdn.com/)  
-[3\. XamarinAppDev.com](http://xamarinappdev.com/ "XamarinAppDev.com")  
-[2\. MvvmCross Github](https://github.com/MvvmCross/MvvmCross/wiki "MvvmCross Github")
+[1. Xamarin Developer Website](http://developer.xamarin.com/guides/ios/getting_started/)  
+[2. Microsoft MSDN Site](http://blogs.msdn.com/)  
+[3. XamarinAppDev.com](http://xamarinappdev.com/ "XamarinAppDev.com")  
+[2. MvvmCross Github](https://github.com/MvvmCross/MvvmCross/wiki "MvvmCross Github")
 
 ### Xamarin Development Books
 

@@ -35,7 +35,7 @@ List<ApplicationInfo> list = packageManager.getInstalledApplications(PackageMana
 
 `packageManager.getInstalledApplications()` return a List of all application packages that are installed on the device. If we set the flag `GET_UNINSTALLED_PACKAGES` has been set, a list of all applications including those deleted with `DONT_DELETE_DATA` (partially installed apps with data directory) will be returned.
 
-# 1\. Creating application layout in xml
+# 1. Creating application layout in xml
 
 **activity\_main.xml**
 
@@ -96,7 +96,7 @@ This layout is being used by the ListView Adapter for representing application d
 </LinearLayout>
 ```
 
-# 2\. Writing Java class
+# 2. Writing Java class
 
 **AllAppsActivity.java**
 

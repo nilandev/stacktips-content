@@ -39,7 +39,7 @@ Following are the steps involved in using ListView in your application
 4.  Setting ListView Adapter
 5.  Handle list click event
 
-# 1\. Declare ListView layout
+# 1. Declare ListView layout
 
 Before using list in your application, you first need to declare its layout inside your activity or fragment. For the sake of simplicity, in the below code snippet, we have declared ListView inside activity layout file.
 
@@ -62,7 +62,7 @@ Before using list in your application, you first need to declare its layout insi
 
 The property `android:id="@+id/IntentoryList"` in the above code snippet is the id assigned to ListView. This id will be used to initialize this from activity cs file.
 
-# 2\. Declare list row layout
+# 2. Declare list row layout
 
 In the above step we have declared ListView layout. Now it is the time to define the layout for list row item. This layout will be used by list adapter.
 
@@ -107,7 +107,7 @@ In the above step we have declared ListView layout. Now it is the time to define
 </RelativeLayout>
 ```
 
-# 3\. Define ListView Adapter
+# 3. Define ListView Adapter
 
 Adapter is a tricky part while creating ListView. BaseAdapter is a common Adapter that can be used in both ListView, GridView or Spinners. An adapter takes list of data objects as input, and each object in the list is mapped to a list row. Adapter also inflates the layout to be rendered for each row items.
 
@@ -178,7 +178,7 @@ public class CusotmListAdapter : BaseAdapter<Post>
 1.  You must override the Count, GetItemId and GetView method in your BaseAdapter class implementation. The `Count` method indicates the total number of rows in the list, `GetItemId` represent a unique id for reach item in the list. `GetView` inflates layout for each list row and render on the screen.
 2.  In this example, we have used [UrlImageViewHelper](http://components.xamarin.com/gettingstarted/urlimageviewhelper) component. You may download the same form component store and add to your project.
 
-# 4\. Setting ListView Adapter
+# 4. Setting ListView Adapter
 
 Once your list adapter is ready, then you are almost done with your ListView implementation. Now all you need to do is to instantiate the adapter and setting to ListView.
 

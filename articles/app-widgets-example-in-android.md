@@ -27,11 +27,11 @@ seo:
 
 In this example we will learn about creating a simple 4×2 home screen App widget using an App Widget provider. It shall show two text view and a button. and clicking on the button will change the widget text contents.
 
-## 1\. Introduction
+## 1. Introduction
 
 App widget is a simple way to enhance your application by having a view on android HomeScreen. This helps to inform user about some important update about the application also this is help user to use the application over and often. App Widgets I available since API Level 3 (Android 1.5). To create an App Widget we need the following classes.
 
-## 2\. Creating View layout for Widget
+## 2. Creating View layout for Widget
 
 Widget layout can be defined in XML and can be saved in project’s res/layout/ directory. Currently App Widget layouts are based on RemoteViews and android currently supports limited View widget. Creating layout for the widget is same as creating the layout for other activity type. But to make a good widget we need to follow the android widget guidelines.
 
@@ -117,7 +117,7 @@ For our example we will take a simple layout with two TextField and a button. Pr
 </RelativeLayout>
 ```
 
-## 3\. Creating AppWidgetProviderInfo in XML
+## 3. Creating AppWidgetProviderInfo in XML
 
 This is used to describe the metadata for an App Widget, such as the App Widget’s layout, update frequency, and the AppWidgetProvider class. This is always defined as XML file.
 
@@ -168,7 +168,7 @@ The resizeMode attribute is used to specify whether the widget can be resizable 
 
 **Note: This attribute is introduced from Android 3.1**
 
-## 4\. Implementing AppWidgetProvider class
+## 4. Implementing AppWidgetProvider class
 
 Now we need to add a class extending AppWidgetProvider which will be used to control the behavior of the widget. The onUpdate() call back method is used to change the text view text at runtime. This class is used to interface with the App Widget, based on broadcast events. Using AppWidgetProvider we can receive broadcast events while the App Widget state has been updated, enabled, disabled or deleted.
 
@@ -231,7 +231,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 }
 ```
 
-## 5\. Writing BroadcastReceiver for your widget
+## 5. Writing BroadcastReceiver for your widget
 
 Now, we will write a BroadcastReciever to perform action on the button click. This implementation is pretty straight forward. The onReceive() method is requesting the app widget provider for updating the widget.
 
@@ -285,7 +285,7 @@ public class MyWidgetIntentReceiver extends BroadcastReceiver {
 }
 ```
 
-## 6\. Registering receiver in in Android Manifest
+## 6. Registering receiver in in Android Manifest
 
 Finally, we need to register the app widget in your application Manifest file. To do this, you will use the tag. This block of XML should be placed inside the application tag in application Manifest.
 
@@ -315,17 +315,17 @@ Finally, we need to register the app widget in your application Manifest file. T
 
 Note that the receiver name is the name of your app widget provider class implementation. We add an intent filter for the UPDATE\_WIDGET event such that your widget will update at regular intervals.
 
-## 7\. Working Demo
+## 7. Working Demo
 
 Now we have an app widget! From the Home screen, press and hold an empty space to get list if widgets instlled, then choose “WidgetDemo” from the list. The app widget will then be added to your Home screen. You can watch a live video of the tutorial below
 
 {{< youtube AguqhQHHrcs >}}
 
-## 8\. Download Complete Source Code
+## 8. Download Complete Source Code
 
 [![dl_github](/media/articles/419/dl_github.png)](https://github.com/javatechig/Advance-Android-Tutorials/tree/master/WidgetDemo)
 
-## 9\. References
+## 9. References
 
 [http://developer.android.com/guide/topics/appwidgets/index.html](http://developer.android.com/guide/topics/appwidgets/index.html)  
 [http://developer.android.com/guide/practices/ui\_guidelines/widget\_design.html](http://developer.android.com/guide/practices/ui_guidelines/widget_design.html)

@@ -116,7 +116,7 @@ Let us now add the player controls right below `YouTubePlayerView` in `activity_
 </LinearLayout>
 ```
 
-### 2\. Add INTERNET Permission in AndroidManifest
+### 2. Add INTERNET Permission in AndroidManifest
 
 INTERNET permission is required to play video over internet. Add the following permission in your application `AndroidManifest.xml` file.
 

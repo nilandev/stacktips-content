@@ -26,7 +26,7 @@ seo:
 
 Dialog is like any other window that pops up in front of current window, used to show some short message, taking user input or to ask user decisions. Unlike `Toast`, a dialog is generally used where user attention is mandate. Android supports several different ways to create a dialog such as `AlertDialog` and `FragmentDialog`. In this example we will cover all the aspect of AlertDialog and DialogFragment.
 
-## 1\. Using AlertDialog in Xamarin.Android
+## 1. Using AlertDialog in Xamarin.Android
 
 `AlertDialog` is the subclass of `Dialog` that can display one, two or three buttons. If you only want to display a String in this dialog box, use the `SetMessage()` method.
 
@@ -53,7 +53,7 @@ The above code snippet will produce the output as shown in the following screens
 
 [![AlertDialog in Xamarin Android](/media/articles/183/AlertDialog-in-Xamarin-Android-300x533.png)](http://stacktips.com)
 
-## 2\. Using DialogFragment in Xamarin.Android
+## 2. Using DialogFragment in Xamarin.Android
 
 Since the release of **Android 3.0 (API level 11)**, fragment can show as a dialog and called as `DialogFragment`. If you’re supporting older android versions, you can make use of fragment-compatibility support library.
 
@@ -67,7 +67,7 @@ You need to perfrom the following steps to create a DialogFragment
 
 In this example, we will see both OnCreateView() and OnCreateDialog() callback.
 
-## 3\. Dialog fragment using OnCreateDialog()
+## 3. Dialog fragment using OnCreateDialog()
 
 The following code snipept shows how to create dialog by overriding OnCreateDialog() method.
 
@@ -113,7 +113,7 @@ namespace DialogExample
 }
 ```
 
-## 4\. Dialog fragment using OnCreateView()
+## 4. Dialog fragment using OnCreateView()
 
 DialogFragment is like any other fragment, the same lifecycle rules are applied. Now we have to override onCreateView method to attach the layout to view hierarchy and construct the dialog fragment.
 
@@ -192,7 +192,7 @@ namespace DialogExample
 The above code snippet will produce the output as shown in the following screenshot.  
 [![DialogFragment in Xamarin Android](/media/articles/183/DialogFragment-in-Xamarin-Android-300x533.png)](http://stacktips.com)
 
-## 5\. Adding DialogFragment
+## 5. Adding DialogFragment
 
 We are pretty much done!. Add the following code snippet in your Activity to instantiate and display the dialog;
 

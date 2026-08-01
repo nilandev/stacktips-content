@@ -28,7 +28,7 @@ In a multi-part request, each chunk/parts are separated by a delimiter. A delimi
 
 For more detailed information on multi part content type search for RFC1341(MIME) or visit [http://www.w3.org/](http://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)
 
-## 1\. Convert the Bitmap to stream
+## 1. Convert the Bitmap to stream
 
 Let us first convert the bitmap image into byte array to send it as ByteArrayContent via multi part form upload.
 
@@ -46,7 +46,7 @@ public async Task<String> UploadBitmapAsync(Bitmap bitmap)
 
 Notice that the `bitmap.Compress()` write a compressed version of the bitmap to the specified stream. The second integer argument indicates the compress quality ranging from 0 being low quality and to 100 maximum.
 
-## 2\. Add request headers
+## 2. Add request headers
 
 Add the following additional content header such as media content type and content disposition. The `"my_uploaded_image.jpg"` is the name of image sent to server.
 
@@ -59,7 +59,7 @@ fileContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("form
 };
 ```
 
-## 3\. Add content chunks
+## 3. Add content chunks
 
 Now let us initialize `MultipartFormDataContent` and add the chunks. The boundary is a random string used as a delimiter to separate each part of the message body.
 
@@ -73,7 +73,7 @@ multipartContent.Add (fileContent);
 
 Declare a string constant that represents the web service endpoint to upload the poi image using multi part.
 
-## 4\. Upload Bitmap using HttpClient
+## 4. Upload Bitmap using HttpClient
 
 Let us now proceed to upload the form content to server using HttpClient class PostAsync() method. The following code snippet demonstrates using HttpClient class for posting data to server.
 
@@ -87,7 +87,7 @@ if (response.IsSuccessStatusCode) {
 return null;
 ```
 
-## 5\. Complete example code
+## 5. Complete example code
 
 ```csharp
 private const string UPLOAD_IMAGE = “http://YOUR_SERVER/api/poi/upload”

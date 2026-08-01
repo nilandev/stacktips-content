@@ -25,13 +25,13 @@ seo:
   metaKeywords: null
 ---
 
-# 1\. Introduction to Android ViewFlipper
+# 1. Introduction to Android ViewFlipper
 
 ViewFlipper is and user interface widget available in android since android API level 1. It can hold two more views, but only one child can be shown at a time. Using this we can implement functionality similar to android gallery item, swiping allows to navigate between images. It also support to auto flip between child at a regular interval.
 
 The ViewFlipper class has derived from ViewAnimator. It supports the methods to set the animation for the in and out actions using `setInAnimation()` and `setOutAnimation()`. You can either use some of the default animation that are available in android system or you can write your own animation class.
 
-# 2\. Defining ViewFlipper Example Layout
+# 2. Defining ViewFlipper Example Layout
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -140,7 +140,7 @@ I admit the fact that, the style file used here can be more improvised. The colo
 
 [![Android ViewFlipper example](/media/articles/409/ViewFlipper-example-javatechig.png)](http://stacktips.com)
 
-# 3\. Using ViewFlipper in Activity
+# 3. Using ViewFlipper in Activity
 
 Android ViewFlipper can anytime display only one immoderate child at a time. So you can only see the first image in your eclipse graphical layout view. We need to pragmatically move to different child or we can setup an auto timer. Setting an auto flip timer will create a slideshow and can be controlled by `startFlipping()` and `stopFlipping()` method. Later in this example we will see more in detail.
 
@@ -202,7 +202,7 @@ imageView.setImageResource(R.drawable.color_baloons);
 mViewFlipper.addView(imageView);
 ```
 
-# 4\. Image Slideshow in ViewFlipper
+# 4. Image Slideshow in ViewFlipper
 
 So far, our example is supporting swipe gesture. But what if we want to implement a slideshow?  
 Android `ViewFlipper` support auto flip which can be controlled with `startFlipping()` and `stopFlipping()` method. We can set the auto flip interval using `setFlipInterval(period)`. Note that the interval period is in milliseconds.
@@ -265,7 +265,7 @@ findViewById(R.id.stop).setOnClickListener(new OnClickListener() {
 
 [![Android ViewFlipper example](/media/articles/409/ViewFlipper-example.png)](http://stacktips.com)
 
-# 5\. ViewFlipper Animation and Events
+# 5. ViewFlipper Animation and Events
 
 The ViewFlipper class has derived from `ViewAnimator`. It supports the methods to set the animation for the in and out actions using `setInAnimation()` and `setOutAnimation()`. You can either use some of the default animation that are available in android system or you can write your own animation class.
 
@@ -293,6 +293,6 @@ Now add the animation listener to `ViewFlipper`.
 mViewFlipper.getInAnimation().setAnimationListener(mAnimationListener);
 ```
 
-# 6\. Download source code
+# 6. Download source code
 
 [Download source](https://github.com/javatechig/Android-UI-Tutorials/tree/master/ViewFlipperExample)

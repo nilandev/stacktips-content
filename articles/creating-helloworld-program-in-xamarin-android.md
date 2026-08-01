@@ -26,7 +26,7 @@ seo:
 
 This tutorial explains step by step approach to create and deploy a Xamarin.Android application. For the sake of simplicity our first ever Xamarin.Android application, will have very basic user interface.
 
-## 1\. Creating a Xamarin.Android Application
+## 1. Creating a Xamarin.Android Application
 
 This example assumes you already have Xamarin.Android installed in your development system. If you are a windows user you can use Visual Studio 2010 Professional or MonoDev IDE for development.
 
@@ -40,7 +40,7 @@ We will use “Android Application template” for this example. Let’s create 
 
 [![Xamrin Android Application](/media/articles/349/Xamrin-Android-Application-620x379.png)](http://stacktips.com)
 
-## 2\. Understanding Application Components
+## 2. Understanding Application Components
 
 In the above section, we have just created a simple Xamarin.Android project. It automatically generates a project structure with different files and folders. The “HelloWorld” project includes three folders named Assets, Properties, and Resources.
 
@@ -51,7 +51,7 @@ In the above section, we have just created a simple Xamarin.Android project. It 
 [![Xamrin Android Application Example](/media/articles/349/Xamrin-Android-Application-Example-300x308.png)](http://stacktips.com)  
 The project template also created a class called HelloWorld in the file MainActivity.cs. An Activity is a class that models a destination where a user can perform some action while using an app, typically via a user interface.
 
-## 3\. Creating HelloWorld program
+## 3. Creating HelloWorld program
 
 In this example we will create a simple screen with a TextView and a Button. Clicking the button will show a toast message to user.
 
@@ -124,7 +124,7 @@ namespace HelloWorld
 }
 ```
 
-## 4\. Output
+## 4. Output
 
 Here is a screenshot that shows the application running in Samsung S4.
 

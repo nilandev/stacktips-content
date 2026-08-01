@@ -31,19 +31,19 @@ In this tutorial we will take a look into one of most important and commonly use
 
 **\* [Android Networking Tutorial](http://stacktips.com/android/android-networking-tutorial "Android Networking Tutorial")**
 
-# 1\. What is IntentService?
+# 1. What is IntentService?
 
 IntentService is a subclass of `android.app.Service` class. A stated intent service allows to handle long running tasks without effecting the application UI thread. This is not bound to any activity so, it is not getting effected for any change in activity lifecycle. Once IntentService is started, it handles each Intent using a worker thread and stops itself when it runs out of work.
 
 IntentService would be an best solution, If you have an work queue to process. For example, if your application using analytics you will likely to send event name and related parameter to your tracking server for each user generated event. Although each event means a tiny piece of data, creating networking request on each click will result an overhead to your application. Instead, you can use work queue processor design pattern and process the events in a batch.
 
-# 2\. IntentService Limitations
+# 2. IntentService Limitations
 
 1.  No easy or direct way to interact with user interface directly from IntentService. Later in this example, we will explain to pass result back from IntentService to
 2.  With IntentService, there can only be one request processed at any single point of time. If you request for another task, then the new job will wait until the previous one is completed. This means that IntentService process the request
 3.  An tasks stated using IntentService cannot be interrupted
 
-# 3\. Why do we need IntentService?
+# 3. Why do we need IntentService?
 
 Android design guidelines strongly suggests to perform all the long running tasks off the UI thread. For example, if you have to periodically download the largest chunk of data from server, you must use IntentService to avoid ANR. ANR (Application not responding) message often occurs, if your main thread is doing too much of work. In this course of this tutorial, we will learn the below concepts
 
@@ -64,7 +64,7 @@ To make this tutorial easy to understand we will extend our previous tutorial ([
 
 [![JSON Feed Response](/media/articles/264/JSON-Feed-Response.png)](http://stacktips.com)
 
-# 4\. Create an IntentService
+# 4. Create an IntentService
 
 In the context of our example, we will create an IntentService to download the data from server. Once download is completed, the response will be sent back to activity. Lets create a new class `DownloadService.java` and extend it from `android.app.IntentService`. Now let us override `onHandleIntent()` method.
 
@@ -223,7 +223,7 @@ public class DownloadService extends IntentService {
 4.  For any exceptions or error, we will pass the error response back to activity via ResultReceiver.
 5.  We have declared custom exception class `DownloadException` for handling all our custom error messages. You may do this
 
-# 5\. Declaring Service in the Manifest
+# 5. Declaring Service in the Manifest
 
 Like `Service`, an IntentService also needs an entry in your application manifest. Provide the element entry and declare all your IntentServices you using. Additionally as we are performing operation to download data from internet, we will request for `android.permission.INTERNET` permission.
 
@@ -260,7 +260,7 @@ Like `Service`, an IntentService also needs an entry in your application manifes
 </manifest>
 ```
 
-# 6\. Sending Work Requests to the IntentService
+# 6. Sending Work Requests to the IntentService
 
 To start the DownloadService to download data, you must create an explicit Intent and add all the request parameters to it. A service can be started by calling `startService()` method. You can start an IntentService either form an `Activity` or a `Fragment`.
 
@@ -280,7 +280,7 @@ intent.putExtra("requestId", 101);
 startService(intent);
 ```
 
-# 7\. Report Status From IntentService to Activity
+# 7. Report Status From IntentService to Activity
 
 To send the status of a work request in an IntentService to other components, get the instance of ResultReceiver. Send the status by calling send() method.
 
@@ -300,7 +300,7 @@ bundle.putString(Intent.EXTRA_TEXT, "Error message here..");
 receiver.send(STATUS_ERROR, bundle);
 ```
 
-# 8\. Receive Status Broadcasts from an IntentService
+# 8. Receive Status Broadcasts from an IntentService
 
 To receive results back from IntentService, we can use subclass of `ResultReciever`. Once results are sent from Service the `onReceiveResult()` method will be called. Your activity handles this response and fetches the results from the Bundle. Once results are recieved, accordingly the activity instance updates the UI.
 
@@ -364,10 +364,10 @@ public class DownloadResultReceiver extends ResultReceiver {
     }
 ```
 
-# 9\. Output
+# 9. Output
 
 [![Android Networking Example](/media/articles/264/Android-Networking-Example-620x1048.png)](http://stacktips.com)
 
-# 11\. Download Source Code
+# 11. Download Source Code
 
 Download complete example source code from [**GitHub**](https://github.com/javatechig/Android-IntentService-Example)

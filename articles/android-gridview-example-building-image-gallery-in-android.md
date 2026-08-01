@@ -25,7 +25,7 @@ seo:
   metaKeywords: null
 ---
 
-## 1\. Introduction
+## 1. Introduction
 
 GridView is a ViewGroup that displays items in a two-dimensional, scrollable grid. In this tutorial, we will build an image gallery using Android GridView. Each grid in our example will display an image and a text tile.
 
@@ -36,7 +36,7 @@ When user clicks on any grid item, it will navigate user to the details page. T
 
 [![Android GridView Example](/media/articles/391/Android-GridView-Example.jpg)](http://stacktips.com)
 
-## 2\. Adding GridView layout
+## 2. Adding GridView layout
 
 To begin with, let us create a layout for activity that contains a GridView. Let us create a new file named activity\_main.xml in your application layout folder.
 
@@ -65,7 +65,7 @@ To begin with, let us create a layout for activity that contains a GridView. Le
 
 Notice that in the above code, we have added a GridView with id gridView, and used some of the attributes such as numColumns, stretchMode, verticalSpacing, etc. Most of the android attributes are self explanatory.
 
-## 3\. Define grid item layout
+## 3. Define grid item layout
 
 As you can notice from the above screenshot, each of the grid item contains an `ImageView` and an `TextView`. The following listing will show you the layout for each grid cell item. This layout will be used by the GridView adapter to render the items. Create a new layout inside your project layout directory and name it as `grid_item_layout.xml`.
 
@@ -94,7 +94,7 @@ As you can notice from the above screenshot, each of the grid item contains an 
 </LinearLayout>
 ```
 
-## 4\. Creating GridView adapter
+## 4. Creating GridView adapter
 
 Adapter is acts as a bridge between data source and adapter views such as ListView, GridView. Adapter iterates through the data set from beginning till the end and generate Views for each item in the list.
 
@@ -179,7 +179,7 @@ public class ImageItem {
 }
 ```
 
-## 5\. Setting adapter to GridView
+## 5. Setting adapter to GridView
 
 Now we are almost ready to hook up grid view on activity. In our activity we will initialize the GridView by calling `findViewById(int)` method. This method takes the same id as provided in the layout xml file. The `setAdapter()` method then sets a custom adapter (GridViewAdapter) as the source for all items to be displayed in the grid.
 
@@ -215,7 +215,7 @@ Note that in this example, we are using the static data and image defined in str
 
 At this point we can run the application and and can see the grid view in action.
 
-## 6\. Handling GridView click action
+## 6. Handling GridView click action
 
 When user click on any grid item, we have to take user to details activity by passing the image and title of the grid item clicked. To do this we can call `setOnItemClickListener()` method by passing the instance of OnItemClickListener.
 
@@ -235,7 +235,7 @@ public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
 Learn  more about [passing data from one activity](/articles/pass-a-data-from-one-activity-to-another-in-android "How to pass a data from one Activity to another in Android") to another here.
 
-## 7\. Customizing GridView style
+## 7. Customizing GridView style
 
 We are pretty much good with the GridView gallery, let us do some customization such as changing the background color of a grid item while user is clicks.
 
@@ -250,7 +250,7 @@ For this, let us define a color selector `grid_color_selector.xml` and place it 
 </selector>
 ```
 
-## 8\. Creating details activity
+## 8. Creating details activity
 
 Create a new layout file named `details_activity.xml`. This will be used for the layout for my DetailsActivity.
 
@@ -305,6 +305,6 @@ public class DetailsActivity extends ActionBarActivity {
 
 Well, we have now completed the whole exercise to build image gallery using Android GridView. If you find any problem, or something is missing, you can download code and compare your code with mine.
 
-## 9\. Download Complete Example
+## 9. Download Complete Example
 
 [Download source](https://github.com/javatechig/Android-GridView-Example)

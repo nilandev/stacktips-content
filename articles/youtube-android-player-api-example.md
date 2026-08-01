@@ -198,7 +198,7 @@ player.setPlaybackEventListener(new PlaybackEventListener() {
 });
 ```
 
-## 5\. Customising YouTubePlayer Controls
+## 5. Customising YouTubePlayer Controls
 
 The YouTube Android Player allows you to customize the playback control by setting one of the style defined in `YouTubePlayer.PlayerStyle` enumeration. It currently support three styles `DEFAULT`, `MINIMAL` or `CHROMELESS`;
 
@@ -214,7 +214,7 @@ player.setPlayerStyle(PlayerStyle.CHROMELESS);
 
 Checkout our Part-II tutorial to learn more about [how to customise YouTubePlayer](/articles/how-to-customize-youtubeplayer-controls-in-android) by adding your own custom playback controls.
 
-## 6\. YouTubePlayerFragment Example
+## 6. YouTubePlayerFragment Example
 
 Integrating YouTubePlayerFragment is relatively easy. The following section demonstrates how to use YouTubePlayerFragment.
 

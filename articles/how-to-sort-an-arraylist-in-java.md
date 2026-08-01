@@ -31,7 +31,7 @@ ArrayList are also called as dynamic arrays that can grow as needed. In Java Arr
 
 At times, you may need to sort the ArrayList to make it alphabetically order. In this below example, it shows the use of Collections.sort and comparator to sort an ArrayList.
 
-# 1\. Sorting using Collections.sort method:
+# 1. Sorting using Collections.sort method:
 
 ```java
 public class SortArrayList {
@@ -67,7 +67,7 @@ Here in this above example the sorting happens according to ASCII.
 
 [![sorting-array-list-using-collections.sort](/media/articles/424/sorting-array-list-using-collections.sort_.png)](http://stacktips.com)
 
-# 2\. Sorting objects in an ArrayList using Comparable interface
+# 2. Sorting objects in an ArrayList using Comparable interface
 
 In my example I want to sort the employees list as per their salary in descending order. My Employee class implements Comparable interface and overridden compareTo method. In Compare to method add your logic, weather to sort ascending or descending order.
 
@@ -126,7 +126,7 @@ public class Employee implements Comparable {
 }
 ```
 
-# 3\. Sorting Objects in an ArrayList using Comparator
+# 3. Sorting Objects in an ArrayList using Comparator
 
 Check out the below code snippet, I am sorting Employees list using Anonymous Comparator
 

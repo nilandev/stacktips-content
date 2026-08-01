@@ -61,11 +61,11 @@ Here the key-value plays major role to adapting the locale language. The key val
 
 # Retrieve message from resource bundle:
 
-**1\. getText()**
+**1. getText()**
 
 <s:property value=”getText(‘msg.key’)” />
 
-**2\. Key attribute**
+**2. Key attribute**
 
 <s:textfield key=”msg.key” />
 
@@ -122,7 +122,7 @@ Add the following line just above the package element.
 </struts>
 ```
 
-**4\. Create resource properties file as follows under src folder**
+**4. Create resource properties file as follows under src folder**
 
 Naming Conventions – **prefix\_lang.properties**
 
@@ -161,7 +161,7 @@ Here you can observe that keys are same across all file but the value changes as
   key: login.submit    value: \u30ED\u30B0\u30A4\u30F3
 ```
 
-**5\. Create Login.jsp with language options as follows**
+**5. Create Login.jsp with language options as follows**
 
 ```html
 <%@ page contentType="text/html; charset=UTF-8"%>
@@ -218,7 +218,7 @@ The above are used to get the message from resource bundle.
 getText(String s) : It searches the key(‘login.user’) in the resource bundle and returns the respective value or null if none is found. This can be used as label in the UI.  
 Key : This helps to retrieve the value from resource bundle using key (‘login.submit’). This is used in html field element like TextField and button etc.
 
-**6\. Create ChangeLocaleAction.java in com.javatechig.struts2web.actions**
+**6. Create ChangeLocaleAction.java in com.javatechig.struts2web.actions**
 
 ```java
 Locale locale = new Locale(lang);
@@ -229,7 +229,7 @@ ActionContext.getContext().setLocale(locale);
 **Locale** : It is from java util package.  
 setLocale : It set the locale object to actionContext which is accessible by resource throughout the context.
 
-**7\. Output of the code sample**
+**7. Output of the code sample**
 
 **Finally the eclipse project structures looks as follows**
 

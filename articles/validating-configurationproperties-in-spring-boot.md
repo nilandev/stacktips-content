@@ -77,7 +77,7 @@ public class ImporterConfig {
     String filePath;
 
     @NotNull
-    @Pattern(regexp = "\\.csv$|\\.txt$")
+    @Pattern(regexp = "\.csv$|\.txt$")
     String fileType;
 
     @Positive
@@ -115,7 +115,7 @@ Binding to target com.stacktips.app.config.ImporterConfig failed:
     Property: importer.service.fileType
     Value: ".xlsx"
     Origin: class path resource [application.yaml] - 8:15
-    Reason: must match "\.csv$|\.txt$"
+    Reason: must match ".csv$|.txt$"
 
 Action:
 

@@ -32,21 +32,21 @@ Spring Boot is built on top of the popular Spring Framework and it inherits all 
 
 Here are some of the features that make a strong case for choosing Spring Boot as opposed to Spring Framework:
 
-**1\. Minimal configuration:**
+**1. Minimal configuration:**
 
 While the Spring framework is a powerhouse with many built-in production-ready features, it requires **complex configurations**. We need to create XML or Java-based configurations to enable different features of the Spring Framework.
 
 On the other hand, Spring Boot takes an opinionated approach. It reduces development time and increases developer productivity. Spring boot provides many default configurations for commonly used tasks and requires minimal configurations.
 
-**2\. Automatic dependency resolution:**
+**2. Automatic dependency resolution:**
 
 In the Spring, developers need to manage dependencies manually, which can sometimes lead to version conflicts and other incompatibility issues. However, Spring Boot comes with starter packages which resolves all transitive dependencies automatically and you don't need to worry about version incompatibility issues.
 
-**3\. Embedded Servers**
+**3. Embedded Servers**
 
 Applications developed with the spring framework require an external application server like Tomcat or JBoss for the deployment. But Spring Boot comes with embedded servers.
 
-**4\. Microservice Ready**
+**4. Microservice Ready**
 
 While we can use Spring Framework to build microservices, it doesn't provide any specific tools and features to support Microservices architecture. On the other hand, the Spring boot is well equipped for Microservices.
 
@@ -74,7 +74,7 @@ Here are some of the key features of the Spring Boot framework:
 
 The first two features (auto-configuration and Dependency injection) are inherited from the spring framework.
 
-### 1\. Auto Configuration
+### 1. Auto Configuration
 
 Auto-configuration allows you to simplify the setup and configuration of Spring applications. It makes it easier to create production-ready applications with minimal effort.
 
@@ -93,7 +93,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 Auto-configuration helps developers reduce the number of errors caused due to misconfiguration and makes you more productive.
 
-### 2\. Dependency Injection
+### 2. Dependency Injection
 
 The Dependency Injection(DI) is one of the core features of the Spring framework. This allows developers to write loosely coupled code that is easy to maintain and test.
 
@@ -103,7 +103,7 @@ As Spring boot is built on top of the Spring framework, it inherits all the Spri
 
 We will cover Dependency Injection in more detail in Chapter 4.
 
-### 3\. Spring Boot Starter Dependencies
+### 3. Spring Boot Starter Dependencies
 
 While developing production-grade applications, we often require multiple external libraries. For example, if you want to implement logging, you would require **Logback** or **Log4J** dependency.
 
@@ -147,7 +147,7 @@ You can get the comprehensive list of Spring boot starters using the following c
 spring init --list
 ```
 
-### 4\. Embedded Servers
+### 4. Embedded Servers
 
 Traditionally, deploying Spring-based applications requires the creation of a deployable WAR (Web Application Archive) file, which is then deployed to an external servlet container such as Tomcat or JBoss. It is important to note that WAR files cannot be run as standalone applications and we can only use them as components of another application, like a servlet container or an application server.
 
@@ -159,7 +159,7 @@ For those who prefer to use the **Jetty** or **Undertow** server instead of **To
 
 Follow this tutorial that explains the step-by-step configuration required to [replace the embedded Tomcat server with Jetty or Undertow](https://stacktips.com/articles/replace-tomcat-with-jetty-or-undertow-in-spring-boot).
 
-### 5\. Production Ready Features
+### 5. Production Ready Features
 
 Spring Boot Framework includes some of the production-ready features such as metrics, health checks, and external configuration management, validation, error handling.
 

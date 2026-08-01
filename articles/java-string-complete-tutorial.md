@@ -27,7 +27,7 @@ seo:
 
 Strings are sequence of characters. In the Java programming language, strings are objects. The Java platform provides the String class to create and manipulate strings.
 
-# 1\. How to creating new String?
+# 1. How to creating new String?
 
 A new String can be created using two approaches.
 
@@ -67,7 +67,7 @@ We can also create a String class from the sequence of characters. String class 
   String string2 = new String(chars);
 ```
 
-# 2\. Why String is immutable in Java?
+# 2. Why String is immutable in Java?
 
 Immutable means that once an object of that Class has been created it can’t be altered. Main reason is too provide better performance. Creating a copy of existing java String is easier as there is no need to create a new instance but can be easily created by pointing to already existing String. This saves valuable primary memory. Using String as a key for Hashtable guarantees that there will be no need for re hashing because of object change. Using java String in multi-threaded environment is safe by itself and we need not take any precautionary measures.
 
@@ -87,7 +87,7 @@ The above code will print Akshay. Only reference for Akshay will be created in S
 
 [![Java String Complete Tutorial2](/media/articles/394/Java-String-Complete-Tutorial2.png)](http://stacktips.com)
 
-# 3\. String class methods
+# 3. String class methods
 
 The String class provides various methods that appear to modify strings. Since strings are immutable, what these methods create and return a new string that contains the result of the operation.
 
@@ -214,7 +214,7 @@ String class has a method called format() that is used to return a formatted str
   // prints Hello Akshay, isn't Javatechig cool?
 ```
 
-# 4\. Other String utilities
+# 4. Other String utilities
 
 ## 4.1. How do you convert java String to Date
 

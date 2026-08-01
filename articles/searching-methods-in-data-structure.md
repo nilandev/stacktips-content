@@ -43,19 +43,19 @@ In this series of tutorial, you’ll be able to understand the following
 
 Consider a list of n elements or can represent a file of n records, where each element is a key / number. The task is to find a particular key in the list in the shortest possible time. If you know you are going to search for an item in a set, you will need to think carefully about what type of data structure you will use for that set. At low level, the only searches that get mentioned are for sorted and unsorted arrays. However, these are not the only data types that are useful for searching.
 
-## [1\. Linear search](http://stacktips.com/c/sequential-search-or-linear-search-data-structure)
+## [1. Linear search](http://stacktips.com/c/sequential-search-or-linear-search-data-structure)
 
 Start at the beginning of the list and check every element of the list. Very slow \[order O(n) \] but works on an unsorted list. [Read Linear Search more in detailed](http://stacktips.com/c/sequential-search-or-linear-search-data-structure).
 
-## [2\. Binary Search](http://stacktips.com/c/binary-search-algorithm-data-structure)
+## [2. Binary Search](http://stacktips.com/c/binary-search-algorithm-data-structure)
 
 This is used for searching in a sorted array. Test the middle element of the array. If it is too big. Repeat the process in the left half of the array, and the right half if it’s too small. In this way, the amount of space that needs to be searched is halved every time, so the time is O(log n). [Read Binary Search more in detailed](http://stacktips.com/c/binary-search-algorithm-data-structure).
 
-## 3\. Hash Search
+## 3. Hash Search
 
 Searching a hash table is easy and extremely fast, just find the hash value for the item you’re looking for then go to that index and start searching the array until you find what you are looking for or you hit a blank spot. The order is pretty close to o(1), depending on how full your hash table is.
 
-## 4\. Binary Tree search
+## 4. Binary Tree search
 
 Search a binary tree is just as easy as searching a hash table, but it is usually slower (especially if the tree is badly unbalanced). Just start at the root. Then go down the left subtree if the root is too big and the right subtree if is too small. Repeat until you find what you want or the sub-tree you want isn’t there. The running time is O(log n) on average and O(n) in the worst case.
 

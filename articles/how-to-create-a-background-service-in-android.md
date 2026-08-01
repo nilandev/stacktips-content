@@ -27,14 +27,14 @@ seo:
 
 To create a background service, first you need to add the service into your manifest file. Then, create a class that extends service. Finally, in your activity start the service.
 
-1\. First add the following service declaration in your application manifest file.
+1. First add the following service declaration in your application manifest file.
 
 ```xml
 <service android:enabled="true" android:name=".MyService">
 </service>
 ```
 
-2\. Create a new class MyService that extends Service class.
+2. Create a new class MyService that extends Service class.
 
 ```java
 public class MyService extends Service {
@@ -54,7 +54,7 @@ public class MyService extends Service {
 }
 ```
 
-3\. To start the service and stop the service:
+3. To start the service and stop the service:
 
 ```java
 public class MyActivity extends Activity {

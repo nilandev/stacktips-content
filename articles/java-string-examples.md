@@ -25,7 +25,7 @@ seo:
   metaKeywords: null
 ---
 
-## 1\. String Length and Trim
+## 1. String Length and Trim
 
 Code snippet explains the usage of String class length and trim() method.
 
@@ -61,7 +61,7 @@ public class StringExampleTwo {
 
 [![String length and trim string in java](/media/articles/71/String-length-and-trim-string-in-java-620x359.png)](http://stacktips.com)
 
-## 2\. String Equality Check
+## 2. String Equality Check
 
 Sample program to test String Equality in Java using equals to () operator and String.equals() method.
 
@@ -86,7 +86,7 @@ public class StringEqualsTest {
 **Output**  
 [![How to Test String Equality in Java](/media/articles/71/How-to-Test-String-Equality-in-Java.png)](http://stacktips.com)
 
-## 3\. String Concatenation
+## 3. String Concatenation
 
 Sample Java program to concatenate two strings using plus (+) concatenation operator.
 
@@ -120,7 +120,7 @@ public class StringConcatination {
 
 [![String Concatenation Test in Java](/media/articles/71/String-Concatenation-Test-in-Java.png)](http://stacktips.com)
 
-## 4\. Change Uppercase to Lowercase
+## 4. Change Uppercase to Lowercase
 
 Quick Java code snippet to change the case of a String in Java. It uses `toUpperCase()` and `toLowerCase()` methods present in java.lang.String class to convert the case.
 
@@ -145,7 +145,7 @@ public class StringCase {
 **Output**  
 [![Change Case of a String in Java](/media/articles/71/Change-Case-of-a-String-in-Java.png)](http://stacktips.com)
 
-## 5\. Reverse String
+## 5. Reverse String
 
 ```java
 import java.util.Scanner;
@@ -173,7 +173,7 @@ class ReverseString
 **Output**  
 [![Reverse String in java](/media/articles/71/Reverse-String-in-java.png)](http://stacktips.com)
 
-## 6\. Reverse String using Recursion
+## 6. Reverse String using Recursion
 
 ```java
 import java.util.Scanner;
@@ -203,7 +203,7 @@ public class StringRecursiveReverse {
 **Output**  
 [![Reverse Java String using recursive method](/media/articles/71/Reverse-Java-String-using-recursive-method.png)](http://stacktips.com)
 
-## 7\. Compare Strings
+## 7. Compare Strings
 
 ```java
 import java.util.Scanner;

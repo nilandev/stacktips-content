@@ -31,7 +31,7 @@ As you upload a build to TestFairy, its process on the uploaded build and do som
 
 Here is the workaround!! Instead of you just uploading your build to TestFairy, you can use the command line uploader script mentioning your keystore details. In this post, we’ll see the configurations and how to execute test fairy command line uploader script. This will be helpful for integrating bamboo, Jenkins or other CI build automation tools.
 
-### 1\. Download TestFairy Command Line Upload Script
+### 1. Download TestFairy Command Line Upload Script
 
 Let us download the TestFairy command line upload script from **[GitHub](https://github.com/testfairy/command-line-uploader).** Once you have the `testfairy-upload.sh` the file you can change the following parameters as per your project configurations.
 
@@ -59,7 +59,7 @@ ZIPALIGN=/Applications/adt-bundle-mac-x86_64-20130917/sdk/build-tools/19.1.0/zip
 JARSIGNER=/usr/bin/jarsigner
 ```
 
-### 2\. Executing Command Line Upload Script
+### 2. Executing Command Line Upload Script
 
 ```bash
 $ chmod a+x testfairy-upload.sh

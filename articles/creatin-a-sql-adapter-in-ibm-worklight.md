@@ -27,7 +27,7 @@ seo:
 
 This tutorial will help you to understand the SQL adapter and to create a SQL adapter from IBM Worklight. Here it provided step by step tutorials to create, implement and test an adapter using IBM Worklight.
 
-## 1\. What is SQL Adapter?
+## 1. What is SQL Adapter?
 
 Adapter is a mediator between mobile applications and enterprise system. Adapters provide an easy and secure access to enterprise system. And it is efficient to provide enterprise data to mobile devices in a uniform data format. The data can be presented to mobile device using various interchange formats like XML or JSON (used mostly)
 
@@ -47,7 +47,7 @@ The two files are bundled into a .adapter archive file that is then deployed to 
 
 In this below example, you will find an SQL adapter working.
 
-## 2\. Creating an SQL adapter in IBM Worklight
+## 2. Creating an SQL adapter in IBM Worklight
 
 Here at this point, I assume that your IBM Worklight development environment is ready and working.
 
@@ -121,7 +121,7 @@ function getStudentInfos() {
 
 Now we are done.
 
-## 3\. Testing my SQLAdapter
+## 3. Testing my SQLAdapter
 
 Right click on the adapter folder -> run as -> Deploy as Worklight adapter. Once deployed you can see it from the admin console. Open your browser and hit [http://localhost:8080/console/](http://localhost:8080/console/). You will see the console window as shown below.
 

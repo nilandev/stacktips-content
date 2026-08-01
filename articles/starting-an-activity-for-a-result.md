@@ -29,7 +29,7 @@ In Android user interface is displayed through an activity. Activity is used to 
 
 [![Starting an activity for a result](/media/articles/386/Starting-an-activity-for-a-result.gif)](http://stacktips.com)
 
-# 1\. Starting An Activity
+# 1. Starting An Activity
 
 We can call one activity from another by using Intents. Intent is one of the main building block which provides an abstract description of an operation to be performed. `startActivity(intent)` method belongs to your Activity class and can be used for starting a new activity.
 
@@ -38,7 +38,7 @@ We can call one activity from another by using Intents. Intent is one of the mai
   startActivity(intent);
 ```
 
-# 2\. Starting Activity for Result
+# 2. Starting Activity for Result
 
 Starting another activity doesn’t have to be one-way. You can also start another activity and receive a result back. To receive a result, call `startActivityForResult()` instead of startActivity(). However, the activity that responds must be designed to return a result. When it does, it sends the result as another Intent object. Your activity receives it in the `onActivityResult()` callback.
 
@@ -51,7 +51,7 @@ Note: You can use explicit or implicit intents when you call startActivityForRes
 
 requestCode is an integer argument, that identifies your request. When you receive the result Intent, the callback provides the same request code so that your app can properly identify the result and determine how to handle it.
 
-# 3\. Passing Result Back
+# 3. Passing Result Back
 
 In secondActivity if you want to send back data:
 
@@ -70,7 +70,7 @@ If you don’t want to return data:
  finish();
 ```
 
-# 4\. Receive the Result
+# 4. Receive the Result
 
 When Second Acivity is done with its work and returns the result back, the caller activity’s `onActivityResult()` method gets invoked.
 
@@ -96,7 +96,7 @@ super.onActivityResult(requestCode, resultCode, data);
 }
 ```
 
-# 5\. Example
+# 5. Example
 
 In this example, we will develop an application with two activities, the first activity will call the second activity for result. The second activity has two buttons; One sends response as “Smile Back” and other doesn’t returns any response.
 
@@ -282,7 +282,7 @@ public class SecondActivity extends Activity {
 }
 ```
 
-# 6\. Download Complete Example
+# 6. Download Complete Example
 
 Here you can download complete eclipse project source code from GitHub.
 

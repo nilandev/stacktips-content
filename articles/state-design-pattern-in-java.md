@@ -108,7 +108,7 @@ In the above code snippet, the gameAction method contains too many conditional b
 # State Design Pattern Example
 
 Before we begin with the state design pattern, let us have a look into the class design.  
-[![State Design Pattern Java](/media/articles/224/State-Design-Pattern-Java.png)](http://stacktips.com)1\. Define an interface named PlayerState that defines an action method. The access() method takes the instance of Player class. This is required to perform the player action.
+[![State Design Pattern Java](/media/articles/224/State-Design-Pattern-Java.png)](http://stacktips.com)1. Define an interface named PlayerState that defines an action method. The access() method takes the instance of Player class. This is required to perform the player action.
 
 ```java
 public interface PlayerState {
@@ -116,7 +116,7 @@ public interface PlayerState {
 }
 ```
 
-2\. Define three different classes that represent the different states. In this example, I have named them as, `HealthyState``, SurvivalState``DeadState`. All three classes implement the `PlayerState`interface and provides the specific `action()` method implementation.
+2. Define three different classes that represent the different states. In this example, I have named them as, `HealthyState``, SurvivalState``DeadState`. All three classes implement the `PlayerState`interface and provides the specific `action()` method implementation.
 
 ```java
 public class HealthyState implements PlayerState {
@@ -148,7 +148,7 @@ public class DeadState implements PlayerState {
 }
 ```
 
-3\. The `GameContxt` class contains two `setState()` method composition. Now we will remove all of the code to conditional logic.
+3. The `GameContxt` class contains two `setState()` method composition. Now we will remove all of the code to conditional logic.
 
 ```java
 public class GameContext {
@@ -166,7 +166,7 @@ public class GameContext {
 }
 ```
 
-4\. That’s All! Let us test our code using below class.
+4. That’s All! Let us test our code using below class.
 
 ```java
 public class GameTest {

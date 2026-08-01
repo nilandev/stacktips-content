@@ -29,7 +29,7 @@ Jack and Jill says this tutorial is retired. And we agree! This tutorial was pub
 
 In this tutorial we’ll see how to use YouTube Player API in android. YouTube player API provides an embedded view that supports with various playback controls.
 
-## 1\. Downloading YouTube Player API
+## 1. Downloading YouTube Player API
 
 Before you start writing some code, you’ll have to first download the YouTube Android Player API. Once downloaded import the jar into your project lib folder and add the jar to your build path.
 
@@ -37,7 +37,7 @@ Before you start writing some code, you’ll have to first download the YouTube 
 
 [![YouTube Android Player API](/media/articles/323/YouTube-Android-Player-API-620x380.png)](http://stacktips.com)
 
-## 2\. Register your app in Google developer console
+## 2. Register your app in Google developer console
 
 -   Before you start using the Youtube player API for android, you have to register your application with Google developer console and get and API key, The API key is a unique value for your application. Do not disclose this to others.
 -   Visit [**Google APIs Console**](https://console.developers.google.com) and login with your Google account and create a new project
@@ -46,7 +46,7 @@ Before you start writing some code, you’ll have to first download the YouTube 
 
 [![YouTube Android Player API2](/media/articles/323/YouTube-Android-Player-API2-620x301.png)](http://stacktips.com)
 
-## 3\. Create a new Android Application project
+## 3. Create a new Android Application project
 
 Now you are ready to create Android project to play YouTube videos using YouTube player API. You may use IDE of your choice, here I am using Eclipse.
 
@@ -56,7 +56,7 @@ You need `INTERNET` permission to play video over internet. Add below permission
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-## 4\. Define your activity layout
+## 4. Define your activity layout
 
 In this example, we will create an simple layout that uses YouTubePlayerView inside an LinearLayout.
 
@@ -77,7 +77,7 @@ In this example, we will create an simple layout that uses YouTubePlayerView ins
 </LinearLayout>
 ```
 
-## 5\. Initialize YouTubePlayerView in your Activity
+## 5. Initialize YouTubePlayerView in your Activity
 
 Initializing YouTube player view by calling initialize methood. Once the initialize is successful, you will get the `onInitializationSuccess()` callback with `YouTubePlayer` instance. You can add additional listeners to handle the playback control events.
 
@@ -183,5 +183,5 @@ public class MainActivity extends YouTubeBaseActivity implements YouTubePlayer.O
 }
 ```
 
-## 6\. Output  
+## 6. Output  
 [![YouTube Android Player API Example - Javatechig](/media/articles/323/YouTube-Android-Player-API-Example-Javatechig-620x390.png)](http://stacktips.com)

@@ -26,27 +26,27 @@ seo:
 
 Over the course of this article, we will focus on Android SQLite database Tutorial. It also demonstrates how to create new table, insert records, and modify records with example.
 
-## 1\. What is SQLite
+## 1. What is SQLite
 
 SQLite is an Open-Source embedded SQL database engine. This provides relational database management structure for storing user defined records in the form of tables. SQLite is light weight when it comes to resource usage and it doesn’t need to have any server setup like other RDBMS systems. It is an cross platform and self-contained database.
 
 Android is shipped with SQLite version 3.4.0.
 
-## 2\. Sample TODO Application
+## 2. Sample TODO Application
 
 In this tutorials we will make a simple TODO application that will store, manipulate the user created records. For the sake of simplicity we have only less number of columns in this application. You may like to extend this to make it an full-fledged application. In this example we will create a database `JAVATECHIG_TODOS.DB` and a table named `TODO` for storing all todo’s that user is creating. You can find a demo link to it on [Google play.](https://play.google.com/store/apps/details?id=com.javatechig.todo)
 
-## 3\. Create New Database
+## 3. Create New Database
 
 Database names must be unique within an application, not across all applications. Let us have a look at the database structure from the below image. We have three columns in `TODO` table. `_id` is with INTEGER data type and a primary key with auto increment, subject is TEXT type and `description` is also TEXT type.
 
 [![database design](/media/articles/312/database-design-620x208.png)](http://stacktips.com)
 
-## 4\. Create a New Android project
+## 4. Create a New Android project
 
 Create a new android project named “TODOApp”. Here in this example we use minSdkVersion as 14, targetSdkVersion as 19 and package name is `com.javatechig.todo`
 
-## 5\. Database Helper Class
+## 5. Database Helper Class
 
 Now let us have a look into database helper classes. Database helper `DBhelper.java` and `SQLController.java` class helps to perform all database CURD operations.
 
@@ -107,7 +107,7 @@ The `onCreate()` method will be called on first time use of the application. Her
 
 The `onUpgrade()` method is called only when the database version is changed. Database version is an integer value which is specified inside the DBhelper constructor.
 
-## 6\. Create Database Controller
+## 6. Create Database Controller
 
 It is always a best practice to define an controller or separate class for all your database operations. Here in this example we are creating an new class that performs all database related operations like add, update, delete records into table.
 
@@ -157,7 +157,7 @@ Refer SQLiteController class.
 
 Refer SQLiteController class.
 
-## 7\. Controller Complete Code
+## 7. Controller Complete Code
 
 **SQLController.java**
 
@@ -224,7 +224,7 @@ public class SQLController {
 }
 ```
 
-## 8\. Application Activity Layout
+## 8. Application Activity Layout
 
 In this example, we have three major layout files. One for listing all TODO items, second one is for adding all records and the third one is for update/deleting records.
 
@@ -345,7 +345,7 @@ In this example, we have three major layout files. One for listing all TODO item
 </LinearLayout>
 ```
 
-## 9\. Application Activity Classes
+## 9. Application Activity Classes
 
 Now let us see how are the activity classes look like. We have three activity classes that does three different works. One for listing all TODO items, second adds TODO item and other helps in update/delete records.
 
@@ -560,6 +560,6 @@ public class ModifyTodoActivity extends Activity implements OnClickListener {
 }
 ```
 
-## 10\. Download Example Code
+## 10. Download Example Code
 
 [Download source](https://github.com/javatechig/Advance-Android-Tutorials/tree/master/TODO%20Android%20App)

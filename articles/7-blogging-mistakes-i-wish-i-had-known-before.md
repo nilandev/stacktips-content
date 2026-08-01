@@ -55,7 +55,7 @@ Let’s cut to the chase:
 
 Nothing new here, but I expand on these above topics.
 
-### 1\. Content is the King, but Consistency is the Key
+### 1. Content is the King, but Consistency is the Key
 
 Great content is essential for any successful blog, this is a must-have. However, consistency is equally important. You need to strike the right balance between quality and quantity.
 
@@ -63,21 +63,21 @@ As a lone worrier, I used to dedicate a few hours over a weekend to produce 2/3 
 
 Publishing many articles a day, makes your readers overwhelmed with content so it is very unlikely that all your stories will be read by everyone. But publishing a story on a regular interval, let’s say every Sunday, will definitely drive more engagement, and your readers will love to spend a few minutes reading a story per week.
 
-### 2\. Building a Distribution Channel is Equally Important as Building a Great Site
+### 2. Building a Distribution Channel is Equally Important as Building a Great Site
 
 Great content is like a hidden treasure, it is worth only when discovered by your readers. Without having an effective distribution strategy no one will ever find what you write.
 
 You need to plan your distribution strategy including content syndication, building email lists, social media groups, etc.
 
-### 3\. You Don't Need a Perfect Domain or Perfect Site Design
+### 3. You Don't Need a Perfect Domain or Perfect Site Design
 
 Many aspiring bloggers get caught up in the quest for the perfect domain name or website design. While these factors are important, they are not as critical as the quality and uniqueness of your content.
 
-### 4\. Understand Your Niche
+### 4. Understand Your Niche
 
 Trying to cover too many topics can dilute your blog's identity and make you appear unfocused. Find out why it's crucial to understand your niche and become an authority in it.
 
-### 5\. SEO is the Secret Weapon
+### 5. SEO is the Secret Weapon
 
 Search Engine Optimization (SEO) can be a game-changer for your blog's growth and to drive organic traffic to your blog. While SEO strategy might sound easy when you Google these topics, there is a vast amount of science behind it.
 
@@ -93,13 +93,13 @@ Some of these include:
 
 These are just a few of these SEO strategies to start with.
 
-### 6\. Engagements are More Important than a Subscribers Count
+### 6. Engagements are More Important than a Subscribers Count
 
 It's not just about the numbers. Don't always throw your stuff, expand your social posts to other stuff including a photo from your pub night or day out with your kids. People love to connect with humans more than a BOT?.
 
 Engaging with your audience, building a community, and nurturing relationships can be more valuable than having a massive but passive following.
 
-### 7\. Social Media: Hype and Caution
+### 7. Social Media: Hype and Caution
 
 Social media can be a double-edged sword. Learn how to leverage its potential to create excitement around your blog while avoiding common pitfalls that can harm your strategy.
 

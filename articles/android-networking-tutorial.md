@@ -282,6 +282,6 @@ Download the Android Networking Example using Apache HttpClient from from [**Git
 
 Download the Android Networking Example using HttpURLConnection from [**GitHub**](https://github.com/javatechig/Android-HttpGet-HttpURLConnection).
 
-# 12\. Screenshot
+# 12. Screenshot
 
 [![Android Networking Example](/media/articles/265/Android-Networking-Example-620x1048.png)](http://stacktips.com)

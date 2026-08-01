@@ -27,7 +27,7 @@ seo:
 
 This tutorial describes how to create and use styles and themes in Android applications with examples and code snippets.
 
-## 1\. Android Design Patterns
+## 1. Android Design Patterns
 
 Android is one among the most matured mobile platform today. Like every platforms, android development follows certain guidelines and patterns. The patterns are derived in order to make the app look amazing, simplifying life, and to provide the best performance. Google developers insist to follow the platform design guidelines for developing android applications. Remember to focus on below three overreaching goals while developing your applications
 
@@ -37,7 +37,7 @@ Android is one among the most matured mobile platform today. Like every platform
 
 Check out Google’s official design pattern guidelines [here.](http://developer.android.com/design/get-started/creative-vision.html)
 
-## 2\. Using Custom Styles
+## 2. Using Custom Styles
 
 Android supports customizing view and widgets by applying styles. A style is a collection of properties that specify the look and format for a View or widget. A style can specify properties such as height, padding, font color, font size, background color, and much more. In Android Styles works similar to CSS (cascading stylesheets) that are used in web designing application.
 
@@ -173,7 +173,7 @@ You can continue inheriting like this as many times as you’d like, by chaining
 
 This inherits from both `MyTextViewStyle` and `MyTextViewStyle.BoldRed` styles, then adds the `android:textSize` property.
 
-## 3\. Applying Activity Themes
+## 3. Applying Activity Themes
 
 A theme is a style applied to an entire activity or application, rather than an individual View. The technique of defining a theme is the same as defining a style.
 
@@ -194,7 +194,7 @@ To set a theme for all the activities of your application, open the AndroidManif
 
 If you want a theme applied to just one Activity in your application, then add the android:theme attribute to the `<activity>` tag.
 
-## 4\. Using Nine-Patch Background
+## 4. Using Nine-Patch Background
 
 A nine-patch drawable is a special kind of image which can be scaled in width and height while maintaining its visual integrity. Nine-patches are the most common way to specify the appearance of Android buttons, though any drawable type can be used. Notice the one pixel black lines around the edge; they control the scaling of the image.
 
@@ -236,7 +236,7 @@ Below are the images used in this example
          android:text="ORANGE BUTTON" />
 ```
 
-# 5\. Using Selector
+# 5. Using Selector
 
 A selector is a drawable which changes based on state. Here is an example selector which switches between two images or two colors. For example, create `/res/drawable/button_selector.xml` to display two images depending on the button state.
 
@@ -258,7 +258,7 @@ Now you can use this selector as the drawable applied to the button style.
   </style>
 ```
 
-## 6\. Gradient Drawables
+## 6. Gradient Drawables
 
 We can define gradients in android xml file and apply to the interface. You can a gradient file in drawable folder `/res/drawable/my_gradient.xml` and add the following code
 
@@ -283,7 +283,7 @@ Now apply the style to the button as background property
     </style>
 ```
 
-## 7\. Make Activity Look Like Dialog
+## 7. Make Activity Look Like Dialog
 
 Android provides other built-in themes and styles which can be used without rewriting them yourself. You can use the Dialog theme and make your Activity appear like a dialog box
 

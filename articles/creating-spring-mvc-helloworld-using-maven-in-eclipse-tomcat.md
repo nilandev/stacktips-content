@@ -62,13 +62,13 @@ In this example we will be using **Apache** **Tomcat** application server for d
 -   Select Apache -> **Tomcat v7.0 Server** and click **Next**. In this example, we will be using Apache Tomcat version 7.0. However, the similar steps will work for other tomcat versions.
 -   Browse and select the **Apache Tomcat v7.0** server installation directory and click **Finish**.
 
-## 4\. Update Project Build Path
+## 4. Update Project Build Path
 
 You might notice a error on your project. This is due to the project Build path problem. To fix this you need to right click on project -> **Properties** to open project Java Build Path settings.
 
 Select **Libraries** tab and click on **Add Library**…-> **Server Runtime** -> **Apache Tomcat** -> **Finish**.
 
-## 5\. Configure Spring Dependency
+## 5. Configure Spring Dependency
 
 Before we develop Spring MVC web application, we need to configure the project by adding the required Maven dependencies. Add the following Maven dependencies into your `pom.xml` file.
 
@@ -127,7 +127,7 @@ With this the basic Spring project configuration is complete. Your project struc
 
 The following steps will take you through the rest of the steps to create and deploy Spring MVC HelloWorld app.
 
-## 6\. Configure Dispatcher Servlet
+## 6. Configure Dispatcher Servlet
 
 The `DispatcherServlet` must be configured as normal in `web.xml` to bootstrap a Spring WebApplicationContext. Edit the default `web.xml` file and add the following.
 
@@ -159,7 +159,7 @@ The `DispatcherServlet` must be configured as normal in `web.xml` to bootstrap a
         /
 ```
 
-## 7\. Mapping Requests
+## 7. Mapping Requests
 
 Create an xml file `dispatcher-servlet.xml` under the same directory of `web.xml`.
 
@@ -174,7 +174,7 @@ Create an xml file `dispatcher-servlet.xml` under the same directory of `web.xml
 
 In the above xml file, base-package specifies the package of the controllers. prefix specifies the directory of views, and it is set to be `/WEB-INF/views/`, which means views directory should be created under WEB-INF. suffix specifies the file extension of views. For example, given a view `hello`, the view will be located as `/WEB-INF/views/hello.jsp`.
 
-## 8\. Create Controller class
+## 8. Create Controller class
 
 Create the HelloWorldController under src/main/java/ directory.
 
@@ -206,7 +206,7 @@ In the code above, @RequestMapping annotation maps web requests onto specific ha
 
 RequestParam indicates that a method parameter should be bound to a web request parameter. In this case, we also make it not required and give it a default value. The ModelAndView(“hello”) determines that hello is the target view.
 
-## 9\. Working with Views
+## 9. Working with Views
 
 Edit the default index.jsp and add the following code snippets.
 

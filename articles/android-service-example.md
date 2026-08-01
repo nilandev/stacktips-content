@@ -24,7 +24,7 @@ seo:
   metaKeywords: null
 ---
 
-# 1\. Introduction to Service
+# 1. Introduction to Service
 
 Android user interface is restricted to perform long running jobs to make user experience smoother. A typical long running tasks can be periodic downloading of data from internet, saving multiple records into database, perform file I/O, fetching your phone contacts list, etc. For such long running tasks, Service is the alternative.
 
@@ -34,7 +34,7 @@ Android user interface is restricted to perform long running jobs to make user e
 4.  Usually a service always performs a single operation and stops itself once intended task is complete.
 5.  A service runs in the main thread of the application instance. It doesn’t create its own thread. If your service is going to do any long running blocking operation, it might cause Application Not Responding (ANR). And hence, you should create a new thread within the service.
 
-# 2\. Bound and Unbound Service
+# 2. Bound and Unbound Service
 
 #### Bound Service
 
@@ -44,7 +44,7 @@ Service which call indefinitely in between activity. An Android component may bi
 
 Service which call at the life span of calling activity. In this case, an application component starts the service, and it would continue to run in the background, even if the original component that initiated it is destroyed. For instance, when started, a service would continue to play music in the background indefinitely.
 
-# 3\. Android Service Lifecycle
+# 3. Android Service Lifecycle
 
 A service can be run by the system, If someone calls Context.startService() or bindService() method.
 
@@ -64,7 +64,7 @@ This method is called while the service is first created. Here all the service i
 
 The system calls this method when the service is no longer used and is being destroyed. This method is used to, clean up any resources such as threads, registered listeners, receivers, etc. This is the last call the service receives.
 
-# 4\. Creating a Android Service
+# 4. Creating a Android Service
 
 Create a new class and extend it from `android.app.Service`. You need to override `onStartCommand()`, `onBind()`, `onCreate()` and `onDestroy()` method to handle the service lifecycle.
 
@@ -137,7 +137,7 @@ public class HelloService extends Service {
 }
 ```
 
-# 5\. Service Manifest Declaration
+# 5. Service Manifest Declaration
 
 In theory, A service can be called from other application unless it is restricted. You can ensure that your service is available to only your app by including the `android:exported` attribute and setting it to “false”. This effectively stops other apps from starting your service, even when using an explicit intent.
 
@@ -169,7 +169,7 @@ In theory, A service can be called from other application unless it is restricte
 </manifest>
 ```
 
-# 6\. Starting Android Service
+# 6. Starting Android Service
 
 You can start a service from an activity or other application component by passing an Intent to `startService()`. The Android system calls the service’s `onStartCommand()` method and passes it the Intent.
 
@@ -180,17 +180,17 @@ Intent intent = new Intent(this, HelloService.class);
 startService(intent);
 ```
 
-# 7\. Stop Running Android Service
+# 7. Stop Running Android Service
 
 -   A service must be stopped itself by calling `stopSelf()` method, once it is finishes execution. However, you can also stop a service yourself by calling `stopService()` method.
 -   A call to stopService method will call `onDestroy()` callback in your service. You have to manually stop your operation being performed by your application. To do this in the above example, we have taken a boolean variable to control the execution of service.
 
-# 8\. Output
+# 8. Output
 
 [![Android Service Example](/media/articles/274/Android-Service-Example-300x533.png)](http://stacktips.com)
 
 Android Service Example
 
-# 9\. Download Source Code
+# 9. Download Source Code
 
 [Download Android Service Example](https://github.com/javatechig/Android-Service-Example "Download Android Service Example")

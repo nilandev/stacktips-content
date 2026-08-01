@@ -23,11 +23,11 @@ seo:
   metaKeywords: null
 ---
 
-### 1\. What is the purposes of Service in Android?
+### 1. What is the purposes of Service in Android?
 
 Android Service is used to perform long running jobs off the UI thread. A typical long running tasks can be periodic downloading of data from internet, saving multiple records into database, perform file I/O, fetching your phone contacts list, etc. For such long running tasks, Service is used to avoid UI lags and makes user experience better.
 
-### 2\. Explain service lifecycle methods?
+### 2. Explain service lifecycle methods?
 
 A service can be run by the system, If someone calls Context.startService() or bindService() method.
 
@@ -36,16 +36,16 @@ A service can be run by the system, If someone calls Context.startService() or b
 3.  **onCreate()**– This method is called while the service is first created. Here all the service initialization is done. This method is never called again.
 4.  **onDestroy()** – The system calls this method when the service is no longer used and is being destroyed. This method is used to, clean up any resources such as threads, registered listeners, receivers, etc. This is the last call the service receives.
 
-### 3\. What is the difference between bound and unbounded service?
+### 3. What is the difference between bound and unbounded service?
 
 1.  **Bound Service –** Service which call indefinitely in between activity. An Android component may bind itself to a Service using bindservice (). A bound service would run as long as the other application components are bound to it. As soon as they unbind, the service destroys itself.
 2.  **Unbound Service –** Service which call at the life span of calling activity. In this case, an application component starts the service, and it would continue to run in the background, even if the original component that initiated it is destroyed. For instance, when started, a service would continue to play music in the background indefinitely.
 
-### 4\. What are the different clock types supported for AlarmService?
+### 4. What are the different clock types supported for AlarmService?
 
 Android supports two clock types for alarm service. Once is elapsed real time and other is real time clock (RTC). Elapsed real time uses the time since device last booted. Real time clock (RTC) uses UTC time for alarm service clock. RTC is most commonly used for setting alarm service in android.
 
-### 5\. How to define a service in manifest
+### 5. How to define a service in manifest
 
 All the services used in the app need to be registered in application Manifest. Services are declared as shown below
 
@@ -55,7 +55,7 @@ All the services used in the app need to be registered in application Manifest. 
 android:exported="false"/>
 ```
 
-### 6\. How to pass data to an IntentService ?
+### 6. How to pass data to an IntentService ?
 
 You can pass data as bundle to IntentService before you start.
 
@@ -70,23 +70,23 @@ intent.putExtra("requestId", 101);
 startService(intent);
 ```
 
-### 7\. What is an alarm service and explain it’s need with real-world example
+### 7. What is an alarm service and explain it’s need with real-world example
 
 Alarm service is used to run tasks periodically at given interval. You can design application like alrm, birthday reminder, or AlarmManager can be used to initiate long running operations such as syncing data from server once a day. Once an Alarm Started, this will execute until it is stopped explicitly or until device reboots.
 
-### 8\. How to stop service?
+### 8. How to stop service?
 
 Bounded service stops itself once it finishes its tasks. But for unbounded service we need to call stopSelf() or stopService() method.
 
-### 9\. Can an IntentService execute multiple tasks sequentially?
+### 9. Can an IntentService execute multiple tasks sequentially?
 
 No. Intent Services are designed to perform one task at single point of time. However tasks can be queued.
 
-### 10\. How can we make the AlarmService run forever even after device reboot
+### 10. How can we make the AlarmService run forever even after device reboot
 
 Once you start an AlarmService, it runs forever until your device restarts. Once your device restart, you have to start the service explicitly to run it forever again. You have to register BroadcastReceiver to handle boot event.
 
-### 11\. What are the key differences between a service and IntentService in Android?
+### 11. What are the key differences between a service and IntentService in Android?
 
 | Service | IntentService |
 | --- | --- |

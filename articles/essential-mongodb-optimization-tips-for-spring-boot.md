@@ -30,7 +30,7 @@ In this article, we will delve into some key optimisation techniques and conside
 
 Let's dive in!
 
-## 1\. Indexing MongoDB Collections
+## 1. Indexing MongoDB Collections
 
 If your collection is not indexed, your queries will scan through the entire collection. Querying data with an index is much faster than scanning from the entire collection.
 
@@ -128,7 +128,7 @@ class AppEventListener {
 
 A single MongoDB collection can have a maximum of 64 indexes.
 
-## 2\. Manage Connection Pool
+## 2. Manage Connection Pool
 
 Incorrectly configured connection pools can either lead to a shortage of database connections under load or waste resources. Increasing the client connection pool size based on availability can improve performance when you have high concurrency usage on your database.
 
@@ -143,7 +143,7 @@ spring:
 
 I highly recommend reading this excellent post by [Brian Shen](https://medium.com/@houwei.shen/how-poolsize-can-impact-mongodb-backed-apps-cee83d481b1f), where he explains how pool size can impact the performance of MongoDB-backed applications.
 
-## 3\. Query Large Dataset
+## 3. Query Large Dataset
 
 Retrieving a large number of documents in a single operation can significantly increase the load on the MongoDB server. Instead, you can use paginated queries to fetch the data in chunks.
 
@@ -155,7 +155,7 @@ Query query = new Query().with(pageable);
 List<Product> products= mongoTemplate.find(query, Product.class);
 ```
 
-## 4\. Inefficient Schema Design
+## 4. Inefficient Schema Design
 
 Unlike relational databases, MongoDB is schema-less and it is not required to design your schema upfront.
 
@@ -167,7 +167,7 @@ For example, embedding documents can reduce the number of database roundtrips, b
 
 Consider reading some of the established schema design patterns [here](https://www.mongodb.com/docs/atlas/performance-advisor/schema-suggestions/)
 
-## 5\. Use Appropriate Write Concerns and Read Preferences
+## 5. Use Appropriate Write Concerns and Read Preferences
 
 If you're using distributed database systems, then consistency, availability, and durability of data is very important. This is where **Write Concerns** and **Read Preferences** come into play.
 
@@ -241,7 +241,7 @@ mongoTemplate.getCollection("product_collection")
 
 References: https://www.javadoc.io/doc/org.mongodb/mongo-java-driver/latest/com/mongodb/ReadPreference.html
 
-## 6\. Optimise Large Payloads using Projections
+## 6. Optimise Large Payloads using Projections
 
 If your database contains collections with large documents then retrieving large documents without projection can lead to high network latency and increase load on the MongoDB server.
 
@@ -255,7 +255,7 @@ query.fields().include("productId").include("name");
 return mongoTemplate.find(query, Product.class);
 ```
 
-## 7\. Leverage Application Level Caching
+## 7. Leverage Application Level Caching
 
 Caching helps to speed up data access and improve overall application performance by reducing the need for frequent access to DB. Caching strategy can be implemented at different levels to meet your performance goals.
 
@@ -267,7 +267,7 @@ Caching helps to speed up data access and improve overall application performanc
 
 Implement application-level data using caching to avoid unnecessary database reads. Read [official documentation](https://docs.spring.io/spring-boot/reference/io/caching.html) to implement caching within your Spring Boot application.
 
-## 8\. Use Aggregations
+## 8. Use Aggregations
 
 For complex data processing, MongoDB's aggregation framework is more efficient than multiple queries and processing data on the application side.
 
@@ -317,7 +317,7 @@ public List<TotalSales> calculateLastMonthSales() {
 
 https://medium.com/mongodb-performance-tuning/explaining-aggregation-pipelines-2d1edd46a341
 
-## 9\. Leverage Bulk Operations
+## 9. Leverage Bulk Operations
 
 Bulk operations allow you to batch multiple operations (insert, update or delete) in a single request. It results in fewer network roundtrips and performs significantly faster.
 
@@ -354,7 +354,7 @@ public class DataLoader implements CommandLineRunner {
 }
 ```
 
-## 10\. Use Capped Collections when Applicable
+## 10. Use Capped Collections when Applicable
 
 Capped collections are fixed-size collections that maintain insertion order and automatically remove the oldest documents when the collection reaches its maximum size.
 

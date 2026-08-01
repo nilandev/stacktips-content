@@ -23,7 +23,7 @@ seo:
   metaKeywords: null
 ---
 
-# 1\. Introduction to Android WebView
+# 1. Introduction to Android WebView
 
 In the course of this tutorial, we will teach you how to use Android WebView and answer to some of the most common questions on android WebView.
 
@@ -42,7 +42,7 @@ If you are interested in taking a look into the Android platform source code, yo
 [Webkit JNI code](https://android.googlesource.com/platform/external/webkit/+/f10585d69aaccf4c1b021df143ee0f08e338cf31/WebKit/android/jni)  
 [BrowserWebView.Java](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android-apps/4.1.1_r1/com/android/browser/BrowserWebView.java?av=f)
 
-# 2\. Open Link on Android Device Browser
+# 2. Open Link on Android Device Browser
 
 At times, you may require to invoke the device browser, when an external link is clicked from app. For example, in most of the mobile advertising platform, when user click on a banner, it redirect user to the ad publisher website to show more info on specific ad. For such similar requirement, you need to open device browser with a URL.
 
@@ -56,11 +56,11 @@ startActivity(intent);
 
 The ACTION\_VIEW intent action is used to invoke the application based on the specified data. Here in this example, we are using URL as bundle data so it will invoke the specified url in the application that can take such action, eg. browser. If you provide the data type as phone number, it will automatically open phone dialer.
 
-# 3\. Android WebView Example
+# 3. Android WebView Example
 
 Following section of the tutorial, will drive you with step by step approach to create a simple WebView with different configuration params and load stacktips.com home page.
 
-# 4\. Declare WebView Layout
+# 4. Declare WebView Layout
 
 Like any other UI controls in android, you can include the WebView in your xml layout. Below is my xml layout
 
@@ -79,7 +79,7 @@ Like any other UI controls in android, you can include the WebView in your xml l
 </LinearLayout>
 ```
 
-# 5\. Load Static Html Data on WebView
+# 5. Load Static Html Data on WebView
 
 Following activity class snippet will show you how to initialize WebView instance and load static Html string onto it. Just call loadData() It takes html string data, mime-type and encoding param as three parameters.
 
@@ -96,7 +96,7 @@ webView.loadData(customHtml, "text/html", "UTF-8");
 Output of the above code is  
 [![Load Static HTML Data on WebView](/media/articles/430/Load-Static-HTML-Data-on-WebView-300x294.png)](http://stacktips.com)
 
-# 6\. Load Remote URL on WebView
+# 6. Load Remote URL on WebView
 
 1.  The default behavior of Android is to open device browser, when links are clicked. But as our WebView should work like a embedded browser, we must override to always open the links in the WebView instead redirecting it to the default browser.
 2.  We can do this using android `WebViewClient`. WebViewClient helps to monitor events in a WebView. We have to override the `shouldOverrideUrlLoading()` method. This method allows performing your own action when a particular URL is selected. Once we are ready with the WebViewClient, we can set the WebViewClient of your WebView using the `setWebViewClient()` method.
@@ -137,6 +137,6 @@ Output of the above code is here
 
 [![Load Remote URL on WebView](/media/articles/430/Load-Remote-URL-on-WebView-300x416.png)](http://stacktips.com)
 
-# 7\. Display HTML Text in TextView
+# 7. Display HTML Text in TextView
 
 Android TextView is also capable of rendering the HTML text. Checkout my post [How to Display HTML in Android TextView](http://stacktips.com/android/display-html-in-android-textview "How to Display HTML in Android TextView").

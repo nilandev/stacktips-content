@@ -26,7 +26,7 @@ seo:
   metaKeywords: null
 ---
 
-### 1\. What are the key features introduced in Java 17?
+### 1. What are the key features introduced in Java 17?
 
 Java 17 introduced several important features including:
 
@@ -35,7 +35,7 @@ Java 17 introduced several important features including:
 -   Records: Provides a compact syntax for creating immutable data classes
 -   Text Blocks: Allows multi-line string literals without escape characters - Improved Random Number Generators: Provides a new interface and implementations for random number generation
 
-### 2\. Explain the concept of text blocks in Java. How do they improve code readability?
+### 2. Explain the concept of text blocks in Java. How do they improve code readability?
 
 Text blocks in Java improve the way multiline strings are handled in code. Traditionally very difficult to read strings that span across multiple lines and require preserving formatting.
 
@@ -68,7 +68,7 @@ String query = """
         """;
 ```
 
-### 3\. What are the Records in Java?
+### 3. What are the Records in Java?
 
 Records is a new language feature introduced in Java 14 and finalised in Java 16. A record is a special type of class in Java that allows us to define classes that act as transparent carriers for immutable data. Records can be used to replace traditional POJOs, which are often verbose and require a lot of boilerplate code.
 
@@ -140,7 +140,7 @@ The `permits` clause is used to specify the allowed subclasses for type `Shape`.
 
 Since the compiler knows all the possible subtypes of a sealed class, it will prevent any other class except `Circle`, `Square` or `Rectangle` from extending the `Shape` class.
 
-### 5\. How Sealed classes are different from final classes?
+### 5. How Sealed classes are different from final classes?
 
 Sealed classes and final classes serve different purposes in Java, although both are used to restrict inheritance.
 
@@ -185,13 +185,13 @@ switch (obj) {
 }
 ```
 
-### 8\. Is it possible to use records with inheritance?
+### 8. Is it possible to use records with inheritance?
 
 A record declaration does not have an extends clause, so it is not possible to explicitly declare a direct superclass type, even a Record. However, a record can implement interfaces, so you can use them polymorphically.
 
 Refer to the Java 17 [JLS 8.10](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.10) notes for more information.
 
-### 9\. How does the new Random Number Generators API in Java 17 improve upon the previous implementation?
+### 9. How does the new Random Number Generators API in Java 17 improve upon the previous implementation?
 
 The new Random Number Generators API in Java 17 introduced a new `RandomGenerator` interface as the top-level interface for random number generators. It provides specialized interfaces like `SplittableRandomGenerator`, `JumpableRandomGenerator`, and `LeapableRandomGenerator` for different types of generators.
 

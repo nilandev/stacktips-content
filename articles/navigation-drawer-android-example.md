@@ -25,13 +25,13 @@ seo:
   metaKeywords: null
 ---
 
-## 1\. Introduction
+## 1. Introduction
 
 Android navigation drawer is a one of the most common used design pattern that displays the app’s main navigation links on the left side of the screen. It is not visible by default, and shown when swiped from left to right or by clicking the navigation menu icon from ActionBar.
 
 The following example explains, how to implement a navigation drawer using Android Support Library `DrawerLayout` API.
 
-## 2\. When to Use Navigation Drawer
+## 2. When to Use Navigation Drawer
 
 Navigation drawer is an overlay panel, that is replaced with the legacy application dashboard screen or menu. Now we don’t need to create a dedicated activity for showing all application options. You can simply it further by just using navigation drawer.
 
@@ -39,7 +39,7 @@ Before you decide to use a navigation drawer in your app, you should understand 
 
 Follow official [Android on design guidelines](http://developer.android.com/design/patterns/navigation-drawer.html) follow for more information.
 
-## 3\. Navigation Drawer Example
+## 3. Navigation Drawer Example
 
 The following section of this tutorial, describes step by step approach to Implement a navigation drawer using the DrawerLayout APIs available in the Android Support Library. Some of the steps includes
 
@@ -50,7 +50,7 @@ The following section of this tutorial, describes step by step approach to Imple
 
 [![Navigation Drawer Android Example](/media/articles/360/Navigation-Drawer-Android-Example.png)](http://stacktips.com)
 
-## 4\. Creating a Drawer Layout
+## 4. Creating a Drawer Layout
 
 For creating a navigation drawer, first we need to declare the drawer layout in your main activity where you want to show the navigation drawer. Add `android.support.v4.widget.DrawerLayout` as root view of activity layout.
 
@@ -88,7 +88,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 -   The main content view is set to match the parent view’s width and height, because it represents the entire UI when the navigation drawer is hidden.
 -   The width of drawer view is specified in dp (density independent pixels) units and the height matches the parent view. The drawer width should be no more than 320dp so the user can always see a portion of the main content.
 
-## 5\. Initialize the Drawer List
+## 5. Initialize the Drawer List
 
 Now, first initialize the navigation drawer’s list of items. As here the navigation drawer consists a ListView, so the list can be populated by an Adapter.
 
@@ -107,7 +107,7 @@ ArrayAdapter adapter = new ArrayAdapter(this,
 mDrawerList.setAdapter(adapter);
 ```
 
-## 6\. Handle Navigation Click Events
+## 6. Handle Navigation Click Events
 
 When the user selects an item in the drawer’s list, the system calls onItemClick() on the OnItemClickListener given to setOnItemClickListener(). In this example, selecting each item in the list inserts a different Fragment into the main content view FrameLayout.
 
@@ -144,7 +144,7 @@ public void updateFragment() {
 }
 ```
 
-## 7\. Handle Drawer Open and Close Events
+## 7. Handle Drawer Open and Close Events
 
 We can also listen to the drawer open and close event. To listen for drawer open and close events, we can extend the ActionBarDrawerToggle class. The ActionBarDrawerToggle implements DrawerLayout.DrawerListener.
 
@@ -165,7 +165,7 @@ mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_dra
 mDrawerLayout.setDrawerListener(mDrawerToggle);
 ```
 
-## 8\. Download Complete Source
+## 8. Download Complete Source
 
 Download Source Code on [Github](https://github.com/javatechig/AndroidNavigationDrawer "Download Navigation Drawer Example")
 

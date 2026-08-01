@@ -25,7 +25,7 @@ seo:
   metaKeywords: null
 ---
 
-## 1\. Introduction
+## 1. Introduction
 
 As mobile devices are limited with memory, we must follow certain best practices to provide best performance and smooth user experience. Among set of best practices, the one holds priority is to take the long running heavy operations off the main thread.
 
@@ -37,7 +37,7 @@ If you’re looking for downloading data from asynchronously from server, we rec
 
 [![Async ListView Android Example](/media/articles/423/Async-ListView-Android-Example.png)](http://stacktips.com)
 
-## 2\. What is Android AsyncTask
+## 2. What is Android AsyncTask
 
 AsyncTask enables you to implement MultiThreading without getting your hands dirty into threads. AsyncTask is easy to use, and it allows performing background operation in dedicated thread and passing the results back UI thread. If you are doing something isolated related to UI, for example downloading data for List view, go ahead and use AsyncTask. Some of the basic characteristics of AsyncTask are as follows
 
@@ -55,7 +55,7 @@ The generic types used by AsyncTask are
 -   Progress, the type of the progress units published during the background computation.
 -   Result, the type of the result of the background computation.
 
-## 3\. Downloading image using AsyncTask
+## 3. Downloading image using AsyncTask
 
 We had learnt the basics of AsyncTask. Let us take a glance at how to use it practically for downloading image asynchronously from web. To achieve this, let us create a new class and name it as `ImageDownloaderTask`.
 
@@ -95,7 +95,7 @@ class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
 }
 ```
 
-## 4\. Downloading image from web
+## 4. Downloading image from web
 
 Notice that, in the above step we are calling downloadBitmap() method but haven’t declared it yet. Let us create declare the downloadBitmap method which takes care of loading image and returning the bitmap. Here we are using HttpURLConnection to download the stream from given url. Learn more about HttpURLConnection from our [android networking tutorial](/articles/android-networking-tutorial "Android Networking Tutorial").
 
@@ -127,7 +127,7 @@ private Bitmap downloadBitmap(String url) {
 }
 ```
 
-## 5\. Creating custom ListView
+## 5. Creating custom ListView
 
 Now that we understand the basics of AsyncTask, let us proceed with creating the custom list view in android. The focus of this tutorial is tried to image download. If you not familiar with creating custom list view in android, you can read our [Android ListView tutorial](/articles/android-listview-tutorial "Android ListView Example").
 
@@ -345,6 +345,6 @@ Add the following string array declarations to string.xml file.
 </resources>
 ```
 
-## 5\. Download Complete Example
+## 5. Download Complete Example
 
 [Download source](https://github.com/javatechig/Async-ListView-Image-Loader)

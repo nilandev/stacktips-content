@@ -31,7 +31,7 @@ This example explains step by step tutorials for building Login Application usin
 -   Show error message in case of invalid credentials without losing user enters text.
 -   Redirect to welcome page on successful /valid credentials.
 
-# 1\. Software and tool requirements
+# 1. Software and tool requirements
 
 This example us using JAVA 1.6 for compilation and and deployed on Tomcat 6.x as application server. We use Eclipse IDE for all of our development purpose.
 
@@ -39,13 +39,13 @@ This example us using JAVA 1.6 for compilation and and deployed on Tomcat 6.x as
 -   Tomcat 6
 -   Eclipse 3.6
 
-# 2\. Struts 2 framework libraries
+# 2. Struts 2 framework libraries
 
 Download the latest version of struts 2 lib from [http://struts.apache.org/download.cgi](http://struts.apache.org/download.cgi "Download Struts 2") with respect to you platform such as Windows or Linux. We are using struts-2.3.15.1-lib(windows) for this example.
 
 After downloading extract the struts-2.3.15.1-lib.zip file to some location e.g. [C:\\struts-2.3.15.1-lib](C:\struts-2.3.15.1-lib)
 
-# 3\. Creating a new dynamic Web Project in eclipse as strutsweb
+# 3. Creating a new dynamic Web Project in eclipse as strutsweb
 
 File -> New -> Dynamic Web Project.
 
@@ -57,7 +57,7 @@ Now copy following jars from `C:\struts-2.3.15.1-lib` to `\WEB-INF\libs`
 
 [![Struts2 Login Application Libs](/media/articles/396/Struts2-Login-Application-Libs.png)](http://stacktips.com)
 
-# 4\. Modify web.xml configuration to enable struts2 framework
+# 4. Modify web.xml configuration to enable struts2 framework
 
 Do the following changes in web.xml file to enable struts 2 framework features. You can locate `web.xml` file in `\WEB-INF\web.xml` in your project directory.
 
@@ -93,7 +93,7 @@ id="WebApp_ID" version="2.5">
 
 <welcome-file-list/> – It is used to populate the default page.
 
-# 5\. Writing Java class to validate the login cridentials
+# 5. Writing Java class to validate the login cridentials
 
 Now, let us jump into validating login credenials from java class. Create `LoginAuthAction.java` inside the following package `com.javatechig.struts2web.actions.` Note, you may have your own package name
 
@@ -149,7 +149,7 @@ public class LoginAuthAction extends ActionSupport {
 
 The `LoginAuthAction` extends `ActionSupport` to use core methods such as `addActionError` and static string `ERROR`, `SUCCESS`. The `execute()` is the default method which contains the logic for action class. In this example we are validating userId & password is empty or equals. If empty showing error “Please enter userId/password” else if equals then its validated.
 
-# 6\. Configuring action class in Struts configuration file
+# 6. Configuring action class in Struts configuration file
 
 Now it’s time to configure the action class in Struts configuration file. Create struts2 configuration file as struts.xml inside project src directory
 
@@ -191,7 +191,7 @@ I am using text field in the login.jsp for userid . The name of textfield is use
 
 When you click on login it request for loginauth action, which is goes through struts2 dispatcher filter which executes interceptor before/after the invoking of action class. The interceptor will convert the field name userId to setUserId and then pass the textfield value to setUserId(val). In the same way when dispatcher deliver the view i.e. jsp it uses getUserId(). E.g. when you enter wrong password and valid user id it throws the same page with error saying invalid password with existing user id values.
 
-# 7\. Creating jsp pages
+# 7. Creating jsp pages
 
 In this example we will be needing two jsp pages. Once for login form and other is welcome screen. Welcome screen will appear once user credentials are authenticated
 
@@ -289,7 +289,7 @@ Now we are done with the sample and it is ready to run, before that pleas make s
 
 [![Struts2 Login Application Project Structure](/media/articles/396/Struts2-Login-Application-Project-Structure.png)](http://stacktips.com)
 
-# 8\. Output
+# 8. Output
 
 [![Struts2 Login Application Project Output](/media/articles/396/Struts2-Login-Application-Project-Output1.png)](http://stacktips.com)
 

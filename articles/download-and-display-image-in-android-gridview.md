@@ -31,7 +31,7 @@ This example is an improved version of my previous example [Android GridView Exa
 
 Without wasting much time, let us jump straight into what it takes to build this kind of GridView. You need to follow the following steps to complete this example.
 
-## 1\. Add GridView in Activity Layout
+## 1. Add GridView in Activity Layout
 
 First, create a new android project. For this example, I prefer to use **Android Studio**. Create a new layout file to your project `res/layout` folder and name it as `activity_grid_view.xml`. And add the following code blocks.
 
@@ -66,7 +66,7 @@ First, create a new android project. For this example, I prefer to use **Android
 
 The above layout is pretty straight forward. We have declared an `GridView` and a `ProgressBar` in activity layout. The progress bar will be displayed when the data is being downloaded.
 
-## 2\. Declare GridView Item Layout
+## 2. Declare GridView Item Layout
 
 Let us now add another file named `grid_item_layout.xml` to `res/layout` folder. This layout will be used by custom grid adapter for laying out individual grid item. For the sake of simplicity, we are adding an `ImageView` and a `TextView`.
 
@@ -98,7 +98,7 @@ Let us now add another file named `grid_item_layout.xml` to `res/layout` folder.
 </LinearLayout>
 ```
 
-## 3\. Adding Internet Permission
+## 3. Adding Internet Permission
 
 You might be aware that, Android application must declare all the permissions that are required for application. As we need to download the data form server, we need to add the `INTERNET` permission. Add the following line to `AndroidManifest.xml` file.
 
@@ -132,7 +132,7 @@ You might be aware that, Android application must declare all the permissions th
 
 Notice that we have also declared all the activities used in the application.
 
-## 4\. Adding Picasso Image Downloading Library
+## 4. Adding Picasso Image Downloading Library
 
 Android open source developer community brings some of the interesting libraries that can be integrated easily to Android applications. They serves a great deal of purpose and saves lot of time. Here in this example, I am talking about **`Picasso`** image loading library. We will add Picasso library for downloading and caching of images. Visit here to learn more about how to use Picasso library in Android.
 
@@ -146,7 +146,7 @@ dependencies {
 }
 ```
 
-## 5\. Create a GridView Custom Adapter
+## 5. Create a GridView Custom Adapter
 
 A grid view is an adapter view. It requires an adapter to render the collection of data items. Add a new class named `GridViewAdapter.java` to your project and add the following code snippets.
 
@@ -224,7 +224,7 @@ Notice the following in the above code snippets,
 -   The GridViewAdapter class constructor requires the id of the grid item layout and the list of data to operate on.
 -   You might be surprised, where is the `GridItem` class came from. Its not a magic, we need to add `GridItem.java` class to our project. The GridItem class looks as follows.
 
-## 6\. Download Data and Hook it to Activity
+## 6. Download Data and Hook it to Activity
 
 Now we will be heading towards hooking the adapter to GridView and make it functional. Create a new Java class and name it as `GridViewActivity.java` and perform the following steps.
 
@@ -370,7 +370,7 @@ public class GridViewActivity extends ActionBarActivity {
 
 At this point you will be able to run the app and notice that the app will download the data from the server and display on GridView.
 
-## 7\. Handle GridView Click Event
+## 7. Handle GridView Click Event
 
 Right now GridView is not responding to user clicks. Let us make it more functional by adding the following code.
 
@@ -396,7 +396,7 @@ When user clicks on a grid item, we will start another activity that displays th
 
 We need to pass the details of the item such as title, and image url for displaying it on `DetailsActivity`.
 
-## 8\. Create Details Activity Layout
+## 8. Create Details Activity Layout
 
 Add a new layout file to res/layout directory, name it as `activity_details_view.xml` and add the following code snippets.
 
@@ -427,7 +427,7 @@ Add a new layout file to res/layout directory, name it as `activity_details_view
 </FrameLayout>
 ```
 
-## 9\. Completing the Details Activity
+## 9. Completing the Details Activity
 
 The `DetailsActivity` retrieves the details passed from `GridViewActivity` and renders the details on screen. Create a new class named DetailsActivity and add the following code snippets.
 
@@ -465,10 +465,10 @@ public class DetailsActivity extends ActionBarActivity {
 }
 ```
 
-## 10\. Download Complete Example
+## 10. Download Complete Example
 
 [Download source](https://github.com/javatechig/Android-GridView-Advance-Tutorial)
 
-## 11\. Custom Activity Transition in GridView
+## 11. Custom Activity Transition in GridView
 
 Continue reading in our [next tutorial.](http://stacktips.com/android/using-custom-activity-transition-in-gridview-image-gallery)

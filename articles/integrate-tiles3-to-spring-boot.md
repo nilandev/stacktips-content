@@ -29,7 +29,7 @@ Spring Boot Web MVC configured to produce an executable WAR and ready for fully 
 
 Let us start by creating an application based on spring-boot-starter-web. You may use spring initializer to create a basic project template.
 
-## 1\. Spring Boot Dependencies
+## 1. Spring Boot Dependencies
 
 Add dependencies to the POM to pull in Tomcat, Jasper and Apache Tiles
 
@@ -71,7 +71,7 @@ Or for gradle
 apply plugin: 'war'
 ```
 
-## 2\. Project Directory Structure
+## 2. Project Directory Structure
 
 Create Web application structure the Maven way (tree showing all files):
 
@@ -108,7 +108,7 @@ ExampleApp:
     └───target
 ```
 
-## 3\. Tiles Configuration for Spring Boot
+## 3. Tiles Configuration for Spring Boot
 
 Configure tiles by adding a new configuration class – it will be pulled in by classpath scanning:
 
@@ -141,7 +141,7 @@ public class TilesConfig {
 }
 ```
 
-## 4\. Tiles Layout and Views Declaration
+## 4. Tiles Layout and Views Declaration
 
 Create the tiles configuration file: `WEB-INF/tiles/tiles.xml`
 
@@ -210,7 +210,7 @@ footer.jsp:
 </div>
 ```
 
-## 5\. Spring Boot Controller
+## 5. Spring Boot Controller
 
 Add a controller class into a controller directory:
 

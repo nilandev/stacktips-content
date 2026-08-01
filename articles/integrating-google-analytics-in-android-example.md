@@ -25,7 +25,7 @@ seo:
   metaKeywords: null
 ---
 
-# 1\. Why Analytics in Mobile app ?
+# 1. Why Analytics in Mobile app ?
 
 Analytics is one of the major parts in applications that drive revenue. Mobile App Analytics help you set and track the goal conversions you want most: purchases, clicks, or simply time spent on your app. It is required to make business inclined towards user’s interest. For example, if you developing an application for Mobile Shopper app, it is important to track the below things.
 
@@ -35,11 +35,11 @@ Analytics is one of the major parts in applications that drive revenue. Mobile A
 
 The above information is required in order to improve the product and make the service is better.
 
-# 2\. Introduction to Google Analytics
+# 2. Introduction to Google Analytics
 
 The Google Analytics Platform lets you measure user interactions with your business across various devices and environments. The platform provides all the computing resources to collect, store, process, and report on these user-interactions.
 
-# 3\. Supported Features
+# 3. Supported Features
 
 Below are the currently supported features. Read more
 
@@ -52,7 +52,7 @@ Below are the currently supported features. Read more
 5.  Flow Visualization
 6.  Real-Time Reporting
 
-# 4\. How to use Google Analytics in android
+# 4. How to use Google Analytics in android
 
 This section of tutorial we will see detailed steps to install Google Analytics for your android application. Before begin with Analytics integration we need the following items
 
@@ -61,7 +61,7 @@ This section of tutorial we will see detailed steps to install Google Analytics 
 3.  Codebase of an Android app that you like to implement the Google Analytics
 4.  Create a Google Analytics account (Requires Gmail), and then create a new app property and view in the Analytics console.
 
-# 5\. Using Google Analytics Detailed Steps
+# 5. Using Google Analytics Detailed Steps
 
 Before starting with section, I assume you already have Codebase of an Android app that you like to implement the Google Analytics. But to simplify my example, I am creating an simple Android App and integrating with Google Analytics.
 
@@ -201,10 +201,10 @@ public class MainActivity extends Activity {
 
 In this above activity code sample, we are tracking event an crashes on two button clicks. Just for demonstation purpose I am creating sample exception and tracking it.
 
-# 6\. Google Analytics Output
+# 6. Google Analytics Output
 
 [![Google Analytics Report](/media/articles/356/Google-Analytics-Report-940x623.png)](http://stacktips.com)
 
-# 7\. Download Complete Example
+# 7. Download Complete Example
 
 [Download source](https://github.com/javatechig/javatechig-android-advanced/tree/master/GoogleAnalyticsDemo)

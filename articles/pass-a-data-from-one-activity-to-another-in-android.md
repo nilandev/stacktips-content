@@ -31,7 +31,7 @@ For example, if you are developing an application for RSS News feed reader, you 
 
 [![pass a data from one Activity to another in Android](/media/articles/387/app_screenshot.gif)](http://stacktips.com)
 
-# 1\. Calling one activity from another in android
+# 1. Calling one activity from another in android
 
 We can call one activity from another by using Intents. Intent is one of the main building block which provides an abstract description of an operation to be performed. `startActivity(intent)` method belongs to your Activity class and can be used for starting a new activity.
 
@@ -40,7 +40,7 @@ Intent intent = new Intent(context, YourActivityClass.class);
 startActivity(intent);
 ```
 
-# 2\. Passing data from one activity to other in android
+# 2. Passing data from one activity to other in android
 
 An intent contains the action and optionally additional data. The data can be passed to other activity using intent p`utExtra()` method. Data is passed as extras and are key/value pairs. The key is always a String. As value you can use the primitive data types int, float, chars, etc. We can also pass `Parceable` and `Serializable` objects from one activity to other.
 
@@ -50,7 +50,7 @@ intent.putExtra(KEY, <your value here>);
 startActivity(intent);
 ```
 
-# 3\. Retrieving bundle data from android activity
+# 3. Retrieving bundle data from android activity
 
 You can retrieve the information using `getData()` methods on the Intent object. The Intent object can be retrieved via the `getIntent(`) method.
 
@@ -66,7 +66,7 @@ You can retrieve the information using `getData()` methods on the Intent object.
 
 To retrieve `Serializable` and `Parcelable` object using `getSerializableExtra(KEY)` and `getParcelableExtra(KEY)` method.
 
-# 4\. Example and case study
+# 4. Example and case study
 
 In this example, we will develop one list view of objects and clicking on a list row, it will open up another actiity displaying the detail of that row. Here, we are passing the row data from one activity to other.
 
@@ -412,6 +412,6 @@ public class NewsDetailsActivity extends Activity {
 }
 ```
 
-# 5\. Download Complete Example
+# 5. Download Complete Example
 
 Here you can download complete eclipse project source code from [**GitHub**](https://github.com/javatechig/Android-UI-Tutorials/tree/master/AndroidBundleExample).

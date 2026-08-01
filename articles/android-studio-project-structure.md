@@ -48,7 +48,7 @@ Change the build type configuration here from the bottom left corner in your And
 
 ## Android Studio Project Structure
 
-### 1\. Main Project
+### 1. Main Project
 
 This would be the entire project context. Whatever you do in IntelliJ IDEA, you do that in the context of a project. A project is an organizational unit that represents a complete software solution. A project in Android Studio is like a workspace in Eclipse. In Android Studio a project can contain multiple modules. A module in Android Studio is like a project in Eclipse. In the above screenshot, “LoginAuthenticator” is the name of my project
 
@@ -56,11 +56,11 @@ This means that, in theory, it is possible to build multiple apps within the sam
 
 ![Android Studio Project Structure](/media/articles/277/Android-Studio-Project-Structure-620x388.png)
 
-### 2\. .idea
+### 2. .idea
 
 Eclipse uses project.properties file for project-specific metadata. Here in the Android studio, this .idea does the same thing. This means the project-specific metadata is stored by Android Studio.
 
-### 3\. Project Module (app)
+### 3. Project Module (app)
 
 This is the actual project folder where your application code resides. The application folder has following sub directories
 
@@ -72,10 +72,10 @@ b. **libs :** This is a commonly seen folder in eclipse land too, which optional
 
 c. **src:** The src folder can have both application code and android unit test script. You will find two folders named “androidTest” and “main” correspond to the “src” folder. The main folder contains two subfolders java and res. The java folder contains all the java codes and res contains drawables, layouts, etc.
 
-### 4\. gradle
+### 4. gradle
 
 This is where the Gradle build system’s jar wrapper i.e. this jar is how AS communicates with Gradle installed in Windows (the OS in my case).
 
-### 5\. External Libraries
+### 5. External Libraries
 
 This is not actually a folder but a place where Referenced Libraries and information on targeted platform SDK is shown.

@@ -25,7 +25,7 @@ seo:
   metaKeywords: null
 ---
 
-### 1\. How to check if the user instance is admin Django permissions?
+### 1. How to check if the user instance is admin Django permissions?
 
 The `is_superuser` property in the User model designates that this user has all permissions without explicitly assigning them.
 
@@ -39,7 +39,7 @@ class UserAdmin(BaseUserAdmin):
         return request.user.is_superuser
 ```
 
-### 2\. How to get the Django admin URL for a model object?
+### 2. How to get the Django admin URL for a model object?
 
 You can use the URL resolver directly in a template, there's no need to write your filter. E.g.
 
@@ -52,7 +52,7 @@ You can use the URL resolver directly in a template, there's no need to write yo
 
 ref: [Django official documentation](https://docs.djangoproject.com/en/dev/ref/contrib/admin/#reversing-admin-urls)
 
-### 3\. What is a "slug" in Django?
+### 3. What is a "slug" in Django?
 
 A "slug" is a way of generating a valid URL, generally using data already obtained. For instance, a slug uses the title of an article to generate a URL. I advise to generate the slug by means of a function, given the title (or another piece of data), rather than setting it manually. An example:
 
@@ -97,6 +97,6 @@ www.example.com/article/the-46-year-old-virgin
 
 In this example, the-46-year-old-virgin is a slug: it is created from the title by down-casing all letters, and replacing spaces with hyphens -
 
-### 4\. What is a Django middleware, and how is it used?
+### 4. What is a Django middleware, and how is it used?
 
 A Django middleware is a component that sits between the web server and the view function and can perform operations on incoming requests or outgoing responses. Middleware can be used to perform tasks such as authentication, caching, logging, or modifying headers.

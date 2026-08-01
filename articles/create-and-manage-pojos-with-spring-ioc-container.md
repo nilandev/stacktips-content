@@ -31,7 +31,7 @@ For the sake of simplicity, in this example we will declare a class NameGenerato
 
 Let us first began with creating a new eclipse Maven project.
 
-## 1\. Add the required dependencies
+## 1. Add the required dependencies
 
 Add the following Maven depandencies to your project pom.xml file.
 
@@ -66,7 +66,7 @@ Add the following Maven depandencies to your project pom.xml file.
             ${org.springframework.version}
 ```
 
-## 2\. Create the POJO Class
+## 2. Create the POJO Class
 
 Let us create a NameGenerator class that has three properties— prefix, firstName, and surName.
 
@@ -118,7 +118,7 @@ Notice that, in the above code snippet the NameGenerator class has a method `get
 
 The NameGenerator class can be instantiated by using standard Java constructorn call. When you use the Spring IoC container to initialize POJOs, if you use the standard Java constructor the mechanism is called constructor injection, where as if you use setter methods the mechanism is called setter injection.
 
-## 3\. Create a XML Configuration for your POJO
+## 3. Create a XML Configuration for your POJO
 
 To define instances of a POJO class in the Spring IoC container, you have to create an XML configuration and initialize the properties.
 
@@ -158,7 +158,7 @@ Note that the constructor arguments are order based, so you have to be careful a
 
 Although a bean’s name can be defined by the name attribute of the element, the preferred way of identifying a bean is through the standard XML id attribute. In this way, if your text editor is XML-aware, it can help to validate each bean’s uniqueness at design time.
 
-## 4\. Instantiate the Spring IoC Container
+## 4. Instantiate the Spring IoC Container
 
 To create bean instances, we first need to instantiate the Spring IoC container by reading the XML configuration files (in our case `beans.xml`). Once IoC container is initialized, you can get the bean instances from the IoC container using bean name or id.
 
@@ -177,7 +177,7 @@ ApplicationContext context = new GenericXmlApplicationContext("beans.xml");
 
 Once the application context is instantiated, we can get the POJO instance and access the properties.
 
-## 5\. Get Bean Instance from the IoC Container
+## 5. Get Bean Instance from the IoC Container
 
 To get the bean instance, you need to call the `getBean()` method by pasing unique bean name.  
 Let us create a new class with a main method so that we can instantiate the bean and call the `getFullName()` method.

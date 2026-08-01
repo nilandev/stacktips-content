@@ -24,11 +24,11 @@ seo:
   metaKeywords: null
 ---
 
-## 1\. Introduction
+## 1. Introduction
 
 This is a tutorial explains how constructor works in Java. Constructor is an block of code which is executed before Object creation. Unlike methods constructors are getting called automatically.
 
-## 2\. Properties of Constructors
+## 2. Properties of Constructors
 
 1.  Constructors are getting called automatically before you create an object
 2.  You class name and the constructor name should be same otherwise compiler treats that as an different method.
@@ -36,11 +36,11 @@ This is a tutorial explains how constructor works in Java. Constructor is an blo
 4.  Since Constructor is executed before object creation, the object initialization code is normally hosted inside constructor.
 5.  Like you override an method, you can also overload an constructor in Java.
 
-## 3\. Constructor and Static
+## 3. Constructor and Static
 
 Static block is executed before constructor, because static members gets initialized during the class is getting loaded into memory but the constructors are executed only when you create instance of any object using new keyword.
 
-## 4\. Declaring Constructor in Java
+## 4. Declaring Constructor in Java
 
 In the below code snippet, we have declared two constructors in ConstructorDemo class. One without argument and other taking a String argument. A java class can have as many as overridden constructors.
 
@@ -66,11 +66,11 @@ public class ConstructorDemo {
 Constructor with no argument  
 Constructor with argument
 
-## 5\. Default Constructor in Java
+## 5. Default Constructor in Java
 
 Usually we define constructor in almost every Class we declare in Java. If no explicit constructor is specified by Programmer, Java Compiler inserts a no argument constructor inside class. This is also called default Constructor in Java. If you define your own constructor, could be parameter or without any parameter, then compiler will not add default constructor. It is always a good practice to define a constructor.
 
-## 6\. Calling Constructor and Chaining
+## 6. Calling Constructor and Chaining
 
 Constructors cannot be called explicitly like methods in java. But a constructor can call another constructor of same class or its immediate super class. Calling one constructor from another constructor in Java is called Constructor chaining. You can keyword “this” for calling constructor of same class and keyword “super” for calling constructor of super class. Call to constructor must be on the first line of any constructor or else you will get compilation error.
 
@@ -136,6 +136,6 @@ Constructor with argument
 Super Class Constructor with argument  
 Constructor with argument
 
-## 7\. Constructor Access Modifiers
+## 7. Constructor Access Modifiers
 
 Java has four basic modifiers, public, projected, private or default. You can use any of these access modifiers to constructor. You can prevent a to get initialize by other class by defining its constructor as private. Using Private constructor, only the same class can create instance of it. This is an typical example of most common singleton design pattern.

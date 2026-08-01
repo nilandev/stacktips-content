@@ -33,7 +33,7 @@ A progress bar can also be made indeterminate. In indeterminate mode, the progre
 
 [![progressbar-android](/media/articles/410/progressbar-android.png)](http://stacktips.com)
 
-## 1\. Determinate Progress Bar Example
+## 1. Determinate Progress Bar Example
 
 Here is my layout
 
@@ -157,7 +157,7 @@ Output of the above program is
 
 [![progressbar1](/media/articles/410/progressbar1.png)](http://stacktips.com)
 
-## 2\. Indeterminate Progress Bar Example
+## 2. Indeterminate Progress Bar Example
 
 In the above layout xml file, do the following changes
 

@@ -27,7 +27,7 @@ seo:
 
 A list of some commonly used Git commands to get you going with Git.
 
-## 1\. Configuring Git
+## 1. Configuring Git
 
 To tell Git who you are, run the following two commands:
 
@@ -48,12 +48,12 @@ Get the list of configurations:
 $ git config --list
 ```
 
-## 2\. Checkout Remote Project
+## 2. Checkout Remote Project
 
 Create a local copy of a remote repository  
 git clone ssh://git@github.com/\[username\]/\[repository-name\].git
 
-## 3\. Adding Local Project to Git
+## 3. Adding Local Project to Git
 
 Initialize the local directory as a Git repository.
 
@@ -103,7 +103,7 @@ Push the changes in your local repository to GitHub.
 $ git push -u origin master
 ```
 
-## 4\. Git Difference
+## 4. Git Difference
 
 To view file diff in git before commit:
 
@@ -129,7 +129,7 @@ The output of –stat is nicely coloured. If you want a more machine-readable ou
 $ git diff --numstat
 ```
 
-## 5\. Read Previous Git Commit
+## 5. Read Previous Git Commit
 
 Show full log of the last commit:
 
@@ -156,7 +156,7 @@ Show log of last N commit:
 $ git log --oneline -5
 ```
 
-## 6\. Working with Git Branches
+## 6. Working with Git Branches
 
 View list local branches
 
@@ -176,7 +176,7 @@ View list of remote branches
 $ git branch -r
 ```
 
-## 7\. Sharing & Updating Projects
+## 7. Sharing & Updating Projects
 
 Push a branch to your remote repository
 
@@ -214,7 +214,7 @@ Pull changes from the remote repository
 $ git pull origin <branch_name>
 ```
 
-## 8\. Create and Manage Branches
+## 8. Create and Manage Branches
 
 If you’re a developer you probably have used it and are familiar with git workflow. Whenever you want to commit a bug or a new feature, you need to create a branch for it, which will be a copy of your master branch. Once your fixes are ready to merge, you typically create a pull request on your new branch. The reason for this is to keep your master branch clean all the time.
 
@@ -281,7 +281,7 @@ Then you need to apply to merge changes if your branch is derivated from develop
 $ git merge <name of remote branch>/develop
 ```
 
-## 9\. Delete Branch
+## 9. Delete Branch
 
 Delete local branch: -d option stands for –delete
 
@@ -301,7 +301,7 @@ Delete a remote GIT branch
 git push origin --delete <branch_name>
 ```
 
-## 10\. Git Stashing
+## 10. Git Stashing
 
 If you run git status, you can see your dirty state:
 

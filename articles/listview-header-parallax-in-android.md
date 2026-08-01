@@ -64,7 +64,7 @@ Now declare the layout for list header. In this example, I have declared an [Ima
 </FrameLayout>
 ```
 
-## 3\. Declare List Row Layout
+## 3. Declare List Row Layout
 
 Declare another layout for your list view row. In this example, for sake of simplicity I have declared a simple `TextView`. You may design fancy list of your choice by declaring your own custom adapter.
 
@@ -81,7 +81,7 @@ Declare another layout for your list view row. In this example, for sake of simp
     android:textColor="#222"/>
 ```
 
-## 4\. Handle ListView Scroll Events
+## 4. Handle ListView Scroll Events
 
 Following step will guide you with the necessary things required in your activity to create list view, add list header and implement parallax effect.
 

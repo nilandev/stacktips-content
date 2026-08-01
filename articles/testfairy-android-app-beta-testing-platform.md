@@ -27,13 +27,13 @@ seo:
 
 Testing apps and getting feedback from users has never been an easy task in mobile development. Managing alpha and beta tests with internal and external testers alike, is a special kind of madness. So, what service will make testing Android apps easier? I’ve compiled a few below, and give you some highlights on my pick [TestFairy](http://testfairy.com/).
 
-## 1\. Beta testing and its importance
+## 1. Beta testing and its importance
 
 If we cast our memories back a few years, mobile apps often meant market presence for companies, but today they’re serious money-making businesses. If you plan to make money in the fiercely-competitive world of mobile apps, then you have to seriously consider every aspect of your application: from design and usability to performance and stability.
 
 Beta testing helps you take those aforementioned considerations into account, and address them before you’re finished app is pushed into the wild.
 
-## 2\. Choosing right beta platform
+## 2. Choosing right beta platform
 
 As there are numerous tools available, each that claim to be more useful than the other, it’s important to consider the following criteria.
 
@@ -49,7 +49,7 @@ As there are numerous tools available, each that claim to be more useful than th
 -   Support for Continuous Integration (CI) tools like Bamboo, Jenkins, etc.
 -   And perhaps most importantly, a reasonable price
 
-## 3\. Beta testing in Android
+## 3. Beta testing in Android
 
 Testing the application and getting feedback from you user is never been easy in mobile application development lifecycle. Each mobile platform follows certain steps to build and distribution process. Normally the build and distribution process differs from platform to platform.
 
@@ -67,7 +67,7 @@ During my initial exploration on this matter, TestFlight arose as one the best p
 
 In my hunt to find a replacement, [App Blade](https://appblade.com/), [Google Play](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en) and [Hockey App](http://hockeyapp.net/features/) emerged as solid options, but TestFairy leads the pack. In fact, it provides awesome support and documentation for abandoned TestFlight users so they can easily migrate over.
 
-## 4\. How testFairy works
+## 4. How testFairy works
 
 TestFairy follows very simple steps while it comes to distributing the build. All you need to do is just upload your android build (.apk) file to your TestFairy account and invite the beta testers. Once you upload the build, TestFairy server process your apk file and inject the required code to your apk. All this process takes places in the background, and you don’t have to do anything for this.
 
@@ -75,7 +75,7 @@ Once your build is processed and ready for download, you can invite beta testers
 
 [![testfairy-archiecture](/media/articles/273/testfairy-archiecture-620x409.png)](http://stacktips.com)
 
-## 5\. TestFairy highlights
+## 5. TestFairy highlights
 
 -   Test Users And Group Management
 -   Test fairy allows you to invite users and provide role based user access. You can be either an administrator, developer or a tester.
@@ -142,7 +142,7 @@ Again, TestFairy stands out as you don’t have to do any coding or no integrati
 
 Along with your video feedback and crash reports, an enterprise account allows for collecting feedback from individual testers, who simply shake the device to send a message.
 
-## 6\. Enterprise license
+## 6. Enterprise license
 
 TestFairy provides fairly many options to the free users. Free account is limited to number of applications, testers and group. There is no official record for the application limit on their website, but it is restricted to 10 apps (Information taken from personal interview with TestFairy CEO “Yair Bar-On”). Below are some of the enterprise license feature highlights
 
@@ -152,7 +152,7 @@ TestFairy provides fairly many options to the free users. Free account is limite
 4.  Taking beta testers feedback
 5.  Crash reporting with series of screenshots and video recording
 
-## 7\. CI integration
+## 7. CI integration
 
 TestFairy is very simple when it comes to integrate with CI (Continuous integration) tools like Bamboo or Jenkins. CI tools can use the below script to upload the scripts
 
@@ -165,16 +165,16 @@ curl    --sslv3 https://app.testfairy.com/api/upload
 -F comment='What’s new in this build?'
 ```
 
-## 8\. TestFairy command line uploader
+## 8. TestFairy command line uploader
 
 Once a build is uploaded, TestFairy process the build and it do some dynamic code injection. It again sign the application with keystore before the build is ready to download. And hence, if your application using features that are dependent on your production keystore key then, those features will fail to work in TestFairy generated build. Such features includes Google Map, In-App Purchases, Google Cloud Messaging (GCM) etc. To avoid such issues, with the [command line uploader script](https://github.com/testfairy/command-line-uploader), you can send TestFairy builds signed with your production keystore key, which makes sure that features dependent on Google Maps, Google Cloud Messaging and the like work.
 
-## 9\. Additional resources
+## 9. Additional resources
 
 1.  [Gradle / Android Studio Plugin](https://github.com/testfairy/testfairy-gradle-plugin)
 2.  [Command line uploader](https://github.com/testfairy/command-line-uploader)
 3.  [TestFairy API Documentation](http://docs.testfairy.com/)
 
-## 10\. Which works for you?
+## 10. Which works for you?
 
 Clearly, TestFairy has treated me well, but what works for you? If I neglected to list an alternative — or one I did mention does the trick for you — let me know in the comments! If you’d like to give TestFairy a try, take advantage of their free account, which allows for 10 applications and a maximum of 500 testers.

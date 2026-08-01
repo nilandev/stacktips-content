@@ -30,13 +30,13 @@ Frame is referred to an image. So to implement frame by frame animation in andro
 
 The following steps will guide you through step by step approach to create frame animation in Android.
 
-## 1\. Identifying the Image Frames
+## 1. Identifying the Image Frames
 
 First step towards creating frame animation is to prepare a series of images with the individual frames of your animation. Add the images to your project’s drawable folder. In this example, I have used the following sequence of images.
 
 ![](/media/articles/426/frame1.png)![](/media/articles/426/frame2.png)![](/media/articles/426/frame3.png)![](/media/articles/426/frame4.png)![](/media/articles/426/frame5.png)![](/media/articles/426/frame6.png)![](/media/articles/426/frame7.png)![](/media/articles/426/frame8.png)![](/media/articles/426/frame9.png)![](/media/articles/426/frame10.png)
 
-## 2\. Define Animation Sequence
+## 2. Define Animation Sequence
 
 Declare a XML file that defines the animation sequence that holds the list of drawables. Create a new file named `frame_animation_list.xml` and paste it to your project resource `res/anim` or `res/drawable` folder.
 
@@ -61,7 +61,7 @@ Declare a XML file that defines the animation sequence that holds the list of dr
 -   Note that the AnimationDrawable class, loads all the images into memory before it starts animation.
 -   You must be careful about using this for images of larger size. Depending on the size of the images, you have to restrict the number of frames for making animation smoother.
 
-## 3\. Declare Activity Layout
+## 3. Declare Activity Layout
 
 Now declare an image view to your activity layout where the animation will be shown. In my example, I have declared an image view and two buttons Start and Stop to control the animation. Add the following snippet to your `activity_main.xml` file.
 
@@ -102,7 +102,7 @@ Now declare an image view to your activity layout where the animation will be sh
 </RelativeLayout>
 ```
 
-## 4\. Control the Animation Behaviour
+## 4. Control the Animation Behaviour
 
 Now that we are ready with the animation sequence, we need to add this Drawable as a background resource for our ImageView. Use the following code snippet to set the AnimationDrawable as the background of the ImageView.
 
@@ -122,7 +122,7 @@ frameAnimation = (AnimationDrawable) view.getBackground();
 -   You may use `setOneShot()` method runs the animation once and then stops.
 -   The `addFrame(drawable, duration)` method can be used to add a new frame by passing a Drawable object and sets its display duration.
 
-## 5\. Completing Example Code
+## 5. Completing Example Code
 
 Now that we understand the concepts, let us complete the example. Here is the complete code that goes inside `MainActivity.java`.
 

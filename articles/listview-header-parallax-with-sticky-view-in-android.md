@@ -32,7 +32,7 @@ The output of this example in the following attached video.
 
 {{< youtube eyWDkwVnYxo >}}
 
-## 1\. Declare Activity Layout
+## 1. Declare Activity Layout
 
 To begin with let us start declaring your activity layout. It is a bit tricky. Let us take an frame layout that hosts the hero image, sticky view and a ListView.
 
@@ -73,7 +73,7 @@ To begin with let us start declaring your activity layout. It is a bit tricky. L
 The following screenshot depicts how out activity layout is defined.  
 [![How to Create ListView Parallax Effect with Sticky Header in Android](/media/articles/187/How-to-Create-ListView-Parallax-Effect-with-Sticky-Header-in-Android.png)](http://stacktips.com)
 
-## 2\. Declare List Header Layout
+## 2. Declare List Header Layout
 
 Now declare the layout for list header. In this example, I have declared an [ImageView](/articles/android-imageview-example) inside [FrameLayout](/articles/android-framelayout-example). The header view is declared as follows.
 
@@ -102,7 +102,7 @@ Notice that in the above header layout,
 -   The height of both Space objects are same as the height of hero image and sticky widget as declared in your activity layout.
 -   These two invisible views will be useful to calculate the view position and will help to create the parallel effect.
 
-## 3\. Declare List Row Layout
+## 3. Declare List Row Layout
 
 Declare another layout for your list view row. In this example, for sake of simplicity I have declared a simple `TextView`. You may design fancy list of your choice by declaring your own custom adapter.
 
@@ -119,7 +119,7 @@ Declare another layout for your list view row. In this example, for sake of simp
     android:textColor="#222"/>
 ```
 
-## 4\. Handle ListView Scroll Events
+## 4. Handle ListView Scroll Events
 
 Following step will guide you with the necessary things required in your activity to create list view, add list header and implement parallax effect.
 
@@ -216,6 +216,6 @@ public class MainActivity extends ActionBarActivity {
 }
 ```
 
-## 5\. Download Complete Source Code
+## 5. Download Complete Source Code
 
 [Download source](https://github.com/javatechig/Android-Parallax-ListView-Sticky)

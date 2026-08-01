@@ -26,7 +26,7 @@ seo:
   metaKeywords: null
 ---
 
-### 1\. What is the difference between the comparison done by the `equals()` method and the `==` operator?
+### 1. What is the difference between the comparison done by the `equals()` method and the `==` operator?
 
 In Java, the `equals()` method is used for comparing the contents of two string objects. It returns **true** if the two have the same value while the `==` operator compares the references of two string objects.
 
@@ -64,7 +64,7 @@ true
 true
 ```
 
-### 2\. What is the output of the following program?
+### 2. What is the output of the following program?
 
 ```java
 public class Test {
@@ -93,7 +93,7 @@ Method 1
 
 This is because Java will automatically promote smaller numeric types to larger numeric types as needed. In this case, the integer literal `5` can be automatically promoted to either an `int` or a `long`, and the integer literal `10` can also be promoted to either an `int` or a `long`.
 
-### 3\. How to Create an Infinite Loop in Java?
+### 3. How to Create an Infinite Loop in Java?
 
 Infinite loops are those loops that run infinitely without any breaking conditions. Some examples of consciously declaring an infinite loop are:
 
@@ -125,13 +125,13 @@ do{
 } while(true);
 ```
 
-### 4\. Explain the Diamond Problem. How does Java overcome this problem?
+### 4. Explain the Diamond Problem. How does Java overcome this problem?
 
 The Diamond Problem is a situation where a class inherits from two classes that have a common ancestor. This creates ambiguity in the path through which a method or a member variable is inherited because there are 2 possible paths to follow up the inheritance hierarchy to the common ancestor.
 
 Java does not support multiple inheritance for classes, meaning a class cannot extend more than one class. However, it supports multiple inheritance of types through the interface mechanism.
 
-### 5\. What is a `default` method in the interface? Is it possible to have a method definition in the Java interface?
+### 5. What is a `default` method in the interface? Is it possible to have a method definition in the Java interface?
 
 Therefore, to overcome this issue, Java 8 has introduced the concept of default methods (Also known as Extension Methods) which allow the interfaces to have methods with implementation without affecting the classes that implement the interface.
 
@@ -154,7 +154,7 @@ interface Vehicle {
 
 Read more about [default methods for interface](https://stacktips.com/articles/default-methods-for-interfaces-in-java8) here.
 
-### 6\. Explain how Java deals with the diamond problem due to the `default` method in the interface.
+### 6. Explain how Java deals with the diamond problem due to the `default` method in the interface.
 
 With the introduction of Default methods in interfaces in Java 8, the potential for a diamond problem arose. Default methods allow an interface to provide a default implementation for methods, which means a class can inherit concrete methods from multiple interfaces.
 
@@ -194,7 +194,7 @@ public class Child implements Interface1, Interface2 {
 }
 ```
 
-### 7\. What is Functional Interfaces?
+### 7. What is Functional Interfaces?
 
 A functional interface must contain exactly one abstract method declaration. Each lambda expression of that type will be matched to this abstract method.
 
@@ -217,7 +217,7 @@ Integer converted = converter.convert("123");
 System.out.println(converted);
 ```
 
-### 8\. Can Abstract Class in Java have Constructors?
+### 8. Can Abstract Class in Java have Constructors?
 
 Yes, abstract classes in Java can have constructors.
 
@@ -261,13 +261,13 @@ When a concrete subclass of an abstract class is instantiated, the constructor o
 
 This process is known as constructor chaining and ensures that the initialization behaviour defined in the abstract class's constructor is executed.
 
-### 9\. Why is the Main Method Static in Java?
+### 9. Why is the Main Method Static in Java?
 
 The main method is always static because static members are those methods that belong to the classes, not to an individual object. So if the main method will not be static then for every object, it will be available to all objects which is not acceptable to JVM. JVM calls the main method based on the class name itself. Not by creating the object.
 
 There must be only 1 main method in the Java program as the execution starts from the main method.
 
-### 10\. Explain Java Streams?
+### 10. Explain Java Streams?
 
 A `java.util.Stream` represents a sequence of elements on which one or more operations can be performed. Stream operations are either intermediate or terminal.
 
@@ -289,7 +289,7 @@ listItems
     .forEach(System.out::println);
 ```
 
-### 11\. How would you differentiate between a `String`, `StringBuffer`, and a `StringBuilder`?
+### 11. How would you differentiate between a `String`, `StringBuffer`, and a `StringBuilder`?
 
 A `String` is **immutable**, whereas both the `StringBuilder` and `StringBuffer` are **mutable**. In string, the String pool serves as the storage area. For StringBuilder and StringBuffer, memory is allocated heap memory storage area.
 
@@ -307,7 +307,7 @@ StringBuffer third = new StringBuffer("InterviewBit");
 StringBuilder fourth = new StringBuilder("InterviewBit");
 ```
 
-### 12\. Explain the output of the following program related to the `equals()` method of StringBuilder.
+### 12. Explain the output of the following program related to the `equals()` method of StringBuilder.
 
 ```java
 public class Demo {
@@ -333,7 +333,7 @@ This is because the `equals()` method in the `StringBuilder` class does not over
 
 Since `sb1` and `sb2` are references to two different `StringBuilder` objects even though they contain the same sequence of characters, the `equals()` method inherited from the `Object` class will return `false`.
 
-### 13\. What is method overriding? What restrictions are in place on method overriding?
+### 13. What is method overriding? What restrictions are in place on method overriding?
 
 When a class defines a method using the same name, same return type, and same argument list as that of a method in its superclass, it is said to be overridden.
 
@@ -341,13 +341,13 @@ When the method is invoked for an object, it is the overridden method that is ca
 
 Following are some of the restrictions placed on method overriding: - Overridden methods must have the same name, argument list, and return type. - The overriding method may not limit the access of the method it overrides. Methods may be overridden to be more public, not more private. - The overriding method may not throw any exceptions that may not be thrown by the overridden method.
 
-### 14\. What is the Difference Between an Inner Class and a Sub-Class?
+### 14. What is the Difference Between an Inner Class and a Sub-Class?
 
 An Inner class is a class that is nested within another class. An Inner class has access rights to the class which is nesting it and it can access all variables and methods defined in the outer class.
 
 A sub-class is a class that inherits from another class called a superclass. Sub-class can access all public and protected methods and fields of its superclass.
 
-### 15\. What are the various access specifiers used for class definition in Java?
+### 15. What are the various access specifiers used for class definition in Java?
 
 Access specifiers are the keywords used before a class name that defines the access scope. The types of access specifiers for classes are:
 
@@ -356,13 +356,13 @@ Access specifiers are the keywords used before a class name that defines the acc
 -   **Default:** Method, Field, and class can be accessed only from the same package and not from outside of its native package.
 -   **Private:** Method, Field can be accessed from the same class to which they belong.
 
-### 16\. Explain encapsulation in OOPS
+### 16. Explain encapsulation in OOPS
 
 Encapsulation is a concept in Object Oriented Programming (OOP) for combining properties and methods in a single unit.
 
 Encapsulation helps programmers to follow a modular approach for software development as each object has its own set of methods and variables and serves its functions independently of other objects. Encapsulation also serves the data hiding purpose.
 
-### 17\. What is a Singleton class? Give a Practical example of when should you use Singleton class.
+### 17. What is a Singleton class? Give a Practical example of when should you use Singleton class.
 
 Singleton design pattern belongs to the creational family of patterns that governs the instantiation process. This pattern ensures at most one instance of a class is ever created through the application lifecycle.
 
@@ -374,7 +374,7 @@ Following are some of the examples where Singleton classes are best suited:
 
 For the step-by-step guide to implement singleton class visit [Singleton Design Pattern](https://stacktips.com/articles/singleton-design-pattern-in-java).
 
-### 18\. What is the difference between continue and break statement?
+### 18. What is the difference between continue and break statement?
 
 The `break` and `continue` are two important keywords used in the loops. When a break keyword is used in a loop, the loop is broken instantly while when the continue keyword is used, the current iteration is broken and the loop continues with the next iteration.
 
@@ -401,11 +401,11 @@ for (counter = 0; counter < 10; counter++)
 }
 ```
 
-### 19\. What is the difference between double and float variables in Java?
+### 19. What is the difference between double and float variables in Java?
 
 In Java, float takes 4 bytes in memory while Double takes 8 bytes in memory. Float is a single-precision floating-point decimal number while Double is a double-precision decimal number.
 
-### 20\. What is the Final Keyword in Java?
+### 20. What is the Final Keyword in Java?
 
 A variable declared with the final keyword is a constant in Java. Value can be assigned only once and after the assignment, the value of a constant can’t be changed.
 
@@ -419,11 +419,11 @@ When a method is declared as final, it can NOT be overridden by the subclasses. 
 
 When a class is declared as final, it cannot be inherited. Example String, Integer, and other wrapper classes.
 
-### 21\. Can we declare a class as Abstract without having any abstract method?
+### 21. Can we declare a class as Abstract without having any abstract method?
 
 Yes, we can create an abstract class by using the abstract keywords before the class names even if it doesn’t have any abstract method. However, if a class has even one abstract method, it must be declared as abstract otherwise it will give an error.
 
-### 22\. What is the difference between an abstract class and an interface in Java?
+### 22. What is the difference between an abstract class and an interface in Java?
 
 The primary difference between an abstract class and an interface is that an interface can only possess a declaration of public static methods with no concrete implementation while an abstract class can have members with any access specifiers (public, private, etc) with or without a concrete implementation.
 
@@ -431,21 +431,21 @@ Another key difference in the use of abstract classes and interfaces is that a c
 
 A class can implement multiple interfaces but it can extend only one abstract class.
 
-### 23\. Can we declare the main method of our class as private?
+### 23. Can we declare the main method of our class as private?
 
 In Java, the main method must be public static to run any application correctly. If the main method is declared as private, the developer won’t get any compilation error however, it will not get executed and will give a runtime error.
 
-### 24\. How we can execute any code even before the main method?
+### 24. How we can execute any code even before the main method?
 
 If we want to execute any statements before even the creation of objects at the load time of the class, we can use a static block of code in the class. Any statements inside this static block of code will get executed once at the time of loading the class even before the creation of objects in the main method.
 
-### 25\. What is a Serializable interface?
+### 25. What is a Serializable interface?
 
 Serializable is a marker interface. When an object has to be transferred over a network ( typically through RMI or EJB) or persists the state of an object to a file, the object Class needs to implement a Serializable interface.
 
 Implementing this interface will allow the object converted into a byte stream and transferred over a network.
 
-### 26\. What is the use of `serialVersionUID`?
+### 26. What is the use of `serialVersionUID`?
 
 During object serialization, the default Java serialization mechanism writes the metadata about the object, which includes the class name, field names, types, and superclass. This class definition is stored as a part of the serialized object. This stored metadata enables the deserialization process to reconstitute the objects and map the stream data into the class attributes with the appropriate type every time an object is serialized the Java serialization mechanism automatically computes a hash value.
 
@@ -455,17 +455,17 @@ So when the serialized object is retrieved, the JVM first evaluates the suid of 
 
 Changes to a serializable class can be compatible or incompatible.
 
-### 27\. Explain the difference between JDK, JRE, and JVM.
+### 27. Explain the difference between JDK, JRE, and JVM.
 
 JVM (Java Virtual Machine): - The runtime engine that executes Java bytecode. It is platform-dependent, meaning different OS/hardware needs different JVM - It also provides memory management and security JRE (Java Runtime Environment): - JRE Contains the JVM and includes core libraries and other components to run Java applications - It is required for running compiled Java programs JDK (Java Development Kit): - JDK contains the JRE. It includes development tools like compiler, debugger, and documentation - You need JDK for developing Java applications
 
-### 28\. How does garbage collection work in Java?
+### 28. How does garbage collection work in Java?
 
 Garbage collection in Java is an automatic memory management process that frees up memory occupied by objects that are no longer in use. It identifies which objects in memory are no longer reachable and periodically removes the unreachable objects from memory.
 
 Garbage collection (GC) helps to prevent memory leaks and manage the limited memory available in Java applications. The typical GC process uses a **Mark-and-Sweep** algorithm.
 
-### 29\. Explain the differences between checked and unchecked exceptions
+### 29. Explain the differences between checked and unchecked exceptions
 
 | Checked Exceptions | Unchecked exceptions |
 | --- | --- |
@@ -475,7 +475,7 @@ Garbage collection (GC) helps to prevent memory leaks and manage the limited mem
 
 Read more about [exception handling in Java](https://stacktips.com/courses/getting-started-with-java/java-exceptions) here.
 
-### 30\. What is the purpose of the `transient` keyword in Java?
+### 30. What is the purpose of the `transient` keyword in Java?
 
 Serialization is the process of converting an object into a byte stream so it can be saved to a file or transferred over a network. Deserialization is the reverse process, where the byte stream is converted back into an object.
 

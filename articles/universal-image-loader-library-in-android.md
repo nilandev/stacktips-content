@@ -44,11 +44,11 @@ Universal Image Loader is an smart and powerful library that helps in loading, c
 
 Integrating this library is quite easy. Here we’ll show you steps to download and integrate this library in Android application.
 
-#### 1\. Download Universal Image Loader
+#### 1. Download Universal Image Loader
 
 **[Download Universal Image Loader JAR](https://github.com/nostra13/Android-Universal-Image-Loader/raw/master/downloads/universal-image-loader-1.9.1-with-sources.jar)** and put the JAR in the **libs** folder of your Android project. You can also fork the library on [GitHub](https://github.com/nostra13/Android-Universal-Image-Loader)
 
-#### 2\. Mainfest permissions
+#### 2. Mainfest permissions
 
 Add below required permission in your application Manifest file.
 
@@ -64,7 +64,7 @@ Add below required permission in your application Manifest file.
 </manifest>
 ```
 
-#### 3\. Library setup in your Application class
+#### 3. Library setup in your Application class
 
 ```java
 import android.app.Application;
@@ -98,7 +98,7 @@ public class MyApplication extends Application {
 }
 ```
 
-#### 4\. Download and display bitmap on ImageView
+#### 4. Download and display bitmap on ImageView
 
 ```java
 //your image url

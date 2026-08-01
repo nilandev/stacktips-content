@@ -26,7 +26,7 @@ seo:
 
 Scheduling and repeating alarms are generally used as a local reminder to notify user about some event. For example, a mobile live TV streaming application can use local reminder to notify users when a specific program starts. Note that, this is different form Server push notification, mainly because it is purely managed by mobile client.
 
-## 1\. AlarmManager in Android
+## 1. AlarmManager in Android
 
 `AlarmManager` is a class in Android allows you to access device system alarm service. Using AlarmManager, you can schedule to execute certain piece of code a particular time. Let us dive into details of AlarmManager specifics:
 
@@ -38,7 +38,7 @@ Scheduling and repeating alarms are generally used as a local reminder to notify
 
 Note, You need to take extra care while working with AlarmManager. A poorly designed AlarmManager can drain your device battery.
 
-## 2\. Setting Repeat Alarm
+## 2. Setting Repeat Alarm
 
 Android supports two clock types for alarm service; elapsed real time and real time clock (RTC). Elapsed real time uses the time since device last booted. Real time clock (RTC) uses UTC time for alarm service clock. RTC is most commonly used for setting alarm service in android. The following example, using RTC to schedule alarm.
 
@@ -95,7 +95,7 @@ Let us have a look into our activity layout file (my\_activity.xml)
 
 [![AlarmManager Example in Android](/media/articles/261/AlarmManager-Example-in-Android-620x433.png)](http://stacktips.com)
 
-## 3\. Defining Alarm BroadcastReceiver
+## 3. Defining Alarm BroadcastReceiver
 
 In this example, we are associating alarm service with broadcast receiver. Alarm service will invoke this receiver on scheduled time. For the sake of simplicity we are just showing an toast to user for each time the alarm is invoked. You may write your logic to start a service or download task.
 
@@ -120,7 +120,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 }
 ```
 
-## 4\. Schedule & Cancel Alarm
+## 4. Schedule & Cancel Alarm
 
 In the above two steps we have defined activity layout and alarm broadcast receiver. Let us have a look into MainActivity.java file. Inside MyActivity class, we have defined three simple methods start(), stop() and startAt10(). The start() method schedule the alarm, cancel() method cancel the scheduled alarm, and startAt!0() method will start the alarm at 10:30 PM with a fixed 20 minutes interval.
 
@@ -204,7 +204,7 @@ public class MyActivity extends Activity {
 }
 ```
 
-## 5\. Re-Starting Alarm Service on Device Reboot
+## 5. Re-Starting Alarm Service on Device Reboot
 
 As discussed earlier, once an alarm service is started, it execute until it is explicitly stopped or until device reboots. This means that, if your device is restarted then your alarm is stopped. To avoid such situation, you have to restart your alarm service as soon as device boot completes. Below code snippet will help you to start alarm service once device reboots.
 
@@ -243,7 +243,7 @@ public class DeviceBootReceiver extends BroadcastReceiver {
 }
 ```
 
-## 6\. Declaring Application Manifest
+## 6. Declaring Application Manifest
 
 To start your alarm on device reboot, you have to register your above declared `DeviceBootReciever` class in your application manifest. This also need `android.permission.RECEIVE_BOOT_COMPLETED`
 
@@ -288,6 +288,6 @@ To start your alarm on device reboot, you have to register your above declared `
 </manifest>
 ```
 
-## 7\. Download Source Code
+## 7. Download Source Code
 
 Download Complete source code from [**GitHub**](https://github.com/javatechig/Android-Alarm-Service-Example)

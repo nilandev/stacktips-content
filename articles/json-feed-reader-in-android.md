@@ -44,7 +44,7 @@ You will learn following things in this article.
 -   Using Share Intent to Share Article in Android
 -   Loading Original Feed Link on Android WebView
 
-# 1\. Designing User Interface
+# 1. Designing User Interface
 
 Here in this example, we are using three Activities. While first Activity is used to list out all feed items on a ListView, Second one is used to show the image preview and the description of each feed. Another Activity is used to view the original feed item on a WebView.
 
@@ -309,7 +309,7 @@ In FeedDetailsActivity, we are using Android ActionBar commands.
 
 Now we are done with all xml layouts. Let us have a look into the Activity components
 
-# 2\. AsyncTask to Download Data from Server
+# 2. AsyncTask to Download Data from Server
 
 AsyncTask enables you to implement MultiThreading without get Hands dirty into threads. AsyncTask enables proper and easy use of the UI thread. It allows performing background operations and passing the results on the UI thread. If we are doing something isolated related to UI, for example downloading data and prepare for a list, it is recemended to use AsyncTask.
 
@@ -396,7 +396,7 @@ public JSONObject getJSONFromUrl(String url) {
 
 The above method will download the Json feed and returned as a JSONObject. Now its the time to parse the JSON feed data
 
-# 3\. JSON Parsing In Android
+# 3. JSON Parsing In Android
 
 The aove Feed link gives the below JSON object structure.
 
@@ -469,7 +469,7 @@ public void parseJson(JSONObject json) {
 }
 ```
 
-# 4\. Downloading Image Asynchronously
+# 4. Downloading Image Asynchronously
 
 A good practice to bring the best performance for android application is to make sure your main thread does the minimum amount of work. Any long running tasks or heavy operations are usually performed in a different thread. Typical long running tasks could be network operations, reading files form memory, animations, etc.
 
@@ -477,7 +477,7 @@ Check out the below post for detailed implementation
 
 [http://stacktips.com/android/asynchronous-image-loader-in-android-listview/](http://stacktips.com/android/asynchronous-image-loader-in-android-listview/)
 
-# 5\. Share Article in Android
+# 5. Share Article in Android
 
 One of the best and most useful feature is sharing of information across different social networks. Android platform provides handy way of sharing contents across different application using Share Intent. It lists out all of the available application that can handle the share event. Check out the code snippet
 
@@ -491,7 +491,7 @@ startActivity(Intent.createChooser(sendIntent, "Share using"));
 
 Note: As sharing intent is taken care by platform, we don’t have control on the way and behavior of each application while sharing. For example, twitter has a limit of maximum of 140 characters for a message.
 
-# 6\. Loading url on Android WebView
+# 6. Loading url on Android WebView
 
 We have an excellent post on using WebView in another section on our site. It will gives complete understanding on loading external URL on android WebView and different configurations.
 
@@ -501,10 +501,10 @@ We have an excellent post on using WebView in another section on our site. It wi
 
 [http://stacktips.com/android/progressbar-while-loading-webview/](http://stacktips.com/android/progressbar-while-loading-webview/)
 
-# 7\. Download Complete Example
+# 7. Download Complete Example
 
 [![dl_github](/media/articles/420/dl_github.png)](https://github.com/javatechig/javatechig-android-advanced/tree/master/Feed%20Reader)
 
-# 8\. Working Demo
+# 8. Working Demo
 
 {{< youtube YTAMIK_ldhA >}}
