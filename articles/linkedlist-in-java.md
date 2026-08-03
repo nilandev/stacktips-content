@@ -29,13 +29,23 @@ While an `ArrayList` uses a normal array to store elements, a `LinkedList` uses 
 
 ## Key Properties of LinkedList
 
-Each element inside a `LinkedList` is called a node. A node holds the data and a reference to the next element in the list.
+Each element inside a `LinkedList` is called a node. A node holds the data along with references to both the previous and next node — that's what makes it doubly linked.
 
 ![](/media/summernote/linkedlist.jpg)  
 
-LinkedList is preferred when the list size is unknown beforehand and the ability to grow or shrink dynamically is important. It is also very efficient when frequent insertions and removals of items from the middle of the list are needed.
+LinkedList is preferred when the list size is unknown beforehand and the ability to grow or shrink dynamically is important.
 
 The `LinkedList` in Java is not synchronized by default. If multiple threads attempt to modify a `LinkedList` concurrently, it must be synchronized externally to prevent unexpected behaviour.
+
+### "Fast middle inserts" is a half-truth
+
+A common claim is that `LinkedList` is efficient for inserting or removing in the middle. That's only true if you already hold a `ListIterator` positioned at that spot — the actual splice is O(1). But `linkedList.add(index, value)` and `linkedList.remove(index)` still have to *walk the list node by node to find that index first*, which is O(n). `LinkedList` does optimize the walk itself — `node(index)` traverses from the head if `index < size / 2`, and from the tail otherwise — but that only halves the constant, it doesn't change the complexity.
+
+In practice, `get(index)` is also O(n) for the same reason, which rules `LinkedList` out for anything that needs random access.
+
+### Memory cost
+
+Each element costs more than it looks like it should. Where `ArrayList` stores a bare reference per slot in a contiguous array, every `LinkedList` element is wrapped in its own `Node` object holding the value plus `prev`/`next` references — roughly 3–4x the memory per element once you count object headers. That overhead, plus the poor cache locality of chasing pointers scattered across the heap, is why `LinkedList` tends to lose real-world benchmarks against `ArrayList` and `ArrayDeque` even in scenarios that look like its strong suit on paper.
 
 ### Creating and Initialising LinkedList
 
@@ -57,26 +67,28 @@ linkedList.addFirst("Orange");
 // Adding an element to the end
 linkedList.addLast("Orange");
 
-// Adding elements from another collection
-List<String> arrayList = Arrays.asList("Apple", "Banana", "Orange");
-List<String> linkedList = new LinkedList<>(arrayList);
- 87
 // Using ListIterator to add items to a specific position
 ListIterator<String> iterator = linkedList.listIterator();
 iterator.next();
 iterator.add("Banana");
-
-// Using the offer method
-Queue<String> linkedList = new LinkedList<>();
-linkedList.offer("Apple");
-linkedList.offer("Banana");
-linkedList.offer("Orange");
 ```
 
--   The `add()` method to insert elements at the end of the list.
--   The `offer()` methods are part of the `Deque` interface and can be used to add elements to the `LinkedList`. It returns `true` if the element was added successfully, and `false` if it was not.
+```java
+// Creating a LinkedList from another collection
+List<String> arrayList = Arrays.asList("Apple", "Banana", "Orange");
+List<String> linkedListFromCollection = new LinkedList<>(arrayList);
 
-### Iterate over an LinkedList
+// Using the offer method
+Queue<String> queue = new LinkedList<>();
+queue.offer("Apple");
+queue.offer("Banana");
+queue.offer("Orange");
+```
+
+-   The `add()` method inserts elements at the end of the list.
+-   The `offer()` methods come from the `Deque` interface and can be used to add elements to a `LinkedList`. They return `true` if the element was added successfully, and `false` otherwise.
+
+### Iterate over a LinkedList
 
 ```java
 // Using a For-Each Loop
@@ -139,30 +151,30 @@ linkedList.removeIf(fruit -> fruit.startsWith("B"));
 linkedList.clear();
 ```
 
-Get the Size of LinkedList
+Get the size of a LinkedList
 
 ```java
-linkedList.size()
+linkedList.size();
 ```
 
-Check if the Item exists in LinkedList
+Check if an item exists in a LinkedList
 
 ```java
-linkedList.contains()
+linkedList.contains("Banana");
 ```
 
 ### Example
 
-Let us create a simple playlist using LinkedList where we can add, remove, and display songs.
+Here's a simple playlist built on `LinkedList` where we can add, remove, and display songs.
 
 ```java
 public record Song(String title, String artist) {
 }
 
-public class _1a_MusicPlayList {
+public class MusicPlaylist {
     private final LinkedList<Song> playlist;
 
-    public _1a_MusicPlayList() {
+    public MusicPlaylist() {
         playlist = new LinkedList<>();
     }
 
@@ -181,7 +193,7 @@ public class _1a_MusicPlayList {
     }
 
     public static void main(String[] args) {
-        _1a_MusicPlayList myPlaylist = new _1a_MusicPlayList();
+        MusicPlaylist myPlaylist = new MusicPlaylist();
 
         Song song1 = new Song("Bohemian Rhapsody", "Queen");
         Song song2 = new Song("Imagine", "John Lennon");
@@ -202,3 +214,12 @@ public class _1a_MusicPlayList {
     }
 }
 ```
+
+### Iterating and removing safely
+
+`LinkedList`'s iterator is fail-fast, same as `ArrayList` — it tracks `modCount` and throws `ConcurrentModificationException` if you mutate the list through anything other than the iterator itself while iterating. Use `Iterator.remove()`, `listIterator().remove()`, or `removeIf()` instead of calling `linkedList.remove(...)` inside a for-each loop.
+
+## LinkedList vs the Alternatives
+
+-   **vs `ArrayList`**: `ArrayList` beats `LinkedList` on nearly every practical metric — cache locality, memory per element, and O(1) indexed access. `LinkedList`'s theoretical edge (O(1) splice) only materializes when you're already holding a `ListIterator` at the insertion point.
+-   **vs `ArrayDeque`**: if you're using `LinkedList` purely as a `Queue` or `Deque` (via `offer`/`poll`/`push`/`pop`), `ArrayDeque` is faster and lighter for that same job — no per-node allocation, better cache behaviour, and the JDK documentation explicitly recommends it over `LinkedList` for that use case. `LinkedList` only wins if you specifically need `null` elements, which `ArrayDeque` disallows.

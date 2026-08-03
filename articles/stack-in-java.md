@@ -37,12 +37,16 @@ Stack allows the following operations:
 -   **empty()**: Checks if the stack is empty.
 -   **search(item)**: Locates the presence of an item in the stack and it returns the distance from the top. If there are duplicate items it returns the top most occurrence.
 
-As the `Stack` extends `Vector`, all the stack operations are synchronized and thread-safe.
+As the `Stack` extends `Vector`, all the stack operations are synchronized and thread-safe — and it inherits `Vector`'s doubling growth strategy and non-fail-fast `Enumeration`, covered in the [Vector article](/articles/vector-in-java).
 
-For example, if you are implementing a text editor functionally, we need to track all type actions to allow undo/redo functionality. The `Stack` will be a good choice for such implementation.
+One detail worth knowing: `push()` and `pop()` operate on the *end* of the underlying array, not the beginning. `push()` is really just `addElement()`, and `pop()` removes the last element — so both are O(1) amortized, not O(n). If `push`/`pop` worked at index 0 instead, every operation would require shifting the entire array.
+
+`search(item)` returns a **1-based** distance from the top, not a zero-based index — `search()` returning `1` means "the top element," not "index 1."
+
+Take a text editor's undo/redo feature as an example — you need to track every typing action in order, and a `Stack` is a natural fit for that.
 
 ```java
-public class _1a_TextEditor {
+public class TextEditor {
     private final Stack<String> textStack = new Stack<>();
     private final Stack<String> undoStack = new Stack<>();
 
@@ -74,7 +78,7 @@ public class _1a_TextEditor {
     }
 
     public static void main(String[] args) {
-        _1a_TextEditor editor = new _1a_TextEditor();
+        TextEditor editor = new TextEditor();
         editor.type("Hello, ");
         editor.type("world!");
         editor.display();
@@ -94,3 +98,20 @@ public class _1a_TextEditor {
     }
 }
 ```
+
+## Why the JDK Recommends Against Stack
+
+The `Stack` Javadoc says outright: prefer `Deque` for LIFO operations, implemented by `ArrayDeque`. Two reasons:
+
+-   **`Stack extends Vector`**, which means it inherits `Vector`'s entire `List` API. Nothing stops you from calling `stack.add(0, item)` or `stack.remove(0)` on a `Stack` and silently breaking the LIFO ordering the class exists to enforce — the type system won't catch it.
+-   `Stack` inherits `Vector`'s synchronized-on-every-method behaviour and doubling growth strategy, both of which cost you in the (far more common) single-threaded case where you don't need the synchronization at all.
+
+`ArrayDeque` doesn't have either problem: it isn't a `List`, so it can't expose operations that would break stack semantics, and it's unsynchronized by default with array-backed storage that resizes more efficiently. The `textStack`/`undoStack` fields in the example above translate directly:
+
+```java
+private final Deque<String> textStack = new ArrayDeque<>();
+private final Deque<String> undoStack = new ArrayDeque<>();
+// push(), pop(), isEmpty() are all the same method names on Deque
+```
+
+The only thing you lose is `search()` — `Deque` has no equivalent, since finding an item's position isn't really a stack operation to begin with.

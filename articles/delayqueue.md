@@ -33,6 +33,14 @@ Elements in the `DelayQueue` must implement the `Delayed` interface, which requi
 
 The queue blocks retrieval operations until the delay of the head element has expired.
 
+### How it actually works
+
+Internally, `DelayQueue` wraps a `PriorityQueue` — the same binary heap [covered in the PriorityQueue article](/articles/priorityqueue-in-java) — ordered by `compareTo()`, guarded by a `ReentrantLock` and a `Condition`. `take()` peeks the head; if its delay hasn't expired, the calling thread awaits on the condition for exactly that remaining duration (not a busy loop) and re-checks on wake. Internally it also uses a "leader-follower" optimization: only one waiting thread (the "leader") ever times its wait against the head element's actual delay — every other waiting thread just blocks indefinitely until signaled, which avoids every consumer thread waking up and re-checking the clock every time the head changes.
+
+### Its iterator makes no ordering promises at all
+
+This is worth calling out explicitly, because it's easy to assume `iterator()` returns elements in delay/expiry order — it doesn't. `DelayQueue`'s iterator doesn't even guarantee the heap-order that `PriorityQueue`'s iterator gives you; the Javadoc explicitly says it makes no guarantees of any kind about traversal order. It's also **weakly consistent** rather than fail-fast: it won't throw `ConcurrentModificationException` if the queue is modified during iteration, and it may or may not reflect those concurrent changes. If you need the current contents in delay order, drain via `take()`/`poll()`, or copy with `toArray()` and sort.
+
 **Example:** Suppose you are developing a system where tasks need to be executed after a certain delay, such as sending out delayed notifications.
 
 ```java
@@ -87,3 +95,8 @@ Notifying Task: {name='Task 3', startTime=1721688863846}
 Notifying Task: {name='Task 1', startTime=1721688865846}
 Notifying Task: {name='Task 2', startTime=1721688870846}
 ```
+
+## DelayQueue vs the Alternatives
+
+-   **vs `ScheduledExecutorService`**: for the common case of "run this task after a delay" or "run this task repeatedly," `ScheduledExecutorService`/`ScheduledThreadPoolExecutor` is the higher-level tool and handles thread management for you. Reach for `DelayQueue` when you need custom control over the consumer side — for example, a cache that evicts entries only after they've expired, where you're pulling expired items yourself rather than firing a fixed callback.
+-   **vs a plain `PriorityQueue` with manual sleep logic**: `DelayQueue` already handles the blocking-until-ready and multi-consumer coordination correctly, including the leader-follower optimization. Reimplementing that on top of `PriorityQueue` yourself is a lot of concurrency detail to get right for no benefit.
