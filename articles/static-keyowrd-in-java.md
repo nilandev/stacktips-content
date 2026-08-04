@@ -17,7 +17,7 @@ tags:
   - static-variables-methods
   - static-nested-class-java
   - java-static-vs-instance
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 21
 seo: 
   metaTitle: null

@@ -16,7 +16,7 @@ tags:
   - java-for-loop
   - java-while-loop
   - do-while-loop-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 7
 seo: 
   metaTitle: null

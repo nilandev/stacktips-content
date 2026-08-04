@@ -17,7 +17,7 @@ tags:
   - abstract-method-java
   - java-class-inheritance
   - java-oop-basics
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 13
 seo: 
   metaTitle: null

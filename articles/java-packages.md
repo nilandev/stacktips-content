@@ -16,7 +16,7 @@ tags:
   - java-package-keyword
   - java-import-statement
   - java-namespace-organization
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 9
 seo: 
   metaTitle: null

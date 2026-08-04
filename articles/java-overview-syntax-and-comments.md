@@ -16,7 +16,7 @@ tags:
   - java-syntax-basics
   - java-comments
   - hello-world-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 2
 seo: 
   metaTitle: null

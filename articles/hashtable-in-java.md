@@ -17,7 +17,7 @@ tags:
   - hashtable-vs-hashmap
   - thread-safe-collections
   - java-collections-framework
-course: getting-started-with-java
+course: beginners-guide-to-java-collections
 displayOrder: 16
 seo: 
   metaTitle: "Hashtable in Java: Thread-Safe Key-Value Store Explained"

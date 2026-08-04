@@ -17,7 +17,7 @@ tags:
   - maven-command-line-project
   - maven-build-lifecycle
   - maven-quickstart-archetype
-course: getting-started-with-maven
+course: maven-for-beginners
 displayOrder: 3
 seo: 
   metaTitle: "Creating a Java Project Using Maven Command Line"

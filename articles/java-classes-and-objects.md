@@ -17,7 +17,7 @@ tags:
   - java-constructors
   - java-oop-fundamentals
   - java-class-blueprint
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 8
 seo: 
   metaTitle: null

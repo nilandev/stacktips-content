@@ -16,7 +16,7 @@ tags:
   - java-arithmetic-operators
   - java-math-class
   - java-math-methods
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 19
 seo: 
   metaTitle: null

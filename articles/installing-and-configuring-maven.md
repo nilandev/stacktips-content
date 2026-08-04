@@ -17,7 +17,7 @@ tags:
   - install-maven-windows
   - sdkman-install-java
   - maven-environment-variables-setup
-course: getting-started-with-maven
+course: maven-for-beginners
 displayOrder: 2
 seo: 
   metaTitle: "Installing and Configuring Maven on Windows and macOS"

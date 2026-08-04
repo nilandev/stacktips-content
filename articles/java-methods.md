@@ -16,7 +16,7 @@ tags:
   - java-methods-tutorial
   - method-parameters-return-java
   - code-reuse-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 4
 seo: 
   metaTitle: null

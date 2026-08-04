@@ -16,7 +16,7 @@ tags:
   - java-interface-example
   - abstract-methods-java
   - interface-vs-abstract-class-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 12
 seo: 
   metaTitle: null
