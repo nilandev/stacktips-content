@@ -16,7 +16,7 @@ tags:
   - java-regex-pattern-matcher
   - regular-expressions-java
   - find-replace-regex-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 20
 seo: 
   metaTitle: null

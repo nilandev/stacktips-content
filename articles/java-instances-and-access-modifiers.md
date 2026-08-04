@@ -16,7 +16,7 @@ tags:
   - java-access-modifiers
   - public-private-protected-java
   - java-class-instances
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 11
 seo: 
   metaTitle: null

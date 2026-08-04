@@ -17,7 +17,7 @@ tags:
   - java-variable-declaration
   - java-variable-naming-rules
   - local-vs-instance-variables
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 3
 seo: 
   metaTitle: null

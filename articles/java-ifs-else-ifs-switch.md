@@ -16,7 +16,7 @@ tags:
   - java-if-else-statement
   - java-switch-case
   - comparison-operators-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 6
 seo: 
   metaTitle: null

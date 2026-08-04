@@ -17,7 +17,7 @@ tags:
   - java-linkedlist
   - java-hashmap-hashset
   - java-collections-framework
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 17
 seo: 
   metaTitle: null

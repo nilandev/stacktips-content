@@ -16,7 +16,7 @@ tags:
   - java-enum-basics
   - defining-enum-java
   - iterating-enum-values-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 12
 seo: 
   metaTitle: null

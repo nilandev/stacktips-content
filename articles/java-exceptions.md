@@ -16,7 +16,7 @@ tags:
   - java-exception-handling
   - try-catch-finally-java
   - arithmeticexception-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 16
 seo: 
   metaTitle: null

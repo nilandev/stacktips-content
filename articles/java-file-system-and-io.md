@@ -16,7 +16,7 @@ tags:
   - java-file-class
   - read-write-file-java
   - java-io-package
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 18
 seo: 
   metaTitle: null

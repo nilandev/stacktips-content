@@ -17,7 +17,7 @@ tags:
   - getter-setter-methods-java
   - java-private-fields
   - java-oop-principles
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 10
 seo: 
   metaTitle: null

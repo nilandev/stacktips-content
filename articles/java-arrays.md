@@ -17,7 +17,7 @@ tags:
   - java-array-sorting
   - java-array-iteration
   - java-arrays-tutorial
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 5
 seo: 
   metaTitle: null

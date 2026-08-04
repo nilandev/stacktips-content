@@ -16,7 +16,7 @@ tags:
   - java-inheritance-example
   - extends-keyword-java
   - parent-child-class-java
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 14
 seo: 
   metaTitle: null

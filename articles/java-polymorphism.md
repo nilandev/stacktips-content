@@ -16,7 +16,7 @@ tags:
   - method-overloading-java
   - method-overriding-java
   - java-polymorphism-example
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 15
 seo: 
   metaTitle: null

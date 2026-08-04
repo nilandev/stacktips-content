@@ -16,7 +16,7 @@ tags:
   - java-date-class
   - java-time-package
   - java-localdate-localdatetime
-course: maven-for-beginners
+course: getting-started-with-java
 displayOrder: 19
 seo: 
   metaTitle: null
