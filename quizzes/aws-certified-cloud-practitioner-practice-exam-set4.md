@@ -6,7 +6,7 @@ excerpt: "CLF-C01 AWS Certified Cloud Practitioner Practice Exam - Test your ski
 difficulty: beginner
 duration: 15
 thumbnail: "media/uploads/articles/AWS_Certified_Cloud_Practitioner_Practice_Exam_XlzUoOZ_ry9qWy2.jpeg"
-topics: [html]
+topics: [aws]
 description: |
   Description
   

@@ -6,7 +6,7 @@ excerpt: "Here is an advanced quiz on Python covering various topics for practic
 difficulty: beginner
 duration: 30
 thumbnail: "media/uploads/articles/python-advance-quiz_1.jpg"
-topics: [html]
+topics: [python]
 description: |
   The test contains 50 questions and has a time imit of 30 minutes
   

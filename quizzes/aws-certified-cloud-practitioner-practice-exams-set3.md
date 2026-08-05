@@ -6,7 +6,7 @@ excerpt: "The test contains 30 questions and has a time imit of 30 minutes"
 difficulty: beginner
 duration: 15
 thumbnail: "media/uploads/articles/AWS_Certified_Cloud_Practitioner_Practice_Exam_XlzUoOZ.jpeg"
-topics: [html]
+topics: [aws]
 description: |
   Description
   

@@ -6,7 +6,7 @@ excerpt: "The test contains 50 questions and has a time imit of 30 minutes"
 difficulty: beginner
 duration: 30
 thumbnail: "media/uploads/articles/python-basics-quiz.jpg"
-topics: [html]
+topics: [python]
 description: |
   The test contains 50 questions and has a time imit of 25 minutes
   
