@@ -1,0 +1,496 @@
+{
+    "id": 11,
+    "title": "Java Intermediate - OOP and Collections Quiz",
+    "slug": "java-intermediate-oop-collections-quiz",
+    "excerpt": "Test your knowledge of Object-Oriented Programming concepts and Java Collections Framework",
+    "difficulty": "intermediate",
+    "thumbnail": "media/uploads/articles/java-intermediate-quiz.jpg",
+    "description": "<h3>Description</h3>\r\n\r\n<p>This intermediate-level quiz covers advanced OOP concepts including inheritance, polymorphism, abstraction, encapsulation, and the Java Collections Framework. Perfect for developers with basic Java knowledge looking to level up their skills.</p>\r\n\r\n<p>Topics covered include: abstract classes, interfaces, ArrayList, HashMap, LinkedList, generics, and more.</p>\r\n\r\n<h3>Instructions</h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>The test contains 15 questions and has a time limit of 25 minutes</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Each question carries 1 mark, no negative marks.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Click the 'Submit Test' button to submit your answers.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Do not refresh the page while taking the test.</p>\r\n\t</li>\r\n</ul>",
+    "duration": 25,
+    "featured": false,
+    "publishedDate": "2026-08-05T10:00:00.000000Z",
+    "createdDate": "2026-08-05T10:00:00.000000Z",
+    "updatedDate": "2026-08-05T10:00:00.000000Z",
+    "publishStatus": "A",
+    "author": {
+        "userId": 1,
+        "alias": "siteadmin",
+        "firstName": "Stacktips",
+        "lastName": "",
+        "avatar": "media/uploads/user/siteadmin/logo_4j3OiHj.png",
+        "bio": "Provides a developer-friendly way to learn programming",
+        "twitter": "https://twitter.com/Stacktips",
+        "youtube": "https://youtube.com/channel/UCGydhB36jVvXIAU8HDlHovQ",
+        "website": "",
+        "linkedin": "",
+        "github": "https://github.com/stacktipslab",
+        "verified": false
+    },
+    "taxonomy": {
+        "id": 18,
+        "name": "Java",
+        "slug": "java",
+        "thumbnail": "media/uploads/categories/java.png",
+        "taxonomyType": "CATEGORY",
+        "description": "Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.",
+        "publishStatus": "A",
+        "updatedAt": "2026-08-05T10:00:00.000000Z",
+        "bgColor": "#ef4444",
+        "textColor": "#ffffff",
+        "seoMeta": null,
+        "articleCount": 0,
+        "author": null
+    },
+    "questions": [
+        {
+            "id": 2001,
+            "title": "What is the main difference between an abstract class and an interface in Java?",
+            "description": "",
+            "explanation": "An abstract class can have both abstract and concrete methods, constructors, and instance variables. An interface (before Java 8) could only have abstract methods and constants. From Java 8+, interfaces can have default and static methods, but still cannot have constructors or instance variables.",
+            "type": "binary",
+            "displayOrder": 1,
+            "answers": [
+                {
+                    "id": 5001,
+                    "content": "Abstract classes can have constructors, interfaces cannot",
+                    "correct": true
+                },
+                {
+                    "id": 5002,
+                    "content": "Interfaces can have constructors, abstract classes cannot",
+                    "correct": false
+                },
+                {
+                    "id": 5003,
+                    "content": "There is no difference",
+                    "correct": false
+                },
+                {
+                    "id": 5004,
+                    "content": "Abstract classes cannot have methods",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2002,
+            "title": "Which collection allows duplicate elements and maintains insertion order?",
+            "description": "",
+            "explanation": "ArrayList allows duplicate elements and maintains the insertion order. It's part of the List interface which guarantees ordered elements. HashSet doesn't allow duplicates, TreeMap is sorted, and Queue has a different purpose (FIFO operations).",
+            "type": "binary",
+            "displayOrder": 2,
+            "answers": [
+                {
+                    "id": 5005,
+                    "content": "HashSet",
+                    "correct": false
+                },
+                {
+                    "id": 5006,
+                    "content": "ArrayList",
+                    "correct": true
+                },
+                {
+                    "id": 5007,
+                    "content": "TreeMap",
+                    "correct": false
+                },
+                {
+                    "id": 5008,
+                    "content": "Queue",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2003,
+            "title": "What is the time complexity for adding an element to a HashMap?",
+            "description": "",
+            "explanation": "HashMap provides O(1) average time complexity for basic operations like get() and put(), assuming the hash function disperses elements properly. In the worst case (many collisions), it can degrade to O(n), but Java 8+ uses tree-based structure for heavily collided buckets, making it O(log n) in worst case.",
+            "type": "binary",
+            "displayOrder": 3,
+            "answers": [
+                {
+                    "id": 5009,
+                    "content": "O(1) average case",
+                    "correct": true
+                },
+                {
+                    "id": 5010,
+                    "content": "O(n)",
+                    "correct": false
+                },
+                {
+                    "id": 5011,
+                    "content": "O(log n)",
+                    "correct": false
+                },
+                {
+                    "id": 5012,
+                    "content": "O(n²)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2004,
+            "title": "What will happen if you try to add a null key to a TreeMap?",
+            "description": "",
+            "explanation": "TreeMap does not allow null keys because it needs to compare keys for ordering (it's a sorted map). Adding a null key will throw a NullPointerException. However, TreeMap can have null values.",
+            "type": "binary",
+            "displayOrder": 4,
+            "answers": [
+                {
+                    "id": 5013,
+                    "content": "It will be added successfully",
+                    "correct": false
+                },
+                {
+                    "id": 5014,
+                    "content": "NullPointerException will be thrown",
+                    "correct": true
+                },
+                {
+                    "id": 5015,
+                    "content": "IllegalArgumentException will be thrown",
+                    "correct": false
+                },
+                {
+                    "id": 5016,
+                    "content": "The null key will be ignored",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2005,
+            "title": "Which of the following is true about method overriding?",
+            "description": "",
+            "explanation": "In method overriding, the overriding method in the subclass must have the same signature (name and parameters) as the parent method. However, it can have a more accessible access modifier (e.g., changing from protected to public) but not less accessible. The return type must be the same or a covariant type.",
+            "type": "binary",
+            "displayOrder": 5,
+            "answers": [
+                {
+                    "id": 5017,
+                    "content": "The method in the child class must have the same signature as the parent",
+                    "correct": true
+                },
+                {
+                    "id": 5018,
+                    "content": "The method in the child class can have different parameters",
+                    "correct": false
+                },
+                {
+                    "id": 5019,
+                    "content": "Private methods can be overridden",
+                    "correct": false
+                },
+                {
+                    "id": 5020,
+                    "content": "Static methods can be overridden",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2006,
+            "title": "What is the difference between ArrayList and LinkedList?",
+            "description": "",
+            "explanation": "ArrayList is backed by a dynamic array, providing fast random access (O(1)) but slower insertions/deletions in the middle (O(n)). LinkedList is a doubly-linked list, providing faster insertions/deletions (O(1) when you have the reference) but slower random access (O(n)).",
+            "type": "binary",
+            "displayOrder": 6,
+            "answers": [
+                {
+                    "id": 5021,
+                    "content": "ArrayList is faster for random access",
+                    "correct": true
+                },
+                {
+                    "id": 5022,
+                    "content": "LinkedList is faster for random access",
+                    "correct": false
+                },
+                {
+                    "id": 5023,
+                    "content": "ArrayList doesn't allow null elements",
+                    "correct": false
+                },
+                {
+                    "id": 5024,
+                    "content": "There is no difference",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2007,
+            "title": "What is the purpose of the 'super' keyword in Java?",
+            "description": "",
+            "explanation": "The 'super' keyword is used to refer to the immediate parent class. It can be used to call parent class methods, constructors, or access parent class variables. This is especially useful when you need to access overridden methods or hidden fields.",
+            "type": "binary",
+            "displayOrder": 7,
+            "answers": [
+                {
+                    "id": 5025,
+                    "content": "To refer to the current object",
+                    "correct": false
+                },
+                {
+                    "id": 5026,
+                    "content": "To refer to the parent class",
+                    "correct": true
+                },
+                {
+                    "id": 5027,
+                    "content": "To create a new object",
+                    "correct": false
+                },
+                {
+                    "id": 5028,
+                    "content": "To define static members",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2008,
+            "title": "Which interface should a class implement to be used as a key in a HashMap?",
+            "description": "",
+            "explanation": "While not strictly required to implement an interface, a class used as a HashMap key should properly override equals() and hashCode() methods. However, if we're talking about comparability for TreeMap, it would need to implement Comparable or provide a Comparator.",
+            "type": "binary",
+            "displayOrder": 8,
+            "answers": [
+                {
+                    "id": 5029,
+                    "content": "The class should override equals() and hashCode()",
+                    "correct": true
+                },
+                {
+                    "id": 5030,
+                    "content": "Serializable",
+                    "correct": false
+                },
+                {
+                    "id": 5031,
+                    "content": "Cloneable",
+                    "correct": false
+                },
+                {
+                    "id": 5032,
+                    "content": "Iterator",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2009,
+            "title": "What is a marker interface in Java?",
+            "description": "",
+            "explanation": "A marker interface is an interface with no methods or constants. It's used to mark or tag a class for some special behavior. Examples include Serializable, Cloneable, and Remote. They provide metadata to the JVM or compiler.",
+            "type": "binary",
+            "displayOrder": 9,
+            "answers": [
+                {
+                    "id": 5033,
+                    "content": "An interface with no methods",
+                    "correct": true
+                },
+                {
+                    "id": 5034,
+                    "content": "An interface with only one method",
+                    "correct": false
+                },
+                {
+                    "id": 5035,
+                    "content": "An interface with static methods",
+                    "correct": false
+                },
+                {
+                    "id": 5036,
+                    "content": "An interface that cannot be implemented",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2010,
+            "title": "What is the output of: List<String> list = Arrays.asList(\"A\", \"B\"); list.add(\"C\");",
+            "description": "",
+            "explanation": "Arrays.asList() returns a fixed-size list backed by the specified array. You cannot add or remove elements from it. Attempting to do so will throw an UnsupportedOperationException. You can only modify existing elements.",
+            "type": "binary",
+            "displayOrder": 10,
+            "answers": [
+                {
+                    "id": 5037,
+                    "content": "Compiles and runs successfully",
+                    "correct": false
+                },
+                {
+                    "id": 5038,
+                    "content": "Throws UnsupportedOperationException",
+                    "correct": true
+                },
+                {
+                    "id": 5039,
+                    "content": "Throws NullPointerException",
+                    "correct": false
+                },
+                {
+                    "id": 5040,
+                    "content": "Compilation error",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2011,
+            "title": "What is autoboxing in Java?",
+            "description": "",
+            "explanation": "Autoboxing is the automatic conversion of primitive types to their corresponding wrapper class objects (e.g., int to Integer). Unboxing is the reverse process. This feature was introduced in Java 5 to simplify code and improve readability.",
+            "type": "binary",
+            "displayOrder": 11,
+            "answers": [
+                {
+                    "id": 5041,
+                    "content": "Automatic conversion between primitive types and wrapper classes",
+                    "correct": true
+                },
+                {
+                    "id": 5042,
+                    "content": "Automatic memory management",
+                    "correct": false
+                },
+                {
+                    "id": 5043,
+                    "content": "Automatic type casting",
+                    "correct": false
+                },
+                {
+                    "id": 5044,
+                    "content": "Automatic exception handling",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2012,
+            "title": "Which collection is thread-safe in Java?",
+            "description": "",
+            "explanation": "Vector is a legacy thread-safe collection (all methods are synchronized). However, it's generally recommended to use ConcurrentHashMap, CopyOnWriteArrayList, or Collections.synchronizedList() for better performance in modern applications.",
+            "type": "binary",
+            "displayOrder": 12,
+            "answers": [
+                {
+                    "id": 5045,
+                    "content": "ArrayList",
+                    "correct": false
+                },
+                {
+                    "id": 5046,
+                    "content": "HashMap",
+                    "correct": false
+                },
+                {
+                    "id": 5047,
+                    "content": "Vector",
+                    "correct": true
+                },
+                {
+                    "id": 5048,
+                    "content": "LinkedList",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2013,
+            "title": "What does the 'instanceof' operator do?",
+            "description": "",
+            "explanation": "The instanceof operator checks whether an object is an instance of a specific class or implements a specific interface. It returns true if the object is an instance of the specified type or its subtype, otherwise false.",
+            "type": "binary",
+            "displayOrder": 13,
+            "answers": [
+                {
+                    "id": 5049,
+                    "content": "Checks if an object is an instance of a class or interface",
+                    "correct": true
+                },
+                {
+                    "id": 5050,
+                    "content": "Creates a new instance of a class",
+                    "correct": false
+                },
+                {
+                    "id": 5051,
+                    "content": "Compares two objects",
+                    "correct": false
+                },
+                {
+                    "id": 5052,
+                    "content": "Checks if a variable is null",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2014,
+            "title": "What is the diamond problem in Java?",
+            "description": "",
+            "explanation": "The diamond problem occurs in multiple inheritance when a class inherits from two classes that have a common parent. Java avoids this problem by not allowing multiple inheritance of classes. However, Java 8+ allows multiple inheritance of behavior through default methods in interfaces.",
+            "type": "binary",
+            "displayOrder": 14,
+            "answers": [
+                {
+                    "id": 5053,
+                    "content": "A problem with multiple inheritance, which Java solves by not allowing multiple class inheritance",
+                    "correct": true
+                },
+                {
+                    "id": 5054,
+                    "content": "A problem with single inheritance",
+                    "correct": false
+                },
+                {
+                    "id": 5055,
+                    "content": "A memory management issue",
+                    "correct": false
+                },
+                {
+                    "id": 5056,
+                    "content": "A compilation error",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 2015,
+            "title": "What is the purpose of the Comparable interface?",
+            "description": "",
+            "explanation": "The Comparable interface is used to define the natural ordering of objects. A class implements Comparable and provides the compareTo() method to specify how its instances should be compared. This is used by sorting methods like Collections.sort().",
+            "type": "binary",
+            "displayOrder": 15,
+            "answers": [
+                {
+                    "id": 5057,
+                    "content": "To define natural ordering of objects",
+                    "correct": true
+                },
+                {
+                    "id": 5058,
+                    "content": "To compare object references",
+                    "correct": false
+                },
+                {
+                    "id": 5059,
+                    "content": "To make objects serializable",
+                    "correct": false
+                },
+                {
+                    "id": 5060,
+                    "content": "To enable cloning",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

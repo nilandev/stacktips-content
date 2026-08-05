@@ -1,0 +1,496 @@
+{
+    "id": 14,
+    "title": "Spring Boot Advanced - Microservices, Security, and Best Practices Quiz",
+    "slug": "spring-boot-advanced-microservices-security-quiz",
+    "excerpt": "Advanced Spring Boot quiz covering microservices, security, transactions, caching, testing, and production best practices",
+    "difficulty": "advanced",
+    "thumbnail": "media/uploads/articles/spring-boot-advanced-quiz.jpg",
+    "description": "<h3>Description</h3>\r\n\r\n<p>This advanced-level Spring Boot quiz is designed for experienced developers working with production applications. It covers complex topics including Spring Security, microservices architecture, distributed tracing, circuit breakers, caching strategies, transaction management, and testing best practices.</p>\r\n\r\n<p>Perfect for developers preparing for senior positions or architects designing Spring Boot microservices.</p>\r\n\r\n<h3>Instructions</h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>The test contains 15 questions and has a time limit of 30 minutes</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Each question carries 1 mark, no negative marks.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Click the 'Submit Test' button to submit your answers.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Do not refresh the page while taking the test.</p>\r\n\t</li>\r\n</ul>",
+    "duration": 30,
+    "featured": true,
+    "publishedDate": "2026-08-05T10:00:00.000000Z",
+    "createdDate": "2026-08-05T10:00:00.000000Z",
+    "updatedDate": "2026-08-05T10:00:00.000000Z",
+    "publishStatus": "A",
+    "author": {
+        "userId": 1,
+        "alias": "siteadmin",
+        "firstName": "Stacktips",
+        "lastName": "",
+        "avatar": "media/uploads/user/siteadmin/logo_4j3OiHj.png",
+        "bio": "Provides a developer-friendly way to learn programming",
+        "twitter": "https://twitter.com/Stacktips",
+        "youtube": "https://youtube.com/channel/UCGydhB36jVvXIAU8HDlHovQ",
+        "website": "",
+        "linkedin": "",
+        "github": "https://github.com/stacktipslab",
+        "verified": false
+    },
+    "taxonomy": {
+        "id": 19,
+        "name": "Spring Boot",
+        "slug": "spring-boot",
+        "thumbnail": "media/uploads/categories/spring-boot.png",
+        "taxonomyType": "CATEGORY",
+        "description": "Spring Boot is an open-source Java-based framework used to create microservices and stand-alone applications with minimal configuration.",
+        "publishStatus": "A",
+        "updatedAt": "2026-08-05T10:00:00.000000Z",
+        "bgColor": "#22c55e",
+        "textColor": "#ffffff",
+        "seoMeta": null,
+        "articleCount": 0,
+        "author": null
+    },
+    "questions": [
+        {
+            "id": 5001,
+            "title": "What is the purpose of @Transactional annotation?",
+            "description": "",
+            "explanation": "@Transactional marks a method or class to be managed within a transaction. If the method completes successfully, the transaction is committed; if an exception occurs, it's rolled back. It supports various properties like propagation, isolation, timeout, and read-only settings.",
+            "type": "binary",
+            "displayOrder": 1,
+            "answers": [
+                {
+                    "id": 8001,
+                    "content": "To manage database transactions with automatic commit/rollback",
+                    "correct": true
+                },
+                {
+                    "id": 8002,
+                    "content": "To transfer data between services",
+                    "correct": false
+                },
+                {
+                    "id": 8003,
+                    "content": "To make methods asynchronous",
+                    "correct": false
+                },
+                {
+                    "id": 8004,
+                    "content": "To cache method results",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5002,
+            "title": "What is the difference between @Bean and @Component?",
+            "description": "",
+            "explanation": "@Component is a class-level annotation used for auto-detection and auto-configuration using classpath scanning. @Bean is a method-level annotation used in @Configuration classes to explicitly declare a bean. @Bean gives you more control over bean instantiation.",
+            "type": "binary",
+            "displayOrder": 2,
+            "answers": [
+                {
+                    "id": 8005,
+                    "content": "@Bean is method-level, @Component is class-level",
+                    "correct": true
+                },
+                {
+                    "id": 8006,
+                    "content": "@Component is method-level, @Bean is class-level",
+                    "correct": false
+                },
+                {
+                    "id": 8007,
+                    "content": "They are the same",
+                    "correct": false
+                },
+                {
+                    "id": 8008,
+                    "content": "@Bean is deprecated",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5003,
+            "title": "What is Spring Cloud Circuit Breaker used for?",
+            "description": "",
+            "explanation": "Circuit Breaker pattern (implemented via Resilience4j or Hystrix) prevents cascading failures in microservices. It monitors for failures and 'opens' the circuit when failures reach a threshold, providing a fallback response instead of calling the failing service, allowing it to recover.",
+            "type": "binary",
+            "displayOrder": 3,
+            "answers": [
+                {
+                    "id": 8009,
+                    "content": "To prevent cascading failures and provide fallback mechanisms",
+                    "correct": true
+                },
+                {
+                    "id": 8010,
+                    "content": "To break database connections",
+                    "correct": false
+                },
+                {
+                    "id": 8011,
+                    "content": "To disconnect circuits in the application",
+                    "correct": false
+                },
+                {
+                    "id": 8012,
+                    "content": "To manage electrical systems",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5004,
+            "title": "What is the purpose of @Cacheable annotation?",
+            "description": "",
+            "explanation": "@Cacheable triggers cache population. When a method annotated with @Cacheable is called, Spring checks if the result is in the cache. If found, the cached result is returned without executing the method. If not, the method executes and the result is stored in the cache.",
+            "type": "binary",
+            "displayOrder": 4,
+            "answers": [
+                {
+                    "id": 8013,
+                    "content": "To cache method results and avoid repeated executions",
+                    "correct": true
+                },
+                {
+                    "id": 8014,
+                    "content": "To make methods accessible from cache",
+                    "correct": false
+                },
+                {
+                    "id": 8015,
+                    "content": "To store beans in cache",
+                    "correct": false
+                },
+                {
+                    "id": 8016,
+                    "content": "To configure cache settings",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5005,
+            "title": "What is the purpose of Spring Cloud Config Server?",
+            "description": "",
+            "explanation": "Spring Cloud Config Server provides centralized external configuration management for distributed systems. It allows you to manage application configuration across all environments from a central location (Git repository, filesystem, etc.), supporting dynamic configuration updates without redeployment.",
+            "type": "binary",
+            "displayOrder": 5,
+            "answers": [
+                {
+                    "id": 8017,
+                    "content": "To provide centralized configuration management for microservices",
+                    "correct": true
+                },
+                {
+                    "id": 8018,
+                    "content": "To configure cloud infrastructure",
+                    "correct": false
+                },
+                {
+                    "id": 8019,
+                    "content": "To manage server configurations only",
+                    "correct": false
+                },
+                {
+                    "id": 8020,
+                    "content": "To configure databases",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5006,
+            "title": "What is the difference between @MockBean and @Mock in Spring Boot testing?",
+            "description": "",
+            "explanation": "@MockBean is a Spring Boot annotation that adds a mock bean to the Spring ApplicationContext, replacing any existing bean of the same type. @Mock is a Mockito annotation that creates a mock object but doesn't add it to the Spring context. Use @MockBean for integration tests and @Mock for unit tests.",
+            "type": "binary",
+            "displayOrder": 6,
+            "answers": [
+                {
+                    "id": 8021,
+                    "content": "@MockBean adds the mock to Spring context, @Mock doesn't",
+                    "correct": true
+                },
+                {
+                    "id": 8022,
+                    "content": "@Mock adds to Spring context, @MockBean doesn't",
+                    "correct": false
+                },
+                {
+                    "id": 8023,
+                    "content": "They are the same",
+                    "correct": false
+                },
+                {
+                    "id": 8024,
+                    "content": "@MockBean is deprecated",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5007,
+            "title": "What is Spring Boot Profiles used for?",
+            "description": "",
+            "explanation": "Spring Profiles provide a way to segregate parts of your application configuration and make it available only in certain environments. You can have different configurations for dev, test, and production using profiles. Activate profiles using spring.profiles.active property.",
+            "type": "binary",
+            "displayOrder": 7,
+            "answers": [
+                {
+                    "id": 8025,
+                    "content": "To have different configurations for different environments",
+                    "correct": true
+                },
+                {
+                    "id": 8026,
+                    "content": "To create user profiles",
+                    "correct": false
+                },
+                {
+                    "id": 8027,
+                    "content": "To profile application performance",
+                    "correct": false
+                },
+                {
+                    "id": 8028,
+                    "content": "To manage social media profiles",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5008,
+            "title": "What is the purpose of @Async annotation?",
+            "description": "",
+            "explanation": "@Async enables asynchronous method execution. When a method is annotated with @Async, Spring executes it in a separate thread from the task executor. You need to enable it with @EnableAsync and the method should return void or Future/CompletableFuture.",
+            "type": "binary",
+            "displayOrder": 8,
+            "answers": [
+                {
+                    "id": 8029,
+                    "content": "To execute methods asynchronously in a separate thread",
+                    "correct": true
+                },
+                {
+                    "id": 8030,
+                    "content": "To make methods synchronized",
+                    "correct": false
+                },
+                {
+                    "id": 8031,
+                    "content": "To cache asynchronous results",
+                    "correct": false
+                },
+                {
+                    "id": 8032,
+                    "content": "To handle async HTTP requests",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5009,
+            "title": "What is Spring Security's default authentication mechanism?",
+            "description": "",
+            "explanation": "By default, Spring Security uses form-based authentication with session management. It generates a default login page and uses HTTP Basic authentication for REST APIs. You can customize this using SecurityFilterChain configurations.",
+            "type": "binary",
+            "displayOrder": 9,
+            "answers": [
+                {
+                    "id": 8033,
+                    "content": "Form-based authentication with session management",
+                    "correct": true
+                },
+                {
+                    "id": 8034,
+                    "content": "JWT token authentication",
+                    "correct": false
+                },
+                {
+                    "id": 8035,
+                    "content": "OAuth2 only",
+                    "correct": false
+                },
+                {
+                    "id": 8036,
+                    "content": "No authentication by default",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5010,
+            "title": "What is the purpose of @Validated annotation?",
+            "description": "",
+            "explanation": "@Validated is a Spring variant of JSR-303's @Valid annotation. It's used to trigger validation of method parameters, particularly supporting validation groups. When applied to a class, it enables method-level validation for that bean.",
+            "type": "binary",
+            "displayOrder": 10,
+            "answers": [
+                {
+                    "id": 8037,
+                    "content": "To trigger validation of method parameters and support validation groups",
+                    "correct": true
+                },
+                {
+                    "id": 8038,
+                    "content": "To validate database connections",
+                    "correct": false
+                },
+                {
+                    "id": 8039,
+                    "content": "To check if beans are valid",
+                    "correct": false
+                },
+                {
+                    "id": 8040,
+                    "content": "To validate configuration files",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5011,
+            "title": "What is Spring Cloud Sleuth used for?",
+            "description": "",
+            "explanation": "Spring Cloud Sleuth provides distributed tracing for microservices. It automatically adds trace and span IDs to logs, helping track requests as they flow through multiple services. It integrates with Zipkin for visualization of traces across distributed systems.",
+            "type": "binary",
+            "displayOrder": 11,
+            "answers": [
+                {
+                    "id": 8041,
+                    "content": "For distributed tracing and log correlation across microservices",
+                    "correct": true
+                },
+                {
+                    "id": 8042,
+                    "content": "For tracking application performance",
+                    "correct": false
+                },
+                {
+                    "id": 8043,
+                    "content": "For finding bugs in code",
+                    "correct": false
+                },
+                {
+                    "id": 8044,
+                    "content": "For security auditing",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5012,
+            "title": "What is the difference between @RestController and @Controller?",
+            "description": "",
+            "explanation": "@RestController is a combination of @Controller and @ResponseBody. With @Controller, you need to add @ResponseBody to each method to serialize the return value. @RestController does this automatically, making it ideal for RESTful web services.",
+            "type": "binary",
+            "displayOrder": 12,
+            "answers": [
+                {
+                    "id": 8045,
+                    "content": "@RestController automatically serializes responses to JSON/XML",
+                    "correct": true
+                },
+                {
+                    "id": 8046,
+                    "content": "@Controller automatically serializes responses",
+                    "correct": false
+                },
+                {
+                    "id": 8047,
+                    "content": "They are exactly the same",
+                    "correct": false
+                },
+                {
+                    "id": 8048,
+                    "content": "@RestController is for databases only",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5013,
+            "title": "What is the purpose of @RefreshScope in Spring Cloud?",
+            "description": "",
+            "explanation": "@RefreshScope allows beans to be re-initialized when configuration changes. When used with Spring Cloud Config, you can update configuration properties at runtime by calling the /actuator/refresh endpoint, and @RefreshScope beans will pick up the new values without restarting the application.",
+            "type": "binary",
+            "displayOrder": 13,
+            "answers": [
+                {
+                    "id": 8049,
+                    "content": "To allow beans to be refreshed when configuration changes",
+                    "correct": true
+                },
+                {
+                    "id": 8050,
+                    "content": "To refresh database connections",
+                    "correct": false
+                },
+                {
+                    "id": 8051,
+                    "content": "To reload the entire application",
+                    "correct": false
+                },
+                {
+                    "id": 8052,
+                    "content": "To refresh cache periodically",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5014,
+            "title": "What is Spring Cloud Gateway used for?",
+            "description": "",
+            "explanation": "Spring Cloud Gateway is an API Gateway built on Spring WebFlux. It provides routing, filtering, load balancing, rate limiting, and circuit breaking for microservices. It's a non-blocking, reactive alternative to Zuul, offering better performance and integration with Spring ecosystem.",
+            "type": "binary",
+            "displayOrder": 14,
+            "answers": [
+                {
+                    "id": 8053,
+                    "content": "As an API Gateway for routing and filtering requests to microservices",
+                    "correct": true
+                },
+                {
+                    "id": 8054,
+                    "content": "For creating cloud infrastructure",
+                    "correct": false
+                },
+                {
+                    "id": 8055,
+                    "content": "For database gateway connections",
+                    "correct": false
+                },
+                {
+                    "id": 8056,
+                    "content": "For managing network gateways",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 5015,
+            "title": "What is the purpose of @ConditionalOnProperty annotation?",
+            "description": "",
+            "explanation": "@ConditionalOnProperty conditionally enables a bean based on the presence and value of a configuration property. It's useful for feature toggling and environment-specific bean creation. For example, you can enable certain beans only when a specific property is set to 'true'.",
+            "type": "binary",
+            "displayOrder": 15,
+            "answers": [
+                {
+                    "id": 8057,
+                    "content": "To conditionally create beans based on configuration property values",
+                    "correct": true
+                },
+                {
+                    "id": 8058,
+                    "content": "To validate property values",
+                    "correct": false
+                },
+                {
+                    "id": 8059,
+                    "content": "To set default property values",
+                    "correct": false
+                },
+                {
+                    "id": 8060,
+                    "content": "To encrypt property files",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

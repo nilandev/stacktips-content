@@ -1,0 +1,496 @@
+{
+    "id": 5,
+    "title": "CLF-C01 AWS Certified Cloud Practitioner Practice Exam - Set2",
+    "slug": "aws-certified-cloud-practitioner-clf-c01-practice-question-set-2",
+    "excerpt": "CLF-C01 AWS Certified Cloud Practitioner Practice Exam - Test your skills with our interactive quiz app.",
+    "difficulty": "beginner",
+    "thumbnail": "media/uploads/articles/AWS_Certified_Cloud_Practitioner_Practice_Exam_XlzUoOZ_DC6Lhw6.jpeg",
+    "description": "<h3>Description</h3>\r\n\r\n<p>AWS Certification helps learners build credibility and confidence by validating their cloud expertise with an industry recognized credential and organisations identify skilled professionals to lead cloud initiatives using AWS.</p>\r\n\r\n<p>These AWS Certified Cloud Practitioner CLF-C01 practice tests are patterned after the latest exam format and were curated based on real test papers. Our AWS Cloud Practitioner certification practice tests are TOP-NOTCH and the CLOSEST to the actual exam.</p>\r\n\r\n<p>Each question has detailed explanations at the end of each set that will help you gain a deeper understanding of the AWS services. The explanation provides an overview of the topic, reference links to AWS documentation, and a rationale on why the option is correct or incorrect</p>\r\n\r\n<h3>Instructions</h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Each test contains 10 questions and has a time limit of 10 minutes</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Each question carries 1 mark, no negative marks.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Click the 'Submit Test' button given at the bottom of this page to Submit your answers.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>The test will be submitted automatically if the time expired</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Do not refresh the page while taking the test.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Please note, this test is not official, it's just a nice way to see how ready you're with your AWS Certification.</p>\r\n\t</li>\r\n</ul>",
+    "duration": 15,
+    "featured": false,
+    "publishedDate": "2025-09-16T22:26:40.778845Z",
+    "createdDate": "2025-09-16T22:26:40.795205Z",
+    "updatedDate": "2025-09-16T22:26:40.795205Z",
+    "publishStatus": "A",
+    "author": {
+        "userId": 1,
+        "alias": "siteadmin",
+        "firstName": "Stacktips",
+        "lastName": "",
+        "avatar": "media/uploads/user/siteadmin/logo_4j3OiHj.png",
+        "bio": "Provides a developer-friendly way to learn programming",
+        "twitter": "https://twitter.com/Stacktips",
+        "youtube": "https://youtube.com/channel/UCGydhB36jVvXIAU8HDlHovQ",
+        "website": "",
+        "linkedin": "",
+        "github": "https://github.com/stacktipslab",
+        "verified": false
+    },
+    "taxonomy": {
+        "id": 17,
+        "name": "HTML",
+        "slug": "html",
+        "thumbnail": "media/uploads/categories/html5.png",
+        "taxonomyType": "CATEGORY",
+        "description": "HTML is the standard markup language used for structuring web pages and formatting content. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.",
+        "publishStatus": "D",
+        "updatedAt": "2025-09-16T22:25:25.918576Z",
+        "bgColor": "#e2e8f0",
+        "textColor": "#0f172a",
+        "seoMeta": null,
+        "articleCount": 0,
+        "author": null
+    },
+    "questions": [
+        {
+            "id": 154,
+            "title": "What best describes the difference between the TCO Calculator and the Cost Explorer?",
+            "description": "",
+            "explanation": "\nThe TCO calculator is a free tool provided by AWS that allows you to estimate the cost savings of using AWS vs. using an on-premises data center. The Cost Explorer is a free tool that allows you to view charges of your cost (helps you analyze where you are spending money).",
+            "type": "binary",
+            "displayOrder": 1,
+            "answers": [
+                {
+                    "id": 611,
+                    "content": "The Cost Explorer is a price list for each AWS service; the TCO Calculator helps you calculate hourly EC2 Usage cost.",
+                    "correct": false
+                },
+                {
+                    "id": 612,
+                    "content": "The TCO Calculator help you analyze current AWS usage charges; the Cost Explorer helps you estimate the cost savings of using AWS.",
+                    "correct": false
+                },
+                {
+                    "id": 613,
+                    "content": "The TCO Calculator helps you estimate the cost savings of using AWS; the Cost Explorer help you analyze current AWS usage charges.",
+                    "correct": true
+                },
+                {
+                    "id": 614,
+                    "content": "The Cost Explorer helps you calculate hourly EC2 Usage cost; the TCO Calculator is a price list for each AWS service.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "title": "When you create an S3 bucket, what rules must be followed regarding the bucket name?",
+            "description": "",
+            "explanation": "Although certain regions do allow for uppercase letters in the bucket name, uppercase letters are NOT required. Also, a bucket name cannot be formatted as an IP address.",
+            "type": "multiple",
+            "displayOrder": 2,
+            "answers": [
+                {
+                    "id": 651,
+                    "content": "Bucket names can be formatted as IP addresses",
+                    "correct": false
+                },
+                {
+                    "id": 652,
+                    "content": "Bucket names must be unique across all of AWS.",
+                    "correct": true
+                },
+                {
+                    "id": 653,
+                    "content": "Bucket names must contain at least one uppercase letter",
+                    "correct": false
+                },
+                {
+                    "id": 654,
+                    "content": "Bucket names must be between 3-63 characters in length.",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "title": "You have just set up a brand new AWS account. You want to keep monthly billing under $100, but you are worried about going over that limit. What can you set up in order to be notified when the\nmonthly bill approaches $100?",
+            "description": "",
+            "explanation": "In CloudWatch, you can set up a billing alarm that will trigger when your monthly bill hit the set threshold. That alarm can then be set up to trigger an SNS topic that will send you a notification that the alarm threshold as been met.",
+            "type": "binary",
+            "displayOrder": 3,
+            "answers": [
+                {
+                    "id": 635,
+                    "content": "A SNS billing alarm that triggers a CloudWatch notification to your email address.",
+                    "correct": false
+                },
+                {
+                    "id": 636,
+                    "content": "A CloudTrail billing alarm that triggers an SNS notification to your email address.",
+                    "correct": false
+                },
+                {
+                    "id": 637,
+                    "content": "A CloudWatch billing alarm that triggers a CloudTrail notification to your email address",
+                    "correct": false
+                },
+                {
+                    "id": 638,
+                    "content": "A CloudWatch billing alarm that triggers an SNS notification to your email address.",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "title": "What best describes the purpose of having many Availability Zones in each AWS region?",
+            "description": "",
+            "explanation": "Availability Zones work together within a region to provide users with the ability to easily setup and configure redundant architecture and backup solutions",
+            "type": "binary",
+            "displayOrder": 4,
+            "answers": [
+                {
+                    "id": 603,
+                    "content": "None of the above",
+                    "correct": false
+                },
+                {
+                    "id": 604,
+                    "content": "Multiple Availability Zones allow for fault tolerance but not high availability.",
+                    "correct": false
+                },
+                {
+                    "id": 605,
+                    "content": "Multiple Availability Zones allow for cheaper prices due to competition between them.",
+                    "correct": false
+                },
+                {
+                    "id": 606,
+                    "content": "Multiple Availability Zones allow for duplicate and redundant compute, and data backups.",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "title": "What TWO services/features are required to have highly available and fault tolerant architecture in AWS?",
+            "description": "",
+            "explanation": "",
+            "type": "multiple",
+            "displayOrder": 5,
+            "answers": [
+                {
+                    "id": 643,
+                    "content": "CloudFront",
+                    "correct": false
+                },
+                {
+                    "id": 644,
+                    "content": "Elastic Load Balancer",
+                    "correct": true
+                },
+                {
+                    "id": 645,
+                    "content": "ElastiCache",
+                    "correct": false
+                },
+                {
+                    "id": 646,
+                    "content": "Auto Scaling",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "title": "Big Cloud Jumbo Corp is beginning to explore migrating their entire on-premises data center to AWS. They are very concerned about how much it will cost once their entire I.T. infrastructure is running on AWS. What tool can you recommend so that they can estimate what the cost of using AWS may be?",
+            "description": "",
+            "explanation": "The AWS TCO (Total Cost of Ownership) Calculator is a free tool provided by AWS. It allows you to compare your current on-premises cost vs. estimated AWS cost.\n",
+            "type": "binary",
+            "displayOrder": 6,
+            "answers": [
+                {
+                    "id": 619,
+                    "content": "AWS Cost Explorer",
+                    "correct": false
+                },
+                {
+                    "id": 620,
+                    "content": "AWS Migration Cost Calculator",
+                    "correct": false
+                },
+                {
+                    "id": 621,
+                    "content": "AWS TCO Calculator",
+                    "correct": true
+                },
+                {
+                    "id": 622,
+                    "content": "AWS Estimate Calculator",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "title": "If you have a set of frequently accessed files that are used on a daily basis, what S3 storage class should you store them in?",
+            "description": "",
+            "explanation": "The Standard storage class should be used for files that you access on a daily or very frequent basis.",
+            "type": "binary",
+            "displayOrder": 7,
+            "answers": [
+                {
+                    "id": 627,
+                    "content": "Infrequent Access",
+                    "correct": false
+                },
+                {
+                    "id": 628,
+                    "content": "Standard",
+                    "correct": true
+                },
+                {
+                    "id": 629,
+                    "content": "Fast Access",
+                    "correct": false
+                },
+                {
+                    "id": 630,
+                    "content": "Reduced Redundancy",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "title": "What acts as an address (like a mailing address) for a web server located on a network?",
+            "description": "",
+            "explanation": "An IP address is a severs address on a network. It is how traffic/request get routed to it (much like a piece of mail gets routed to your home).",
+            "type": "binary",
+            "displayOrder": 8,
+            "answers": [
+                {
+                    "id": 647,
+                    "content": "DNS Server",
+                    "correct": false
+                },
+                {
+                    "id": 648,
+                    "content": "IP Address",
+                    "correct": true
+                },
+                {
+                    "id": 649,
+                    "content": "None of the above",
+                    "correct": false
+                },
+                {
+                    "id": 650,
+                    "content": "Common language domain name",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "title": "What AWS service uses Edge Locations for content caching?",
+            "description": "",
+            "explanation": "CloudFront is a content caching service provided by AWS that utilizes \"Edge Locations,\" which are AWS data centers located all around the world.",
+            "type": "binary",
+            "displayOrder": 9,
+            "answers": [
+                {
+                    "id": 655,
+                    "content": "CloudFront",
+                    "correct": true
+                },
+                {
+                    "id": 656,
+                    "content": "ElastiCache",
+                    "correct": false
+                },
+                {
+                    "id": 657,
+                    "content": "Route 53",
+                    "correct": false
+                },
+                {
+                    "id": 658,
+                    "content": "CloudCache",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "title": "What is the purpose of AWS's Route 53 service? Select all that apply",
+            "description": "",
+            "explanation": "Route 53 is AWS's domain and DNS management service. You can use it to register new domain names, as well as manage DNS record sets.",
+            "type": "multiple",
+            "displayOrder": 10,
+            "answers": [
+                {
+                    "id": 599,
+                    "content": "Domain Registration",
+                    "correct": true
+                },
+                {
+                    "id": 600,
+                    "content": "Domain Name System (DNS) service",
+                    "correct": true
+                },
+                {
+                    "id": 601,
+                    "content": "Database Management",
+                    "correct": false
+                },
+                {
+                    "id": 602,
+                    "content": "Content Caching",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "title": "If you are using an on-demand EC2 instance, how are you being charged for it?",
+            "description": "",
+            "explanation": "On-demand EC2 instances are exactly that, on-demand. There are no upfront or termination fees, and you are charged for each second of usage (based on an hourly rate).",
+            "type": "binary",
+            "displayOrder": 11,
+            "answers": [
+                {
+                    "id": 623,
+                    "content": "You are charged per second, based on an hourly rate, and there is a termination fee.",
+                    "correct": false
+                },
+                {
+                    "id": 624,
+                    "content": "You are charged per second, based on an hourly rate, and there are no termination fees.",
+                    "correct": true
+                },
+                {
+                    "id": 625,
+                    "content": "You must commit to a one or three year term and pay upfront.",
+                    "correct": false
+                },
+                {
+                    "id": 626,
+                    "content": "You are charged by the hour and must pay a partial upfront fee.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "title": "What are the four primary benefits of using the cloud/AWS?",
+            "description": "",
+            "explanation": "Fault tolerance, scalability, elasticity, and high availability are the four primary benefits of AWS/the cloud.",
+            "type": "binary",
+            "displayOrder": 12,
+            "answers": [
+                {
+                    "id": 615,
+                    "content": "Elasticity, scalability, easy access, limited storage.",
+                    "correct": false
+                },
+                {
+                    "id": 616,
+                    "content": "Fault tolerance, scalability, elasticity, and high availability.",
+                    "correct": true
+                },
+                {
+                    "id": 617,
+                    "content": "Fault tolerance, scalability, sometimes available, unlimited storage",
+                    "correct": false
+                },
+                {
+                    "id": 618,
+                    "content": "Unlimited storage, limited compute capacity, fault tolerance, and high availability.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 161,
+            "title": "What is the purpose of a DNS server?",
+            "description": "",
+            "explanation": "Domain name system servers act as a \"third party\" that provides the service of converting common language domain names to IP addresses (which are required for a web browser to properly make a request for web content).",
+            "type": "binary",
+            "displayOrder": 13,
+            "answers": [
+                {
+                    "id": 639,
+                    "content": "To convert common language domain names to IP addresses.",
+                    "correct": true
+                },
+                {
+                    "id": 640,
+                    "content": "To serve web application content.",
+                    "correct": false
+                },
+                {
+                    "id": 641,
+                    "content": "To act as an internet search engine",
+                    "correct": false
+                },
+                {
+                    "id": 642,
+                    "content": "To convert IP addresses to common language domain names.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "title": "\nWhat is a main benefit of consolidated billing?",
+            "description": "",
+            "explanation": "Consolidated billing allows you to view, manage, and pay bills for multiple AWS accounts in one user interface. Volume discounts can be earned by combining the usage from all accounts your own.\n",
+            "type": "binary",
+            "displayOrder": 14,
+            "answers": [
+                {
+                    "id": 631,
+                    "content": "Gain a volume discount for usage across all your AWS accounts.",
+                    "correct": true
+                },
+                {
+                    "id": 632,
+                    "content": "Access to a higher support plan level.",
+                    "correct": false
+                },
+                {
+                    "id": 633,
+                    "content": "None of the abov",
+                    "correct": false
+                },
+                {
+                    "id": 634,
+                    "content": "Faster response from AWS technical support.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "title": "What categories full under those analyzed by the AWS Trusted Advisor program?",
+            "description": "",
+            "explanation": "The AWS Trusted Advisor program will analyze your account with check in the following categories: Cost Optimization Performance Security Fault Tolerance",
+            "type": "multiple",
+            "displayOrder": 15,
+            "answers": [
+                {
+                    "id": 607,
+                    "content": "Cost optimization",
+                    "correct": true
+                },
+                {
+                    "id": 608,
+                    "content": "Fault tolerance",
+                    "correct": true
+                },
+                {
+                    "id": 609,
+                    "content": "None of the above",
+                    "correct": false
+                },
+                {
+                    "id": 610,
+                    "content": "Scalability",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

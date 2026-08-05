@@ -1,0 +1,496 @@
+{
+    "id": 10,
+    "title": "Java Basics and Fundamentals Quiz",
+    "slug": "java-basics-fundamentals-quiz",
+    "excerpt": "Test your knowledge of Java basics including syntax, data types, operators, and control structures",
+    "difficulty": "beginner",
+    "thumbnail": "media/uploads/articles/java-basics-quiz.jpg",
+    "description": "<h3>Description</h3>\r\n\r\n<p>This quiz is designed for beginners who want to test their understanding of Java fundamentals. It covers essential topics including variables, data types, operators, control flow statements, and basic OOP concepts.</p>\r\n\r\n<p>Each question has detailed explanations to help you understand the concepts better and improve your Java programming skills.</p>\r\n\r\n<h3>Instructions</h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>The test contains 15 questions and has a time limit of 20 minutes</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Each question carries 1 mark, no negative marks.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Click the 'Submit Test' button to submit your answers.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Do not refresh the page while taking the test.</p>\r\n\t</li>\r\n</ul>",
+    "duration": 20,
+    "featured": false,
+    "publishedDate": "2026-08-05T10:00:00.000000Z",
+    "createdDate": "2026-08-05T10:00:00.000000Z",
+    "updatedDate": "2026-08-05T10:00:00.000000Z",
+    "publishStatus": "A",
+    "author": {
+        "userId": 1,
+        "alias": "siteadmin",
+        "firstName": "Stacktips",
+        "lastName": "",
+        "avatar": "media/uploads/user/siteadmin/logo_4j3OiHj.png",
+        "bio": "Provides a developer-friendly way to learn programming",
+        "twitter": "https://twitter.com/Stacktips",
+        "youtube": "https://youtube.com/channel/UCGydhB36jVvXIAU8HDlHovQ",
+        "website": "",
+        "linkedin": "",
+        "github": "https://github.com/stacktipslab",
+        "verified": false
+    },
+    "taxonomy": {
+        "id": 18,
+        "name": "Java",
+        "slug": "java",
+        "thumbnail": "media/uploads/categories/java.png",
+        "taxonomyType": "CATEGORY",
+        "description": "Java is a high-level, class-based, object-oriented programming language designed to have as few implementation dependencies as possible.",
+        "publishStatus": "A",
+        "updatedAt": "2026-08-05T10:00:00.000000Z",
+        "bgColor": "#ef4444",
+        "textColor": "#ffffff",
+        "seoMeta": null,
+        "articleCount": 0,
+        "author": null
+    },
+    "questions": [
+        {
+            "id": 1001,
+            "title": "What is the correct way to declare a main method in Java?",
+            "description": "",
+            "explanation": "The main method must be declared as 'public static void main(String[] args)' for the JVM to recognize it as the entry point of the application. It must be public (accessible by JVM), static (can be called without creating an instance), void (returns nothing), and accept a String array as parameter.",
+            "type": "binary",
+            "displayOrder": 1,
+            "answers": [
+                {
+                    "id": 4001,
+                    "content": "public static void main(String[] args)",
+                    "correct": true
+                },
+                {
+                    "id": 4002,
+                    "content": "public void main(String[] args)",
+                    "correct": false
+                },
+                {
+                    "id": 4003,
+                    "content": "static void main(String[] args)",
+                    "correct": false
+                },
+                {
+                    "id": 4004,
+                    "content": "public static int main(String[] args)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1002,
+            "title": "Which of the following is NOT a primitive data type in Java?",
+            "description": "",
+            "explanation": "String is not a primitive data type in Java; it's a reference type (class). The eight primitive data types in Java are: byte, short, int, long, float, double, boolean, and char.",
+            "type": "binary",
+            "displayOrder": 2,
+            "answers": [
+                {
+                    "id": 4005,
+                    "content": "int",
+                    "correct": false
+                },
+                {
+                    "id": 4006,
+                    "content": "boolean",
+                    "correct": false
+                },
+                {
+                    "id": 4007,
+                    "content": "String",
+                    "correct": true
+                },
+                {
+                    "id": 4008,
+                    "content": "char",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1003,
+            "title": "What is the default value of a boolean variable in Java?",
+            "description": "",
+            "explanation": "The default value of a boolean instance variable in Java is false. However, local boolean variables must be explicitly initialized before use.",
+            "type": "binary",
+            "displayOrder": 3,
+            "answers": [
+                {
+                    "id": 4009,
+                    "content": "true",
+                    "correct": false
+                },
+                {
+                    "id": 4010,
+                    "content": "false",
+                    "correct": true
+                },
+                {
+                    "id": 4011,
+                    "content": "0",
+                    "correct": false
+                },
+                {
+                    "id": 4012,
+                    "content": "null",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1004,
+            "title": "Which keyword is used to inherit a class in Java?",
+            "description": "",
+            "explanation": "The 'extends' keyword is used to inherit a class in Java. For example: 'class Dog extends Animal'. Java supports single inheritance for classes, meaning a class can extend only one parent class.",
+            "type": "binary",
+            "displayOrder": 4,
+            "answers": [
+                {
+                    "id": 4013,
+                    "content": "implements",
+                    "correct": false
+                },
+                {
+                    "id": 4014,
+                    "content": "extends",
+                    "correct": true
+                },
+                {
+                    "id": 4015,
+                    "content": "inherits",
+                    "correct": false
+                },
+                {
+                    "id": 4016,
+                    "content": "super",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1005,
+            "title": "What is the size of an int variable in Java?",
+            "description": "",
+            "explanation": "An int in Java is always 32 bits (4 bytes), regardless of the platform. This is one of the key features of Java - platform independence. The int type can store values from -2,147,483,648 to 2,147,483,647.",
+            "type": "binary",
+            "displayOrder": 5,
+            "answers": [
+                {
+                    "id": 4017,
+                    "content": "16 bits",
+                    "correct": false
+                },
+                {
+                    "id": 4018,
+                    "content": "32 bits",
+                    "correct": true
+                },
+                {
+                    "id": 4019,
+                    "content": "64 bits",
+                    "correct": false
+                },
+                {
+                    "id": 4020,
+                    "content": "Platform dependent",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1006,
+            "title": "Which loop is guaranteed to execute at least once?",
+            "description": "",
+            "explanation": "The do-while loop is guaranteed to execute at least once because the condition is checked after the loop body executes. In contrast, for and while loops check the condition before executing the body, so they might not execute at all.",
+            "type": "binary",
+            "displayOrder": 6,
+            "answers": [
+                {
+                    "id": 4021,
+                    "content": "for loop",
+                    "correct": false
+                },
+                {
+                    "id": 4022,
+                    "content": "while loop",
+                    "correct": false
+                },
+                {
+                    "id": 4023,
+                    "content": "do-while loop",
+                    "correct": true
+                },
+                {
+                    "id": 4024,
+                    "content": "All of the above",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1007,
+            "title": "What is the output of: System.out.println(10 + 20 + \"Hello\");",
+            "description": "",
+            "explanation": "The output is '30Hello'. Java evaluates expressions from left to right. First, 10 + 20 = 30 (both are integers), then 30 + 'Hello' concatenates to '30Hello' (when adding a number and string, the number is converted to string).",
+            "type": "binary",
+            "displayOrder": 7,
+            "answers": [
+                {
+                    "id": 4025,
+                    "content": "1020Hello",
+                    "correct": false
+                },
+                {
+                    "id": 4026,
+                    "content": "30Hello",
+                    "correct": true
+                },
+                {
+                    "id": 4027,
+                    "content": "Hello1020",
+                    "correct": false
+                },
+                {
+                    "id": 4028,
+                    "content": "Hello30",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1008,
+            "title": "Which access modifier makes a member accessible only within its own class?",
+            "description": "",
+            "explanation": "The 'private' access modifier restricts access to members only within the same class. This is the most restrictive access level and is a key principle of encapsulation in object-oriented programming.",
+            "type": "binary",
+            "displayOrder": 8,
+            "answers": [
+                {
+                    "id": 4029,
+                    "content": "public",
+                    "correct": false
+                },
+                {
+                    "id": 4030,
+                    "content": "private",
+                    "correct": true
+                },
+                {
+                    "id": 4031,
+                    "content": "protected",
+                    "correct": false
+                },
+                {
+                    "id": 4032,
+                    "content": "default",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1009,
+            "title": "What is the correct way to create an array in Java?",
+            "description": "",
+            "explanation": "Both 'int[] arr = new int[5];' and 'int arr[] = new int[5];' are correct ways to declare and initialize an array in Java. The first syntax is preferred as it clearly shows that the type is 'array of int'.",
+            "type": "binary",
+            "displayOrder": 9,
+            "answers": [
+                {
+                    "id": 4033,
+                    "content": "int arr[] = new int[5];",
+                    "correct": false
+                },
+                {
+                    "id": 4034,
+                    "content": "int[] arr = new int[5];",
+                    "correct": false
+                },
+                {
+                    "id": 4035,
+                    "content": "Both A and B",
+                    "correct": true
+                },
+                {
+                    "id": 4036,
+                    "content": "array int arr[5];",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1010,
+            "title": "Which method is used to compare two strings in Java?",
+            "description": "",
+            "explanation": "The equals() method compares the content of two strings, while == compares object references. For string comparison, always use equals() or equalsIgnoreCase() method to compare the actual content.",
+            "type": "binary",
+            "displayOrder": 10,
+            "answers": [
+                {
+                    "id": 4037,
+                    "content": "==",
+                    "correct": false
+                },
+                {
+                    "id": 4038,
+                    "content": "equals()",
+                    "correct": true
+                },
+                {
+                    "id": 4039,
+                    "content": "compare()",
+                    "correct": false
+                },
+                {
+                    "id": 4040,
+                    "content": "compareTo()",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1011,
+            "title": "What does the 'static' keyword mean in Java?",
+            "description": "",
+            "explanation": "The 'static' keyword indicates that a member belongs to the class itself rather than to instances of the class. Static members are shared among all instances and can be accessed without creating an object of the class.",
+            "type": "binary",
+            "displayOrder": 11,
+            "answers": [
+                {
+                    "id": 4041,
+                    "content": "The member belongs to the class, not instances",
+                    "correct": true
+                },
+                {
+                    "id": 4042,
+                    "content": "The member cannot be changed",
+                    "correct": false
+                },
+                {
+                    "id": 4043,
+                    "content": "The member is private",
+                    "correct": false
+                },
+                {
+                    "id": 4044,
+                    "content": "The member is constant",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1012,
+            "title": "Which exception is thrown when dividing by zero in Java?",
+            "description": "",
+            "explanation": "When you divide an integer by zero in Java, it throws an ArithmeticException. However, dividing a floating-point number by zero results in Infinity or NaN (Not a Number), not an exception.",
+            "type": "binary",
+            "displayOrder": 12,
+            "answers": [
+                {
+                    "id": 4045,
+                    "content": "NullPointerException",
+                    "correct": false
+                },
+                {
+                    "id": 4046,
+                    "content": "ArithmeticException",
+                    "correct": true
+                },
+                {
+                    "id": 4047,
+                    "content": "NumberFormatException",
+                    "correct": false
+                },
+                {
+                    "id": 4048,
+                    "content": "IllegalArgumentException",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1013,
+            "title": "What is method overloading in Java?",
+            "description": "",
+            "explanation": "Method overloading allows a class to have multiple methods with the same name but different parameters (different number of parameters, different types, or different order). The return type alone is not sufficient to overload a method.",
+            "type": "binary",
+            "displayOrder": 13,
+            "answers": [
+                {
+                    "id": 4049,
+                    "content": "Having multiple methods with the same name but different parameters",
+                    "correct": true
+                },
+                {
+                    "id": 4050,
+                    "content": "Having multiple methods with the same name and same parameters",
+                    "correct": false
+                },
+                {
+                    "id": 4051,
+                    "content": "Redefining a method in a subclass",
+                    "correct": false
+                },
+                {
+                    "id": 4052,
+                    "content": "None of the above",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1014,
+            "title": "Which package is automatically imported in every Java program?",
+            "description": "",
+            "explanation": "The java.lang package is automatically imported in every Java program. It contains fundamental classes like String, System, Integer, Math, etc. You don't need to explicitly import this package.",
+            "type": "binary",
+            "displayOrder": 14,
+            "answers": [
+                {
+                    "id": 4053,
+                    "content": "java.util",
+                    "correct": false
+                },
+                {
+                    "id": 4054,
+                    "content": "java.io",
+                    "correct": false
+                },
+                {
+                    "id": 4055,
+                    "content": "java.lang",
+                    "correct": true
+                },
+                {
+                    "id": 4056,
+                    "content": "java.net",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 1015,
+            "title": "What is the purpose of the 'final' keyword when applied to a variable?",
+            "description": "",
+            "explanation": "When the 'final' keyword is applied to a variable, it makes the variable a constant - its value cannot be changed once initialized. For reference variables, the reference cannot be changed, but the object's state can still be modified.",
+            "type": "binary",
+            "displayOrder": 15,
+            "answers": [
+                {
+                    "id": 4057,
+                    "content": "The variable cannot be inherited",
+                    "correct": false
+                },
+                {
+                    "id": 4058,
+                    "content": "The variable cannot be changed after initialization",
+                    "correct": true
+                },
+                {
+                    "id": 4059,
+                    "content": "The variable is static",
+                    "correct": false
+                },
+                {
+                    "id": 4060,
+                    "content": "The variable is private",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

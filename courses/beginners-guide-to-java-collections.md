@@ -30,12 +30,8 @@ Welcome to "Beginner's Guide to Java Collections Course" - your complete guide t
 This course is ideal for:
 
 -   Java developers looking to strengthen their fundamentals
-    
 -   Programming students transitioning from basic Java to intermediate concepts
-    
 -   Software engineers wanting to optimize their code using appropriate data structures
-    
 -   Backend developers working with data-intensive applications
-    
 -   Anyone preparing for Java technical interviews
     

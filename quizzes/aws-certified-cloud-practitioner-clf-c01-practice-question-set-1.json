@@ -1,0 +1,346 @@
+{
+    "id": 4,
+    "title": "CLF-C01 AWS Certified Cloud Practitioner Practice Exam - Set1",
+    "slug": "aws-certified-cloud-practitioner-clf-c01-practice-question-set-1",
+    "excerpt": "CLF-C01 AWS Certified Cloud Practitioner Practice Exam - Test your skills with our interactive quiz app",
+    "difficulty": "beginner",
+    "thumbnail": "media/uploads/articles/AWS_Certified_Cloud_Practitioner_Practice_Exam_XlzUoOZ_XSGPOtJ.jpeg",
+    "description": "<h3>Description</h3>\r\n\r\n<p>AWS Certification helps learners build credibility and confidence by validating their cloud expertise with an industry recognized credential and organisations identify skilled professionals to lead cloud initiatives using AWS.</p>\r\n\r\n<p>These AWS Certified Cloud Practitioner CLF-C01 practice tests are patterned after the latest exam format and were curated based on real test papers. Our AWS Cloud Practitioner certification practice tests are TOP-NOTCH and the CLOSEST to the actual exam.</p>\r\n\r\n<p>Each question has detailed explanations at the end of each set that will help you gain a deeper understanding of the AWS services. The explanation provides an overview of the topic, reference links to AWS documentation, and a rationale on why the option is correct or incorrect</p>\r\n\r\n<h3>Instructions</h3>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Each test contains 10 questions and has a time limit of 10 minutes</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Each question carries 1 mark, no negative marks.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Click the 'Submit Test' button given at the bottom of this page to Submit your answers.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>The test will be submitted automatically if the time expired</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Do not refresh the page while taking the test.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Please note, this test is not official, it's just a nice way to see how ready you're with your AWS Certification.</p>\r\n\t</li>\r\n</ul>",
+    "duration": 15,
+    "featured": false,
+    "publishedDate": "2025-09-16T22:26:40.681472Z",
+    "createdDate": "2025-09-16T22:26:40.694197Z",
+    "updatedDate": "2025-09-16T22:26:40.694197Z",
+    "publishStatus": "A",
+    "author": {
+        "userId": 1,
+        "alias": "siteadmin",
+        "firstName": "Stacktips",
+        "lastName": "",
+        "avatar": "media/uploads/user/siteadmin/logo_4j3OiHj.png",
+        "bio": "Provides a developer-friendly way to learn programming",
+        "twitter": "https://twitter.com/Stacktips",
+        "youtube": "https://youtube.com/channel/UCGydhB36jVvXIAU8HDlHovQ",
+        "website": "",
+        "linkedin": "",
+        "github": "https://github.com/stacktipslab",
+        "verified": false
+    },
+    "taxonomy": {
+        "id": 17,
+        "name": "HTML",
+        "slug": "html",
+        "thumbnail": "media/uploads/categories/html5.png",
+        "taxonomyType": "CATEGORY",
+        "description": "HTML is the standard markup language used for structuring web pages and formatting content. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.",
+        "publishStatus": "D",
+        "updatedAt": "2025-09-16T22:25:25.918576Z",
+        "bgColor": "#e2e8f0",
+        "textColor": "#0f172a",
+        "seoMeta": null,
+        "articleCount": 0,
+        "author": null
+    },
+    "questions": [
+        {
+            "id": 141,
+            "title": " Why is AWS more economical than traditional data centers for applications with varying compute\nworkloads?",
+            "description": "",
+            "explanation": "The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload. This is a more economical practice than purchasing enough on-premises servers to handle the peak load.",
+            "type": "binary",
+            "displayOrder": 1,
+            "answers": [
+                {
+                    "id": 559,
+                    "content": "Amazon EC2 instances can be launched on demand when needed.",
+                    "correct": true
+                },
+                {
+                    "id": 560,
+                    "content": "Users retain full administrative access to their Amazon EC2 instances.",
+                    "correct": false
+                },
+                {
+                    "id": 561,
+                    "content": "Users can permanently run enough instances to handle peak workloads.",
+                    "correct": false
+                },
+                {
+                    "id": 562,
+                    "content": "Amazon EC2 costs are billed on a monthly basis.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "title": "Which AWS service would simplify the migration of a database to AWS?",
+            "description": "",
+            "explanation": "AWS DMS helps users migrate databases to AWS quickly and securely. The source database remains fully operational during the migration, minimizing downtime to applications that rely on the database. AWS DMS can migrate data to and from most widely used commercial and open-source databases.",
+            "type": "binary",
+            "displayOrder": 2,
+            "answers": [
+                {
+                    "id": 583,
+                    "content": "Amazon EC2",
+                    "correct": false
+                },
+                {
+                    "id": 584,
+                    "content": "AWS Database Migration Service (AWS DMS)",
+                    "correct": true
+                },
+                {
+                    "id": 585,
+                    "content": "AWS Storage Gateway",
+                    "correct": false
+                },
+                {
+                    "id": 586,
+                    "content": "Amazon AppStream 2.0",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "title": "Which AWS offering enables users to find, buy, and immediately start using software solutions in their AWS environment?",
+            "description": "",
+            "explanation": "AWS Marketplace is a digital catalog with thousands of software listings from independent software vendors that makes it easy to find, test, buy, and deploy software that runs on AWS",
+            "type": "binary",
+            "displayOrder": 3,
+            "answers": [
+                {
+                    "id": 563,
+                    "content": "AWS SDK",
+                    "correct": false
+                },
+                {
+                    "id": 564,
+                    "content": "AWS OpsWorks",
+                    "correct": false
+                },
+                {
+                    "id": 565,
+                    "content": "AWS Config",
+                    "correct": false
+                },
+                {
+                    "id": 566,
+                    "content": "AWS Marketplace",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 149,
+            "title": "Which AWS networking service enables a company to create a virtual network within AWS?",
+            "description": "",
+            "explanation": "Amazon VPC lets users provision a logically isolated section of the AWS Cloud where users can launch AWS resources in a virtual network that they define.",
+            "type": "binary",
+            "displayOrder": 4,
+            "answers": [
+                {
+                    "id": 591,
+                    "content": "AWS Config",
+                    "correct": false
+                },
+                {
+                    "id": 592,
+                    "content": "Amazon Virtual Private Cloud (Amazon VP5) ",
+                    "correct": true
+                },
+                {
+                    "id": 593,
+                    "content": "AWS Direct Connect",
+                    "correct": false
+                },
+                {
+                    "id": 594,
+                    "content": "Amazon Route 53",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "title": "Which of the following is an AWS responsibility under the AWS shared responsibility model?",
+            "description": "",
+            "explanation": "Maintaining physical hardware is an AWS responsibility under the AWS shared responsibility model.",
+            "type": "binary",
+            "displayOrder": 5,
+            "answers": [
+                {
+                    "id": 575,
+                    "content": "Configuring third-party applications",
+                    "correct": false
+                },
+                {
+                    "id": 576,
+                    "content": "Maintaining physical hardware",
+                    "correct": true
+                },
+                {
+                    "id": 577,
+                    "content": "Managing guest operating systems",
+                    "correct": false
+                },
+                {
+                    "id": 578,
+                    "content": "Securing application access and data",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "title": "What are some common uses of AWS? Select all that apply",
+            "description": "",
+            "explanation": "All of the answers are common uses of AWS. AWS has thousands of different uses. In this course we discussed some of the major categories, including: Storage Compute Power Databases Networking Analytics Developer Tools Virtualization Security",
+            "type": "multiple",
+            "displayOrder": 6,
+            "answers": [
+                {
+                    "id": 571,
+                    "content": "Analytics",
+                    "correct": true
+                },
+                {
+                    "id": 572,
+                    "content": "Virtualization",
+                    "correct": true
+                },
+                {
+                    "id": 573,
+                    "content": "Networking",
+                    "correct": true
+                },
+                {
+                    "id": 574,
+                    "content": "Storage",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "title": "Which of the following will effect how much you are charged for storing objects in S3? Choose the 2 Correct answers:",
+            "description": "",
+            "explanation": "",
+            "type": "multiple",
+            "displayOrder": 7,
+            "answers": [
+                {
+                    "id": 587,
+                    "content": "Creating and deleting S3 buckets",
+                    "correct": false
+                },
+                {
+                    "id": 588,
+                    "content": "The storage class used for the objects stored.",
+                    "correct": true
+                },
+                {
+                    "id": 589,
+                    "content": "The total size in gigabytes of all objects store",
+                    "correct": true
+                },
+                {
+                    "id": 590,
+                    "content": "Encrypting data (objects) stored in S3.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "title": "What best describes the concept of fault tolerance?",
+            "description": "",
+            "explanation": "Fault tolerance describes the concept of a system (in our case a web application) to have failure in some of its components and still remain accessible (highly available). Fault tolerant web applications will have at least two web servers (in case one fails).",
+            "type": "binary",
+            "displayOrder": 8,
+            "answers": [
+                {
+                    "id": 567,
+                    "content": "The ability for a system to withstand a certain amount of failure and still remain functional.",
+                    "correct": true
+                },
+                {
+                    "id": 568,
+                    "content": "The ability for a system be accessible when you attempt to access it",
+                    "correct": false
+                },
+                {
+                    "id": 569,
+                    "content": "The ability for a system to grow and shrink based on demand.",
+                    "correct": false
+                },
+                {
+                    "id": 570,
+                    "content": "The ability for a system to grow in size, capacity, and/or scope.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 146,
+            "title": "What is a main benefit of CloudFront?",
+            "description": "",
+            "explanation": "CloudFront allows you to cache content at edge locations. When a request is made for that content, the request is sent to an edge location (not your applications hardware), so the edge locations will absorb any DDoS attack and protect your underlining hardware.",
+            "type": "binary",
+            "displayOrder": 9,
+            "answers": [
+                {
+                    "id": 579,
+                    "content": "DNS management",
+                    "correct": false
+                },
+                {
+                    "id": 580,
+                    "content": "Serverless compute capacity",
+                    "correct": false
+                },
+                {
+                    "id": 581,
+                    "content": "Built-in DDoS protection",
+                    "correct": true
+                },
+                {
+                    "id": 582,
+                    "content": "Unlimited storage",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "title": "What is AWS's relational database service?",
+            "description": "",
+            "explanation": "RDS offers SQL database options - otherwise known as relational databases.",
+            "type": "binary",
+            "displayOrder": 10,
+            "answers": [
+                {
+                    "id": 595,
+                    "content": "RDS",
+                    "correct": true
+                },
+                {
+                    "id": 596,
+                    "content": "Redshift",
+                    "correct": false
+                },
+                {
+                    "id": 597,
+                    "content": "DymamoDB",
+                    "correct": false
+                },
+                {
+                    "id": 598,
+                    "content": "ElastiCache",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
