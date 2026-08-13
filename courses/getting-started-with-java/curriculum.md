@@ -20,6 +20,65 @@ prerequisites:
 difficulty: beginner
 topic: java
 instructor: nilanchala-panigrahy
+curriculum:
+  - title: "Introduction to Java"
+    slug: introduction-to-java
+  - title: "Overview of Java Syntax and Comments"
+    slug: java-overview-syntax-and-comments
+  - title: "Introduction to Java Variables and Types"
+    slug: java-variables-and-types
+  - title: "Operators in Java"
+    slug: java-operators
+  - title: "Type Casting and Conversion in Java"
+    slug: java-type-casting
+  - title: "Working with Methods in Java"
+    slug: java-methods
+  - title: "Working with Java Arrays"
+    slug: java-arrays
+  - title: "Decision Making in Java using Ifs, Else Ifs, Switch"
+    slug: java-ifs-else-ifs-switch
+  - title: "Loops in Java for, while and do-while"
+    slug: java-loops
+  - title: "Reading User Input in Java Using Scanner"
+    slug: java-user-input-scanner
+  - title: "Strings in Java"
+    slug: java-strings
+  - title: "Classes and Objects in Java"
+    slug: java-classes-and-objects
+  - title: "Static Variables, Methods, and Class"
+    slug: static-keyowrd-in-java
+  - title: "Working with Packages in Java"
+    slug: java-packages
+  - title: "Encapsulation in Java"
+    slug: java-encapsulation
+  - title: "Access Modifiers in Java"
+    slug: java-instances-and-access-modifiers
+  - title: "Enums in Java"
+    slug: java-enums
+  - title: "Interfaces in Java"
+    slug: java-interfaces
+  - title: "Abstract Classes in Java"
+    slug: java-abstract-classes
+  - title: "Inheritance in Java"
+    slug: java-inheritance
+  - title: "this and super Keywords in Java"
+    slug: java-this-and-super-keywords
+  - title: "Java Polymorphism - Method Overloading, Method Overriding"
+    slug: java-polymorphism
+  - title: "Wrapper Classes and Autoboxing in Java"
+    slug: java-wrapper-classes-and-autoboxing
+  - title: "Exceptions Handling in Java"
+    slug: java-exceptions
+  - title: "Working with Java Collections"
+    slug: java-collections
+  - title: "Working With File System and IO in Java"
+    slug: java-file-system-and-io
+  - title: "Working with Date, Time in Java"
+    slug: java-date-work-with-moments-in-time
+  - title: "Perform Math Operations in Java"
+    slug: java-math
+  - title: "Regular Expressions in Java"
+    slug: java-regular-expressions
 seo:
   metaTitle: "Java Tutorial for Beginners - Free Course"
   metaDescription: "Learn core Java programming from scratch with this free beginner's course - syntax, OOP concepts, and hands-on exercises to start coding in Java today."
