@@ -18,7 +18,7 @@ tags:
   - spring-boot-log-levels
   - actuator-runtime-log-level
 course: spring-boot-for-beginners
-displayOrder: 7
+displayOrder: 8
 seo: 
   metaTitle: null
   metaDescription: null

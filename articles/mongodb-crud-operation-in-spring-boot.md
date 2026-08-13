@@ -17,8 +17,8 @@ tags:
   - mongorepository-example
   - spring-data-mongodb
   - mongodb-spring-boot-tutorial
-course: null
-displayOrder: 1
+course: spring-boot-for-beginners
+displayOrder: 16
 seo: 
   metaTitle: null
   metaDescription: null

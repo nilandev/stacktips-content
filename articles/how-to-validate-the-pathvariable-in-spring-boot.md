@@ -17,8 +17,8 @@ tags:
   - spring-boot-custom-validator
   - constraintvalidator-example
   - spring-pattern-annotation-validation
-course: null
-displayOrder: 0
+course: spring-boot-for-beginners
+displayOrder: 11
 seo: 
   metaTitle: "How to Validate @PathVariable in Spring Boot"
   metaDescription: "Learn how to validate @PathVariable in Spring Boot using @NotEmpty, @Pattern regex validation, a custom ConstraintValidator, and manual validation."

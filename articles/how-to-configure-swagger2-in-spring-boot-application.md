@@ -17,8 +17,8 @@ tags:
   - springfox-boot-starter
   - enableswagger2
   - swagger-ui-setup
-course: null
-displayOrder: 0
+course: spring-boot-for-beginners
+displayOrder: 22
 seo: 
   metaTitle: "How to Configure Swagger2 in a Spring Boot Application"
   metaDescription: "Learn how to configure Swagger2 and enable Swagger UI in a Spring Boot app using the springfox-boot-starter dependency and @EnableSwagger2 annotation."

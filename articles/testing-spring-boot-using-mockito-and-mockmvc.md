@@ -18,7 +18,7 @@ tags:
   - webmvctest-annotation
   - spring-boot-rest-api-testing
 course: spring-boot-for-beginners
-displayOrder: 10
+displayOrder: 24
 seo: 
   metaTitle: null
   metaDescription: null

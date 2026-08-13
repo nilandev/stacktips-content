@@ -17,8 +17,8 @@ tags:
   - h2-console-configuration
   - spring-boot-embedded-database
   - h2-database-testing-java
-course: null
-displayOrder: 0
+course: spring-boot-for-beginners
+displayOrder: 14
 seo: 
   metaTitle: null
   metaDescription: null

@@ -20,6 +20,61 @@ prerequisites:
 difficulty: beginner
 topic: spring-boot
 instructor: nilanchala-panigrahy
+curriculum:
+  - title: "Introduction to Spring Boot Framework"
+    slug: introduction-to-spring-boot-framework
+  - title: "Prerequisites for Spring Boot Development"
+    slug: prerequisites-for-spring-boot-development
+  - title: "Setting Up Your First Spring Boot Project"
+    slug: setting-up-your-first-spring-boot-project
+  - title: "Understanding Spring Boot Project Structure"
+    slug: understanding-spring-boot-project-structure
+  - title: "Dependency Injection in Spring Boot"
+    slug: dependency-injection-in-spring-boot
+  - title: "Most Commonly Used Annotations in Spring Boot"
+    slug: spring-boot-annotations
+  - title: "Configuration Management in Spring Boot"
+    slug: configuration-management-in-spring-boot
+  - title: "Logging in Spring Boot"
+    slug: logging-in-spring-boot
+  - title: "Building Your First REST API with Spring Boot"
+    slug: building-your-first-rest-api-with-spring-boot
+  - title: "Handling Request Parameters, Path Variables, and Request Bodies"
+    slug: handling-request-parameters-path-variables-and-request-body-in-spring-boot
+  - title: "How to Validate the @PathVariable in Spring Boot"
+    slug: how-to-validate-the-pathvariable-in-spring-boot
+  - title: "Validating Request Data with Bean Validation in Spring Boot"
+    slug: validating-request-data-with-bean-validation-in-spring-boot
+  - title: "Connecting Spring Boot to a Database with Spring Data JPA"
+    slug: connecting-spring-boot-to-a-database-with-spring-data-jpa
+  - title: "Using H2 In-Memory Database in Spring Boot"
+    slug: using-h2-in-memory-database-in-spring-boot
+  - title: "Building CRUD REST APIs with Spring Data JPA"
+    slug: building-crud-rest-apis-with-spring-data-jpa
+  - title: "Performing MongoDB CRUD Operation in Spring Boot"
+    slug: mongodb-crud-operation-in-spring-boot
+  - title: "Pagination and Sorting in Spring Boot REST APIs"
+    slug: pagination-and-sorting-in-spring-boot-rest-apis
+  - title: "Handling File Upload and Download in Spring Boot"
+    slug: handling-file-upload-and-download-in-spring-boot
+  - title: "Centralized Error Handling in Spring Boot with @ControllerAdvice"
+    slug: centralized-error-handling-in-spring-boot-with-controlleradvice
+  - title: "How to Use Interceptor in Spring Boot Application"
+    slug: how-to-use-interceptor-in-spring-boot
+  - title: "Using Filters in Spring Boot"
+    slug: using-filters-in-spring-boot
+  - title: "How to Configure Swagger2 in Spring Boot Application"
+    slug: how-to-configure-swagger2-in-spring-boot-application
+  - title: "Working with Spring Boot Actuators"
+    slug: working-with-spring-boot-actuators
+  - title: "Testing Spring Boot REST API using Mockito and MockMvc"
+    slug: testing-spring-boot-using-mockito-and-mockmvc
+  - title: "Packaging and Running a Spring Boot Application"
+    slug: packaging-and-running-a-spring-boot-application
+  - title: "Dockerizing a Spring Boot Application"
+    slug: dockerizing-a-spring-boot-application
+  - title: "Deploying a Spring Boot Application to the Cloud"
+    slug: deploying-a-spring-boot-application-to-the-cloud
 seo:
   metaTitle: "Spring Boot Tutorial for Beginners"
   metaDescription: "Learn Spring Boot from scratch with this free beginner's guide - build REST APIs, web apps, and microservices using the Spring Boot framework."

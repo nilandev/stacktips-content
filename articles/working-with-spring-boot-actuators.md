@@ -18,7 +18,7 @@ tags:
   - actuator-health-endpoint
   - spring-boot-monitoring
 course: spring-boot-for-beginners
-displayOrder: 8
+displayOrder: 23
 seo: 
   metaTitle: null
   metaDescription: null

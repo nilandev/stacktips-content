@@ -18,7 +18,7 @@ tags:
   - spring-value-annotation
   - spring-profiles-configuration
 course: spring-boot-for-beginners
-displayOrder: 6
+displayOrder: 7
 seo: 
   metaTitle: "Configuration Management in Spring Boot Explained"
   metaDescription: "Learn how Spring Boot loads and prioritizes configuration from properties files, environment variables, and command-line arguments across environments."

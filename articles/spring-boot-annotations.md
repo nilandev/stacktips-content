@@ -18,8 +18,8 @@ tags:
   - autowired-annotation
   - component-vs-service-vs-repository
   - spring-bean-annotation
-course: null
-displayOrder: 0
+course: spring-boot-for-beginners
+displayOrder: 6
 seo: 
   metaTitle: null
   metaDescription: null
