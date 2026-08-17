@@ -39,7 +39,7 @@ Mainly we have the following choices:
 4.  [WebClient](https://stacktips.com/articles/what-is-webclient-how-to-use-webclient-in-java-springboot)
 5.  New declarative HTTP Interface
 
-## 1. RestTemplate
+### 1. RestTemplate
 
 The `RestTemplate` was Introduced almost 14 years ago in Spring Framework version 3.0. RestTemplate is a synchronous client used to make HTTP requests from the Spring application. It simplifies the process of making HTTP requests using template-like classes.
 
