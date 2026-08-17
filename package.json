@@ -1,0 +1,11 @@
+{
+  "name": "stacktips-content",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update-dates": "node scripts/update-dates.mjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
