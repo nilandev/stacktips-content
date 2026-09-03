@@ -2,14 +2,14 @@
 id: 12
 name: JavaScript
 slug: javascript
-description: JavaScript worlds more popular, high-level, dynamic, and interpreted programming language for web.
+description: "Tutorials and examples covering JavaScript, from language fundamentals to DOM manipulation, async programming, and modern ES features."
 thumbnail: /media/categories/javascript.png
 bgColor: "#e2e8f0"
 textColor: "#0f172a"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples covering JavaScript, from language fundamentals to DOM manipulation, async programming, and modern ES features."
   metaKeywords: null
 ---
 
-JavaScript worlds more popular, high-level, dynamic, and interpreted programming language for web.
+Tutorials and examples covering JavaScript, from language fundamentals to DOM manipulation, async programming, and modern ES features.

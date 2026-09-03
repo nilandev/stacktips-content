@@ -2,14 +2,14 @@
 id: 5
 name: Git
 slug: git
-description: Git is a DevOps tool used for source code management
+description: "Tutorials and guides for using Git, covering branching, merging, rebasing, and other everyday source control workflows."
 thumbnail: /media/categories/git.png
 bgColor: "#e84d32"
 textColor: "#d9dbdeff"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and guides for using Git, covering branching, merging, rebasing, and other everyday source control workflows."
   metaKeywords: null
 ---
 
-Git is a DevOps tool used for source code management
+Tutorials and guides for using Git, covering branching, merging, rebasing, and other everyday source control workflows.

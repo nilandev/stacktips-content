@@ -2,14 +2,14 @@
 id: 101
 name: IBM Worklight
 slug: ibm-worklight
-description: IBM Worklight enables you to develop rich cross-platform applications that can access the full capabilities of a wide range of mobile devices.
+description: "Tutorials and examples for building cross-platform mobile applications with IBM Worklight."
 thumbnail: /media/categories/ibm-worklight.png
 bgColor: "#e2e8f0"
 textColor: "#0f172a"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples for building cross-platform mobile applications with IBM Worklight."
   metaKeywords: null
 ---
 
-IBM Worklight enables you to develop rich cross-platform applications that can access the full capabilities of a wide range of mobile devices.
+Tutorials and examples for building cross-platform mobile applications with IBM Worklight.

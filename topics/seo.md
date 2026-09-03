@@ -2,14 +2,14 @@
 id: 95
 name: SEO
 slug: seo
-description: Search Engine Optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic rather than direct traffic or paid traffic.
+description: "Guides and tips for improving search engine visibility, covering on-page SEO, technical SEO, and strategies for growing organic traffic."
 thumbnail: /media/categories/seo.png
 bgColor: "#e2e8f0"
 textColor: "#0f172a"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Guides and tips for improving search engine visibility, covering on-page SEO, technical SEO, and strategies for growing organic traffic."
   metaKeywords: null
 ---
 
-Search Engine Optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic rather than direct traffic or paid traffic.
+Guides and tips for improving search engine visibility, covering on-page SEO, technical SEO, and strategies for growing organic traffic.

@@ -1,8 +1,8 @@
 ---
 id: 11
-title: How to Generate Valid RSS Feed for your Laravel Application?
+title: How to Generate a Valid RSS Feed for Your Laravel Application?
 slug: how-to-generate-valid-rss-feed-for-your-laravel-application
-excerpt: Feeds are one of the traditional and most effective ways to distribute your content to the wider audience.…
+excerpt: Feeds are one of the traditional and most effective ways to distribute your content to a wider audience.…
 difficulty: beginners
 publishedDate: "2017-05-18T17:54:52.000Z"
 updatedDate: "2025-09-16T23:05:21.443Z"
@@ -11,12 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - laravel
+  - blog
 tags:
-  - laravel-rss-feed
-  - roumen-laravel-feed
-  - laravel-atom-feed
-  - laravel-feed-service-provider
+  - laravel
+  - rss-feed
+  - xml-feed
 course: null
 displayOrder: 0
 seo: 
@@ -25,33 +24,33 @@ seo:
   metaKeywords: null
 ---
 
-Feeds are one of the traditional and most effective ways to distribute your content to the wider audience. There are thousands of apps such as Feedly, Apple News, Google Newsstand, that allows people to follow and read your content whenever new content is published.
+Feeds are one of the traditional and most effective ways to distribute your content to a wider audience. There are thousands of apps, such as Feedly, Apple News, and Google Newsstand, that allow people to follow and read your content whenever new content is published.
 
-Feeds allow webmasters to drive traffic to their website. Some of the feed delivery platforms such as Google Feed burner allows you to monetize your feed content by serving ads.
+Feeds allow webmasters to drive traffic to their websites. Some feed delivery platforms, such as Google FeedBurner, allow you to monetize your feed content by serving ads.
 
-## Generate RSS Feed in Laravel
+## Generate an RSS Feed in Laravel
 
-According to web standards, there are different feed formats that are widely accepted. RSS and Atom are the most popular ones. Feeds are XML based, however, they differ in specifications.
+According to web standards, there are different feed formats that are widely accepted. RSS and Atom are the most popular ones. Feeds are XML-based; however, they differ in specifications.
 
-To make our life easy, we will generate valid RSS and Atom feed using [roumen/feed](https://github.com/RoumenDamianoff/laravel-feed) Laravel open source library. In this article, we assume you have the basic knowledge of Laravel project and have a project handy to integrate.
+To make our lives easier, we will generate valid RSS and Atom feeds using the [roumen/feed](https://github.com/RoumenDamianoff/laravel-feed) open-source Laravel library. In this article, we assume you have a basic knowledge of Laravel and have a project handy to integrate with.
 
-### Adding roumen/feed via composer
+### Adding roumen/feed via Composer
 
-Laravel project dependencies are maintained using [composer](/articles/intro-to-laravel-php-framework-and-features). We can add the roumen/feed dependency library using the following artisan command:
+Laravel project dependencies are maintained using [Composer](/articles/intro-to-laravel-php-framework-and-features). We can add the roumen/feed dependency library using the following Artisan command:
 
 ```bash
 composer require roumen/feed
 ```
 
-Or add the following to your re composer.json file:
+Or add the following to your `composer.json` file:
 
 ```json
 "roumen/feed": "~2.10"
 ```
 
-Please note, after updating composer.json file, run `composer install` command to add dependency to project.
+Please note, after updating the `composer.json` file, run the `composer install` command to add the dependency to your project.
 
-Now, register for `Roumen\Feed\FeedServiceProvider` service provider and class alias in your Laravel `config/app/php` file.
+Now, register the `Roumen\Feed\FeedServiceProvider` service provider and class alias in your Laravel `config/app.php` file.
 
 ```php
 <?php
@@ -69,7 +68,7 @@ return [
 ];
 ```
 
-Optionally, if you want to alter the blade layouts, you can publish vendor views using following artisan command.
+Optionally, if you want to alter the Blade layouts, you can publish vendor views using the following Artisan command:
 
 ```bash
 artisan vendor:publish --provider="Roumen\Feed\FeedServiceProvider"
@@ -77,9 +76,9 @@ artisan vendor:publish --provider="Roumen\Feed\FeedServiceProvider"
 
 ### Eloquent Models
 
-This tutorial scope is limited to generating RSS feed, and hence we wont cover the Eloquent Models and database concepts.
+This tutorial's scope is limited to generating an RSS feed, and hence we won't cover Eloquent models and database concepts.
 
-The following code snippet of the Post and User model are illustrated just to get the idea of how my data in the database are stored.
+The following code snippets of the Post and User models are illustrated just to give an idea of how the data in the database is stored.
 
 ```php
 <?php
@@ -106,7 +105,7 @@ class Post extends Model
 }
 ```
 
-Let us now see how the User model looks like.
+Let us now see what the User model looks like.
 
 ```php
 <?php
@@ -136,11 +135,11 @@ class User extends Authenticatable
 }
 ```
 
-Notice that in the above relationship, we have inverse one to many relationship between Post and User. A user can have multiple posts and a post can be associated to one user.
+Notice that in the above relationship, we have an inverse one-to-many relationship between Post and User. A user can have multiple posts, and a post can be associated with one user.
 
 ### Routes for Feed
 
-Here is how our routes for posts looks like,
+Here is what our routes for posts look like:
 
 ```php
 #Post archive
@@ -151,7 +150,7 @@ Route::get('post/{id}/{slug?}', ['as' => 'post.single', 'uses' => 'PostControlle
 
 ### Feed Configuration
 
-We would like to have some of the feed configurations inside a config file. Create a new file named `feed.php` inside `/config/` directory and add the following snippets.
+We would like to have some of the feed configurations inside a config file. Create a new file named `feed.php` inside the `config/` directory and add the following snippet:
 
 ```php
 <?php
@@ -166,18 +165,18 @@ return [
 ];
 ```
 
-In this example, we have configured to serve 30 items in our feed. There is no such rule on many items you should serve, but it is recommended to have your feed sleek. I believe between 20-30 is a good number.
+In this example, we have configured the feed to serve 30 items. There is no strict rule on how many items you should serve, but it is recommended to keep your feed sleek. I believe between 20 and 30 is a good number.
 
 ### Laravel Routes for Feed
 
-Let us now define routes for RSS feeds. Here we will define two routes; one for accessing atom feed and other for rss.
+Let us now define routes for RSS feeds. Here, we will define two routes: one for accessing the Atom feed and the other for RSS.
 
 ```php
 # Feeds
 Route::get('feed/{type?}', ['as' => 'feed.atom', 'uses' => 'Feed\FeedsController@getFeed']);
 ```
 
-I personally believe in simplicity, so let us define a method `getFeed()` in controller and abstract most of the business logic into a service class.
+I personally believe in simplicity, so let us define a `getFeed()` method in the controller and abstract most of the business logic into a service class.
 
 ### Feed Controller
 
@@ -211,17 +210,15 @@ class FeedsController extends Controller
 }
 ```
 
-Notice that,
+Note that:
 
--   The feed route defines an optional parameter `type`. This is used to define what type of feed user want to access.
--   Currently we will support only RSS and Atom, and make Atom the default choice.
--   If user pass any invalid value for feed type, instead of showing an error page, we will rather redirect to home page.
+-   The feed route defines an optional parameter `type`. This is used to define what type of feed the user wants to access.
+-   Currently, we will support only RSS and Atom, and make Atom the default choice.
+-   If the user passes an invalid value for the feed type, instead of showing an error page, we will redirect to the home page.
 
 ### FeedBuilder Service
 
-The next part is the real fun is. Here we make use of roumen/feed library APIs to serve the latest content in the feed.
-
-### Feed Controller
+The next part is where the real fun is. Here, we make use of the roumen/feed library APIs to serve the latest content in the feed.
 
 ```php
 <?php
@@ -276,7 +273,7 @@ class FeedBuilder
     }
 
     /**
-     * Creating rss feed with our most recent posts.
+     * Creating an RSS feed with our most recent posts.
      * The size of the feed is defined in feed.php config.
      *
      * @return mixed
@@ -290,9 +287,9 @@ class FeedBuilder
 }
 ```
 
-Notice that, if you have multiple feeds for different contents then, you must have to have different cache keys.
+Notice that if you have multiple feeds for different content, you must have different cache keys.
 
-Now visit any of the following URL and test if your feeds are working.
+Now visit any of the following URLs and test if your feeds are working:
 
 http://localhost:8080/feed  
 http://localhost:8080/feed/atom  

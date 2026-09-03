@@ -2,14 +2,14 @@
 id: 29
 name: JSON
 slug: json
-description: JSON is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+description: "Tutorials and examples for working with JSON, covering parsing, generating, and validating this lightweight data-interchange format."
 thumbnail: /media/categories/json.png
 bgColor: "#121725ff"
 textColor: "#e2e8f0"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples for working with JSON, covering parsing, generating, and validating this lightweight data-interchange format."
   metaKeywords: null
 ---
 
-JSON is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.
+Tutorials and examples for working with JSON, covering parsing, generating, and validating this lightweight data-interchange format.

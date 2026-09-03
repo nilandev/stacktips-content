@@ -11,12 +11,11 @@ githubLink: null
 featured: false
 thumbnail: null
 topics: 
-  - json
+  - blog
 tags:
   - json-vs-xml
-  - json-syntax-basics
-  - json-parse-stringify
-  - json-data-interchange-format
+  - json-syntax
+  - json-intro
 course: null
 displayOrder: 0
 seo: 
