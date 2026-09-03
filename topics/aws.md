@@ -2,14 +2,14 @@
 id: 10
 name: AWS
 slug: aws
-description: "Amazon Web Services (AWS) is the world's most comprehensive, scalable, and cost-effective cloud computing solution."
+description: "Tutorials, guides, and hands-on examples for building and deploying on Amazon Web Services, covering EC2, S3, Lambda, and other core AWS services."
 thumbnail: /media/categories/aws.png
 bgColor: "#f69403"
 textColor: "#ffffff"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials, guides, and hands-on examples for building and deploying on Amazon Web Services, covering EC2, S3, Lambda, and other core AWS services."
   metaKeywords: null
 ---
 
-Amazon Web Services (AWS) is the world's most comprehensive, scalable, and cost-effective cloud computing solution.
+Tutorials, guides, and hands-on examples for building and deploying on Amazon Web Services, covering EC2, S3, Lambda, and other core AWS services.

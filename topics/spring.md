@@ -2,14 +2,14 @@
 id: 1
 name: Spring
 slug: spring
-description: An application framework and inversion of control container for the Java platform
+description: "Tutorials and examples for building Java applications with the Spring Framework, covering dependency injection, MVC, security, and more."
 thumbnail: /media/categories/spring.png
 bgColor: "#6cb440"
 textColor: "#ffffff"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples for building Java applications with the Spring Framework, covering dependency injection, MVC, security, and more."
   metaKeywords: null
 ---
 
-An application framework and inversion of control container for the Java platform
+Tutorials and examples for building Java applications with the Spring Framework, covering dependency injection, MVC, security, and more.

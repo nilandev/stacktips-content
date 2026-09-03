@@ -2,14 +2,14 @@
 id: 90
 name: Maven
 slug: maven
-description: "Apache Maven is a build automation and project management tool used primarily for Java projects. "
+description: "Tutorials and examples for managing Java projects with Apache Maven, covering builds, dependencies, plugins, and project structure."
 thumbnail: /media/categories/maven.png
 bgColor: "#a72052"
 textColor: "#e2e8f0"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples for managing Java projects with Apache Maven, covering builds, dependencies, plugins, and project structure."
   metaKeywords: null
 ---
 
-Apache Maven is a build automation and project management tool used primarily for Java projects.
+Tutorials and examples for managing Java projects with Apache Maven, covering builds, dependencies, plugins, and project structure.

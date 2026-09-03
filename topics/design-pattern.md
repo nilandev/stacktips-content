@@ -2,14 +2,14 @@
 id: 55
 name: Design Pattern
 slug: design-pattern
-description: "A design pattern is a general reusable solution to a commonly occurring problem in software design. "
+description: "Tutorials and examples covering classic software design patterns, creational, structural, and behavioral, with real-world code."
 thumbnail: /media/categories/design-pattern.png
 bgColor: "#ff606c"
 textColor: "#242426ff"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples covering classic software design patterns, creational, structural, and behavioral, with real-world code."
   metaKeywords: null
 ---
 
-A design pattern is a general reusable solution to a commonly occurring problem in software design.
+Tutorials and examples covering classic software design patterns, creational, structural, and behavioral, with real-world code.

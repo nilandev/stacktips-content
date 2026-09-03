@@ -2,14 +2,14 @@
 id: 100
 name: Sencha Touch
 slug: sencha-touch
-description: Sencha Touch is a popular framework of Sencha for creating a user interface for mobile applications. It helps the developer create a mobile app using simple HTML, CSS, JS which supports many mobile devices such as android, IOS, BlackBerry, and Windows. It is based on MVC architecture.
+description: "Tutorials and examples for building mobile app interfaces with Sencha Touch using HTML, CSS, and JavaScript."
 thumbnail: /media/categories/sencha-touch.png
 bgColor: "#e2e8f0"
 textColor: "#0f172a"
 seo: 
   metaTitle: null
-  metaDescription: null
+  metaDescription: "Tutorials and examples for building mobile app interfaces with Sencha Touch using HTML, CSS, and JavaScript."
   metaKeywords: null
 ---
 
-Sencha Touch is a popular framework of Sencha for creating a user interface for mobile applications. It helps the developer create a mobile app using simple HTML, CSS, JS which supports many mobile devices such as android, IOS, BlackBerry, and Windows. It is based on MVC architecture.
+Tutorials and examples for building mobile app interfaces with Sencha Touch using HTML, CSS, and JavaScript.

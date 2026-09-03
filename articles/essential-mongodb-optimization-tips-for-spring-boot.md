@@ -1,9 +1,9 @@
 ---
 id: 461
-title: Essential MongoDB Optimization Tips for Spring Boot Application
+title: Essential MongoDB Optimization Tips for Spring Boot Applications
 slug: essential-mongodb-optimization-tips-for-spring-boot
-excerpt: This article delves into some key optimisation techniques and considerations to improve the overall application performance when dealing with MongoDB from Spring Boot.
-difficulty: advance
+excerpt: This article delves into some key optimization techniques and considerations to improve the overall application performance when dealing with MongoDB from Spring Boot.
+difficulty: advanced
 publishedDate: "2024-07-28T00:04:02.000Z"
 updatedDate: "2025-09-16T23:05:42.105Z"
 videoLink: null
@@ -11,13 +11,11 @@ githubLink: null
 featured: true
 thumbnail: /media/post/690_Essential_MongoDB_Optimization_Tips_for_Spring_Boot_Application-min.png
 topics: 
-  - mongodb
+  - spring-boot
 tags:
-  - mongodb-indexing-spring-data
-  - mongodb-compound-index
-  - spring-data-mongodb-performance
-  - mongodb-aggregation-pipeline
-  - mongodb-connection-pool-tuning
+  - mongodb-indexing
+  - mongodb-optimization
+  - mongodb-performance
 course: null
 displayOrder: 0
 seo: 
@@ -26,27 +24,27 @@ seo:
   metaKeywords: null
 ---
 
-In this article, we will delve into some key optimisation techniques and considerations to improve the overall application performance when dealing with MongoDB from Spring Boot.
+In this article, we will delve into some key optimization techniques and considerations to improve the overall application performance when dealing with MongoDB from Spring Boot.
 
 Let's dive in!
 
 ## 1. Indexing MongoDB Collections
 
-If your collection is not indexed, your queries will scan through the entire collection. Querying data with an index is much faster than scanning from the entire collection.
+If your collection is not indexed, your queries will scan through the entire collection. Querying data with an index is much faster than scanning the entire collection.
 
-By default, MongoDB includes a `_id` property in every document inside the collection and it is indexed. If you're using a custom ID field, then you need to ensure they are efficiently indexable.
+By default, MongoDB includes an `_id` property in every document inside the collection and it is indexed. If you're using a custom ID field, then you need to ensure it is efficiently indexable.
 
-There are several types of indexes supported in MongoDB. You can create a simple index on a field inside the collection or define more complex ones; using Compound index, Partial index and TTL indexes.
+There are several types of indexes supported in MongoDB. You can create a simple index on a field inside the collection or define more complex ones, such as compound indexes, partial indexes, and TTL indexes.
 
-You can choose the type of indexes to use based on your query pattern.
+You can choose the type of index to use based on your query patterns.
 
 ### Creating an Index
 
 The Spring Data MongoDB (`spring-data-mongodb`) dependency provides several convenient options for creating an index.
 
-The easiest way to create an index is to use the `@Indexed` annotation. All you need to do is to use `@Indexed` annotation on the field within your model class. You can also set the `expireAfterSeconds` attribute to `@Indexed` annotation for creating a TTL index.
+The easiest way to create an index is to use the `@Indexed` annotation. All you need to do is to use the `@Indexed` annotation on the field within your model class. You can also set the `expireAfterSeconds` attribute on the `@Indexed` annotation to create a TTL index.
 
-Let us look into the `Product` model, the field `productId` is indexed with a TTL value set to 1 minute.
+In the following `Product` model, the `productId` field is indexed with a TTL value:
 
 ```java
 @Document(collection = "products")
@@ -63,13 +61,13 @@ public class Product {
 
 ### Compound Indexes
 
-The indexes are great, but what if your query searches based on multiple fields inside a collection? That is when you will use compound indexes.
+Indexes are great, but what if your query searches based on multiple fields inside a collection? That is when you should use compound indexes.
 
-A compound index can be created using `@CompoundIndex` annotation by passing the index definition in a JSON format. This annotation is applied at the class level and can be repeatable.
+A compound index can be created using the `@CompoundIndex` annotation by passing the index definition in JSON format. This annotation is applied at the class level and is repeatable.
 
-Note that, a compound index can have a maximum of 32 fields.
+Note that a compound index can have a maximum of 32 fields.
 
-The following example creates a compound index named `product_brand_index` using the `productId` and `brand` field.
+The following example creates a compound index named `product_brand_index` using the `productId` and `brand` fields.
 
 ```java
 @CompoundIndex(name = "product_brand_index",
@@ -87,15 +85,15 @@ public class Product {
 
 ### Partial Index
 
-Partial indexes are like regular indexes but they only include documents in a collection that meet a specific filter criteria. Because it only indexes a subset of data in a collection, it is more efficient as compared to basic and compound indexes.
+Partial indexes are like regular indexes, but they only include documents in a collection that meet specific filter criteria. Because they only index a subset of data in a collection, they are more efficient compared to basic and compound indexes.
 
-The Spring Data MongoDB does not support creating partial indexes via the annotations but it is possible programmatically.
+Spring Data MongoDB does not support creating partial indexes via annotations, but it is possible programmatically.
 
 _Note_
 
-It is recommended to start the index creation on Spring application startup, specifically after the application context is refreshed. You can use the Spring lifecycle events to guarantee that the context is fully initialized before you create indexes.
+It is recommended to start index creation on Spring application startup, specifically after the application context is refreshed. You can use Spring lifecycle events to guarantee that the context is fully initialized before you create indexes.
 
-The following example creates a partial index named `apple_products_index` inside the `products` collection only for documents which contain `brand=apple`.
+The following example creates a partial index named `apple_products_index` inside the `products` collection only for documents that contain `brand=apple`.
 
 ```java
 @Component
@@ -124,15 +122,15 @@ class AppEventListener {
 
 ### FAQs
 
-**How many indexes can we create?** As indexes largely live in memory, ensure that your indexes fit entirely in RAM. If you're going overboard, MongoDB will attempt to read the index from the disk, which has an adverse effect and slow down your queries.
+**How many indexes can we create?** As indexes largely live in memory, ensure that your indexes fit entirely in RAM. If you're going overboard, MongoDB will attempt to read the index from disk, which has an adverse effect and slows down your queries.
 
 A single MongoDB collection can have a maximum of 64 indexes.
 
-## 2. Manage Connection Pool
+## 2. Manage the Connection Pool
 
-Incorrectly configured connection pools can either lead to a shortage of database connections under load or waste resources. Increasing the client connection pool size based on availability can improve performance when you have high concurrency usage on your database.
+Incorrectly configured connection pools can either lead to a shortage of database connections under load or waste resources. Increasing the client connection pool size based on availability can improve performance when you have high concurrent usage on your database.
 
-By default spring data MongoDB sets the max pool size to 100. But this can be changed by setting the `maxPoolSize=500` parameter to your connection URI.
+By default, Spring Data MongoDB sets the max pool size to 100. But this can be changed by setting the `maxPoolSize=500` parameter in your connection URI.
 
 ```yaml
 spring:
@@ -143,11 +141,11 @@ spring:
 
 I highly recommend reading this excellent post by [Brian Shen](https://medium.com/@houwei.shen/how-poolsize-can-impact-mongodb-backed-apps-cee83d481b1f), where he explains how pool size can impact the performance of MongoDB-backed applications.
 
-## 3. Query Large Dataset
+## 3. Query Large Datasets
 
 Retrieving a large number of documents in a single operation can significantly increase the load on the MongoDB server. Instead, you can use paginated queries to fetch the data in chunks.
 
-For example, the following code snippet uses the paginated query instead of fetching all data at once.
+For example, the following code snippet uses a paginated query instead of fetching all the data at once.
 
 ```java
 Pageable pageable = PageRequest.of(page, size);
@@ -157,36 +155,36 @@ List<Product> products= mongoTemplate.find(query, Product.class);
 
 ## 4. Inefficient Schema Design
 
-Unlike relational databases, MongoDB is schema-less and it is not required to design your schema upfront.
+Unlike relational databases, MongoDB is schema-less and you are not required to design your schema upfront.
 
-Although it is not mandatory, having a database schema upfront, helps to ensure that the data stored in the database follows a specific structure. A well-designed schema can significantly enhance performance and data consistency.
+Although it is not mandatory, having a database schema upfront helps to ensure that the data stored in the database follows a specific structure. A well-designed schema can significantly enhance performance and data consistency.
 
 While designing your database schema, consider your data access patterns and aspects like sharding and indexing to ensure the database performs well as it scales.
 
-For example, embedding documents can reduce the number of database roundtrips, but it can be overhead if your document size is huge.
+For example, embedding documents can reduce the number of database roundtrips, but it can add overhead if your document size is huge.
 
-Consider reading some of the established schema design patterns [here](https://www.mongodb.com/docs/atlas/performance-advisor/schema-suggestions/)
+Consider reading some of the established schema design patterns [here](https://www.mongodb.com/docs/atlas/performance-advisor/schema-suggestions/).
 
 ## 5. Use Appropriate Write Concerns and Read Preferences
 
-If you're using distributed database systems, then consistency, availability, and durability of data is very important. This is where **Write Concerns** and **Read Preferences** come into play.
+If you're using distributed database systems, then consistency, availability, and durability of data are very important. This is where **Write Concerns** and **Read Preferences** come into play.
 
 ### Write Concerns
 
-Write Concerns deals with the level of acknowledgement requested from MongoDB for performing the write operations.
+Write Concerns deal with the level of acknowledgment requested from MongoDB when performing write operations.
 
-By default, MongoDB acknowledges all write operations. Meaning, it ensures the data is written into all replica sets before the operation is considered successful. This can be overridden using the `setDefaultRWConcern` administrative command globally during cluster setup.
+By default, MongoDB acknowledges all write operations. This means it ensures the data is written to replica sets before the operation is considered successful. This can be overridden using the `setDefaultRWConcern` administrative command globally during cluster setup.
 
-The default write concern used in Java Mongo driver is to **acknowledge** all write operations. But, you can override this behaviour from your application using the `setWriteConcern()` method on `MongoTemplate`.
+The default write concern used in the Java Mongo driver is to **acknowledge** all write operations. However, you can override this behavior from your application using the `setWriteConcern()` method on `MongoTemplate`.
 
 ```java
 MongoTemplate template = new MongoTemplate(factory, converter);
 template.setWriteConcern(WriteConcern.ACKNOWLEDGED);
 ```
 
-The above configuration alters the behaviour globally across all repositories.
+The above configuration alters the behavior globally across all repositories.
 
-Alternatively, you can configure it per-operation basis using `WriteConcernResolver` bean.
+Alternatively, you can configure it on a per-operation basis using a `WriteConcernResolver` bean.
 
 ```java
 @Sl4j
@@ -214,15 +212,14 @@ public class MongoConfiguration {
 
 -   [https://mongodb.github.io/mongo-java-driver/4.2/apidocs/mongodb-driver-core/com/mongodb/WriteConcern.html](https://mongodb.github.io/mongo-java-driver/4.2/apidocs/mongodb-driver-core/com/mongodb/WriteConcern.html)
 -   [https://www.mongodb.com/docs/manual/reference/mongodb-defaults/](https://www.mongodb.com/docs/manual/reference/mongodb-defaults/)
--   [https://mongodb.github.io/mongo-java-driver/4.2/apidocs/mongodb-driver-core/com/mongodb/WriteConcern.html](https://mongodb.github.io/mongo-java-driver/4.2/apidocs/mongodb-driver-core/com/mongodb/WriteConcern.html)
 
-### Read Preference
+### Read Preferences
 
-Read Preferences configuration is used to determine how MongoDB directs read operations to the members of a replica set. It allows clients to control whether they prefer to read from the primary node or a secondary node based on latency.
+The Read Preferences configuration is used to determine how MongoDB directs read operations to the members of a replica set. It allows clients to control whether they prefer to read from the primary node or a secondary node based on latency.
 
 It helps to balance the load and optimize read performance across a distributed database system.
 
-The **Read Preferences** can be configured globally using `MongoClientSettingsBuilderCustomizer` bean.
+The **Read Preferences** can be configured globally using a `MongoClientSettingsBuilderCustomizer` bean.
 
 ```java
 @Bean
@@ -239,15 +236,17 @@ mongoTemplate.getCollection("product_collection")
         .find();
 ```
 
-References: https://www.javadoc.io/doc/org.mongodb/mongo-java-driver/latest/com/mongodb/ReadPreference.html
+**References:**
 
-## 6. Optimise Large Payloads using Projections
+-   [https://www.javadoc.io/doc/org.mongodb/mongo-java-driver/latest/com/mongodb/ReadPreference.html](https://www.javadoc.io/doc/org.mongodb/mongo-java-driver/latest/com/mongodb/ReadPreference.html)
 
-If your database contains collections with large documents then retrieving large documents without projection can lead to high network latency and increase load on the MongoDB server.
+## 6. Optimize Large Payloads Using Projections
+
+If your database contains collections with large documents, retrieving large documents without projection can lead to high network latency and increased load on the MongoDB server.
 
 It is a good practice to use projections and limit the result by pulling only the required fields. This can reduce the amount of data transferred over the network.
 
-In Spring Data MongoDB, you can use the `fields()` method to include and exclude fields in your response. For example, the following query pulls only productId and name Product collection.
+In Spring Data MongoDB, you can use the `fields()` method to include and exclude fields in your response. For example, the following query pulls only `productId` and `name` from the `Product` collection.
 
 ```java
 Query query = new Query();
@@ -255,27 +254,27 @@ query.fields().include("productId").include("name");
 return mongoTemplate.find(query, Product.class);
 ```
 
-## 7. Leverage Application Level Caching
+## 7. Leverage Application-Level Caching
 
-Caching helps to speed up data access and improve overall application performance by reducing the need for frequent access to DB. Caching strategy can be implemented at different levels to meet your performance goals.
+Caching helps to speed up data access and improve overall application performance by reducing the need for frequent access to the database. A caching strategy can be implemented at different levels to meet your performance goals:
 
--   Caching at the client side (browser)
+-   Caching on the client side (browser)
 -   Caching at the web server layer
 -   Caching application-level data
--   CDN Caching
+-   CDN caching
 -   Database caching
 
-Implement application-level data using caching to avoid unnecessary database reads. Read [official documentation](https://docs.spring.io/spring-boot/reference/io/caching.html) to implement caching within your Spring Boot application.
+Implement application-level caching to avoid unnecessary database reads. Read the [official documentation](https://docs.spring.io/spring-boot/reference/io/caching.html) to implement caching within your Spring Boot application.
 
 ## 8. Use Aggregations
 
-For complex data processing, MongoDB's aggregation framework is more efficient than multiple queries and processing data on the application side.
+For complex data processing, MongoDB's aggregation framework is more efficient than running multiple queries and processing data on the application side.
 
-Aggregations can be used for processing and transforming documents within a collection. It uses a pipeline approach, where documents pass through a series of stages that perform operations such as filtering, grouping, and transforming data.
+Aggregations can be used for processing and transforming documents within a collection. They use a pipeline approach, where documents pass through a series of stages that perform operations such as filtering, grouping, and transforming data.
 
-Spring Data MongoDB provides support for the aggregation framework through the Aggregation class.
+Spring Data MongoDB provides support for the aggregation framework through the `Aggregation` class.
 
-Let's say you have a list of products, prices and sales data stored in different collections and you want to generate a report that calculates the total sales made last month for each product. This can be written using aggregations as follows;
+Let's say you have a list of products, prices, and sales data stored in different collections and you want to generate a report that calculates the total sales made last month for each product. This can be written using aggregations as follows:
 
 ```java
 public List<TotalSales> calculateLastMonthSales() {
@@ -315,15 +314,15 @@ public List<TotalSales> calculateLastMonthSales() {
 
 **References:**
 
-https://medium.com/mongodb-performance-tuning/explaining-aggregation-pipelines-2d1edd46a341
+-   [https://medium.com/mongodb-performance-tuning/explaining-aggregation-pipelines-2d1edd46a341](https://medium.com/mongodb-performance-tuning/explaining-aggregation-pipelines-2d1edd46a341)
 
 ## 9. Leverage Bulk Operations
 
-Bulk operations allow you to batch multiple operations (insert, update or delete) in a single request. It results in fewer network roundtrips and performs significantly faster.
+Bulk operations allow you to batch multiple operations (insert, update, or delete) in a single request. This results in fewer network roundtrips and significantly faster performance.
 
-MongoDB bulk operations are not atomic by default. However, it can be integrated with Spring's transaction management capabilities to ensure consistency across multiple operations.
+MongoDB bulk operations are not atomic by default. However, they can be integrated with Spring's transaction management capabilities to ensure consistency across multiple operations.
 
-The following example demonstrates inserting multiple records using bulk operation.
+The following example demonstrates inserting multiple records using a bulk operation.
 
 ```java
 @Component
@@ -354,13 +353,13 @@ public class DataLoader implements CommandLineRunner {
 }
 ```
 
-## 10. Use Capped Collections when Applicable
+## 10. Use Capped Collections When Applicable
 
 Capped collections are fixed-size collections that maintain insertion order and automatically remove the oldest documents when the collection reaches its maximum size.
 
-You're not allowed to perform delete documents from a capped collection. If you want to delete all documents, you can drop the whole collection.
+You're not allowed to delete documents from a capped collection. If you want to delete all documents, you can drop the whole collection.
 
-Capped collection can be useful if you want to create a real-time logging system that maintains a rolling log of the most recent user activities.
+A capped collection can be useful if you want to create a real-time logging system that maintains a rolling log of the most recent user activities.
 
 ```java
 mongoTemplate.createCollection(LogEntry.class,
